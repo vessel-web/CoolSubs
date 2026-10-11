@@ -105,7 +105,13 @@ BLOCKED_ASNS = {
     "20860"
 }
 
+FINGERPRINTS = ["firefox", "chrome", "safari", "ios", "android", "edge", "random", "randomized"]
+
 _FLAGS = {}
+
+
+def random_fp():
+    return random.choice(FINGERPRINTS)
 
 
 def parse_config(line, source_label):
@@ -311,7 +317,7 @@ def to_clash_proxy(cfg, flag, country, idx):
             if q.get("security") == "reality":
                 proxy["reality-opts"] = {"public-key": q.get("pbk", ""), "short-id": q.get("sid", "")}
                 proxy["servername"] = q.get("sni", "")
-                proxy["client-fingerprint"] = q.get("fp", "chrome")
+                proxy["client-fingerprint"] = random_fp()
             elif q.get("security") == "tls":
                 proxy["servername"] = q.get("sni", p.hostname)
             if q.get("type") == "ws":
@@ -499,7 +505,7 @@ def xray_vless(uri):
             "serverName": q.get("sni", ""),
             "publicKey": q.get("pbk", ""),
             "shortId": q.get("sid", ""),
-            "fingerprint": q.get("fp", "chrome")
+            "fingerprint": random_fp()
         }
     if q.get("security") == "tls":
         cfg["streamSettings"]["tlsSettings"] = {
@@ -797,7 +803,7 @@ def run_subscription(sources, remote_name, label):
     stats_name = remote_name.replace(".txt", "_stats.json")
     save_stats(working, stats_name)
 
-    print(f"⏱️  Всего: {time.time() - t0:.1f}с")
+    print(f"⏱️  Всего: {time.time() - t0:.1f}s")
 
 
 if __name__ == "__main__":
