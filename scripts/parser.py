@@ -778,7 +778,7 @@ def run_subscription(sources, remote_name, label):
     random.shuffle(working)
     output = [format_line(c, p, i + 1) for i, (c, p) in enumerate(working)]
 
-    if "bl" in remote_name.lower():
+    if "black" in remote_name.lower():
         title = "CoolSubs — Black"
     else:
         title = "CoolSubs — White"
@@ -789,7 +789,7 @@ def run_subscription(sources, remote_name, label):
         output,
         title,
         update_hours=4,
-        support_url="https://github.com/vessel-web/subs_pars",
+        support_url="https://github.com/vessel-web/CoolSubs",
         announce=announce,
     )
 
@@ -803,12 +803,12 @@ def run_subscription(sources, remote_name, label):
     stats_name = remote_name.replace(".txt", "_stats.json")
     save_stats(working, stats_name)
 
-    print(f"⏱️  Всего: {time.time() - t0:.1f}s")
+    print(f"⏱️  Всего: {time.time() - t0:.1f}с")
 
 
 if __name__ == "__main__":
     os.makedirs(TMP_DIR, exist_ok=True)
     print("🚀 Запуск парсера с Xray-проверкой...")
-    run_subscription(BLACK_SOURCES, "subs_bl.txt", "⚫ ЧЁРНАЯ")
-    run_subscription(WHITE_SOURCES, "subs_wl.txt", "⚪ БЕЛАЯ")
+    run_subscription(BLACK_SOURCES, "Cool-Black.txt", "⚫ ЧЁРНАЯ")
+    run_subscription(WHITE_SOURCES, "Cool-White.txt", "⚪ БЕЛАЯ")
     print("\n✅ Готово!")
