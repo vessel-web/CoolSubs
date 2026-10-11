@@ -105,7 +105,7 @@ BLOCKED_ASNS = {
     "20860"
 }
 
-FINGERPRINTS = ["firefox", "chrome", "safari", "ios", "android", "edge", "random", "randomized"]
+FINGERPRINTS = ["firefox", "safari", "ios", "android", "edge", "random", "randomized"]
 
 _FLAGS = {}
 
