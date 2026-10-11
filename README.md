@@ -1,6 +1,6 @@
 ![Auto Update](https://github.com/vessel-web/subs_pars/actions/workflows/update.yml/badge.svg)
 
-![BL Servers]![BL Servers](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-Black_stats.json&query=$.total&label=Black%20Servers&color=red)
+![BL Servers](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-Black_stats.json&query=$.total&label=Black%20Servers&color=red)
 ![WL Servers](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-White_stats.json&query=$.total&label=White%20Servers&color=green)
 ![BL Countries](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-Black_stats.json&query=$.countries&label=Black%20Countries&color=blue)
 ![WL Countries](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-White_stats.json&query=$.countries&label=White%20Countries&color=purple)
@@ -15,7 +15,7 @@
 
 ## Ссылки для клиента
 
-Чёрные:  TXT чёрный:  
+TXT чёрный:  
 https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-Black.txt
 
 TXT белый:   
