@@ -1,9 +1,9 @@
 ![Auto Update](https://github.com/vessel-web/subs_pars/actions/workflows/update.yml/badge.svg)
 
-![BL Servers](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/subs_pars/refs/heads/main/subs_bl_stats.json&query=$.total&label=BL%20Servers&color=red)
-![WL Servers](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/subs_pars/refs/heads/main/subs_wl_stats.json&query=$.total&label=WL%20Servers&color=green)
-![BL Countries](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/subs_pars/refs/heads/main/subs_bl_stats.json&query=$.countries&label=BL%20Countries&color=blue)
-![WL Countries](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/subs_pars/refs/heads/main/subs_wl_stats.json&query=$.countries&label=WL%20Countries&color=purple)
+![BL Servers]![BL Servers](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-Black_stats.json&query=$.total&label=Black%20Servers&color=red)
+![WL Servers](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-White_stats.json&query=$.total&label=White%20Servers&color=green)
+![BL Countries](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-Black_stats.json&query=$.countries&label=Black%20Countries&color=blue)
+![WL Countries](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-White_stats.json&query=$.countries&label=White%20Countries&color=purple)
 
 # subs_pars
 
@@ -15,13 +15,17 @@
 
 ## Ссылки для клиента
 
-Чёрные:  https://raw.githubusercontent.com/vessel-web/subs_pars/refs/heads/main/subs_bl.txt
+Чёрные:  TXT чёрный:  
+https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-Black.txt
 
-Белые:   https://raw.githubusercontent.com/vessel-web/subs_pars/refs/heads/main/subs_wl.txt
+TXT белый:   
+https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-White.txt
 
-CLASH чёрный: https://raw.githubusercontent.com/vessel-web/subs_pars/refs/heads/main/subs_bl.yaml
+YAML чёрный: 
+https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-Black.yaml
 
-CLASH белый:  https://raw.githubusercontent.com/vessel-web/subs_pars/refs/heads/main/subs_wl.yaml
+YAML белый:  
+https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-White.yaml
 
 ## 📡 Источники
 
