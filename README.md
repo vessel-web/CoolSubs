@@ -67,3 +67,34 @@ https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-White
 ---
 
 **Спасибо авторам источников**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+￴ ￴￴ ￴￴ ￴
