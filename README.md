@@ -5,11 +5,11 @@
 ![BL Countries](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-Black_stats.json&query=$.countries&label=Black%20Countries&color=blue)
 ![WL Countries](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-White_stats.json&query=$.countries&label=White%20Countries&color=purple)
 
-# subs_pars
+# CoolSubs
 
-Парсер подписок для v2rayNG / Hiddify / NekoBox / FlClash / Happ... / Incy....
+Автообновляемая подписка для v2rayNG / Hiddify / NekoBox / FlClash / Happ / Incy
 
-Собирает конфиги с кучи источников, проверяет их и заливает сюда же.
+Собирает подписки с кучи источников, проверяет их берет конфиги изаливает сюда же.
 
 Если берете подписку и выставляете, упоминайте пж
 
