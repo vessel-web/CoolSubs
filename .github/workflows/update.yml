@@ -43,7 +43,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Cool-Black.txt Cool-White.txt Cool-Black.yaml Cool-White.yaml Cool-Black_stats.json Cool-White_stats.json
+          git add Cool-Black.txt Cool-White.txt Cool-Black.yaml Cool-White.yaml Cool-Black_stats.json Cool-White_stats.json CHANGELOG.md
           git diff --staged --quiet || git commit -m "Auto update $(date -u +%F_%H-%M)"
           git pull --rebase origin main
           git push
