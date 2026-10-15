@@ -24,7 +24,7 @@ BLACK_SOURCES = [
     ("igareck",     "https://raw.githack.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt"),
     ("Diversan",    "https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt"),
     ("luxxuria",    "https://github.com/luxxuria/harvester/raw/refs/heads/main/non_ru.txt"),
-    ("Akres",       "https://hub.mos.ru/akres/vpn/-/raw/main/all"),
+    ("Akres",       "https://github.com/theakres/VPN/raw/main/all"),
     ("VLESSFORU",   "https://sub.vlessfo.ru/vlessforu/working_configs.txt"),
     ("RKP",         "https://hub.mos.ru/rkp/sub-roskompozor/raw/main/bl"),
     ("Pizduk-sub",  "https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/sub.txt"),
@@ -34,6 +34,12 @@ BLACK_SOURCES = [
     ("BUNKER",      "https://gitverse.ru/api/repos/KOT_ANTIDOT/BUNKER/raw/branch/master/BUNKER_BLACK700.txt"),
     ("ImSketch",    "https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
     ("LSO-WIFI",    "https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/WIFI.txt"),
+    ("IR-1",        "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt"),
+    ("IR-2",        "https://raw.githubusercontent.com/mohammadaz2/v2rayConfigsForYou/main/configs.txt"),
+    ("IR-3",        "https://raw.githubusercontent.com/DukeMehdi/FreeList-V2ray-Configs/main/configs.txt"),
+    ("IR-4",        "https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/Sub.txt"),
+    ("IR-5",        "https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"),
+    ("IR-6",        "https://raw.githubusercontent.com/balochscript/free-vpn-configs/gh-pages/subscription-recent.txt"),
 ]
 
 WHITE_SOURCES = [
@@ -46,7 +52,10 @@ WHITE_SOURCES = [
     ("ring-team",   "https://enc.ring-team.casa/sub/kuajs27ilzcz"),
     ("ImSketch",    "https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
     ("LSO-LTE",     "https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/LTE.txt"),
-    ("Akres-WL",    "https://hub.mos.ru/akres/vpn/-/raw/main/bwl"),
+    ("Akres-WL",    "https://github.com/theakres/VPN/raw/main/bwl"),
+    ("IR-WL-1",     "https://raw.githubusercontent.com/liketolivefree/kobabi/main/sub.txt"),
+    ("IR-WL-2",     "https://raw.githubusercontent.com/DukeMehdi/FreeList-V2ray-Configs/refs/heads/main/Configs/All-DukeMehdi-Configs.txt"),
+    ("IR-WL-3",     "https://raw.githubusercontent.com/r3zarahimi/tg-v2ray-configs-every2h/main/Config_jo.txt"),
 ]
 
 COUNTRY_NAMES = {
