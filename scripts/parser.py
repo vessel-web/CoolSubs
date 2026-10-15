@@ -171,6 +171,20 @@ def dedup_configs(configs):
     return unique
 
 
+def save_unsorted(configs, out_path):
+    seen = set()
+    lines = []
+    for cfg in configs:
+        raw = cfg['raw'].split('#')[0]
+        if raw in seen:
+            continue
+        seen.add(raw)
+        lines.append(cfg['raw'])
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+    print(f"💾 {out_path}: {len(lines)} сырых конфигов")
+
+
 def check_asn(host):
     try:
         req = urllib.request.Request(f"https://getmyip.pro/api/{host}",
@@ -786,6 +800,11 @@ def run_subscription(sources, remote_name, label):
     if not all_configs:
         print("⚠️ Нечего проверять")
         return
+
+    if "black" in remote_name.lower():
+        save_unsorted(all_configs, "unsorted-black.txt")
+    else:
+        save_unsorted(all_configs, "unsorted-white.txt")
 
     before = len(all_configs)
     all_configs = dedup_configs(all_configs)
