@@ -82,8 +82,8 @@ SOURCES_FILE: Path = SOURCES_DIR / "sources.txt"
 # Чёрный список лежит в sources/, ровно там, где его читает
 # Telegram_Checker.py. Файл должен быть один, иначе связка ЧС между
 # скриптами не работает.
-BLACKLIST_FILE: Path = SOURCES_DIR / "blacklist_sources.txt"
-CONFIGS_FILE: Path = TEMP_DIR / "configs.txt"
+BLACKLIST_FILE: Path = ROOT_DIR / "blacklist_sources.txt"
+CONFIGS_FILE: Path = ROOT_DIR / "configs.txt"
 SETTINGS_FILE: Path = DOWNLOADER_DIR / "settings.json"
 # Таблица кулдауна ЧС — построчный текст «url<TAB>время» рядом с
 # настройками. Старый blacklist_cooldown.json при первом запуске
