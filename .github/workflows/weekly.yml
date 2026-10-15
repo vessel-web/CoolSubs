@@ -1,0 +1,42 @@
+name: Weekly Downloader
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-downloader
+  cancel-in-progress: true
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install requests pyyaml
+
+      - name: Run Downloader
+        run: python scripts/downloader.py --once
+
+      - name: Commit configs.txt
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add configs.txt blacklist_sources.txt
+          git diff --staged --quiet || git commit -m "Weekly downloader $(date -u +%F)"
+          git pull --rebase origin main
+          git push
