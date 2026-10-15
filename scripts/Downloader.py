@@ -71,7 +71,7 @@ urllib3.disable_warnings()  # запросы идут с verify=False — руг
 # ПУТИ (всё относительно корня — папки, где лежит этот файл)
 # ══════════════════════════════════════════════════════════════════════════════
 
-ROOT_DIR: Path = Path(__file__).resolve().parent
+ROOT_DIR: Path = Path(__file__).resolve().parent.parent
 SOURCES_DIR: Path = ROOT_DIR / "sources"
 TEMP_DIR: Path = ROOT_DIR / "temp"
 DOWNLOADER_DIR: Path = TEMP_DIR / "Downloader"
