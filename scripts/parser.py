@@ -125,6 +125,13 @@ def random_fp():
     return random.choice(FINGERPRINTS)
 
 
+def sample_ratio(configs, ratio=0.3):
+    if not configs:
+        return configs
+    n = max(1, int(len(configs) * ratio))
+    return random.sample(configs, n)
+
+
 def parse_config(line, source_label):
     line = line.strip()
     if not line or line.startswith('#'):
@@ -782,19 +789,24 @@ def run_subscription(sources, remote_name, label):
     type_counter = Counter()
     for src_label, url in sources:
         lines, error, reason = fetch_sub(url, retries=1)
-        got = 0
+        src_configs = []
         for line in lines:
             cfg = parse_config(line, src_label)
             if cfg:
-                all_configs.append(cfg)
-                type_counter[cfg['type']] += 1
-                got += 1
-        if error:
+                src_configs.append(cfg)
+        if src_label.startswith("IR-"):
+            before = len(src_configs)
+            src_configs = sample_ratio(src_configs, 0.3)
+            print(f"   ✅ [{src_label}] {len(lines)} строк → {before} конфигов → взято {len(src_configs)} (30%)")
+        elif error:
             print(f"   ❌ [{src_label}] {error}")
-        elif got == 0 and reason:
+        elif not src_configs and reason:
             print(f"   ⚠️  [{src_label}] {reason}")
         else:
-            print(f"   ✅ [{src_label}] {len(lines)} строк → {got} конфигов")
+            print(f"   ✅ [{src_label}] {len(lines)} строк → {len(src_configs)} конфигов")
+        for cfg in src_configs:
+            all_configs.append(cfg)
+            type_counter[cfg['type']] += 1
 
     print(f"\n✅ Всего конфигов: {len(all_configs)}")
     if not all_configs:
