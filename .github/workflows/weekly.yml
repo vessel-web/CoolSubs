@@ -57,7 +57,7 @@ jobs:
           total = 0
           for line in lines:
               total += len(line.encode('utf-8'))
-              if total > 95 * 1024 * 1024:
+              if total > 30 * 1024 * 1024:
                   break
               out.append(line)
           with open('configs.txt', 'w', encoding='utf-8') as f:
