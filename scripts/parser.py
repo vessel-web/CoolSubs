@@ -8,6 +8,7 @@ import socket
 import ssl
 import os
 import re
+import gzip
 import time
 import random
 import subprocess
@@ -40,7 +41,7 @@ BLACK_SOURCES = [
     ("IR-4",        "https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/Sub.txt"),
     ("IR-5",        "https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"),
     ("IR-6",        "https://raw.githubusercontent.com/balochscript/free-vpn-configs/gh-pages/subscription-recent.txt"),
-    ("Downloader",  "https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/configs.txt"),
+    ("Downloader",  "https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/configs.txt.gz"),
 ]
 
 WHITE_SOURCES = [
@@ -105,7 +106,7 @@ TMP_DIR = "/tmp/xray_tmp"
 SOCKS_BASE_PORT = 20000
 TEST_URL = "https://www.gstatic.com/generate_204"
 PING_TIMEOUT = 5
-XRAY_WORKERS = 50
+XRAY_WORKERS = 20
 
 BLOCKED_ASNS = {
     "13335", "14789", "132892", "202623", "203898", "209242",
@@ -240,6 +241,12 @@ def fetch_sub(url, retries=1):
             })
             resp = urllib.request.urlopen(req, timeout=20)
             data = resp.read()
+            # Распаковка .gz
+            if url.endswith(".gz"):
+                try:
+                    data = gzip.decompress(data)
+                except Exception:
+                    pass
             if not data:
                 return [], "Пустой ответ", "empty"
             try:
@@ -797,11 +804,15 @@ def run_subscription(sources, remote_name, label):
     all_configs = []
     type_counter = Counter()
     for src_label, url in sources:
-        if src_label == "Downloader" and os.path.exists("configs.txt"):
+        if src_label == "Downloader" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
             print(f"   ✅ [Downloader] локальный configs.txt")
             try:
-                with open("configs.txt", "r", encoding="utf-8", errors="ignore") as f:
-                    lines = f.read().splitlines()
+                if os.path.exists("configs.txt"):
+                    with open("configs.txt", "r", encoding="utf-8", errors="ignore") as f:
+                        lines = f.read().splitlines()
+                else:
+                    with gzip.open("configs.txt.gz", "rt", encoding="utf-8", errors="ignore") as f:
+                        lines = f.read().splitlines()
                 error, reason = None, None
             except Exception as e:
                 print(f"   ❌ [Downloader] ошибка чтения: {e}")
