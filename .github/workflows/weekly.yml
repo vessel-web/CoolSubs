@@ -2,20 +2,20 @@ name: Monthly Downloader + Parser
 
 on:
   schedule:
-    - cron: '0 3 1 * *'
+    - cron: '0 3 1 * *'   # 1-го числа каждого месяца в 03:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: weekly-downloader
+  group: monthly-downloader
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 350   # < 6 часов GitHub Actions
 
     steps:
       - name: Checkout repo
@@ -41,14 +41,28 @@ jobs:
       - name: Run Downloader
         run: python scripts/downloader.py --once
 
-      - name: Compress configs.txt
+      - name: Sample 100k random lines + gzip
         run: |
-          echo "До сжатия:"
-          wc -l configs.txt 2>/dev/null || echo "configs.txt нет"
-          ls -lh configs.txt 2>/dev/null || echo "configs.txt нет"
-          gzip -9 configs.txt
-          echo "После сжатия:"
-          ls -lh configs.txt.gz 2>/dev/null || echo "configs.txt.gz нет"
+          echo "=== До выборки ==="
+          wc -l configs.txt 2>/dev/null || { echo "configs.txt нет — прерываем"; exit 1; }
+          ls -lh configs.txt
+
+          python - <<'EOF'
+          import random, gzip, os
+          src = 'configs.txt'
+          lines = open(src, encoding='utf-8', errors='ignore').read().splitlines()
+          total = len(lines)
+          n = min(100_000, total)
+          sampled = random.sample(lines, n)
+          with gzip.open('configs.txt.gz', 'wt', encoding='utf-8') as f:
+              f.write('\n'.join(sampled))
+          os.remove(src)
+          print(f'✅ sampled {n} / {total} → configs.txt.gz')
+          EOF
+
+          echo "=== После выборки ==="
+          ls -lh configs.txt.gz
+          python -c "import gzip; print('строк в .gz:', len(gzip.open('configs.txt.gz','rt',encoding='utf-8').read().splitlines()))"
 
       - name: Run Parser
         run: python scripts/parser.py
@@ -57,7 +71,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Cool-Black.txt Cool-White.txt Cool-Black.yaml Cool-White.yaml Cool-Black_stats.json Cool-White_stats.json CHANGELOG.md configs.txt.gz blacklist_sources.txt
+          git add Cool-Black.txt Cool-White.txt Cool-Black.yaml Cool-White.yaml \
+                  Cool-Black_stats.json Cool-White_stats.json CHANGELOG.md \
+                  unsorted-black.txt unsorted-white.txt \
+                  configs.txt.gz blacklist_sources.txt
           git diff --staged --quiet || git commit -m "Monthly: downloader + parser $(date -u +%F)"
           git pull --rebase origin main
           git push
