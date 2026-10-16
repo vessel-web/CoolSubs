@@ -1,51 +1,51 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import urllib.request, urllib.error, base64, json, socket, ssl, os, re, gzip, time, random
+import urllib.request, urllib.error, base64, json, socket, ssl, os, re, gzip, time, random, glob
 import subprocess, concurrent.futures, requests, yaml
 from urllib.parse import urlparse, quote
 from collections import Counter
 
 BLACK_SOURCES = [
-    ("Gidroksi",   "https://gidroksi.fun/black-list"),
-    ("Aetris",     "https://gitverse.ru/api/repos/flaafix/AetrisVPN_Black_list/raw/branch/master/configs.txt"),
-    ("etoneya",    "https://etoskam.ru/other"),
-    ("igareck",    "https://raw.githack.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt"),
-    ("Diversan",   "https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt"),
-    ("luxxuria",   "https://github.com/luxxuria/harvester/raw/refs/heads/main/non_ru.txt"),
-    ("Akres",      "https://github.com/theakres/VPN/raw/main/all"),
-    ("VLESSFORU",  "https://sub.vlessfo.ru/vlessforu/working_configs.txt"),
-    ("RKP",        "https://hub.mos.ru/rkp/sub-roskompozor/raw/main/bl"),
-    ("Pizduk-sub", "https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/sub.txt"),
-    ("LimeVPN",    "https://raw.githubusercontent.com/LimeHi/LimeVPN/refs/heads/main/blacklist.txt"),
-    ("atbPars",    "https://raw.githubusercontent.com/djsigggmagg-ui/atbPars-sub/refs/heads/main/subscription.txt"),
-    ("WarpGen",    "https://warp-gen.cyb-portal.org/CP-039"),
-    ("BUNKER",     "https://hub.mos.ru/akelladejavu/bunker/-/raw/main/BLACK_LIST.txt"),
-    ("ImSketch",   "https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
-    ("LSO-WIFI",   "https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/WIFI.txt"),
-    ("IR-1",       "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt"),
-    ("IR-2",       "https://raw.githubusercontent.com/mohammadaz2/v2rayConfigsForYou/main/configs.txt"),
-    ("IR-3",       "https://raw.githubusercontent.com/DukeMehdi/FreeList-V2ray-Configs/main/configs.txt"),
-    ("IR-4",       "https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/Sub.txt"),
-    ("IR-5",       "https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"),
-    ("IR-6",       "https://raw.githubusercontent.com/balochscript/free-vpn-configs/gh-pages/subscription-recent.txt"),
-    ("Downloader", "https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/configs.txt.gz"),
+    ("Gidroksi","https://gidroksi.fun/black-list"),
+    ("Aetris","https://gitverse.ru/api/repos/flaafix/AetrisVPN_Black_list/raw/branch/master/configs.txt"),
+    ("etoneya","https://etoskam.ru/other"),
+    ("igareck","https://raw.githack.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt"),
+    ("Diversan","https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt"),
+    ("luxxuria","https://github.com/luxxuria/harvester/raw/refs/heads/main/non_ru.txt"),
+    ("Akres","https://github.com/theakres/VPN/raw/main/all"),
+    ("VLESSFORU","https://sub.vlessfo.ru/vlessforu/working_configs.txt"),
+    ("RKP","https://hub.mos.ru/rkp/sub-roskompozor/raw/main/bl"),
+    ("Pizduk-sub","https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/sub.txt"),
+    ("LimeVPN","https://raw.githubusercontent.com/LimeHi/LimeVPN/refs/heads/main/blacklist.txt"),
+    ("atbPars","https://raw.githubusercontent.com/djsigggmagg-ui/atbPars-sub/refs/heads/main/subscription.txt"),
+    ("WarpGen","https://warp-gen.cyb-portal.org/CP-039"),
+    ("BUNKER","https://hub.mos.ru/akelladejavu/bunker/-/raw/main/BLACK_LIST.txt"),
+    ("ImSketch","https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
+    ("LSO-WIFI","https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/WIFI.txt"),
+    ("IR-1","https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt"),
+    ("IR-2","https://raw.githubusercontent.com/mohammadaz2/v2rayConfigsForYou/main/configs.txt"),
+    ("IR-3","https://raw.githubusercontent.com/DukeMehdi/FreeList-V2ray-Configs/main/configs.txt"),
+    ("IR-4","https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/Sub.txt"),
+    ("IR-5","https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"),
+    ("IR-6","https://raw.githubusercontent.com/balochscript/free-vpn-configs/gh-pages/subscription-recent.txt"),
+    ("Downloader","https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/configs.txt.gz"),
 ]
 
 WHITE_SOURCES = [
-    ("bikinitw22", "https://gitverse.ru/api/repos/bikinitw22/apelsintel/raw/branch/main/alive_bs.txt"),
-    ("Pizduk",     "https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/WlSubPiz.txt"),
-    ("mos.ru",     "https://hub.mos.ru/kfwl/auto/raw/main/wl"),
-    ("RKP-WL",     "https://hub.mos.ru/rkp/sub-roskompozor/raw/main/wl"),
-    ("igareck-WL", "https://raw.githack.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt"),
-    ("etoneya wl", "https://etoskam.ru/whitelist"),
-    ("ring-team",  "https://enc.ring-team.casa/sub/kuajs27ilzcz"),
-    ("ImSketch",   "https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
-    ("LSO-LTE",    "https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/LTE.txt"),
-    ("Akres-WL",   "https://github.com/theakres/VPN/raw/main/bwl"),
-    ("BUNKER-WL",  "https://hub.mos.ru/akelladejavu/bunker/-/raw/main/WHITE_LIST.txt"),
-    ("IR-WL-1",    "https://raw.githubusercontent.com/liketolivefree/kobabi/main/sub.txt"),
-    ("IR-WL-2",    "https://raw.githubusercontent.com/DukeMehdi/FreeList-V2ray-Configs/refs/heads/main/Configs/All-DukeMehdi-Configs.txt"),
-    ("IR-WL-3",    "https://raw.githubusercontent.com/r3zarahimi/tg-v2ray-configs-every2h/main/Config_jo.txt"),
+    ("bikinitw22","https://gitverse.ru/api/repos/bikinitw22/apelsintel/raw/branch/main/alive_bs.txt"),
+    ("Pizduk","https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/WlSubPiz.txt"),
+    ("mos.ru","https://hub.mos.ru/kfwl/auto/raw/main/wl"),
+    ("RKP-WL","https://hub.mos.ru/rkp/sub-roskompozor/raw/main/wl"),
+    ("igareck-WL","https://raw.githack.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt"),
+    ("etoneya wl","https://etoskam.ru/whitelist"),
+    ("ring-team","https://enc.ring-team.casa/sub/kuajs27ilzcz"),
+    ("ImSketch","https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
+    ("LSO-LTE","https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/LTE.txt"),
+    ("Akres-WL","https://github.com/theakres/VPN/raw/main/bwl"),
+    ("BUNKER-WL","https://hub.mos.ru/akelladejavu/bunker/-/raw/main/WHITE_LIST.txt"),
+    ("IR-WL-1","https://raw.githubusercontent.com/liketolivefree/kobabi/main/sub.txt"),
+    ("IR-WL-2","https://raw.githubusercontent.com/DukeMehdi/FreeList-V2ray-Configs/refs/heads/main/Configs/All-DukeMehdi-Configs.txt"),
+    ("IR-WL-3","https://raw.githubusercontent.com/r3zarahimi/tg-v2ray-configs-every2h/main/Config_jo.txt"),
 ]
 
 COUNTRY_NAMES = {
@@ -94,31 +94,33 @@ SOCKS_BASE_PORT = 20000
 TEST_URL = "https://www.gstatic.com/generate_204"
 PING_TIMEOUT = 5
 XRAY_WORKERS = 20
-
-BLOCKED_ASNS = {
-    "13335","14789","132892","202623","203898","209242",
-    "395747","400095","402542","16509","396982","8075","20860",
-}
-
+BLOCKED_ASNS = {"13335","14789","132892","202623","203898","209242","395747","400095","402542","16509","396982","8075","20860"}
 FINGERPRINTS = ["firefox","safari","ios","android","edge","random","randomized"]
-GEOIP_DB = "GeoLite2-Country.mmdb"
 
+def _find_geoip_db():
+    here = os.path.dirname(os.path.abspath(__file__))
+    for root in [here, os.path.join(here, ".."), os.getcwd()]:
+        for p in sorted(glob.glob(os.path.join(root, "GeoLite2-Country*.mmdb"))):
+            try:
+                if os.path.getsize(p) > 1_000_000:
+                    return p
+            except Exception:
+                pass
+    return None
+
+GEOIP_DB = _find_geoip_db()
 _FLAGS = {}
 _STATS_BL = {}
 _STATS_WL = {}
 _RESOLVE_CACHE = {}
 
-
 def random_fp():
     return random.choice(FINGERPRINTS)
-
 
 def sample_ratio(configs, ratio=0.3):
     if not configs:
         return configs
-    n = max(1, int(len(configs) * ratio))
-    return random.sample(configs, n)
-
+    return random.sample(configs, max(1, int(len(configs) * ratio)))
 
 def parse_config(line, source_label):
     line = line.strip()
@@ -128,80 +130,52 @@ def parse_config(line, source_label):
         if line.startswith('vmess://'):
             raw = base64.b64decode(line[8:] + '=' * (-len(line[8:]) % 4)).decode('utf-8')
             cfg = json.loads(raw)
-            return {'host': cfg['add'], 'port': int(cfg['port']), 'raw': line,
-                    'label': source_label, 'type': 'VMess'}
-        elif line.startswith('vless://'):
-            p = urlparse(line)
-            return {'host': p.hostname, 'port': p.port or 443, 'raw': line,
-                    'label': source_label, 'type': 'VLESS'}
-        elif line.startswith('trojan://'):
-            p = urlparse(line)
-            return {'host': p.hostname, 'port': p.port or 443, 'raw': line,
-                    'label': source_label, 'type': 'Trojan'}
-        elif line.startswith('ss://'):
-            p = urlparse(line)
-            return {'host': p.hostname, 'port': p.port or 8388, 'raw': line,
-                    'label': source_label, 'type': 'Shadowsocks'}
-        elif line.startswith(('hysteria2://', 'hy2://')):
-            p = urlparse(line)
-            return {'host': p.hostname, 'port': p.port or 443, 'raw': line,
-                    'label': source_label, 'type': 'Hysteria2'}
-        elif line.startswith('tuic://'):
-            p = urlparse(line)
-            return {'host': p.hostname, 'port': p.port or 443, 'raw': line,
-                    'label': source_label, 'type': 'TUIC'}
+            return {'host': cfg['add'], 'port': int(cfg['port']), 'raw': line, 'label': source_label, 'type': 'VMess'}
+        if line.startswith('vless://'):
+            p = urlparse(line); return {'host': p.hostname, 'port': p.port or 443, 'raw': line, 'label': source_label, 'type': 'VLESS'}
+        if line.startswith('trojan://'):
+            p = urlparse(line); return {'host': p.hostname, 'port': p.port or 443, 'raw': line, 'label': source_label, 'type': 'Trojan'}
+        if line.startswith('ss://'):
+            p = urlparse(line); return {'host': p.hostname, 'port': p.port or 8388, 'raw': line, 'label': source_label, 'type': 'Shadowsocks'}
+        if line.startswith(('hysteria2://', 'hy2://')):
+            p = urlparse(line); return {'host': p.hostname, 'port': p.port or 443, 'raw': line, 'label': source_label, 'type': 'Hysteria2'}
+        if line.startswith('tuic://'):
+            p = urlparse(line); return {'host': p.hostname, 'port': p.port or 443, 'raw': line, 'label': source_label, 'type': 'TUIC'}
     except Exception:
         return None
     return None
 
-
 def dedup_configs(configs):
-    seen = set()
-    unique = []
+    seen, unique = set(), []
     for cfg in configs:
-        key = cfg['raw'].split('#')[0]
-        if key not in seen:
-            seen.add(key)
-            unique.append(cfg)
+        k = cfg['raw'].split('#')[0]
+        if k not in seen:
+            seen.add(k); unique.append(cfg)
     return unique
 
-
 def save_unsorted(configs, out_path):
-    seen = set()
-    lines = []
+    seen, lines = set(), []
     for cfg in configs:
         raw = cfg['raw'].split('#')[0]
         if raw in seen:
             continue
-        seen.add(raw)
-        lines.append(cfg['raw'])
+        seen.add(raw); lines.append(cfg['raw'])
     with open(out_path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
     print(f"💾 {out_path}: {len(lines)} сырых конфигов")
 
-
 def check_asn(host):
+    for url in (f"https://getmyip.pro/api/{host}", f"https://ipdata.info/{host}"):
+        try:
+            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            resp = json.loads(urllib.request.urlopen(req, timeout=5).read())
+            asn = resp.get("asn")
+            if asn:
+                return str(asn).replace("AS", "")
+        except Exception:
+            pass
     try:
-        req = urllib.request.Request(f"https://getmyip.pro/api/{host}",
-            headers={'User-Agent': 'Mozilla/5.0'})
-        resp = json.loads(urllib.request.urlopen(req, timeout=5).read())
-        asn = resp.get("asn")
-        if asn:
-            return str(asn).replace("AS", "")
-    except Exception:
-        pass
-    try:
-        req = urllib.request.Request(f"https://ipdata.info/{host}",
-            headers={'User-Agent': 'Mozilla/5.0'})
-        resp = json.loads(urllib.request.urlopen(req, timeout=5).read())
-        asn = resp.get("asn")
-        if asn:
-            return str(asn).replace("AS", "")
-    except Exception:
-        pass
-    try:
-        req = urllib.request.Request(f"http://ip-api.com/json/{host}?fields=as",
-            headers={'User-Agent': 'Mozilla/5.0'})
+        req = urllib.request.Request(f"http://ip-api.com/json/{host}?fields=as", headers={'User-Agent': 'Mozilla/5.0'})
         resp = json.loads(urllib.request.urlopen(req, timeout=5).read())
         as_str = resp.get("as", "")
         if as_str:
@@ -209,7 +183,6 @@ def check_asn(host):
     except Exception:
         pass
     return ""
-
 
 def resolve_host(host):
     if not host:
@@ -225,7 +198,6 @@ def resolve_host(host):
         ip = None
     _RESOLVE_CACHE[host] = ip
     return ip
-
 
 def fetch_sub(url, retries=1):
     for attempt in range(retries + 1):
@@ -264,8 +236,7 @@ def fetch_sub(url, retries=1):
                 return [], "Не найдено (404)", "notfound"
             if len(text.strip()) < 20:
                 return [], f"Слишком короткий ответ ({len(text)} байт)", "short"
-            b64_blocks = re.findall(r'[A-Za-z0-9+/=]{100,}', text)
-            for block in b64_blocks:
+            for block in re.findall(r'[A-Za-z0-9+/=]{100,}', text):
                 try:
                     dec = base64.b64decode(block + '=' * (-len(block) % 4)).decode('utf-8', errors='ignore')
                     if any(p in dec for p in ('vless://', 'vmess://', 'trojan://', 'ss://')):
@@ -275,52 +246,47 @@ def fetch_sub(url, retries=1):
             return [], f"Не распознан формат ({len(text)} байт)", "unknown"
         except urllib.error.HTTPError as e:
             if e.code == 429 and attempt < retries:
-                time.sleep(5)
-                continue
+                time.sleep(5); continue
             return [], f"HTTP {e.code} {e.reason}", f"http{e.code}"
         except urllib.error.URLError as e:
             if attempt < retries and 'timed out' in str(e).lower():
-                time.sleep(3)
-                continue
+                time.sleep(3); continue
             return [], f"Сеть: {e.reason}", "network"
         except Exception as e:
             return [], f"{type(e).__name__}: {e}", "error"
     return [], "Все попытки провалились", "failed"
 
-
 def load_flags_batch(hosts):
-    """Определяет страны: резолвит домены в IP + GeoLite2. Ключ — ХОСТ."""
     global _FLAGS
     _FLAGS = {}
+    if not GEOIP_DB:
+        print("⚠️ GeoLite2-Country*.mmdb не найден (или <1МБ) — все будут 🌐")
+        return
     try:
         import geoip2.database
         reader = geoip2.database.Reader(GEOIP_DB)
     except Exception as e:
         print(f"⚠️ GeoLite2 не загружен: {e} — все будут 🌐")
         return
-
+    print(f"🌍 GeoLite2: {GEOIP_DB} ({os.path.getsize(GEOIP_DB)//1024} КБ)")
     unique_hosts = list({h for h in hosts if h})
     print(f"\n🌍 Определение стран для {len(unique_hosts)} хостов...")
-
     host_to_ip = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=50) as ex:
         for host, ip in zip(unique_hosts, ex.map(resolve_host, unique_hosts)):
             if ip:
                 host_to_ip[host] = ip
     print(f"   ✅ Резолвнуто: {len(host_to_ip)}/{len(unique_hosts)}")
-
     found = 0
     for host, ip in host_to_ip.items():
         try:
             resp = reader.country(ip)
             if resp.country.iso_code:
-                _FLAGS[host] = resp.country.iso_code
-                found += 1
+                _FLAGS[host] = resp.country.iso_code; found += 1
         except Exception:
             pass
     reader.close()
     print(f"✅ Определено стран: {found}/{len(unique_hosts)}")
-
 
 def get_flag_and_name(host):
     code = _FLAGS.get(host, '')
@@ -328,28 +294,22 @@ def get_flag_and_name(host):
         return "🌐", "Unknown"
     return chr(ord(code[0]) + 127397) + chr(ord(code[1]) + 127397), COUNTRY_NAMES.get(code, code)
 
-
 def format_line(cfg, ping, idx=0):
-    flag, country = get_flag_and_name(cfg['host'])
+    flag, _ = get_flag_and_name(cfg['host'])
     new_name = f"cool [{cfg['label']}] {flag} |#{idx}|"
     raw = cfg['raw']
     if '#' in raw:
-        base, _ = raw.rsplit('#', 1)
-        return f"{base}#{quote(new_name)}"
+        base, _ = raw.rsplit('#', 1); return f"{base}#{quote(new_name)}"
     return f"{raw}#{quote(new_name)}"
 
-
 def add_metadata(lines, title, update_hours=4, support_url=None, announce=None):
-    meta = []
-    meta.append(f"#profile-title: {title}")
-    meta.append(f"#profile-update-interval: {update_hours}")
+    meta = [f"#profile-title: {title}", f"#profile-update-interval: {update_hours}"]
     if support_url:
         meta.append(f"#support-url: {support_url}")
     if announce:
         meta.append(f"#announce: {announce}")
     meta.append("")
     return meta + lines
-
 
 def to_clash_proxy(cfg, flag, country, idx):
     uri = cfg['raw'].strip()
@@ -358,19 +318,13 @@ def to_clash_proxy(cfg, flag, country, idx):
         if uri.startswith('vless://'):
             p = urlparse(uri)
             q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
-            proxy = {
-                "name": name, "type": "vless", "server": p.hostname,
-                "port": p.port or 443, "uuid": p.username, "udp": True,
-                "tls": q.get("security") in ("tls", "reality"),
-                "network": q.get("type", "tcp"),
-                "skip-cert-verify": q.get("allowInsecure", "0") == "1",
-            }
-            if q.get("flow"):
-                proxy["flow"] = q["flow"]
+            proxy = {"name": name, "type": "vless", "server": p.hostname, "port": p.port or 443,
+                     "uuid": p.username, "udp": True, "tls": q.get("security") in ("tls", "reality"),
+                     "network": q.get("type", "tcp"), "skip-cert-verify": q.get("allowInsecure", "0") == "1"}
+            if q.get("flow"): proxy["flow"] = q["flow"]
             if q.get("security") == "reality":
                 proxy["reality-opts"] = {"public-key": q.get("pbk", ""), "short-id": q.get("sid", "")}
-                proxy["servername"] = q.get("sni", "")
-                proxy["client-fingerprint"] = random_fp()
+                proxy["servername"] = q.get("sni", ""); proxy["client-fingerprint"] = random_fp()
             elif q.get("security") == "tls":
                 proxy["servername"] = q.get("sni", p.hostname)
             if q.get("type") == "ws":
@@ -378,227 +332,141 @@ def to_clash_proxy(cfg, flag, country, idx):
             elif q.get("type") == "grpc":
                 proxy["grpc-opts"] = {"grpc-service-name": q.get("serviceName", "")}
             return proxy
-        elif uri.startswith('vmess://'):
+        if uri.startswith('vmess://'):
             raw = base64.b64decode(uri[8:] + '=' * (-len(uri[8:]) % 4)).decode('utf-8')
             v = json.loads(raw)
-            proxy = {
-                "name": name, "type": "vmess", "server": v.get("add"),
-                "port": int(v.get("port", 443)), "uuid": v.get("id"),
-                "alterId": int(v.get("aid", 0)), "cipher": v.get("scy", "auto"),
-                "udp": True, "tls": v.get("tls") == "tls",
-                "network": v.get("net", "tcp"),
-            }
-            if v.get("sni"):
-                proxy["servername"] = v["sni"]
+            proxy = {"name": name, "type": "vmess", "server": v.get("add"), "port": int(v.get("port", 443)),
+                     "uuid": v.get("id"), "alterId": int(v.get("aid", 0)), "cipher": v.get("scy", "auto"),
+                     "udp": True, "tls": v.get("tls") == "tls", "network": v.get("net", "tcp")}
+            if v.get("sni"): proxy["servername"] = v["sni"]
             if v.get("net") == "ws":
                 proxy["ws-opts"] = {"path": v.get("path", "/"), "headers": {"Host": v.get("host", "")}}
             return proxy
-        elif uri.startswith('trojan://'):
+        if uri.startswith('trojan://'):
             p = urlparse(uri)
             q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
-            return {
-                "name": name, "type": "trojan", "server": p.hostname,
-                "port": p.port or 443, "password": p.username,
-                "sni": q.get("sni", p.hostname), "udp": True,
-                "skip-cert-verify": False,
-            }
-        elif uri.startswith('ss://'):
-            raw = uri[5:]
-            if "#" in raw:
-                raw = raw.split("#")[0]
+            return {"name": name, "type": "trojan", "server": p.hostname, "port": p.port or 443,
+                    "password": p.username, "sni": q.get("sni", p.hostname), "udp": True, "skip-cert-verify": False}
+        if uri.startswith('ss://'):
+            raw = uri[5:].split("#")[0]
             if "@" in raw:
                 userinfo, hostport = raw.rsplit("@", 1)
-                try:
-                    userinfo = base64.b64decode(userinfo + '=' * (-len(userinfo) % 4)).decode()
-                except Exception:
-                    pass
+                try: userinfo = base64.b64decode(userinfo + '=' * (-len(userinfo) % 4)).decode()
+                except Exception: pass
             else:
                 decoded = base64.b64decode(raw + '=' * (-len(raw) % 4)).decode()
                 userinfo, hostport = decoded.rsplit("@", 1)
             method, password = userinfo.split(":", 1)
             host, port = hostport.split(":")
-            return {
-                "name": name, "type": "ss", "server": host,
-                "port": int(port.split("/")[0]), "cipher": method, "password": password, "udp": True,
-            }
-        elif uri.startswith(('hysteria2://', 'hy2://')):
+            return {"name": name, "type": "ss", "server": host, "port": int(port.split("/")[0]),
+                    "cipher": method, "password": password, "udp": True}
+        if uri.startswith(('hysteria2://', 'hy2://')):
             p = urlparse(uri)
             q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
-            return {
-                "name": name, "type": "hysteria2", "server": p.hostname,
-                "port": p.port or 443, "password": p.username,
-                "sni": q.get("sni", p.hostname),
-                "skip-cert-verify": q.get("insecure", "0") == "1",
-            }
+            return {"name": name, "type": "hysteria2", "server": p.hostname, "port": p.port or 443,
+                    "password": p.username, "sni": q.get("sni", p.hostname),
+                    "skip-cert-verify": q.get("insecure", "0") == "1"}
     except Exception:
         return None
     return None
 
-
 def build_clash_yaml(working_list, out_path):
-    proxies = []
-    skipped = 0
-    seen_names = {}
-    country_map = {}
-    non_ru_names = []
-
-    for idx, (cfg, ping) in enumerate(working_list, 1):
+    proxies, skipped, seen_names, country_map, non_ru = [], 0, {}, {}, []
+    for idx, (cfg, _) in enumerate(working_list, 1):
         flag, country = get_flag_and_name(cfg['host'])
         p = to_clash_proxy(cfg, flag, country, idx)
         if not p:
-            skipped += 1
-            continue
-        base_name = p["name"]
-        if base_name in seen_names:
-            seen_names[base_name] += 1
-            p["name"] = f"{base_name} #{seen_names[base_name]}"
+            skipped += 1; continue
+        base = p["name"]
+        if base in seen_names:
+            seen_names[base] += 1; p["name"] = f"{base} #{seen_names[base]}"
         else:
-            seen_names[base_name] = 1
+            seen_names[base] = 1
         proxies.append(p)
         country_map.setdefault(country, []).append(p["name"])
         if country != "Russia":
-            non_ru_names.append(p["name"])
-
+            non_ru.append(p["name"])
     if not proxies:
-        print(f"⚠️ {out_path}: нет прокси")
-        return
-
+        print(f"⚠️ {out_path}: нет прокси"); return
     all_names = [p["name"] for p in proxies]
     code_by_name = {v: k for k, v in COUNTRY_NAMES.items()}
-
     groups = [
-        {"name": "Обычный", "type": "select",
-         "proxies": ["Авто", "Авто (без RU)"] + all_names},
-        {"name": "Авто", "type": "url-test",
-         "url": "http://www.gstatic.com/generate_204",
-         "interval": 300, "tolerance": 50,
-         "proxies": all_names},
-        {"name": "Авто (без RU)", "type": "url-test",
-         "url": "http://www.gstatic.com/generate_204",
-         "interval": 300, "tolerance": 50,
-         "proxies": non_ru_names if non_ru_names else all_names},
+        {"name": "Обычный", "type": "select", "proxies": ["Авто", "Авто (без RU)"] + all_names},
+        {"name": "Авто", "type": "url-test", "url": "http://www.gstatic.com/generate_204",
+         "interval": 300, "tolerance": 50, "proxies": all_names},
+        {"name": "Авто (без RU)", "type": "url-test", "url": "http://www.gstatic.com/generate_204",
+         "interval": 300, "tolerance": 50, "proxies": non_ru if non_ru else all_names},
     ]
-
-    for country in sorted(country_map.keys()):
+    for country in sorted(country_map):
         names = country_map[country]
         if country == "Unknown":
-            group_name = "🌐 Unknown"
+            gname = "🌐 Unknown"
         else:
             code = code_by_name.get(country)
-            if code:
-                flag = chr(ord(code[0]) + 127397) + chr(ord(code[1]) + 127397)
-                group_name = f"{flag} {country}"
-            else:
-                group_name = country
-        groups.append({
-            "name": group_name, "type": "url-test",
-            "url": "http://www.gstatic.com/generate_204",
-            "interval": 300, "tolerance": 50,
-            "proxies": names,
-        })
-
-    data = {
-        "proxies": proxies,
-        "proxy-groups": groups,
-        "rules": ["MATCH,Обычный"],
-    }
-
+            gname = (chr(ord(code[0]) + 127397) + chr(ord(code[1]) + 127397) + " " + country) if code else country
+        groups.append({"name": gname, "type": "url-test", "url": "http://www.gstatic.com/generate_204",
+                       "interval": 300, "tolerance": 50, "proxies": names})
+    data = {"proxies": proxies, "proxy-groups": groups, "rules": ["MATCH,Обычный"]}
     with open(out_path, "w", encoding="utf-8") as f:
         yaml.dump(data, f, allow_unicode=True, sort_keys=False, width=1000)
     dupes = sum(v - 1 for v in seen_names.values() if v > 1)
-    print(f"💾 {out_path}: {len(proxies)} прокси, {len(country_map)} стран, "
-          f"без RU {len(non_ru_names)} (пропущено {skipped}, дубликатов {dupes})")
-
+    print(f"💾 {out_path}: {len(proxies)} прокси, {len(country_map)} стран, без RU {len(non_ru)} (пропущено {skipped}, дубликатов {dupes})")
 
 def save_stats(working_list, out_path):
     countries = {}
     for cfg, _ in working_list:
         _, country = get_flag_and_name(cfg['host'])
         countries[country] = countries.get(country, 0) + 1
-    top_countries = sorted(countries.items(), key=lambda x: -x[1])[:10]
-    stats = {
-        "total": len(working_list),
-        "countries": len(countries),
-        "top": [{"country": c, "count": n} for c, n in top_countries],
-        "updated": int(time.time()),
-    }
+    top = sorted(countries.items(), key=lambda x: -x[1])[:10]
+    stats = {"total": len(working_list), "countries": len(countries),
+             "top": [{"country": c, "count": n} for c, n in top], "updated": int(time.time())}
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
     print(f"💾 {out_path}: {stats['total']} серверов, {stats['countries']} стран")
 
-
 def update_changelog(stats_bl, stats_wl, changelog_path="CHANGELOG.md"):
     try:
-        with open(changelog_path, "r", encoding="utf-8") as f:
-            old = f.read()
+        old = open(changelog_path, "r", encoding="utf-8").read()
     except Exception:
         old = "# Changelog\n\nИстория обновлений CoolSubs.\n\n"
-
-    prev_bl = 0
-    prev_wl = 0
+    prev_bl, prev_wl = 0, 0
     for line in old.split("\n"):
         if "BL:" in line and "WL:" in line:
             try:
                 parts = line.split("BL:")[1].split("WL:")
-                prev_bl = int(parts[0].strip().split()[0])
-                prev_wl = int(parts[1].strip().split()[0])
+                prev_bl = int(parts[0].strip().split()[0]); prev_wl = int(parts[1].strip().split()[0])
             except Exception:
                 pass
             break
-
     now = time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())
-    bl = stats_bl["total"]
-    wl = stats_wl["total"]
-    diff_bl = bl - prev_bl if prev_bl else 0
-    diff_wl = wl - prev_wl if prev_wl else 0
-    sign_bl = f"+{diff_bl}" if diff_bl > 0 else str(diff_bl)
-    sign_wl = f"+{diff_wl}" if diff_wl > 0 else str(diff_wl)
-    line = f"- **{now}** — BL: {bl} ({sign_bl}), WL: {wl} ({sign_wl})"
-
+    bl, wl = stats_bl["total"], stats_wl["total"]
+    dbl, dwl = (bl - prev_bl) if prev_bl else 0, (wl - prev_wl) if prev_wl else 0
+    line = f"- **{now}** — BL: {bl} ({'+' if dbl>0 else ''}{dbl}), WL: {wl} ({'+' if dwl>0 else ''}{dwl})"
     if old.startswith("# Changelog"):
-        header_end = old.find("\n\n")
-        if header_end == -1:
-            new = old + "\n" + line + "\n"
-        else:
-            header = old[:header_end + 2]
-            body = old[header_end + 2:].rstrip()
-            new = header + line + "\n" + body + "\n"
+        he = old.find("\n\n")
+        new = (old + "\n" + line + "\n") if he == -1 else (old[:he+2] + line + "\n" + old[he+2:].rstrip() + "\n")
     else:
         new = "# Changelog\n\n" + line + "\n"
-
     lines = new.split("\n")
     if len(lines) > 200:
         new = "\n".join(lines[:200])
-
     with open(changelog_path, "w", encoding="utf-8") as f:
         f.write(new)
-    print(f"💾 {changelog_path}: BL {bl} ({sign_bl}), WL {wl} ({sign_wl})")
-
+    print(f"💾 {changelog_path}: BL {bl}, WL {wl}")
 
 def xray_vless(uri):
     p = urlparse(uri)
     q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
-    cfg = {
-        "protocol": "vless",
-        "settings": {"vnext": [{
-            "address": p.hostname, "port": p.port or 443,
-            "users": [{"id": p.username, "encryption": q.get("encryption", "none"),
-                       "flow": q.get("flow", "")}]
-        }]},
-        "streamSettings": {"network": q.get("type", "tcp"), "security": q.get("security", "none")},
-    }
+    cfg = {"protocol": "vless", "settings": {"vnext": [{"address": p.hostname, "port": p.port or 443,
+            "users": [{"id": p.username, "encryption": q.get("encryption", "none"), "flow": q.get("flow", "")}]}]},
+            "streamSettings": {"network": q.get("type", "tcp"), "security": q.get("security", "none")}}
     if q.get("security") == "reality":
-        cfg["streamSettings"]["realitySettings"] = {
-            "serverName": q.get("sni", ""), "publicKey": q.get("pbk", ""),
-            "shortId": q.get("sid", ""), "fingerprint": random_fp(),
-        }
+        cfg["streamSettings"]["realitySettings"] = {"serverName": q.get("sni", ""), "publicKey": q.get("pbk", ""),
+            "shortId": q.get("sid", ""), "fingerprint": random_fp()}
     if q.get("security") == "tls":
-        cfg["streamSettings"]["tlsSettings"] = {
-            "serverName": q.get("sni", p.hostname),
-            "allowInsecure": q.get("allowInsecure", "0") == "1",
-        }
+        cfg["streamSettings"]["tlsSettings"] = {"serverName": q.get("sni", p.hostname),
+            "allowInsecure": q.get("allowInsecure", "0") == "1"}
     return cfg
-
 
 def xray_vmess(uri):
     raw = base64.b64decode(uri[8:] + '=' * (-len(uri[8:]) % 4)).decode()
@@ -608,88 +476,49 @@ def xray_vmess(uri):
         ss["tlsSettings"] = {"serverName": v.get("sni") or v.get("host", "")}
     if v.get("net") == "ws":
         ss["wsSettings"] = {"path": v.get("path", "/"), "headers": {"Host": v.get("host", "")}}
-    return {
-        "protocol": "vmess",
-        "settings": {"vnext": [{
-            "address": v.get("add"), "port": int(v.get("port", 443)),
-            "users": [{"id": v.get("id"), "alterId": int(v.get("aid", 0)),
-                       "security": v.get("scy", "auto")}]
-        }]},
-        "streamSettings": ss,
-    }
-
+    return {"protocol": "vmess", "settings": {"vnext": [{"address": v.get("add"), "port": int(v.get("port", 443)),
+            "users": [{"id": v.get("id"), "alterId": int(v.get("aid", 0)), "security": v.get("scy", "auto")}]}]},
+            "streamSettings": ss}
 
 def xray_trojan(uri):
     p = urlparse(uri)
     q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
-    return {
-        "protocol": "trojan",
-        "settings": {"servers": [{
-            "address": p.hostname, "port": p.port or 443, "password": p.username
-        }]},
-        "streamSettings": {
-            "network": q.get("type", "tcp"), "security": "tls",
-            "tlsSettings": {"serverName": q.get("sni", p.hostname)},
-        },
-    }
-
+    return {"protocol": "trojan", "settings": {"servers": [{"address": p.hostname, "port": p.port or 443,
+            "password": p.username}]}, "streamSettings": {"network": q.get("type", "tcp"), "security": "tls",
+            "tlsSettings": {"serverName": q.get("sni", p.hostname)}}}
 
 def xray_ss(uri):
-    raw = uri[5:]
-    if "#" in raw:
-        raw = raw.split("#")[0]
+    raw = uri[5:].split("#")[0]
     if "@" in raw:
         userinfo, hostport = raw.rsplit("@", 1)
-        try:
-            userinfo = base64.b64decode(userinfo + '=' * (-len(userinfo) % 4)).decode()
-        except Exception:
-            pass
+        try: userinfo = base64.b64decode(userinfo + '=' * (-len(userinfo) % 4)).decode()
+        except Exception: pass
     else:
         decoded = base64.b64decode(raw + '=' * (-len(raw) % 4)).decode()
         userinfo, hostport = decoded.rsplit("@", 1)
     method, password = userinfo.split(":", 1)
     host, port = hostport.split(":")
-    return {
-        "protocol": "shadowsocks",
-        "settings": {"servers": [{
-            "address": host, "port": int(port.split("/")[0]),
-            "method": method, "password": password
-        }]},
-    }
-
+    return {"protocol": "shadowsocks", "settings": {"servers": [{"address": host, "port": int(port.split("/")[0]),
+            "method": method, "password": password}]}}
 
 def xray_hysteria2(uri):
     p = urlparse(uri)
     q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
-    return {
-        "protocol": "hysteria2",
-        "settings": {"servers": [{
-            "address": p.hostname, "port": p.port or 443, "password": p.username
-        }]},
-        "streamSettings": {
-            "security": "tls",
-            "tlsSettings": {"serverName": q.get("sni", p.hostname)},
-        },
-    }
-
+    return {"protocol": "hysteria2", "settings": {"servers": [{"address": p.hostname, "port": p.port or 443,
+            "password": p.username}]}, "streamSettings": {"security": "tls",
+            "tlsSettings": {"serverName": q.get("sni", p.hostname)}}}
 
 def xray_config(uri):
     uri = uri.strip()
     try:
-        if uri.startswith("vless://"):
-            return xray_vless(uri)
-        if uri.startswith("vmess://"):
-            return xray_vmess(uri)
-        if uri.startswith("trojan://"):
-            return xray_trojan(uri)
-        if uri.startswith("ss://"):
-            return xray_ss(uri)
-        if uri.startswith(("hysteria2://", "hy2://")):
-            return xray_hysteria2(uri)
+        if uri.startswith("vless://"): return xray_vless(uri)
+        if uri.startswith("vmess://"): return xray_vmess(uri)
+        if uri.startswith("trojan://"): return xray_trojan(uri)
+        if uri.startswith("ss://"): return xray_ss(uri)
+        if uri.startswith(("hysteria2://", "hy2://")): return xray_hysteria2(uri)
     except Exception:
         return None
     return None
-
 
 def check_via_xray(args):
     idx, cfg = args
@@ -698,97 +527,69 @@ def check_via_xray(args):
         return None, None
     port = SOCKS_BASE_PORT + (idx % 500)
     cfg_path = os.path.join(TMP_DIR, f"c{idx}.json")
-    full = {
-        "log": {"loglevel": "none"},
-        "inbounds": [{
-            "listen": "127.0.0.1", "port": port, "protocol": "socks",
-            "settings": {"auth": "noauth", "udp": False},
-        }],
-        "outbounds": [outbound],
-    }
+    full = {"log": {"loglevel": "none"},
+            "inbounds": [{"listen": "127.0.0.1", "port": port, "protocol": "socks",
+                          "settings": {"auth": "noauth", "udp": False}}],
+            "outbounds": [outbound]}
     try:
-        with open(cfg_path, "w") as f:
-            json.dump(full, f)
+        with open(cfg_path, "w") as f: json.dump(full, f)
     except Exception:
         return None, None
-    proc = subprocess.Popen([XRAY_BIN, "-c", cfg_path],
-                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    proc = subprocess.Popen([XRAY_BIN, "-c", cfg_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     ready = False
     for _ in range(30):
         time.sleep(0.1)
         try:
             with socket.create_connection(("127.0.0.1", port), timeout=0.3):
-                ready = True
-                break
+                ready = True; break
         except Exception:
             continue
     if not ready:
         proc.kill()
-        try:
-            os.remove(cfg_path)
-        except Exception:
-            pass
+        try: os.remove(cfg_path)
+        except Exception: pass
         return None, None
     try:
         start = time.time()
         opener = urllib.request.build_opener(urllib.request.ProxyHandler({
-            "http": f"socks5://127.0.0.1:{port}",
-            "https": f"socks5://127.0.0.1:{port}",
-        }))
+            "http": f"socks5://127.0.0.1:{port}", "https": f"socks5://127.0.0.1:{port}"}))
         req = urllib.request.Request(TEST_URL, headers={"User-Agent": "Mozilla/5.0"})
         resp = opener.open(req, timeout=PING_TIMEOUT)
         ping = int((time.time() - start) * 1000)
         proc.kill()
-        try:
-            os.remove(cfg_path)
-        except Exception:
-            pass
+        try: os.remove(cfg_path)
+        except Exception: pass
         return (cfg, ping) if resp.status == 204 else (None, None)
     except Exception:
         proc.kill()
-        try:
-            os.remove(cfg_path)
-        except Exception:
-            pass
+        try: os.remove(cfg_path)
+        except Exception: pass
         return None, None
-
 
 def run_subscription(sources, remote_name, label):
     global _FLAGS, _STATS_BL, _STATS_WL
     _FLAGS = {}
     t0 = time.time()
-
     print(f"\n═══ {label} → {remote_name} ═══")
     print(f"⚙️  Xray-потоков: {XRAY_WORKERS} | Пинг-таймаут: {PING_TIMEOUT}s | URL: {TEST_URL}")
-
     all_configs = []
-    type_counter = Counter()
     for src_label, url in sources:
         if src_label == "Downloader" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
             print(f"   ✅ [Downloader] локальный configs.txt")
             try:
                 if os.path.exists("configs.txt"):
-                    with open("configs.txt", "r", encoding="utf-8", errors="ignore") as f:
-                        lines = f.read().splitlines()
+                    lines = open("configs.txt", "r", encoding="utf-8", errors="ignore").read().splitlines()
                 else:
                     with gzip.open("configs.txt.gz", "rt", encoding="utf-8", errors="ignore") as f:
                         lines = f.read().splitlines()
                 error, reason = None, None
             except Exception as e:
-                print(f"   ❌ [Downloader] ошибка чтения: {e}")
-                continue
+                print(f"   ❌ [Downloader] ошибка чтения: {e}"); continue
         else:
             lines, error, reason = fetch_sub(url, retries=1)
-
-        src_configs = []
-        for line in lines:
-            cfg = parse_config(line, src_label)
-            if cfg:
-                src_configs.append(cfg)
-
+        src_configs = [c for c in (parse_config(l, src_label) for l in lines) if c]
         if src_label.startswith("IR-"):
-            before = len(src_configs)
-            src_configs = sample_ratio(src_configs, 0.3)
+            before = len(src_configs); src_configs = sample_ratio(src_configs, 0.3)
             print(f"   ✅ [{src_label}] {len(lines)} строк → {before} конфигов → взято {len(src_configs)} (30%)")
         elif error:
             print(f"   ❌ [{src_label}] {error}")
@@ -796,36 +597,20 @@ def run_subscription(sources, remote_name, label):
             print(f"   ⚠️  [{src_label}] {reason}")
         else:
             print(f"   ✅ [{src_label}] {len(lines)} строк → {len(src_configs)} конфигов")
-
-        for cfg in src_configs:
-            all_configs.append(cfg)
-            type_counter[cfg['type']] += 1
-
+        all_configs.extend(src_configs)
     print(f"\n✅ Всего конфигов: {len(all_configs)}")
     if not all_configs:
-        print("⚠️ Нечего проверять")
-        return
-
-    if "black" in remote_name.lower():
-        save_unsorted(all_configs, "unsorted-black.txt")
-    else:
-        save_unsorted(all_configs, "unsorted-white.txt")
-
-    before = len(all_configs)
-    all_configs = dedup_configs(all_configs)
-    after = len(all_configs)
-    if before > after:
-        print(f"♻️  Дедупликация: {before} → {after} (убрано {before - after})")
-
+        print("⚠️ Нечего проверять"); return
+    save_unsorted(all_configs, "unsorted-black.txt" if "black" in remote_name.lower() else "unsorted-white.txt")
+    before = len(all_configs); all_configs = dedup_configs(all_configs)
+    if before > len(all_configs):
+        print(f"♻️  Дедупликация: {before} → {len(all_configs)} (убрано {before - len(all_configs)})")
     load_flags_batch(list({c['host'] for c in all_configs}))
-
     print(f"\n🔥 Xray-проверка (GET {TEST_URL}) в {XRAY_WORKERS} потоков...")
     print("   ⏳ Это медленно — может занять 15-40 минут...")
-
     working = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=XRAY_WORKERS) as ex:
-        tasks = list(enumerate(all_configs))
-        for i, (cfg, ping) in enumerate(ex.map(check_via_xray, tasks)):
+        for i, (cfg, ping) in enumerate(ex.map(check_via_xray, list(enumerate(all_configs)))):
             if cfg and ping is not None:
                 working.append((cfg, ping))
             if (i + 1) % 20 == 0:
@@ -833,62 +618,39 @@ def run_subscription(sources, remote_name, label):
                 speed = (i + 1) / elapsed if elapsed > 0 else 0
                 eta = (len(all_configs) - i - 1) / speed if speed > 0 else 0
                 print(f"   {i+1}/{len(all_configs)} | рабочих: {len(working)} | {speed:.1f}/с | ETA {eta:.0f}с")
-
     print(f"\n🔥 Рабочих через прокси: {len(working)}")
     if not working:
-        print("⚠️ Ничего не прошло проверку")
-        return
-
+        print("⚠️ Ничего не прошло проверку"); return
     print(f"\n🛡️  Фильтр по ASN (ТСПУ-блокировки)...")
-    filtered = []
-    asn_skipped = 0
-    asn_cache = {}
+    filtered, asn_skipped, asn_cache = [], 0, {}
     for cfg, ping in working:
         host = cfg['host']
         if host not in asn_cache:
             asn_cache[host] = check_asn(host)
-        asn = asn_cache[host]
-        if asn in BLOCKED_ASNS:
-            asn_skipped += 1
-            continue
+        if asn_cache[host] in BLOCKED_ASNS:
+            asn_skipped += 1; continue
         filtered.append((cfg, ping))
     print(f"🚫 Убрано {asn_skipped} конфигов (Cloudflare/Amazon/Google/Microsoft)")
     print(f"✅ Осталось: {len(filtered)}")
     working = filtered
-
     if not working:
-        print("⚠️ После фильтра ASN ничего не осталось")
-        return
-
+        print("⚠️ После фильтра ASN ничего не осталось"); return
     random.shuffle(working)
     output = [format_line(c, p, i + 1) for i, (c, p) in enumerate(working)]
-
     title = "CoolSubs — Black" if "black" in remote_name.lower() else "CoolSubs — White"
-    announce = "могут быть нерабочие сервера под видом рабочих"
-
-    output = add_metadata(
-        output, title, update_hours=4,
-        support_url="https://github.com/vessel-web/CoolSubs",
-        announce=announce,
-    )
-
+    output = add_metadata(output, title, update_hours=4,
+                          support_url="https://github.com/vessel-web/CoolSubs",
+                          announce="могут быть нерабочие сервера под видом рабочих")
     with open(remote_name, "w", encoding="utf-8") as f:
         f.write("\n".join(output))
     print(f"💾 {remote_name}: {len(output)} серверов (TXT)")
-
-    yaml_name = remote_name.replace(".txt", ".yaml")
-    build_clash_yaml(working, yaml_name)
-
-    stats_name = remote_name.replace(".txt", "_stats.json")
-    save_stats(working, stats_name)
-
+    build_clash_yaml(working, remote_name.replace(".txt", ".yaml"))
+    save_stats(working, remote_name.replace(".txt", "_stats.json"))
     if "black" in remote_name.lower():
         _STATS_BL = {"total": len(working)}
     else:
         _STATS_WL = {"total": len(working)}
-
     print(f"⏱️  Всего: {time.time() - t0:.1f}с")
-
 
 if __name__ == "__main__":
     os.makedirs(TMP_DIR, exist_ok=True)
