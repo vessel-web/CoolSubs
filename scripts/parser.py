@@ -105,7 +105,7 @@ TMP_DIR = "/tmp/xray_tmp"
 SOCKS_BASE_PORT = 20000
 TEST_URL = "https://www.gstatic.com/generate_204"
 PING_TIMEOUT = 5
-XRAY_WORKERS = 20
+XRAY_WORKERS = 50
 
 BLOCKED_ASNS = {
     "13335", "14789", "132892", "202623", "203898", "209242",
