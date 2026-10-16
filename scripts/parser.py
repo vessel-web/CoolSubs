@@ -832,11 +832,6 @@ def run_subscription(sources, remote_name, label):
     if before > after:
         print(f"♻️  Дедупликация: {before} → {after} (убрано {before - after})")
 
-    MAX_CONFIGS = 10000
-    if len(all_configs) > MAX_CONFIGS:
-        random.shuffle(all_configs)
-        all_configs = all_configs[:MAX_CONFIGS]
-        print(f"🎲 Ограничение: оставлено {MAX_CONFIGS} случайных конфигов")
 
     load_flags_batch(list({c['host'] for c in all_configs}))
 
