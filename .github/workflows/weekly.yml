@@ -1,4 +1,4 @@
-name: Weekly Downloader
+name: Weekly Downloader + Parser
 
 on:
   schedule:
@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  download:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 350
 
@@ -29,14 +29,50 @@ jobs:
       - name: Install deps
         run: pip install requests pyyaml
 
+      - name: Install Xray
+        run: |
+          mkdir -p ~/xray
+          cd ~/xray
+          wget -q https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
+          unzip -q Xray-linux-64.zip
+          chmod +x xray
+          ./xray version
+
       - name: Run Downloader
         run: python scripts/downloader.py --once
 
-      - name: Commit configs.txt
+      - name: Trim configs.txt to 100MB
+        run: |
+          echo "Было:"
+          wc -l configs.txt
+          ls -lh configs.txt
+          python -c "
+          import os
+          with open('configs.txt', encoding='utf-8', errors='ignore') as f:
+              lines = f.readlines()
+          out = []
+          total = 0
+          for line in lines:
+              total += len(line.encode('utf-8'))
+              if total > 95 * 1024 * 1024:
+                  break
+              out.append(line)
+          with open('configs.txt', 'w', encoding='utf-8') as f:
+              f.writelines(out)
+          print(f'Оставлено: {len(out)}')
+          "
+          echo "Стало:"
+          wc -l configs.txt
+          ls -lh configs.txt
+
+      - name: Run Parser
+        run: python scripts/parser.py
+
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add configs.txt blacklist_sources.txt
-          git diff --staged --quiet || git commit -m "Weekly downloader $(date -u +%F)"
+          git add Cool-Black.txt Cool-White.txt Cool-Black.yaml Cool-White.yaml Cool-Black_stats.json Cool-White_stats.json CHANGELOG.md configs.txt
+          git diff --staged --quiet || git commit -m "Weekly: downloader + parser $(date -u +%F)"
           git pull --rebase origin main
           git push
