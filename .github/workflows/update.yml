@@ -1,6 +1,8 @@
 name: Auto Update Subscriptions (Xray)
 
 on:
+  schedule:
+    - cron: '0 */4 * * *'
   workflow_dispatch:
 
 permissions:
@@ -25,7 +27,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install deps
-        run: pip install requests pyyaml
+        run: pip install requests pyyaml geoip2
 
       - name: Install Xray
         run: |
