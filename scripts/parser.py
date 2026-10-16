@@ -118,6 +118,8 @@ BLOCKED_ASNS = {
 
 FINGERPRINTS = ["firefox", "safari", "ios", "android", "edge", "random", "randomized"]
 
+GEOIP_DB = "GeoLite2-Country.mmdb"
+
 _FLAGS = {}
 _STATS_BL = {}
 _STATS_WL = {}
@@ -285,22 +287,27 @@ def fetch_sub(url, retries=1):
 
 
 def load_flags_batch(hosts):
-    ips = [h for h in hosts if h and h.count('.') == 3 and all(p.isdigit() for p in h.split('.'))]
-    if not ips:
+    """Определяет страны по IP из локальной базы GeoLite2. Без интернета, без лимитов."""
+    try:
+        import geoip2.database
+        reader = geoip2.database.Reader(GEOIP_DB)
+    except Exception as e:
+        print(f"⚠️ GeoLite2 не загружен: {e} — все будут 🌐")
         return
-    print(f"\n🌍 Определение стран для {len(ips)} IP...")
-    for i in range(0, len(ips), 100):
-        chunk = ips[i:i+100]
+
+    ips = [h for h in hosts if h and h.count('.') == 3 and all(p.isdigit() for p in h.split('.'))]
+    print(f"\n🌍 Определение стран для {len(ips)} IP (локальная база)...")
+    found = 0
+    for ip in ips:
         try:
-            payload = json.dumps([{"query": ip} for ip in chunk]).encode()
-            req = urllib.request.Request("http://ip-api.com/batch?fields=countryCode,query",
-                data=payload, headers={'Content-Type': 'application/json'})
-            resp = json.loads(urllib.request.urlopen(req, timeout=10).read())
-            for item in resp:
-                _FLAGS[item['query']] = item.get('countryCode', '')
-        except Exception as e:
-            print(f"   ⚠️ Батч {i//100}: {e}")
-        time.sleep(1.5)
+            resp = reader.country(ip)
+            if resp.country.iso_code:
+                _FLAGS[ip] = resp.country.iso_code
+                found += 1
+        except Exception:
+            pass
+    reader.close()
+    print(f"✅ Определено: {found}/{len(ips)}")
 
 
 def get_flag_and_name(host):
@@ -790,7 +797,6 @@ def run_subscription(sources, remote_name, label):
     all_configs = []
     type_counter = Counter()
     for src_label, url in sources:
-        # Сначала пробуем локальный configs.txt для Downloader
         if src_label == "Downloader" and os.path.exists("configs.txt"):
             print(f"   ✅ [Downloader] локальный configs.txt")
             try:
