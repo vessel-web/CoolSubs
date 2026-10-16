@@ -790,18 +790,25 @@ def run_subscription(sources, remote_name, label):
     all_configs = []
     type_counter = Counter()
     for src_label, url in sources:
+        # Сначала пробуем локальный configs.txt для Downloader
         if src_label == "Downloader" and os.path.exists("configs.txt"):
             print(f"   ✅ [Downloader] локальный configs.txt")
-            with open("configs.txt", "r", encoding="utf-8", errors="ignore") as f:
-                lines = f.read().splitlines()
-            error, reason = None, None
+            try:
+                with open("configs.txt", "r", encoding="utf-8", errors="ignore") as f:
+                    lines = f.read().splitlines()
+                error, reason = None, None
+            except Exception as e:
+                print(f"   ❌ [Downloader] ошибка чтения: {e}")
+                continue
         else:
             lines, error, reason = fetch_sub(url, retries=1)
+
         src_configs = []
         for line in lines:
             cfg = parse_config(line, src_label)
             if cfg:
                 src_configs.append(cfg)
+
         if src_label.startswith("IR-"):
             before = len(src_configs)
             src_configs = sample_ratio(src_configs, 0.3)
@@ -812,6 +819,7 @@ def run_subscription(sources, remote_name, label):
             print(f"   ⚠️  [{src_label}] {reason}")
         else:
             print(f"   ✅ [{src_label}] {len(lines)} строк → {len(src_configs)} конфигов")
+
         for cfg in src_configs:
             all_configs.append(cfg)
             type_counter[cfg['type']] += 1
@@ -831,7 +839,6 @@ def run_subscription(sources, remote_name, label):
     after = len(all_configs)
     if before > after:
         print(f"♻️  Дедупликация: {before} → {after} (убрано {before - after})")
-
 
     load_flags_batch(list({c['host'] for c in all_configs}))
 
