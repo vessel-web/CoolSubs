@@ -1,64 +1,51 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import urllib.request
-import urllib.error
-import base64
-import json
-import socket
-import ssl
-import os
-import re
-import gzip
-import time
-import random
-import subprocess
-import concurrent.futures
-import requests
-import yaml
+import urllib.request, urllib.error, base64, json, socket, ssl, os, re, gzip, time, random
+import subprocess, concurrent.futures, requests, yaml
 from urllib.parse import urlparse, quote
 from collections import Counter
 
 BLACK_SOURCES = [
-    ("Gidroksi",    "https://gidroksi.fun/black-list"),
-    ("Aetris",      "https://gitverse.ru/api/repos/flaafix/AetrisVPN_Black_list/raw/branch/master/configs.txt"),
-    ("etoneya",     "https://etoskam.ru/other"),
-    ("igareck",     "https://raw.githack.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt"),
-    ("Diversan",    "https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt"),
-    ("luxxuria",    "https://github.com/luxxuria/harvester/raw/refs/heads/main/non_ru.txt"),
-    ("Akres",       "https://github.com/theakres/VPN/raw/main/all"),
-    ("VLESSFORU",   "https://sub.vlessfo.ru/vlessforu/working_configs.txt"),
-    ("RKP",         "https://hub.mos.ru/rkp/sub-roskompozor/raw/main/bl"),
-    ("Pizduk-sub",  "https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/sub.txt"),
-    ("LimeVPN",     "https://raw.githubusercontent.com/LimeHi/LimeVPN/refs/heads/main/blacklist.txt"),
-    ("atbPars",     "https://raw.githubusercontent.com/djsigggmagg-ui/atbPars-sub/refs/heads/main/subscription.txt"),
-    ("WarpGen",     "https://warp-gen.cyb-portal.org/CP-039"),
-    ("BUNKER",      "https://hub.mos.ru/akelladejavu/bunker/-/raw/main/BLACK_LIST.txt"),
-    ("ImSketch",    "https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
-    ("LSO-WIFI",    "https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/WIFI.txt"),
-    ("IR-1",        "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt"),
-    ("IR-2",        "https://raw.githubusercontent.com/mohammadaz2/v2rayConfigsForYou/main/configs.txt"),
-    ("IR-3",        "https://raw.githubusercontent.com/DukeMehdi/FreeList-V2ray-Configs/main/configs.txt"),
-    ("IR-4",        "https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/Sub.txt"),
-    ("IR-5",        "https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"),
-    ("IR-6",        "https://raw.githubusercontent.com/balochscript/free-vpn-configs/gh-pages/subscription-recent.txt"),
-    ("Downloader",  "https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/configs.txt.gz"),
+    ("Gidroksi",   "https://gidroksi.fun/black-list"),
+    ("Aetris",     "https://gitverse.ru/api/repos/flaafix/AetrisVPN_Black_list/raw/branch/master/configs.txt"),
+    ("etoneya",    "https://etoskam.ru/other"),
+    ("igareck",    "https://raw.githack.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt"),
+    ("Diversan",   "https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt"),
+    ("luxxuria",   "https://github.com/luxxuria/harvester/raw/refs/heads/main/non_ru.txt"),
+    ("Akres",      "https://github.com/theakres/VPN/raw/main/all"),
+    ("VLESSFORU",  "https://sub.vlessfo.ru/vlessforu/working_configs.txt"),
+    ("RKP",        "https://hub.mos.ru/rkp/sub-roskompozor/raw/main/bl"),
+    ("Pizduk-sub", "https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/sub.txt"),
+    ("LimeVPN",    "https://raw.githubusercontent.com/LimeHi/LimeVPN/refs/heads/main/blacklist.txt"),
+    ("atbPars",    "https://raw.githubusercontent.com/djsigggmagg-ui/atbPars-sub/refs/heads/main/subscription.txt"),
+    ("WarpGen",    "https://warp-gen.cyb-portal.org/CP-039"),
+    ("BUNKER",     "https://hub.mos.ru/akelladejavu/bunker/-/raw/main/BLACK_LIST.txt"),
+    ("ImSketch",   "https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
+    ("LSO-WIFI",   "https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/WIFI.txt"),
+    ("IR-1",       "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt"),
+    ("IR-2",       "https://raw.githubusercontent.com/mohammadaz2/v2rayConfigsForYou/main/configs.txt"),
+    ("IR-3",       "https://raw.githubusercontent.com/DukeMehdi/FreeList-V2ray-Configs/main/configs.txt"),
+    ("IR-4",       "https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/Sub.txt"),
+    ("IR-5",       "https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"),
+    ("IR-6",       "https://raw.githubusercontent.com/balochscript/free-vpn-configs/gh-pages/subscription-recent.txt"),
+    ("Downloader", "https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/configs.txt.gz"),
 ]
 
 WHITE_SOURCES = [
-    ("bikinitw22",  "https://gitverse.ru/api/repos/bikinitw22/apelsintel/raw/branch/main/alive_bs.txt"),
-    ("Pizduk",      "https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/WlSubPiz.txt"),
-    ("mos.ru",      "https://hub.mos.ru/kfwl/auto/raw/main/wl"),
-    ("RKP-WL",      "https://hub.mos.ru/rkp/sub-roskompozor/raw/main/wl"),
-    ("igareck-WL",  "https://raw.githack.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt"),
-    ("etoneya wl",  "https://etoskam.ru/whitelist"),
-    ("ring-team",   "https://enc.ring-team.casa/sub/kuajs27ilzcz"),
-    ("ImSketch",    "https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
-    ("LSO-LTE",     "https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/LTE.txt"),
-    ("Akres-WL",    "https://github.com/theakres/VPN/raw/main/bwl"),
-    ("BUNKER-WL",   "https://hub.mos.ru/akelladejavu/bunker/-/raw/main/WHITE_LIST.txt"),
-    ("IR-WL-1",     "https://raw.githubusercontent.com/liketolivefree/kobabi/main/sub.txt"),
-    ("IR-WL-2",     "https://raw.githubusercontent.com/DukeMehdi/FreeList-V2ray-Configs/refs/heads/main/Configs/All-DukeMehdi-Configs.txt"),
-    ("IR-WL-3",     "https://raw.githubusercontent.com/r3zarahimi/tg-v2ray-configs-every2h/main/Config_jo.txt"),
+    ("bikinitw22", "https://gitverse.ru/api/repos/bikinitw22/apelsintel/raw/branch/main/alive_bs.txt"),
+    ("Pizduk",     "https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/WlSubPiz.txt"),
+    ("mos.ru",     "https://hub.mos.ru/kfwl/auto/raw/main/wl"),
+    ("RKP-WL",     "https://hub.mos.ru/rkp/sub-roskompozor/raw/main/wl"),
+    ("igareck-WL", "https://raw.githack.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt"),
+    ("etoneya wl", "https://etoskam.ru/whitelist"),
+    ("ring-team",  "https://enc.ring-team.casa/sub/kuajs27ilzcz"),
+    ("ImSketch",   "https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
+    ("LSO-LTE",    "https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/LTE.txt"),
+    ("Akres-WL",   "https://github.com/theakres/VPN/raw/main/bwl"),
+    ("BUNKER-WL",  "https://hub.mos.ru/akelladejavu/bunker/-/raw/main/WHITE_LIST.txt"),
+    ("IR-WL-1",    "https://raw.githubusercontent.com/liketolivefree/kobabi/main/sub.txt"),
+    ("IR-WL-2",    "https://raw.githubusercontent.com/DukeMehdi/FreeList-V2ray-Configs/refs/heads/main/Configs/All-DukeMehdi-Configs.txt"),
+    ("IR-WL-3",    "https://raw.githubusercontent.com/r3zarahimi/tg-v2ray-configs-every2h/main/Config_jo.txt"),
 ]
 
 COUNTRY_NAMES = {
@@ -109,21 +96,17 @@ PING_TIMEOUT = 5
 XRAY_WORKERS = 20
 
 BLOCKED_ASNS = {
-    "13335", "14789", "132892", "202623", "203898", "209242",
-    "395747", "400095", "402542",
-    "16509",
-    "396982",
-    "8075",
-    "20860"
+    "13335","14789","132892","202623","203898","209242",
+    "395747","400095","402542","16509","396982","8075","20860",
 }
 
-FINGERPRINTS = ["firefox", "safari", "ios", "android", "edge", "random", "randomized"]
-
+FINGERPRINTS = ["firefox","safari","ios","android","edge","random","randomized"]
 GEOIP_DB = "GeoLite2-Country.mmdb"
 
 _FLAGS = {}
 _STATS_BL = {}
 _STATS_WL = {}
+_RESOLVE_CACHE = {}
 
 
 def random_fp():
@@ -207,7 +190,6 @@ def check_asn(host):
             return str(asn).replace("AS", "")
     except Exception:
         pass
-
     try:
         req = urllib.request.Request(f"https://ipdata.info/{host}",
             headers={'User-Agent': 'Mozilla/5.0'})
@@ -217,7 +199,6 @@ def check_asn(host):
             return str(asn).replace("AS", "")
     except Exception:
         pass
-
     try:
         req = urllib.request.Request(f"http://ip-api.com/json/{host}?fields=as",
             headers={'User-Agent': 'Mozilla/5.0'})
@@ -227,8 +208,23 @@ def check_asn(host):
             return as_str.split()[0].replace("AS", "")
     except Exception:
         pass
-
     return ""
+
+
+def resolve_host(host):
+    if not host:
+        return None
+    if host in _RESOLVE_CACHE:
+        return _RESOLVE_CACHE[host]
+    if host.count('.') == 3 and all(p.isdigit() for p in host.split('.')):
+        _RESOLVE_CACHE[host] = host
+        return host
+    try:
+        ip = socket.gethostbyname(host)
+    except Exception:
+        ip = None
+    _RESOLVE_CACHE[host] = ip
+    return ip
 
 
 def fetch_sub(url, retries=1):
@@ -241,7 +237,6 @@ def fetch_sub(url, retries=1):
             })
             resp = urllib.request.urlopen(req, timeout=20)
             data = resp.read()
-            # Распаковка .gz
             if url.endswith(".gz"):
                 try:
                     data = gzip.decompress(data)
@@ -294,7 +289,9 @@ def fetch_sub(url, retries=1):
 
 
 def load_flags_batch(hosts):
-    """Определяет страны по IP из локальной базы GeoLite2. Без интернета, без лимитов."""
+    """Определяет страны: резолвит домены в IP + GeoLite2. Ключ — ХОСТ."""
+    global _FLAGS
+    _FLAGS = {}
     try:
         import geoip2.database
         reader = geoip2.database.Reader(GEOIP_DB)
@@ -302,19 +299,27 @@ def load_flags_batch(hosts):
         print(f"⚠️ GeoLite2 не загружен: {e} — все будут 🌐")
         return
 
-    ips = [h for h in hosts if h and h.count('.') == 3 and all(p.isdigit() for p in h.split('.'))]
-    print(f"\n🌍 Определение стран для {len(ips)} IP (локальная база)...")
+    unique_hosts = list({h for h in hosts if h})
+    print(f"\n🌍 Определение стран для {len(unique_hosts)} хостов...")
+
+    host_to_ip = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=50) as ex:
+        for host, ip in zip(unique_hosts, ex.map(resolve_host, unique_hosts)):
+            if ip:
+                host_to_ip[host] = ip
+    print(f"   ✅ Резолвнуто: {len(host_to_ip)}/{len(unique_hosts)}")
+
     found = 0
-    for ip in ips:
+    for host, ip in host_to_ip.items():
         try:
             resp = reader.country(ip)
             if resp.country.iso_code:
-                _FLAGS[ip] = resp.country.iso_code
+                _FLAGS[host] = resp.country.iso_code
                 found += 1
         except Exception:
             pass
     reader.close()
-    print(f"✅ Определено: {found}/{len(ips)}")
+    print(f"✅ Определено стран: {found}/{len(unique_hosts)}")
 
 
 def get_flag_and_name(host):
@@ -373,7 +378,6 @@ def to_clash_proxy(cfg, flag, country, idx):
             elif q.get("type") == "grpc":
                 proxy["grpc-opts"] = {"grpc-service-name": q.get("serviceName", "")}
             return proxy
-
         elif uri.startswith('vmess://'):
             raw = base64.b64decode(uri[8:] + '=' * (-len(uri[8:]) % 4)).decode('utf-8')
             v = json.loads(raw)
@@ -389,7 +393,6 @@ def to_clash_proxy(cfg, flag, country, idx):
             if v.get("net") == "ws":
                 proxy["ws-opts"] = {"path": v.get("path", "/"), "headers": {"Host": v.get("host", "")}}
             return proxy
-
         elif uri.startswith('trojan://'):
             p = urlparse(uri)
             q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
@@ -399,7 +402,6 @@ def to_clash_proxy(cfg, flag, country, idx):
                 "sni": q.get("sni", p.hostname), "udp": True,
                 "skip-cert-verify": False,
             }
-
         elif uri.startswith('ss://'):
             raw = uri[5:]
             if "#" in raw:
@@ -419,7 +421,6 @@ def to_clash_proxy(cfg, flag, country, idx):
                 "name": name, "type": "ss", "server": host,
                 "port": int(port.split("/")[0]), "cipher": method, "password": password, "udp": True,
             }
-
         elif uri.startswith(('hysteria2://', 'hy2://')):
             p = urlparse(uri)
             q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
@@ -490,8 +491,7 @@ def build_clash_yaml(working_list, out_path):
             else:
                 group_name = country
         groups.append({
-            "name": group_name,
-            "type": "url-test",
+            "name": group_name, "type": "url-test",
             "url": "http://www.gstatic.com/generate_204",
             "interval": 300, "tolerance": 50,
             "proxies": names,
@@ -551,10 +551,8 @@ def update_changelog(stats_bl, stats_wl, changelog_path="CHANGELOG.md"):
     wl = stats_wl["total"]
     diff_bl = bl - prev_bl if prev_bl else 0
     diff_wl = wl - prev_wl if prev_wl else 0
-
     sign_bl = f"+{diff_bl}" if diff_bl > 0 else str(diff_bl)
     sign_wl = f"+{diff_wl}" if diff_wl > 0 else str(diff_wl)
-
     line = f"- **{now}** — BL: {bl} ({sign_bl}), WL: {wl} ({sign_wl})"
 
     if old.startswith("# Changelog"):
@@ -582,33 +580,22 @@ def xray_vless(uri):
     q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
     cfg = {
         "protocol": "vless",
-        "settings": {
-            "vnext": [{
-                "address": p.hostname,
-                "port": p.port or 443,
-                "users": [{
-                    "id": p.username,
-                    "encryption": q.get("encryption", "none"),
-                    "flow": q.get("flow", "")
-                }]
-            }]
-        },
-        "streamSettings": {
-            "network": q.get("type", "tcp"),
-            "security": q.get("security", "none")
-        }
+        "settings": {"vnext": [{
+            "address": p.hostname, "port": p.port or 443,
+            "users": [{"id": p.username, "encryption": q.get("encryption", "none"),
+                       "flow": q.get("flow", "")}]
+        }]},
+        "streamSettings": {"network": q.get("type", "tcp"), "security": q.get("security", "none")},
     }
     if q.get("security") == "reality":
         cfg["streamSettings"]["realitySettings"] = {
-            "serverName": q.get("sni", ""),
-            "publicKey": q.get("pbk", ""),
-            "shortId": q.get("sid", ""),
-            "fingerprint": random_fp()
+            "serverName": q.get("sni", ""), "publicKey": q.get("pbk", ""),
+            "shortId": q.get("sid", ""), "fingerprint": random_fp(),
         }
     if q.get("security") == "tls":
         cfg["streamSettings"]["tlsSettings"] = {
             "serverName": q.get("sni", p.hostname),
-            "allowInsecure": q.get("allowInsecure", "0") == "1"
+            "allowInsecure": q.get("allowInsecure", "0") == "1",
         }
     return cfg
 
@@ -616,31 +603,19 @@ def xray_vless(uri):
 def xray_vmess(uri):
     raw = base64.b64decode(uri[8:] + '=' * (-len(uri[8:]) % 4)).decode()
     v = json.loads(raw)
-    ss = {
-        "network": v.get("net", "tcp"),
-        "security": v.get("tls", "") or "none"
-    }
+    ss = {"network": v.get("net", "tcp"), "security": v.get("tls", "") or "none"}
     if v.get("tls") == "tls":
         ss["tlsSettings"] = {"serverName": v.get("sni") or v.get("host", "")}
     if v.get("net") == "ws":
-        ss["wsSettings"] = {
-            "path": v.get("path", "/"),
-            "headers": {"Host": v.get("host", "")}
-        }
+        ss["wsSettings"] = {"path": v.get("path", "/"), "headers": {"Host": v.get("host", "")}}
     return {
         "protocol": "vmess",
-        "settings": {
-            "vnext": [{
-                "address": v.get("add"),
-                "port": int(v.get("port", 443)),
-                "users": [{
-                    "id": v.get("id"),
-                    "alterId": int(v.get("aid", 0)),
-                    "security": v.get("scy", "auto")
-                }]
-            }]
-        },
-        "streamSettings": ss
+        "settings": {"vnext": [{
+            "address": v.get("add"), "port": int(v.get("port", 443)),
+            "users": [{"id": v.get("id"), "alterId": int(v.get("aid", 0)),
+                       "security": v.get("scy", "auto")}]
+        }]},
+        "streamSettings": ss,
     }
 
 
@@ -649,18 +624,13 @@ def xray_trojan(uri):
     q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
     return {
         "protocol": "trojan",
-        "settings": {
-            "servers": [{
-                "address": p.hostname,
-                "port": p.port or 443,
-                "password": p.username
-            }]
-        },
+        "settings": {"servers": [{
+            "address": p.hostname, "port": p.port or 443, "password": p.username
+        }]},
         "streamSettings": {
-            "network": q.get("type", "tcp"),
-            "security": "tls",
-            "tlsSettings": {"serverName": q.get("sni", p.hostname)}
-        }
+            "network": q.get("type", "tcp"), "security": "tls",
+            "tlsSettings": {"serverName": q.get("sni", p.hostname)},
+        },
     }
 
 
@@ -681,14 +651,10 @@ def xray_ss(uri):
     host, port = hostport.split(":")
     return {
         "protocol": "shadowsocks",
-        "settings": {
-            "servers": [{
-                "address": host,
-                "port": int(port.split("/")[0]),
-                "method": method,
-                "password": password
-            }]
-        }
+        "settings": {"servers": [{
+            "address": host, "port": int(port.split("/")[0]),
+            "method": method, "password": password
+        }]},
     }
 
 
@@ -697,17 +663,13 @@ def xray_hysteria2(uri):
     q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
     return {
         "protocol": "hysteria2",
-        "settings": {
-            "servers": [{
-                "address": p.hostname,
-                "port": p.port or 443,
-                "password": p.username
-            }]
-        },
+        "settings": {"servers": [{
+            "address": p.hostname, "port": p.port or 443, "password": p.username
+        }]},
         "streamSettings": {
             "security": "tls",
-            "tlsSettings": {"serverName": q.get("sni", p.hostname)}
-        }
+            "tlsSettings": {"serverName": q.get("sni", p.hostname)},
+        },
     }
 
 
@@ -739,12 +701,10 @@ def check_via_xray(args):
     full = {
         "log": {"loglevel": "none"},
         "inbounds": [{
-            "listen": "127.0.0.1",
-            "port": port,
-            "protocol": "socks",
-            "settings": {"auth": "noauth", "udp": False}
+            "listen": "127.0.0.1", "port": port, "protocol": "socks",
+            "settings": {"auth": "noauth", "udp": False},
         }],
-        "outbounds": [outbound]
+        "outbounds": [outbound],
     }
     try:
         with open(cfg_path, "w") as f:
@@ -773,7 +733,7 @@ def check_via_xray(args):
         start = time.time()
         opener = urllib.request.build_opener(urllib.request.ProxyHandler({
             "http": f"socks5://127.0.0.1:{port}",
-            "https": f"socks5://127.0.0.1:{port}"
+            "https": f"socks5://127.0.0.1:{port}",
         }))
         req = urllib.request.Request(TEST_URL, headers={"User-Agent": "Mozilla/5.0"})
         resp = opener.open(req, timeout=PING_TIMEOUT)
@@ -903,17 +863,11 @@ def run_subscription(sources, remote_name, label):
     random.shuffle(working)
     output = [format_line(c, p, i + 1) for i, (c, p) in enumerate(working)]
 
-    if "black" in remote_name.lower():
-        title = "CoolSubs — Black"
-    else:
-        title = "CoolSubs — White"
-
+    title = "CoolSubs — Black" if "black" in remote_name.lower() else "CoolSubs — White"
     announce = "могут быть нерабочие сервера под видом рабочих"
 
     output = add_metadata(
-        output,
-        title,
-        update_hours=4,
+        output, title, update_hours=4,
         support_url="https://github.com/vessel-web/CoolSubs",
         announce=announce,
     )
