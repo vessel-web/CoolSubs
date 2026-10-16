@@ -31,7 +31,7 @@ BLACK_SOURCES = [
     ("LimeVPN",     "https://raw.githubusercontent.com/LimeHi/LimeVPN/refs/heads/main/blacklist.txt"),
     ("atbPars",     "https://raw.githubusercontent.com/djsigggmagg-ui/atbPars-sub/refs/heads/main/subscription.txt"),
     ("WarpGen",     "https://warp-gen.cyb-portal.org/CP-039"),
-    ("BUNKER",      "https://gitverse.ru/api/repos/KOT_ANTIDOT/BUNKER/raw/branch/master/BUNKER_BLACK700.txt"),
+    ("BUNKER",      "https://hub.mos.ru/akelladejavu/bunker/-/raw/main/BLACK_LIST.txt"),
     ("ImSketch",    "https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
     ("LSO-WIFI",    "https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/WIFI.txt"),
     ("IR-1",        "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt"),
@@ -40,6 +40,7 @@ BLACK_SOURCES = [
     ("IR-4",        "https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/Sub.txt"),
     ("IR-5",        "https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"),
     ("IR-6",        "https://raw.githubusercontent.com/balochscript/free-vpn-configs/gh-pages/subscription-recent.txt"),
+    ("Downloader",  "https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/configs.txt"),
 ]
 
 WHITE_SOURCES = [
@@ -53,6 +54,7 @@ WHITE_SOURCES = [
     ("ImSketch",    "https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
     ("LSO-LTE",     "https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/LTE.txt"),
     ("Akres-WL",    "https://github.com/theakres/VPN/raw/main/bwl"),
+    ("BUNKER-WL",   "https://hub.mos.ru/akelladejavu/bunker/-/raw/main/WHITE_LIST.txt"),
     ("IR-WL-1",     "https://raw.githubusercontent.com/liketolivefree/kobabi/main/sub.txt"),
     ("IR-WL-2",     "https://raw.githubusercontent.com/DukeMehdi/FreeList-V2ray-Configs/refs/heads/main/Configs/All-DukeMehdi-Configs.txt"),
     ("IR-WL-3",     "https://raw.githubusercontent.com/r3zarahimi/tg-v2ray-configs-every2h/main/Config_jo.txt"),
@@ -788,7 +790,13 @@ def run_subscription(sources, remote_name, label):
     all_configs = []
     type_counter = Counter()
     for src_label, url in sources:
-        lines, error, reason = fetch_sub(url, retries=1)
+        if src_label == "Downloader" and os.path.exists("configs.txt"):
+            print(f"   ✅ [Downloader] локальный configs.txt")
+            with open("configs.txt", "r", encoding="utf-8", errors="ignore") as f:
+                lines = f.read().splitlines()
+            error, reason = None, None
+        else:
+            lines, error, reason = fetch_sub(url, retries=1)
         src_configs = []
         for line in lines:
             cfg = parse_config(line, src_label)
@@ -823,6 +831,12 @@ def run_subscription(sources, remote_name, label):
     after = len(all_configs)
     if before > after:
         print(f"♻️  Дедупликация: {before} → {after} (убрано {before - after})")
+
+    MAX_CONFIGS = 10000
+    if len(all_configs) > MAX_CONFIGS:
+        random.shuffle(all_configs)
+        all_configs = all_configs[:MAX_CONFIGS]
+        print(f"🎲 Ограничение: оставлено {MAX_CONFIGS} случайных конфигов")
 
     load_flags_batch(list({c['host'] for c in all_configs}))
 
