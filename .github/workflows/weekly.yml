@@ -1,8 +1,8 @@
-name: Weekly Downloader + Parser
+name: Monthly Downloader + Parser
 
 on:
   schedule:
-    - cron: '0 3 * * 0'
+    - cron: '0 3 1 * *'
   workflow_dispatch:
 
 permissions:
@@ -41,32 +41,14 @@ jobs:
       - name: Run Downloader
         run: python scripts/downloader.py --once
 
-      - name: Trim configs.txt
+      - name: Compress configs.txt
         run: |
-          echo "Было:"
+          echo "До сжатия:"
           wc -l configs.txt 2>/dev/null || echo "configs.txt нет"
           ls -lh configs.txt 2>/dev/null || echo "configs.txt нет"
-          python -c "
-          import os
-          if not os.path.exists('configs.txt'):
-              print('configs.txt не найден')
-              exit(0)
-          with open('configs.txt', encoding='utf-8', errors='ignore') as f:
-              lines = f.readlines()
-          out = []
-          total = 0
-          for line in lines:
-              total += len(line.encode('utf-8'))
-              if total > 30 * 1024 * 1024:
-                  break
-              out.append(line)
-          with open('configs.txt', 'w', encoding='utf-8') as f:
-              f.writelines(out)
-          print(f'Оставлено: {len(out)}')
-          "
-          echo "Стало:"
-          wc -l configs.txt 2>/dev/null || echo "configs.txt нет"
-          ls -lh configs.txt 2>/dev/null || echo "configs.txt нет"
+          gzip -9 configs.txt
+          echo "После сжатия:"
+          ls -lh configs.txt.gz 2>/dev/null || echo "configs.txt.gz нет"
 
       - name: Run Parser
         run: python scripts/parser.py
@@ -75,7 +57,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Cool-Black.txt Cool-White.txt Cool-Black.yaml Cool-White.yaml Cool-Black_stats.json Cool-White_stats.json CHANGELOG.md
-          git diff --staged --quiet || git commit -m "Weekly: downloader + parser $(date -u +%F)"
+          git add Cool-Black.txt Cool-White.txt Cool-Black.yaml Cool-White.yaml Cool-Black_stats.json Cool-White_stats.json CHANGELOG.md configs.txt.gz blacklist_sources.txt
+          git diff --staged --quiet || git commit -m "Monthly: downloader + parser $(date -u +%F)"
           git pull --rebase origin main
           git push
