@@ -2,7 +2,7 @@ name: Monthly Downloader + Parser
 
 on:
   schedule:
-    - cron: '0 3 1 * *'   # 1-го числа каждого месяца в 03:00 UTC
+    - cron: '0 3 1 * *'
   workflow_dispatch:
 
 permissions:
@@ -15,11 +15,14 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 350   # < 6 часов GitHub Actions
+    timeout-minutes: 350
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -75,6 +78,26 @@ jobs:
                   Cool-Black_stats.json Cool-White_stats.json CHANGELOG.md \
                   unsorted-black.txt unsorted-white.txt \
                   configs.txt.gz blacklist_sources.txt
-          git diff --staged --quiet || git commit -m "Monthly: downloader + parser $(date -u +%F)"
-          git pull --rebase origin main
-          git push
+          if git diff --staged --quiet; then
+            echo "Нет изменений для коммита"
+            exit 0
+          fi
+          git commit -m "Monthly: downloader + parser $(date -u +%F)"
+
+          if ! git push origin main 2>/dev/null; then
+            echo "Remote ушёл вперёд — делаем rebase с приоритетом наших файлов"
+            git fetch origin main
+            if ! git rebase -X ours origin/main; then
+              echo "Rebase с -X ours не удался — жёстко берём наши версии конфликтных файлов"
+              git checkout --ours Cool-Black.txt Cool-White.txt Cool-Black.yaml Cool-White.yaml \
+                                Cool-Black_stats.json Cool-White_stats.json CHANGELOG.md \
+                                unsorted-black.txt unsorted-white.txt 2>/dev/null || true
+              git add Cool-Black.txt Cool-White.txt Cool-Black.yaml Cool-White.yaml \
+                      Cool-Black_stats.json Cool-White_stats.json CHANGELOG.md \
+                      unsorted-black.txt unsorted-white.txt 2>/dev/null || true
+              git rebase --continue || git rebase --skip || true
+            fi
+            git push origin main
+          fi
+
+          echo "✅ Готово: $(git log -1 --oneline)"
