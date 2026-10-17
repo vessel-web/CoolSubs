@@ -1,4 +1,4 @@
-name: Monthly Downloader + Parser
+name: Monthly Downloader + Parser (sing-box-extended)
 
 on:
   schedule:
@@ -32,14 +32,27 @@ jobs:
       - name: Install deps
         run: pip install requests pyyaml geoip2
 
-      - name: Install Xray
+      - name: Install sing-box-extended
         run: |
-          mkdir -p ~/xray
-          cd ~/xray
-          wget -q https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
-          unzip -q Xray-linux-64.zip
-          chmod +x xray
-          ./xray version
+          mkdir -p ~/singbox
+          cd ~/singbox
+          RELEASE_JSON=$(curl -sL https://api.github.com/repos/shtorm-7/sing-box-extended/releases/latest)
+          ASSET_URL=$(echo "$RELEASE_JSON" | python3 -c "import sys, json; d=json.load(sys.stdin); print(next((a['browser_download_url'] for a in d['assets'] if 'linux-amd64' in a['name'] and a['name'].endswith('.tar.gz')), ''))")
+          if [ -z "$ASSET_URL" ]; then
+            echo "Ассет linux-amd64.tar.gz не найден. Доступные файлы:"
+            echo "$RELEASE_JSON" | python3 -c "import sys, json; d=json.load(sys.stdin); [print(a['name']) for a in d['assets']]"
+            exit 1
+          fi
+          echo "Скачиваем: $ASSET_URL"
+          curl -sL -o sb.tar.gz "$ASSET_URL"
+          tar -xzf sb.tar.gz
+          BIN_PATH=$(find . -maxdepth 2 -type f -name 'sing-box-extended' | head -n 1)
+          if [ -z "$BIN_PATH" ]; then
+            BIN_PATH=$(find . -maxdepth 2 -type f -name 'sing-box' | head -n 1)
+          fi
+          mv "$BIN_PATH" ./sing-box-extended
+          chmod +x ./sing-box-extended
+          ./sing-box-extended version
 
       - name: Run Downloader
         run: python scripts/downloader.py --once
@@ -49,7 +62,6 @@ jobs:
           echo "=== До выборки ==="
           wc -l configs.txt 2>/dev/null || { echo "configs.txt нет — прерываем"; exit 1; }
           ls -lh configs.txt
-
           python - <<'EOF'
           import random, gzip, os
           src = 'configs.txt'
@@ -62,7 +74,6 @@ jobs:
           os.remove(src)
           print(f'✅ sampled {n} / {total} → configs.txt.gz')
           EOF
-
           echo "=== После выборки ==="
           ls -lh configs.txt.gz
           python -c "import gzip; print('строк в .gz:', len(gzip.open('configs.txt.gz','rt',encoding='utf-8').read().splitlines()))"
@@ -82,8 +93,7 @@ jobs:
             echo "Нет изменений для коммита"
             exit 0
           fi
-          git commit -m "Monthly: downloader + parser $(date -u +%F)"
-
+          git commit -m "Monthly: downloader + parser (sing-box-extended) $(date -u +%F)"
           if ! git push origin main 2>/dev/null; then
             echo "Remote ушёл вперёд — делаем rebase с приоритетом наших файлов"
             git fetch origin main
@@ -99,5 +109,4 @@ jobs:
             fi
             git push origin main
           fi
-
           echo "✅ Готово: $(git log -1 --oneline)"
