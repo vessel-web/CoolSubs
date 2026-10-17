@@ -1,4 +1,4 @@
-name: Monthly Downloader + Parser (sing-box-extended)
+name: Weekly Downloader + Parser (sing-box-extended)
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: monthly-downloader
+  group: weekly-downloader
   cancel-in-progress: true
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install deps
-        run: pip install requests pyyaml geoip2 pysocks
+        run: pip install requests pyyaml geoip2
 
       - name: Build sing-box-extended
         run: |
@@ -45,17 +45,15 @@ jobs:
           chmod +x ~/singbox/sing-box-extended
           ~/singbox/sing-box-extended version
 
-      - name: Download DBIP ASN lite (best-effort)
+      - name: Download DBIP ASN lite
         run: |
-          M=$(date +%Y-%m); P=$(date -d "last month" +%Y-%m)
-          for MM in $M $P; do
-            curl -fsSL -m 120 -o DBIP-ASN-lite.mmdb.gz "https://download.db-ip.com/free/dbip-asn-lite-$MM.mmdb.gz" && break || true
-          done
-          if [ -f DBIP-ASN-lite.mmdb.gz ]; then
-            gunzip -f DBIP-ASN-lite.mmdb.gz
-            echo "✅ ASN-база: $(du -h DBIP-ASN-lite.mmdb | cut -f1)"
+          curl -sL -o dbip.mmdb.gz "https://download.db-ip.com/free/dbip-asn-lite-$(date -u +%Y-%m).mmdb.gz" || true
+          if [ -s dbip.mmdb.gz ]; then
+            gunzip -f dbip.mmdb.gz || mv dbip.mmdb.gz dbip-asn-lite.mmdb
+            if [ -f dbip.mmdb ]; then mv dbip.mmdb dbip-asn-lite.mmdb; fi
+            ls -lh dbip-asn-lite.mmdb || true
           else
-            echo "⚠️ DBIP недоступен — ASN будет через ip-api batch"
+            echo "DBIP не скачался — fallback на ip-api batch"
           fi
 
       - name: Run Downloader
@@ -97,7 +95,7 @@ jobs:
             echo "Нет изменений для коммита"
             exit 0
           fi
-          git commit -m "Monthly: downloader + parser (sing-box-extended) $(date -u +%F)"
+          git commit -m "Weekly: downloader + parser (sing-box-extended) $(date -u +%F)"
           if ! git push origin main 2>/dev/null; then
             echo "Remote ушёл вперёд — делаем rebase с приоритетом наших файлов"
             git fetch origin main
