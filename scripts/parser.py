@@ -98,6 +98,7 @@ DELAY_TIMEOUT_MS = 5000
 KERNEL_COUNT = 4
 BATCH_SIZE_PER_CORE = 50
 XRAY_WORKERS = 20
+CHECK_LIMIT = 5
 BLOCKED_ASNS = {"13335","14789","132892","202623","203898","209242","395747","400095","402542","16509","396982","8075","20860"}
 FINGERPRINTS = ["firefox","safari","ios","android","edge","random","randomized"]
 UTLS_FP = {"chrome","firefox","safari","ios","android","edge","360","qq","random","randomized"}
@@ -105,6 +106,7 @@ VMESS_SECURITY = {"auto","none","zero","aes-128-gcm","chacha20-poly1305"}
 TUIC_CC = {"cubic","new_reno","bbr"}
 TUIC_URM = {"native","quic"}
 SS_PLUGINS = {"obfs-local":"obfs-local","simple-obfs":"obfs-local","v2ray-plugin":"v2ray-plugin"}
+_CHECK_COUNTER = [0]
 
 def _find_geoip_db():
     here = os.path.dirname(os.path.abspath(__file__))
@@ -138,6 +140,7 @@ _RESOLVE_CACHE = {}
 SB_GEN_ERRORS = {}
 SB_CHECK_ERRORS = {}
 SB_RUN_ERRORS = {}
+SB_HTTP_ERRORS = {}
 
 def random_fp():
     return random.choice(FINGERPRINTS)
@@ -646,7 +649,7 @@ def _probe_kernel():
         try: os.remove(probe_cfg)
         except Exception: pass
 
-async def _wait_api_async(session, port, timeout=8.0):
+async def _wait_api_async(session, port, timeout=3.0):
     deadline = time.time() + timeout
     while time.time() < deadline:
         try:
@@ -676,6 +679,7 @@ async def _delay_one_async(session, api_port, tag):
         return tag, None
 
 async def _run_batch_async(batch_cfgs, worker_id, session):
+    t_start = time.time()
     api_port = _next_api_port(worker_id)
     socks_port = _next_socks_port(worker_id)
     cfg_path = os.path.join(TMP_DIR, f"w{worker_id}.json")
@@ -705,20 +709,28 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
             json.dump(full, f)
     except Exception:
         return []
-    check = subprocess.run([SINGBOX_BIN, "check", "-c", cfg_path],
-                           capture_output=True, timeout=20)
-    if check.returncode != 0:
-        err_text = check.stderr.decode("utf-8", "ignore").strip()
-        key = re.sub(r"\d+", "N", (err_text.splitlines()[-1] if err_text else "unknown"))[:200]
-        _note_err(SB_CHECK_ERRORS, key)
-        try: os.remove(cfg_path)
-        except: pass
-        if len(batch_cfgs) <= 1:
-            return []
-        mid = len(batch_cfgs) // 2
-        left = await _run_batch_async(batch_cfgs[:mid], worker_id, session)
-        right = await _run_batch_async(batch_cfgs[mid:], worker_id, session)
-        return left + right
+    t_check = time.time()
+    do_check = _CHECK_COUNTER[0] < CHECK_LIMIT
+    if do_check:
+        _CHECK_COUNTER[0] += 1
+        check = await asyncio.create_subprocess_exec(
+            SINGBOX_BIN, "check", "-c", cfg_path,
+            stdout=asyncio.subprocess.DEVNULL, stderr=asyncio.subprocess.PIPE,
+        )
+        stdout, stderr = await check.communicate()
+        if check.returncode != 0:
+            err_text = stderr.decode("utf-8", "ignore").strip()
+            key = re.sub(r"\d+", "N", (err_text.splitlines()[-1] if err_text else "unknown"))[:200]
+            _note_err(SB_CHECK_ERRORS, key)
+            try: os.remove(cfg_path)
+            except: pass
+            if len(batch_cfgs) <= 1:
+                return []
+            mid = len(batch_cfgs) // 2
+            left = await _run_batch_async(batch_cfgs[:mid], worker_id, session)
+            right = await _run_batch_async(batch_cfgs[mid:], worker_id, session)
+            return left + right
+    t_run = time.time()
     proc, errf = None, None
     try:
         errf = open(err_path, "wb")
@@ -726,8 +738,8 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
             SINGBOX_BIN, "run", "-c", cfg_path,
             stdout=asyncio.subprocess.DEVNULL, stderr=errf,
         )
-        if not await _wait_api_async(session, api_port, timeout=10.0):
-            _note_err(SB_RUN_ERRORS, "api not ready")
+        if not await _wait_api_async(session, api_port, timeout=3.0):
+            _note_err(SB_RUN_ERRORS, "api_not_ready")
             proc.kill()
             try: await proc.wait()
             except: pass
@@ -737,8 +749,12 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
                 right = await _run_batch_async(batch_cfgs[mid:], worker_id, session)
                 return left + right
             return []
+        t_delay = time.time()
         results = await asyncio.gather(*[_delay_one_async(session, api_port, t) for t in tag_to_cfg])
         working = [(tag_to_cfg[t], d) for t, d in results if d is not None and t in tag_to_cfg]
+        t_end = time.time()
+        if worker_id == 0:
+            print(f"   [w0] check={t_run-t_check:.2f}s api={t_delay-t_run:.2f}s delay={t_end-t_delay:.2f}s total={t_end-t_start:.2f}s | in={len(batch_cfgs)} out={len(working)}")
         if len(batch_cfgs) >= 4 and len(working) < max(1, len(batch_cfgs) // 2):
             proc.kill()
             try: await proc.wait()
@@ -786,7 +802,7 @@ async def _check_batch_main(all_configs):
     results = []
     lock = asyncio.Lock()
     stats = {"done": 0, "t0": time.time()}
-    connector = aiohttp.TCPConnector(limit=BATCH_SIZE_PER_CORE * KERNEL_COUNT * 2)
+    connector = aiohttp.TCPConnector(limit=BATCH_SIZE_PER_CORE * KERNEL_COUNT * 4)
     async with aiohttp.ClientSession(connector=connector) as session:
         workers = [_batch_worker(i, queue, session, results, lock, stats, len(all_configs))
                    for i in range(KERNEL_COUNT)]
@@ -797,7 +813,7 @@ def _check_one_legacy(idx, cfg):
     ob = sb_config(cfg["raw"])
     if not ob:
         return None
-    port = SOCKS_BASE_PORT + (idx % 500)
+    port = SOCKS_BASE_PORT + (idx % 500) + 1000
     cfg_path = os.path.join(TMP_DIR, f"fb{idx}.json")
     err_path = os.path.join(TMP_DIR, f"fb{idx}.err")
     full = {
@@ -806,6 +822,7 @@ def _check_one_legacy(idx, cfg):
         "outbounds": [ob],
     }
     proc = None
+    errf = None
     try:
         with open(cfg_path, "w") as f:
             json.dump(full, f)
@@ -826,7 +843,6 @@ def _check_one_legacy(idx, cfg):
                 if proc.poll() is not None:
                     break
                 continue
-        errf.close()
         if not ready:
             return None
         start = time.time()
@@ -844,6 +860,9 @@ def _check_one_legacy(idx, cfg):
                 proc.kill(); proc.wait(timeout=3)
             except Exception:
                 pass
+        if errf is not None:
+            try: errf.close()
+            except Exception: pass
         for pth in (cfg_path, err_path):
             try: os.remove(pth)
             except Exception: pass
@@ -867,7 +886,7 @@ def check_via_singbox_batch(all_configs):
     if not _probe_kernel():
         print("❌ Ядро недоступно — fallback")
         return _fallback_check(all_configs)
-    print(f"🔥 batch: {KERNEL_COUNT} процесса × {BATCH_SIZE_PER_CORE} конфигов = {KERNEL_COUNT * BATCH_SIZE_PER_CORE} одновременно")
+    print(f"🔥 batch: {KERNEL_COUNT} процесса × {BATCH_SIZE_PER_CORE} = {KERNEL_COUNT * BATCH_SIZE_PER_CORE} одновременно")
     return asyncio.run(_check_batch_main(all_configs))
 
 def to_clash_proxy(cfg, flag, country, idx):
@@ -1092,10 +1111,11 @@ def update_changelog(stats_bl, stats_wl, changelog_path="CHANGELOG.md"):
     print(f"💾 {changelog_path}: BL {bl}, WL {wl}")
 
 def run_subscription(sources, remote_name, label):
-    global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS
+    global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, SB_HTTP_ERRORS, _CHECK_COUNTER
     _FLAGS = {}
     _ASN = {}
-    SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS = {}, {}, {}
+    SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, SB_HTTP_ERRORS = {}, {}, {}, {}
+    _CHECK_COUNTER[0] = 0
     t0 = time.time()
     print(f"\n═══ {label} → {remote_name} ═══")
     print(f"⚙️  {KERNEL_COUNT} ядра × {BATCH_SIZE_PER_CORE} = {KERNEL_COUNT * BATCH_SIZE_PER_CORE} параллельно | timeout {DELAY_TIMEOUT_MS}ms")
