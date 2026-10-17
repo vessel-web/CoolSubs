@@ -28,7 +28,7 @@ BLACK_SOURCES = [
     ("IR-4","https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/Sub.txt"),
     ("IR-5","https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"),
     ("IR-6","https://raw.githubusercontent.com/balochscript/free-vpn-configs/gh-pages/subscription-recent.txt"),
-    ("dwln","https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/configs.txt.gz"),
+    ("dwnl","https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/configs.txt.gz"),
 ]
 
 WHITE_SOURCES = [
@@ -94,9 +94,9 @@ API_BASE_PORT = 19090
 SOCKS_BASE_PORT = 20000
 TEST_URL = "https://www.gstatic.com/generate_204"
 PING_TIMEOUT = 5
-DELAY_TIMEOUT_MS = 3000
-KERNEL_COUNT = 6
-BATCH_SIZE_PER_CORE = 100
+DELAY_TIMEOUT_MS = 4000
+KERNEL_COUNT = 4
+BATCH_SIZE_PER_CORE = 50
 XRAY_WORKERS = 20
 CHECK_LIMIT = 5
 BLOCKED_ASNS = {"13335","14789","132892","202623","203898","209242","395747","400095","402542","16509","396982","8075","20860"}
@@ -738,6 +738,11 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
             except: pass
             try: os.remove(cfg_path)
             except: pass
+            if len(batch_cfgs) > 1:
+                mid = len(batch_cfgs) // 2
+                left = await _run_batch_async(batch_cfgs[:mid], worker_id, session)
+                right = await _run_batch_async(batch_cfgs[mid:], worker_id, session)
+                return left + right
             return []
         t_delay = time.time()
         results = await asyncio.gather(*[_delay_one_async(session, api_port, t) for t in tag_to_cfg])
@@ -1102,8 +1107,8 @@ def run_subscription(sources, remote_name, label):
     print(f"\n═══ {label} → {remote_name} ═══")
     all_configs = []
     for src_label, url in sources:
-        if src_label == "dwln" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
-            print(f"   ✅ [dwln] локальный configs.txt")
+        if src_label == "dwnl" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
+            print(f"   ✅ [dwnl] локальный configs.txt")
             try:
                 if os.path.exists("configs.txt"):
                     lines = open("configs.txt", "r", encoding="utf-8", errors="ignore").read().splitlines()
@@ -1112,7 +1117,7 @@ def run_subscription(sources, remote_name, label):
                         lines = f.read().splitlines()
                 error, reason = None, None
             except Exception as e:
-                print(f"   ❌ [dwln] ошибка чтения: {e}"); continue
+                print(f"   ❌ [dwnl] ошибка чтения: {e}"); continue
         else:
             lines, error, reason = fetch_sub(url, retries=1)
         src_configs = [c for c in (parse_config(l, src_label) for l in lines) if c]
