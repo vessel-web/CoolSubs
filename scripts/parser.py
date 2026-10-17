@@ -28,7 +28,7 @@ BLACK_SOURCES = [
     ("IR-4","https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/Sub.txt"),
     ("IR-5","https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"),
     ("IR-6","https://raw.githubusercontent.com/balochscript/free-vpn-configs/gh-pages/subscription-recent.txt"),
-    ("Downloader","https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/configs.txt.gz"),
+    ("dwln","https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/configs.txt.gz"),
 ]
 
 WHITE_SOURCES = [
@@ -1102,8 +1102,8 @@ def run_subscription(sources, remote_name, label):
     print(f"\n═══ {label} → {remote_name} ═══")
     all_configs = []
     for src_label, url in sources:
-        if src_label == "Downloader" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
-            print(f"   ✅ [Downloader] локальный configs.txt")
+        if src_label == "dwln" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
+            print(f"   ✅ [dwln] локальный configs.txt")
             try:
                 if os.path.exists("configs.txt"):
                     lines = open("configs.txt", "r", encoding="utf-8", errors="ignore").read().splitlines()
@@ -1112,7 +1112,7 @@ def run_subscription(sources, remote_name, label):
                         lines = f.read().splitlines()
                 error, reason = None, None
             except Exception as e:
-                print(f"   ❌ [Downloader] ошибка чтения: {e}"); continue
+                print(f"   ❌ [dwln] ошибка чтения: {e}"); continue
         else:
             lines, error, reason = fetch_sub(url, retries=1)
         src_configs = [c for c in (parse_config(l, src_label) for l in lines) if c]
