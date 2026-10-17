@@ -99,8 +99,6 @@ KERNEL_COUNT = 6
 BATCH_SIZE_PER_CORE = 100
 XRAY_WORKERS = 20
 CHECK_LIMIT = 5
-TCP_PREFILTER_WORKERS = 500
-TCP_PREFILTER_TIMEOUT = 1.5
 BLOCKED_ASNS = {"13335","14789","132892","202623","203898","209242","395747","400095","402542","16509","396982","8075","20860"}
 FINGERPRINTS = ["firefox","safari","ios","android","edge","random","randomized"]
 UTLS_FP = {"chrome","firefox","safari","ios","android","edge","360","qq","random","randomized"}
@@ -142,7 +140,6 @@ _RESOLVE_CACHE = {}
 SB_GEN_ERRORS = {}
 SB_CHECK_ERRORS = {}
 SB_RUN_ERRORS = {}
-SB_TCP_FILTERED = [0]
 
 def random_fp():
     return random.choice(FINGERPRINTS)
@@ -208,37 +205,6 @@ def resolve_host(host):
         ip = None
     _RESOLVE_CACHE[host] = ip
     return ip
-
-def _tcp_probe(args):
-    host, port = args
-    ip = resolve_host(host)
-    if not ip:
-        return False
-    try:
-        with socket.create_connection((ip, port), timeout=TCP_PREFILTER_TIMEOUT):
-            return True
-    except Exception:
-        return False
-
-def prefilter_tcp(configs):
-    if not configs:
-        return []
-    print(f"\n🔎 TCP-предфильтр: {len(configs)} конфигов, {TCP_PREFILTER_WORKERS} потоков, таймаут {TCP_PREFILTER_TIMEOUT}s...")
-    t0 = time.time()
-    alive = []
-    with ThreadPoolExecutor(max_workers=TCP_PREFILTER_WORKERS) as ex:
-        futures = {ex.submit(_tcp_probe, (c['host'], c['port'])): c for c in configs}
-        for i, fut in enumerate(as_completed(futures), 1):
-            if fut.result():
-                alive.append(futures[fut])
-            if i % 5000 == 0:
-                elapsed = time.time() - t0
-                speed = i / elapsed if elapsed > 0 else 0
-                print(f"   TCP {i}/{len(configs)} | живых {len(alive)} | {speed:.0f}/с")
-    filtered = len(configs) - len(alive)
-    SB_TCP_FILTERED[0] = filtered
-    print(f"✅ TCP-предфильтр: живых {len(alive)}/{len(configs)}, отсеяно {filtered} ({time.time()-t0:.1f}с)")
-    return alive
 
 def check_asn(host):
     return _ASN.get(host, "")
@@ -1127,11 +1093,10 @@ def update_changelog(stats_bl, stats_wl, changelog_path="CHANGELOG.md"):
     print(f"💾 {changelog_path}: BL {bl}, WL {wl}")
 
 def run_subscription(sources, remote_name, label):
-    global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, SB_TCP_FILTERED, _CHECK_COUNTER
+    global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, _CHECK_COUNTER
     _FLAGS = {}
     _ASN = {}
     SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS = {}, {}, {}
-    SB_TCP_FILTERED[0] = 0
     _CHECK_COUNTER[0] = 0
     t0 = time.time()
     print(f"\n═══ {label} → {remote_name} ═══")
@@ -1169,10 +1134,6 @@ def run_subscription(sources, remote_name, label):
     if before > len(all_configs):
         print(f"♻️  Дедупликация: {before} → {len(all_configs)} (убрано {before - len(all_configs)})")
     load_flags_batch(list({c['host'] for c in all_configs}))
-    t_tcp = time.time()
-    all_configs = prefilter_tcp(all_configs)
-    if not all_configs:
-        print("⚠️ TCP-предфильтр убил всё"); return
     print(f"\n🔥 batch-проверка через Clash API...")
     working = check_via_singbox_batch(all_configs)
     print(f"\n🔥 Рабочих: {len(working)}")
@@ -1219,7 +1180,7 @@ def run_subscription(sources, remote_name, label):
 
 if __name__ == "__main__":
     os.makedirs(TMP_DIR, exist_ok=True)
-    print("🚀 sing-box-extended async batch parser (hardcore)")
+    print("🚀 sing-box-extended async batch parser")
     if not os.path.exists(SINGBOX_BIN):
         print(f"❌ Бинарник не найден: {SINGBOX_BIN}"); raise SystemExit(1)
     print(f"🌍 GeoLite2: {GEOIP_DB}")
