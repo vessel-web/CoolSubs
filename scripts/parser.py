@@ -1,14 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import urllib.request, urllib.error, base64, json, socket, ssl, os, re, gzip, time, random, glob, sys
-import subprocess, concurrent.futures, threading, requests, yaml
+import urllib.request, urllib.error, base64, json, socket, os, re, gzip, time, random, glob
+import subprocess, concurrent.futures, requests, yaml
 from urllib.parse import urlparse, quote, parse_qs, unquote
-from collections import Counter
-
-try:
-    import socks
-except ImportError:
-    socks = None
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 BLACK_SOURCES = [
     ("Gidroksi","https://gidroksi.fun/black-list"),
@@ -95,14 +90,14 @@ COUNTRY_NAMES = {
 
 SINGBOX_BIN = os.path.expanduser("~/singbox/sing-box-extended")
 TMP_DIR = "/tmp/singbox_tmp"
+API_BASE_PORT = 19090
 SOCKS_BASE_PORT = 20000
 TEST_URL = "https://www.gstatic.com/generate_204"
 PING_TIMEOUT = 5
-XRAY_WORKERS = 20
 BATCH_SIZE = 1000
-TEST_CONCURRENCY = 128
-API_BASE_PORT = 19090
+DELAY_CONCURRENCY = 128
 DELAY_TIMEOUT_MS = 5000
+XRAY_WORKERS = 20
 BLOCKED_ASNS = {"13335","14789","132892","202623","203898","209242","395747","400095","402542","16509","396982","8075","20860"}
 FINGERPRINTS = ["firefox","safari","ios","android","edge","random","randomized"]
 UTLS_FP = {"chrome","firefox","safari","ios","android","edge","360","qq","random","randomized"}
@@ -122,8 +117,19 @@ def _find_geoip_db():
                 pass
     return None
 
+def _find_dbip_db():
+    here = os.path.dirname(os.path.abspath(__file__))
+    for root in [here, os.path.join(here, ".."), os.getcwd()]:
+        for p in sorted(glob.glob(os.path.join(root, "dbip-asn-lite*.mmdb"))):
+            try:
+                if os.path.getsize(p) > 100_000:
+                    return p
+            except Exception:
+                pass
+    return None
+
 GEOIP_DB = _find_geoip_db()
-_ASN_DB = None
+DBIP_DB = _find_dbip_db()
 _FLAGS = {}
 _ASN = {}
 _STATS_BL = {}
@@ -133,6 +139,7 @@ SB_GEN_ERRORS = {}
 SB_CHECK_ERRORS = {}
 SB_RUN_ERRORS = {}
 SB_HTTP_ERRORS = {}
+_PORT_COUNTER = [0]
 
 def random_fp():
     return random.choice(FINGERPRINTS)
@@ -184,101 +191,6 @@ def save_unsorted(configs, out_path):
         f.write("\n".join(lines))
     print(f"💾 {out_path}: {len(lines)} сырых конфигов")
 
-def check_asn(host):
-    for url in (f"https://getmyip.pro/api/{host}", f"https://ipdata.info/{host}"):
-        try:
-            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            resp = json.loads(urllib.request.urlopen(req, timeout=5).read())
-            asn = resp.get("asn")
-            if asn:
-                return str(asn).replace("AS", "")
-        except Exception:
-            pass
-    try:
-        req = urllib.request.Request(f"http://ip-api.com/json/{host}?fields=as", headers={'User-Agent': 'Mozilla/5.0'})
-        resp = json.loads(urllib.request.urlopen(req, timeout=5).read())
-        as_str = resp.get("as", "")
-        if as_str:
-            return as_str.split()[0].replace("AS", "")
-    except Exception:
-        pass
-    return ""
-
-def _find_asn_db():
-    here = os.path.dirname(os.path.abspath(__file__))
-    for root in [here, os.path.join(here, ".."), os.getcwd()]:
-        for p in sorted(glob.glob(os.path.join(root, "*ASN*.mmdb"))):
-            try:
-                if os.path.getsize(p) > 1_000_000:
-                    return p
-            except Exception:
-                pass
-    return None
-
-def _ipapi_batch(hosts):
-    out = {}
-    chunks = [hosts[s:s + 100] for s in range(0, len(hosts), 100)]
-    for ci, part in enumerate(chunks):
-        for attempt in range(2):
-            try:
-                r = requests.post("http://ip-api.com/batch?fields=as", json=part, timeout=20)
-                if r.status_code == 429:
-                    time.sleep(65)
-                    continue
-                for h, item in zip(part, r.json()):
-                    as_str = (item.get("as") or "").split()
-                    if as_str:
-                        out[h] = as_str[0].replace("AS", "")
-                break
-            except Exception:
-                time.sleep(2)
-        if len(chunks) > 1 and ci < len(chunks) - 1:
-            time.sleep(4.2)
-    return out
-
-def load_asn_batch(hosts):
-    global _ASN, _ASN_DB
-    _ASN = {}
-    uniq = sorted({h for h in hosts if h})
-    if not uniq:
-        return
-    if _ASN_DB is None:
-        _ASN_DB = _find_asn_db()
-    ip_of, unresolved = {}, []
-    for h in uniq:
-        ip = resolve_host(h)
-        if ip:
-            ip_of[h] = ip
-        else:
-            unresolved.append(h)
-    misses = list(unresolved)
-    if _ASN_DB:
-        try:
-            import geoip2.database
-            reader = geoip2.database.Reader(_ASN_DB)
-            for h, ip in ip_of.items():
-                try:
-                    num = reader.asn(ip).autonomous_system_number
-                    if num:
-                        _ASN[h] = str(num)
-                    else:
-                        misses.append(h)
-                except Exception:
-                    misses.append(h)
-            reader.close()
-            print(f"🛡️ Локальная ASN-база: {_ASN_DB} — найдено {len(_ASN)}/{len(uniq)}")
-        except Exception as e:
-            misses = uniq + unresolved
-            print(f"⚠️ ASN-база не прочитана ({type(e).__name__}) — переход на ip-api batch")
-    else:
-        misses = uniq + unresolved
-        print("⚠️ GeoLite2-ASN*.mmdb не найден — ASN через ip-api batch")
-    misses = [h for h in dict.fromkeys(misses) if h not in _ASN]
-    if misses:
-        got = _ipapi_batch(misses)
-        _ASN.update(got)
-        print(f"🌐 ip-api batch: найдено {len(got)}/{len(misses)}")
-
 def resolve_host(host):
     if not host:
         return None
@@ -293,6 +205,59 @@ def resolve_host(host):
         ip = None
     _RESOLVE_CACHE[host] = ip
     return ip
+
+def check_asn(host):
+    return _ASN.get(host, "")
+
+def load_asn_batch(hosts):
+    global _ASN
+    _ASN = {}
+    unique_hosts = list({h for h in hosts if h})
+    if not unique_hosts:
+        return
+    host_to_ip = {}
+    with ThreadPoolExecutor(max_workers=50) as ex:
+        for h, ip in zip(unique_hosts, ex.map(resolve_host, unique_hosts)):
+            if ip:
+                host_to_ip[h] = ip
+    print(f"🌐 ASN: {len(host_to_ip)}/{len(unique_hosts)} хостов резолвнуто")
+    if DBIP_DB:
+        try:
+            import geoip2.database
+            reader = geoip2.database.Reader(DBIP_DB)
+            found = 0
+            for h, ip in host_to_ip.items():
+                try:
+                    r = reader.asn(ip)
+                    if r.autonomous_system_number:
+                        _ASN[h] = str(r.autonomous_system_number)
+                        found += 1
+                except Exception:
+                    pass
+            reader.close()
+            print(f"✅ DBIP ASN: {found}/{len(host_to_ip)} ({DBIP_DB})")
+        except Exception as e:
+            print(f"⚠️ DBIP ASN: {e}")
+    else:
+        print("⚠️ dbip-asn-lite*.mmdb не найден")
+    missing = [(h, ip) for h, ip in host_to_ip.items() if h not in _ASN]
+    if missing:
+        print(f"🌐 ip-api batch: {len(missing)} хостов")
+        for i in range(0, len(missing), 100):
+            chunk = missing[i:i+100]
+            payload = [{"query": ip, "fields": "as,query"} for _, ip in chunk]
+            try:
+                r = requests.post("http://ip-api.com/batch", json=payload, timeout=15)
+                if r.status_code == 200:
+                    data = r.json()
+                    for item, (h, _) in zip(data, chunk):
+                        as_str = item.get("as", "") if isinstance(item, dict) else ""
+                        if as_str:
+                            _ASN[h] = as_str.split()[0].replace("AS", "")
+                time.sleep(4.5)
+            except Exception:
+                pass
+    print(f"✅ ASN итого: {len(_ASN)}/{len(unique_hosts)}")
 
 def fetch_sub(url, retries=1):
     for attempt in range(retries + 1):
@@ -365,9 +330,8 @@ def load_flags_batch(hosts):
         return
     print(f"🌍 GeoLite2: {GEOIP_DB} ({os.path.getsize(GEOIP_DB)//1024} КБ)")
     unique_hosts = list({h for h in hosts if h})
-    print(f"\n🌍 Определение стран для {len(unique_hosts)} хостов...")
     host_to_ip = {}
-    with concurrent.futures.ThreadPoolExecutor(max_workers=50) as ex:
+    with ThreadPoolExecutor(max_workers=50) as ex:
         for host, ip in zip(unique_hosts, ex.map(resolve_host, unique_hosts)):
             if ip:
                 host_to_ip[host] = ip
@@ -405,6 +369,469 @@ def add_metadata(lines, title, update_hours=4, support_url=None, announce=None):
         meta.append(f"#announce: {announce}")
     meta.append("")
     return meta + lines
+
+def _q(uri):
+    p = urlparse(uri)
+    return p, {k: v[0] for k, v in parse_qs(p.query, keep_blank_values=True).items()}
+
+def sb_vless(uri):
+    p, q = _q(uri)
+    if not p.hostname:
+        return None
+    uuid = unquote(p.username or "")
+    if not uuid:
+        return None
+    security = q.get("security") or ("reality" if q.get("pbk") else "")
+    out = {"type": "vless", "server": p.hostname, "server_port": p.port or 443, "uuid": uuid}
+    if security == "reality":
+        pbk = q.get("pbk", "")
+        if not pbk:
+            return None
+        out["tls"] = {"enabled": True, "server_name": q.get("sni") or p.hostname,
+                      "reality": {"enabled": True, "public_key": pbk, "short_id": q.get("sid", "")},
+                      "utls": {"enabled": True, "fingerprint": q.get("fp") if q.get("fp") in UTLS_FP else random_fp()}}
+    elif security == "tls":
+        out["tls"] = {"enabled": True, "server_name": q.get("sni") or p.hostname,
+                      "insecure": q.get("allowInsecure", "0") == "1"}
+        if q.get("alpn"):
+            out["tls"]["alpn"] = [a for a in q["alpn"].split(",") if a]
+        if q.get("fp") in UTLS_FP:
+            out["tls"]["utls"] = {"enabled": True, "fingerprint": q["fp"]}
+    net = q.get("type", "tcp")
+    if net == "ws":
+        tr = {"type": "ws", "path": q.get("path") or "/"}
+        if q.get("host"):
+            tr["headers"] = {"Host": q["host"]}
+        out["transport"] = tr
+    elif net == "grpc":
+        out["transport"] = {"type": "grpc", "service_name": q.get("serviceName", "")}
+    elif net == "httpupgrade":
+        out["transport"] = {"type": "httpupgrade", "host": q.get("host") or p.hostname,
+                            "path": q.get("path") or "/"}
+    elif net in ("xhttp", "splithttp"):
+        out["transport"] = {"type": "xhttp", "host": q.get("host") or p.hostname,
+                            "path": q.get("path") or "/", "mode": q.get("mode", "auto")}
+    elif net in ("h2", "h2c", "http"):
+        out["transport"] = {"type": "http", "host": [q.get("host") or p.hostname],
+                            "path": q.get("path") or "/"}
+    flow = q.get("flow", "")
+    if flow == "xtls-rprx-vision" and "transport" not in out and out.get("tls"):
+        out["flow"] = flow
+    return out
+
+def sb_vmess(uri):
+    raw = base64.b64decode(uri[8:] + '=' * (-len(uri[8:]) % 4)).decode("utf-8", errors="ignore")
+    v = json.loads(raw)
+    if not v.get("add") or not v.get("id"):
+        return None
+    try:
+        port = int(v.get("port") or 443)
+    except Exception:
+        return None
+    scy = (v.get("scy") or "auto").strip().lower()
+    if scy not in VMESS_SECURITY:
+        return None
+    try:
+        aid = int(v.get("aid") or 0)
+    except Exception:
+        aid = 0
+    out = {"type": "vmess", "server": v["add"], "server_port": port,
+           "uuid": v["id"], "security": scy, "alter_id": aid}
+    if v.get("tls") in ("tls", "reality"):
+        out["tls"] = {"enabled": True, "server_name": v.get("sni") or v.get("host") or v["add"],
+                      "insecure": v.get("allowInsecure") in (True, "1", "true")}
+        if v.get("alpn"):
+            out["tls"]["alpn"] = [a for a in str(v["alpn"]).split(",") if a]
+        if v.get("fp") in UTLS_FP:
+            out["tls"]["utls"] = {"enabled": True, "fingerprint": v["fp"]}
+    net = (v.get("net") or "tcp").lower()
+    if net == "ws":
+        tr = {"type": "ws", "path": v.get("path") or "/"}
+        if v.get("host"):
+            tr["headers"] = {"Host": v["host"]}
+        out["transport"] = tr
+    elif net == "grpc":
+        out["transport"] = {"type": "grpc", "service_name": v.get("path") or ""}
+    elif net == "httpupgrade":
+        out["transport"] = {"type": "httpupgrade", "host": v.get("host") or v["add"],
+                            "path": v.get("path") or "/"}
+    elif net in ("h2", "h2c", "http") or (net == "tcp" and v.get("type") == "http"):
+        out["transport"] = {"type": "http", "host": [v.get("host") or v["add"]],
+                            "path": v.get("path") or "/"}
+    return out
+
+def sb_trojan(uri):
+    p, q = _q(uri)
+    if not p.hostname:
+        return None
+    password = unquote(p.username or "")
+    if not password:
+        return None
+    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname,
+               "insecure": q.get("allowInsecure", "0") == "1"}
+    if q.get("alpn"):
+        tls_cfg["alpn"] = [a for a in q["alpn"].split(",") if a]
+    if q.get("fp") in UTLS_FP:
+        tls_cfg["utls"] = {"enabled": True, "fingerprint": q["fp"]}
+    out = {"type": "trojan", "server": p.hostname, "server_port": p.port or 443,
+           "password": password, "tls": tls_cfg}
+    net = q.get("type", "tcp")
+    if net == "ws":
+        tr = {"type": "ws", "path": q.get("path") or "/"}
+        if q.get("host"):
+            tr["headers"] = {"Host": q["host"]}
+        out["transport"] = tr
+    elif net == "grpc":
+        out["transport"] = {"type": "grpc", "service_name": q.get("serviceName", "")}
+    elif net == "httpupgrade":
+        out["transport"] = {"type": "httpupgrade", "host": q.get("host") or p.hostname,
+                            "path": q.get("path") or "/"}
+    return out
+
+def sb_ss(uri):
+    u = uri[5:].split("#", 1)[0]
+    if "?" in u:
+        base, qs = u.split("?", 1)
+        q = {k: v[0] for k, v in parse_qs(qs, keep_blank_values=True).items()}
+    else:
+        base, q = u, {}
+    if "@" in base:
+        userinfo, hostport = base.rsplit("@", 1)
+        userinfo = unquote(userinfo)
+        if ":" not in userinfo:
+            try:
+                userinfo = base64.b64decode(userinfo + '=' * (-len(userinfo) % 4)).decode("utf-8", errors="ignore")
+            except Exception:
+                return None
+    else:
+        try:
+            decoded = base64.b64decode(base + '=' * (-len(base) % 4)).decode("utf-8", errors="ignore")
+        except Exception:
+            return None
+        if "@" not in decoded:
+            return None
+        userinfo, hostport = decoded.rsplit("@", 1)
+    if ":" not in userinfo:
+        return None
+    method, password = userinfo.split(":", 1)
+    method = method.strip().lower()
+    if not method:
+        return None
+    hp = urlparse("//" + hostport)
+    if not hp.hostname:
+        return None
+    try:
+        port = hp.port or 8388
+    except ValueError:
+        return None
+    out = {"type": "shadowsocks", "server": hp.hostname, "server_port": port,
+           "method": method, "password": unquote(password)}
+    plugin = q.get("plugin", "")
+    if plugin:
+        parts = plugin.split(";", 1)
+        pname = SS_PLUGINS.get(parts[0].strip())
+        if not pname:
+            return None
+        out["plugin"] = pname
+        if len(parts) > 1 and parts[1]:
+            out["plugin_opts"] = parts[1]
+    return out
+
+def sb_hysteria2(uri):
+    p, q = _q(uri)
+    if not p.hostname:
+        return None
+    password = unquote(p.username or "") or q.get("auth", "")
+    if not password:
+        return None
+    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname,
+               "insecure": q.get("insecure", q.get("allowInsecure", "0")) == "1"}
+    if q.get("alpn"):
+        tls_cfg["alpn"] = [a for a in q["alpn"].split(",") if a]
+    out = {"type": "hysteria2", "server": p.hostname, "server_port": p.port or 443,
+           "password": password, "tls": tls_cfg}
+    if q.get("obfs") == "salamander":
+        out["obfs"] = {"type": "salamander", "password": q.get("obfs-password", "")}
+    return out
+
+def sb_tuic(uri):
+    p, q = _q(uri)
+    if not p.hostname:
+        return None
+    uid = unquote(p.username or "")
+    if not uid:
+        return None
+    pwd = unquote(p.password or "")
+    cc = q.get("congestion_control", "cubic")
+    if cc not in TUIC_CC:
+        cc = "cubic"
+    urm = q.get("udp_relay_mode", "native")
+    if urm not in TUIC_URM:
+        urm = "native"
+    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname,
+               "insecure": q.get("allow_insecure", q.get("allowInsecure", q.get("insecure", "0"))) == "1"}
+    alpn = q.get("alpn")
+    tls_cfg["alpn"] = [a for a in alpn.split(",") if a] if alpn else ["h3"]
+    return {"type": "tuic", "server": p.hostname, "server_port": p.port or 443,
+            "uuid": uid, "password": pwd, "congestion_control": cc, "udp_relay_mode": urm,
+            "tls": tls_cfg}
+
+def sb_config(uri):
+    uri = uri.strip()
+    try:
+        if uri.startswith("vless://"): return sb_vless(uri)
+        if uri.startswith("vmess://"): return sb_vmess(uri)
+        if uri.startswith("trojan://"): return sb_trojan(uri)
+        if uri.startswith("ss://"): return sb_ss(uri)
+        if uri.startswith(("hysteria2://", "hy2://")): return sb_hysteria2(uri)
+        if uri.startswith("tuic://"): return sb_tuic(uri)
+    except Exception:
+        return None
+    return None
+def _note_err(store, key):
+    store[key] = store.get(key, 0) + 1
+
+def _next_api_port():
+    _PORT_COUNTER[0] += 1
+    return API_BASE_PORT + (_PORT_COUNTER[0] % 200)
+
+def _wait_api(port, timeout=8.0):
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        try:
+            r = requests.get(f"http://127.0.0.1:{port}/version", timeout=0.5)
+            if r.status_code == 200:
+                return True
+        except Exception:
+            pass
+        time.sleep(0.1)
+    return False
+
+def _kill_proc(proc):
+    if proc is None:
+        return
+    try:
+        proc.kill()
+        proc.wait(timeout=3)
+    except Exception:
+        pass
+
+def _probe_kernel():
+    probe_cfg = os.path.join(TMP_DIR, "probe.json")
+    probe_port = _next_api_port()
+    cfg = {
+        "log": {"level": "error"},
+        "experimental": {"clash_api": {"external_controller": f"127.0.0.1:{probe_port}"}},
+        "inbounds": [{"type": "socks", "listen": "127.0.0.1", "listen_port": probe_port + 1}],
+        "outbounds": [{"type": "direct", "tag": "direct"}],
+        "route": {"rules": [{"action": "route", "outbound": "direct"}]},
+    }
+    try:
+        with open(probe_cfg, "w") as f:
+            json.dump(cfg, f)
+        check = subprocess.run([SINGBOX_BIN, "check", "-c", probe_cfg],
+                               capture_output=True, timeout=10)
+        if check.returncode != 0:
+            print(f"❌ probe: sing-box check failed: {check.stderr.decode('utf-8','ignore')[:300]}")
+            return False
+        proc = subprocess.Popen([SINGBOX_BIN, "run", "-c", probe_cfg],
+                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        ok = _wait_api(probe_port, timeout=8.0)
+        _kill_proc(proc)
+        if ok:
+            print(f"✅ probe: ядро живо, API на :{probe_port}")
+        else:
+            print("❌ probe: API не поднялся")
+        return ok
+    except Exception as e:
+        print(f"❌ probe: {type(e).__name__}: {e}")
+        return False
+    finally:
+        try: os.remove(probe_cfg)
+        except Exception: pass
+
+def _delay_one(api_port, tag):
+    try:
+        url = f"http://127.0.0.1:{api_port}/proxies/{tag}/delay"
+        r = requests.get(url, params={"url": TEST_URL, "timeout": DELAY_TIMEOUT_MS},
+                         timeout=(DELAY_TIMEOUT_MS / 1000.0) + 2)
+        if r.status_code == 200:
+            data = r.json()
+            d = data.get("delay")
+            if isinstance(d, int) and d > 0:
+                return tag, d
+        return tag, None
+    except Exception:
+        return tag, None
+
+def _run_batch(batch_cfgs, batch_idx):
+    api_port = _next_api_port()
+    socks_port = SOCKS_BASE_PORT + (batch_idx % 400) + 100
+    cfg_path = os.path.join(TMP_DIR, f"batch{batch_idx}.json")
+    err_path = os.path.join(TMP_DIR, f"batch{batch_idx}.err")
+    outbounds = []
+    tag_to_cfg = {}
+    for j, cfg in enumerate(batch_cfgs):
+        ob = sb_config(cfg["raw"])
+        if not ob:
+            scheme = cfg["raw"].split("://")[0] if "://" in cfg["raw"] else "unknown"
+            _note_err(SB_GEN_ERRORS, scheme)
+            continue
+        tag = f"p{j}"
+        ob["tag"] = tag
+        outbounds.append(ob)
+        tag_to_cfg[tag] = cfg
+    if not outbounds:
+        return []
+    full = {
+        "log": {"level": "error"},
+        "experimental": {"clash_api": {"external_controller": f"127.0.0.1:{api_port}"}},
+        "inbounds": [{"type": "socks", "listen": "127.0.0.1", "listen_port": socks_port}],
+        "outbounds": outbounds,
+        "route": {"rules": [{"action": "route", "outbound": ob["tag"]} for ob in outbounds]},
+    }
+    proc = None
+    try:
+        with open(cfg_path, "w") as f:
+            json.dump(full, f)
+        check = subprocess.run([SINGBOX_BIN, "check", "-c", cfg_path],
+                               capture_output=True, timeout=20)
+        if check.returncode != 0:
+            err_text = check.stderr.decode("utf-8", "ignore").strip()
+            key = re.sub(r"\d+", "N", (err_text.splitlines()[-1] if err_text else "unknown"))[:200]
+            _note_err(SB_CHECK_ERRORS, key)
+            if len(batch_cfgs) <= 1:
+                return []
+            mid = len(batch_cfgs) // 2
+            left = _run_batch(batch_cfgs[:mid], batch_idx * 2 + 1)
+            right = _run_batch(batch_cfgs[mid:], batch_idx * 2 + 2)
+            return left + right
+        with open(err_path, "wb") as errf:
+            proc = subprocess.Popen([SINGBOX_BIN, "run", "-c", cfg_path],
+                                    stdout=subprocess.DEVNULL, stderr=errf)
+        if not _wait_api(api_port, timeout=10.0):
+            _note_err(SB_RUN_ERRORS, "api не поднялся за 10с")
+            if len(batch_cfgs) > 1:
+                mid = len(batch_cfgs) // 2
+                left = _run_batch(batch_cfgs[:mid], batch_idx * 2 + 1)
+                right = _run_batch(batch_cfgs[mid:], batch_idx * 2 + 2)
+                return left + right
+            return []
+        results = []
+        tags = list(tag_to_cfg.keys())
+        with ThreadPoolExecutor(max_workers=DELAY_CONCURRENCY) as ex:
+            futures = [ex.submit(_delay_one, api_port, t) for t in tags]
+            for fut in as_completed(futures):
+                tag, d = fut.result()
+                if d is not None and tag in tag_to_cfg:
+                    results.append((tag_to_cfg[tag], d))
+        if len(batch_cfgs) >= 4 and len(results) < max(1, len(batch_cfgs) // 2):
+            print(f"   ⚠️ батч {batch_idx}: рабочих {len(results)}/{len(batch_cfgs)} — guard, бисекция")
+            _kill_proc(proc)
+            proc = None
+            mid = len(batch_cfgs) // 2
+            left = _run_batch(batch_cfgs[:mid], batch_idx * 2 + 1)
+            right = _run_batch(batch_cfgs[mid:], batch_idx * 2 + 2)
+            return left + right
+        return results
+    except Exception as e:
+        _note_err(SB_RUN_ERRORS, f"{type(e).__name__}")
+        if len(batch_cfgs) > 1:
+            mid = len(batch_cfgs) // 2
+            left = _run_batch(batch_cfgs[:mid], batch_idx * 2 + 1)
+            right = _run_batch(batch_cfgs[mid:], batch_idx * 2 + 2)
+            return left + right
+        return []
+    finally:
+        _kill_proc(proc)
+        for pth in (cfg_path, err_path):
+            try: os.remove(pth)
+            except Exception: pass
+
+def check_via_singbox_batch(all_configs):
+    if not all_configs:
+        return []
+    if not _probe_kernel():
+        print("❌ Ядро недоступно — используем fallback")
+        return _fallback_check(all_configs)
+    results = []
+    total = len(all_configs)
+    t_start = time.time()
+    done = 0
+    for bstart in range(0, total, BATCH_SIZE):
+        chunk = all_configs[bstart:bstart + BATCH_SIZE]
+        b_idx = bstart // BATCH_SIZE
+        batch_res = _run_batch(chunk, b_idx)
+        results.extend(batch_res)
+        done += len(chunk)
+        elapsed = time.time() - t_start
+        speed = done / elapsed if elapsed > 0 else 0
+        eta = (total - done) / speed if speed > 0 else 0
+        print(f"   батч {b_idx+1}: {done}/{total} | рабочих {len(results)} | {speed:.1f}/с | ETA {eta:.0f}с")
+    return results
+
+def _fallback_check(all_configs):
+    print(f"   fallback: старый метод ({XRAY_WORKERS} потоков)")
+    results = []
+    with ThreadPoolExecutor(max_workers=XRAY_WORKERS) as ex:
+        futures = {ex.submit(_check_one_legacy, i, c): c for i, c in enumerate(all_configs)}
+        for i, fut in enumerate(as_completed(futures), 1):
+            r = fut.result()
+            if r:
+                results.append(r)
+            if i % 50 == 0:
+                print(f"   fallback {i}/{len(all_configs)} | рабочих {len(results)}")
+    return results
+
+def _check_one_legacy(idx, cfg):
+    ob = sb_config(cfg["raw"])
+    if not ob:
+        return None
+    port = SOCKS_BASE_PORT + (idx % 500)
+    cfg_path = os.path.join(TMP_DIR, f"fb{idx}.json")
+    err_path = os.path.join(TMP_DIR, f"fb{idx}.err")
+    full = {
+        "log": {"level": "error"},
+        "inbounds": [{"type": "socks", "listen": "127.0.0.1", "listen_port": port}],
+        "outbounds": [ob],
+    }
+    proc = None
+    try:
+        with open(cfg_path, "w") as f:
+            json.dump(full, f)
+        check = subprocess.run([SINGBOX_BIN, "check", "-c", cfg_path],
+                               capture_output=True, timeout=10)
+        if check.returncode != 0:
+            return None
+        with open(err_path, "wb") as errf:
+            proc = subprocess.Popen([SINGBOX_BIN, "run", "-c", cfg_path],
+                                    stdout=subprocess.DEVNULL, stderr=errf)
+        ready = False
+        for _ in range(30):
+            time.sleep(0.1)
+            try:
+                with socket.create_connection(("127.0.0.1", port), timeout=0.3):
+                    ready = True; break
+            except Exception:
+                if proc.poll() is not None:
+                    break
+                continue
+        if not ready:
+            return None
+        start = time.time()
+        resp = requests.get(TEST_URL, timeout=PING_TIMEOUT,
+                            proxies={"http": f"socks5h://127.0.0.1:{port}",
+                                     "https": f"socks5h://127.0.0.1:{port}"},
+                            headers={"User-Agent": "Mozilla/5.0"})
+        ping = int((time.time() - start) * 1000)
+        return (cfg, ping) if resp.status_code == 204 else None
+    except Exception:
+        return None
+    finally:
+        _kill_proc(proc)
+        for pth in (cfg_path, err_path):
+            try: os.remove(pth)
+            except Exception: pass
 
 def to_clash_proxy(cfg, flag, country, idx):
     uri = cfg['raw'].strip()
@@ -627,462 +1054,14 @@ def update_changelog(stats_bl, stats_wl, changelog_path="CHANGELOG.md"):
         f.write(new)
     print(f"💾 {changelog_path}: BL {bl}, WL {wl}")
 
-def _q(uri):
-    p = urlparse(uri)
-    return p, {k: v[0] for k, v in parse_qs(p.query, keep_blank_values=True).items()}
-
-def sb_vless(uri):
-    p, q = _q(uri)
-    if not p.hostname:
-        return None
-    uuid = unquote(p.username or "")
-    if not uuid:
-        return None
-    security = q.get("security") or ("reality" if q.get("pbk") else "")
-    out = {"type": "vless", "server": p.hostname, "server_port": p.port or 443,
-           "uuid": uuid, "packet_encoding": "xudp"}
-    if security == "reality":
-        pbk = q.get("pbk", "")
-        if not pbk:
-            return None
-        out["tls"] = {"enabled": True, "server_name": q.get("sni") or p.hostname,
-                      "reality": {"enabled": True, "public_key": pbk, "short_id": q.get("sid", "")},
-                      "utls": {"enabled": True, "fingerprint": q.get("fp") if q.get("fp") in UTLS_FP else random_fp()}}
-    elif security == "tls":
-        out["tls"] = {"enabled": True, "server_name": q.get("sni") or p.hostname,
-                      "insecure": q.get("allowInsecure", "0") == "1"}
-        if q.get("alpn"):
-            out["tls"]["alpn"] = [a for a in q["alpn"].split(",") if a]
-        if q.get("fp") in UTLS_FP:
-            out["tls"]["utls"] = {"enabled": True, "fingerprint": q["fp"]}
-    net = q.get("type", "tcp")
-    if net == "ws":
-        tr = {"type": "ws", "path": q.get("path") or "/"}
-        if q.get("host"):
-            tr["headers"] = {"Host": q["host"]}
-        out["transport"] = tr
-    elif net == "grpc":
-        out["transport"] = {"type": "grpc", "service_name": q.get("serviceName", "")}
-    elif net == "httpupgrade":
-        out["transport"] = {"type": "httpupgrade", "host": q.get("host") or p.hostname,
-                            "path": q.get("path") or "/"}
-    elif net in ("xhttp", "splithttp"):
-        out["transport"] = {"type": "xhttp", "host": q.get("host") or p.hostname,
-                            "path": q.get("path") or "/", "mode": q.get("mode", "auto"),
-                            "x_padding_bytes": "100-2000"}
-    elif net in ("h2", "h2c", "http"):
-        out["transport"] = {"type": "http", "host": [q.get("host") or p.hostname],
-                            "path": q.get("path") or "/"}
-    flow = q.get("flow", "")
-    if flow == "xtls-rprx-vision" and "transport" not in out and out.get("tls"):
-        out["flow"] = flow
-    return out
-
-def sb_vmess(uri):
-    raw = base64.b64decode(uri[8:] + '=' * (-len(uri[8:]) % 4)).decode("utf-8", errors="ignore")
-    v = json.loads(raw)
-    if not v.get("add") or not v.get("id"):
-        return None
-    try:
-        port = int(v.get("port") or 443)
-    except Exception:
-        return None
-    scy = (v.get("scy") or "auto").strip().lower()
-    if scy not in VMESS_SECURITY:
-        return None
-    try:
-        aid = int(v.get("aid") or 0)
-    except Exception:
-        aid = 0
-    out = {"type": "vmess", "server": v["add"], "server_port": port,
-           "uuid": v["id"], "security": scy, "alter_id": aid}
-    if v.get("tls") in ("tls", "reality"):
-        out["tls"] = {"enabled": True, "server_name": v.get("sni") or v.get("host") or v["add"],
-                      "insecure": v.get("allowInsecure") in (True, "1", "true")}
-        if v.get("alpn"):
-            out["tls"]["alpn"] = [a for a in str(v["alpn"]).split(",") if a]
-        if v.get("fp") in UTLS_FP:
-            out["tls"]["utls"] = {"enabled": True, "fingerprint": v["fp"]}
-    net = (v.get("net") or "tcp").lower()
-    if net == "ws":
-        tr = {"type": "ws", "path": v.get("path") or "/"}
-        if v.get("host"):
-            tr["headers"] = {"Host": v["host"]}
-        out["transport"] = tr
-    elif net == "grpc":
-        out["transport"] = {"type": "grpc", "service_name": v.get("path") or ""}
-    elif net == "httpupgrade":
-        out["transport"] = {"type": "httpupgrade", "host": v.get("host") or v["add"],
-                            "path": v.get("path") or "/"}
-    elif net in ("h2", "h2c", "http") or (net == "tcp" and v.get("type") == "http"):
-        out["transport"] = {"type": "http", "host": [v.get("host") or v["add"]],
-                            "path": v.get("path") or "/"}
-    return out
-
-def sb_trojan(uri):
-    p, q = _q(uri)
-    if not p.hostname:
-        return None
-    password = unquote(p.username or "")
-    if not password:
-        return None
-    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname,
-               "insecure": q.get("allowInsecure", "0") == "1"}
-    if q.get("alpn"):
-        tls_cfg["alpn"] = [a for a in q["alpn"].split(",") if a]
-    if q.get("fp") in UTLS_FP:
-        tls_cfg["utls"] = {"enabled": True, "fingerprint": q["fp"]}
-    out = {"type": "trojan", "server": p.hostname, "server_port": p.port or 443,
-           "password": password, "tls": tls_cfg}
-    net = q.get("type", "tcp")
-    if net == "ws":
-        tr = {"type": "ws", "path": q.get("path") or "/"}
-        if q.get("host"):
-            tr["headers"] = {"Host": q["host"]}
-        out["transport"] = tr
-    elif net == "grpc":
-        out["transport"] = {"type": "grpc", "service_name": q.get("serviceName", "")}
-    elif net == "httpupgrade":
-        out["transport"] = {"type": "httpupgrade", "host": q.get("host") or p.hostname,
-                            "path": q.get("path") or "/"}
-    return out
-
-def sb_ss(uri):
-    u = uri[5:].split("#", 1)[0]
-    if "?" in u:
-        base, qs = u.split("?", 1)
-        q = {k: v[0] for k, v in parse_qs(qs, keep_blank_values=True).items()}
-    else:
-        base, q = u, {}
-    if "@" in base:
-        userinfo, hostport = base.rsplit("@", 1)
-        userinfo = unquote(userinfo)
-        if ":" not in userinfo:
-            try:
-                userinfo = base64.b64decode(userinfo + '=' * (-len(userinfo) % 4)).decode("utf-8", errors="ignore")
-            except Exception:
-                return None
-    else:
-        try:
-            decoded = base64.b64decode(base + '=' * (-len(base) % 4)).decode("utf-8", errors="ignore")
-        except Exception:
-            return None
-        if "@" not in decoded:
-            return None
-        userinfo, hostport = decoded.rsplit("@", 1)
-    if ":" not in userinfo:
-        return None
-    method, password = userinfo.split(":", 1)
-    method = method.strip().lower()
-    if not method:
-        return None
-    hp = urlparse("//" + hostport)
-    if not hp.hostname:
-        return None
-    try:
-        port = hp.port or 8388
-    except ValueError:
-        return None
-    out = {"type": "shadowsocks", "server": hp.hostname, "server_port": port,
-           "method": method, "password": unquote(password)}
-    plugin = q.get("plugin", "")
-    if plugin:
-        parts = plugin.split(";", 1)
-        pname = SS_PLUGINS.get(parts[0].strip())
-        if not pname:
-            return None
-        out["plugin"] = pname
-        if len(parts) > 1 and parts[1]:
-            out["plugin_opts"] = parts[1]
-    return out
-
-def sb_hysteria2(uri):
-    p, q = _q(uri)
-    if not p.hostname:
-        return None
-    password = unquote(p.username or "") or q.get("auth", "")
-    if not password:
-        return None
-    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname,
-               "insecure": q.get("insecure", q.get("allowInsecure", "0")) == "1"}
-    if q.get("alpn"):
-        tls_cfg["alpn"] = [a for a in q["alpn"].split(",") if a]
-    out = {"type": "hysteria2", "server": p.hostname, "server_port": p.port or 443,
-           "password": password, "tls": tls_cfg}
-    if q.get("obfs") == "salamander":
-        out["obfs"] = {"type": "salamander", "password": q.get("obfs-password", "")}
-    return out
-
-def sb_tuic(uri):
-    p, q = _q(uri)
-    if not p.hostname:
-        return None
-    uid = unquote(p.username or "")
-    if not uid:
-        return None
-    pwd = unquote(p.password or "")
-    cc = q.get("congestion_control", "cubic")
-    if cc not in TUIC_CC:
-        cc = "cubic"
-    urm = q.get("udp_relay_mode", "native")
-    if urm not in TUIC_URM:
-        urm = "native"
-    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname,
-               "insecure": q.get("allow_insecure", q.get("allowInsecure", q.get("insecure", "0"))) == "1"}
-    alpn = q.get("alpn")
-    tls_cfg["alpn"] = [a for a in alpn.split(",") if a] if alpn else ["h3"]
-    return {"type": "tuic", "server": p.hostname, "server_port": p.port or 443,
-            "uuid": uid, "password": pwd, "congestion_control": cc, "udp_relay_mode": urm,
-            "tls": tls_cfg}
-
-def sb_config(uri):
-    uri = uri.strip()
-    try:
-        if uri.startswith("vless://"): return sb_vless(uri)
-        if uri.startswith("vmess://"): return sb_vmess(uri)
-        if uri.startswith("trojan://"): return sb_trojan(uri)
-        if uri.startswith("ss://"): return sb_ss(uri)
-        if uri.startswith(("hysteria2://", "hy2://")): return sb_hysteria2(uri)
-        if uri.startswith("tuic://"): return sb_tuic(uri)
-    except Exception:
-        return None
-    return None
-
-def _note_err(store, key):
-    store[key] = store.get(key, 0) + 1
-
-_api_local = threading.local()
-
-def _api_session():
-    s = getattr(_api_local, "s", None)
-    if s is None:
-        s = requests.Session()
-        s.trust_env = False
-        s.mount("http://", requests.adapters.HTTPAdapter(pool_connections=4, pool_maxsize=8))
-        _api_local.s = s
-    return s
-
-def _wait_api(port, proc, timeout=10.0):
-    deadline = time.time() + timeout
-    while time.time() < deadline:
-        if proc.poll() is not None:
-            return False
-        try:
-            r = _api_session().get(f"http://127.0.0.1:{port}/version", timeout=0.5)
-            if r.status_code == 200:
-                return True
-        except Exception:
-            pass
-        time.sleep(0.1)
-    return False
-
-def _err_key(err):
-    lines = [l for l in err.strip().splitlines() if l.strip()]
-    return re.sub(r"\d+", "N", lines[-1])[:200] if lines else "unknown"
-
-def _check_conf(path):
-    try:
-        r = subprocess.run([SINGBOX_BIN, "check", "-c", path], capture_output=True, timeout=90)
-        return r.returncode == 0, r.stderr.decode("utf-8", "ignore")
-    except subprocess.TimeoutExpired:
-        return False, "check timeout >90s"
-
-def _bisect_bad(items, bid):
-    if not items:
-        return set()
-    path = os.path.join(TMP_DIR, f"bisect_{bid}.json")
-    conf = {"log": {"level": "error"}, "outbounds": [ob for _, _, ob in items]}
-    with open(path, "w") as f:
-        json.dump(conf, f)
-    ok, err = _check_conf(path)
-    os.remove(path)
-    if ok:
-        return set()
-    if len(items) <= 4:
-        _note_err(SB_CHECK_ERRORS, _err_key(err))
-        return {it[0] for it in items}
-    mid = len(items) // 2
-    return _bisect_bad(items[:mid], bid) | _bisect_bad(items[mid:], bid)
-
-def _probe_singbox():
-    try:
-        r = subprocess.run([SINGBOX_BIN, "version"], capture_output=True, timeout=15)
-        if r.returncode == 0:
-            first = r.stdout.decode("utf-8", "ignore").splitlines()
-            print(f"🧰 Ядро: {first[0] if first else 'OK'} ({SINGBOX_BIN})")
-            return True
-    except Exception as e:
-        print(f"❌ Ядро недоступно: {SINGBOX_BIN} ({type(e).__name__})")
-    return False
-
-def _delay_test(base, tag):
-    try:
-        r = _api_session().get(f"{base}/proxies/{quote(tag, safe='')}/delay",
-                               params={"url": TEST_URL, "timeout": DELAY_TIMEOUT_MS},
-                               timeout=DELAY_TIMEOUT_MS / 1000.0 + 4)
-        if r.status_code == 200:
-            d = r.json().get("delay")
-            if isinstance(d, (int, float)) and d > 0:
-                return int(d)
-    except Exception:
-        pass
-    return None
-
-def run_batch(chunk, batch_id):
-    results, retry = {}, []
-    port = API_BASE_PORT + (batch_id % 200)
-    cfg_path = os.path.join(TMP_DIR, f"batch_{batch_id % 4}.json")
-    err_path = os.path.join(TMP_DIR, f"batch_{batch_id % 4}.err")
-    conf = {
-        "log": {"level": "error"},
-        "experimental": {"clash_api": {"external_controller": f"127.0.0.1:{port}"}},
-        "outbounds": [ob for _, _, ob in chunk],
-    }
-    with open(cfg_path, "w") as f:
-        json.dump(conf, f)
-    ok, err = _check_conf(cfg_path)
-    if not ok:
-        bad = _bisect_bad(chunk, batch_id)
-        if len(bad) > len(chunk) // 2:
-            _note_err(SB_RUN_ERRORS, f"check нестабилен: отбраковано {len(bad)}/{len(chunk)} — батч целиком в fallback")
-            return results, [it[0] for it in chunk]
-        if bad:
-            print(f"   ⚠️ батч {batch_id}: check отклонил {len(bad)} outbound(ов) — отброшены")
-        chunk = [it for it in chunk if it[0] not in bad]
-        if not chunk:
-            return results, retry
-        conf["outbounds"] = [ob for _, _, ob in chunk]
-        with open(cfg_path, "w") as f:
-            json.dump(conf, f)
-    proc = None
-    try:
-        for attempt in range(2):
-            conf["experimental"]["clash_api"]["external_controller"] = f"127.0.0.1:{port}"
-            with open(cfg_path, "w") as f:
-                json.dump(conf, f)
-            with open(err_path, "wb") as errf:
-                proc = subprocess.Popen([SINGBOX_BIN, "run", "-c", cfg_path],
-                                        stdout=subprocess.DEVNULL, stderr=errf)
-            if _wait_api(port, proc):
-                break
-            tail = open(err_path, "r", errors="ignore").read()
-            if proc.poll() is None:
-                try:
-                    proc.kill(); proc.wait(timeout=3)
-                except Exception:
-                    pass
-            if "address already in use" in tail and attempt == 0:
-                port += 1
-                continue
-            _note_err(SB_RUN_ERRORS, _err_key(tail))
-            return results, [it[0] for it in chunk]
-        base = f"http://127.0.0.1:{port}"
-        with concurrent.futures.ThreadPoolExecutor(max_workers=TEST_CONCURRENCY) as ex:
-            futs = {ex.submit(_delay_test, base, f"c{idx}"): idx for idx, _, _ in chunk}
-            for fut in concurrent.futures.as_completed(futs):
-                d = fut.result()
-                if d is not None:
-                    results[futs[fut]] = d
-        if proc.poll() is not None:
-            tail = open(err_path, "r", errors="ignore").read()
-            _note_err(SB_RUN_ERRORS, _err_key(tail) if tail else "core умер посреди батча")
-            retry = [idx for idx, _, _ in chunk if idx not in results]
-        return results, retry
-    except Exception as e:
-        _note_err(SB_HTTP_ERRORS, f"{type(e).__name__}")
-        return results, [idx for idx, _, _ in chunk if idx not in results]
-    finally:
-        if proc is not None and proc.poll() is None:
-            try:
-                proc.kill(); proc.wait(timeout=3)
-            except Exception:
-                pass
-        for pth in (cfg_path, err_path):
-            try:
-                os.remove(pth)
-            except Exception:
-                pass
-
-def check_via_singbox(args):
-    idx, cfg = args
-    outbound = sb_config(cfg['raw'])
-    if not outbound:
-        scheme = cfg['raw'].split('://')[0] if '://' in cfg['raw'] else 'unknown'
-        _note_err(SB_GEN_ERRORS, scheme)
-        return None, None
-    port = SOCKS_BASE_PORT + (idx % 500)
-    cfg_path = os.path.join(TMP_DIR, f"s{idx}.json")
-    err_path = os.path.join(TMP_DIR, f"s{idx}.err")
-    full = {
-        "log": {"level": "error"},
-        "inbounds": [{"type": "socks", "listen": "127.0.0.1", "listen_port": port}],
-        "outbounds": [outbound],
-    }
-    proc = None
-    try:
-        with open(cfg_path, "w") as f:
-            json.dump(full, f)
-        try:
-            check = subprocess.run([SINGBOX_BIN, "check", "-c", cfg_path],
-                                   capture_output=True, timeout=10)
-            if check.returncode != 0:
-                lines = [l for l in check.stderr.decode("utf-8", "ignore").strip().splitlines() if l.strip()]
-                _note_err(SB_CHECK_ERRORS, lines[-1] if lines else "unknown")
-                return None, None
-        except subprocess.TimeoutExpired:
-            _note_err(SB_CHECK_ERRORS, "check timeout >10s")
-            return None, None
-        with open(err_path, "wb") as errf:
-            proc = subprocess.Popen([SINGBOX_BIN, "run", "-c", cfg_path],
-                                    stdout=subprocess.DEVNULL, stderr=errf)
-        ready = False
-        for _ in range(30):
-            time.sleep(0.1)
-            try:
-                with socket.create_connection(("127.0.0.1", port), timeout=0.3):
-                    ready = True; break
-            except Exception:
-                if proc.poll() is not None:
-                    break
-                continue
-        if not ready:
-            try:
-                tail = open(err_path, "r", encoding="utf-8", errors="ignore").read().strip().splitlines()
-                msg = re.sub(r"\d+", "N", tail[-1])[:200] if tail else "процесс умер без stderr"
-            except Exception:
-                msg = "не поднялся за 3с"
-            _note_err(SB_RUN_ERRORS, msg)
-            return None, None
-        start = time.time()
-        resp = requests.get(TEST_URL, timeout=PING_TIMEOUT,
-                            proxies={"http": f"socks5h://127.0.0.1:{port}",
-                                     "https": f"socks5h://127.0.0.1:{port}"},
-                            headers={"User-Agent": "Mozilla/5.0"})
-        ping = int((time.time() - start) * 1000)
-        if resp.status_code != 204:
-            _note_err(SB_HTTP_ERRORS, f"HTTP {resp.status_code}")
-            return None, None
-        return cfg, ping
-    except Exception as e:
-        _note_err(SB_HTTP_ERRORS, f"{type(e).__name__}")
-        return None, None
-    finally:
-        if proc is not None:
-            try:
-                proc.kill(); proc.wait(timeout=3)
-            except Exception:
-                pass
-        for pth in (cfg_path, err_path):
-            try: os.remove(pth)
-            except Exception: pass
-
 def run_subscription(sources, remote_name, label):
-    global _FLAGS, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, SB_HTTP_ERRORS
+    global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, SB_HTTP_ERRORS
     _FLAGS = {}
+    _ASN = {}
     SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, SB_HTTP_ERRORS = {}, {}, {}, {}
     t0 = time.time()
     print(f"\n═══ {label} → {remote_name} ═══")
-    print(f"⚙️  sing-box-extended: батчи по {BATCH_SIZE} outbound | {TEST_CONCURRENCY} параллельных тестов | Таймаут: {DELAY_TIMEOUT_MS}мс | URL: {TEST_URL}")
+    print(f"⚙️  batch={BATCH_SIZE} | concurrency={DELAY_CONCURRENCY} | timeout={DELAY_TIMEOUT_MS}ms | URL={TEST_URL}")
     all_configs = []
     for src_label, url in sources:
         if src_label == "Downloader" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
@@ -1117,37 +1096,9 @@ def run_subscription(sources, remote_name, label):
     if before > len(all_configs):
         print(f"♻️  Дедупликация: {before} → {len(all_configs)} (убрано {before - len(all_configs)})")
     load_flags_batch(list({c['host'] for c in all_configs}))
-    print(f"\n🔥 sing-box-extended проверка (GET {TEST_URL}) — батчи по {BATCH_SIZE}, {TEST_CONCURRENCY} потоков...")
-    candidates = []
-    for idx, cfg in enumerate(all_configs):
-        ob = sb_config(cfg['raw'])
-        if ob:
-            ob['tag'] = f"c{idx}"
-            candidates.append((idx, cfg, ob))
-        else:
-            scheme = cfg['raw'].split('://')[0] if '://' in cfg['raw'] else 'unknown'
-            _note_err(SB_GEN_ERRORS, scheme)
-    print(f"⚙️  Сгенерировано outbound: {len(candidates)}/{len(all_configs)}")
-    working = []
-    tb = time.time()
-    done = 0
-    for b, s in enumerate(range(0, len(candidates), BATCH_SIZE)):
-        chunk = candidates[s:s + BATCH_SIZE]
-        res, retry = run_batch(chunk, b)
-        cmap = {idx: cfg for idx, cfg, _ in chunk}
-        for idx, d in res.items():
-            working.append((cmap[idx], d))
-        if retry:
-            print(f"   ♻️  fallback одиночной проверки: {len(retry)} конфигов")
-            with concurrent.futures.ThreadPoolExecutor(max_workers=XRAY_WORKERS) as ex:
-                for cfg, ping in ex.map(check_via_singbox, [(i, all_configs[i]) for i in retry]):
-                    if cfg and ping is not None:
-                        working.append((cfg, ping))
-        done += len(chunk)
-        elapsed = time.time() - tb
-        speed = done / elapsed if elapsed > 0 else 0
-        eta = (len(candidates) - done) / speed if speed > 0 else 0
-        print(f"   {done}/{len(candidates)} | рабочих: {len(working)} | {speed:.1f}/с | ETA {eta:.0f}с")
+    print(f"\n🔥 batch-проверка через Clash API...")
+    results = check_via_singbox_batch(all_configs)
+    working = results
     print(f"\n🔥 Рабочих через прокси: {len(working)}")
     if SB_GEN_ERRORS:
         print("🧹 Не построен outbound: " + ", ".join(f"{k} ×{v}" for k, v in sorted(SB_GEN_ERRORS.items(), key=lambda kv: -kv[1])[:8]))
@@ -1164,12 +1115,14 @@ def run_subscription(sources, remote_name, label):
     if not working:
         print("⚠️ Ничего не прошло проверку"); return
     print(f"\n🛡️  Фильтр по ASN (ТСПУ-блокировки)...")
-    uniq_hosts = sorted({c['host'] for c, _ in working if c['host']})
-    load_asn_batch(uniq_hosts)
-    filtered, asn_skipped = [], 0
+    load_asn_batch(list({c['host'] for c, _ in working}))
+    filtered = []
+    asn_skipped = 0
     for cfg, ping in working:
-        if _ASN.get(cfg['host'], "") in BLOCKED_ASNS:
-            asn_skipped += 1; continue
+        asn = _ASN.get(cfg['host'], "")
+        if asn in BLOCKED_ASNS:
+            asn_skipped += 1
+            continue
         filtered.append((cfg, ping))
     print(f"🚫 Убрано {asn_skipped} конфигов (Cloudflare/Amazon/Google/Microsoft)")
     print(f"✅ Осталось: {len(filtered)}")
@@ -1195,12 +1148,12 @@ def run_subscription(sources, remote_name, label):
 
 if __name__ == "__main__":
     os.makedirs(TMP_DIR, exist_ok=True)
-    if socks is None:
-        print("⚠️ PySocks не установлен (pip install pysocks) — SOCKS-проверка работать не будет")
-    if not _probe_singbox():
-        print("❌ sing-box-extended не найден или не запускается — проверка невозможна")
-        sys.exit(1)
-    print("🚀 Запуск парсера с sing-box-extended проверкой...")
+    print("🚀 Запуск парсера с sing-box-extended (batch + Clash API)...")
+    if not os.path.exists(SINGBOX_BIN):
+        print(f"❌ Бинарник не найден: {SINGBOX_BIN}")
+        raise SystemExit(1)
+    print(f"🌍 GeoLite2: {GEOIP_DB}")
+    print(f"🌐 DBIP ASN: {DBIP_DB}")
     run_subscription(BLACK_SOURCES, "Cool-Black.txt", "⚫ ЧЁРНАЯ")
     run_subscription(WHITE_SOURCES, "Cool-White.txt", "⚪ БЕЛАЯ")
     if _STATS_BL and _STATS_WL:
