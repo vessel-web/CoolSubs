@@ -25,7 +25,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install deps
-        run: pip install requests pyyaml geoip2
+        run: pip install requests pyyaml geoip2 aiohttp
 
       - name: Build sing-box-extended
         run: |
