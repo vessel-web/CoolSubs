@@ -28,26 +28,47 @@ jobs:
         run: pip install requests pyyaml geoip2
 
       - name: Install sing-box-extended
-        run: |
-          mkdir -p ~/singbox
-          cd ~/singbox
-          RELEASE_JSON=$(curl -sL https://api.github.com/repos/shtorm-7/sing-box-extended/releases/latest)
-          ASSET_URL=$(echo "$RELEASE_JSON" | python3 -c "import sys, json; d=json.load(sys.stdin); print(next((a['browser_download_url'] for a in d['assets'] if 'linux-amd64' in a['name'] and a['name'].endswith('.tar.gz')), ''))")
-          if [ -z "$ASSET_URL" ]; then
-            echo "Ассет linux-amd64.tar.gz не найден. Доступные файлы:"
-            echo "$RELEASE_JSON" | python3 -c "import sys, json; d=json.load(sys.stdin); [print(a['name']) for a in d['assets']]"
-            exit 1
-          fi
-          echo "Скачиваем: $ASSET_URL"
-          curl -sL -o sb.tar.gz "$ASSET_URL"
-          tar -xzf sb.tar.gz
-          BIN_PATH=$(find . -maxdepth 2 -type f -name 'sing-box-extended' | head -n 1)
-          if [ -z "$BIN_PATH" ]; then
-            BIN_PATH=$(find . -maxdepth 2 -type f -name 'sing-box' | head -n 1)
-          fi
-          mv "$BIN_PATH" ./sing-box-extended
-          chmod +x ./sing-box-extended
-          ./sing-box-extended version
+  run: |
+    mkdir -p ~/singbox
+    cd ~/singbox
+    API_URL="https://api.github.com/repos/shtorm-7/sing-box-extended/releases/latest"
+    HTTP_CODE=$(curl -sL -o release.json -w "%{http_code}" "$API_URL")
+    if [ "$HTTP_CODE" != "200" ]; then
+      echo "GitHub API вернул код $HTTP_CODE. Ответ:"
+      cat release.json
+      exit 1
+    fi
+    ASSET_URL=$(python3 -c "
+    import json
+    d = json.load(open('release.json'))
+    if 'assets' not in d:
+        print('NO_ASSETS')
+    else:
+        for a in d['assets']:
+            if a['name'].endswith('amd64.deb'):
+                print(a['browser_download_url'])
+                break
+    ")
+    if [ "$ASSET_URL" = "NO_ASSETS" ] || [ -z "$ASSET_URL" ]; then
+      echo "Ассет amd64.deb не найден. Доступные файлы:"
+      python3 -c "
+    import json
+    d = json.load(open('release.json'))
+    for a in d.get('assets', []):
+        print(a['name'])
+    "
+      exit 1
+    fi
+    echo "Скачиваем: $ASSET_URL"
+    curl -sL -o sb.deb "$ASSET_URL"
+    dpkg-deb -x sb.deb extracted
+    BIN_PATH=$(find extracted -type f -name 'sing-box' | head -n 1)
+    if [ -z "$BIN_PATH" ]; then
+      BIN_PATH=$(find extracted -type f -name 'sing-box-extended' | head -n 1)
+    fi
+    mv "$BIN_PATH" ./sing-box-extended
+    chmod +x ./sing-box-extended
+    ./sing-box-extended version
 
       - name: Run parser
         run: python scripts/parser.py
