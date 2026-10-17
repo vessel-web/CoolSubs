@@ -2,8 +2,13 @@
 # -*- coding: utf-8 -*-
 import urllib.request, urllib.error, base64, json, socket, ssl, os, re, gzip, time, random, glob
 import subprocess, concurrent.futures, requests, yaml
-from urllib.parse import urlparse, quote
+from urllib.parse import urlparse, quote, parse_qs, unquote
 from collections import Counter
+
+try:
+    import socks
+except ImportError:
+    socks = None
 
 BLACK_SOURCES = [
     ("Gidroksi","https://gidroksi.fun/black-list"),
@@ -96,6 +101,11 @@ PING_TIMEOUT = 5
 XRAY_WORKERS = 20
 BLOCKED_ASNS = {"13335","14789","132892","202623","203898","209242","395747","400095","402542","16509","396982","8075","20860"}
 FINGERPRINTS = ["firefox","safari","ios","android","edge","random","randomized"]
+UTLS_FP = {"chrome","firefox","safari","ios","android","edge","360","qq","random","randomized"}
+VMESS_SECURITY = {"auto","none","zero","aes-128-gcm","chacha20-poly1305"}
+TUIC_CC = {"cubic","new_reno","bbr"}
+TUIC_URM = {"native","quic"}
+SS_PLUGINS = {"obfs-local":"obfs-local","simple-obfs":"obfs-local","v2ray-plugin":"v2ray-plugin"}
 
 def _find_geoip_db():
     here = os.path.dirname(os.path.abspath(__file__))
@@ -113,6 +123,10 @@ _FLAGS = {}
 _STATS_BL = {}
 _STATS_WL = {}
 _RESOLVE_CACHE = {}
+SB_GEN_ERRORS = {}
+SB_CHECK_ERRORS = {}
+SB_RUN_ERRORS = {}
+SB_HTTP_ERRORS = {}
 
 def random_fp():
     return random.choice(FINGERPRINTS)
@@ -317,55 +331,133 @@ def to_clash_proxy(cfg, flag, country, idx):
     try:
         if uri.startswith('vless://'):
             p = urlparse(uri)
-            q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
+            q = {k: v[0] for k, v in parse_qs(p.query).items()}
+            security = q.get("security") or ("reality" if q.get("pbk") else "")
             proxy = {"name": name, "type": "vless", "server": p.hostname, "port": p.port or 443,
-                     "uuid": p.username, "udp": True, "tls": q.get("security") in ("tls", "reality"),
+                     "uuid": unquote(p.username or ""), "udp": True, "tls": security in ("tls", "reality"),
                      "network": q.get("type", "tcp"), "skip-cert-verify": q.get("allowInsecure", "0") == "1"}
-            if q.get("flow"): proxy["flow"] = q["flow"]
-            if q.get("security") == "reality":
+            if not proxy["uuid"]:
+                return None
+            if q.get("flow") == "xtls-rprx-vision" and q.get("type", "tcp") in ("tcp", "none", ""):
+                proxy["flow"] = q["flow"]
+            if security == "reality":
+                if not q.get("pbk"):
+                    return None
                 proxy["reality-opts"] = {"public-key": q.get("pbk", ""), "short-id": q.get("sid", "")}
-                proxy["servername"] = q.get("sni", ""); proxy["client-fingerprint"] = random_fp()
-            elif q.get("security") == "tls":
-                proxy["servername"] = q.get("sni", p.hostname)
-            if q.get("type") == "ws":
-                proxy["ws-opts"] = {"path": q.get("path", "/"), "headers": {"Host": q.get("host", "")}}
-            elif q.get("type") == "grpc":
+                proxy["servername"] = q.get("sni", "") or p.hostname; proxy["client-fingerprint"] = random_fp()
+            elif security == "tls":
+                proxy["servername"] = q.get("sni", "") or p.hostname
+            net = q.get("type", "tcp")
+            if net == "ws":
+                proxy["ws-opts"] = {"path": q.get("path", "/")}
+                if q.get("host"):
+                    proxy["ws-opts"]["headers"] = {"Host": q["host"]}
+            elif net == "grpc":
                 proxy["grpc-opts"] = {"grpc-service-name": q.get("serviceName", "")}
+            elif net == "httpupgrade":
+                proxy["httpupgrade-opts"] = {"path": q.get("path", "/"), "host": q.get("host", "") or p.hostname}
             return proxy
         if uri.startswith('vmess://'):
             raw = base64.b64decode(uri[8:] + '=' * (-len(uri[8:]) % 4)).decode('utf-8')
             v = json.loads(raw)
-            proxy = {"name": name, "type": "vmess", "server": v.get("add"), "port": int(v.get("port", 443)),
-                     "uuid": v.get("id"), "alterId": int(v.get("aid", 0)), "cipher": v.get("scy", "auto"),
+            try:
+                aid = int(v.get("aid") or 0)
+            except Exception:
+                aid = 0
+            try:
+                vmport = int(v.get("port") or 443)
+            except Exception:
+                return None
+            if vmport <= 0:
+                return None
+            proxy = {"name": name, "type": "vmess", "server": v.get("add"), "port": vmport,
+                     "uuid": v.get("id"), "alterId": aid, "cipher": v.get("scy") or "auto",
                      "udp": True, "tls": v.get("tls") == "tls", "network": v.get("net", "tcp")}
-            if v.get("sni"): proxy["servername"] = v["sni"]
+            if v.get("sni") or v.get("host"):
+                proxy["servername"] = v.get("sni") or v.get("host")
             if v.get("net") == "ws":
-                proxy["ws-opts"] = {"path": v.get("path", "/"), "headers": {"Host": v.get("host", "")}}
+                proxy["ws-opts"] = {"path": v.get("path", "/")}
+                if v.get("host"):
+                    proxy["ws-opts"]["headers"] = {"Host": v["host"]}
+            elif v.get("net") == "grpc":
+                proxy["grpc-opts"] = {"grpc-service-name": v.get("path", "")}
+            elif v.get("net") == "tcp" and v.get("type") == "http":
+                proxy["network"] = "http"
+                proxy["http-opts"] = {"path": [v.get("path", "/")], "headers": {"Host": [v.get("host") or v.get("add")]}}
             return proxy
         if uri.startswith('trojan://'):
             p = urlparse(uri)
-            q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
-            return {"name": name, "type": "trojan", "server": p.hostname, "port": p.port or 443,
-                    "password": p.username, "sni": q.get("sni", p.hostname), "udp": True, "skip-cert-verify": False}
+            q = {k: v[0] for k, v in parse_qs(p.query).items()}
+            if not p.username:
+                return None
+            proxy = {"name": name, "type": "trojan", "server": p.hostname, "port": p.port or 443,
+                     "password": unquote(p.username), "sni": q.get("sni", "") or p.hostname,
+                     "udp": True, "skip-cert-verify": q.get("allowInsecure", "0") == "1"}
+            net = q.get("type", "tcp")
+            if net == "ws":
+                proxy["network"] = "ws"
+                proxy["ws-opts"] = {"path": q.get("path", "/")}
+                if q.get("host"):
+                    proxy["ws-opts"]["headers"] = {"Host": q["host"]}
+            elif net == "grpc":
+                proxy["network"] = "grpc"
+                proxy["grpc-opts"] = {"grpc-service-name": q.get("serviceName", "")}
+            return proxy
         if uri.startswith('ss://'):
-            raw = uri[5:].split("#")[0]
-            if "@" in raw:
-                userinfo, hostport = raw.rsplit("@", 1)
-                try: userinfo = base64.b64decode(userinfo + '=' * (-len(userinfo) % 4)).decode()
-                except Exception: pass
+            u = uri[5:].split("#", 1)[0]
+            if "?" in u:
+                base, qs = u.split("?", 1)
+                q = {k: v[0] for k, v in parse_qs(qs).items()}
             else:
-                decoded = base64.b64decode(raw + '=' * (-len(raw) % 4)).decode()
+                base, q = u, {}
+            if "@" in base:
+                userinfo, hostport = base.rsplit("@", 1)
+                userinfo = unquote(userinfo)
+                if ":" not in userinfo:
+                    try: userinfo = base64.b64decode(userinfo + '=' * (-len(userinfo) % 4)).decode()
+                    except Exception: return None
+            else:
+                try:
+                    decoded = base64.b64decode(base + '=' * (-len(base) % 4)).decode()
+                except Exception:
+                    return None
+                if "@" not in decoded:
+                    return None
                 userinfo, hostport = decoded.rsplit("@", 1)
+            if ":" not in userinfo:
+                return None
             method, password = userinfo.split(":", 1)
-            host, port = hostport.split(":")
-            return {"name": name, "type": "ss", "server": host, "port": int(port.split("/")[0]),
-                    "cipher": method, "password": password, "udp": True}
+            hp = urlparse("//" + hostport)
+            if not hp.hostname:
+                return None
+            proxy = {"name": name, "type": "ss", "server": hp.hostname, "port": hp.port or 8388,
+                     "cipher": method.strip(), "password": unquote(password), "udp": True}
+            plugin = q.get("plugin", "")
+            if plugin:
+                parts = plugin.split(";", 1)
+                popts = parts[1] if len(parts) > 1 else ""
+                if parts[0].strip() in ("obfs-local", "simple-obfs"):
+                    opts = dict(x.split("=", 1) for x in popts.split(";") if "=" in x)
+                    proxy["plugin"] = "obfs"
+                    proxy["plugin-opts"] = {"mode": opts.get("obfs", "http")}
+                    if opts.get("obfs-host"):
+                        proxy["plugin-opts"]["host"] = opts["obfs-host"]
+                else:
+                    return None
+            return proxy
         if uri.startswith(('hysteria2://', 'hy2://')):
             p = urlparse(uri)
-            q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
-            return {"name": name, "type": "hysteria2", "server": p.hostname, "port": p.port or 443,
-                    "password": p.username, "sni": q.get("sni", p.hostname),
-                    "skip-cert-verify": q.get("insecure", "0") == "1"}
+            q = {k: v[0] for k, v in parse_qs(p.query).items()}
+            password = unquote(p.username or "") or q.get("auth", "")
+            if not password:
+                return None
+            proxy = {"name": name, "type": "hysteria2", "server": p.hostname, "port": p.port or 443,
+                     "password": password, "sni": q.get("sni", "") or p.hostname,
+                     "skip-cert-verify": q.get("insecure", q.get("allowInsecure", "0")) == "1"}
+            if q.get("obfs") == "salamander":
+                proxy["obfs"] = "salamander"
+                proxy["obfs-password"] = q.get("obfs-password", "")
+            return proxy
     except Exception:
         return None
     return None
@@ -454,67 +546,213 @@ def update_changelog(stats_bl, stats_wl, changelog_path="CHANGELOG.md"):
         f.write(new)
     print(f"💾 {changelog_path}: BL {bl}, WL {wl}")
 
-def sb_vless(uri):
+def _q(uri):
     p = urlparse(uri)
-    q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
+    return p, {k: v[0] for k, v in parse_qs(p.query, keep_blank_values=True).items()}
+
+def sb_vless(uri):
+    p, q = _q(uri)
+    if not p.hostname:
+        return None
+    uuid = unquote(p.username or "")
+    if not uuid:
+        return None
+    security = q.get("security") or ("reality" if q.get("pbk") else "")
     out = {"type": "vless", "server": p.hostname, "server_port": p.port or 443,
-           "uuid": p.username, "packet_encoding": "xudp"}
-    if q.get("flow"): out["flow"] = q["flow"]
-    if q.get("security") == "reality":
-        out["tls"] = {"enabled": True, "server_name": q.get("sni", ""),
-                      "reality": {"enabled": True, "public_key": q.get("pbk", ""),
-                                  "short_id": q.get("sid", "")},
-                      "utls": {"enabled": True, "fingerprint": random_fp()}}
-    elif q.get("security") == "tls":
-        out["tls"] = {"enabled": True, "server_name": q.get("sni", p.hostname),
+           "uuid": uuid, "packet_encoding": "xudp"}
+    if security == "reality":
+        pbk = q.get("pbk", "")
+        if not pbk:
+            return None
+        out["tls"] = {"enabled": True, "server_name": q.get("sni") or p.hostname,
+                      "reality": {"enabled": True, "public_key": pbk, "short_id": q.get("sid", "")},
+                      "utls": {"enabled": True, "fingerprint": q.get("fp") if q.get("fp") in UTLS_FP else random_fp()}}
+    elif security == "tls":
+        out["tls"] = {"enabled": True, "server_name": q.get("sni") or p.hostname,
                       "insecure": q.get("allowInsecure", "0") == "1"}
-    if q.get("type") == "ws":
-        out["transport"] = {"type": "ws", "path": q.get("path", "/"),
-                            "headers": {"Host": q.get("host", "")}}
-    elif q.get("type") == "grpc":
+        if q.get("alpn"):
+            out["tls"]["alpn"] = [a for a in q["alpn"].split(",") if a]
+        if q.get("fp") in UTLS_FP:
+            out["tls"]["utls"] = {"enabled": True, "fingerprint": q["fp"]}
+    net = q.get("type", "tcp")
+    if net == "ws":
+        tr = {"type": "ws", "path": q.get("path") or "/"}
+        if q.get("host"):
+            tr["headers"] = {"Host": q["host"]}
+        out["transport"] = tr
+    elif net == "grpc":
         out["transport"] = {"type": "grpc", "service_name": q.get("serviceName", "")}
+    elif net == "httpupgrade":
+        out["transport"] = {"type": "httpupgrade", "host": q.get("host") or p.hostname,
+                            "path": q.get("path") or "/"}
+    elif net in ("xhttp", "splithttp"):
+        out["transport"] = {"type": "xhttp", "host": q.get("host") or p.hostname,
+                            "path": q.get("path") or "/", "mode": q.get("mode", "auto"),
+                            "x_padding_bytes": "100-2000"}
+    elif net in ("h2", "h2c", "http"):
+        out["transport"] = {"type": "http", "host": [q.get("host") or p.hostname],
+                            "path": q.get("path") or "/"}
+    flow = q.get("flow", "")
+    if flow == "xtls-rprx-vision" and "transport" not in out and out.get("tls"):
+        out["flow"] = flow
     return out
 
 def sb_vmess(uri):
-    raw = base64.b64decode(uri[8:] + '=' * (-len(uri[8:]) % 4)).decode()
+    raw = base64.b64decode(uri[8:] + '=' * (-len(uri[8:]) % 4)).decode("utf-8", errors="ignore")
     v = json.loads(raw)
-    out = {"type": "vmess", "server": v.get("add"), "server_port": int(v.get("port", 443)),
-           "uuid": v.get("id"), "security": v.get("scy", "auto"), "alter_id": int(v.get("aid", 0))}
-    if v.get("tls") == "tls":
-        out["tls"] = {"enabled": True, "server_name": v.get("sni") or v.get("host", "")}
-    if v.get("net") == "ws":
-        out["transport"] = {"type": "ws", "path": v.get("path", "/"),
-                            "headers": {"Host": v.get("host", "")}}
+    if not v.get("add") or not v.get("id"):
+        return None
+    try:
+        port = int(v.get("port") or 443)
+    except Exception:
+        return None
+    scy = (v.get("scy") or "auto").strip().lower()
+    if scy not in VMESS_SECURITY:
+        return None
+    try:
+        aid = int(v.get("aid") or 0)
+    except Exception:
+        aid = 0
+    out = {"type": "vmess", "server": v["add"], "server_port": port,
+           "uuid": v["id"], "security": scy, "alter_id": aid}
+    if v.get("tls") in ("tls", "reality"):
+        out["tls"] = {"enabled": True, "server_name": v.get("sni") or v.get("host") or v["add"],
+                      "insecure": v.get("allowInsecure") in (True, "1", "true")}
+        if v.get("alpn"):
+            out["tls"]["alpn"] = [a for a in str(v["alpn"]).split(",") if a]
+        if v.get("fp") in UTLS_FP:
+            out["tls"]["utls"] = {"enabled": True, "fingerprint": v["fp"]}
+    net = (v.get("net") or "tcp").lower()
+    if net == "ws":
+        tr = {"type": "ws", "path": v.get("path") or "/"}
+        if v.get("host"):
+            tr["headers"] = {"Host": v["host"]}
+        out["transport"] = tr
+    elif net == "grpc":
+        out["transport"] = {"type": "grpc", "service_name": v.get("path") or ""}
+    elif net == "httpupgrade":
+        out["transport"] = {"type": "httpupgrade", "host": v.get("host") or v["add"],
+                            "path": v.get("path") or "/"}
+    elif net in ("h2", "h2c", "http") or (net == "tcp" and v.get("type") == "http"):
+        out["transport"] = {"type": "http", "host": [v.get("host") or v["add"]],
+                            "path": v.get("path") or "/"}
     return out
 
 def sb_trojan(uri):
-    p = urlparse(uri)
-    q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
+    p, q = _q(uri)
+    if not p.hostname:
+        return None
+    password = unquote(p.username or "")
+    if not password:
+        return None
+    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname,
+               "insecure": q.get("allowInsecure", "0") == "1"}
+    if q.get("alpn"):
+        tls_cfg["alpn"] = [a for a in q["alpn"].split(",") if a]
+    if q.get("fp") in UTLS_FP:
+        tls_cfg["utls"] = {"enabled": True, "fingerprint": q["fp"]}
     out = {"type": "trojan", "server": p.hostname, "server_port": p.port or 443,
-           "password": p.username}
-    out["tls"] = {"enabled": True, "server_name": q.get("sni", p.hostname)}
+           "password": password, "tls": tls_cfg}
+    net = q.get("type", "tcp")
+    if net == "ws":
+        tr = {"type": "ws", "path": q.get("path") or "/"}
+        if q.get("host"):
+            tr["headers"] = {"Host": q["host"]}
+        out["transport"] = tr
+    elif net == "grpc":
+        out["transport"] = {"type": "grpc", "service_name": q.get("serviceName", "")}
+    elif net == "httpupgrade":
+        out["transport"] = {"type": "httpupgrade", "host": q.get("host") or p.hostname,
+                            "path": q.get("path") or "/"}
     return out
 
 def sb_ss(uri):
-    raw = uri[5:].split("#")[0]
-    if "@" in raw:
-        userinfo, hostport = raw.rsplit("@", 1)
-        try: userinfo = base64.b64decode(userinfo + '=' * (-len(userinfo) % 4)).decode()
-        except Exception: pass
+    u = uri[5:].split("#", 1)[0]
+    if "?" in u:
+        base, qs = u.split("?", 1)
+        q = {k: v[0] for k, v in parse_qs(qs, keep_blank_values=True).items()}
     else:
-        decoded = base64.b64decode(raw + '=' * (-len(raw) % 4)).decode()
+        base, q = u, {}
+    if "@" in base:
+        userinfo, hostport = base.rsplit("@", 1)
+        userinfo = unquote(userinfo)
+        if ":" not in userinfo:
+            try:
+                userinfo = base64.b64decode(userinfo + '=' * (-len(userinfo) % 4)).decode("utf-8", errors="ignore")
+            except Exception:
+                return None
+    else:
+        try:
+            decoded = base64.b64decode(base + '=' * (-len(base) % 4)).decode("utf-8", errors="ignore")
+        except Exception:
+            return None
+        if "@" not in decoded:
+            return None
         userinfo, hostport = decoded.rsplit("@", 1)
+    if ":" not in userinfo:
+        return None
     method, password = userinfo.split(":", 1)
-    host, port = hostport.split(":")
-    return {"type": "shadowsocks", "server": host, "server_port": int(port.split("/")[0]),
-            "method": method, "password": password}
+    method = method.strip().lower()
+    if not method:
+        return None
+    hp = urlparse("//" + hostport)
+    if not hp.hostname:
+        return None
+    try:
+        port = hp.port or 8388
+    except ValueError:
+        return None
+    out = {"type": "shadowsocks", "server": hp.hostname, "server_port": port,
+           "method": method, "password": unquote(password)}
+    plugin = q.get("plugin", "")
+    if plugin:
+        parts = plugin.split(";", 1)
+        pname = SS_PLUGINS.get(parts[0].strip())
+        if not pname:
+            return None
+        out["plugin"] = pname
+        if len(parts) > 1 and parts[1]:
+            out["plugin_opts"] = parts[1]
+    return out
 
 def sb_hysteria2(uri):
-    p = urlparse(uri)
-    q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
-    return {"type": "hysteria2", "server": p.hostname, "server_port": p.port or 443,
-            "password": p.username, "tls": {"enabled": True, "server_name": q.get("sni", p.hostname),
-            "insecure": q.get("insecure", "0") == "1"}}
+    p, q = _q(uri)
+    if not p.hostname:
+        return None
+    password = unquote(p.username or "") or q.get("auth", "")
+    if not password:
+        return None
+    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname,
+               "insecure": q.get("insecure", q.get("allowInsecure", "0")) == "1"}
+    if q.get("alpn"):
+        tls_cfg["alpn"] = [a for a in q["alpn"].split(",") if a]
+    out = {"type": "hysteria2", "server": p.hostname, "server_port": p.port or 443,
+           "password": password, "tls": tls_cfg}
+    if q.get("obfs") == "salamander":
+        out["obfs"] = {"type": "salamander", "password": q.get("obfs-password", "")}
+    return out
+
+def sb_tuic(uri):
+    p, q = _q(uri)
+    if not p.hostname:
+        return None
+    uid = unquote(p.username or "")
+    if not uid:
+        return None
+    pwd = unquote(p.password or "")
+    cc = q.get("congestion_control", "cubic")
+    if cc not in TUIC_CC:
+        cc = "cubic"
+    urm = q.get("udp_relay_mode", "native")
+    if urm not in TUIC_URM:
+        urm = "native"
+    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname,
+               "insecure": q.get("allow_insecure", q.get("allowInsecure", q.get("insecure", "0"))) == "1"}
+    alpn = q.get("alpn")
+    tls_cfg["alpn"] = [a for a in alpn.split(",") if a] if alpn else ["h3"]
+    return {"type": "tuic", "server": p.hostname, "server_port": p.port or 443,
+            "uuid": uid, "password": pwd, "congestion_control": cc, "udp_relay_mode": urm,
+            "tls": tls_cfg}
 
 def sb_config(uri):
     uri = uri.strip()
@@ -524,68 +762,91 @@ def sb_config(uri):
         if uri.startswith("trojan://"): return sb_trojan(uri)
         if uri.startswith("ss://"): return sb_ss(uri)
         if uri.startswith(("hysteria2://", "hy2://")): return sb_hysteria2(uri)
+        if uri.startswith("tuic://"): return sb_tuic(uri)
     except Exception:
         return None
     return None
+
+def _note_err(store, key):
+    store[key] = store.get(key, 0) + 1
 
 def check_via_singbox(args):
     idx, cfg = args
     outbound = sb_config(cfg['raw'])
     if not outbound:
+        scheme = cfg['raw'].split('://')[0] if '://' in cfg['raw'] else 'unknown'
+        _note_err(SB_GEN_ERRORS, scheme)
         return None, None
     port = SOCKS_BASE_PORT + (idx % 500)
     cfg_path = os.path.join(TMP_DIR, f"s{idx}.json")
+    err_path = os.path.join(TMP_DIR, f"s{idx}.err")
     full = {
         "log": {"level": "error"},
         "inbounds": [{"type": "socks", "listen": "127.0.0.1", "listen_port": port}],
         "outbounds": [outbound],
     }
+    proc = None
     try:
         with open(cfg_path, "w") as f:
             json.dump(full, f)
-        check = subprocess.run([SINGBOX_BIN, "check", "-c", cfg_path],
-                               capture_output=True, timeout=10)
-        if check.returncode != 0:
-            os.remove(cfg_path); return None, None
-    except Exception:
-        try: os.remove(cfg_path)
-        except Exception: pass
-        return None, None
-    proc = subprocess.Popen([SINGBOX_BIN, "run", "-c", cfg_path],
-                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    ready = False
-    for _ in range(30):
-        time.sleep(0.1)
         try:
-            with socket.create_connection(("127.0.0.1", port), timeout=0.3):
-                ready = True; break
-        except Exception:
-            continue
-    if not ready:
-        proc.kill()
-        try: os.remove(cfg_path)
-        except Exception: pass
-        return None, None
-    try:
+            check = subprocess.run([SINGBOX_BIN, "check", "-c", cfg_path],
+                                   capture_output=True, timeout=10)
+            if check.returncode != 0:
+                lines = [l for l in check.stderr.decode("utf-8", "ignore").strip().splitlines() if l.strip()]
+                _note_err(SB_CHECK_ERRORS, lines[-1] if lines else "unknown")
+                return None, None
+        except subprocess.TimeoutExpired:
+            _note_err(SB_CHECK_ERRORS, "check timeout >10s")
+            return None, None
+        with open(err_path, "wb") as errf:
+            proc = subprocess.Popen([SINGBOX_BIN, "run", "-c", cfg_path],
+                                    stdout=subprocess.DEVNULL, stderr=errf)
+        ready = False
+        for _ in range(30):
+            time.sleep(0.1)
+            try:
+                with socket.create_connection(("127.0.0.1", port), timeout=0.3):
+                    ready = True; break
+            except Exception:
+                if proc.poll() is not None:
+                    break
+                continue
+        if not ready:
+            try:
+                tail = open(err_path, "r", encoding="utf-8", errors="ignore").read().strip().splitlines()
+                msg = re.sub(r"\d+", "N", tail[-1])[:200] if tail else "процесс умер без stderr"
+            except Exception:
+                msg = "не поднялся за 3с"
+            _note_err(SB_RUN_ERRORS, msg)
+            return None, None
         start = time.time()
-        opener = urllib.request.build_opener(urllib.request.ProxyHandler({
-            "http": f"socks5://127.0.0.1:{port}", "https": f"socks5://127.0.0.1:{port}"}))
-        req = urllib.request.Request(TEST_URL, headers={"User-Agent": "Mozilla/5.0"})
-        resp = opener.open(req, timeout=PING_TIMEOUT)
+        resp = requests.get(TEST_URL, timeout=PING_TIMEOUT,
+                            proxies={"http": f"socks5h://127.0.0.1:{port}",
+                                     "https": f"socks5h://127.0.0.1:{port}"},
+                            headers={"User-Agent": "Mozilla/5.0"})
         ping = int((time.time() - start) * 1000)
-        proc.kill()
-        try: os.remove(cfg_path)
-        except Exception: pass
-        return (cfg, ping) if resp.status == 204 else (None, None)
-    except Exception:
-        proc.kill()
-        try: os.remove(cfg_path)
-        except Exception: pass
+        if resp.status_code != 204:
+            _note_err(SB_HTTP_ERRORS, f"HTTP {resp.status_code}")
+            return None, None
+        return cfg, ping
+    except Exception as e:
+        _note_err(SB_HTTP_ERRORS, f"{type(e).__name__}")
         return None, None
+    finally:
+        if proc is not None:
+            try:
+                proc.kill(); proc.wait(timeout=3)
+            except Exception:
+                pass
+        for pth in (cfg_path, err_path):
+            try: os.remove(pth)
+            except Exception: pass
 
 def run_subscription(sources, remote_name, label):
-    global _FLAGS, _STATS_BL, _STATS_WL
+    global _FLAGS, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, SB_HTTP_ERRORS
     _FLAGS = {}
+    SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, SB_HTTP_ERRORS = {}, {}, {}, {}
     t0 = time.time()
     print(f"\n═══ {label} → {remote_name} ═══")
     print(f"⚙️  sing-box-extended потоков: {XRAY_WORKERS} | Пинг-таймаут: {PING_TIMEOUT}s | URL: {TEST_URL}")
@@ -636,6 +897,18 @@ def run_subscription(sources, remote_name, label):
                 eta = (len(all_configs) - i - 1) / speed if speed > 0 else 0
                 print(f"   {i+1}/{len(all_configs)} | рабочих: {len(working)} | {speed:.1f}/с | ETA {eta:.0f}с")
     print(f"\n🔥 Рабочих через прокси: {len(working)}")
+    if SB_GEN_ERRORS:
+        print("🧹 Не построен outbound: " + ", ".join(f"{k} ×{v}" for k, v in sorted(SB_GEN_ERRORS.items(), key=lambda kv: -kv[1])[:8]))
+    if SB_CHECK_ERRORS:
+        print("🧹 sing-box check, топ ошибок:")
+        for msg, n in sorted(SB_CHECK_ERRORS.items(), key=lambda kv: -kv[1])[:10]:
+            print(f"   [{n}x] {msg}")
+    if SB_RUN_ERRORS:
+        for msg, n in sorted(SB_RUN_ERRORS.items(), key=lambda kv: -kv[1])[:5]:
+            print(f"   run [{n}x]: {msg}")
+    if SB_HTTP_ERRORS:
+        for msg, n in sorted(SB_HTTP_ERRORS.items(), key=lambda kv: -kv[1])[:5]:
+            print(f"   http [{n}x]: {msg}")
     if not working:
         print("⚠️ Ничего не прошло проверку"); return
     print(f"\n🛡️  Фильтр по ASN (ТСПУ-блокировки)...")
@@ -671,6 +944,8 @@ def run_subscription(sources, remote_name, label):
 
 if __name__ == "__main__":
     os.makedirs(TMP_DIR, exist_ok=True)
+    if socks is None:
+        print("⚠️ PySocks не установлен (pip install pysocks) — SOCKS-проверка работать не будет")
     print("🚀 Запуск парсера с sing-box-extended проверкой...")
     run_subscription(BLACK_SOURCES, "Cool-Black.txt", "⚫ ЧЁРНАЯ")
     run_subscription(WHITE_SOURCES, "Cool-White.txt", "⚪ БЕЛАЯ")
