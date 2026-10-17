@@ -88,8 +88,8 @@ COUNTRY_NAMES = {
     "ZM":"Zambia","ZW":"Zimbabwe",
 }
 
-XRAY_BIN = os.path.expanduser("~/xray/xray")
-TMP_DIR = "/tmp/xray_tmp"
+SINGBOX_BIN = os.path.expanduser("~/singbox/sing-box-extended")
+TMP_DIR = "/tmp/singbox_tmp"
 SOCKS_BASE_PORT = 20000
 TEST_URL = "https://www.gstatic.com/generate_204"
 PING_TIMEOUT = 5
@@ -260,7 +260,7 @@ def load_flags_batch(hosts):
     global _FLAGS
     _FLAGS = {}
     if not GEOIP_DB:
-        print("⚠️ GeoLite2-Country*.mmdb не найден (или <1МБ) — все будут 🌐")
+        print("⚠️ GeoLite2-Country*.mmdb не найден — все будут 🌐")
         return
     try:
         import geoip2.database
@@ -454,40 +454,48 @@ def update_changelog(stats_bl, stats_wl, changelog_path="CHANGELOG.md"):
         f.write(new)
     print(f"💾 {changelog_path}: BL {bl}, WL {wl}")
 
-def xray_vless(uri):
+def sb_vless(uri):
     p = urlparse(uri)
     q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
-    cfg = {"protocol": "vless", "settings": {"vnext": [{"address": p.hostname, "port": p.port or 443,
-            "users": [{"id": p.username, "encryption": q.get("encryption", "none"), "flow": q.get("flow", "")}]}]},
-            "streamSettings": {"network": q.get("type", "tcp"), "security": q.get("security", "none")}}
+    out = {"type": "vless", "server": p.hostname, "server_port": p.port or 443,
+           "uuid": p.username, "packet_encoding": "xudp"}
+    if q.get("flow"): out["flow"] = q["flow"]
     if q.get("security") == "reality":
-        cfg["streamSettings"]["realitySettings"] = {"serverName": q.get("sni", ""), "publicKey": q.get("pbk", ""),
-            "shortId": q.get("sid", ""), "fingerprint": random_fp()}
-    if q.get("security") == "tls":
-        cfg["streamSettings"]["tlsSettings"] = {"serverName": q.get("sni", p.hostname),
-            "allowInsecure": q.get("allowInsecure", "0") == "1"}
-    return cfg
+        out["tls"] = {"enabled": True, "server_name": q.get("sni", ""),
+                      "reality": {"enabled": True, "public_key": q.get("pbk", ""),
+                                  "short_id": q.get("sid", "")},
+                      "utls": {"enabled": True, "fingerprint": random_fp()}}
+    elif q.get("security") == "tls":
+        out["tls"] = {"enabled": True, "server_name": q.get("sni", p.hostname),
+                      "insecure": q.get("allowInsecure", "0") == "1"}
+    if q.get("type") == "ws":
+        out["transport"] = {"type": "ws", "path": q.get("path", "/"),
+                            "headers": {"Host": q.get("host", "")}}
+    elif q.get("type") == "grpc":
+        out["transport"] = {"type": "grpc", "service_name": q.get("serviceName", "")}
+    return out
 
-def xray_vmess(uri):
+def sb_vmess(uri):
     raw = base64.b64decode(uri[8:] + '=' * (-len(uri[8:]) % 4)).decode()
     v = json.loads(raw)
-    ss = {"network": v.get("net", "tcp"), "security": v.get("tls", "") or "none"}
+    out = {"type": "vmess", "server": v.get("add"), "server_port": int(v.get("port", 443)),
+           "uuid": v.get("id"), "security": v.get("scy", "auto"), "alter_id": int(v.get("aid", 0))}
     if v.get("tls") == "tls":
-        ss["tlsSettings"] = {"serverName": v.get("sni") or v.get("host", "")}
+        out["tls"] = {"enabled": True, "server_name": v.get("sni") or v.get("host", "")}
     if v.get("net") == "ws":
-        ss["wsSettings"] = {"path": v.get("path", "/"), "headers": {"Host": v.get("host", "")}}
-    return {"protocol": "vmess", "settings": {"vnext": [{"address": v.get("add"), "port": int(v.get("port", 443)),
-            "users": [{"id": v.get("id"), "alterId": int(v.get("aid", 0)), "security": v.get("scy", "auto")}]}]},
-            "streamSettings": ss}
+        out["transport"] = {"type": "ws", "path": v.get("path", "/"),
+                            "headers": {"Host": v.get("host", "")}}
+    return out
 
-def xray_trojan(uri):
+def sb_trojan(uri):
     p = urlparse(uri)
     q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
-    return {"protocol": "trojan", "settings": {"servers": [{"address": p.hostname, "port": p.port or 443,
-            "password": p.username}]}, "streamSettings": {"network": q.get("type", "tcp"), "security": "tls",
-            "tlsSettings": {"serverName": q.get("sni", p.hostname)}}}
+    out = {"type": "trojan", "server": p.hostname, "server_port": p.port or 443,
+           "password": p.username}
+    out["tls"] = {"enabled": True, "server_name": q.get("sni", p.hostname)}
+    return out
 
-def xray_ss(uri):
+def sb_ss(uri):
     raw = uri[5:].split("#")[0]
     if "@" in raw:
         userinfo, hostport = raw.rsplit("@", 1)
@@ -498,44 +506,53 @@ def xray_ss(uri):
         userinfo, hostport = decoded.rsplit("@", 1)
     method, password = userinfo.split(":", 1)
     host, port = hostport.split(":")
-    return {"protocol": "shadowsocks", "settings": {"servers": [{"address": host, "port": int(port.split("/")[0]),
-            "method": method, "password": password}]}}
+    return {"type": "shadowsocks", "server": host, "server_port": int(port.split("/")[0]),
+            "method": method, "password": password}
 
-def xray_hysteria2(uri):
+def sb_hysteria2(uri):
     p = urlparse(uri)
     q = dict(x.split('=', 1) for x in p.query.split('&') if '=' in x)
-    return {"protocol": "hysteria2", "settings": {"servers": [{"address": p.hostname, "port": p.port or 443,
-            "password": p.username}]}, "streamSettings": {"security": "tls",
-            "tlsSettings": {"serverName": q.get("sni", p.hostname)}}}
+    return {"type": "hysteria2", "server": p.hostname, "server_port": p.port or 443,
+            "password": p.username, "tls": {"enabled": True, "server_name": q.get("sni", p.hostname),
+            "insecure": q.get("insecure", "0") == "1"}}
 
-def xray_config(uri):
+def sb_config(uri):
     uri = uri.strip()
     try:
-        if uri.startswith("vless://"): return xray_vless(uri)
-        if uri.startswith("vmess://"): return xray_vmess(uri)
-        if uri.startswith("trojan://"): return xray_trojan(uri)
-        if uri.startswith("ss://"): return xray_ss(uri)
-        if uri.startswith(("hysteria2://", "hy2://")): return xray_hysteria2(uri)
+        if uri.startswith("vless://"): return sb_vless(uri)
+        if uri.startswith("vmess://"): return sb_vmess(uri)
+        if uri.startswith("trojan://"): return sb_trojan(uri)
+        if uri.startswith("ss://"): return sb_ss(uri)
+        if uri.startswith(("hysteria2://", "hy2://")): return sb_hysteria2(uri)
     except Exception:
         return None
     return None
 
-def check_via_xray(args):
+def check_via_singbox(args):
     idx, cfg = args
-    outbound = xray_config(cfg['raw'])
+    outbound = sb_config(cfg['raw'])
     if not outbound:
         return None, None
     port = SOCKS_BASE_PORT + (idx % 500)
-    cfg_path = os.path.join(TMP_DIR, f"c{idx}.json")
-    full = {"log": {"loglevel": "none"},
-            "inbounds": [{"listen": "127.0.0.1", "port": port, "protocol": "socks",
-                          "settings": {"auth": "noauth", "udp": False}}],
-            "outbounds": [outbound]}
+    cfg_path = os.path.join(TMP_DIR, f"s{idx}.json")
+    full = {
+        "log": {"level": "error"},
+        "inbounds": [{"type": "socks", "listen": "127.0.0.1", "listen_port": port}],
+        "outbounds": [outbound],
+    }
     try:
-        with open(cfg_path, "w") as f: json.dump(full, f)
+        with open(cfg_path, "w") as f:
+            json.dump(full, f)
+        check = subprocess.run([SINGBOX_BIN, "check", "-c", cfg_path],
+                               capture_output=True, timeout=10)
+        if check.returncode != 0:
+            os.remove(cfg_path); return None, None
     except Exception:
+        try: os.remove(cfg_path)
+        except Exception: pass
         return None, None
-    proc = subprocess.Popen([XRAY_BIN, "-c", cfg_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    proc = subprocess.Popen([SINGBOX_BIN, "run", "-c", cfg_path],
+                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     ready = False
     for _ in range(30):
         time.sleep(0.1)
@@ -571,7 +588,7 @@ def run_subscription(sources, remote_name, label):
     _FLAGS = {}
     t0 = time.time()
     print(f"\n═══ {label} → {remote_name} ═══")
-    print(f"⚙️  Xray-потоков: {XRAY_WORKERS} | Пинг-таймаут: {PING_TIMEOUT}s | URL: {TEST_URL}")
+    print(f"⚙️  sing-box-extended потоков: {XRAY_WORKERS} | Пинг-таймаут: {PING_TIMEOUT}s | URL: {TEST_URL}")
     all_configs = []
     for src_label, url in sources:
         if src_label == "Downloader" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
@@ -606,11 +623,11 @@ def run_subscription(sources, remote_name, label):
     if before > len(all_configs):
         print(f"♻️  Дедупликация: {before} → {len(all_configs)} (убрано {before - len(all_configs)})")
     load_flags_batch(list({c['host'] for c in all_configs}))
-    print(f"\n🔥 Xray-проверка (GET {TEST_URL}) в {XRAY_WORKERS} потоков...")
+    print(f"\n🔥 sing-box-extended проверка (GET {TEST_URL}) в {XRAY_WORKERS} потоков...")
     print("   ⏳ Это медленно — может занять 15-40 минут...")
     working = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=XRAY_WORKERS) as ex:
-        for i, (cfg, ping) in enumerate(ex.map(check_via_xray, list(enumerate(all_configs)))):
+        for i, (cfg, ping) in enumerate(ex.map(check_via_singbox, list(enumerate(all_configs)))):
             if cfg and ping is not None:
                 working.append((cfg, ping))
             if (i + 1) % 20 == 0:
@@ -654,7 +671,7 @@ def run_subscription(sources, remote_name, label):
 
 if __name__ == "__main__":
     os.makedirs(TMP_DIR, exist_ok=True)
-    print("🚀 Запуск парсера с Xray-проверкой...")
+    print("🚀 Запуск парсера с sing-box-extended проверкой...")
     run_subscription(BLACK_SOURCES, "Cool-Black.txt", "⚫ ЧЁРНАЯ")
     run_subscription(WHITE_SOURCES, "Cool-White.txt", "⚪ БЕЛАЯ")
     if _STATS_BL and _STATS_WL:
