@@ -1117,9 +1117,9 @@ proxies:
   client-fingerprint: firefox
 - name: cool [IR-WL-2] 🇳🇱 |#79|
   type: vless
-  server: nl2.balancer.vbuste-bot.com
+  server: 150.251.113.34
   port: 443
-  uuid: 318c935d-c195-41d3-99ad-9bbcfdab3386
+  uuid: d7d724b5-17ce-4f3c-877d-dfbf0f07afa1
   udp: true
   tls: true
   network: tcp
@@ -1541,9 +1541,9 @@ proxies:
   client-fingerprint: ios
 - name: cool [LSO-LTE] 🇷🇺 |#111|
   type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+  server: 154.21.203.106
+  port: 21033
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
   udp: true
   tls: true
   network: tcp

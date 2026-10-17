@@ -71,7 +71,75 @@ proxies:
   type: vless
   server: 178.236.251.175
   port: 8443
-  uuid: a04c750d-3b71-493b-b2c1-6473ff1209dd
+  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
+  udp: true
+  tls: true
+  network: raw
+  skip-cert-verify: false
+  servername: pl.flen-vpn.xyz
+- name: cool [etoneya] 🇫🇮 |#154|
+  type: vless
+  server: 144.31.232.104
+  port: 443
+  uuid: 318c935d-c195-41d3-99ad-9bbcfdab3386
+  udp: true
+  tls: true
+  network: raw
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08
+    short-id: 4be4110078ebed4a
+  servername: fl1.balancer.vbuste-bot.com
+  client-fingerprint: android
+- name: cool [IR-5] 🌐 |#155|
+  type: vless
+  server: 188.114.98.0
+  port: 443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: '%2Fcart%2Fdocs%2Fwww%2Fproxyip%3D108.160.132.132%3Fed%23Telegram---TOOTFFARANGI'
+    headers:
+      Host: lucasjow.us.ci
+- name: cool [Downloader] 🌐 |#156|
+  type: vless
+  server: 104.21.70.228
+  port: 443
+  uuid: b8d8a5b0-867f-4491-b4e4-30edc04bb10e
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: u.srilankangrill.online
+  ws-opts:
+    path: '%2F'
+    headers:
+      Host: u.srilankangrill.online
+- name: cool [Downloader] 🇰🇿 |#157|
+  type: vmess
+  server: 3h-kazakhstan1.09vpn.com
+  port: 80
+  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: ws
+  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: ''
+- name: cool [Downloader] 🇫🇷 |#158|
+  type: vless
+  server: 54.37.136.194
+  port: 2053
+  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
   udp: true
   tls: true
   network: tcp
@@ -16001,12 +16069,13 @@ proxies:
   type: vless
   server: 188.164.248.216
   port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
+  cipher: auto
   udp: true
   tls: true
   network: ws
-  skip-cert-verify: false
-  servername: ccc.010304.xyz
+  servername: NYcQg19zkwaCPM1B.v.3dns.vip
   ws-opts:
     path: '%2F'
     headers:
@@ -16043,7 +16112,7 @@ proxies:
   uuid: 8a9c586c-4b2c-49e5-9e78-97408bf58500
   udp: true
   tls: true
-  network: tcp
+  network: raw
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
@@ -16099,7 +16168,7 @@ proxies:
   type: vless
   server: 189.74.106.157
   port: 443
-  uuid: 082f5694-9019-4110-b67b-8125dbb9bab8
+  uuid: 18805ff3-b420-45de-af18-93be14024ae8
   udp: true
   tls: true
   network: tcp
@@ -16285,7 +16354,7 @@ proxies:
   servername: pl9.aiage.work
 - name: cool [etoneya] 🇬🇧 |#1146|
   type: vless
-  server: 107.181.151.241
+  server: 188.114.97.6
   port: 443
   uuid: 455cfdc6-9abf-4e40-863f-5ff6cc63457c
   udp: true
@@ -20753,9 +20822,9 @@ proxies:
   client-fingerprint: safari
 - name: cool [etoneya] 🇷🇺 |#1460|
   type: vless
-  server: rus1.justnable.xyz
+  server: 103.244.145.138
   port: 443
-  uuid: 5d7e07ba-f460-4638-af79-bbcde67fcb6b
+  uuid: e75ad2eb-6c1f-45ce-8023-f5f10875df66
   udp: true
   tls: true
   network: raw
@@ -21208,14 +21277,14 @@ proxies:
   skip-cert-verify: false
   servername: ccc.010304.xyz
   ws-opts:
-    path: /
+    path: '%2Ffdip%3Dsstp%3A%2F%2Fvpn%3Avpn%40public-vpn-200.opengw.net%3A443'
     headers:
       Host: ccc.010304.xyz
 - name: cool [Akres] 🇳🇱 |#1492|
   type: vless
   server: 31.77.114.114
   port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+  uuid: 4d852af3-a121-41aa-9aed-4ca40a6f7b4d
   udp: true
   tls: true
   network: tcp
@@ -21475,7 +21544,7 @@ proxies:
   port: 2053
   uuid: b4caaf57-ad77-4948-a6f5-51b3513799bf
   udp: true
-  tls: true
+  tls: false
   network: tcp
   skip-cert-verify: false
   reality-opts:
@@ -22465,6 +22534,141 @@ proxies:
   reality-opts:
     public-key: g63cT3uI0Y5iUtj3m__RYz7nmR1eIK4AYikdnZCl63w
     short-id: bfe58beb41f1d09f
+  servername: www.apple.com
+  client-fingerprint: randomized
+- name: cool [Downloader] 🇩🇪 |#2667|
+  type: vless
+  server: 169.40.42.35
+  port: 443
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: c39cc7310a
+  servername: yahoo.com
+  client-fingerprint: firefox
+- name: cool [Akres] 🇷🇴 |#2668|
+  type: vless
+  server: 146.70.124.85
+  port: 443
+  uuid: 40abbe13-f02e-4da2-9b19-966c2c3eb4ee
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: byzvlw97wjAAAfHs5AZRV0P0H6_JKBEZ4yfLS0HNewE
+    short-id: fe24f8a0a560056e
+  servername: www.datadoghq.com
+  client-fingerprint: ios
+- name: cool [Downloader] 🌐 |#2669|
+  type: vless
+  server: 104.16.10.235
+  port: 443
+  uuid: b8d8a5b0-867f-4491-b4e4-30edc04bb10e
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: u.srilankangrill.online
+  ws-opts:
+    path: '%2F'
+    headers:
+      Host: ''
+- name: cool [RKP] 🇺🇸 |#2670|
+  type: ss
+  server: 198.98.53.130
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: eDfN7SODQceIOmIAbtJJtK
+  udp: true
+- name: cool [LSO-WIFI] 🇭🇰 |#2671|
+  type: trojan
+  server: 2.27.109.179
+  port: 45464
+  password: XuMweB2PWs
+  sni: 2.27.109.179.sslip.io
+  udp: true
+  skip-cert-verify: false
+- name: cool [etoneya] 🇩🇪 |#2672|
+  type: vless
+  server: 89.169.53.176
+  port: 4443
+  uuid: 20dd9433-389e-4573-ba7b-689619cf13da
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: YIyohkkCU5kw6J5iZYZkhILyDwlfftFPDTkbITlrAUw
+    short-id: df3aff719526dc5a
+  servername: de.wvpn.one
+  client-fingerprint: ios
+- name: cool [Akres] 🇷🇺 |#2673|
+  type: vless
+  server: 145.249.109.112
+  port: 27311
+  uuid: f83ce3c4-07d9-4895-bd14-cb74abbcab37
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
+    short-id: 56daff9a
+  servername: metrika.yandex.ru
+  client-fingerprint: firefox
+- name: cool [Downloader] 🇨🇦 |#2674|
+  type: vmess
+  server: 134.195.196.211
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: tcp
+- name: cool [Downloader] 🌐 |#2675|
+  type: ss
+  server: 193.29.139.147
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: cool [Downloader] 🇳🇱 |#2676|
+  type: vless
+  server: 188.164.248.216
+  port: 443
+  uuid: d342d11e-d224-4463-b982-532309285094
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ccc.010304.xyz
+  ws-opts:
+    path: '%2F'
+    headers:
+      Host: ccc.010304.xyz
+- name: cool [etoneya] 🇺🇸 |#2677|
+  type: vless
+  server: 67.220.73.204
+  port: 18662
+  uuid: 814bd064-544d-4255-a070-5705c03f6da9
+  udp: true
+  tls: true
+  network: raw
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
+    short-id: 48050fab
   servername: www.apple.com
   client-fingerprint: edge
 - name: cool [etoneya] 🇷🇺 |#1581|
