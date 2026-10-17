@@ -1,65 +1,5 @@
 proxies:
-- name: cool [etoneya wl] 🇳🇱 |#1|
-  type: vless
-  server: 87.199.205.28
-  port: 443
-  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
-    short-id: dd3519f8d7626e05
-  servername: vkvd754.okcdn.ru
-  client-fingerprint: ios
-- name: cool [LSO-LTE] 🇸🇬 |#2|
-  type: vless
-  server: 147.93.173.45
-  port: 10444
-  uuid: 75c5f51b-d548-4eab-a26e-aa10fc3dbc7b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: video.yandex.ru
-  client-fingerprint: firefox
-- name: cool [ImSketch] 🇳🇱 |#3|
-  type: vless
-  server: 193.233.82.201
-  port: 443
-  uuid: ee18d188-14cc-417e-beb1-70e4add6d023
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fsEatg3Hi0O3NPHIg1xQYjmcYRmEgvnSW-i_ZwaL7XI
-    short-id: b054ade250673c91
-  servername: nl4.nztvpn.com
-  client-fingerprint: firefox
-- name: cool [etoneya wl] 🇳🇱 |#4|
-  type: vless
-  server: 87.199.205.28
-  port: 443
-  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
-    short-id: a9c11b06829163c9
-  servername: vkvd754.okcdn.ru
-  client-fingerprint: edge
-- name: cool [etoneya wl] 🇩🇪 |#5|
+- name: cool [LSO-LTE] 🇩🇪 |#1|
   type: vless
   server: 78.17.178.125
   port: 443
@@ -74,116 +14,37 @@ proxies:
     short-id: e0215064d8d1fd7c
   servername: cdn.tbank.ru
   client-fingerprint: randomized
-- name: cool [ImSketch] 🇷🇺 |#6|
+- name: cool [LSO-LTE] 🇷🇺 |#2|
   type: vless
-  server: 78.159.250.214
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
+  server: spainspeedboostjbl88.qcloud.surf
+  port: 27311
+  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: ''
-  servername: qq.utiltools.site
-  client-fingerprint: android
-- name: cool [LSO-LTE] 🇺🇸 |#7|
+    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
+    short-id: 56daff9a
+  servername: metrika.yandex.ru
+  client-fingerprint: edge
+- name: cool [LSO-LTE] 🇭🇰 |#3|
   type: vless
-  server: prep.wwwinternetvideo.click
-  port: 443
-  uuid: 1c332eae-7e02-4acd-996d-4eb3e652401c
+  server: 213.176.92.168
+  port: 10444
+  uuid: ba52cc43-700d-4040-9444-29214c98e6e0
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: uitO4Z8t9TplwwYaqwLqh5rfxDh_X8bOBiNuPbzvaEM
-    short-id: bbe46bd8f6b96839
-  servername: yandex.ru
-  client-fingerprint: random
-- name: cool [IR-WL-2] 🇫🇮 |#8|
-  type: vless
-  server: 144.31.232.104
-  port: 443
-  uuid: 318c935d-c195-41d3-99ad-9bbcfdab3386
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08
-    short-id: 4be4110078ebed4a
-  servername: fl1.balancer.vbuste-bot.com
-  client-fingerprint: android
-- name: cool [ImSketch] 🇺🇸 |#9|
-  type: vless
-  server: fi.quic.best
-  port: 443
-  uuid: c2331311-c9fd-4af9-8f34-7a9edcee3b92
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  servername: fi.quic.best
-- name: cool [LSO-LTE] 🇺🇸 |#10|
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: 6ba85179e30d4fc2
-  servername: yandex.net
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: video.yandex.ru
   client-fingerprint: ios
-- name: cool [ImSketch] 🇷🇺 |#11|
-  type: vless
-  server: 81.26.182.128
-  port: 443
-  uuid: 5d7e07ba-f460-4638-af79-bbcde67fcb6b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: xlXuN8KDdbqGEsaj1m2D8NUnR5d2oeo5TT71RSMmfxY
-    short-id: ''
-  servername: www.samsung.com
-  client-fingerprint: random
-- name: cool [IR-WL-2] 🇸🇬 |#12|
-  type: trojan
-  server: moral-basilisk.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: moral-basilisk.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [IR-WL-2] 🇺🇸 |#13|
-  type: vless
-  server: tk1.high-speed-test-56424.me
-  port: 443
-  uuid: 37615d66-5467-44a3-bc23-f2c3bef7f761
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM
-    short-id: 21270a66
-  servername: aws.amazon.com
-  client-fingerprint: random
-- name: cool [etoneya wl] 🇸🇪 |#14|
+- name: cool [LSO-LTE] 🇸🇪 |#4|
   type: vless
   server: sweedenqfds777.qcloud.surf
   port: 21221
@@ -192,116 +53,42 @@ proxies:
   tls: true
   network: raw
   skip-cert-verify: false
+  reality-opts:
+    public-key: RtxGqCtQJeOyUwSe7k6oZOrQWV1hPbC-TMqqgxl9fn4
+    short-id: c430045c
+  servername: metrika.yandex.ru
+  client-fingerprint: android
+- name: cool [LSO-LTE] 🇸🇪 |#5|
+  type: vless
+  server: sweedenqfds777.qcloud.surf
+  port: 21221
+  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
     public-key: RtxGqCtQJeOyUwSe7k6oZOrQWV1hPbC-TMqqgxl9fn4
     short-id: c430045c
   servername: metrika.yandex.ru
-  client-fingerprint: safari
-- name: cool [LSO-LTE] 🇺🇸 |#15|
+  client-fingerprint: random
+- name: cool [LSO-LTE] 🇮🇹 |#6|
   type: vless
-  server: 193.23.195.37
-  port: 8443
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: d2061bb1
-  servername: ya.ru
-  client-fingerprint: safari
-- name: cool [IR-WL-1] 🇫🇷 |#16|
-  type: vless
-  server: 137.74.16.237
+  server: 82.118.16.149
   port: 443
-  uuid: aaec4e42-a095-44b6-a239-f16d234a0798
+  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: 7LSzvilTVKGMtBDuKGeMrLtlhY7tQf5YcG566dEgO0I
-    short-id: b390e0a721d242b0
-  servername: www.icloud.com
-  client-fingerprint: randomized
-- name: cool [IR-WL-2] 🇩🇪 |#17|
-  type: vless
-  server: sino.bestsellers1.site
-  port: 2083
-  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: sino.bestsellers1.site
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: ''
-- name: cool [Akres-WL] 🇷🇺 |#18|
-  type: vless
-  server: 45.8.99.5
-  port: 8443
-  uuid: ef841361-5a82-0096-887c-3be03f6eac99
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
-    short-id: 187eea0acfb7f778
-  servername: x5club.ru
-  client-fingerprint: firefox
-- name: cool [etoneya wl] 🇺🇸 |#19|
-  type: vless
-  server: 13.143.137.206
-  port: 12443
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: d2061bb1
-  servername: ya.ru
+    public-key: HbK-TTnL1Dog-wKCowjLrKsx5ECIt2uxBsdGfeWG6kQ
+    short-id: 7bbf811a
+  servername: metrika.yandex.ru
   client-fingerprint: edge
-- name: cool [IR-WL-1] 🇦🇪 |#20|
-  type: vless
-  server: 140.225.199.210
-  port: 443
-  uuid: 6c713691-3ca2-0009-ad25-113d1bed6b03
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: JWDpSUaLgiXGXpgZzzxfDnYGvi4MBFcadN6cHZ-He1E
-    short-id: b8c6965f3596688a
-  servername: hatch.senko.ru
-  client-fingerprint: android
-- name: cool [ImSketch] 🇺🇸 |#21|
-  type: vless
-  server: 50.7.176.123
-  port: 443
-  uuid: 8a9c586c-4b2c-49e5-9e78-97408bf58500
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: E12wXXagR8xuql7KlWCLTgMaXj74JcU__lg66yz6iTw
-    short-id: ''
-  servername: direct-nl.bachidze.com
-  client-fingerprint: safari
-- name: cool [IR-WL-2] 🇸🇬 |#22|
+- name: cool [LSO-LTE] 🇸🇬 |#7|
   type: vless
   server: 147.93.173.45
   port: 10444
@@ -315,1764 +102,23 @@ proxies:
     public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
     short-id: 8debcf36f1cc69ff
   servername: video.yandex.ru
-  client-fingerprint: edge
-- name: cool [ImSketch] 🇺🇸 |#23|
-  type: ss
-  server: 15.204.247.244
-  port: 4444
-  cipher: aes-256-gcm
-  password: pKEW8JPByTVTLtM
-  udp: true
-- name: cool [IR-WL-2] 🇬🇧 |#24|
-  type: vless
-  server: 87.239.249.137
-  port: 443
-  uuid: 67eb6b17-7797-4ded-bf52-423c4c5f6cbd
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: G7bpUPFSW28-oE6ff8qZac1_apU6PiJ-GHmi7tAPDSY
-    short-id: 91af08b1ce1f
-  servername: www.foxsports.com
-  client-fingerprint: edge
-- name: cool [IR-WL-1] 🌐 |#25|
-  type: vless
-  server: 172.67.155.65
-  port: 8443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%2Fcart%2Fdocs%2Fwww%2Fproxyip%3D108.160.132.132'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [IR-WL-3] 🇭🇺 |#26|
-  type: vless
-  server: 85.155.242.37
-  port: 443
-  uuid: 6338c01a-310e-42c3-bf4f-2a20e161054b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: mPzNFHO4pZMzFviRkIhRd7xDUz4dMHyI-flZLOrgDVg
-    short-id: f8379ce795f2e5ed
-  servername: hu1.aiage.work
-  client-fingerprint: firefox
-- name: cool [IR-WL-1] 🇫🇷 |#27|
-  type: vless
-  server: 149.202.57.89
-  port: 443
-  uuid: rgiw5k0gg5
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  servername: rgiw5k0gg5-1492025789-direct.kheibarr.com
-- name: cool [IR-WL-2] 🌐 |#28|
-  type: vless
-  server: 172.64.150.43
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: '%2F '
-    headers:
-      Host: snip.edgeoneai.cc.cd
-- name: cool [etoneya wl] 🇷🇺 |#29|
-  type: vless
-  server: xnodtwx.artemida.live
-  port: 443
-  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-    short-id: a1b2c3d4e5f6a7b8
-  servername: ''
-  client-fingerprint: firefox
-  grpc-opts:
-    grpc-service-name: ''
-- name: cool [ImSketch] 🇷🇺 |#30|
-  type: vless
-  server: 45.8.99.5
-  port: 8443
-  uuid: ef841361-5a82-0096-887c-3be03f6eac99
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
-    short-id: 187eea0acfb7f778
-  servername: x5club.ru
-  client-fingerprint: ios
-- name: cool [IR-WL-2] 🇸🇬 |#31|
-  type: trojan
-  server: inviting-ferret.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: inviting-ferret.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [IR-WL-2] 🇷🇺 |#32|
-  type: vless
-  server: api.mediapolyana.cc
-  port: 443
-  uuid: 082f5694-9019-4110-b67b-8125dbb9bab8
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
-    short-id: a8
-  servername: api.mediapolyana.cc
-  client-fingerprint: edge
-- name: cool [LSO-LTE] 🇺🇸 |#33|
-  type: vless
-  server: finkawwwbroy5.qcloud.surf
-  port: 20324
-  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RK2g-bLoaa9GD9cJRRk2ktU9nAvP4-YmUPnBs1-UC1A
-    short-id: a9391e22
-  servername: metrika.yandex.ru
   client-fingerprint: android
-- name: cool [IR-WL-2] 🇷🇺 |#34|
+- name: cool [LSO-LTE] 🇷🇺 |#8|
   type: vless
-  server: 188.225.77.254
-  port: 443
-  uuid: 9cfb9099-439f-4bd2-87d3-54e67269fdc3
+  server: sub-edge-05-1g.whitenw.net
+  port: 20003
+  uuid: 9ec97e03-5e0b-4feb-b6f2-1c377977e471
   udp: true
   tls: true
-  network: raw
+  network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s
-    short-id: 4951a2313524dd8f
-  servername: io.ozone.ru
+    public-key: MAQju7q8wIeEznBQoDXP9l4SpuAkEs8CGDKaNNpKlHI
+    short-id: '4326'
+  servername: onf.ru
   client-fingerprint: randomized
-- name: cool [etoneya wl] 🇸🇪 |#35|
-  type: vless
-  server: 193.188.21.253
-  port: 10444
-  uuid: 57f7772d-f5d6-4d8f-992d-5fa5e0d6da55
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: video.yandex.ru
-  client-fingerprint: safari
-- name: cool [IR-WL-2] 🇩🇪 |#36|
-  type: vless
-  server: free.sahanwickramasinghe.me
-  port: 80
-  uuid: fcdb24e3-5e66-4c45-b89e-ac9441f4dcda
-  udp: true
-  tls: false
-  network: ws
-  skip-cert-verify: false
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: free.sahanwickramasinghe.me
-- name: cool [IR-WL-1] 🌐 |#37|
-  type: vless
-  server: 104.18.35.15
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ccc.010304.xyz
-  ws-opts:
-    path: '%2Ffp%3Dchrome'
-    headers:
-      Host: ccc.010304.xyz
-- name: cool [IR-WL-2] 🇺🇸 |#38|
-  type: vless
-  server: saas.sin.fan
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: '%2Ffdip '
-    headers:
-      Host: snip.edgeoneai.cc.cd
-- name: cool [Akres-WL] 🇷🇺 |#39|
-  type: vless
-  server: 121.127.37.211
-  port: 443
-  uuid: b8d8a5b0-867f-4491-b4e4-30edc04bb10e
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: u.srilankangrill.online
-  ws-opts:
-    path: /
-    headers:
-      Host: u.srilankangrill.online
-- name: cool [etoneya wl] 🇷🇺 |#40|
-  type: vless
-  server: 45.12.75.242
-  port: 26424
-  uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
-    short-id: 23103e1e
-  servername: ya.ru
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇸🇬 |#41|
-  type: vless
-  server: sg2-8sb.6121999.dpdns.org
-  port: 19825
-  uuid: 2d1ad594-80a4-4bfb-87a6-038e39701f51
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI
-    short-id: ''
-  servername: sg2-8sb.6121999.dpdns.org
-  client-fingerprint: edge
-- name: cool [etoneya wl] 🇷🇺 |#42|
-  type: vless
-  server: spainspeedboostjbl88.qcloud.surf
-  port: 27311
-  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
-    short-id: 56daff9a
-  servername: metrika.yandex.ru
-  client-fingerprint: edge
-- name: cool [LSO-LTE] 🇸🇪 |#43|
-  type: vless
-  server: 193.25.216.99
-  port: 21221
-  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RtxGqCtQJeOyUwSe7k6oZOrQWV1hPbC-TMqqgxl9fn4
-    short-id: c430045c
-  servername: metrika.yandex.ru
-  client-fingerprint: ios
-- name: cool [etoneya wl] 🇷🇺 |#44|
-  type: vless
-  server: xnodtwx.artemida.live
-  port: 443
-  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-    short-id: a1b2c3d4e5f6a7b8
-  servername: xnodtwx.artemida.live
-  client-fingerprint: safari
-  grpc-opts:
-    grpc-service-name: ''
-- name: cool [IR-WL-2] 🇺🇸 |#45|
-  type: vless
-  server: 141.193.213.21
-  port: 8443
-  uuid: 29c3dd6b-b164-40ca-a0d5-f06aca52a8b2
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: u.srilankangrill.online
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: u.srilankangrill.online
-- name: cool [LSO-LTE] 🇺🇸 |#46|
-  type: vless
-  server: 185.243.99.100
-  port: 1222
-  uuid: 36c3dcc2-17b6-4478-b8a7-3978e6d5afe9
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: zpLKK8HuwXJDH9D0O3t5Z_tO3ajkj7VRtXdr6UGy1zE
-    short-id: a25d0f
-  servername: play.google.com
-  client-fingerprint: randomized
-- name: cool [LSO-LTE] 🇷🇺 |#47|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: firefox
-- name: cool [ImSketch] 🇺🇸 |#48|
-  type: vless
-  server: direct-nl.bachidze.com
-  port: 443
-  uuid: 8a9c586c-4b2c-49e5-9e78-97408bf58500
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: E12wXXagR8xuql7KlWCLTgMaXj74JcU__lg66yz6iTw
-    short-id: ''
-  servername: direct-nl.bachidze.com
-  client-fingerprint: random
-- name: cool [LSO-LTE] 🇷🇺 |#49|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: randomized
-- name: cool [LSO-LTE] 🇷🇺 |#50|
-  type: vless
-  server: 145.249.109.112
-  port: 27311
-  uuid: 4ad3dbf5-2005-4d96-b56c-a0ca9905cab6
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
-    short-id: 56daff9a
-  servername: metrika.yandex.ru
-  client-fingerprint: firefox
-- name: cool [ImSketch] 🇺🇸 |#51|
-  type: vless
-  server: 31.76.6.160
-  port: 8443
-  uuid: ef841361-5a82-0096-887c-3be03f6eac99
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
-    short-id: 187eea0acfb7f778
-  servername: x5club.ru
-  client-fingerprint: firefox
-- name: cool [ImSketch] 🇫🇮 |#52|
-  type: vless
-  server: 144.31.232.104
-  port: 443
-  uuid: 318c935d-c195-41d3-99ad-9bbcfdab3386
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08
-    short-id: 4be4110078ebed4a
-  servername: fl1.balancer.vbuste-bot.com
-  client-fingerprint: random
-- name: cool [etoneya wl] 🇷🇺 |#53|
-  type: vless
-  server: spainspeedboostjbl88.qcloud.surf
-  port: 27311
-  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
-    short-id: 56daff9a
-  servername: metrika.yandex.ru
-  client-fingerprint: random
-- name: cool [mos.ru] 🇷🇺 |#54|
-  type: vless
-  server: 78.159.250.214
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: '00000000'
-  servername: qq.utiltools.site
-  client-fingerprint: safari
-- name: cool [ImSketch] 🇭🇰 |#55|
-  type: vless
-  server: 154.21.203.106
-  port: 21033
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: EG-jzQw1RyOwAM4L9rMKondSx7cyFmPyv1OP7xXkIk4
-    short-id: cbd39bea0805e2
-  servername: www.kaidee.com
-  client-fingerprint: safari
-- name: cool [ImSketch] 🇷🇺 |#56|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: edge
-- name: cool [LSO-LTE] 🇷🇺 |#57|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇸🇬 |#58|
-  type: vless
-  server: 545.150333.xyz
-  port: 21002
-  uuid: b17f6233-6726-41ff-9f62-fde7ccdbd282
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 7RyQhh-unO6BjkHRVycWKlFyQgJ3vi5_bAI3Mc8CGCA
-    short-id: a52a4528cd4d4c52
-  servername: www.cloudflare.com
-  client-fingerprint: ios
-- name: cool [etoneya wl] 🇷🇺 |#59|
-  type: vless
-  server: xnodtwx.artemida.live
-  port: 443
-  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-    short-id: a1b2c3d4e5f6a7b8
-  servername: xnodtwx.artemida.live
-  client-fingerprint: random
-  grpc-opts:
-    grpc-service-name: ''
-- name: cool [LSO-LTE] 🇺🇸 |#60|
-  type: vless
-  server: 13.143.137.206
-  port: 11443
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: d2061bb1
-  servername: ya.ru
-  client-fingerprint: android
-- name: cool [ImSketch] 🇷🇺 |#61|
-  type: vless
-  server: 45.8.99.5
-  port: 8443
-  uuid: ef841361-5a82-0096-887c-3be03f6eac99
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
-    short-id: 187eea0acfb7f778
-  servername: x5club.ru
-  client-fingerprint: random
-- name: cool [IR-WL-2] 🇸🇬 |#62|
-  type: vless
-  server: free.nadun.store
-  port: 443
-  uuid: 20ff936a-8eb5-4d27-9cce-93f2016d467b
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: free.nadun.store
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: free.nadun.store
-- name: cool [mos.ru] 🇷🇺 |#63|
-  type: vless
-  server: qq.utiltools.site
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: ''
-  servername: qq.utiltools.site
-  client-fingerprint: safari
-- name: cool [LSO-LTE] 🇷🇺 |#64|
-  type: vless
-  server: 139.28.168.75
-  port: 10444
-  uuid: 154bd388-4968-4900-a088-18676f428a20
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: video.yandex.ru
-  client-fingerprint: randomized
-- name: cool [IR-WL-1] 🇦🇪 |#65|
-  type: vless
-  server: 31.57.190.17
-  port: 443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%2Fcart%2Fdocs%2Fwww%2Fproxyip%3D108.160.132.132'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [IR-WL-2] 🇺🇸 |#66|
-  type: vless
-  server: saas.sin.fan
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: '%2F '
-    headers:
-      Host: snip.edgeoneai.cc.cd
-- name: cool [LSO-LTE] 🇺🇸 |#67|
-  type: vless
-  server: 150.241.101.17
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: 6ba85179e30d4fc2
-  servername: yandex.net
-  client-fingerprint: randomized
-- name: cool [LSO-LTE] 🇺🇸 |#68|
-  type: vless
-  server: finkawwwbroy5.qcloud.surf
-  port: 20324
-  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RK2g-bLoaa9GD9cJRRk2ktU9nAvP4-YmUPnBs1-UC1A
-    short-id: a9391e22
-  servername: metrika.yandex.ru
-  client-fingerprint: edge
-- name: cool [IR-WL-2] 🇵🇱 |#69|
-  type: vless
-  server: pl.flen-vpn.xyz
-  port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  servername: pl.flen-vpn.xyz
-- name: cool [IR-WL-1] 🇦🇪 |#70|
-  type: vless
-  server: 140.225.199.210
-  port: 443
-  uuid: 6c713691-3ca2-0009-ad25-113d1bed6b03
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: JWDpSUaLgiXGXpgZzzxfDnYGvi4MBFcadN6cHZ-He1E
-    short-id: b8c6965f3596688a
-  servername: hatch.senko.ru
-  client-fingerprint: ios
-- name: cool [etoneya wl] 🇸🇪 |#71|
-  type: vless
-  server: sweedenqfds777.qcloud.surf
-  port: 21221
-  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RtxGqCtQJeOyUwSe7k6oZOrQWV1hPbC-TMqqgxl9fn4
-    short-id: c430045c
-  servername: metrika.yandex.ru
-  client-fingerprint: randomized
-- name: cool [igareck-WL] 🇷🇺 |#72|
-  type: vless
-  server: 121.127.37.211
-  port: 443
-  uuid: b8d8a5b0-867f-4491-b4e4-30edc04bb10e
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: u.srilankangrill.online
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: u.srilankangrill.online
-- name: cool [IR-WL-1] 🌐 |#73|
-  type: vless
-  server: 104.18.37.127
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ccc.010304.xyz
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: ccc.010304.xyz
-- name: cool [IR-WL-3] 🇯🇵 |#74|
-  type: vless
-  server: funagfrdfs.alixxplay.com
-  port: 34379
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: KfOrtENkHAXDFlsCluw6fv62Q-WuJXCKI98XZihtemA
-    short-id: e51285e3
-  servername: us1p1.xn--ghq880n3na965a.com
-  client-fingerprint: random
-- name: cool [mos.ru] 🇷🇺 |#75|
-  type: vless
-  server: qq.utiltools.site
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: ''
-  servername: qq.utiltools.site
-  client-fingerprint: safari
-- name: cool [IR-WL-2] 🇺🇸 |#76|
-  type: vless
-  server: saas.sin.fan
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: '%2Ffdip%3Dsstp%3A%2F%2Fvpn%3Avpn%40vpn771984099.opengw.net%3A1770%3Fed%3D2560 '
-    headers:
-      Host: snip.edgeoneai.cc.cd
-- name: cool [ImSketch] 🇳🇱 |#77|
-  type: vless
-  server: 150.251.141.90
-  port: 443
-  uuid: 8d790ba0-5407-441b-b545-8ab369c591ce
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 2f_7ERsv1xlrHryC9Fmaw5D8_Dgo3B5pP0OMctsCngs
-    short-id: 3b3afe877e7dec9b
-  servername: n1.coconutsvpn.com
-  client-fingerprint: randomized
-- name: cool [LSO-LTE] 🇳🇱 |#78|
-  type: vless
-  server: 31.77.114.114
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: api.vk.me
-  client-fingerprint: firefox
-- name: cool [IR-WL-2] 🇳🇱 |#79|
-  type: vless
-  server: 150.251.113.34
-  port: 443
-  uuid: d7d724b5-17ce-4f3c-877d-dfbf0f07afa1
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08
-    short-id: 4be4110078ebed4a
-  servername: nl2.balancer.vbuste-bot.com
-  client-fingerprint: random
-- name: cool [ImSketch] 🇬🇧 |#80|
-  type: vless
-  server: 195.72.166.251
-  port: 443
-  uuid: 64c05afc-ce81-4ba0-b697-afa04da1427e
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RKDT6fVgcZS8Qfzhv5rbeHRIflA3UTKD_HNLJyOoUwk
-    short-id: 25349b36802f
-  servername: www.lloydsbankinggroup.com
-  client-fingerprint: edge
-- name: cool [ImSketch] 🇬🇧 |#81|
-  type: ss
-  server: 82.38.31.171
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: cool [mos.ru] 🇷🇺 |#82|
-  type: vless
-  server: 188.225.83.133
-  port: 443
-  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-    short-id: a1b2c3d4e5f6a7b8
-  servername: xnodtwx.artemida.live
-  client-fingerprint: edge
-  grpc-opts:
-    grpc-service-name: ''
-- name: cool [IR-WL-1] 🇫🇷 |#83|
-  type: vless
-  server: rgiw5k0gg5-1492025789-direct.kheibarr.com
-  port: 443
-  uuid: rgiw5k0gg5
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  servername: rgiw5k0gg5-1492025789-direct.kheibarr.com
-- name: cool [IR-WL-2] 🇳🇱 |#84|
-  type: vless
-  server: s1243.sspcccdn.xyz
-  port: 10829
-  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  servername: u695098ueb8953b4s861.gogocs.xyz
-- name: cool [LSO-LTE] 🇬🇧 |#85|
-  type: vless
-  server: 138.124.125.193
-  port: 10444
-  uuid: e57ce64d-5a1a-4a90-96df-9e1bd3ad26e4
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: ads.x5.ru
-  client-fingerprint: ios
-- name: cool [mos.ru] 🇷🇺 |#86|
-  type: vless
-  server: 188.225.83.133
-  port: 443
-  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-    short-id: a1b2c3d4e5f6a7b8
-  servername: xnodtwx.artemida.live
-  client-fingerprint: randomized
-  grpc-opts:
-    grpc-service-name: ''
-- name: cool [IR-WL-2] 🇸🇬 |#87|
-  type: trojan
-  server: inviting-ferret.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: inviting-ferret.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [IR-WL-2] 🇳🇱 |#88|
-  type: vless
-  server: s1243.sspcccdn.xyz
-  port: 10829
-  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  servername: u695098ueb8953b4s861.gogocs.xyz
-- name: cool [IR-WL-3] 🇩🇪 |#89|
-  type: vless
-  server: 169.40.42.74
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  servername: yahoo.com
-  client-fingerprint: safari
-- name: cool [LSO-LTE] 🇳🇱 |#90|
-  type: vless
-  server: 62.105.220.106
-  port: 443
-  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  servername: u695098u7dae9c0cs220.gogocs.xyz
-- name: cool [IR-WL-2] 🌐 |#91|
-  type: vless
-  server: cf.090227.xyz
-  port: 443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: /cart/docs/www/proxyip=108.160.132.132
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [LSO-LTE] 🇺🇸 |#92|
-  type: vless
-  server: 193.23.195.37
-  port: 8443
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: d2061bb1
-  servername: ya.ru
-  client-fingerprint: android
-- name: cool [etoneya wl] 🇺🇸 |#93|
-  type: vless
-  server: 150.241.101.17
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: 6ba85179e30d4fc2
-  servername: yandex.net
-  client-fingerprint: firefox
-- name: cool [IR-WL-2] 🇯🇵 |#94|
-  type: vless
-  server: funagfrdfs.alixxplay.com
-  port: 56656
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: QFM3jTzb5n-E9L2cfFo6GHqioGmIkjmG60l8wXA4IXc
-    short-id: aae6d935
-  servername: cdn-dynmedia-1.microsoft.com
-  client-fingerprint: randomized
-- name: cool [IR-WL-2] 🇺🇸 |#95|
-  type: vless
-  server: ge-s-1.pythonmakemigreat.wiki
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 5fkwwCKZzMsE6Eb_b3iqluu-1AWIfnYl-p0N3EL9Al8
-    short-id: 2c9a2790ad5900b2
-  servername: ge-s-1.pythonmakemigreat.wiki
-  client-fingerprint: ios
-- name: cool [ImSketch] 🇷🇺 |#96|
-  type: vless
-  server: 147.45.148.6
-  port: 443
-  uuid: 8a9c586c-4b2c-49e5-9e78-97408bf58500
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI
-    short-id: ''
-  servername: yoy-api.bachidze.com
-  client-fingerprint: edge
-- name: cool [etoneya wl] 🇺🇸 |#97|
-  type: vless
-  server: prep.wwwinternetvideo.click
-  port: 443
-  uuid: 1c332eae-7e02-4acd-996d-4eb3e652401c
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: uitO4Z8t9TplwwYaqwLqh5rfxDh_X8bOBiNuPbzvaEM
-    short-id: bbe46bd8f6b96839
-  servername: yandex.ru
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇸🇬 |#98|
-  type: trojan
-  server: inviting-ferret.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: inviting-ferret.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [IR-WL-2] 🇸🇬 |#99|
-  type: trojan
-  server: musical-mouse.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: musical-mouse.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [etoneya wl] 🇸🇪 |#100|
-  type: vless
-  server: 193.25.216.99
-  port: 21221
-  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RtxGqCtQJeOyUwSe7k6oZOrQWV1hPbC-TMqqgxl9fn4
-    short-id: c430045c
-  servername: metrika.yandex.ru
-  client-fingerprint: safari
-- name: cool [ImSketch] 🇬🇧 |#101|
-  type: ss
-  server: 82.38.31.171
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: cool [LSO-LTE] 🇷🇺 |#102|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: randomized
-- name: cool [etoneya wl] 🇺🇸 |#103|
-  type: vless
-  server: 150.241.101.80
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: 6ba85179e30d4fc2
-  servername: yandex.net
-  client-fingerprint: safari
-- name: cool [IR-WL-2] 🇸🇬 |#104|
-  type: vless
-  server: free.nadun.store
-  port: 443
-  uuid: 20ff936a-8eb5-4d27-9cce-93f2016d467b
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: free.nadun.store
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: free.nadun.store
-- name: cool [IR-WL-1] 🇺🇸 |#105|
-  type: vless
-  server: 172.66.0.162
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ccc.010304.xyz
-  ws-opts:
-    path: '%2Ffp%3Dchrome'
-    headers:
-      Host: ccc.010304.xyz
-- name: cool [IR-WL-2] 🌐 |#106|
-  type: vless
-  server: 172.64.156.111
-  port: 443
-  uuid: 2d4b819d-6fa6-4db2-8434-61e7db0fe93c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: cf.zhahui.de5.net
-  ws-opts:
-    path: '%2Ffp%3Dchrome '
-    headers:
-      Host: cf.zhahui.de5.net
-- name: cool [IR-WL-1] 🌐 |#107|
-  type: vless
-  server: 104.18.35.15
-  port: 443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%2Fcart%2Fdocs%2Fwww%2Fproxyip%3D108.160.132.132'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [RKP-WL] 🇷🇺 |#108|
-  type: vless
-  server: rus1.justnable.xyz
-  port: 443
-  uuid: 5d7e07ba-f460-4638-af79-bbcde67fcb6b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: xlXuN8KDdbqGEsaj1m2D8NUnR5d2oeo5TT71RSMmfxY
-    short-id: ''
-  servername: www.samsung.com
-  client-fingerprint: firefox
-- name: cool [IR-WL-2] 🇦🇪 |#109|
-  type: vless
-  server: nl1.fluxorvpn.net
-  port: 443
-  uuid: 6c713691-3ca2-0009-ad25-113d1bed6b03
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: JWDpSUaLgiXGXpgZzzxfDnYGvi4MBFcadN6cHZ-He1E
-    short-id: b8c6965f3596688a
-  servername: hatch.senko.ru
-  client-fingerprint: ios
-- name: cool [Akres-WL] 🇷🇺 |#110|
-  type: vless
-  server: 168.113.135.90
-  port: 443
-  uuid: 7c86240f-ac0c-4cfe-87c8-fa0dd69b2d25
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZtAlhN1pU4MTmv4KaX9J_5_8KWnwy9IOnc-BLzIf234
-    short-id: 11ac376e18d20343
-  servername: m-vruvc.mvpstr.com
-  client-fingerprint: ios
-- name: cool [LSO-LTE] 🇷🇺 |#111|
-  type: vless
-  server: 154.21.203.106
-  port: 21033
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: safari
-- name: cool [etoneya wl] 🇷🇺 |#112|
-  type: vless
-  server: spainspeedboostjbl88.qcloud.surf
-  port: 27311
-  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
-    short-id: 56daff9a
-  servername: metrika.yandex.ru
-  client-fingerprint: ios
-- name: cool [IR-WL-3] 🇩🇪 |#113|
-  type: vless
-  server: 169.40.42.133
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  servername: yahoo.com
-  client-fingerprint: firefox
-- name: cool [etoneya wl] 🇺🇦 |#114|
-  type: vless
-  server: 91.196.163.140
-  port: 10444
-  uuid: e86a3662-9b31-4d59-bc80-9e8644749b95
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: video.yandex.ru
-  client-fingerprint: android
-- name: cool [LSO-LTE] 🇵🇱 |#115|
-  type: vless
-  server: 144.31.101.196
-  port: 33891
-  uuid: 1c794e75-bcd4-4a65-9f69-ed0a10f33d60
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: HXXIkFRPeRpluXJ7SOoUGf9EOq4Lw-oJpvg1W0UPbEw
-    short-id: 5bd7b68ca4c04443
-  servername: browser.yandex.com
-  client-fingerprint: android
-- name: cool [ImSketch] 🇷🇺 |#116|
-  type: vless
-  server: api.oblachnyservis.cc
-  port: 443
-  uuid: 082f5694-9019-4110-b67b-8125dbb9bab8
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
-    short-id: a8
-  servername: api.oblachnyservis.cc
-  client-fingerprint: random
-- name: cool [IR-WL-2] 🇩🇪 |#117|
-  type: vless
-  server: 176.9.141.110
-  port: 443
-  uuid: 0d628b17-8ac4-49b9-a422-6b99077bfdf6
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: rj8GjMgtHuf5iZ5sWKmV62ihJbQWB6M4E-BJZBk1Z1A
-    short-id: 8a2b3c4d5e6f7012
-  servername: tradingview.com
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇳🇱 |#118|
-  type: vless
-  server: 45.150.33.33
-  port: 443
-  uuid: eec2f6a7-c10f-43b0-b133-61f9bf9bbc27
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: G8SING6Ibc_igZ5vI5578fXCT_mBMRuq_o8_Ymnj2SQ
-    short-id: eba1498e012ef580
-  servername: amazon.de
-  client-fingerprint: safari
-- name: cool [IR-WL-1] 🌐 |#119|
-  type: vless
-  server: 172.64.144.82
-  port: 443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%2Fcart%2Fdocs%2Fwww%2Fproxyip%3D108.160.132.132'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [LSO-LTE] 🇱🇻 |#120|
-  type: vless
-  server: 185.220.223.24
-  port: 443
-  uuid: 6338c01a-310e-42c3-bf4f-2a20e161054b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ds-U8G06uZvV9qFhAeO16dwS9Nkcw_coYr_4puEUGFg
-    short-id: 3c6afdc4124d0560
-  servername: lv.aiage.work
-  client-fingerprint: edge
-- name: cool [IR-WL-2] 🇯🇵 |#121|
-  type: vless
-  server: 3.114.220.22
-  port: 10583
-  uuid: 814bd064-544d-4255-a070-5705c03f6da9
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
-    short-id: 48050fab
-  servername: www.apple.com
-  client-fingerprint: randomized
-- name: cool [etoneya wl] 🇷🇺 |#122|
-  type: vless
-  server: 78.159.250.214
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: ''
-  servername: qq.utiltools.site
-  client-fingerprint: edge
-- name: cool [LSO-LTE] 🇷🇺 |#123|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: random
-- name: cool [IR-WL-1] 🇦🇪 |#124|
-  type: vless
-  server: nl1.fluxorvpn.net
-  port: 443
-  uuid: 6c713691-3ca2-0009-ad25-113d1bed6b03
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: JWDpSUaLgiXGXpgZzzxfDnYGvi4MBFcadN6cHZ-He1E
-    short-id: b8c6965f3596688a
-  servername: hatch.senko.ru
-  client-fingerprint: randomized
-- name: cool [etoneya wl] 🇷🇺 |#125|
-  type: vless
-  server: 78.159.250.214
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: ''
-  servername: qq.utiltools.site
-  client-fingerprint: ios
-- name: cool [ImSketch] 🇷🇺 |#126|
-  type: vless
-  server: 85.193.85.231
-  port: 443
-  uuid: 8a9c586c-4b2c-49e5-9e78-97408bf58500
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI
-    short-id: ''
-  servername: yoy-api.bachidze.com
-  client-fingerprint: ios
-- name: cool [LSO-LTE] 🇺🇸 |#127|
-  type: vless
-  server: prep.wwwinternetvideo.click
-  port: 443
-  uuid: 1c332eae-7e02-4acd-996d-4eb3e652401c
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: uitO4Z8t9TplwwYaqwLqh5rfxDh_X8bOBiNuPbzvaEM
-    short-id: bbe46bd8f6b96839
-  servername: yandex.ru
-  client-fingerprint: randomized
-- name: cool [IR-WL-2] 🇩🇪 |#128|
-  type: vless
-  server: 157.230.101.36
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ccc.010304.xyz
-  ws-opts:
-    path: '%2F '
-    headers:
-      Host: ccc.010304.xyz
-- name: cool [LSO-LTE] 🇮🇹 |#129|
-  type: vless
-  server: it.song69.fun
-  port: 443
-  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: HbK-TTnL1Dog-wKCowjLrKsx5ECIt2uxBsdGfeWG6kQ
-    short-id: 7bbf811a
-  servername: metrika.yandex.ru
-  client-fingerprint: randomized
-- name: cool [IR-WL-2] 🇷🇴 |#130|
-  type: vless
-  server: 103.244.145.144
-  port: 443
-  uuid: e75ad2eb-6c1f-45ce-8023-f5f10875df66
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: f4EJP55daJRlJkcZbbGsY-gFGGFGiXPPdfVxtNWQPCE
-    short-id: c8621ebb1e56abb3
-  servername: zsde.eu-cdn294.com
-  client-fingerprint: android
-- name: cool [IR-WL-1] 🌐 |#131|
-  type: vless
-  server: 172.67.155.65
-  port: 2053
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [IR-WL-2] 🇸🇬 |#132|
-  type: vless
-  server: 511.150333.xyz
-  port: 21001
-  uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
-    short-id: ab39fc68ab3dee81
-  servername: www.cloudflare.com
-  client-fingerprint: edge
-- name: cool [IR-WL-3] 🇳🇱 |#133|
-  type: vless
-  server: 31.77.114.114
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: api.vk.me
-  client-fingerprint: safari
-- name: cool [ImSketch] 🇪🇪 |#134|
-  type: vless
-  server: 132.243.65.82
-  port: 443
-  uuid: 4f35274e-006f-43e7-87be-c8cba4882b0c
-  udp: true
-  tls: true
-  network: xhttp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: UZKrOusu0M0i3gnqDanh2yXXkTibNEjj41Hsvah2XlI
-    short-id: ''
-  servername: player.vimeo.com
-  client-fingerprint: edge
-- name: cool [ImSketch] 🇵🇱 |#135|
-  type: vless
-  server: 144.31.4.234
-  port: 443
-  uuid: 8a9c586c-4b2c-49e5-9e78-97408bf58500
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: E12wXXagR8xuql7KlWCLTgMaXj74JcU__lg66yz6iTw
-    short-id: ''
-  servername: direct-nl.bachidze.com
-  client-fingerprint: firefox
-- name: cool [etoneya wl] 🇷🇺 |#136|
-  type: vless
-  server: 81.94.148.162
-  port: 9446
-  uuid: 8571b13c-96ae-480a-8b0d-8969ceda21f8
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: kUxaKv4LfQZyhZgBSFVfVK1zSFCyn5zkQXDSipad1jM
-    short-id: ''
-  servername: no.roskomnadzor.space
-  client-fingerprint: random
-- name: cool [IR-WL-3] 🇲🇩 |#137|
-  type: vless
-  server: md1.aiage.work
-  port: 443
-  uuid: 6338c01a-310e-42c3-bf4f-2a20e161054b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0dtXhkhkh-_MBFoGwzdW4PdlJtVX9oswhJZHbUPGCmo
-    short-id: 5d7a45ac0ad6adff
-  servername: md1.aiage.work
-  client-fingerprint: ios
-- name: cool [ImSketch] 🇬🇧 |#138|
-  type: ss
-  server: 82.38.31.149
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: cool [etoneya wl] 🇱🇹 |#139|
-  type: vless
-  server: 147.45.217.140
-  port: 21731
-  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: QeLV1NQeTG3e1DRFSNnK_f9Ca5Gf9smexICxtr27WUA
-    short-id: 0446eb17
-  servername: metrika.yandex.ru
-  client-fingerprint: android
-- name: cool [LSO-LTE] 🇷🇺 |#140|
-  type: vless
-  server: spainspeedboostjbl88.qcloud.surf
-  port: 27311
-  uuid: f83ce3c4-07d9-4895-bd14-cb74abbcab37
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
-    short-id: 56daff9a
-  servername: metrika.yandex.ru
-  client-fingerprint: firefox
-- name: cool [IR-WL-3] 🇬🇧 |#141|
-  type: ss
-  server: 82.38.31.213
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-- name: cool [IR-WL-3] 🌐 |#142|
-  type: vless
-  server: 172.67.155.65
-  port: 2053
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%2F%3FTelegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET%3Fed%3D2560'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [etoneya wl] 🇷🇺 |#143|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: edge
-- name: cool [IR-WL-2] 🇺🇸 |#144|
-  type: vless
-  server: 26uusapi.mate-fox.com
-  port: 41705
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: KfOrtENkHAXDFlsCluw6fv62Q-WuJXCKI98XZihtemA
-    short-id: e51285e3
-  servername: us1p1.xn--ghq880n3na965a.com
-  client-fingerprint: randomized
-- name: cool [IR-WL-3] 🇯🇵 |#145|
-  type: vless
-  server: funagfrdfs.alixxplay.com
-  port: 47672
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: tBvlo8F8hKRXSK-EHRAfzEH-x3e4uvheGloO-9bPKx4
-    short-id: 70ab6d813e
-  servername: us1p1.xn--ghq880n3na965a.com
-  client-fingerprint: safari
-- name: cool [LSO-LTE] 🇷🇺 |#146|
-  type: vless
-  server: 145.249.109.112
-  port: 27311
-  uuid: f83ce3c4-07d9-4895-bd14-cb74abbcab37
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
-    short-id: 56daff9a
-  servername: metrika.yandex.ru
-  client-fingerprint: firefox
-- name: cool [LSO-LTE] 🇷🇺 |#147|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: android
-- name: cool [etoneya wl] 🇳🇱 |#148|
+- name: cool [LSO-LTE] 🇳🇱 |#9|
   type: vless
   server: 87.199.205.28
   port: 443
@@ -2086,1207 +132,10 @@ proxies:
     public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
     short-id: b7cd177731793b1e
   servername: vkvd754.okcdn.ru
-  client-fingerprint: android
-- name: cool [IR-WL-1] 🇮🇹 |#149|
-  type: vless
-  server: 204.216.216.23
-  port: 1114
-  uuid: 6ba2eac6-0ec9-44ca-a42b-a8e23aafb530
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: WfkCF0eEuIoO0MyJsKOddU89QrTzCZ4y2dzCJbH99CQ
-    short-id: 79a1e14b
-  servername: yahoo.com
   client-fingerprint: firefox
-- name: cool [LSO-LTE] 🇧🇾 |#150|
-  type: vless
-  server: 95.128.71.79
-  port: 10444
-  uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: ads.x5.ru
-  client-fingerprint: randomized
-- name: cool [IR-WL-1] 🇨🇭 |#151|
-  type: vless
-  server: ch.srv.vbuste.ru
-  port: 444
-  uuid: 318c935d-c195-41d3-99ad-9bbcfdab3386
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08
-    short-id: 4be4110078ebed4a
-  servername: ch.srv.vbuste.ru
-  client-fingerprint: random
-  grpc-opts:
-    grpc-service-name: ''
-- name: cool [IR-WL-2] 🌐 |#152|
-  type: vless
-  server: 104.21.71.249
-  port: 443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%2Fcart%2Fdocs%2Fwww%2Fproxyip%3D108.160.132.132'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [etoneya wl] 🇸🇪 |#153|
-  type: vless
-  server: 193.25.216.99
-  port: 21221
-  uuid: 4ad3dbf5-2005-4d96-b56c-a0ca9905cab6
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RtxGqCtQJeOyUwSe7k6oZOrQWV1hPbC-TMqqgxl9fn4
-    short-id: c430045c
-  servername: metrika.yandex.ru
-  client-fingerprint: firefox
-- name: cool [IR-WL-2] 🇦🇪 |#154|
-  type: vless
-  server: uae.unixzone.us
-  port: 22573
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  udp: true
-  tls: false
-  network: ws
-  skip-cert-verify: false
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: uae.unixzone.us
-- name: cool [etoneya wl] 🇳🇱 |#155|
-  type: vless
-  server: 87.199.205.28
-  port: 443
-  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
-    short-id: 6b196d2f190f32b3
-  servername: vkvd754.okcdn.ru
-  client-fingerprint: safari
-- name: cool [mos.ru] 🇷🇺 |#156|
-  type: vless
-  server: qq.utiltools.site
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: ''
-  servername: qq.utiltools.site
-  client-fingerprint: random
-- name: cool [IR-WL-2] 🇺🇸 |#157|
-  type: vless
-  server: lists.soloramtin.cyou
-  port: 443
-  uuid: 67eb6b17-7797-4ded-bf52-423c4c5f6cbd
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: G7bpUPFSW28-oE6ff8qZac1_apU6PiJ-GHmi7tAPDSY
-    short-id: 91af08b1ce1f
-  servername: www.foxsports.com
-  client-fingerprint: android
-- name: cool [ImSketch] 🇦🇪 |#158|
-  type: vless
-  server: 140.225.199.212
-  port: 443
-  uuid: 6c713691-3ca2-0009-ad25-113d1bed6b03
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: JWDpSUaLgiXGXpgZzzxfDnYGvi4MBFcadN6cHZ-He1E
-    short-id: b8c6965f3596688a
-  servername: hatch.senko.ru
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇺🇸 |#159|
-  type: vless
-  server: 31.76.64.248
-  port: 443
-  uuid: 0a322246-8c1a-47cd-9865-cccebbb2e5c1
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 9OV_GN4lgwY_4llPfYCGev-PPXLMj-hfYnveKF4tjws
-    short-id: f8
-  servername: blog.api.www.cloudflare.com
-  client-fingerprint: safari
-- name: cool [LSO-LTE] 🇷🇺 |#160|
-  type: vless
-  server: 139.28.168.75
-  port: 10444
-  uuid: 154bd388-4968-4900-a088-18676f428a20
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: video.yandex.ru
-  client-fingerprint: android
-- name: cool [LSO-LTE] 🇷🇺 |#161|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: edge
-- name: cool [LSO-LTE] 🇷🇺 |#162|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: safari
-- name: cool [etoneya wl] 🇱🇻 |#163|
-  type: vless
-  server: 193.163.203.170
-  port: 443
-  uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o
-    short-id: b28db60d77c50b4f
-  servername: yandex.ru
-  client-fingerprint: safari
-- name: cool [etoneya wl] 🇷🇺 |#164|
-  type: vless
-  server: 139.28.168.75
-  port: 10444
-  uuid: 154bd388-4968-4900-a088-18676f428a20
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: video.yandex.ru
-  client-fingerprint: safari
-- name: cool [ImSketch] 🇷🇺 |#165|
-  type: vless
-  server: yoy-api.bachidze.com
-  port: 443
-  uuid: 8a9c586c-4b2c-49e5-9e78-97408bf58500
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI
-    short-id: ''
-  servername: yoy-api.bachidze.com
-  client-fingerprint: safari
-- name: cool [etoneya wl] 🇮🇹 |#166|
-  type: vless
-  server: it.song69.fun
-  port: 443
-  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: HbK-TTnL1Dog-wKCowjLrKsx5ECIt2uxBsdGfeWG6kQ
-    short-id: 7bbf811a
-  servername: metrika.yandex.ru
-  client-fingerprint: safari
-- name: cool [Akres-WL] 🇷🇺 |#167|
-  type: vless
-  server: 81.26.182.128
-  port: 443
-  uuid: 5d7e07ba-f460-4638-af79-bbcde67fcb6b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: xlXuN8KDdbqGEsaj1m2D8NUnR5d2oeo5TT71RSMmfxY
-    short-id: ''
-  servername: www.samsung.com
-  client-fingerprint: safari
-- name: cool [LSO-LTE] 🇺🇸 |#168|
-  type: vless
-  server: prep.wwwinternetvideo.click
-  port: 443
-  uuid: 1c332eae-7e02-4acd-996d-4eb3e652401c
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: uitO4Z8t9TplwwYaqwLqh5rfxDh_X8bOBiNuPbzvaEM
-    short-id: bbe46bd8f6b96839
-  servername: yandex.ru
-  client-fingerprint: randomized
-- name: cool [ImSketch] 🇺🇸 |#169|
-  type: vless
-  server: api.videobereg.cc
-  port: 443
-  uuid: 082f5694-9019-4110-b67b-8125dbb9bab8
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
-    short-id: a8
-  servername: api.videobereg.cc
-  client-fingerprint: android
-- name: cool [ImSketch] 🇦🇪 |#170|
-  type: vless
-  server: 140.225.199.234
-  port: 443
-  uuid: 6c713691-3ca2-0009-ad25-113d1bed6b03
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: JWDpSUaLgiXGXpgZzzxfDnYGvi4MBFcadN6cHZ-He1E
-    short-id: b8c6965f3596688a
-  servername: hatch.senko.ru
-  client-fingerprint: safari
-- name: cool [etoneya wl] 🇷🇺 |#171|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: edge
-- name: cool [LSO-LTE] 🇷🇺 |#172|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: safari
-- name: cool [LSO-LTE] 🇱🇻 |#173|
-  type: vless
-  server: 185.220.223.24
-  port: 443
-  uuid: 6338c01a-310e-42c3-bf4f-2a20e161054b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ds-U8G06uZvV9qFhAeO16dwS9Nkcw_coYr_4puEUGFg
-    short-id: 3c6afdc4124d0560
-  servername: lv.aiage.work
-  client-fingerprint: ios
-- name: cool [IR-WL-1] 🌐 |#174|
-  type: vless
-  server: 172.64.156.111
-  port: 443
-  uuid: 2d4b819d-6fa6-4db2-8434-61e7db0fe93c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: cf.zhahui.de5.net
-  ws-opts:
-    path: '%2Ffp%3Dchrome'
-    headers:
-      Host: cf.zhahui.de5.net
-- name: cool [IR-WL-2] 🌐 |#175|
-  type: vless
-  server: 104.16.10.233
-  port: 443
-  uuid: b8d8a5b0-867f-4491-b4e4-30edc04bb10e
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: u.srilankangrill.online
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: u.srilankangrill.online
-- name: cool [IR-WL-2] 🇧🇾 |#176|
-  type: vless
-  server: 46.243.183.2
-  port: 443
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: lrbP-ePUk7nbeLS8vBLbP5yyld7ZLmTB4_VQWRO31T8
-    short-id: 8a68df3a93c63ac8
-  servername: stream.indigo.ru
-  client-fingerprint: android
-- name: cool [IR-WL-1] 🇺🇸 |#177|
-  type: vless
-  server: 31.76.64.248
-  port: 443
-  uuid: 0a322246-8c1a-47cd-9865-cccebbb2e5c1
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 9OV_GN4lgwY_4llPfYCGev-PPXLMj-hfYnveKF4tjws
-    short-id: f8
-  servername: blog.api.www.cloudflare.com
-  client-fingerprint: edge
-- name: cool [LSO-LTE] 🇺🇸 |#178|
-  type: vless
-  server: 13.143.137.206
-  port: 8443
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: d2061bb1
-  servername: ya.ru
-  client-fingerprint: edge
-- name: cool [IR-WL-2] 🌐 |#179|
-  type: vless
-  server: 104.16.3.98
-  port: 443
-  uuid: b8d8a5b0-867f-4491-b4e4-30edc04bb10e
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: u.srilankangrill.online
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: u.srilankangrill.online
-- name: cool [etoneya wl] 🇦🇪 |#180|
-  type: vless
-  server: 45.59.120.217
-  port: 443
-  uuid: 8732f92b-ba85-48f7-92e4-ad029f1cd4e7
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  reality-opts:
-    public-key: mWxcYeYE-M3iE0RBjTzG88QI9kj2wivJDoIYDu_aG3w
-    short-id: 29c2dd1e3ef7c4d4
-  servername: strm.yandex.net
-  client-fingerprint: edge
-- name: cool [IR-WL-3] 🇩🇪 |#181|
-  type: vless
-  server: de-allnet.onlinernet.ir
-  port: 22000
-  uuid: 16188ecf-2dcd-40d7-898b-60461f125978
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: IffRRgkO2Kn06y1prY-NT2TfW-Ezm_RBi__F_jhKoSw
-    short-id: 1b0fa065866978d2
-  servername: connectivitycheck.android.com
-  client-fingerprint: random
-- name: cool [LSO-LTE] 🇸🇪 |#182|
-  type: vless
-  server: sweedenqfds777.qcloud.surf
-  port: 21221
-  uuid: 4ad3dbf5-2005-4d96-b56c-a0ca9905cab6
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RtxGqCtQJeOyUwSe7k6oZOrQWV1hPbC-TMqqgxl9fn4
-    short-id: c430045c
-  servername: metrika.yandex.ru
-  client-fingerprint: ios
-- name: cool [IR-WL-2] 🇵🇱 |#183|
-  type: vless
-  server: pl.flen-vpn.xyz
-  port: 8443
-  uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  servername: pl.flen-vpn.xyz
-- name: cool [ImSketch] 🇷🇺 |#184|
-  type: vless
-  server: rus1.justnable.xyz
-  port: 443
-  uuid: 5d7e07ba-f460-4638-af79-bbcde67fcb6b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: xlXuN8KDdbqGEsaj1m2D8NUnR5d2oeo5TT71RSMmfxY
-    short-id: ''
-  servername: www.samsung.com
-  client-fingerprint: ios
-- name: cool [IR-WL-2] 🇸🇬 |#185|
-  type: trojan
-  server: brave-tomcat.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: brave-tomcat.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [RKP-WL] 🇷🇺 |#186|
-  type: vless
-  server: 81.26.182.128
-  port: 443
-  uuid: 5d7e07ba-f460-4638-af79-bbcde67fcb6b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: xlXuN8KDdbqGEsaj1m2D8NUnR5d2oeo5TT71RSMmfxY
-    short-id: ''
-  servername: www.samsung.com
-  client-fingerprint: android
-- name: cool [RKP-WL] 🇷🇺 |#187|
-  type: vless
-  server: 78.159.250.214
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: ''
-  servername: qq.utiltools.site
-  client-fingerprint: random
-- name: cool [IR-WL-2] 🇩🇪 |#188|
-  type: vless
-  server: edge10.cyrionflare.com
-  port: 2052
-  uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
-  udp: true
-  tls: false
-  network: tcp
-  skip-cert-verify: false
-- name: cool [LSO-LTE] 🇷🇺 |#189|
-  type: vless
-  server: spainspeedboostjbl88.qcloud.surf
-  port: 27311
-  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
-    short-id: 56daff9a
-  servername: metrika.yandex.ru
-  client-fingerprint: ios
-- name: cool [RKP-WL] 🇷🇺 |#190|
-  type: vless
-  server: 81.26.182.128
-  port: 443
-  uuid: 5d7e07ba-f460-4638-af79-bbcde67fcb6b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: xlXuN8KDdbqGEsaj1m2D8NUnR5d2oeo5TT71RSMmfxY
-    short-id: ''
-  servername: www.samsung.com
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇺🇸 |#191|
-  type: vless
-  server: 31.76.6.160
-  port: 8443
-  uuid: ef841361-5a82-0096-887c-3be03f6eac99
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
-    short-id: 187eea0acfb7f778
-  servername: x5club.ru
-  client-fingerprint: safari
-- name: cool [ImSketch] 🇷🇺 |#192|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: android
-- name: cool [IR-WL-1] 🌐 |#193|
-  type: vless
-  server: 188.114.98.0
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: '%2Ffdip'
-    headers:
-      Host: snip.edgeoneai.cc.cd
-- name: cool [IR-WL-2] 🇷🇴 |#194|
-  type: vless
-  server: 103.244.145.138
-  port: 443
-  uuid: e75ad2eb-6c1f-45ce-8023-f5f10875df66
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: f4EJP55daJRlJkcZbbGsY-gFGGFGiXPPdfVxtNWQPCE
-    short-id: c8621ebb1e56abb3
-  servername: zsde.eu-cdn294.com
-  client-fingerprint: firefox
-- name: cool [IR-WL-2] 🇯🇵 |#195|
-  type: vless
-  server: funagfrdfs.alixxplay.com
-  port: 56656
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: QFM3jTzb5n-E9L2cfFo6GHqioGmIkjmG60l8wXA4IXc
-    short-id: aae6d935
-  servername: cdn-dynmedia-1.microsoft.com
-  client-fingerprint: edge
-- name: cool [etoneya wl] 🇷🇺 |#196|
-  type: vless
-  server: 78.159.250.214
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: '00000000'
-  servername: qq.utiltools.site
-  client-fingerprint: android
-- name: cool [LSO-LTE] 🇷🇺 |#197|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: randomized
-- name: cool [igareck-WL] 🇷🇺 |#198|
-  type: vless
-  server: 121.127.37.211
-  port: 443
-  uuid: b8d8a5b0-867f-4491-b4e4-30edc04bb10e
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: u.srilankangrill.online
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: u.srilankangrill.online
-- name: cool [ImSketch] 🇬🇧 |#199|
-  type: ss
-  server: 82.38.31.149
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: cool [mos.ru] 🇷🇺 |#200|
-  type: vless
-  server: qq.utiltools.site
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: ''
-  servername: qq.utiltools.site
-  client-fingerprint: android
-- name: cool [IR-WL-1] 🌐 |#201|
-  type: vless
-  server: 104.18.41.190
-  port: 443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%252Fcart%252Fdocs%252Fwww%252Fproxyip%253D108.160.132.132'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [LSO-LTE] 🇷🇺 |#202|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: random
-- name: cool [ImSketch] 🇺🇸 |#203|
-  type: vless
-  server: 31.76.6.160
-  port: 8443
-  uuid: ef841361-5a82-0096-887c-3be03f6eac99
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 7T9ZSCdUh4IUlx17R1Vbzk8kjiopA3j5mI7-inh6aQU
-    short-id: 187eea0acfb7f778
-  servername: x5club.ru
-  client-fingerprint: firefox
-- name: cool [IR-WL-2] 🇰🇷 |#204|
-  type: trojan
-  server: pretty-rat.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: pretty-rat.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [LSO-LTE] 🇷🇺 |#205|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: randomized
-- name: cool [etoneya wl] 🇬🇧 |#206|
-  type: vless
-  server: 138.124.125.193
-  port: 10444
-  uuid: e57ce64d-5a1a-4a90-96df-9e1bd3ad26e4
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: ads.x5.ru
-  client-fingerprint: safari
-- name: cool [IR-WL-1] 🇬🇧 |#207|
-  type: vless
-  server: 51.89.194.151
-  port: 2053
-  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-    short-id: d051f678212f9d54
-  servername: www.apple.com
-  client-fingerprint: firefox
-- name: cool [IR-WL-2] 🇸🇬 |#208|
-  type: trojan
-  server: musical-mouse.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: musical-mouse.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [LSO-LTE] 🇱🇻 |#209|
-  type: vless
-  server: 193.163.203.170
-  port: 443
-  uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o
-    short-id: b28db60d77c50b4f
-  servername: yandex.ru
-  client-fingerprint: random
-- name: cool [IR-WL-3] 🇷🇺 |#210|
-  type: vless
-  server: entry6.chick-chirik.com
-  port: 443
-  uuid: dd045fba-0257-4643-be29-4325450ef186
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: aFbCyrLOre-V3ORpBjqenGfDt62Ng_i1sSq-DmZHVgc
-    short-id: 89e0494514ec
-  servername: www.oracle.com
-  client-fingerprint: android
-- name: cool [ImSketch] 🇷🇺 |#211|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇷🇺 |#212|
-  type: vless
-  server: 81.94.148.162
-  port: 9446
-  uuid: 8571b13c-96ae-480a-8b0d-8969ceda21f8
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: kUxaKv4LfQZyhZgBSFVfVK1zSFCyn5zkQXDSipad1jM
-    short-id: ''
-  servername: no.roskomnadzor.space
-  client-fingerprint: randomized
-- name: cool [IR-WL-1] 🇩🇪 |#213|
-  type: vless
-  server: 193.222.99.226
-  port: 8545
-  uuid: 4dc73b6c-ed9e-4d40-8f3f-ebd15d8e702e
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: VpalqjubUqVrLmgjSjR6lKVXDierUncli66LeIyIO0M
-    short-id: e98c63b3c1a5d204
-  servername: www.cloudflare.com
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇩🇪 |#214|
-  type: vless
-  server: free.sahanwickramasinghe.me
-  port: 80
-  uuid: fcdb24e3-5e66-4c45-b89e-ac9441f4dcda
-  udp: true
-  tls: false
-  network: ws
-  skip-cert-verify: true
-  ws-opts:
-    path: '/ '
-    headers:
-      Host: free.sahanwickramasinghe.me
-- name: cool [ImSketch] 🇸🇦 |#215|
-  type: vless
-  server: freede.aiage.work
-  port: 443
-  uuid: 6338c01a-310e-42c3-bf4f-2a20e161054b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: A_bQLZE6D32TJUdAf9doQTPaTUXyJjPXLSklplG4V1g
-    short-id: 5f5e74dfd296b28d
-  servername: freede.aiage.work
-  client-fingerprint: ios
-- name: cool [etoneya wl] 🇱🇻 |#216|
-  type: vless
-  server: 193.163.203.170
-  port: 443
-  uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o
-    short-id: b28db60d77c50b4f
-  servername: yandex.ru
-  client-fingerprint: firefox
-- name: cool [mos.ru] 🇷🇺 |#217|
-  type: vless
-  server: 78.159.250.214
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: ''
-  servername: qq.utiltools.site
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇨🇦 |#218|
-  type: trojan
-  server: ca.tronsg.com
-  port: 443
-  password: Trojan@82164024
-  sni: ca.tronsg.com
-  udp: true
-  skip-cert-verify: false
-- name: cool [LSO-LTE] 🇸🇪 |#219|
-  type: vless
-  server: sweedenqfds777.qcloud.surf
-  port: 21221
-  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RtxGqCtQJeOyUwSe7k6oZOrQWV1hPbC-TMqqgxl9fn4
-    short-id: c430045c
-  servername: metrika.yandex.ru
-  client-fingerprint: edge
-- name: cool [IR-WL-3] 🌐 |#220|
-  type: vless
-  server: 188.114.98.0
-  port: 443
-  uuid: 20ff936a-8eb5-4d27-9cce-93f2016d467b
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: free.nadun.store
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: free.nadun.store
-- name: cool [IR-WL-2] 🇫🇮 |#221|
-  type: vless
-  server: 152.233.71.81
-  port: 443
-  uuid: 741809be-e44e-000b-b411-bf66f0ae3860
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 6VMgXXhZdJCiOG05EyK_zTHh00kpFGrZJeZIEPgqhjY
-    short-id: 1c3e8241a8743df9
-  servername: brointelengence.com
-  client-fingerprint: ios
-- name: cool [IR-WL-2] 🇰🇷 |#222|
-  type: trojan
-  server: optimum-snapper.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: optimum-snapper.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [etoneya wl] 🇩🇪 |#223|
-  type: vless
-  server: 78.17.178.125
-  port: 443
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: jcp4Lj_qYzxtkalm_XFjrmvqEMGRG7sb19yMwLe16WE
-    short-id: e0215064d8d1fd7c
-  servername: cdn.tbank.ru
-  client-fingerprint: edge
-- name: cool [IR-WL-2] 🇬🇧 |#224|
-  type: vless
-  server: 195.72.166.251
-  port: 443
-  uuid: 64c05afc-ce81-4ba0-b697-afa04da1427e
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RKDT6fVgcZS8Qfzhv5rbeHRIflA3UTKD_HNLJyOoUwk
-    short-id: 25349b36802f
-  servername: www.lloydsbankinggroup.com
-  client-fingerprint: ios
-- name: cool [etoneya wl] 🇳🇱 |#225|
-  type: vless
-  server: 87.199.205.28
-  port: 443
-  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
-    short-id: ef1d3554c652a436
-  servername: vkvd754.okcdn.ru
-  client-fingerprint: firefox
-- name: cool [IR-WL-3] 🇩🇪 |#226|
-  type: vless
-  server: 169.40.42.232
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  servername: yahoo.com
-  client-fingerprint: safari
-- name: cool [etoneya wl] 🇱🇻 |#227|
-  type: vless
-  server: 193.163.203.170
-  port: 443
-  uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o
-    short-id: b28db60d77c50b4f
-  servername: yandex.ru
-  client-fingerprint: safari
-- name: cool [etoneya wl] 🇺🇸 |#228|
+- name: cool [LSO-LTE] 🇺🇸 |#10|
   type: vless
   server: gw1.edgemedia.lol
-  port: 11443
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: d2061bb1
-  servername: ya.ru
-  client-fingerprint: safari
-- name: cool [Akres-WL] 🇷🇺 |#229|
-  type: vless
-  server: 147.45.148.6
-  port: 443
-  uuid: 8a9c586c-4b2c-49e5-9e78-97408bf58500
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI
-    short-id: ''
-  servername: yoy-api.bachidze.com
-  client-fingerprint: ios
-- name: cool [IR-WL-2] 🌐 |#230|
-  type: vless
-  server: cf.090227.xyz
-  port: 443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%2Fcart%2Fdocs%2Fwww%2Fproxyip%3D108.160.132.132'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [IR-WL-2] 🇬🇧 |#231|
-  type: vless
-  server: milo.rubinaz.xyz
-  port: 8080
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  udp: true
-  tls: false
-  network: tcp
-  skip-cert-verify: false
-- name: cool [etoneya wl] 🇦🇪 |#232|
-  type: vless
-  server: 45.59.120.217
-  port: 443
-  uuid: 8732f92b-ba85-48f7-92e4-ad029f1cd4e7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: mWxcYeYE-M3iE0RBjTzG88QI9kj2wivJDoIYDu_aG3w
-    short-id: 29c2dd1e3ef7c4d4
-  servername: strm.yandex.net
-  client-fingerprint: randomized
-- name: cool [IR-WL-2] 🌐 |#233|
-  type: vless
-  server: 104.21.93.182
-  port: 443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%2Fcart%2Fdocs%2Fwww%2Fproxyip%3D108.160.132.132%3Fed%23Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [etoneya wl] 🇺🇸 |#234|
-  type: vless
-  server: 13.143.137.206
   port: 8443
   uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
   udp: true
@@ -3299,50 +148,22 @@ proxies:
     short-id: d2061bb1
   servername: ya.ru
   client-fingerprint: randomized
-- name: cool [etoneya wl] 🇺🇸 |#235|
+- name: cool [LSO-LTE] 🇺🇸 |#11|
   type: vless
-  server: prep.wwwinternetvideo.click
-  port: 443
-  uuid: 1c332eae-7e02-4acd-996d-4eb3e652401c
+  server: qcloudge1.exitvpn.shop
+  port: 20268
+  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: uitO4Z8t9TplwwYaqwLqh5rfxDh_X8bOBiNuPbzvaEM
-    short-id: bbe46bd8f6b96839
-  servername: yandex.ru
+    public-key: 5H_MmyfvF4SkwS84wTbLmtcZDecXJIJtZ3uisiKQpSM
+    short-id: 0c774b50
+  servername: metrika.yandex.ru
   client-fingerprint: ios
-- name: cool [IR-WL-2] 🇦🇪 |#236|
-  type: vless
-  server: uae.unixzone.us
-  port: 22573
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  udp: true
-  tls: false
-  network: ws
-  skip-cert-verify: false
-  ws-opts:
-    path: '/ '
-    headers:
-      Host: uae.unixzone.us
-- name: cool [mos.ru] 🇷🇺 |#237|
-  type: vless
-  server: 78.159.250.214
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: '00000000'
-  servername: qq.utiltools.site
-  client-fingerprint: random
-- name: cool [LSO-LTE] 🇺🇸 |#238|
+- name: cool [LSO-LTE] 🇺🇸 |#12|
   type: vless
   server: 13.143.137.206
   port: 12443
@@ -3356,796 +177,52 @@ proxies:
     public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
     short-id: d2061bb1
   servername: ya.ru
+  client-fingerprint: ios
+- name: cool [LSO-LTE] 🇫🇷 |#13|
+  type: vless
+  server: 95.163.152.205
+  port: 2053
+  uuid: a4b5dc53-2eee-4c5e-ac43-d8f0fdc36a40
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: KEwhHRW2YSUHYAKsyX0KE3uKkGVDMudZUhLKfmb8eR0
+    short-id: 4b27271677fa6fde
+  servername: www.rutube.ru
   client-fingerprint: edge
-- name: cool [IR-WL-2] 🇫🇮 |#239|
+- name: cool [LSO-LTE] 🇺🇸 |#14|
   type: vless
-  server: 177.1.188.96
-  port: 443
-  uuid: 318c935d-c195-41d3-99ad-9bbcfdab3386
+  server: qcloudge1.exitvpn.shop
+  port: 20268
+  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: 0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08
-    short-id: 4be4110078ebed4a
-  servername: fl1.balancer.vbuste-bot.com
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇬🇧 |#240|
-  type: vless
-  server: server.slavkiti.monster
-  port: 443
-  uuid: fad0b9a6-187d-4fcc-96fc-498bc5b3135a
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: J-dv-HrWfQ_IOoyutv0Kg-rO8QwoRwc02dS1dS_tblk
-    short-id: 8325360e8bd2
-  servername: www.foxsports.com
-  client-fingerprint: android
-- name: cool [RKP-WL] 🇷🇺 |#241|
-  type: vless
-  server: 81.94.148.162
-  port: 9446
-  uuid: 8571b13c-96ae-480a-8b0d-8969ceda21f8
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: kUxaKv4LfQZyhZgBSFVfVK1zSFCyn5zkQXDSipad1jM
-    short-id: ''
-  servername: no.roskomnadzor.space
-  client-fingerprint: randomized
-- name: cool [etoneya wl] 🇷🇺 |#242|
-  type: vless
-  server: spainspeedboostjbl88.qcloud.surf
-  port: 27311
-  uuid: f83ce3c4-07d9-4895-bd14-cb74abbcab37
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
-    short-id: 56daff9a
+    public-key: 5H_MmyfvF4SkwS84wTbLmtcZDecXJIJtZ3uisiKQpSM
+    short-id: 0c774b50
   servername: metrika.yandex.ru
-  client-fingerprint: randomized
-- name: cool [IR-WL-2] 🇳🇱 |#243|
-  type: vless
-  server: s170.gogocs.xyz
-  port: 443
-  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  servername: s170.gogocs.xyz
-- name: cool [etoneya wl] 🇸🇬 |#244|
-  type: vless
-  server: 147.93.173.45
-  port: 10444
-  uuid: 75c5f51b-d548-4eab-a26e-aa10fc3dbc7b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: video.yandex.ru
   client-fingerprint: ios
-- name: cool [IR-WL-1] 🇺🇸 |#245|
-  type: vless
-  server: 195.123.235.177
-  port: 443
-  uuid: 729dd5f2-f5ff-4070-8c10-863eceded0b1
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 5B83otQ5ZQwtBFhR7xzsGJRXflkFKRJpQguYbE5JWGI
-    short-id: c85d029f5e8eb393
-  servername: gateway.icloud.com
-  client-fingerprint: android
-- name: cool [IR-WL-3] 🇯🇵 |#246|
-  type: vless
-  server: funagfrdfs.alixxplay.com
-  port: 47672
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: tBvlo8F8hKRXSK-EHRAfzEH-x3e4uvheGloO-9bPKx4
-    short-id: 70ab6d813e
-  servername: us1p1.xn--ghq880n3na965a.com
-  client-fingerprint: safari
-- name: cool [IR-WL-2] 🇺🇸 |#247|
-  type: vless
-  server: gw1.edgemedia.lol
-  port: 8443
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: d2061bb1
-  servername: ya.ru
-  client-fingerprint: android
-- name: cool [ImSketch] 🇺🇸 |#248|
-  type: vless
-  server: 31.76.240.15
-  port: 443
-  uuid: c2331311-c9fd-4af9-8f34-7a9edcee3b92
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  servername: fi.quic.best
-- name: cool [IR-WL-1] 🌐 |#249|
-  type: vless
-  server: 104.17.154.123
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ccc.010304.xyz
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: ccc.010304.xyz
-- name: cool [ImSketch] 🇨🇦 |#250|
-  type: ss
-  server: 51.222.141.125
-  port: 445
-  cipher: aes-256-gcm
-  password: zDNVedRFPQexG9v
-  udp: true
-- name: cool [LSO-LTE] 🇷🇺 |#251|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: randomized
-- name: cool [LSO-LTE] 🇷🇺 |#252|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: randomized
-- name: cool [LSO-LTE] 🇮🇱 |#253|
-  type: vless
-  server: 185.95.231.156
-  port: 443
-  uuid: 1f8cf47a-b66a-4916-979f-26edfcf44eea
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
-    short-id: a3a578ab
-  servername: www.apple.com
-  client-fingerprint: randomized
-- name: cool [IR-WL-1] 🇫🇮 |#254|
-  type: vless
-  server: fl1.balancer.vbuste-bot.com
-  port: 443
-  uuid: 318c935d-c195-41d3-99ad-9bbcfdab3386
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08
-    short-id: 4be4110078ebed4a
-  servername: fl1.balancer.vbuste-bot.com
-  client-fingerprint: firefox
-- name: cool [IR-WL-1] 🇦🇪 |#255|
-  type: vless
-  server: 31.57.190.89
-  port: 443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%2Fcart%2Fdocs%2Fwww%2Fproxyip%3D108.160.132.132'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [etoneya wl] 🇺🇸 |#256|
-  type: vless
-  server: 13.143.137.206
-  port: 8443
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: d2061bb1
-  servername: ya.ru
-  client-fingerprint: safari
-- name: cool [IR-WL-2] 🇺🇸 |#257|
-  type: vless
-  server: saas.sin.fan
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: '%2F '
-    headers:
-      Host: snip.edgeoneai.cc.cd
-- name: cool [IR-WL-3] 🇷🇺 |#258|
-  type: vless
-  server: 168.113.135.90
-  port: 443
-  uuid: 7c86240f-ac0c-4cfe-87c8-fa0dd69b2d25
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZtAlhN1pU4MTmv4KaX9J_5_8KWnwy9IOnc-BLzIf234
-    short-id: 11ac376e18d20343
-  servername: m-vruvc.mvpstr.com
-  client-fingerprint: edge
-- name: cool [RKP-WL] 🇷🇺 |#259|
-  type: vless
-  server: 147.45.148.6
-  port: 443
-  uuid: 8a9c586c-4b2c-49e5-9e78-97408bf58500
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI
-    short-id: ''
-  servername: yoy-api.bachidze.com
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇯🇵 |#260|
-  type: vless
-  server: funagfrdfs.alixxplay.com
-  port: 55688
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: KeV1nArisy7FO5DjqTSmn0hBnlNd38rzhbIMMpe-MBw
-    short-id: a46bb5972cf50671
-  servername: bilibili-vn.biliimg.com
-  client-fingerprint: firefox
-- name: cool [ImSketch] 🇩🇪 |#261|
-  type: vless
-  server: 78.17.178.125
-  port: 443
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: jcp4Lj_qYzxtkalm_XFjrmvqEMGRG7sb19yMwLe16WE
-    short-id: e0215064d8d1fd7c
-  servername: cdn.tbank.ru
-  client-fingerprint: firefox
-- name: cool [ImSketch] 🇦🇪 |#262|
-  type: vless
-  server: 140.225.199.230
-  port: 443
-  uuid: 6c713691-3ca2-0009-ad25-113d1bed6b03
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: JWDpSUaLgiXGXpgZzzxfDnYGvi4MBFcadN6cHZ-He1E
-    short-id: b8c6965f3596688a
-  servername: hatch.senko.ru
-  client-fingerprint: randomized
-- name: cool [IR-WL-2] 🇰🇷 |#263|
-  type: trojan
-  server: main-fawn.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: main-fawn.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [IR-WL-2] 🇩🇪 |#264|
-  type: vless
-  server: 2.27.35.55
-  port: 443
-  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RTG-xTU5UuKTRrkk8_COe04GiUWrqrSdt9mqSak_XEc
-    short-id: e696e744
-  servername: addons.mozilla.org
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇷🇺 |#265|
-  type: vless
-  server: yoy-api.bachidze.com
-  port: 443
-  uuid: 8a9c586c-4b2c-49e5-9e78-97408bf58500
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI
-    short-id: ''
-  servername: yoy-api.bachidze.com
-  client-fingerprint: edge
-- name: cool [IR-WL-3] 🌐 |#266|
-  type: vless
-  server: 188.114.98.0
-  port: 443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%2F%3FTelegram---mehrosaboran'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [ImSketch] 🇬🇧 |#267|
-  type: ss
-  server: 82.38.31.2
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: cool [IR-WL-2] 🇸🇬 |#268|
-  type: vless
-  server: 545.150333.xyz
-  port: 21003
-  uuid: b17f6233-6726-41ff-9f62-fde7ccdbd282
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 7RyQhh-unO6BjkHRVycWKlFyQgJ3vi5_bAI3Mc8CGCA
-    short-id: 5a2d904fe6d0a39b
-  servername: www.cloudflare.com
-  client-fingerprint: ios
-- name: cool [ImSketch] 🇦🇪 |#269|
-  type: vless
-  server: 140.225.199.210
-  port: 443
-  uuid: 6c713691-3ca2-0009-ad25-113d1bed6b03
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: JWDpSUaLgiXGXpgZzzxfDnYGvi4MBFcadN6cHZ-He1E
-    short-id: b8c6965f3596688a
-  servername: hatch.senko.ru
-  client-fingerprint: safari
-- name: cool [LSO-LTE] 🇸🇬 |#270|
-  type: vless
-  server: 147.93.173.45
-  port: 10444
-  uuid: 75c5f51b-d548-4eab-a26e-aa10fc3dbc7b
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: video.yandex.ru
-  client-fingerprint: safari
-- name: cool [LSO-LTE] 🇳🇱 |#271|
-  type: vless
-  server: 87.199.205.28
-  port: 443
-  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
-    short-id: ef1d3554c652a436
-  servername: vkvd754.okcdn.ru
-  client-fingerprint: randomized
-- name: cool [ImSketch] 🇺🇸 |#272|
-  type: vless
-  server: api.mediasvyaz.cc
-  port: 443
-  uuid: 082f5694-9019-4110-b67b-8125dbb9bab8
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
-    short-id: a8
-  servername: api.mediasvyaz.cc
-  client-fingerprint: android
-- name: cool [LSO-LTE] 🇷🇺 |#273|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: android
-- name: cool [IR-WL-1] 🇱🇹 |#274|
-  type: vless
-  server: 84.32.109.20
-  port: 443
-  uuid: ee18d188-14cc-417e-beb1-70e4add6d023
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 3jySGemfaqPZ2vM66Qtzo5SotO3eoRn1FeGaKp6KBQ4
-    short-id: 0da7e14db353e7d0
-  servername: litv.nztvpn.com
-  client-fingerprint: firefox
-- name: cool [etoneya wl] 🇵🇱 |#275|
-  type: vless
-  server: 144.31.101.196
-  port: 33891
-  uuid: 1c794e75-bcd4-4a65-9f69-ed0a10f33d60
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: HXXIkFRPeRpluXJ7SOoUGf9EOq4Lw-oJpvg1W0UPbEw
-    short-id: 5bd7b68ca4c04443
-  servername: browser.yandex.com
-  client-fingerprint: firefox
-- name: cool [IR-WL-2] 🌐 |#276|
-  type: vless
-  server: www.speedtest.net
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: snip.edgeoneai.cc.cd
-  ws-opts:
-    path: '%2F '
-    headers:
-      Host: snip.edgeoneai.cc.cd
-- name: cool [LSO-LTE] 🇷🇺 |#277|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: safari
-- name: cool [IR-WL-1] 🌐 |#278|
-  type: vless
-  server: 172.64.152.241
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ccc.010304.xyz
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: ccc.010304.xyz
-- name: cool [etoneya wl] 🇳🇱 |#279|
-  type: vless
-  server: 87.199.205.28
-  port: 443
-  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
-    short-id: ef1d3554c652a436
-  servername: vkvd754.okcdn.ru
-  client-fingerprint: edge
-- name: cool [IR-WL-2] 🇸🇬 |#280|
-  type: vless
-  server: 511.150333.xyz
-  port: 21003
-  uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
-    short-id: bab49aa4c2a88d27
-  servername: www.cloudflare.com
-  client-fingerprint: ios
-- name: cool [etoneya wl] 🇷🇺 |#281|
-  type: vless
-  server: 188.225.83.133
-  port: 443
-  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-    short-id: a1b2c3d4e5f6a7b8
-  servername: xnodtwx.artemida.live
-  client-fingerprint: safari
-  grpc-opts:
-    grpc-service-name: ''
-- name: cool [IR-WL-2] 🇬🇧 |#282|
-  type: vless
-  server: node-uk.connectsuite.org
-  port: 8443
-  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  servername: node-uk.connectsuite.org
-- name: cool [IR-WL-3] 🇩🇪 |#283|
-  type: vless
-  server: de3-allnet.onlinernet.ir
-  port: 22000
-  uuid: 16188ecf-2dcd-40d7-898b-60461f125978
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: IffRRgkO2Kn06y1prY-NT2TfW-Ezm_RBi__F_jhKoSw
-    short-id: 1b0fa065866978d2
-  servername: connectivitycheck.android.com
-  client-fingerprint: random
-- name: cool [LSO-LTE] 🇷🇺 |#284|
-  type: vless
-  server: 109.120.181.153
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: firefox
-- name: cool [etoneya wl] 🇱🇻 |#285|
-  type: vless
-  server: 193.163.203.170
-  port: 443
-  uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o
-    short-id: b28db60d77c50b4f
-  servername: yandex.ru
-  client-fingerprint: firefox
-- name: cool [IR-WL-2] 🇸🇬 |#286|
-  type: trojan
-  server: moral-basilisk.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: moral-basilisk.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [IR-WL-2] 🇩🇪 |#287|
-  type: vless
-  server: free.sahanwickramasinghe.me
-  port: 8443
-  uuid: c136a12c-4260-48a7-a1e6-fbda83a11045
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: free.sahanwickramasinghe.me
-  ws-opts:
-    path: '%2F '
-    headers:
-      Host: free.sahanwickramasinghe.me
-- name: cool [IR-WL-2] 🇯🇵 |#288|
-  type: vless
-  server: funagfrdfs.alixxplay.com
-  port: 47691
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 6PbC7GxOg_YdXya-53llPReUzoU_yknQbkDvI4uorBg
-    short-id: 2905326a
-  servername: m.media-amazon.com
-  client-fingerprint: edge
-- name: cool [IR-WL-2] 🇸🇬 |#289|
-  type: trojan
-  server: glorious-glider.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: glorious-glider.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [etoneya wl] 🇺🇸 |#290|
+- name: cool [LSO-LTE] 🇺🇸 |#15|
   type: vless
   server: 150.241.101.17
   port: 8443
   uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
   udp: true
   tls: true
-  network: tcp
+  network: raw
   skip-cert-verify: false
-  flow: xtls-rprx-vision
   reality-opts:
     public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
     short-id: 6ba85179e30d4fc2
   servername: yandex.net
   client-fingerprint: randomized
-- name: cool [IR-WL-3] 🇬🇧 |#291|
-  type: ss
-  server: 141.98.101.181
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-- name: cool [LSO-LTE] 🇷🇺 |#292|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: random
-- name: cool [IR-WL-1] 🌐 |#293|
-  type: vless
-  server: 172.66.47.10
-  port: 443
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: lucasjow.us.ci
-  ws-opts:
-    path: '%2Fcart%2Fdocs%2Fwww%2Fproxyip%3D108.160.132.132'
-    headers:
-      Host: lucasjow.us.ci
-- name: cool [ImSketch] 🇷🇺 |#294|
-  type: vless
-  server: 77.110.105.122
-  port: 443
-  uuid: 019fbe0f-2d9f-4b89-9f81-e1e36129892a
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: EBISh6QAVskJ_nvet-Qio9jS2yqxe9de6GMScYlbjhI
-    short-id: 226509f017e4c36d
-  servername: co-de.speedtec.ru
-  client-fingerprint: randomized
-- name: cool [etoneya wl] 🇷🇺 |#295|
-  type: vless
-  server: qq.utiltools.site
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: ''
-  servername: qq.utiltools.site
-  client-fingerprint: randomized
-- name: cool [etoneya wl] 🇧🇾 |#296|
+- name: cool [LSO-LTE] 🇧🇾 |#16|
   type: vless
   server: 178.172.227.124
   port: 10444
@@ -4159,43 +236,206 @@ proxies:
     public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
     short-id: 8debcf36f1cc69ff
   servername: ads.x5.ru
-  client-fingerprint: android
-- name: cool [IR-WL-2] 🇰🇷 |#297|
-  type: trojan
-  server: noted-cougar.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: noted-cougar.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [LSO-LTE] 🇭🇰 |#298|
+  client-fingerprint: edge
+- name: cool [LSO-LTE] 🇱🇻 |#17|
   type: vless
-  server: 82.29.36.250
+  server: 193.163.203.170
   port: 443
-  uuid: 41a7af38-0bb1-4493-aa8d-634af0c2548b
+  uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o
+    short-id: b28db60d77c50b4f
+  servername: yandex.ru
+  client-fingerprint: android
+- name: cool [LSO-LTE] 🇷🇺 |#18|
+  type: vless
+  server: 145.249.109.112
+  port: 27311
+  uuid: f83ce3c4-07d9-4895-bd14-cb74abbcab37
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
+    short-id: 56daff9a
+  servername: metrika.yandex.ru
+  client-fingerprint: ios
+- name: cool [LSO-LTE] 🇸🇪 |#19|
+  type: vless
+  server: sweedenqfds777.qcloud.surf
+  port: 21221
+  uuid: 4ad3dbf5-2005-4d96-b56c-a0ca9905cab6
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: RtxGqCtQJeOyUwSe7k6oZOrQWV1hPbC-TMqqgxl9fn4
+    short-id: c430045c
+  servername: metrika.yandex.ru
+  client-fingerprint: android
+- name: cool [LSO-LTE] 🇺🇸 |#20|
+  type: vless
+  server: 13.143.137.206
+  port: 8443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: d2061bb1
+  servername: ya.ru
+  client-fingerprint: ios
+- name: cool [LSO-LTE] 🇦🇪 |#21|
+  type: vless
+  server: 157.228.132.79
+  port: 2053
+  uuid: cdc72f62-1697-4644-b5a9-ca6308584c86
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: ksNclbnfGt4HmNSSKJdjQcU8vqJpRnv4ksVlCRgUeV8
+    short-id: 6590876aa8dc5ba5
+  servername: max.ru
+  client-fingerprint: ios
+- name: cool [LSO-LTE] 🇸🇪 |#22|
+  type: vless
+  server: sweedenqfds777.qcloud.surf
+  port: 21221
+  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: RtxGqCtQJeOyUwSe7k6oZOrQWV1hPbC-TMqqgxl9fn4
+    short-id: c430045c
+  servername: metrika.yandex.ru
+  client-fingerprint: safari
+- name: cool [LSO-LTE] 🇮🇹 |#23|
+  type: vless
+  server: it.song69.fun
+  port: 443
+  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: HbK-TTnL1Dog-wKCowjLrKsx5ECIt2uxBsdGfeWG6kQ
+    short-id: 7bbf811a
+  servername: metrika.yandex.ru
+  client-fingerprint: random
+- name: cool [LSO-LTE] 🇸🇪 |#24|
+  type: vless
+  server: 193.25.216.99
+  port: 21221
+  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: RtxGqCtQJeOyUwSe7k6oZOrQWV1hPbC-TMqqgxl9fn4
+    short-id: c430045c
+  servername: metrika.yandex.ru
+  client-fingerprint: ios
+- name: cool [LSO-LTE] 🇱🇹 |#25|
+  type: vless
+  server: boostlitva77www.qcloud.surf
+  port: 21731
+  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: QeLV1NQeTG3e1DRFSNnK_f9Ca5Gf9smexICxtr27WUA
+    short-id: 0446eb17
+  servername: metrika.yandex.ru
+  client-fingerprint: safari
+- name: cool [LSO-LTE] 🇺🇸 |#26|
+  type: vless
+  server: 193.23.195.37
+  port: 8443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: d2061bb1
+  servername: ya.ru
+  client-fingerprint: firefox
+- name: cool [LSO-LTE] 🇺🇸 |#27|
+  type: vless
+  server: 13.143.137.206
+  port: 8443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: d2061bb1
+  servername: ya.ru
+  client-fingerprint: randomized
+- name: cool [LSO-LTE] 🇷🇺 |#28|
+  type: vless
+  server: spainspeedboostjbl88.qcloud.surf
+  port: 27311
+  uuid: f83ce3c4-07d9-4895-bd14-cb74abbcab37
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
+    short-id: 56daff9a
+  servername: metrika.yandex.ru
+  client-fingerprint: ios
+- name: cool [LSO-LTE] 🇺🇸 |#29|
+  type: vless
+  server: 150.241.101.80
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
   udp: true
   tls: true
   network: raw
   skip-cert-verify: false
-  flow: xtls-rprx-vision
   reality-opts:
-    public-key: 09XPceP705hC-5sEDXDSLeL2eMOrF-mFISK8JaJ7q2g
-    short-id: 09353d6dc5b789
-  servername: aws.amazon.com
-  client-fingerprint: safari
-- name: cool [IR-WL-2] 🇰🇷 |#299|
-  type: trojan
-  server: central-jawfish.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: central-jawfish.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [LSO-LTE] 🇷🇺 |#300|
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: 6ba85179e30d4fc2
+  servername: yandex.net
+  client-fingerprint: random
+- name: cool [LSO-LTE] 🇷🇺 |#30|
   type: vless
-  server: spainspeedboostjbl88.qcloud.surf
+  server: 145.249.109.112
   port: 27311
-  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
+  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
   udp: true
   tls: true
   network: tcp
@@ -4206,186 +446,7 @@ proxies:
     short-id: 56daff9a
   servername: metrika.yandex.ru
   client-fingerprint: random
-- name: cool [igareck-WL] 🇷🇺 |#301|
-  type: vless
-  server: 121.127.37.211
-  port: 443
-  uuid: b8d8a5b0-867f-4491-b4e4-30edc04bb10e
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: u.srilankangrill.online
-  ws-opts:
-    path: '%2F'
-    headers:
-      Host: u.srilankangrill.online
-- name: cool [etoneya wl] 🇷🇺 |#302|
-  type: vless
-  server: 188.225.83.133
-  port: 443
-  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-    short-id: a1b2c3d4e5f6a7b8
-  servername: xnodtwx.artemida.live
-  client-fingerprint: android
-  grpc-opts:
-    grpc-service-name: ''
-- name: cool [ImSketch] 🇩🇪 |#303|
-  type: vless
-  server: 2.27.19.157
-  port: 443
-  uuid: 5fefb7a2-a045-4409-a383-12bbfb111041
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: bBI6MyZl42OYBNDkZ1n75oRsFoLF-ez3HvHwzDJvDic
-    short-id: ''
-  servername: dropbox.com
-  client-fingerprint: ios
-- name: cool [LSO-LTE] 🇺🇸 |#304|
-  type: vless
-  server: 201.58.176.73
-  port: 20324
-  uuid: 4ad3dbf5-2005-4d96-b56c-a0ca9905cab6
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RK2g-bLoaa9GD9cJRRk2ktU9nAvP4-YmUPnBs1-UC1A
-    short-id: a9391e22
-  servername: metrika.yandex.ru
-  client-fingerprint: ios
-- name: cool [LSO-LTE] 🇷🇺 |#305|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: safari
-- name: cool [etoneya wl] 🇺🇸 |#306|
-  type: vless
-  server: finkawwwbroy5.qcloud.surf
-  port: 20324
-  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: RK2g-bLoaa9GD9cJRRk2ktU9nAvP4-YmUPnBs1-UC1A
-    short-id: a9391e22
-  servername: metrika.yandex.ru
-  client-fingerprint: randomized
-- name: cool [etoneya wl] 🇵🇱 |#307|
-  type: vless
-  server: 144.31.101.196
-  port: 33891
-  uuid: 1c794e75-bcd4-4a65-9f69-ed0a10f33d60
-  udp: true
-  tls: true
-  network: raw
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: HXXIkFRPeRpluXJ7SOoUGf9EOq4Lw-oJpvg1W0UPbEw
-    short-id: 5bd7b68ca4c04443
-  servername: browser.yandex.com
-  client-fingerprint: android
-- name: cool [LSO-LTE] 🇷🇺 |#308|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: safari
-- name: cool [ImSketch] 🇳🇱 |#309|
-  type: vless
-  server: nl2.balancer.vbuste-bot.com
-  port: 443
-  uuid: 318c935d-c195-41d3-99ad-9bbcfdab3386
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08
-    short-id: 4be4110078ebed4a
-  servername: nl2.balancer.vbuste-bot.com
-  client-fingerprint: randomized
-- name: cool [IR-WL-2] 🇰🇷 |#310|
-  type: trojan
-  server: noted-cougar.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: noted-cougar.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [IR-WL-2] 🇰🇷 |#311|
-  type: trojan
-  server: pretty-rat.rooster465.autos
-  port: 443
-  password: UX82473651
-  sni: pretty-rat.rooster465.autos
-  udp: true
-  skip-cert-verify: false
-- name: cool [igareck-WL] 🇳🇱 |#312|
-  type: vmess
-  server: nl-2a972c8052.shamanapp.online
-  port: 33736
-  uuid: 1281acca-f21d-475c-bf04-eccbee7f8df2
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: nl-2a972c8052.shamanapp.online
-  ws-opts:
-    path: /vmess-ws
-    headers:
-      Host: nl-2a972c8052.shamanapp.online
-- name: cool [IR-WL-2] 🇦🇪 |#313|
-  type: vless
-  server: uae.unixzone.us
-  port: 22573
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  udp: true
-  tls: false
-  network: ws
-  skip-cert-verify: false
-  ws-opts:
-    path: '/ '
-    headers:
-      Host: uae.unixzone.us
-- name: cool [LSO-LTE] 🇩🇪 |#314|
+- name: cool [LSO-LTE] 🇩🇪 |#31|
   type: vless
   server: 78.17.178.125
   port: 443
@@ -4399,12 +460,12 @@ proxies:
     public-key: jcp4Lj_qYzxtkalm_XFjrmvqEMGRG7sb19yMwLe16WE
     short-id: e0215064d8d1fd7c
   servername: cdn.tbank.ru
-  client-fingerprint: randomized
-- name: cool [LSO-LTE] 🇷🇺 |#315|
+  client-fingerprint: edge
+- name: cool [LSO-LTE] 🇷🇺 |#32|
   type: vless
   server: spainspeedboostjbl88.qcloud.surf
   port: 27311
-  uuid: 4ad3dbf5-2005-4d96-b56c-a0ca9905cab6
+  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
   udp: true
   tls: true
   network: tcp
@@ -4414,1466 +475,224 @@ proxies:
     public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
     short-id: 56daff9a
   servername: metrika.yandex.ru
-  client-fingerprint: ios
-- name: cool [IR-WL-2] 🇯🇵 |#316|
-  type: vless
-  server: funagfrdfs.alixxplay.com
-  port: 46105
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Lk5nwDxC2tr3J7hT8emhUUiMX8cHyKX9TiRj_EnAiik
-    short-id: 28f5c1f8f98a
-  servername: www.lamer.com.sg
-  client-fingerprint: edge
-- name: cool [ImSketch] 🇬🇧 |#317|
-  type: ss
-  server: 82.38.31.11
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: cool [IR-WL-3] 🇩🇪 |#318|
-  type: vless
-  server: 169.40.42.225
-  port: 443
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: c39cc7310a
-  servername: yahoo.com
   client-fingerprint: safari
-- name: cool [RKP-WL] 🇷🇺 |#319|
-  type: vless
-  server: 78.159.250.214
-  port: 443
-  uuid: 4054fdc2-ee80-4419-8a8e-d937df4719e2
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: drY21DHNOr6ezJLA2B10mzTExeJ9-gVBfTBNLwVBtWI
-    short-id: ''
-  servername: qq.utiltools.site
-  client-fingerprint: android
-- name: cool [LSO-LTE] 🇷🇺 |#320|
-  type: vless
-  server: 90.156.218.163
-  port: 443
-  uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-    short-id: db04ce8bdb8900f1
-  servername: eh.vk.ru
-  client-fingerprint: android
-- name: cool [IR-WL-3] 🇷🇺 |#321|
-  type: vless
-  server: 77.110.105.122
-  port: 443
-  uuid: 019fbe0f-2d9f-4b89-9f81-e1e36129892a
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: EBISh6QAVskJ_nvet-Qio9jS2yqxe9de6GMScYlbjhI
-    short-id: 226509f017e4c36d
-  servername: co-nl.speedtec.ru
-  client-fingerprint: android
 proxy-groups:
 - name: Обычный
   type: select
   proxies:
   - Авто
   - Авто (без RU)
-  - cool [etoneya wl] 🇳🇱 |#1|
-  - cool [LSO-LTE] 🇸🇬 |#2|
-  - cool [ImSketch] 🇳🇱 |#3|
-  - cool [etoneya wl] 🇳🇱 |#4|
-  - cool [etoneya wl] 🇩🇪 |#5|
-  - cool [ImSketch] 🇷🇺 |#6|
-  - cool [LSO-LTE] 🇺🇸 |#7|
-  - cool [IR-WL-2] 🇫🇮 |#8|
-  - cool [ImSketch] 🇺🇸 |#9|
+  - cool [LSO-LTE] 🇩🇪 |#1|
+  - cool [LSO-LTE] 🇷🇺 |#2|
+  - cool [LSO-LTE] 🇭🇰 |#3|
+  - cool [LSO-LTE] 🇸🇪 |#4|
+  - cool [LSO-LTE] 🇸🇪 |#5|
+  - cool [LSO-LTE] 🇮🇹 |#6|
+  - cool [LSO-LTE] 🇸🇬 |#7|
+  - cool [LSO-LTE] 🇷🇺 |#8|
+  - cool [LSO-LTE] 🇳🇱 |#9|
   - cool [LSO-LTE] 🇺🇸 |#10|
-  - cool [ImSketch] 🇷🇺 |#11|
-  - cool [IR-WL-2] 🇸🇬 |#12|
-  - cool [IR-WL-2] 🇺🇸 |#13|
-  - cool [etoneya wl] 🇸🇪 |#14|
+  - cool [LSO-LTE] 🇺🇸 |#11|
+  - cool [LSO-LTE] 🇺🇸 |#12|
+  - cool [LSO-LTE] 🇫🇷 |#13|
+  - cool [LSO-LTE] 🇺🇸 |#14|
   - cool [LSO-LTE] 🇺🇸 |#15|
-  - cool [IR-WL-1] 🇫🇷 |#16|
-  - cool [IR-WL-2] 🇩🇪 |#17|
-  - cool [Akres-WL] 🇷🇺 |#18|
-  - cool [etoneya wl] 🇺🇸 |#19|
-  - cool [IR-WL-1] 🇦🇪 |#20|
-  - cool [ImSketch] 🇺🇸 |#21|
-  - cool [IR-WL-2] 🇸🇬 |#22|
-  - cool [ImSketch] 🇺🇸 |#23|
-  - cool [IR-WL-2] 🇬🇧 |#24|
-  - cool [IR-WL-1] 🌐 |#25|
-  - cool [IR-WL-3] 🇭🇺 |#26|
-  - cool [IR-WL-1] 🇫🇷 |#27|
-  - cool [IR-WL-2] 🌐 |#28|
-  - cool [etoneya wl] 🇷🇺 |#29|
-  - cool [ImSketch] 🇷🇺 |#30|
-  - cool [IR-WL-2] 🇸🇬 |#31|
-  - cool [IR-WL-2] 🇷🇺 |#32|
-  - cool [LSO-LTE] 🇺🇸 |#33|
-  - cool [IR-WL-2] 🇷🇺 |#34|
-  - cool [etoneya wl] 🇸🇪 |#35|
-  - cool [IR-WL-2] 🇩🇪 |#36|
-  - cool [IR-WL-1] 🌐 |#37|
-  - cool [IR-WL-2] 🇺🇸 |#38|
-  - cool [Akres-WL] 🇷🇺 |#39|
-  - cool [etoneya wl] 🇷🇺 |#40|
-  - cool [IR-WL-2] 🇸🇬 |#41|
-  - cool [etoneya wl] 🇷🇺 |#42|
-  - cool [LSO-LTE] 🇸🇪 |#43|
-  - cool [etoneya wl] 🇷🇺 |#44|
-  - cool [IR-WL-2] 🇺🇸 |#45|
-  - cool [LSO-LTE] 🇺🇸 |#46|
-  - cool [LSO-LTE] 🇷🇺 |#47|
-  - cool [ImSketch] 🇺🇸 |#48|
-  - cool [LSO-LTE] 🇷🇺 |#49|
-  - cool [LSO-LTE] 🇷🇺 |#50|
-  - cool [ImSketch] 🇺🇸 |#51|
-  - cool [ImSketch] 🇫🇮 |#52|
-  - cool [etoneya wl] 🇷🇺 |#53|
-  - cool [mos.ru] 🇷🇺 |#54|
-  - cool [ImSketch] 🇭🇰 |#55|
-  - cool [ImSketch] 🇷🇺 |#56|
-  - cool [LSO-LTE] 🇷🇺 |#57|
-  - cool [IR-WL-2] 🇸🇬 |#58|
-  - cool [etoneya wl] 🇷🇺 |#59|
-  - cool [LSO-LTE] 🇺🇸 |#60|
-  - cool [ImSketch] 🇷🇺 |#61|
-  - cool [IR-WL-2] 🇸🇬 |#62|
-  - cool [mos.ru] 🇷🇺 |#63|
-  - cool [LSO-LTE] 🇷🇺 |#64|
-  - cool [IR-WL-1] 🇦🇪 |#65|
-  - cool [IR-WL-2] 🇺🇸 |#66|
-  - cool [LSO-LTE] 🇺🇸 |#67|
-  - cool [LSO-LTE] 🇺🇸 |#68|
-  - cool [IR-WL-2] 🇵🇱 |#69|
-  - cool [IR-WL-1] 🇦🇪 |#70|
-  - cool [etoneya wl] 🇸🇪 |#71|
-  - cool [igareck-WL] 🇷🇺 |#72|
-  - cool [IR-WL-1] 🌐 |#73|
-  - cool [IR-WL-3] 🇯🇵 |#74|
-  - cool [mos.ru] 🇷🇺 |#75|
-  - cool [IR-WL-2] 🇺🇸 |#76|
-  - cool [ImSketch] 🇳🇱 |#77|
-  - cool [LSO-LTE] 🇳🇱 |#78|
-  - cool [IR-WL-2] 🇳🇱 |#79|
-  - cool [ImSketch] 🇬🇧 |#80|
-  - cool [ImSketch] 🇬🇧 |#81|
-  - cool [mos.ru] 🇷🇺 |#82|
-  - cool [IR-WL-1] 🇫🇷 |#83|
-  - cool [IR-WL-2] 🇳🇱 |#84|
-  - cool [LSO-LTE] 🇬🇧 |#85|
-  - cool [mos.ru] 🇷🇺 |#86|
-  - cool [IR-WL-2] 🇸🇬 |#87|
-  - cool [IR-WL-2] 🇳🇱 |#88|
-  - cool [IR-WL-3] 🇩🇪 |#89|
-  - cool [LSO-LTE] 🇳🇱 |#90|
-  - cool [IR-WL-2] 🌐 |#91|
-  - cool [LSO-LTE] 🇺🇸 |#92|
-  - cool [etoneya wl] 🇺🇸 |#93|
-  - cool [IR-WL-2] 🇯🇵 |#94|
-  - cool [IR-WL-2] 🇺🇸 |#95|
-  - cool [ImSketch] 🇷🇺 |#96|
-  - cool [etoneya wl] 🇺🇸 |#97|
-  - cool [IR-WL-2] 🇸🇬 |#98|
-  - cool [IR-WL-2] 🇸🇬 |#99|
-  - cool [etoneya wl] 🇸🇪 |#100|
-  - cool [ImSketch] 🇬🇧 |#101|
-  - cool [LSO-LTE] 🇷🇺 |#102|
-  - cool [etoneya wl] 🇺🇸 |#103|
-  - cool [IR-WL-2] 🇸🇬 |#104|
-  - cool [IR-WL-1] 🇺🇸 |#105|
-  - cool [IR-WL-2] 🌐 |#106|
-  - cool [IR-WL-1] 🌐 |#107|
-  - cool [RKP-WL] 🇷🇺 |#108|
-  - cool [IR-WL-2] 🇦🇪 |#109|
-  - cool [Akres-WL] 🇷🇺 |#110|
-  - cool [LSO-LTE] 🇷🇺 |#111|
-  - cool [etoneya wl] 🇷🇺 |#112|
-  - cool [IR-WL-3] 🇩🇪 |#113|
-  - cool [etoneya wl] 🇺🇦 |#114|
-  - cool [LSO-LTE] 🇵🇱 |#115|
-  - cool [ImSketch] 🇷🇺 |#116|
-  - cool [IR-WL-2] 🇩🇪 |#117|
-  - cool [IR-WL-2] 🇳🇱 |#118|
-  - cool [IR-WL-1] 🌐 |#119|
-  - cool [LSO-LTE] 🇱🇻 |#120|
-  - cool [IR-WL-2] 🇯🇵 |#121|
-  - cool [etoneya wl] 🇷🇺 |#122|
-  - cool [LSO-LTE] 🇷🇺 |#123|
-  - cool [IR-WL-1] 🇦🇪 |#124|
-  - cool [etoneya wl] 🇷🇺 |#125|
-  - cool [ImSketch] 🇷🇺 |#126|
-  - cool [LSO-LTE] 🇺🇸 |#127|
-  - cool [IR-WL-2] 🇩🇪 |#128|
-  - cool [LSO-LTE] 🇮🇹 |#129|
-  - cool [IR-WL-2] 🇷🇴 |#130|
-  - cool [IR-WL-1] 🌐 |#131|
-  - cool [IR-WL-2] 🇸🇬 |#132|
-  - cool [IR-WL-3] 🇳🇱 |#133|
-  - cool [ImSketch] 🇪🇪 |#134|
-  - cool [ImSketch] 🇵🇱 |#135|
-  - cool [etoneya wl] 🇷🇺 |#136|
-  - cool [IR-WL-3] 🇲🇩 |#137|
-  - cool [ImSketch] 🇬🇧 |#138|
-  - cool [etoneya wl] 🇱🇹 |#139|
-  - cool [LSO-LTE] 🇷🇺 |#140|
-  - cool [IR-WL-3] 🇬🇧 |#141|
-  - cool [IR-WL-3] 🌐 |#142|
-  - cool [etoneya wl] 🇷🇺 |#143|
-  - cool [IR-WL-2] 🇺🇸 |#144|
-  - cool [IR-WL-3] 🇯🇵 |#145|
-  - cool [LSO-LTE] 🇷🇺 |#146|
-  - cool [LSO-LTE] 🇷🇺 |#147|
-  - cool [etoneya wl] 🇳🇱 |#148|
-  - cool [IR-WL-1] 🇮🇹 |#149|
-  - cool [LSO-LTE] 🇧🇾 |#150|
-  - cool [IR-WL-1] 🇨🇭 |#151|
-  - cool [IR-WL-2] 🌐 |#152|
-  - cool [etoneya wl] 🇸🇪 |#153|
-  - cool [IR-WL-2] 🇦🇪 |#154|
-  - cool [etoneya wl] 🇳🇱 |#155|
-  - cool [mos.ru] 🇷🇺 |#156|
-  - cool [IR-WL-2] 🇺🇸 |#157|
-  - cool [ImSketch] 🇦🇪 |#158|
-  - cool [IR-WL-2] 🇺🇸 |#159|
-  - cool [LSO-LTE] 🇷🇺 |#160|
-  - cool [LSO-LTE] 🇷🇺 |#161|
-  - cool [LSO-LTE] 🇷🇺 |#162|
-  - cool [etoneya wl] 🇱🇻 |#163|
-  - cool [etoneya wl] 🇷🇺 |#164|
-  - cool [ImSketch] 🇷🇺 |#165|
-  - cool [etoneya wl] 🇮🇹 |#166|
-  - cool [Akres-WL] 🇷🇺 |#167|
-  - cool [LSO-LTE] 🇺🇸 |#168|
-  - cool [ImSketch] 🇺🇸 |#169|
-  - cool [ImSketch] 🇦🇪 |#170|
-  - cool [etoneya wl] 🇷🇺 |#171|
-  - cool [LSO-LTE] 🇷🇺 |#172|
-  - cool [LSO-LTE] 🇱🇻 |#173|
-  - cool [IR-WL-1] 🌐 |#174|
-  - cool [IR-WL-2] 🌐 |#175|
-  - cool [IR-WL-2] 🇧🇾 |#176|
-  - cool [IR-WL-1] 🇺🇸 |#177|
-  - cool [LSO-LTE] 🇺🇸 |#178|
-  - cool [IR-WL-2] 🌐 |#179|
-  - cool [etoneya wl] 🇦🇪 |#180|
-  - cool [IR-WL-3] 🇩🇪 |#181|
-  - cool [LSO-LTE] 🇸🇪 |#182|
-  - cool [IR-WL-2] 🇵🇱 |#183|
-  - cool [ImSketch] 🇷🇺 |#184|
-  - cool [IR-WL-2] 🇸🇬 |#185|
-  - cool [RKP-WL] 🇷🇺 |#186|
-  - cool [RKP-WL] 🇷🇺 |#187|
-  - cool [IR-WL-2] 🇩🇪 |#188|
-  - cool [LSO-LTE] 🇷🇺 |#189|
-  - cool [RKP-WL] 🇷🇺 |#190|
-  - cool [IR-WL-2] 🇺🇸 |#191|
-  - cool [ImSketch] 🇷🇺 |#192|
-  - cool [IR-WL-1] 🌐 |#193|
-  - cool [IR-WL-2] 🇷🇴 |#194|
-  - cool [IR-WL-2] 🇯🇵 |#195|
-  - cool [etoneya wl] 🇷🇺 |#196|
-  - cool [LSO-LTE] 🇷🇺 |#197|
-  - cool [igareck-WL] 🇷🇺 |#198|
-  - cool [ImSketch] 🇬🇧 |#199|
-  - cool [mos.ru] 🇷🇺 |#200|
-  - cool [IR-WL-1] 🌐 |#201|
-  - cool [LSO-LTE] 🇷🇺 |#202|
-  - cool [ImSketch] 🇺🇸 |#203|
-  - cool [IR-WL-2] 🇰🇷 |#204|
-  - cool [LSO-LTE] 🇷🇺 |#205|
-  - cool [etoneya wl] 🇬🇧 |#206|
-  - cool [IR-WL-1] 🇬🇧 |#207|
-  - cool [IR-WL-2] 🇸🇬 |#208|
-  - cool [LSO-LTE] 🇱🇻 |#209|
-  - cool [IR-WL-3] 🇷🇺 |#210|
-  - cool [ImSketch] 🇷🇺 |#211|
-  - cool [IR-WL-2] 🇷🇺 |#212|
-  - cool [IR-WL-1] 🇩🇪 |#213|
-  - cool [IR-WL-2] 🇩🇪 |#214|
-  - cool [ImSketch] 🇸🇦 |#215|
-  - cool [etoneya wl] 🇱🇻 |#216|
-  - cool [mos.ru] 🇷🇺 |#217|
-  - cool [IR-WL-2] 🇨🇦 |#218|
-  - cool [LSO-LTE] 🇸🇪 |#219|
-  - cool [IR-WL-3] 🌐 |#220|
-  - cool [IR-WL-2] 🇫🇮 |#221|
-  - cool [IR-WL-2] 🇰🇷 |#222|
-  - cool [etoneya wl] 🇩🇪 |#223|
-  - cool [IR-WL-2] 🇬🇧 |#224|
-  - cool [etoneya wl] 🇳🇱 |#225|
-  - cool [IR-WL-3] 🇩🇪 |#226|
-  - cool [etoneya wl] 🇱🇻 |#227|
-  - cool [etoneya wl] 🇺🇸 |#228|
-  - cool [Akres-WL] 🇷🇺 |#229|
-  - cool [IR-WL-2] 🌐 |#230|
-  - cool [IR-WL-2] 🇬🇧 |#231|
-  - cool [etoneya wl] 🇦🇪 |#232|
-  - cool [IR-WL-2] 🌐 |#233|
-  - cool [etoneya wl] 🇺🇸 |#234|
-  - cool [etoneya wl] 🇺🇸 |#235|
-  - cool [IR-WL-2] 🇦🇪 |#236|
-  - cool [mos.ru] 🇷🇺 |#237|
-  - cool [LSO-LTE] 🇺🇸 |#238|
-  - cool [IR-WL-2] 🇫🇮 |#239|
-  - cool [IR-WL-2] 🇬🇧 |#240|
-  - cool [RKP-WL] 🇷🇺 |#241|
-  - cool [etoneya wl] 🇷🇺 |#242|
-  - cool [IR-WL-2] 🇳🇱 |#243|
-  - cool [etoneya wl] 🇸🇬 |#244|
-  - cool [IR-WL-1] 🇺🇸 |#245|
-  - cool [IR-WL-3] 🇯🇵 |#246|
-  - cool [IR-WL-2] 🇺🇸 |#247|
-  - cool [ImSketch] 🇺🇸 |#248|
-  - cool [IR-WL-1] 🌐 |#249|
-  - cool [ImSketch] 🇨🇦 |#250|
-  - cool [LSO-LTE] 🇷🇺 |#251|
-  - cool [LSO-LTE] 🇷🇺 |#252|
-  - cool [LSO-LTE] 🇮🇱 |#253|
-  - cool [IR-WL-1] 🇫🇮 |#254|
-  - cool [IR-WL-1] 🇦🇪 |#255|
-  - cool [etoneya wl] 🇺🇸 |#256|
-  - cool [IR-WL-2] 🇺🇸 |#257|
-  - cool [IR-WL-3] 🇷🇺 |#258|
-  - cool [RKP-WL] 🇷🇺 |#259|
-  - cool [IR-WL-2] 🇯🇵 |#260|
-  - cool [ImSketch] 🇩🇪 |#261|
-  - cool [ImSketch] 🇦🇪 |#262|
-  - cool [IR-WL-2] 🇰🇷 |#263|
-  - cool [IR-WL-2] 🇩🇪 |#264|
-  - cool [IR-WL-2] 🇷🇺 |#265|
-  - cool [IR-WL-3] 🌐 |#266|
-  - cool [ImSketch] 🇬🇧 |#267|
-  - cool [IR-WL-2] 🇸🇬 |#268|
-  - cool [ImSketch] 🇦🇪 |#269|
-  - cool [LSO-LTE] 🇸🇬 |#270|
-  - cool [LSO-LTE] 🇳🇱 |#271|
-  - cool [ImSketch] 🇺🇸 |#272|
-  - cool [LSO-LTE] 🇷🇺 |#273|
-  - cool [IR-WL-1] 🇱🇹 |#274|
-  - cool [etoneya wl] 🇵🇱 |#275|
-  - cool [IR-WL-2] 🌐 |#276|
-  - cool [LSO-LTE] 🇷🇺 |#277|
-  - cool [IR-WL-1] 🌐 |#278|
-  - cool [etoneya wl] 🇳🇱 |#279|
-  - cool [IR-WL-2] 🇸🇬 |#280|
-  - cool [etoneya wl] 🇷🇺 |#281|
-  - cool [IR-WL-2] 🇬🇧 |#282|
-  - cool [IR-WL-3] 🇩🇪 |#283|
-  - cool [LSO-LTE] 🇷🇺 |#284|
-  - cool [etoneya wl] 🇱🇻 |#285|
-  - cool [IR-WL-2] 🇸🇬 |#286|
-  - cool [IR-WL-2] 🇩🇪 |#287|
-  - cool [IR-WL-2] 🇯🇵 |#288|
-  - cool [IR-WL-2] 🇸🇬 |#289|
-  - cool [etoneya wl] 🇺🇸 |#290|
-  - cool [IR-WL-3] 🇬🇧 |#291|
-  - cool [LSO-LTE] 🇷🇺 |#292|
-  - cool [IR-WL-1] 🌐 |#293|
-  - cool [ImSketch] 🇷🇺 |#294|
-  - cool [etoneya wl] 🇷🇺 |#295|
-  - cool [etoneya wl] 🇧🇾 |#296|
-  - cool [IR-WL-2] 🇰🇷 |#297|
-  - cool [LSO-LTE] 🇭🇰 |#298|
-  - cool [IR-WL-2] 🇰🇷 |#299|
-  - cool [LSO-LTE] 🇷🇺 |#300|
-  - cool [igareck-WL] 🇷🇺 |#301|
-  - cool [etoneya wl] 🇷🇺 |#302|
-  - cool [ImSketch] 🇩🇪 |#303|
-  - cool [LSO-LTE] 🇺🇸 |#304|
-  - cool [LSO-LTE] 🇷🇺 |#305|
-  - cool [etoneya wl] 🇺🇸 |#306|
-  - cool [etoneya wl] 🇵🇱 |#307|
-  - cool [LSO-LTE] 🇷🇺 |#308|
-  - cool [ImSketch] 🇳🇱 |#309|
-  - cool [IR-WL-2] 🇰🇷 |#310|
-  - cool [IR-WL-2] 🇰🇷 |#311|
-  - cool [igareck-WL] 🇳🇱 |#312|
-  - cool [IR-WL-2] 🇦🇪 |#313|
-  - cool [LSO-LTE] 🇩🇪 |#314|
-  - cool [LSO-LTE] 🇷🇺 |#315|
-  - cool [IR-WL-2] 🇯🇵 |#316|
-  - cool [ImSketch] 🇬🇧 |#317|
-  - cool [IR-WL-3] 🇩🇪 |#318|
-  - cool [RKP-WL] 🇷🇺 |#319|
-  - cool [LSO-LTE] 🇷🇺 |#320|
-  - cool [IR-WL-3] 🇷🇺 |#321|
+  - cool [LSO-LTE] 🇧🇾 |#16|
+  - cool [LSO-LTE] 🇱🇻 |#17|
+  - cool [LSO-LTE] 🇷🇺 |#18|
+  - cool [LSO-LTE] 🇸🇪 |#19|
+  - cool [LSO-LTE] 🇺🇸 |#20|
+  - cool [LSO-LTE] 🇦🇪 |#21|
+  - cool [LSO-LTE] 🇸🇪 |#22|
+  - cool [LSO-LTE] 🇮🇹 |#23|
+  - cool [LSO-LTE] 🇸🇪 |#24|
+  - cool [LSO-LTE] 🇱🇹 |#25|
+  - cool [LSO-LTE] 🇺🇸 |#26|
+  - cool [LSO-LTE] 🇺🇸 |#27|
+  - cool [LSO-LTE] 🇷🇺 |#28|
+  - cool [LSO-LTE] 🇺🇸 |#29|
+  - cool [LSO-LTE] 🇷🇺 |#30|
+  - cool [LSO-LTE] 🇩🇪 |#31|
+  - cool [LSO-LTE] 🇷🇺 |#32|
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [etoneya wl] 🇳🇱 |#1|
-  - cool [LSO-LTE] 🇸🇬 |#2|
-  - cool [ImSketch] 🇳🇱 |#3|
-  - cool [etoneya wl] 🇳🇱 |#4|
-  - cool [etoneya wl] 🇩🇪 |#5|
-  - cool [ImSketch] 🇷🇺 |#6|
-  - cool [LSO-LTE] 🇺🇸 |#7|
-  - cool [IR-WL-2] 🇫🇮 |#8|
-  - cool [ImSketch] 🇺🇸 |#9|
+  - cool [LSO-LTE] 🇩🇪 |#1|
+  - cool [LSO-LTE] 🇷🇺 |#2|
+  - cool [LSO-LTE] 🇭🇰 |#3|
+  - cool [LSO-LTE] 🇸🇪 |#4|
+  - cool [LSO-LTE] 🇸🇪 |#5|
+  - cool [LSO-LTE] 🇮🇹 |#6|
+  - cool [LSO-LTE] 🇸🇬 |#7|
+  - cool [LSO-LTE] 🇷🇺 |#8|
+  - cool [LSO-LTE] 🇳🇱 |#9|
   - cool [LSO-LTE] 🇺🇸 |#10|
-  - cool [ImSketch] 🇷🇺 |#11|
-  - cool [IR-WL-2] 🇸🇬 |#12|
-  - cool [IR-WL-2] 🇺🇸 |#13|
-  - cool [etoneya wl] 🇸🇪 |#14|
+  - cool [LSO-LTE] 🇺🇸 |#11|
+  - cool [LSO-LTE] 🇺🇸 |#12|
+  - cool [LSO-LTE] 🇫🇷 |#13|
+  - cool [LSO-LTE] 🇺🇸 |#14|
   - cool [LSO-LTE] 🇺🇸 |#15|
-  - cool [IR-WL-1] 🇫🇷 |#16|
-  - cool [IR-WL-2] 🇩🇪 |#17|
-  - cool [Akres-WL] 🇷🇺 |#18|
-  - cool [etoneya wl] 🇺🇸 |#19|
-  - cool [IR-WL-1] 🇦🇪 |#20|
-  - cool [ImSketch] 🇺🇸 |#21|
-  - cool [IR-WL-2] 🇸🇬 |#22|
-  - cool [ImSketch] 🇺🇸 |#23|
-  - cool [IR-WL-2] 🇬🇧 |#24|
-  - cool [IR-WL-1] 🌐 |#25|
-  - cool [IR-WL-3] 🇭🇺 |#26|
-  - cool [IR-WL-1] 🇫🇷 |#27|
-  - cool [IR-WL-2] 🌐 |#28|
-  - cool [etoneya wl] 🇷🇺 |#29|
-  - cool [ImSketch] 🇷🇺 |#30|
-  - cool [IR-WL-2] 🇸🇬 |#31|
-  - cool [IR-WL-2] 🇷🇺 |#32|
-  - cool [LSO-LTE] 🇺🇸 |#33|
-  - cool [IR-WL-2] 🇷🇺 |#34|
-  - cool [etoneya wl] 🇸🇪 |#35|
-  - cool [IR-WL-2] 🇩🇪 |#36|
-  - cool [IR-WL-1] 🌐 |#37|
-  - cool [IR-WL-2] 🇺🇸 |#38|
-  - cool [Akres-WL] 🇷🇺 |#39|
-  - cool [etoneya wl] 🇷🇺 |#40|
-  - cool [IR-WL-2] 🇸🇬 |#41|
-  - cool [etoneya wl] 🇷🇺 |#42|
-  - cool [LSO-LTE] 🇸🇪 |#43|
-  - cool [etoneya wl] 🇷🇺 |#44|
-  - cool [IR-WL-2] 🇺🇸 |#45|
-  - cool [LSO-LTE] 🇺🇸 |#46|
-  - cool [LSO-LTE] 🇷🇺 |#47|
-  - cool [ImSketch] 🇺🇸 |#48|
-  - cool [LSO-LTE] 🇷🇺 |#49|
-  - cool [LSO-LTE] 🇷🇺 |#50|
-  - cool [ImSketch] 🇺🇸 |#51|
-  - cool [ImSketch] 🇫🇮 |#52|
-  - cool [etoneya wl] 🇷🇺 |#53|
-  - cool [mos.ru] 🇷🇺 |#54|
-  - cool [ImSketch] 🇭🇰 |#55|
-  - cool [ImSketch] 🇷🇺 |#56|
-  - cool [LSO-LTE] 🇷🇺 |#57|
-  - cool [IR-WL-2] 🇸🇬 |#58|
-  - cool [etoneya wl] 🇷🇺 |#59|
-  - cool [LSO-LTE] 🇺🇸 |#60|
-  - cool [ImSketch] 🇷🇺 |#61|
-  - cool [IR-WL-2] 🇸🇬 |#62|
-  - cool [mos.ru] 🇷🇺 |#63|
-  - cool [LSO-LTE] 🇷🇺 |#64|
-  - cool [IR-WL-1] 🇦🇪 |#65|
-  - cool [IR-WL-2] 🇺🇸 |#66|
-  - cool [LSO-LTE] 🇺🇸 |#67|
-  - cool [LSO-LTE] 🇺🇸 |#68|
-  - cool [IR-WL-2] 🇵🇱 |#69|
-  - cool [IR-WL-1] 🇦🇪 |#70|
-  - cool [etoneya wl] 🇸🇪 |#71|
-  - cool [igareck-WL] 🇷🇺 |#72|
-  - cool [IR-WL-1] 🌐 |#73|
-  - cool [IR-WL-3] 🇯🇵 |#74|
-  - cool [mos.ru] 🇷🇺 |#75|
-  - cool [IR-WL-2] 🇺🇸 |#76|
-  - cool [ImSketch] 🇳🇱 |#77|
-  - cool [LSO-LTE] 🇳🇱 |#78|
-  - cool [IR-WL-2] 🇳🇱 |#79|
-  - cool [ImSketch] 🇬🇧 |#80|
-  - cool [ImSketch] 🇬🇧 |#81|
-  - cool [mos.ru] 🇷🇺 |#82|
-  - cool [IR-WL-1] 🇫🇷 |#83|
-  - cool [IR-WL-2] 🇳🇱 |#84|
-  - cool [LSO-LTE] 🇬🇧 |#85|
-  - cool [mos.ru] 🇷🇺 |#86|
-  - cool [IR-WL-2] 🇸🇬 |#87|
-  - cool [IR-WL-2] 🇳🇱 |#88|
-  - cool [IR-WL-3] 🇩🇪 |#89|
-  - cool [LSO-LTE] 🇳🇱 |#90|
-  - cool [IR-WL-2] 🌐 |#91|
-  - cool [LSO-LTE] 🇺🇸 |#92|
-  - cool [etoneya wl] 🇺🇸 |#93|
-  - cool [IR-WL-2] 🇯🇵 |#94|
-  - cool [IR-WL-2] 🇺🇸 |#95|
-  - cool [ImSketch] 🇷🇺 |#96|
-  - cool [etoneya wl] 🇺🇸 |#97|
-  - cool [IR-WL-2] 🇸🇬 |#98|
-  - cool [IR-WL-2] 🇸🇬 |#99|
-  - cool [etoneya wl] 🇸🇪 |#100|
-  - cool [ImSketch] 🇬🇧 |#101|
-  - cool [LSO-LTE] 🇷🇺 |#102|
-  - cool [etoneya wl] 🇺🇸 |#103|
-  - cool [IR-WL-2] 🇸🇬 |#104|
-  - cool [IR-WL-1] 🇺🇸 |#105|
-  - cool [IR-WL-2] 🌐 |#106|
-  - cool [IR-WL-1] 🌐 |#107|
-  - cool [RKP-WL] 🇷🇺 |#108|
-  - cool [IR-WL-2] 🇦🇪 |#109|
-  - cool [Akres-WL] 🇷🇺 |#110|
-  - cool [LSO-LTE] 🇷🇺 |#111|
-  - cool [etoneya wl] 🇷🇺 |#112|
-  - cool [IR-WL-3] 🇩🇪 |#113|
-  - cool [etoneya wl] 🇺🇦 |#114|
-  - cool [LSO-LTE] 🇵🇱 |#115|
-  - cool [ImSketch] 🇷🇺 |#116|
-  - cool [IR-WL-2] 🇩🇪 |#117|
-  - cool [IR-WL-2] 🇳🇱 |#118|
-  - cool [IR-WL-1] 🌐 |#119|
-  - cool [LSO-LTE] 🇱🇻 |#120|
-  - cool [IR-WL-2] 🇯🇵 |#121|
-  - cool [etoneya wl] 🇷🇺 |#122|
-  - cool [LSO-LTE] 🇷🇺 |#123|
-  - cool [IR-WL-1] 🇦🇪 |#124|
-  - cool [etoneya wl] 🇷🇺 |#125|
-  - cool [ImSketch] 🇷🇺 |#126|
-  - cool [LSO-LTE] 🇺🇸 |#127|
-  - cool [IR-WL-2] 🇩🇪 |#128|
-  - cool [LSO-LTE] 🇮🇹 |#129|
-  - cool [IR-WL-2] 🇷🇴 |#130|
-  - cool [IR-WL-1] 🌐 |#131|
-  - cool [IR-WL-2] 🇸🇬 |#132|
-  - cool [IR-WL-3] 🇳🇱 |#133|
-  - cool [ImSketch] 🇪🇪 |#134|
-  - cool [ImSketch] 🇵🇱 |#135|
-  - cool [etoneya wl] 🇷🇺 |#136|
-  - cool [IR-WL-3] 🇲🇩 |#137|
-  - cool [ImSketch] 🇬🇧 |#138|
-  - cool [etoneya wl] 🇱🇹 |#139|
-  - cool [LSO-LTE] 🇷🇺 |#140|
-  - cool [IR-WL-3] 🇬🇧 |#141|
-  - cool [IR-WL-3] 🌐 |#142|
-  - cool [etoneya wl] 🇷🇺 |#143|
-  - cool [IR-WL-2] 🇺🇸 |#144|
-  - cool [IR-WL-3] 🇯🇵 |#145|
-  - cool [LSO-LTE] 🇷🇺 |#146|
-  - cool [LSO-LTE] 🇷🇺 |#147|
-  - cool [etoneya wl] 🇳🇱 |#148|
-  - cool [IR-WL-1] 🇮🇹 |#149|
-  - cool [LSO-LTE] 🇧🇾 |#150|
-  - cool [IR-WL-1] 🇨🇭 |#151|
-  - cool [IR-WL-2] 🌐 |#152|
-  - cool [etoneya wl] 🇸🇪 |#153|
-  - cool [IR-WL-2] 🇦🇪 |#154|
-  - cool [etoneya wl] 🇳🇱 |#155|
-  - cool [mos.ru] 🇷🇺 |#156|
-  - cool [IR-WL-2] 🇺🇸 |#157|
-  - cool [ImSketch] 🇦🇪 |#158|
-  - cool [IR-WL-2] 🇺🇸 |#159|
-  - cool [LSO-LTE] 🇷🇺 |#160|
-  - cool [LSO-LTE] 🇷🇺 |#161|
-  - cool [LSO-LTE] 🇷🇺 |#162|
-  - cool [etoneya wl] 🇱🇻 |#163|
-  - cool [etoneya wl] 🇷🇺 |#164|
-  - cool [ImSketch] 🇷🇺 |#165|
-  - cool [etoneya wl] 🇮🇹 |#166|
-  - cool [Akres-WL] 🇷🇺 |#167|
-  - cool [LSO-LTE] 🇺🇸 |#168|
-  - cool [ImSketch] 🇺🇸 |#169|
-  - cool [ImSketch] 🇦🇪 |#170|
-  - cool [etoneya wl] 🇷🇺 |#171|
-  - cool [LSO-LTE] 🇷🇺 |#172|
-  - cool [LSO-LTE] 🇱🇻 |#173|
-  - cool [IR-WL-1] 🌐 |#174|
-  - cool [IR-WL-2] 🌐 |#175|
-  - cool [IR-WL-2] 🇧🇾 |#176|
-  - cool [IR-WL-1] 🇺🇸 |#177|
-  - cool [LSO-LTE] 🇺🇸 |#178|
-  - cool [IR-WL-2] 🌐 |#179|
-  - cool [etoneya wl] 🇦🇪 |#180|
-  - cool [IR-WL-3] 🇩🇪 |#181|
-  - cool [LSO-LTE] 🇸🇪 |#182|
-  - cool [IR-WL-2] 🇵🇱 |#183|
-  - cool [ImSketch] 🇷🇺 |#184|
-  - cool [IR-WL-2] 🇸🇬 |#185|
-  - cool [RKP-WL] 🇷🇺 |#186|
-  - cool [RKP-WL] 🇷🇺 |#187|
-  - cool [IR-WL-2] 🇩🇪 |#188|
-  - cool [LSO-LTE] 🇷🇺 |#189|
-  - cool [RKP-WL] 🇷🇺 |#190|
-  - cool [IR-WL-2] 🇺🇸 |#191|
-  - cool [ImSketch] 🇷🇺 |#192|
-  - cool [IR-WL-1] 🌐 |#193|
-  - cool [IR-WL-2] 🇷🇴 |#194|
-  - cool [IR-WL-2] 🇯🇵 |#195|
-  - cool [etoneya wl] 🇷🇺 |#196|
-  - cool [LSO-LTE] 🇷🇺 |#197|
-  - cool [igareck-WL] 🇷🇺 |#198|
-  - cool [ImSketch] 🇬🇧 |#199|
-  - cool [mos.ru] 🇷🇺 |#200|
-  - cool [IR-WL-1] 🌐 |#201|
-  - cool [LSO-LTE] 🇷🇺 |#202|
-  - cool [ImSketch] 🇺🇸 |#203|
-  - cool [IR-WL-2] 🇰🇷 |#204|
-  - cool [LSO-LTE] 🇷🇺 |#205|
-  - cool [etoneya wl] 🇬🇧 |#206|
-  - cool [IR-WL-1] 🇬🇧 |#207|
-  - cool [IR-WL-2] 🇸🇬 |#208|
-  - cool [LSO-LTE] 🇱🇻 |#209|
-  - cool [IR-WL-3] 🇷🇺 |#210|
-  - cool [ImSketch] 🇷🇺 |#211|
-  - cool [IR-WL-2] 🇷🇺 |#212|
-  - cool [IR-WL-1] 🇩🇪 |#213|
-  - cool [IR-WL-2] 🇩🇪 |#214|
-  - cool [ImSketch] 🇸🇦 |#215|
-  - cool [etoneya wl] 🇱🇻 |#216|
-  - cool [mos.ru] 🇷🇺 |#217|
-  - cool [IR-WL-2] 🇨🇦 |#218|
-  - cool [LSO-LTE] 🇸🇪 |#219|
-  - cool [IR-WL-3] 🌐 |#220|
-  - cool [IR-WL-2] 🇫🇮 |#221|
-  - cool [IR-WL-2] 🇰🇷 |#222|
-  - cool [etoneya wl] 🇩🇪 |#223|
-  - cool [IR-WL-2] 🇬🇧 |#224|
-  - cool [etoneya wl] 🇳🇱 |#225|
-  - cool [IR-WL-3] 🇩🇪 |#226|
-  - cool [etoneya wl] 🇱🇻 |#227|
-  - cool [etoneya wl] 🇺🇸 |#228|
-  - cool [Akres-WL] 🇷🇺 |#229|
-  - cool [IR-WL-2] 🌐 |#230|
-  - cool [IR-WL-2] 🇬🇧 |#231|
-  - cool [etoneya wl] 🇦🇪 |#232|
-  - cool [IR-WL-2] 🌐 |#233|
-  - cool [etoneya wl] 🇺🇸 |#234|
-  - cool [etoneya wl] 🇺🇸 |#235|
-  - cool [IR-WL-2] 🇦🇪 |#236|
-  - cool [mos.ru] 🇷🇺 |#237|
-  - cool [LSO-LTE] 🇺🇸 |#238|
-  - cool [IR-WL-2] 🇫🇮 |#239|
-  - cool [IR-WL-2] 🇬🇧 |#240|
-  - cool [RKP-WL] 🇷🇺 |#241|
-  - cool [etoneya wl] 🇷🇺 |#242|
-  - cool [IR-WL-2] 🇳🇱 |#243|
-  - cool [etoneya wl] 🇸🇬 |#244|
-  - cool [IR-WL-1] 🇺🇸 |#245|
-  - cool [IR-WL-3] 🇯🇵 |#246|
-  - cool [IR-WL-2] 🇺🇸 |#247|
-  - cool [ImSketch] 🇺🇸 |#248|
-  - cool [IR-WL-1] 🌐 |#249|
-  - cool [ImSketch] 🇨🇦 |#250|
-  - cool [LSO-LTE] 🇷🇺 |#251|
-  - cool [LSO-LTE] 🇷🇺 |#252|
-  - cool [LSO-LTE] 🇮🇱 |#253|
-  - cool [IR-WL-1] 🇫🇮 |#254|
-  - cool [IR-WL-1] 🇦🇪 |#255|
-  - cool [etoneya wl] 🇺🇸 |#256|
-  - cool [IR-WL-2] 🇺🇸 |#257|
-  - cool [IR-WL-3] 🇷🇺 |#258|
-  - cool [RKP-WL] 🇷🇺 |#259|
-  - cool [IR-WL-2] 🇯🇵 |#260|
-  - cool [ImSketch] 🇩🇪 |#261|
-  - cool [ImSketch] 🇦🇪 |#262|
-  - cool [IR-WL-2] 🇰🇷 |#263|
-  - cool [IR-WL-2] 🇩🇪 |#264|
-  - cool [IR-WL-2] 🇷🇺 |#265|
-  - cool [IR-WL-3] 🌐 |#266|
-  - cool [ImSketch] 🇬🇧 |#267|
-  - cool [IR-WL-2] 🇸🇬 |#268|
-  - cool [ImSketch] 🇦🇪 |#269|
-  - cool [LSO-LTE] 🇸🇬 |#270|
-  - cool [LSO-LTE] 🇳🇱 |#271|
-  - cool [ImSketch] 🇺🇸 |#272|
-  - cool [LSO-LTE] 🇷🇺 |#273|
-  - cool [IR-WL-1] 🇱🇹 |#274|
-  - cool [etoneya wl] 🇵🇱 |#275|
-  - cool [IR-WL-2] 🌐 |#276|
-  - cool [LSO-LTE] 🇷🇺 |#277|
-  - cool [IR-WL-1] 🌐 |#278|
-  - cool [etoneya wl] 🇳🇱 |#279|
-  - cool [IR-WL-2] 🇸🇬 |#280|
-  - cool [etoneya wl] 🇷🇺 |#281|
-  - cool [IR-WL-2] 🇬🇧 |#282|
-  - cool [IR-WL-3] 🇩🇪 |#283|
-  - cool [LSO-LTE] 🇷🇺 |#284|
-  - cool [etoneya wl] 🇱🇻 |#285|
-  - cool [IR-WL-2] 🇸🇬 |#286|
-  - cool [IR-WL-2] 🇩🇪 |#287|
-  - cool [IR-WL-2] 🇯🇵 |#288|
-  - cool [IR-WL-2] 🇸🇬 |#289|
-  - cool [etoneya wl] 🇺🇸 |#290|
-  - cool [IR-WL-3] 🇬🇧 |#291|
-  - cool [LSO-LTE] 🇷🇺 |#292|
-  - cool [IR-WL-1] 🌐 |#293|
-  - cool [ImSketch] 🇷🇺 |#294|
-  - cool [etoneya wl] 🇷🇺 |#295|
-  - cool [etoneya wl] 🇧🇾 |#296|
-  - cool [IR-WL-2] 🇰🇷 |#297|
-  - cool [LSO-LTE] 🇭🇰 |#298|
-  - cool [IR-WL-2] 🇰🇷 |#299|
-  - cool [LSO-LTE] 🇷🇺 |#300|
-  - cool [igareck-WL] 🇷🇺 |#301|
-  - cool [etoneya wl] 🇷🇺 |#302|
-  - cool [ImSketch] 🇩🇪 |#303|
-  - cool [LSO-LTE] 🇺🇸 |#304|
-  - cool [LSO-LTE] 🇷🇺 |#305|
-  - cool [etoneya wl] 🇺🇸 |#306|
-  - cool [etoneya wl] 🇵🇱 |#307|
-  - cool [LSO-LTE] 🇷🇺 |#308|
-  - cool [ImSketch] 🇳🇱 |#309|
-  - cool [IR-WL-2] 🇰🇷 |#310|
-  - cool [IR-WL-2] 🇰🇷 |#311|
-  - cool [igareck-WL] 🇳🇱 |#312|
-  - cool [IR-WL-2] 🇦🇪 |#313|
-  - cool [LSO-LTE] 🇩🇪 |#314|
-  - cool [LSO-LTE] 🇷🇺 |#315|
-  - cool [IR-WL-2] 🇯🇵 |#316|
-  - cool [ImSketch] 🇬🇧 |#317|
-  - cool [IR-WL-3] 🇩🇪 |#318|
-  - cool [RKP-WL] 🇷🇺 |#319|
-  - cool [LSO-LTE] 🇷🇺 |#320|
-  - cool [IR-WL-3] 🇷🇺 |#321|
+  - cool [LSO-LTE] 🇧🇾 |#16|
+  - cool [LSO-LTE] 🇱🇻 |#17|
+  - cool [LSO-LTE] 🇷🇺 |#18|
+  - cool [LSO-LTE] 🇸🇪 |#19|
+  - cool [LSO-LTE] 🇺🇸 |#20|
+  - cool [LSO-LTE] 🇦🇪 |#21|
+  - cool [LSO-LTE] 🇸🇪 |#22|
+  - cool [LSO-LTE] 🇮🇹 |#23|
+  - cool [LSO-LTE] 🇸🇪 |#24|
+  - cool [LSO-LTE] 🇱🇹 |#25|
+  - cool [LSO-LTE] 🇺🇸 |#26|
+  - cool [LSO-LTE] 🇺🇸 |#27|
+  - cool [LSO-LTE] 🇷🇺 |#28|
+  - cool [LSO-LTE] 🇺🇸 |#29|
+  - cool [LSO-LTE] 🇷🇺 |#30|
+  - cool [LSO-LTE] 🇩🇪 |#31|
+  - cool [LSO-LTE] 🇷🇺 |#32|
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [etoneya wl] 🇳🇱 |#1|
-  - cool [LSO-LTE] 🇸🇬 |#2|
-  - cool [ImSketch] 🇳🇱 |#3|
-  - cool [etoneya wl] 🇳🇱 |#4|
-  - cool [etoneya wl] 🇩🇪 |#5|
-  - cool [LSO-LTE] 🇺🇸 |#7|
-  - cool [IR-WL-2] 🇫🇮 |#8|
-  - cool [ImSketch] 🇺🇸 |#9|
+  - cool [LSO-LTE] 🇩🇪 |#1|
+  - cool [LSO-LTE] 🇭🇰 |#3|
+  - cool [LSO-LTE] 🇸🇪 |#4|
+  - cool [LSO-LTE] 🇸🇪 |#5|
+  - cool [LSO-LTE] 🇮🇹 |#6|
+  - cool [LSO-LTE] 🇸🇬 |#7|
+  - cool [LSO-LTE] 🇳🇱 |#9|
   - cool [LSO-LTE] 🇺🇸 |#10|
-  - cool [IR-WL-2] 🇸🇬 |#12|
-  - cool [IR-WL-2] 🇺🇸 |#13|
-  - cool [etoneya wl] 🇸🇪 |#14|
+  - cool [LSO-LTE] 🇺🇸 |#11|
+  - cool [LSO-LTE] 🇺🇸 |#12|
+  - cool [LSO-LTE] 🇫🇷 |#13|
+  - cool [LSO-LTE] 🇺🇸 |#14|
   - cool [LSO-LTE] 🇺🇸 |#15|
-  - cool [IR-WL-1] 🇫🇷 |#16|
-  - cool [IR-WL-2] 🇩🇪 |#17|
-  - cool [etoneya wl] 🇺🇸 |#19|
-  - cool [IR-WL-1] 🇦🇪 |#20|
-  - cool [ImSketch] 🇺🇸 |#21|
-  - cool [IR-WL-2] 🇸🇬 |#22|
-  - cool [ImSketch] 🇺🇸 |#23|
-  - cool [IR-WL-2] 🇬🇧 |#24|
-  - cool [IR-WL-1] 🌐 |#25|
-  - cool [IR-WL-3] 🇭🇺 |#26|
-  - cool [IR-WL-1] 🇫🇷 |#27|
-  - cool [IR-WL-2] 🌐 |#28|
-  - cool [IR-WL-2] 🇸🇬 |#31|
-  - cool [LSO-LTE] 🇺🇸 |#33|
-  - cool [etoneya wl] 🇸🇪 |#35|
-  - cool [IR-WL-2] 🇩🇪 |#36|
-  - cool [IR-WL-1] 🌐 |#37|
-  - cool [IR-WL-2] 🇺🇸 |#38|
-  - cool [IR-WL-2] 🇸🇬 |#41|
-  - cool [LSO-LTE] 🇸🇪 |#43|
-  - cool [IR-WL-2] 🇺🇸 |#45|
-  - cool [LSO-LTE] 🇺🇸 |#46|
-  - cool [ImSketch] 🇺🇸 |#48|
-  - cool [ImSketch] 🇺🇸 |#51|
-  - cool [ImSketch] 🇫🇮 |#52|
-  - cool [ImSketch] 🇭🇰 |#55|
-  - cool [IR-WL-2] 🇸🇬 |#58|
-  - cool [LSO-LTE] 🇺🇸 |#60|
-  - cool [IR-WL-2] 🇸🇬 |#62|
-  - cool [IR-WL-1] 🇦🇪 |#65|
-  - cool [IR-WL-2] 🇺🇸 |#66|
-  - cool [LSO-LTE] 🇺🇸 |#67|
-  - cool [LSO-LTE] 🇺🇸 |#68|
-  - cool [IR-WL-2] 🇵🇱 |#69|
-  - cool [IR-WL-1] 🇦🇪 |#70|
-  - cool [etoneya wl] 🇸🇪 |#71|
-  - cool [IR-WL-1] 🌐 |#73|
-  - cool [IR-WL-3] 🇯🇵 |#74|
-  - cool [IR-WL-2] 🇺🇸 |#76|
-  - cool [ImSketch] 🇳🇱 |#77|
-  - cool [LSO-LTE] 🇳🇱 |#78|
-  - cool [IR-WL-2] 🇳🇱 |#79|
-  - cool [ImSketch] 🇬🇧 |#80|
-  - cool [ImSketch] 🇬🇧 |#81|
-  - cool [IR-WL-1] 🇫🇷 |#83|
-  - cool [IR-WL-2] 🇳🇱 |#84|
-  - cool [LSO-LTE] 🇬🇧 |#85|
-  - cool [IR-WL-2] 🇸🇬 |#87|
-  - cool [IR-WL-2] 🇳🇱 |#88|
-  - cool [IR-WL-3] 🇩🇪 |#89|
-  - cool [LSO-LTE] 🇳🇱 |#90|
-  - cool [IR-WL-2] 🌐 |#91|
-  - cool [LSO-LTE] 🇺🇸 |#92|
-  - cool [etoneya wl] 🇺🇸 |#93|
-  - cool [IR-WL-2] 🇯🇵 |#94|
-  - cool [IR-WL-2] 🇺🇸 |#95|
-  - cool [etoneya wl] 🇺🇸 |#97|
-  - cool [IR-WL-2] 🇸🇬 |#98|
-  - cool [IR-WL-2] 🇸🇬 |#99|
-  - cool [etoneya wl] 🇸🇪 |#100|
-  - cool [ImSketch] 🇬🇧 |#101|
-  - cool [etoneya wl] 🇺🇸 |#103|
-  - cool [IR-WL-2] 🇸🇬 |#104|
-  - cool [IR-WL-1] 🇺🇸 |#105|
-  - cool [IR-WL-2] 🌐 |#106|
-  - cool [IR-WL-1] 🌐 |#107|
-  - cool [IR-WL-2] 🇦🇪 |#109|
-  - cool [IR-WL-3] 🇩🇪 |#113|
-  - cool [etoneya wl] 🇺🇦 |#114|
-  - cool [LSO-LTE] 🇵🇱 |#115|
-  - cool [IR-WL-2] 🇩🇪 |#117|
-  - cool [IR-WL-2] 🇳🇱 |#118|
-  - cool [IR-WL-1] 🌐 |#119|
-  - cool [LSO-LTE] 🇱🇻 |#120|
-  - cool [IR-WL-2] 🇯🇵 |#121|
-  - cool [IR-WL-1] 🇦🇪 |#124|
-  - cool [LSO-LTE] 🇺🇸 |#127|
-  - cool [IR-WL-2] 🇩🇪 |#128|
-  - cool [LSO-LTE] 🇮🇹 |#129|
-  - cool [IR-WL-2] 🇷🇴 |#130|
-  - cool [IR-WL-1] 🌐 |#131|
-  - cool [IR-WL-2] 🇸🇬 |#132|
-  - cool [IR-WL-3] 🇳🇱 |#133|
-  - cool [ImSketch] 🇪🇪 |#134|
-  - cool [ImSketch] 🇵🇱 |#135|
-  - cool [IR-WL-3] 🇲🇩 |#137|
-  - cool [ImSketch] 🇬🇧 |#138|
-  - cool [etoneya wl] 🇱🇹 |#139|
-  - cool [IR-WL-3] 🇬🇧 |#141|
-  - cool [IR-WL-3] 🌐 |#142|
-  - cool [IR-WL-2] 🇺🇸 |#144|
-  - cool [IR-WL-3] 🇯🇵 |#145|
-  - cool [etoneya wl] 🇳🇱 |#148|
-  - cool [IR-WL-1] 🇮🇹 |#149|
-  - cool [LSO-LTE] 🇧🇾 |#150|
-  - cool [IR-WL-1] 🇨🇭 |#151|
-  - cool [IR-WL-2] 🌐 |#152|
-  - cool [etoneya wl] 🇸🇪 |#153|
-  - cool [IR-WL-2] 🇦🇪 |#154|
-  - cool [etoneya wl] 🇳🇱 |#155|
-  - cool [IR-WL-2] 🇺🇸 |#157|
-  - cool [ImSketch] 🇦🇪 |#158|
-  - cool [IR-WL-2] 🇺🇸 |#159|
-  - cool [etoneya wl] 🇱🇻 |#163|
-  - cool [etoneya wl] 🇮🇹 |#166|
-  - cool [LSO-LTE] 🇺🇸 |#168|
-  - cool [ImSketch] 🇺🇸 |#169|
-  - cool [ImSketch] 🇦🇪 |#170|
-  - cool [LSO-LTE] 🇱🇻 |#173|
-  - cool [IR-WL-1] 🌐 |#174|
-  - cool [IR-WL-2] 🌐 |#175|
-  - cool [IR-WL-2] 🇧🇾 |#176|
-  - cool [IR-WL-1] 🇺🇸 |#177|
-  - cool [LSO-LTE] 🇺🇸 |#178|
-  - cool [IR-WL-2] 🌐 |#179|
-  - cool [etoneya wl] 🇦🇪 |#180|
-  - cool [IR-WL-3] 🇩🇪 |#181|
-  - cool [LSO-LTE] 🇸🇪 |#182|
-  - cool [IR-WL-2] 🇵🇱 |#183|
-  - cool [IR-WL-2] 🇸🇬 |#185|
-  - cool [IR-WL-2] 🇩🇪 |#188|
-  - cool [IR-WL-2] 🇺🇸 |#191|
-  - cool [IR-WL-1] 🌐 |#193|
-  - cool [IR-WL-2] 🇷🇴 |#194|
-  - cool [IR-WL-2] 🇯🇵 |#195|
-  - cool [ImSketch] 🇬🇧 |#199|
-  - cool [IR-WL-1] 🌐 |#201|
-  - cool [ImSketch] 🇺🇸 |#203|
-  - cool [IR-WL-2] 🇰🇷 |#204|
-  - cool [etoneya wl] 🇬🇧 |#206|
-  - cool [IR-WL-1] 🇬🇧 |#207|
-  - cool [IR-WL-2] 🇸🇬 |#208|
-  - cool [LSO-LTE] 🇱🇻 |#209|
-  - cool [IR-WL-1] 🇩🇪 |#213|
-  - cool [IR-WL-2] 🇩🇪 |#214|
-  - cool [ImSketch] 🇸🇦 |#215|
-  - cool [etoneya wl] 🇱🇻 |#216|
-  - cool [IR-WL-2] 🇨🇦 |#218|
-  - cool [LSO-LTE] 🇸🇪 |#219|
-  - cool [IR-WL-3] 🌐 |#220|
-  - cool [IR-WL-2] 🇫🇮 |#221|
-  - cool [IR-WL-2] 🇰🇷 |#222|
-  - cool [etoneya wl] 🇩🇪 |#223|
-  - cool [IR-WL-2] 🇬🇧 |#224|
-  - cool [etoneya wl] 🇳🇱 |#225|
-  - cool [IR-WL-3] 🇩🇪 |#226|
-  - cool [etoneya wl] 🇱🇻 |#227|
-  - cool [etoneya wl] 🇺🇸 |#228|
-  - cool [IR-WL-2] 🌐 |#230|
-  - cool [IR-WL-2] 🇬🇧 |#231|
-  - cool [etoneya wl] 🇦🇪 |#232|
-  - cool [IR-WL-2] 🌐 |#233|
-  - cool [etoneya wl] 🇺🇸 |#234|
-  - cool [etoneya wl] 🇺🇸 |#235|
-  - cool [IR-WL-2] 🇦🇪 |#236|
-  - cool [LSO-LTE] 🇺🇸 |#238|
-  - cool [IR-WL-2] 🇫🇮 |#239|
-  - cool [IR-WL-2] 🇬🇧 |#240|
-  - cool [IR-WL-2] 🇳🇱 |#243|
-  - cool [etoneya wl] 🇸🇬 |#244|
-  - cool [IR-WL-1] 🇺🇸 |#245|
-  - cool [IR-WL-3] 🇯🇵 |#246|
-  - cool [IR-WL-2] 🇺🇸 |#247|
-  - cool [ImSketch] 🇺🇸 |#248|
-  - cool [IR-WL-1] 🌐 |#249|
-  - cool [ImSketch] 🇨🇦 |#250|
-  - cool [LSO-LTE] 🇮🇱 |#253|
-  - cool [IR-WL-1] 🇫🇮 |#254|
-  - cool [IR-WL-1] 🇦🇪 |#255|
-  - cool [etoneya wl] 🇺🇸 |#256|
-  - cool [IR-WL-2] 🇺🇸 |#257|
-  - cool [IR-WL-2] 🇯🇵 |#260|
-  - cool [ImSketch] 🇩🇪 |#261|
-  - cool [ImSketch] 🇦🇪 |#262|
-  - cool [IR-WL-2] 🇰🇷 |#263|
-  - cool [IR-WL-2] 🇩🇪 |#264|
-  - cool [IR-WL-3] 🌐 |#266|
-  - cool [ImSketch] 🇬🇧 |#267|
-  - cool [IR-WL-2] 🇸🇬 |#268|
-  - cool [ImSketch] 🇦🇪 |#269|
-  - cool [LSO-LTE] 🇸🇬 |#270|
-  - cool [LSO-LTE] 🇳🇱 |#271|
-  - cool [ImSketch] 🇺🇸 |#272|
-  - cool [IR-WL-1] 🇱🇹 |#274|
-  - cool [etoneya wl] 🇵🇱 |#275|
-  - cool [IR-WL-2] 🌐 |#276|
-  - cool [IR-WL-1] 🌐 |#278|
-  - cool [etoneya wl] 🇳🇱 |#279|
-  - cool [IR-WL-2] 🇸🇬 |#280|
-  - cool [IR-WL-2] 🇬🇧 |#282|
-  - cool [IR-WL-3] 🇩🇪 |#283|
-  - cool [etoneya wl] 🇱🇻 |#285|
-  - cool [IR-WL-2] 🇸🇬 |#286|
-  - cool [IR-WL-2] 🇩🇪 |#287|
-  - cool [IR-WL-2] 🇯🇵 |#288|
-  - cool [IR-WL-2] 🇸🇬 |#289|
-  - cool [etoneya wl] 🇺🇸 |#290|
-  - cool [IR-WL-3] 🇬🇧 |#291|
-  - cool [IR-WL-1] 🌐 |#293|
-  - cool [etoneya wl] 🇧🇾 |#296|
-  - cool [IR-WL-2] 🇰🇷 |#297|
-  - cool [LSO-LTE] 🇭🇰 |#298|
-  - cool [IR-WL-2] 🇰🇷 |#299|
-  - cool [ImSketch] 🇩🇪 |#303|
-  - cool [LSO-LTE] 🇺🇸 |#304|
-  - cool [etoneya wl] 🇺🇸 |#306|
-  - cool [etoneya wl] 🇵🇱 |#307|
-  - cool [ImSketch] 🇳🇱 |#309|
-  - cool [IR-WL-2] 🇰🇷 |#310|
-  - cool [IR-WL-2] 🇰🇷 |#311|
-  - cool [igareck-WL] 🇳🇱 |#312|
-  - cool [IR-WL-2] 🇦🇪 |#313|
-  - cool [LSO-LTE] 🇩🇪 |#314|
-  - cool [IR-WL-2] 🇯🇵 |#316|
-  - cool [ImSketch] 🇬🇧 |#317|
-  - cool [IR-WL-3] 🇩🇪 |#318|
+  - cool [LSO-LTE] 🇧🇾 |#16|
+  - cool [LSO-LTE] 🇱🇻 |#17|
+  - cool [LSO-LTE] 🇸🇪 |#19|
+  - cool [LSO-LTE] 🇺🇸 |#20|
+  - cool [LSO-LTE] 🇦🇪 |#21|
+  - cool [LSO-LTE] 🇸🇪 |#22|
+  - cool [LSO-LTE] 🇮🇹 |#23|
+  - cool [LSO-LTE] 🇸🇪 |#24|
+  - cool [LSO-LTE] 🇱🇹 |#25|
+  - cool [LSO-LTE] 🇺🇸 |#26|
+  - cool [LSO-LTE] 🇺🇸 |#27|
+  - cool [LSO-LTE] 🇺🇸 |#29|
+  - cool [LSO-LTE] 🇩🇪 |#31|
 - name: 🇧🇾 Belarus
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [LSO-LTE] 🇧🇾 |#150|
-  - cool [IR-WL-2] 🇧🇾 |#176|
-  - cool [etoneya wl] 🇧🇾 |#296|
-- name: 🇨🇦 Canada
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [IR-WL-2] 🇨🇦 |#218|
-  - cool [ImSketch] 🇨🇦 |#250|
-- name: 🇪🇪 Estonia
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [ImSketch] 🇪🇪 |#134|
-- name: 🇫🇮 Finland
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [IR-WL-2] 🇫🇮 |#8|
-  - cool [ImSketch] 🇫🇮 |#52|
-  - cool [IR-WL-2] 🇫🇮 |#221|
-  - cool [IR-WL-2] 🇫🇮 |#239|
-  - cool [IR-WL-1] 🇫🇮 |#254|
+  - cool [LSO-LTE] 🇧🇾 |#16|
 - name: 🇫🇷 France
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [IR-WL-1] 🇫🇷 |#16|
-  - cool [IR-WL-1] 🇫🇷 |#27|
-  - cool [IR-WL-1] 🇫🇷 |#83|
+  - cool [LSO-LTE] 🇫🇷 |#13|
 - name: 🇩🇪 Germany
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [etoneya wl] 🇩🇪 |#5|
-  - cool [IR-WL-2] 🇩🇪 |#17|
-  - cool [IR-WL-2] 🇩🇪 |#36|
-  - cool [IR-WL-3] 🇩🇪 |#89|
-  - cool [IR-WL-3] 🇩🇪 |#113|
-  - cool [IR-WL-2] 🇩🇪 |#117|
-  - cool [IR-WL-2] 🇩🇪 |#128|
-  - cool [IR-WL-3] 🇩🇪 |#181|
-  - cool [IR-WL-2] 🇩🇪 |#188|
-  - cool [IR-WL-1] 🇩🇪 |#213|
-  - cool [IR-WL-2] 🇩🇪 |#214|
-  - cool [etoneya wl] 🇩🇪 |#223|
-  - cool [IR-WL-3] 🇩🇪 |#226|
-  - cool [ImSketch] 🇩🇪 |#261|
-  - cool [IR-WL-2] 🇩🇪 |#264|
-  - cool [IR-WL-3] 🇩🇪 |#283|
-  - cool [IR-WL-2] 🇩🇪 |#287|
-  - cool [ImSketch] 🇩🇪 |#303|
-  - cool [LSO-LTE] 🇩🇪 |#314|
-  - cool [IR-WL-3] 🇩🇪 |#318|
+  - cool [LSO-LTE] 🇩🇪 |#1|
+  - cool [LSO-LTE] 🇩🇪 |#31|
 - name: 🇭🇰 Hong Kong
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [ImSketch] 🇭🇰 |#55|
-  - cool [LSO-LTE] 🇭🇰 |#298|
-- name: 🇭🇺 Hungary
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [IR-WL-3] 🇭🇺 |#26|
-- name: 🇮🇱 Israel
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [LSO-LTE] 🇮🇱 |#253|
+  - cool [LSO-LTE] 🇭🇰 |#3|
 - name: 🇮🇹 Italy
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [LSO-LTE] 🇮🇹 |#129|
-  - cool [IR-WL-1] 🇮🇹 |#149|
-  - cool [etoneya wl] 🇮🇹 |#166|
-- name: 🇯🇵 Japan
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [IR-WL-3] 🇯🇵 |#74|
-  - cool [IR-WL-2] 🇯🇵 |#94|
-  - cool [IR-WL-2] 🇯🇵 |#121|
-  - cool [IR-WL-3] 🇯🇵 |#145|
-  - cool [IR-WL-2] 🇯🇵 |#195|
-  - cool [IR-WL-3] 🇯🇵 |#246|
-  - cool [IR-WL-2] 🇯🇵 |#260|
-  - cool [IR-WL-2] 🇯🇵 |#288|
-  - cool [IR-WL-2] 🇯🇵 |#316|
+  - cool [LSO-LTE] 🇮🇹 |#6|
+  - cool [LSO-LTE] 🇮🇹 |#23|
 - name: 🇱🇻 Latvia
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [LSO-LTE] 🇱🇻 |#120|
-  - cool [etoneya wl] 🇱🇻 |#163|
-  - cool [LSO-LTE] 🇱🇻 |#173|
-  - cool [LSO-LTE] 🇱🇻 |#209|
-  - cool [etoneya wl] 🇱🇻 |#216|
-  - cool [etoneya wl] 🇱🇻 |#227|
-  - cool [etoneya wl] 🇱🇻 |#285|
+  - cool [LSO-LTE] 🇱🇻 |#17|
 - name: 🇱🇹 Lithuania
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [etoneya wl] 🇱🇹 |#139|
-  - cool [IR-WL-1] 🇱🇹 |#274|
-- name: 🇲🇩 Moldova
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [IR-WL-3] 🇲🇩 |#137|
+  - cool [LSO-LTE] 🇱🇹 |#25|
 - name: 🇳🇱 Netherlands
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [etoneya wl] 🇳🇱 |#1|
-  - cool [ImSketch] 🇳🇱 |#3|
-  - cool [etoneya wl] 🇳🇱 |#4|
-  - cool [ImSketch] 🇳🇱 |#77|
-  - cool [LSO-LTE] 🇳🇱 |#78|
-  - cool [IR-WL-2] 🇳🇱 |#79|
-  - cool [IR-WL-2] 🇳🇱 |#84|
-  - cool [IR-WL-2] 🇳🇱 |#88|
-  - cool [LSO-LTE] 🇳🇱 |#90|
-  - cool [IR-WL-2] 🇳🇱 |#118|
-  - cool [IR-WL-3] 🇳🇱 |#133|
-  - cool [etoneya wl] 🇳🇱 |#148|
-  - cool [etoneya wl] 🇳🇱 |#155|
-  - cool [etoneya wl] 🇳🇱 |#225|
-  - cool [IR-WL-2] 🇳🇱 |#243|
-  - cool [LSO-LTE] 🇳🇱 |#271|
-  - cool [etoneya wl] 🇳🇱 |#279|
-  - cool [ImSketch] 🇳🇱 |#309|
-  - cool [igareck-WL] 🇳🇱 |#312|
-- name: 🇵🇱 Poland
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [IR-WL-2] 🇵🇱 |#69|
-  - cool [LSO-LTE] 🇵🇱 |#115|
-  - cool [ImSketch] 🇵🇱 |#135|
-  - cool [IR-WL-2] 🇵🇱 |#183|
-  - cool [etoneya wl] 🇵🇱 |#275|
-  - cool [etoneya wl] 🇵🇱 |#307|
-- name: 🇷🇴 Romania
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [IR-WL-2] 🇷🇴 |#130|
-  - cool [IR-WL-2] 🇷🇴 |#194|
+  - cool [LSO-LTE] 🇳🇱 |#9|
 - name: 🇷🇺 Russia
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [ImSketch] 🇷🇺 |#6|
-  - cool [ImSketch] 🇷🇺 |#11|
-  - cool [Akres-WL] 🇷🇺 |#18|
-  - cool [etoneya wl] 🇷🇺 |#29|
-  - cool [ImSketch] 🇷🇺 |#30|
-  - cool [IR-WL-2] 🇷🇺 |#32|
-  - cool [IR-WL-2] 🇷🇺 |#34|
-  - cool [Akres-WL] 🇷🇺 |#39|
-  - cool [etoneya wl] 🇷🇺 |#40|
-  - cool [etoneya wl] 🇷🇺 |#42|
-  - cool [etoneya wl] 🇷🇺 |#44|
-  - cool [LSO-LTE] 🇷🇺 |#47|
-  - cool [LSO-LTE] 🇷🇺 |#49|
-  - cool [LSO-LTE] 🇷🇺 |#50|
-  - cool [etoneya wl] 🇷🇺 |#53|
-  - cool [mos.ru] 🇷🇺 |#54|
-  - cool [ImSketch] 🇷🇺 |#56|
-  - cool [LSO-LTE] 🇷🇺 |#57|
-  - cool [etoneya wl] 🇷🇺 |#59|
-  - cool [ImSketch] 🇷🇺 |#61|
-  - cool [mos.ru] 🇷🇺 |#63|
-  - cool [LSO-LTE] 🇷🇺 |#64|
-  - cool [igareck-WL] 🇷🇺 |#72|
-  - cool [mos.ru] 🇷🇺 |#75|
-  - cool [mos.ru] 🇷🇺 |#82|
-  - cool [mos.ru] 🇷🇺 |#86|
-  - cool [ImSketch] 🇷🇺 |#96|
-  - cool [LSO-LTE] 🇷🇺 |#102|
-  - cool [RKP-WL] 🇷🇺 |#108|
-  - cool [Akres-WL] 🇷🇺 |#110|
-  - cool [LSO-LTE] 🇷🇺 |#111|
-  - cool [etoneya wl] 🇷🇺 |#112|
-  - cool [ImSketch] 🇷🇺 |#116|
-  - cool [etoneya wl] 🇷🇺 |#122|
-  - cool [LSO-LTE] 🇷🇺 |#123|
-  - cool [etoneya wl] 🇷🇺 |#125|
-  - cool [ImSketch] 🇷🇺 |#126|
-  - cool [etoneya wl] 🇷🇺 |#136|
-  - cool [LSO-LTE] 🇷🇺 |#140|
-  - cool [etoneya wl] 🇷🇺 |#143|
-  - cool [LSO-LTE] 🇷🇺 |#146|
-  - cool [LSO-LTE] 🇷🇺 |#147|
-  - cool [mos.ru] 🇷🇺 |#156|
-  - cool [LSO-LTE] 🇷🇺 |#160|
-  - cool [LSO-LTE] 🇷🇺 |#161|
-  - cool [LSO-LTE] 🇷🇺 |#162|
-  - cool [etoneya wl] 🇷🇺 |#164|
-  - cool [ImSketch] 🇷🇺 |#165|
-  - cool [Akres-WL] 🇷🇺 |#167|
-  - cool [etoneya wl] 🇷🇺 |#171|
-  - cool [LSO-LTE] 🇷🇺 |#172|
-  - cool [ImSketch] 🇷🇺 |#184|
-  - cool [RKP-WL] 🇷🇺 |#186|
-  - cool [RKP-WL] 🇷🇺 |#187|
-  - cool [LSO-LTE] 🇷🇺 |#189|
-  - cool [RKP-WL] 🇷🇺 |#190|
-  - cool [ImSketch] 🇷🇺 |#192|
-  - cool [etoneya wl] 🇷🇺 |#196|
-  - cool [LSO-LTE] 🇷🇺 |#197|
-  - cool [igareck-WL] 🇷🇺 |#198|
-  - cool [mos.ru] 🇷🇺 |#200|
-  - cool [LSO-LTE] 🇷🇺 |#202|
-  - cool [LSO-LTE] 🇷🇺 |#205|
-  - cool [IR-WL-3] 🇷🇺 |#210|
-  - cool [ImSketch] 🇷🇺 |#211|
-  - cool [IR-WL-2] 🇷🇺 |#212|
-  - cool [mos.ru] 🇷🇺 |#217|
-  - cool [Akres-WL] 🇷🇺 |#229|
-  - cool [mos.ru] 🇷🇺 |#237|
-  - cool [RKP-WL] 🇷🇺 |#241|
-  - cool [etoneya wl] 🇷🇺 |#242|
-  - cool [LSO-LTE] 🇷🇺 |#251|
-  - cool [LSO-LTE] 🇷🇺 |#252|
-  - cool [IR-WL-3] 🇷🇺 |#258|
-  - cool [RKP-WL] 🇷🇺 |#259|
-  - cool [IR-WL-2] 🇷🇺 |#265|
-  - cool [LSO-LTE] 🇷🇺 |#273|
-  - cool [LSO-LTE] 🇷🇺 |#277|
-  - cool [etoneya wl] 🇷🇺 |#281|
-  - cool [LSO-LTE] 🇷🇺 |#284|
-  - cool [LSO-LTE] 🇷🇺 |#292|
-  - cool [ImSketch] 🇷🇺 |#294|
-  - cool [etoneya wl] 🇷🇺 |#295|
-  - cool [LSO-LTE] 🇷🇺 |#300|
-  - cool [igareck-WL] 🇷🇺 |#301|
-  - cool [etoneya wl] 🇷🇺 |#302|
-  - cool [LSO-LTE] 🇷🇺 |#305|
-  - cool [LSO-LTE] 🇷🇺 |#308|
-  - cool [LSO-LTE] 🇷🇺 |#315|
-  - cool [RKP-WL] 🇷🇺 |#319|
-  - cool [LSO-LTE] 🇷🇺 |#320|
-  - cool [IR-WL-3] 🇷🇺 |#321|
-- name: 🇸🇦 Saudi Arabia
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [ImSketch] 🇸🇦 |#215|
+  - cool [LSO-LTE] 🇷🇺 |#2|
+  - cool [LSO-LTE] 🇷🇺 |#8|
+  - cool [LSO-LTE] 🇷🇺 |#18|
+  - cool [LSO-LTE] 🇷🇺 |#28|
+  - cool [LSO-LTE] 🇷🇺 |#30|
+  - cool [LSO-LTE] 🇷🇺 |#32|
 - name: 🇸🇬 Singapore
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [LSO-LTE] 🇸🇬 |#2|
-  - cool [IR-WL-2] 🇸🇬 |#12|
-  - cool [IR-WL-2] 🇸🇬 |#22|
-  - cool [IR-WL-2] 🇸🇬 |#31|
-  - cool [IR-WL-2] 🇸🇬 |#41|
-  - cool [IR-WL-2] 🇸🇬 |#58|
-  - cool [IR-WL-2] 🇸🇬 |#62|
-  - cool [IR-WL-2] 🇸🇬 |#87|
-  - cool [IR-WL-2] 🇸🇬 |#98|
-  - cool [IR-WL-2] 🇸🇬 |#99|
-  - cool [IR-WL-2] 🇸🇬 |#104|
-  - cool [IR-WL-2] 🇸🇬 |#132|
-  - cool [IR-WL-2] 🇸🇬 |#185|
-  - cool [IR-WL-2] 🇸🇬 |#208|
-  - cool [etoneya wl] 🇸🇬 |#244|
-  - cool [IR-WL-2] 🇸🇬 |#268|
-  - cool [LSO-LTE] 🇸🇬 |#270|
-  - cool [IR-WL-2] 🇸🇬 |#280|
-  - cool [IR-WL-2] 🇸🇬 |#286|
-  - cool [IR-WL-2] 🇸🇬 |#289|
-- name: 🇰🇷 South Korea
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [IR-WL-2] 🇰🇷 |#204|
-  - cool [IR-WL-2] 🇰🇷 |#222|
-  - cool [IR-WL-2] 🇰🇷 |#263|
-  - cool [IR-WL-2] 🇰🇷 |#297|
-  - cool [IR-WL-2] 🇰🇷 |#299|
-  - cool [IR-WL-2] 🇰🇷 |#310|
-  - cool [IR-WL-2] 🇰🇷 |#311|
+  - cool [LSO-LTE] 🇸🇬 |#7|
 - name: 🇸🇪 Sweden
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [etoneya wl] 🇸🇪 |#14|
-  - cool [etoneya wl] 🇸🇪 |#35|
-  - cool [LSO-LTE] 🇸🇪 |#43|
-  - cool [etoneya wl] 🇸🇪 |#71|
-  - cool [etoneya wl] 🇸🇪 |#100|
-  - cool [etoneya wl] 🇸🇪 |#153|
-  - cool [LSO-LTE] 🇸🇪 |#182|
-  - cool [LSO-LTE] 🇸🇪 |#219|
-- name: 🇨🇭 Switzerland
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [IR-WL-1] 🇨🇭 |#151|
+  - cool [LSO-LTE] 🇸🇪 |#4|
+  - cool [LSO-LTE] 🇸🇪 |#5|
+  - cool [LSO-LTE] 🇸🇪 |#19|
+  - cool [LSO-LTE] 🇸🇪 |#22|
+  - cool [LSO-LTE] 🇸🇪 |#24|
 - name: 🇦🇪 UAE
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [IR-WL-1] 🇦🇪 |#20|
-  - cool [IR-WL-1] 🇦🇪 |#65|
-  - cool [IR-WL-1] 🇦🇪 |#70|
-  - cool [IR-WL-2] 🇦🇪 |#109|
-  - cool [IR-WL-1] 🇦🇪 |#124|
-  - cool [IR-WL-2] 🇦🇪 |#154|
-  - cool [ImSketch] 🇦🇪 |#158|
-  - cool [ImSketch] 🇦🇪 |#170|
-  - cool [etoneya wl] 🇦🇪 |#180|
-  - cool [etoneya wl] 🇦🇪 |#232|
-  - cool [IR-WL-2] 🇦🇪 |#236|
-  - cool [IR-WL-1] 🇦🇪 |#255|
-  - cool [ImSketch] 🇦🇪 |#262|
-  - cool [ImSketch] 🇦🇪 |#269|
-  - cool [IR-WL-2] 🇦🇪 |#313|
+  - cool [LSO-LTE] 🇦🇪 |#21|
 - name: 🇺🇸 USA
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - cool [LSO-LTE] 🇺🇸 |#7|
-  - cool [ImSketch] 🇺🇸 |#9|
   - cool [LSO-LTE] 🇺🇸 |#10|
-  - cool [IR-WL-2] 🇺🇸 |#13|
+  - cool [LSO-LTE] 🇺🇸 |#11|
+  - cool [LSO-LTE] 🇺🇸 |#12|
+  - cool [LSO-LTE] 🇺🇸 |#14|
   - cool [LSO-LTE] 🇺🇸 |#15|
-  - cool [etoneya wl] 🇺🇸 |#19|
-  - cool [ImSketch] 🇺🇸 |#21|
-  - cool [ImSketch] 🇺🇸 |#23|
-  - cool [LSO-LTE] 🇺🇸 |#33|
-  - cool [IR-WL-2] 🇺🇸 |#38|
-  - cool [IR-WL-2] 🇺🇸 |#45|
-  - cool [LSO-LTE] 🇺🇸 |#46|
-  - cool [ImSketch] 🇺🇸 |#48|
-  - cool [ImSketch] 🇺🇸 |#51|
-  - cool [LSO-LTE] 🇺🇸 |#60|
-  - cool [IR-WL-2] 🇺🇸 |#66|
-  - cool [LSO-LTE] 🇺🇸 |#67|
-  - cool [LSO-LTE] 🇺🇸 |#68|
-  - cool [IR-WL-2] 🇺🇸 |#76|
-  - cool [LSO-LTE] 🇺🇸 |#92|
-  - cool [etoneya wl] 🇺🇸 |#93|
-  - cool [IR-WL-2] 🇺🇸 |#95|
-  - cool [etoneya wl] 🇺🇸 |#97|
-  - cool [etoneya wl] 🇺🇸 |#103|
-  - cool [IR-WL-1] 🇺🇸 |#105|
-  - cool [LSO-LTE] 🇺🇸 |#127|
-  - cool [IR-WL-2] 🇺🇸 |#144|
-  - cool [IR-WL-2] 🇺🇸 |#157|
-  - cool [IR-WL-2] 🇺🇸 |#159|
-  - cool [LSO-LTE] 🇺🇸 |#168|
-  - cool [ImSketch] 🇺🇸 |#169|
-  - cool [IR-WL-1] 🇺🇸 |#177|
-  - cool [LSO-LTE] 🇺🇸 |#178|
-  - cool [IR-WL-2] 🇺🇸 |#191|
-  - cool [ImSketch] 🇺🇸 |#203|
-  - cool [etoneya wl] 🇺🇸 |#228|
-  - cool [etoneya wl] 🇺🇸 |#234|
-  - cool [etoneya wl] 🇺🇸 |#235|
-  - cool [LSO-LTE] 🇺🇸 |#238|
-  - cool [IR-WL-1] 🇺🇸 |#245|
-  - cool [IR-WL-2] 🇺🇸 |#247|
-  - cool [ImSketch] 🇺🇸 |#248|
-  - cool [etoneya wl] 🇺🇸 |#256|
-  - cool [IR-WL-2] 🇺🇸 |#257|
-  - cool [ImSketch] 🇺🇸 |#272|
-  - cool [etoneya wl] 🇺🇸 |#290|
-  - cool [LSO-LTE] 🇺🇸 |#304|
-  - cool [etoneya wl] 🇺🇸 |#306|
-- name: 🇺🇦 Ukraine
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [etoneya wl] 🇺🇦 |#114|
-- name: 🇬🇧 United Kingdom
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [IR-WL-2] 🇬🇧 |#24|
-  - cool [ImSketch] 🇬🇧 |#80|
-  - cool [ImSketch] 🇬🇧 |#81|
-  - cool [LSO-LTE] 🇬🇧 |#85|
-  - cool [ImSketch] 🇬🇧 |#101|
-  - cool [ImSketch] 🇬🇧 |#138|
-  - cool [IR-WL-3] 🇬🇧 |#141|
-  - cool [ImSketch] 🇬🇧 |#199|
-  - cool [etoneya wl] 🇬🇧 |#206|
-  - cool [IR-WL-1] 🇬🇧 |#207|
-  - cool [IR-WL-2] 🇬🇧 |#224|
-  - cool [IR-WL-2] 🇬🇧 |#231|
-  - cool [IR-WL-2] 🇬🇧 |#240|
-  - cool [ImSketch] 🇬🇧 |#267|
-  - cool [IR-WL-2] 🇬🇧 |#282|
-  - cool [IR-WL-3] 🇬🇧 |#291|
-  - cool [ImSketch] 🇬🇧 |#317|
-- name: 🌐 Unknown
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - cool [IR-WL-1] 🌐 |#25|
-  - cool [IR-WL-2] 🌐 |#28|
-  - cool [IR-WL-1] 🌐 |#37|
-  - cool [IR-WL-1] 🌐 |#73|
-  - cool [IR-WL-2] 🌐 |#91|
-  - cool [IR-WL-2] 🌐 |#106|
-  - cool [IR-WL-1] 🌐 |#107|
-  - cool [IR-WL-1] 🌐 |#119|
-  - cool [IR-WL-1] 🌐 |#131|
-  - cool [IR-WL-3] 🌐 |#142|
-  - cool [IR-WL-2] 🌐 |#152|
-  - cool [IR-WL-1] 🌐 |#174|
-  - cool [IR-WL-2] 🌐 |#175|
-  - cool [IR-WL-2] 🌐 |#179|
-  - cool [IR-WL-1] 🌐 |#193|
-  - cool [IR-WL-1] 🌐 |#201|
-  - cool [IR-WL-3] 🌐 |#220|
-  - cool [IR-WL-2] 🌐 |#230|
-  - cool [IR-WL-2] 🌐 |#233|
-  - cool [IR-WL-1] 🌐 |#249|
-  - cool [IR-WL-3] 🌐 |#266|
-  - cool [IR-WL-2] 🌐 |#276|
-  - cool [IR-WL-1] 🌐 |#278|
-  - cool [IR-WL-1] 🌐 |#293|
+  - cool [LSO-LTE] 🇺🇸 |#20|
+  - cool [LSO-LTE] 🇺🇸 |#26|
+  - cool [LSO-LTE] 🇺🇸 |#27|
+  - cool [LSO-LTE] 🇺🇸 |#29|
 rules:
 - MATCH,Обычный
