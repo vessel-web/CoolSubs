@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import urllib.request, urllib.error, base64, json, socket, ssl, os, re, gzip, time, random, glob
-import subprocess, concurrent.futures, requests, yaml
+import urllib.request, urllib.error, base64, json, socket, ssl, os, re, gzip, time, random, glob, sys
+import subprocess, concurrent.futures, threading, requests, yaml
 from urllib.parse import urlparse, quote, parse_qs, unquote
 from collections import Counter
 
@@ -99,6 +99,10 @@ SOCKS_BASE_PORT = 20000
 TEST_URL = "https://www.gstatic.com/generate_204"
 PING_TIMEOUT = 5
 XRAY_WORKERS = 20
+BATCH_SIZE = 1000
+TEST_CONCURRENCY = 128
+API_BASE_PORT = 19090
+DELAY_TIMEOUT_MS = 5000
 BLOCKED_ASNS = {"13335","14789","132892","202623","203898","209242","395747","400095","402542","16509","396982","8075","20860"}
 FINGERPRINTS = ["firefox","safari","ios","android","edge","random","randomized"]
 UTLS_FP = {"chrome","firefox","safari","ios","android","edge","360","qq","random","randomized"}
@@ -119,7 +123,9 @@ def _find_geoip_db():
     return None
 
 GEOIP_DB = _find_geoip_db()
+_ASN_DB = None
 _FLAGS = {}
+_ASN = {}
 _STATS_BL = {}
 _STATS_WL = {}
 _RESOLVE_CACHE = {}
@@ -197,6 +203,81 @@ def check_asn(host):
     except Exception:
         pass
     return ""
+
+def _find_asn_db():
+    here = os.path.dirname(os.path.abspath(__file__))
+    for root in [here, os.path.join(here, ".."), os.getcwd()]:
+        for p in sorted(glob.glob(os.path.join(root, "*ASN*.mmdb"))):
+            try:
+                if os.path.getsize(p) > 1_000_000:
+                    return p
+            except Exception:
+                pass
+    return None
+
+def _ipapi_batch(hosts):
+    out = {}
+    chunks = [hosts[s:s + 100] for s in range(0, len(hosts), 100)]
+    for ci, part in enumerate(chunks):
+        for attempt in range(2):
+            try:
+                r = requests.post("http://ip-api.com/batch?fields=as", json=part, timeout=20)
+                if r.status_code == 429:
+                    time.sleep(65)
+                    continue
+                for h, item in zip(part, r.json()):
+                    as_str = (item.get("as") or "").split()
+                    if as_str:
+                        out[h] = as_str[0].replace("AS", "")
+                break
+            except Exception:
+                time.sleep(2)
+        if len(chunks) > 1 and ci < len(chunks) - 1:
+            time.sleep(4.2)
+    return out
+
+def load_asn_batch(hosts):
+    global _ASN, _ASN_DB
+    _ASN = {}
+    uniq = sorted({h for h in hosts if h})
+    if not uniq:
+        return
+    if _ASN_DB is None:
+        _ASN_DB = _find_asn_db()
+    ip_of, unresolved = {}, []
+    for h in uniq:
+        ip = resolve_host(h)
+        if ip:
+            ip_of[h] = ip
+        else:
+            unresolved.append(h)
+    misses = list(unresolved)
+    if _ASN_DB:
+        try:
+            import geoip2.database
+            reader = geoip2.database.Reader(_ASN_DB)
+            for h, ip in ip_of.items():
+                try:
+                    num = reader.asn(ip).autonomous_system_number
+                    if num:
+                        _ASN[h] = str(num)
+                    else:
+                        misses.append(h)
+                except Exception:
+                    misses.append(h)
+            reader.close()
+            print(f"🛡️ Локальная ASN-база: {_ASN_DB} — найдено {len(_ASN)}/{len(uniq)}")
+        except Exception as e:
+            misses = uniq + unresolved
+            print(f"⚠️ ASN-база не прочитана ({type(e).__name__}) — переход на ip-api batch")
+    else:
+        misses = uniq + unresolved
+        print("⚠️ GeoLite2-ASN*.mmdb не найден — ASN через ip-api batch")
+    misses = [h for h in dict.fromkeys(misses) if h not in _ASN]
+    if misses:
+        got = _ipapi_batch(misses)
+        _ASN.update(got)
+        print(f"🌐 ip-api batch: найдено {len(got)}/{len(misses)}")
 
 def resolve_host(host):
     if not host:
@@ -770,6 +851,158 @@ def sb_config(uri):
 def _note_err(store, key):
     store[key] = store.get(key, 0) + 1
 
+_api_local = threading.local()
+
+def _api_session():
+    s = getattr(_api_local, "s", None)
+    if s is None:
+        s = requests.Session()
+        s.trust_env = False
+        s.mount("http://", requests.adapters.HTTPAdapter(pool_connections=4, pool_maxsize=8))
+        _api_local.s = s
+    return s
+
+def _wait_api(port, proc, timeout=10.0):
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        if proc.poll() is not None:
+            return False
+        try:
+            r = _api_session().get(f"http://127.0.0.1:{port}/version", timeout=0.5)
+            if r.status_code == 200:
+                return True
+        except Exception:
+            pass
+        time.sleep(0.1)
+    return False
+
+def _err_key(err):
+    lines = [l for l in err.strip().splitlines() if l.strip()]
+    return re.sub(r"\d+", "N", lines[-1])[:200] if lines else "unknown"
+
+def _check_conf(path):
+    try:
+        r = subprocess.run([SINGBOX_BIN, "check", "-c", path], capture_output=True, timeout=90)
+        return r.returncode == 0, r.stderr.decode("utf-8", "ignore")
+    except subprocess.TimeoutExpired:
+        return False, "check timeout >90s"
+
+def _bisect_bad(items, bid):
+    if not items:
+        return set()
+    path = os.path.join(TMP_DIR, f"bisect_{bid}.json")
+    conf = {"log": {"level": "error"}, "outbounds": [ob for _, _, ob in items]}
+    with open(path, "w") as f:
+        json.dump(conf, f)
+    ok, err = _check_conf(path)
+    os.remove(path)
+    if ok:
+        return set()
+    if len(items) <= 4:
+        _note_err(SB_CHECK_ERRORS, _err_key(err))
+        return {it[0] for it in items}
+    mid = len(items) // 2
+    return _bisect_bad(items[:mid], bid) | _bisect_bad(items[mid:], bid)
+
+def _probe_singbox():
+    try:
+        r = subprocess.run([SINGBOX_BIN, "version"], capture_output=True, timeout=15)
+        if r.returncode == 0:
+            first = r.stdout.decode("utf-8", "ignore").splitlines()
+            print(f"🧰 Ядро: {first[0] if first else 'OK'} ({SINGBOX_BIN})")
+            return True
+    except Exception as e:
+        print(f"❌ Ядро недоступно: {SINGBOX_BIN} ({type(e).__name__})")
+    return False
+
+def _delay_test(base, tag):
+    try:
+        r = _api_session().get(f"{base}/proxies/{quote(tag, safe='')}/delay",
+                               params={"url": TEST_URL, "timeout": DELAY_TIMEOUT_MS},
+                               timeout=DELAY_TIMEOUT_MS / 1000.0 + 4)
+        if r.status_code == 200:
+            d = r.json().get("delay")
+            if isinstance(d, (int, float)) and d > 0:
+                return int(d)
+    except Exception:
+        pass
+    return None
+
+def run_batch(chunk, batch_id):
+    results, retry = {}, []
+    port = API_BASE_PORT + (batch_id % 200)
+    cfg_path = os.path.join(TMP_DIR, f"batch_{batch_id % 4}.json")
+    err_path = os.path.join(TMP_DIR, f"batch_{batch_id % 4}.err")
+    conf = {
+        "log": {"level": "error"},
+        "experimental": {"clash_api": {"external_controller": f"127.0.0.1:{port}"}},
+        "outbounds": [ob for _, _, ob in chunk],
+    }
+    with open(cfg_path, "w") as f:
+        json.dump(conf, f)
+    ok, err = _check_conf(cfg_path)
+    if not ok:
+        bad = _bisect_bad(chunk, batch_id)
+        if len(bad) > len(chunk) // 2:
+            _note_err(SB_RUN_ERRORS, f"check нестабилен: отбраковано {len(bad)}/{len(chunk)} — батч целиком в fallback")
+            return results, [it[0] for it in chunk]
+        if bad:
+            print(f"   ⚠️ батч {batch_id}: check отклонил {len(bad)} outbound(ов) — отброшены")
+        chunk = [it for it in chunk if it[0] not in bad]
+        if not chunk:
+            return results, retry
+        conf["outbounds"] = [ob for _, _, ob in chunk]
+        with open(cfg_path, "w") as f:
+            json.dump(conf, f)
+    proc = None
+    try:
+        for attempt in range(2):
+            conf["experimental"]["clash_api"]["external_controller"] = f"127.0.0.1:{port}"
+            with open(cfg_path, "w") as f:
+                json.dump(conf, f)
+            with open(err_path, "wb") as errf:
+                proc = subprocess.Popen([SINGBOX_BIN, "run", "-c", cfg_path],
+                                        stdout=subprocess.DEVNULL, stderr=errf)
+            if _wait_api(port, proc):
+                break
+            tail = open(err_path, "r", errors="ignore").read()
+            if proc.poll() is None:
+                try:
+                    proc.kill(); proc.wait(timeout=3)
+                except Exception:
+                    pass
+            if "address already in use" in tail and attempt == 0:
+                port += 1
+                continue
+            _note_err(SB_RUN_ERRORS, _err_key(tail))
+            return results, [it[0] for it in chunk]
+        base = f"http://127.0.0.1:{port}"
+        with concurrent.futures.ThreadPoolExecutor(max_workers=TEST_CONCURRENCY) as ex:
+            futs = {ex.submit(_delay_test, base, f"c{idx}"): idx for idx, _, _ in chunk}
+            for fut in concurrent.futures.as_completed(futs):
+                d = fut.result()
+                if d is not None:
+                    results[futs[fut]] = d
+        if proc.poll() is not None:
+            tail = open(err_path, "r", errors="ignore").read()
+            _note_err(SB_RUN_ERRORS, _err_key(tail) if tail else "core умер посреди батча")
+            retry = [idx for idx, _, _ in chunk if idx not in results]
+        return results, retry
+    except Exception as e:
+        _note_err(SB_HTTP_ERRORS, f"{type(e).__name__}")
+        return results, [idx for idx, _, _ in chunk if idx not in results]
+    finally:
+        if proc is not None and proc.poll() is None:
+            try:
+                proc.kill(); proc.wait(timeout=3)
+            except Exception:
+                pass
+        for pth in (cfg_path, err_path):
+            try:
+                os.remove(pth)
+            except Exception:
+                pass
+
 def check_via_singbox(args):
     idx, cfg = args
     outbound = sb_config(cfg['raw'])
@@ -849,7 +1082,7 @@ def run_subscription(sources, remote_name, label):
     SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, SB_HTTP_ERRORS = {}, {}, {}, {}
     t0 = time.time()
     print(f"\n═══ {label} → {remote_name} ═══")
-    print(f"⚙️  sing-box-extended потоков: {XRAY_WORKERS} | Пинг-таймаут: {PING_TIMEOUT}s | URL: {TEST_URL}")
+    print(f"⚙️  sing-box-extended: батчи по {BATCH_SIZE} outbound | {TEST_CONCURRENCY} параллельных тестов | Таймаут: {DELAY_TIMEOUT_MS}мс | URL: {TEST_URL}")
     all_configs = []
     for src_label, url in sources:
         if src_label == "Downloader" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
@@ -884,18 +1117,37 @@ def run_subscription(sources, remote_name, label):
     if before > len(all_configs):
         print(f"♻️  Дедупликация: {before} → {len(all_configs)} (убрано {before - len(all_configs)})")
     load_flags_batch(list({c['host'] for c in all_configs}))
-    print(f"\n🔥 sing-box-extended проверка (GET {TEST_URL}) в {XRAY_WORKERS} потоков...")
-    print("   ⏳ Это медленно — может занять 15-40 минут...")
+    print(f"\n🔥 sing-box-extended проверка (GET {TEST_URL}) — батчи по {BATCH_SIZE}, {TEST_CONCURRENCY} потоков...")
+    candidates = []
+    for idx, cfg in enumerate(all_configs):
+        ob = sb_config(cfg['raw'])
+        if ob:
+            ob['tag'] = f"c{idx}"
+            candidates.append((idx, cfg, ob))
+        else:
+            scheme = cfg['raw'].split('://')[0] if '://' in cfg['raw'] else 'unknown'
+            _note_err(SB_GEN_ERRORS, scheme)
+    print(f"⚙️  Сгенерировано outbound: {len(candidates)}/{len(all_configs)}")
     working = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=XRAY_WORKERS) as ex:
-        for i, (cfg, ping) in enumerate(ex.map(check_via_singbox, list(enumerate(all_configs)))):
-            if cfg and ping is not None:
-                working.append((cfg, ping))
-            if (i + 1) % 20 == 0:
-                elapsed = time.time() - t0
-                speed = (i + 1) / elapsed if elapsed > 0 else 0
-                eta = (len(all_configs) - i - 1) / speed if speed > 0 else 0
-                print(f"   {i+1}/{len(all_configs)} | рабочих: {len(working)} | {speed:.1f}/с | ETA {eta:.0f}с")
+    tb = time.time()
+    done = 0
+    for b, s in enumerate(range(0, len(candidates), BATCH_SIZE)):
+        chunk = candidates[s:s + BATCH_SIZE]
+        res, retry = run_batch(chunk, b)
+        cmap = {idx: cfg for idx, cfg, _ in chunk}
+        for idx, d in res.items():
+            working.append((cmap[idx], d))
+        if retry:
+            print(f"   ♻️  fallback одиночной проверки: {len(retry)} конфигов")
+            with concurrent.futures.ThreadPoolExecutor(max_workers=XRAY_WORKERS) as ex:
+                for cfg, ping in ex.map(check_via_singbox, [(i, all_configs[i]) for i in retry]):
+                    if cfg and ping is not None:
+                        working.append((cfg, ping))
+        done += len(chunk)
+        elapsed = time.time() - tb
+        speed = done / elapsed if elapsed > 0 else 0
+        eta = (len(candidates) - done) / speed if speed > 0 else 0
+        print(f"   {done}/{len(candidates)} | рабочих: {len(working)} | {speed:.1f}/с | ETA {eta:.0f}с")
     print(f"\n🔥 Рабочих через прокси: {len(working)}")
     if SB_GEN_ERRORS:
         print("🧹 Не построен outbound: " + ", ".join(f"{k} ×{v}" for k, v in sorted(SB_GEN_ERRORS.items(), key=lambda kv: -kv[1])[:8]))
@@ -912,12 +1164,11 @@ def run_subscription(sources, remote_name, label):
     if not working:
         print("⚠️ Ничего не прошло проверку"); return
     print(f"\n🛡️  Фильтр по ASN (ТСПУ-блокировки)...")
-    filtered, asn_skipped, asn_cache = [], 0, {}
+    uniq_hosts = sorted({c['host'] for c, _ in working if c['host']})
+    load_asn_batch(uniq_hosts)
+    filtered, asn_skipped = [], 0
     for cfg, ping in working:
-        host = cfg['host']
-        if host not in asn_cache:
-            asn_cache[host] = check_asn(host)
-        if asn_cache[host] in BLOCKED_ASNS:
+        if _ASN.get(cfg['host'], "") in BLOCKED_ASNS:
             asn_skipped += 1; continue
         filtered.append((cfg, ping))
     print(f"🚫 Убрано {asn_skipped} конфигов (Cloudflare/Amazon/Google/Microsoft)")
@@ -946,6 +1197,9 @@ if __name__ == "__main__":
     os.makedirs(TMP_DIR, exist_ok=True)
     if socks is None:
         print("⚠️ PySocks не установлен (pip install pysocks) — SOCKS-проверка работать не будет")
+    if not _probe_singbox():
+        print("❌ sing-box-extended не найден или не запускается — проверка невозможна")
+        sys.exit(1)
     print("🚀 Запуск парсера с sing-box-extended проверкой...")
     run_subscription(BLACK_SOURCES, "Cool-Black.txt", "⚫ ЧЁРНАЯ")
     run_subscription(WHITE_SOURCES, "Cool-White.txt", "⚪ БЕЛАЯ")
