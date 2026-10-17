@@ -94,11 +94,13 @@ API_BASE_PORT = 19090
 SOCKS_BASE_PORT = 20000
 TEST_URL = "https://www.gstatic.com/generate_204"
 PING_TIMEOUT = 5
-DELAY_TIMEOUT_MS = 5000
-KERNEL_COUNT = 4
-BATCH_SIZE_PER_CORE = 50
+DELAY_TIMEOUT_MS = 3000
+KERNEL_COUNT = 6
+BATCH_SIZE_PER_CORE = 100
 XRAY_WORKERS = 20
 CHECK_LIMIT = 5
+TCP_PREFILTER_WORKERS = 500
+TCP_PREFILTER_TIMEOUT = 1.5
 BLOCKED_ASNS = {"13335","14789","132892","202623","203898","209242","395747","400095","402542","16509","396982","8075","20860"}
 FINGERPRINTS = ["firefox","safari","ios","android","edge","random","randomized"]
 UTLS_FP = {"chrome","firefox","safari","ios","android","edge","360","qq","random","randomized"}
@@ -140,7 +142,7 @@ _RESOLVE_CACHE = {}
 SB_GEN_ERRORS = {}
 SB_CHECK_ERRORS = {}
 SB_RUN_ERRORS = {}
-SB_HTTP_ERRORS = {}
+SB_TCP_FILTERED = [0]
 
 def random_fp():
     return random.choice(FINGERPRINTS)
@@ -206,6 +208,37 @@ def resolve_host(host):
         ip = None
     _RESOLVE_CACHE[host] = ip
     return ip
+
+def _tcp_probe(args):
+    host, port = args
+    ip = resolve_host(host)
+    if not ip:
+        return False
+    try:
+        with socket.create_connection((ip, port), timeout=TCP_PREFILTER_TIMEOUT):
+            return True
+    except Exception:
+        return False
+
+def prefilter_tcp(configs):
+    if not configs:
+        return []
+    print(f"\n🔎 TCP-предфильтр: {len(configs)} конфигов, {TCP_PREFILTER_WORKERS} потоков, таймаут {TCP_PREFILTER_TIMEOUT}s...")
+    t0 = time.time()
+    alive = []
+    with ThreadPoolExecutor(max_workers=TCP_PREFILTER_WORKERS) as ex:
+        futures = {ex.submit(_tcp_probe, (c['host'], c['port'])): c for c in configs}
+        for i, fut in enumerate(as_completed(futures), 1):
+            if fut.result():
+                alive.append(futures[fut])
+            if i % 5000 == 0:
+                elapsed = time.time() - t0
+                speed = i / elapsed if elapsed > 0 else 0
+                print(f"   TCP {i}/{len(configs)} | живых {len(alive)} | {speed:.0f}/с")
+    filtered = len(configs) - len(alive)
+    SB_TCP_FILTERED[0] = filtered
+    print(f"✅ TCP-предфильтр: живых {len(alive)}/{len(configs)}, отсеяно {filtered} ({time.time()-t0:.1f}с)")
+    return alive
 
 def check_asn(host):
     return _ASN.get(host, "")
@@ -665,7 +698,7 @@ async def _wait_api_async(session, port, timeout=3.0):
 async def _delay_one_async(session, api_port, tag):
     try:
         url = f"http://127.0.0.1:{api_port}/proxies/{tag}/delay"
-        timeout = aiohttp.ClientTimeout(total=DELAY_TIMEOUT_MS / 1000.0 + 2)
+        timeout = aiohttp.ClientTimeout(total=DELAY_TIMEOUT_MS / 1000.0 + 1)
         async with session.get(url,
                                 params={"url": TEST_URL, "timeout": DELAY_TIMEOUT_MS},
                                 timeout=timeout) as r:
@@ -710,8 +743,7 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
     except Exception:
         return []
     t_check = time.time()
-    do_check = _CHECK_COUNTER[0] < CHECK_LIMIT
-    if do_check:
+    if _CHECK_COUNTER[0] < CHECK_LIMIT:
         _CHECK_COUNTER[0] += 1
         check = await asyncio.create_subprocess_exec(
             SINGBOX_BIN, "check", "-c", cfg_path,
@@ -724,12 +756,7 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
             _note_err(SB_CHECK_ERRORS, key)
             try: os.remove(cfg_path)
             except: pass
-            if len(batch_cfgs) <= 1:
-                return []
-            mid = len(batch_cfgs) // 2
-            left = await _run_batch_async(batch_cfgs[:mid], worker_id, session)
-            right = await _run_batch_async(batch_cfgs[mid:], worker_id, session)
-            return left + right
+            return []
     t_run = time.time()
     proc, errf = None, None
     try:
@@ -743,11 +770,8 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
             proc.kill()
             try: await proc.wait()
             except: pass
-            if len(batch_cfgs) > 1:
-                mid = len(batch_cfgs) // 2
-                left = await _run_batch_async(batch_cfgs[:mid], worker_id, session)
-                right = await _run_batch_async(batch_cfgs[mid:], worker_id, session)
-                return left + right
+            try: os.remove(cfg_path)
+            except: pass
             return []
         t_delay = time.time()
         results = await asyncio.gather(*[_delay_one_async(session, api_port, t) for t in tag_to_cfg])
@@ -755,14 +779,6 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
         t_end = time.time()
         if worker_id == 0:
             print(f"   [w0] check={t_run-t_check:.2f}s api={t_delay-t_run:.2f}s delay={t_end-t_delay:.2f}s total={t_end-t_start:.2f}s | in={len(batch_cfgs)} out={len(working)}")
-        if len(batch_cfgs) >= 4 and len(working) < max(1, len(batch_cfgs) // 2):
-            proc.kill()
-            try: await proc.wait()
-            except: pass
-            mid = len(batch_cfgs) // 2
-            left = await _run_batch_async(batch_cfgs[:mid], worker_id, session)
-            right = await _run_batch_async(batch_cfgs[mid:], worker_id, session)
-            return left + right
         return working
     except Exception as e:
         _note_err(SB_RUN_ERRORS, f"{type(e).__name__}")
@@ -886,7 +902,7 @@ def check_via_singbox_batch(all_configs):
     if not _probe_kernel():
         print("❌ Ядро недоступно — fallback")
         return _fallback_check(all_configs)
-    print(f"🔥 batch: {KERNEL_COUNT} процесса × {BATCH_SIZE_PER_CORE} = {KERNEL_COUNT * BATCH_SIZE_PER_CORE} одновременно")
+    print(f"🔥 batch: {KERNEL_COUNT} ядра × {BATCH_SIZE_PER_CORE} = {KERNEL_COUNT * BATCH_SIZE_PER_CORE} параллельно | timeout {DELAY_TIMEOUT_MS}ms")
     return asyncio.run(_check_batch_main(all_configs))
 
 def to_clash_proxy(cfg, flag, country, idx):
@@ -1111,14 +1127,14 @@ def update_changelog(stats_bl, stats_wl, changelog_path="CHANGELOG.md"):
     print(f"💾 {changelog_path}: BL {bl}, WL {wl}")
 
 def run_subscription(sources, remote_name, label):
-    global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, SB_HTTP_ERRORS, _CHECK_COUNTER
+    global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, SB_TCP_FILTERED, _CHECK_COUNTER
     _FLAGS = {}
     _ASN = {}
-    SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, SB_HTTP_ERRORS = {}, {}, {}, {}
+    SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS = {}, {}, {}
+    SB_TCP_FILTERED[0] = 0
     _CHECK_COUNTER[0] = 0
     t0 = time.time()
     print(f"\n═══ {label} → {remote_name} ═══")
-    print(f"⚙️  {KERNEL_COUNT} ядра × {BATCH_SIZE_PER_CORE} = {KERNEL_COUNT * BATCH_SIZE_PER_CORE} параллельно | timeout {DELAY_TIMEOUT_MS}ms")
     all_configs = []
     for src_label, url in sources:
         if src_label == "Downloader" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
@@ -1153,6 +1169,10 @@ def run_subscription(sources, remote_name, label):
     if before > len(all_configs):
         print(f"♻️  Дедупликация: {before} → {len(all_configs)} (убрано {before - len(all_configs)})")
     load_flags_batch(list({c['host'] for c in all_configs}))
+    t_tcp = time.time()
+    all_configs = prefilter_tcp(all_configs)
+    if not all_configs:
+        print("⚠️ TCP-предфильтр убил всё"); return
     print(f"\n🔥 batch-проверка через Clash API...")
     working = check_via_singbox_batch(all_configs)
     print(f"\n🔥 Рабочих: {len(working)}")
@@ -1199,7 +1219,7 @@ def run_subscription(sources, remote_name, label):
 
 if __name__ == "__main__":
     os.makedirs(TMP_DIR, exist_ok=True)
-    print("🚀 sing-box-extended async batch parser")
+    print("🚀 sing-box-extended async batch parser (hardcore)")
     if not os.path.exists(SINGBOX_BIN):
         print(f"❌ Бинарник не найден: {SINGBOX_BIN}"); raise SystemExit(1)
     print(f"🌍 GeoLite2: {GEOIP_DB}")
