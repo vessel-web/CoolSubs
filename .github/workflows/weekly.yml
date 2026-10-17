@@ -45,6 +45,19 @@ jobs:
           chmod +x ~/singbox/sing-box-extended
           ~/singbox/sing-box-extended version
 
+      - name: Download DBIP ASN lite (best-effort)
+        run: |
+          M=$(date +%Y-%m); P=$(date -d "last month" +%Y-%m)
+          for MM in $M $P; do
+            curl -fsSL -m 120 -o DBIP-ASN-lite.mmdb.gz "https://download.db-ip.com/free/dbip-asn-lite-$MM.mmdb.gz" && break || true
+          done
+          if [ -f DBIP-ASN-lite.mmdb.gz ]; then
+            gunzip -f DBIP-ASN-lite.mmdb.gz
+            echo "✅ ASN-база: $(du -h DBIP-ASN-lite.mmdb | cut -f1)"
+          else
+            echo "⚠️ DBIP недоступен — ASN будет через ip-api batch"
+          fi
+
       - name: Run Downloader
         run: python scripts/downloader.py --once
 
