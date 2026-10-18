@@ -92,13 +92,14 @@ SINGBOX_BIN = os.path.expanduser("~/singbox/sing-box-extended")
 TMP_DIR = "/tmp/singbox_tmp"
 API_BASE_PORT = 19090
 SOCKS_BASE_PORT = 20000
-TEST_URL = "https://www.gstatic.com/generate_204"
+TEST_URL = "https://api.ipify.org?format=json"
 PING_TIMEOUT = 5
-DELAY_TIMEOUT_MS = 4000
+DELAY_TIMEOUT_MS = 6000
 KERNEL_COUNT = 4
 BATCH_SIZE_PER_CORE = 50
 XRAY_WORKERS = 20
 CHECK_LIMIT = 5
+RETRY_PAUSE_SEC = 20
 BLOCKED_ASNS = {"13335","14789","132892","202623","203898","209242","395747","400095","402542","16509","396982","8075","20860"}
 FINGERPRINTS = ["firefox","safari","ios","android","edge","random","randomized"]
 UTLS_FP = {"chrome","firefox","safari","ios","android","edge","360","qq","random","randomized"}
@@ -378,6 +379,8 @@ def sb_vless(uri):
     p, q = _q(uri)
     if not p.hostname:
         return None
+    if q.get("allowInsecure") == "1":
+        return None
     uuid = unquote(p.username or "")
     if not uuid:
         return None
@@ -391,8 +394,7 @@ def sb_vless(uri):
                       "reality": {"enabled": True, "public_key": pbk, "short_id": q.get("sid", "")},
                       "utls": {"enabled": True, "fingerprint": q.get("fp") if q.get("fp") in UTLS_FP else random_fp()}}
     elif security == "tls":
-        out["tls"] = {"enabled": True, "server_name": q.get("sni") or p.hostname,
-                      "insecure": q.get("allowInsecure", "0") == "1"}
+        out["tls"] = {"enabled": True, "server_name": q.get("sni") or p.hostname}
         if q.get("alpn"):
             out["tls"]["alpn"] = [a for a in q["alpn"].split(",") if a]
         if q.get("fp") in UTLS_FP:
@@ -424,6 +426,8 @@ def sb_vmess(uri):
     v = json.loads(raw)
     if not v.get("add") or not v.get("id"):
         return None
+    if v.get("allowInsecure") in (True, "1", "true"):
+        return None
     try:
         port = int(v.get("port") or 443)
     except Exception:
@@ -438,8 +442,7 @@ def sb_vmess(uri):
     out = {"type": "vmess", "server": v["add"], "server_port": port,
            "uuid": v["id"], "security": scy, "alter_id": aid}
     if v.get("tls") in ("tls", "reality"):
-        out["tls"] = {"enabled": True, "server_name": v.get("sni") or v.get("host") or v["add"],
-                      "insecure": v.get("allowInsecure") in (True, "1", "true")}
+        out["tls"] = {"enabled": True, "server_name": v.get("sni") or v.get("host") or v["add"]}
         if v.get("alpn"):
             out["tls"]["alpn"] = [a for a in str(v["alpn"]).split(",") if a]
         if v.get("fp") in UTLS_FP:
@@ -464,11 +467,12 @@ def sb_trojan(uri):
     p, q = _q(uri)
     if not p.hostname:
         return None
+    if q.get("allowInsecure") == "1":
+        return None
     password = unquote(p.username or "")
     if not password:
         return None
-    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname,
-               "insecure": q.get("allowInsecure", "0") == "1"}
+    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname}
     if q.get("alpn"):
         tls_cfg["alpn"] = [a for a in q["alpn"].split(",") if a]
     if q.get("fp") in UTLS_FP:
@@ -541,11 +545,12 @@ def sb_hysteria2(uri):
     p, q = _q(uri)
     if not p.hostname:
         return None
+    if q.get("insecure", q.get("allowInsecure", "0")) == "1":
+        return None
     password = unquote(p.username or "") or q.get("auth", "")
     if not password:
         return None
-    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname,
-               "insecure": q.get("insecure", q.get("allowInsecure", "0")) == "1"}
+    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname}
     if q.get("alpn"):
         tls_cfg["alpn"] = [a for a in q["alpn"].split(",") if a]
     out = {"type": "hysteria2", "server": p.hostname, "server_port": p.port or 443,
@@ -558,6 +563,8 @@ def sb_tuic(uri):
     p, q = _q(uri)
     if not p.hostname:
         return None
+    if q.get("allow_insecure", q.get("allowInsecure", q.get("insecure", "0"))) == "1":
+        return None
     uid = unquote(p.username or "")
     if not uid:
         return None
@@ -568,8 +575,7 @@ def sb_tuic(uri):
     urm = q.get("udp_relay_mode", "native")
     if urm not in TUIC_URM:
         urm = "native"
-    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname,
-               "insecure": q.get("allow_insecure", q.get("allowInsecure", q.get("insecure", "0"))) == "1"}
+    tls_cfg = {"enabled": True, "server_name": q.get("sni") or q.get("peer") or p.hostname}
     alpn = q.get("alpn")
     tls_cfg["alpn"] = [a for a in alpn.split(",") if a] if alpn else ["h3"]
     return {"type": "tuic", "server": p.hostname, "server_port": p.port or 443,
@@ -664,7 +670,7 @@ async def _wait_api_async(session, port, timeout=3.0):
 async def _delay_one_async(session, api_port, tag):
     try:
         url = f"http://127.0.0.1:{api_port}/proxies/{tag}/delay"
-        timeout = aiohttp.ClientTimeout(total=DELAY_TIMEOUT_MS / 1000.0 + 1)
+        timeout = aiohttp.ClientTimeout(total=DELAY_TIMEOUT_MS / 1000.0 + 2)
         async with session.get(url,
                                 params={"url": TEST_URL, "timeout": DELAY_TIMEOUT_MS},
                                 timeout=timeout) as r:
@@ -745,11 +751,16 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
                 return left + right
             return []
         t_delay = time.time()
-        results = await asyncio.gather(*[_delay_one_async(session, api_port, t) for t in tag_to_cfg])
-        working = [(tag_to_cfg[t], d) for t, d in results if d is not None and t in tag_to_cfg]
+        results1 = await asyncio.gather(*[_delay_one_async(session, api_port, t) for t in tag_to_cfg])
+        first_pass = {t: d for t, d in results1 if d is not None and t in tag_to_cfg}
+        if not first_pass:
+            return []
+        await asyncio.sleep(RETRY_PAUSE_SEC)
+        results2 = await asyncio.gather(*[_delay_one_async(session, api_port, t) for t in first_pass.keys()])
+        working = [(tag_to_cfg[t], d) for t, d in results2 if d is not None and t in first_pass]
         t_end = time.time()
         if worker_id == 0:
-            print(f"   [w0] check={t_run-t_check:.2f}s api={t_delay-t_run:.2f}s delay={t_end-t_delay:.2f}s total={t_end-t_start:.2f}s | in={len(batch_cfgs)} out={len(working)}")
+            print(f"   [w0] check={t_run-t_check:.2f}s api={t_delay-t_run:.2f}s verify={t_end-t_delay:.2f}s total={t_end-t_start:.2f}s | in={len(batch_cfgs)} first={len(first_pass)} final={len(working)}")
         return working
     except Exception as e:
         _note_err(SB_RUN_ERRORS, f"{type(e).__name__}")
@@ -838,7 +849,9 @@ def _check_one_legacy(idx, cfg):
                                      "https": f"socks5h://127.0.0.1:{port}"},
                             headers={"User-Agent": "Mozilla/5.0"})
         ping = int((time.time() - start) * 1000)
-        return (cfg, ping) if resp.status_code == 204 else None
+        if resp.status_code == 200 and "ip" in resp.text:
+            return (cfg, ping)
+        return None
     except Exception:
         return None
     finally:
@@ -873,7 +886,7 @@ def check_via_singbox_batch(all_configs):
     if not _probe_kernel():
         print("❌ Ядро недоступно — fallback")
         return _fallback_check(all_configs)
-    print(f"🔥 batch: {KERNEL_COUNT} ядра × {BATCH_SIZE_PER_CORE} = {KERNEL_COUNT * BATCH_SIZE_PER_CORE} параллельно | timeout {DELAY_TIMEOUT_MS}ms")
+    print(f"🔥 batch: {KERNEL_COUNT} ядра × {BATCH_SIZE_PER_CORE} = {KERNEL_COUNT * BATCH_SIZE_PER_CORE} | timeout {DELAY_TIMEOUT_MS}ms | URL {TEST_URL} | double-pass")
     return asyncio.run(_check_batch_main(all_configs))
 
 def to_clash_proxy(cfg, flag, country, idx):
@@ -1185,7 +1198,7 @@ def run_subscription(sources, remote_name, label):
 
 if __name__ == "__main__":
     os.makedirs(TMP_DIR, exist_ok=True)
-    print("🚀 sing-box-extended async batch parser")
+    print("🚀 sing-box-extended async batch parser (anti-phantom)")
     if not os.path.exists(SINGBOX_BIN):
         print(f"❌ Бинарник не найден: {SINGBOX_BIN}"); raise SystemExit(1)
     print(f"🌍 GeoLite2: {GEOIP_DB}")
