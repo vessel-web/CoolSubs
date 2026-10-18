@@ -30,9 +30,9 @@ proxies:
   client-fingerprint: safari
 - name: cool [LSO-LTE] 🇩🇪 |#3|
   type: vless
-  server: 78.17.178.125
-  port: 443
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  server: 145.249.109.112
+  port: 27311
+  uuid: f83ce3c4-07d9-4895-bd14-cb74abbcab37
   udp: true
   tls: true
   network: tcp
@@ -291,6 +291,35 @@ proxies:
   reality-opts:
     public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
     short-id: a9c11b06829163c9
+  servername: vkvd754.okcdn.ru
+  client-fingerprint: ios
+- name: cool [LSO-LTE] 🇷🇺 |#11|
+  type: vless
+  server: 46.182.24.178
+  port: 443
+  uuid: ad7966f9-7710-47b9-90d9-2f33e539b06a
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: XguLRlc-hWqFhf8-KTxtCE434F6e4Hiqoc5cTBpLxnE
+    short-id: '111111'
+  servername: 5post-gate.x5.ru
+  client-fingerprint: random
+- name: cool [etoneya wl] 🇳🇱 |#12|
+  type: vless
+  server: 87.199.205.28
+  port: 443
+  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
+  udp: true
+  tls: true
+  network: raw
+  skip-cert-verify: false
+  reality-opts:
+    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
+    short-id: ef1d3554c652a436
   servername: vkvd754.okcdn.ru
   client-fingerprint: edge
 - name: cool [igareck-WL] 🇷🇺 |#22|
@@ -1056,18 +1085,32 @@ proxies:
   client-fingerprint: android
 - name: cool [etoneya wl] 🇳🇱 |#76|
   type: vless
-  server: 87.199.205.28
-  port: 443
-  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
+  server: qcloudge1.exitvpn.shop
+  port: 20268
+  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
+  udp: true
+  tls: true
+  network: raw
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 5H_MmyfvF4SkwS84wTbLmtcZDecXJIJtZ3uisiKQpSM
+    short-id: 0c774b50
+  servername: metrika.yandex.ru
+  client-fingerprint: ios
+- name: cool [LSO-LTE] 🇷🇺 |#35|
+  type: vless
+  server: spainspeedboostjbl88.qcloud.surf
+  port: 27311
+  uuid: 4ad3dbf5-2005-4d96-b56c-a0ca9905cab6
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
-    short-id: b7cd177731793b1e
-  servername: vkvd754.okcdn.ru
+    public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
+    short-id: 56daff9a
+  servername: metrika.yandex.ru
   client-fingerprint: firefox
 - name: cool [igareck-WL] 🇷🇺 |#77|
   type: vless
