@@ -99,12 +99,13 @@ API_BASE_PORT = 19090
 SOCKS_BASE_PORT = 20000
 TEST_URL = "https://api.ipify.org?format=json"
 PING_TIMEOUT = 5
-DELAY_TIMEOUT_MS = 6000
+DELAY_TIMEOUT_MS = 3500
 API_START_TIMEOUT = 8.0
-KERNEL_COUNT = 4
+KERNEL_COUNT = max(4, min(8, (os.cpu_count() or 4) * 2))
 BATCH_SIZE_PER_CORE = 50
 XRAY_WORKERS = 20
-RETRY_PAUSE_SEC = 20
+SOURCE_WORKERS = 16
+RETRY_PAUSE_SEC = 6
 MAX_RESPONSE_BYTES = 128 * 1024 * 1024
 BLOCKED_ASNS = {"13335","14789","132892","202623","203898","209242","395747","400095","402542","16509","396982","8075","20860"}
 FINGERPRINTS = ["firefox","safari","ios","android","edge","random","randomized"]
@@ -115,6 +116,13 @@ CLASH_NETWORKS = {"tcp","ws","grpc","http","h2","httpupgrade"}
 TUIC_CC = {"cubic","new_reno","bbr"}
 TUIC_URM = {"native","quic"}
 SS_PLUGINS = {"obfs-local":"obfs-local","simple-obfs":"obfs-local","v2ray-plugin":"v2ray-plugin"}
+
+try:
+    import yaml as _yaml_mod
+    YAML_DUMPER = getattr(_yaml_mod, "CSafeDumper", _yaml_mod.SafeDumper)
+except Exception:
+    YAML_DUMPER = yaml.SafeDumper
+
 
 def _find_geoip_db():
     here = os.path.dirname(os.path.abspath(__file__))
@@ -127,6 +135,7 @@ def _find_geoip_db():
                 pass
     return None
 
+
 def _find_dbip_db():
     here = os.path.dirname(os.path.abspath(__file__))
     for root in [here, os.path.join(here, ".."), os.getcwd()]:
@@ -138,6 +147,7 @@ def _find_dbip_db():
                 pass
     return None
 
+
 GEOIP_DB = _find_geoip_db()
 DBIP_DB = _find_dbip_db()
 _FLAGS = {}
@@ -148,20 +158,21 @@ _RESOLVE_CACHE = {}
 SB_GEN_ERRORS = {}
 SB_RUN_ERRORS = {}
 
+
 def _b64(s):
     s = s.strip()
-    return urlsafe_b64decode_padded(s)
-
-def urlsafe_b64decode_padded(s):
     return base64.urlsafe_b64decode(s + '=' * (-len(s) % 4))
+
 
 def random_fp():
     return random.choice(FINGERPRINTS)
+
 
 def sample_ratio(configs, ratio=0.3):
     if not configs:
         return configs
     return random.sample(configs, max(1, int(len(configs) * ratio)))
+
 
 def parse_config(line, source_label):
     line = line.strip()
@@ -186,6 +197,7 @@ def parse_config(line, source_label):
         return None
     return None
 
+
 def dedup_configs(configs):
     seen, unique = set(), []
     for cfg in configs:
@@ -193,6 +205,7 @@ def dedup_configs(configs):
         if k not in seen:
             seen.add(k); unique.append(cfg)
     return unique
+
 
 def save_unsorted(configs, out_path):
     seen, lines = set(), []
@@ -204,6 +217,7 @@ def save_unsorted(configs, out_path):
     with open(out_path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
     print(f"💾 {out_path}: {len(lines)} сырых конфигов")
+
 
 def resolve_host(host):
     if not host:
@@ -226,6 +240,7 @@ def resolve_host(host):
         ip = None
     _RESOLVE_CACHE[host] = ip
     return ip
+
 
 def load_asn_batch(hosts):
     global _ASN
@@ -258,6 +273,7 @@ def load_asn_batch(hosts):
         print(f"✅ DBIP ASN: {found}/{len(host_to_ip)} ({DBIP_DB})")
     except Exception as e:
         print(f"⚠️ DBIP ASN: {e}")
+
 
 def fetch_sub(url, retries=1):
     for attempt in range(retries + 1):
@@ -318,6 +334,7 @@ def fetch_sub(url, retries=1):
             return [], f"{type(e).__name__}: {e}", "error"
     return [], "Все попытки провалились", "failed"
 
+
 def load_flags_batch(hosts):
     global _FLAGS
     _FLAGS = {}
@@ -349,11 +366,13 @@ def load_flags_batch(hosts):
     reader.close()
     print(f"✅ Определено стран: {found}/{len(unique_hosts)}")
 
+
 def get_flag_and_name(host):
     code = _FLAGS.get(host, '')
     if not code or len(code) != 2:
         return "🌐", "Unknown"
     return chr(ord(code[0]) + 127397) + chr(ord(code[1]) + 127397), COUNTRY_NAMES.get(code, code)
+
 
 def format_line(cfg, idx=0):
     flag, _ = get_flag_and_name(cfg['host'])
@@ -362,6 +381,7 @@ def format_line(cfg, idx=0):
     if '#' in raw:
         base, _ = raw.rsplit('#', 1); return f"{base}#{quote(new_name)}"
     return f"{raw}#{quote(new_name)}"
+
 
 def add_metadata(lines, title, update_hours=4, support_url=None, announce=None):
     meta = [f"#profile-title: {title}", f"#profile-update-interval: {update_hours}"]
@@ -372,9 +392,11 @@ def add_metadata(lines, title, update_hours=4, support_url=None, announce=None):
     meta.append("")
     return meta + lines
 
+
 def _q(uri):
     p = urlparse(uri)
     return p, {k: v[0] for k, v in parse_qs(p.query, keep_blank_values=True).items()}
+
 
 def sb_vless(uri):
     p, q = _q(uri)
@@ -422,6 +444,7 @@ def sb_vless(uri):
         out["flow"] = flow
     return out
 
+
 def sb_vmess(uri):
     raw = _b64(uri[8:]).decode("utf-8", errors="ignore")
     v = json.loads(raw)
@@ -464,6 +487,7 @@ def sb_vmess(uri):
                             "path": v.get("path") or "/"}
     return out
 
+
 def sb_trojan(uri):
     p, q = _q(uri)
     if not p.hostname:
@@ -492,6 +516,7 @@ def sb_trojan(uri):
         out["transport"] = {"type": "httpupgrade", "host": q.get("host") or p.hostname,
                             "path": q.get("path") or "/"}
     return out
+
 
 def sb_ss(uri):
     u = uri[5:].split("#", 1)[0]
@@ -542,6 +567,7 @@ def sb_ss(uri):
             out["plugin_opts"] = parts[1]
     return out
 
+
 def sb_hysteria2(uri):
     p, q = _q(uri)
     if not p.hostname:
@@ -559,6 +585,7 @@ def sb_hysteria2(uri):
     if q.get("obfs") == "salamander":
         out["obfs"] = {"type": "salamander", "password": q.get("obfs-password", "")}
     return out
+
 
 def sb_tuic(uri):
     p, q = _q(uri)
@@ -583,6 +610,7 @@ def sb_tuic(uri):
             "uuid": uid, "password": pwd, "congestion_control": cc, "udp_relay_mode": urm,
             "tls": tls_cfg}
 
+
 def sb_config(uri):
     uri = uri.strip()
     try:
@@ -596,14 +624,18 @@ def sb_config(uri):
         return None
     return None
 
+
 def _note_err(store, key):
     store[key] = store.get(key, 0) + 1
+
 
 def _next_api_port(worker_id):
     return API_BASE_PORT + worker_id * 100
 
+
 def _next_socks_port(worker_id):
     return SOCKS_BASE_PORT + worker_id * 100 + 100
+
 
 def _probe_kernel():
     probe_cfg = os.path.join(TMP_DIR, "probe.json")
@@ -646,6 +678,7 @@ def _probe_kernel():
         try: os.remove(probe_cfg)
         except Exception: pass
 
+
 async def _wait_api_async(session, port, timeout):
     deadline = time.time() + timeout
     while time.time() < deadline:
@@ -658,6 +691,7 @@ async def _wait_api_async(session, port, timeout):
             pass
         await asyncio.sleep(0.05)
     return False
+
 
 async def _delay_one_async(session, api_port, tag):
     try:
@@ -674,6 +708,7 @@ async def _delay_one_async(session, api_port, tag):
             return tag, None
     except Exception:
         return tag, None
+
 
 async def _run_batch_async(batch_cfgs, worker_id, session):
     api_port = _next_api_port(worker_id)
@@ -743,6 +778,7 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
             try: os.remove(pth)
             except Exception: pass
 
+
 async def _split_retry(batch_cfgs, worker_id, session):
     if len(batch_cfgs) <= 1:
         return []
@@ -750,6 +786,7 @@ async def _split_retry(batch_cfgs, worker_id, session):
     left = await _run_batch_async(batch_cfgs[:mid], worker_id, session)
     right = await _run_batch_async(batch_cfgs[mid:], worker_id, session)
     return left + right
+
 
 async def _batch_worker(worker_id, queue, session, results, lock, stats, total):
     while True:
@@ -766,6 +803,7 @@ async def _batch_worker(worker_id, queue, session, results, lock, stats, total):
             eta = (total - stats["done"]) / speed if speed > 0 else 0
             print(f"   [w{worker_id}] {stats['done']}/{total} | рабочих {len(results)} | {speed:.1f}/с | ETA {eta:.0f}с")
 
+
 async def _check_batch_main(all_configs):
     queue = asyncio.Queue()
     for i in range(0, len(all_configs), BATCH_SIZE_PER_CORE):
@@ -779,6 +817,7 @@ async def _check_batch_main(all_configs):
                    for i in range(KERNEL_COUNT)]
         await asyncio.gather(*workers)
     return results
+
 
 def _check_one_legacy(idx, cfg):
     ob = sb_config(cfg["raw"])
@@ -835,6 +874,7 @@ def _check_one_legacy(idx, cfg):
             try: os.remove(pth)
             except Exception: pass
 
+
 def _fallback_check(all_configs):
     if not HAS_SOCKS:
         print("❌ PySocks не установлен — fallback невозможен")
@@ -851,14 +891,16 @@ def _fallback_check(all_configs):
                 print(f"   fallback {i}/{len(all_configs)} | рабочих {len(results)}")
     return results
 
+
 def check_via_singbox_batch(all_configs):
     if not all_configs:
         return []
     if not _probe_kernel():
         print("❌ Ядро недоступно — fallback")
         return _fallback_check(all_configs)
-    print(f"🔥 batch: {KERNEL_COUNT} ядра × {BATCH_SIZE_PER_CORE} = {KERNEL_COUNT * BATCH_SIZE_PER_CORE} | timeout {DELAY_TIMEOUT_MS}ms | URL {TEST_URL} | double-pass")
+    print(f"🔥 batch: {KERNEL_COUNT} ядра × {BATCH_SIZE_PER_CORE} | timeout {DELAY_TIMEOUT_MS}ms | pause {RETRY_PAUSE_SEC}s | URL {TEST_URL} | double-pass")
     return asyncio.run(_check_batch_main(all_configs))
+
 
 def to_clash_proxy(cfg, flag, country, idx):
     uri = cfg['raw'].strip()
@@ -1010,6 +1052,7 @@ def to_clash_proxy(cfg, flag, country, idx):
         return None
     return None
 
+
 def build_clash_yaml(working_list, out_path):
     proxies, skipped, country_map, non_ru = [], 0, {}, []
     for idx, (cfg, _) in enumerate(working_list, 1):
@@ -1043,8 +1086,9 @@ def build_clash_yaml(working_list, out_path):
                        "interval": 300, "tolerance": 50, "proxies": names})
     data = {"proxies": proxies, "proxy-groups": groups, "rules": ["MATCH,Обычный"]}
     with open(out_path, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, allow_unicode=True, sort_keys=False, width=1000)
+        yaml.dump(data, f, Dumper=YAML_DUMPER, allow_unicode=True, sort_keys=False, width=1000)
     print(f"💾 {out_path}: {len(proxies)} прокси, {len(country_map)} стран, без RU {len(non_ru)} (пропущено {skipped})")
+
 
 def save_stats(working_list, out_path):
     countries = {}
@@ -1057,6 +1101,7 @@ def save_stats(working_list, out_path):
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
     print(f"💾 {out_path}: {stats['total']} серверов, {stats['countries']} стран")
+
 
 def update_changelog(stats_bl, stats_wl, changelog_path="CHANGELOG.md"):
     try:
@@ -1089,6 +1134,25 @@ def update_changelog(stats_bl, stats_wl, changelog_path="CHANGELOG.md"):
         f.write(new)
     print(f"💾 {changelog_path}: BL {bl}, WL {wl}")
 
+
+def _load_source(item):
+    label, url = item
+    if not url:
+        return label, None, None, None
+    if label == "dwnl" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
+        try:
+            if os.path.exists("configs.txt"):
+                lines = open("configs.txt", "r", encoding="utf-8", errors="ignore").read().splitlines()
+            else:
+                with gzip.open("configs.txt.gz", "rt", encoding="utf-8", errors="ignore") as f:
+                    lines = f.read().splitlines()
+            return label, lines, None, "local"
+        except Exception as e:
+            return label, None, f"чтение: {e}", None
+    lines, error, kind = fetch_sub(url, retries=1)
+    return label, lines, error, kind
+
+
 def run_subscription(sources, remote_name, label):
     global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_RUN_ERRORS
     _FLAGS = {}
@@ -1097,30 +1161,21 @@ def run_subscription(sources, remote_name, label):
     t0 = time.time()
     print(f"\n═══ {label} → {remote_name} ═══")
     all_configs = []
-    for src_label, url in sources:
-        if not url:
+    with ThreadPoolExecutor(max_workers=min(SOURCE_WORKERS, max(1, len(sources)))) as ex:
+        loaded = list(ex.map(_load_source, sources))
+    for src_label, lines, error, kind in loaded:
+        if lines is None:
+            if error:
+                print(f"   ❌ [{src_label}] {error}")
             continue
-        if src_label == "dwnl" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
-            print(f"   ✅ [dwnl] локальный configs.txt")
-            try:
-                if os.path.exists("configs.txt"):
-                    lines = open("configs.txt", "r", encoding="utf-8", errors="ignore").read().splitlines()
-                else:
-                    with gzip.open("configs.txt.gz", "rt", encoding="utf-8", errors="ignore") as f:
-                        lines = f.read().splitlines()
-                error, reason = None, None
-            except Exception as e:
-                print(f"   ❌ [dwnl] ошибка чтения: {e}"); continue
-        else:
-            lines, error, reason = fetch_sub(url, retries=1)
         src_configs = [c for c in (parse_config(l, src_label) for l in lines) if c]
         if src_label.startswith("IR-"):
             before = len(src_configs); src_configs = sample_ratio(src_configs, 0.3)
             print(f"   ✅ [{src_label}] {len(lines)} строк → {before} конфигов → взято {len(src_configs)} (30%)")
         elif error:
             print(f"   ❌ [{src_label}] {error}")
-        elif not src_configs and reason:
-            print(f"   ⚠️  [{src_label}] {reason}")
+        elif not src_configs and kind and kind != "local":
+            print(f"   ⚠️  [{src_label}] {kind}")
         else:
             print(f"   ✅ [{src_label}] {len(lines)} строк → {len(src_configs)} конфигов")
         all_configs.extend(src_configs)
@@ -1172,9 +1227,10 @@ def run_subscription(sources, remote_name, label):
         _STATS_WL = {"total": len(working)}
     print(f"⏱️  Всего: {time.time() - t0:.1f}с")
 
+
 if __name__ == "__main__":
     os.makedirs(TMP_DIR, exist_ok=True)
-    print("🚀 sing-box-extended async batch parser (anti-phantom)")
+    print("🚀 sing-box-extended async batch parser")
     if not os.path.exists(SINGBOX_BIN):
         print(f"❌ Бинарник не найден: {SINGBOX_BIN}"); raise SystemExit(1)
     print(f"🌍 GeoLite2: {GEOIP_DB}")
