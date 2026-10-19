@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-import urllib.request, urllib.error, base64, json, socket, os, re, gzip, time, random, glob, asyncio, aiohttp
-import subprocess, requests, yaml
+import urllib.request, urllib.error, base64, json, socket, os, re, gzip, time, random, glob, asyncio, ipaddress
+import subprocess, requests, yaml, aiohttp
 from urllib.parse import urlparse, quote, parse_qs, unquote
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
+try:
+    import socks
+    HAS_SOCKS = True
+except ImportError:
+    HAS_SOCKS = False
 
 BLACK_SOURCES = [
     ("Gidroksi","https://gidroksi.fun/black-list"),
@@ -38,7 +43,7 @@ WHITE_SOURCES = [
     ("RKP-WL","https://hub.mos.ru/rkp/sub-roskompozor/raw/main/wl"),
     ("igareck-WL","https://raw.githack.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt"),
     ("etoneya wl","https://etoskam.ru/whitelist"),
-    ("ring-team","https://enc.ring-team.casa/sub/kuajs27ilzcz"),
+    ("ring-team", os.environ.get("RING_TEAM_SUB", "")),
     ("ImSketch","https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
     ("LSO-LTE","https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/LTE.txt"),
     ("Akres-WL","https://github.com/theakres/VPN/raw/main/bwl"),
@@ -54,7 +59,7 @@ COUNTRY_NAMES = {
     "BA":"Bosnia","BB":"Barbados","BD":"Bangladesh","BE":"Belgium","BF":"Burkina Faso",
     "BG":"Bulgaria","BH":"Bahrain","BI":"Burundi","BJ":"Benin","BN":"Brunei","BO":"Bolivia",
     "BR":"Brazil","BS":"Bahamas","BT":"Bhutan","BW":"Botswana","BY":"Belarus","BZ":"Belize",
-    "CA":"Canada","CD":"Congo","CF":"CAR","CG":"Congo","CH":"Switzerland","CI":"Côte d'Ivoire",
+    "CA":"Canada","CD":"DR Congo","CF":"CAR","CG":"Congo","CH":"Switzerland","CI":"Côte d'Ivoire",
     "CL":"Chile","CM":"Cameroon","CN":"China","CO":"Colombia","CR":"Costa Rica","CU":"Cuba",
     "CV":"Cape Verde","CY":"Cyprus","CZ":"Czechia","DE":"Germany","DJ":"Djibouti","DK":"Denmark",
     "DM":"Dominica","DO":"Dominican Rep","DZ":"Algeria","EC":"Ecuador","EE":"Estonia",
@@ -95,19 +100,21 @@ SOCKS_BASE_PORT = 20000
 TEST_URL = "https://api.ipify.org?format=json"
 PING_TIMEOUT = 5
 DELAY_TIMEOUT_MS = 6000
+API_START_TIMEOUT = 8.0
 KERNEL_COUNT = 4
 BATCH_SIZE_PER_CORE = 50
 XRAY_WORKERS = 20
-CHECK_LIMIT = 5
 RETRY_PAUSE_SEC = 20
+MAX_RESPONSE_BYTES = 128 * 1024 * 1024
 BLOCKED_ASNS = {"13335","14789","132892","202623","203898","209242","395747","400095","402542","16509","396982","8075","20860"}
 FINGERPRINTS = ["firefox","safari","ios","android","edge","random","randomized"]
 UTLS_FP = {"chrome","firefox","safari","ios","android","edge","360","qq","random","randomized"}
 VMESS_SECURITY = {"auto","none","zero","aes-128-gcm","chacha20-poly1305"}
+CLASH_VMESS_CIPHERS = {"auto","none","aes-128-gcm","chacha20-poly1305"}
+CLASH_NETWORKS = {"tcp","ws","grpc","http","h2","httpupgrade"}
 TUIC_CC = {"cubic","new_reno","bbr"}
 TUIC_URM = {"native","quic"}
 SS_PLUGINS = {"obfs-local":"obfs-local","simple-obfs":"obfs-local","v2ray-plugin":"v2ray-plugin"}
-_CHECK_COUNTER = [0]
 
 def _find_geoip_db():
     here = os.path.dirname(os.path.abspath(__file__))
@@ -139,8 +146,14 @@ _STATS_BL = {}
 _STATS_WL = {}
 _RESOLVE_CACHE = {}
 SB_GEN_ERRORS = {}
-SB_CHECK_ERRORS = {}
 SB_RUN_ERRORS = {}
+
+def _b64(s):
+    s = s.strip()
+    return urlsafe_b64decode_padded(s)
+
+def urlsafe_b64decode_padded(s):
+    return base64.urlsafe_b64decode(s + '=' * (-len(s) % 4))
 
 def random_fp():
     return random.choice(FINGERPRINTS)
@@ -156,7 +169,7 @@ def parse_config(line, source_label):
         return None
     try:
         if line.startswith('vmess://'):
-            raw = base64.b64decode(line[8:] + '=' * (-len(line[8:]) % 4)).decode('utf-8')
+            raw = _b64(line[8:]).decode('utf-8')
             cfg = json.loads(raw)
             return {'host': cfg['add'], 'port': int(cfg['port']), 'raw': line, 'label': source_label, 'type': 'VMess'}
         if line.startswith('vless://'):
@@ -197,18 +210,22 @@ def resolve_host(host):
         return None
     if host in _RESOLVE_CACHE:
         return _RESOLVE_CACHE[host]
-    if host.count('.') == 3 and all(p.isdigit() for p in host.split('.')):
+    try:
+        ipaddress.ip_address(host)
         _RESOLVE_CACHE[host] = host
         return host
+    except ValueError:
+        pass
+    ip = None
     try:
-        ip = socket.gethostbyname(host)
+        infos = socket.getaddrinfo(host, None, socket.AF_UNSPEC, socket.SOCK_STREAM)
+        v4 = [i[4][0] for i in infos if i[0] == socket.AF_INET]
+        v6 = [i[4][0] for i in infos if i[0] == socket.AF_INET6]
+        ip = (v4 or v6 or [None])[0]
     except Exception:
         ip = None
     _RESOLVE_CACHE[host] = ip
     return ip
-
-def check_asn(host):
-    return _ASN.get(host, "")
 
 def load_asn_batch(hosts):
     global _ASN
@@ -222,43 +239,25 @@ def load_asn_batch(hosts):
             if ip:
                 host_to_ip[h] = ip
     print(f"🌐 ASN: {len(host_to_ip)}/{len(unique_hosts)} хостов резолвнуто")
-    if DBIP_DB:
-        try:
-            import geoip2.database
-            reader = geoip2.database.Reader(DBIP_DB)
-            found = 0
-            for h, ip in host_to_ip.items():
-                try:
-                    r = reader.asn(ip)
-                    if r.autonomous_system_number:
-                        _ASN[h] = str(r.autonomous_system_number)
-                        found += 1
-                except Exception:
-                    pass
-            reader.close()
-            print(f"✅ DBIP ASN: {found}/{len(host_to_ip)} ({DBIP_DB})")
-        except Exception as e:
-            print(f"⚠️ DBIP ASN: {e}")
-    else:
+    if not DBIP_DB:
         print("⚠️ dbip-asn-lite*.mmdb не найден")
-    missing = [(h, ip) for h, ip in host_to_ip.items() if h not in _ASN]
-    if missing:
-        print(f"🌐 ip-api batch: {len(missing)} хостов")
-        for i in range(0, len(missing), 100):
-            chunk = missing[i:i+100]
-            payload = [{"query": ip, "fields": "as,query"} for _, ip in chunk]
+        return
+    try:
+        import geoip2.database
+        reader = geoip2.database.Reader(DBIP_DB)
+        found = 0
+        for h, ip in host_to_ip.items():
             try:
-                r = requests.post("http://ip-api.com/batch", json=payload, timeout=15)
-                if r.status_code == 200:
-                    data = r.json()
-                    for item, (h, _) in zip(data, chunk):
-                        as_str = item.get("as", "") if isinstance(item, dict) else ""
-                        if as_str:
-                            _ASN[h] = as_str.split()[0].replace("AS", "")
-                time.sleep(4.5)
+                r = reader.asn(ip)
+                if r.autonomous_system_number:
+                    _ASN[h] = str(r.autonomous_system_number)
+                    found += 1
             except Exception:
                 pass
-    print(f"✅ ASN итого: {len(_ASN)}/{len(unique_hosts)}")
+        reader.close()
+        print(f"✅ DBIP ASN: {found}/{len(host_to_ip)} ({DBIP_DB})")
+    except Exception as e:
+        print(f"⚠️ DBIP ASN: {e}")
 
 def fetch_sub(url, retries=1):
     for attempt in range(retries + 1):
@@ -269,7 +268,9 @@ def fetch_sub(url, retries=1):
                 'Accept': '*/*', 'Accept-Language': 'ru,en;q=0.9', 'Referer': url,
             })
             resp = urllib.request.urlopen(req, timeout=20)
-            data = resp.read()
+            data = resp.read(MAX_RESPONSE_BYTES + 1)
+            if len(data) > MAX_RESPONSE_BYTES:
+                return [], "Ответ слишком большой", "toolarge"
             if url.endswith(".gz"):
                 try:
                     data = gzip.decompress(data)
@@ -279,12 +280,12 @@ def fetch_sub(url, retries=1):
                 return [], "Пустой ответ", "empty"
             try:
                 decoded = base64.b64decode(data + b'=' * (-len(data) % 4)).decode('utf-8', errors='ignore')
-                if any(p in decoded for p in ('vless://', 'vmess://', 'trojan://', 'ss://', 'hysteria2://')):
+                if any(p in decoded for p in ('vless://', 'vmess://', 'trojan://', 'ss://', 'hysteria2://', 'hy2://', 'tuic://')):
                     return decoded.splitlines(), None, None
             except Exception:
                 pass
             text = data.decode('utf-8', errors='ignore')
-            if any(p in text for p in ('vless://', 'vmess://', 'trojan://', 'ss://', 'hysteria2://')):
+            if any(p in text for p in ('vless://', 'vmess://', 'trojan://', 'ss://', 'hysteria2://', 'hy2://', 'tuic://')):
                 return text.splitlines(), None, None
             head = text[:500].lower()
             if '<html' in head or '<!doctype' in head or '<body' in head:
@@ -354,7 +355,7 @@ def get_flag_and_name(host):
         return "🌐", "Unknown"
     return chr(ord(code[0]) + 127397) + chr(ord(code[1]) + 127397), COUNTRY_NAMES.get(code, code)
 
-def format_line(cfg, ping, idx=0):
+def format_line(cfg, idx=0):
     flag, _ = get_flag_and_name(cfg['host'])
     new_name = f"cool [{cfg['label']}] {flag} |#{idx}|"
     raw = cfg['raw']
@@ -422,7 +423,7 @@ def sb_vless(uri):
     return out
 
 def sb_vmess(uri):
-    raw = base64.b64decode(uri[8:] + '=' * (-len(uri[8:]) % 4)).decode("utf-8", errors="ignore")
+    raw = _b64(uri[8:]).decode("utf-8", errors="ignore")
     v = json.loads(raw)
     if not v.get("add") or not v.get("id"):
         return None
@@ -604,18 +605,6 @@ def _next_api_port(worker_id):
 def _next_socks_port(worker_id):
     return SOCKS_BASE_PORT + worker_id * 100 + 100
 
-def _wait_api(port, timeout=8.0):
-    deadline = time.time() + timeout
-    while time.time() < deadline:
-        try:
-            r = requests.get(f"http://127.0.0.1:{port}/version", timeout=0.5)
-            if r.status_code == 200:
-                return True
-        except Exception:
-            pass
-        time.sleep(0.1)
-    return False
-
 def _probe_kernel():
     probe_cfg = os.path.join(TMP_DIR, "probe.json")
     probe_port = API_BASE_PORT + 5000
@@ -627,34 +616,37 @@ def _probe_kernel():
         "outbounds": [{"type": "direct", "tag": "direct"}],
         "route": {"rules": [{"action": "route", "outbound": "direct"}]},
     }
+    proc = None
     try:
         with open(probe_cfg, "w") as f:
             json.dump(cfg, f)
-        check = subprocess.run([SINGBOX_BIN, "check", "-c", probe_cfg],
-                               capture_output=True, timeout=10)
-        if check.returncode != 0:
-            print(f"❌ probe: check failed: {check.stderr.decode('utf-8','ignore')[:300]}")
-            return False
         proc = subprocess.Popen([SINGBOX_BIN, "run", "-c", probe_cfg],
                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        ok = _wait_api(probe_port, timeout=8.0)
-        try:
-            proc.kill(); proc.wait(timeout=3)
-        except Exception:
-            pass
-        if ok:
-            print(f"✅ probe: ядро живо, API :{probe_port}")
-        else:
-            print("❌ probe: API не поднялся")
+        deadline = time.time() + API_START_TIMEOUT
+        ok = False
+        while time.time() < deadline:
+            try:
+                r = requests.get(f"http://127.0.0.1:{probe_port}/version", timeout=0.5)
+                if r.status_code == 200:
+                    ok = True; break
+            except Exception:
+                pass
+            time.sleep(0.1)
+        print(f"{'✅' if ok else '❌'} probe: API :{probe_port} {'поднялся' if ok else 'не поднялся'}")
         return ok
     except Exception as e:
         print(f"❌ probe: {type(e).__name__}: {e}")
         return False
     finally:
+        if proc is not None:
+            try:
+                proc.kill(); proc.wait(timeout=3)
+            except Exception:
+                pass
         try: os.remove(probe_cfg)
         except Exception: pass
 
-async def _wait_api_async(session, port, timeout=3.0):
+async def _wait_api_async(session, port, timeout):
     deadline = time.time() + timeout
     while time.time() < deadline:
         try:
@@ -684,7 +676,6 @@ async def _delay_one_async(session, api_port, tag):
         return tag, None
 
 async def _run_batch_async(batch_cfgs, worker_id, session):
-    t_start = time.time()
     api_port = _next_api_port(worker_id)
     socks_port = _next_socks_port(worker_id)
     cfg_path = os.path.join(TMP_DIR, f"w{worker_id}.json")
@@ -714,22 +705,6 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
             json.dump(full, f)
     except Exception:
         return []
-    t_check = time.time()
-    if _CHECK_COUNTER[0] < CHECK_LIMIT:
-        _CHECK_COUNTER[0] += 1
-        check = await asyncio.create_subprocess_exec(
-            SINGBOX_BIN, "check", "-c", cfg_path,
-            stdout=asyncio.subprocess.DEVNULL, stderr=asyncio.subprocess.PIPE,
-        )
-        stdout, stderr = await check.communicate()
-        if check.returncode != 0:
-            err_text = stderr.decode("utf-8", "ignore").strip()
-            key = re.sub(r"\d+", "N", (err_text.splitlines()[-1] if err_text else "unknown"))[:200]
-            _note_err(SB_CHECK_ERRORS, key)
-            try: os.remove(cfg_path)
-            except: pass
-            return []
-    t_run = time.time()
     proc, errf = None, None
     try:
         errf = open(err_path, "wb")
@@ -737,31 +712,20 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
             SINGBOX_BIN, "run", "-c", cfg_path,
             stdout=asyncio.subprocess.DEVNULL, stderr=errf,
         )
-        if not await _wait_api_async(session, api_port, timeout=3.0):
+        if not await _wait_api_async(session, api_port, API_START_TIMEOUT):
             _note_err(SB_RUN_ERRORS, "api_not_ready")
             proc.kill()
             try: await proc.wait()
-            except: pass
-            try: os.remove(cfg_path)
-            except: pass
-            if len(batch_cfgs) > 1:
-                mid = len(batch_cfgs) // 2
-                left = await _run_batch_async(batch_cfgs[:mid], worker_id, session)
-                right = await _run_batch_async(batch_cfgs[mid:], worker_id, session)
-                return left + right
-            return []
-        t_delay = time.time()
+            except Exception: pass
+            proc = None
+            return await _split_retry(batch_cfgs, worker_id, session)
         results1 = await asyncio.gather(*[_delay_one_async(session, api_port, t) for t in tag_to_cfg])
         first_pass = {t: d for t, d in results1 if d is not None and t in tag_to_cfg}
         if not first_pass:
             return []
         await asyncio.sleep(RETRY_PAUSE_SEC)
         results2 = await asyncio.gather(*[_delay_one_async(session, api_port, t) for t in first_pass.keys()])
-        working = [(tag_to_cfg[t], d) for t, d in results2 if d is not None and t in first_pass]
-        t_end = time.time()
-        if worker_id == 0:
-            print(f"   [w0] check={t_run-t_check:.2f}s api={t_delay-t_run:.2f}s verify={t_end-t_delay:.2f}s total={t_end-t_start:.2f}s | in={len(batch_cfgs)} first={len(first_pass)} final={len(working)}")
-        return working
+        return [(tag_to_cfg[t], d) for t, d in results2 if d is not None and t in first_pass]
     except Exception as e:
         _note_err(SB_RUN_ERRORS, f"{type(e).__name__}")
         return []
@@ -770,13 +734,22 @@ async def _run_batch_async(batch_cfgs, worker_id, session):
             try:
                 proc.kill()
                 await proc.wait()
-            except: pass
+            except Exception:
+                pass
         if errf is not None:
             try: errf.close()
-            except: pass
+            except Exception: pass
         for pth in (cfg_path, err_path):
             try: os.remove(pth)
-            except: pass
+            except Exception: pass
+
+async def _split_retry(batch_cfgs, worker_id, session):
+    if len(batch_cfgs) <= 1:
+        return []
+    mid = len(batch_cfgs) // 2
+    left = await _run_batch_async(batch_cfgs[:mid], worker_id, session)
+    right = await _run_batch_async(batch_cfgs[mid:], worker_id, session)
+    return left + right
 
 async def _batch_worker(worker_id, queue, session, results, lock, stats, total):
     while True:
@@ -824,10 +797,6 @@ def _check_one_legacy(idx, cfg):
     try:
         with open(cfg_path, "w") as f:
             json.dump(full, f)
-        check = subprocess.run([SINGBOX_BIN, "check", "-c", cfg_path],
-                               capture_output=True, timeout=10)
-        if check.returncode != 0:
-            return None
         errf = open(err_path, "wb")
         proc = subprocess.Popen([SINGBOX_BIN, "run", "-c", cfg_path],
                                 stdout=subprocess.DEVNULL, stderr=errf)
@@ -840,7 +809,6 @@ def _check_one_legacy(idx, cfg):
             except Exception:
                 if proc.poll() is not None:
                     break
-                continue
         if not ready:
             return None
         start = time.time()
@@ -868,6 +836,9 @@ def _check_one_legacy(idx, cfg):
             except Exception: pass
 
 def _fallback_check(all_configs):
+    if not HAS_SOCKS:
+        print("❌ PySocks не установлен — fallback невозможен")
+        return []
     print(f"   fallback: legacy ({XRAY_WORKERS} потоков)")
     results = []
     with ThreadPoolExecutor(max_workers=XRAY_WORKERS) as ex:
@@ -895,23 +866,27 @@ def to_clash_proxy(cfg, flag, country, idx):
     try:
         if uri.startswith('vless://'):
             p = urlparse(uri)
-            q = {k: v[0] for k, v in parse_qs(p.query).items()}
+            q = {k: v[0] for k, v in parse_qs(p.query, keep_blank_values=True).items()}
             security = q.get("security") or ("reality" if q.get("pbk") else "")
-            proxy = {"name": name, "type": "vless", "server": p.hostname, "port": p.port or 443,
-                     "uuid": unquote(p.username or ""), "udp": True, "tls": security in ("tls", "reality"),
-                     "network": q.get("type", "tcp"), "skip-cert-verify": q.get("allowInsecure", "0") == "1"}
-            if not proxy["uuid"]:
+            net = q.get("type", "tcp") or "tcp"
+            if net not in CLASH_NETWORKS:
                 return None
-            if q.get("flow") == "xtls-rprx-vision" and q.get("type", "tcp") in ("tcp", "none", ""):
+            uuid = unquote(p.username or "")
+            if not uuid or not p.hostname:
+                return None
+            proxy = {"name": name, "type": "vless", "server": p.hostname, "port": p.port or 443,
+                     "uuid": uuid, "udp": True, "tls": security in ("tls", "reality"),
+                     "network": net, "skip-cert-verify": q.get("allowInsecure", "0") == "1"}
+            if q.get("flow") == "xtls-rprx-vision" and net == "tcp":
                 proxy["flow"] = q["flow"]
             if security == "reality":
                 if not q.get("pbk"):
                     return None
                 proxy["reality-opts"] = {"public-key": q.get("pbk", ""), "short-id": q.get("sid", "")}
-                proxy["servername"] = q.get("sni", "") or p.hostname; proxy["client-fingerprint"] = random_fp()
+                proxy["servername"] = q.get("sni", "") or p.hostname
+                proxy["client-fingerprint"] = random_fp()
             elif security == "tls":
                 proxy["servername"] = q.get("sni", "") or p.hostname
-            net = q.get("type", "tcp")
             if net == "ws":
                 proxy["ws-opts"] = {"path": q.get("path", "/")}
                 if q.get("host"):
@@ -922,8 +897,16 @@ def to_clash_proxy(cfg, flag, country, idx):
                 proxy["httpupgrade-opts"] = {"path": q.get("path", "/"), "host": q.get("host", "") or p.hostname}
             return proxy
         if uri.startswith('vmess://'):
-            raw = base64.b64decode(uri[8:] + '=' * (-len(uri[8:]) % 4)).decode('utf-8')
+            raw = _b64(uri[8:]).decode('utf-8', errors='ignore')
             v = json.loads(raw)
+            cipher = (v.get("scy") or "auto").strip().lower()
+            if cipher not in CLASH_VMESS_CIPHERS:
+                return None
+            net = (v.get("net") or "tcp").lower()
+            if net == "tcp" and v.get("type") == "http":
+                net = "http"
+            if net not in CLASH_NETWORKS:
+                return None
             try:
                 aid = int(v.get("aid") or 0)
             except Exception:
@@ -932,32 +915,31 @@ def to_clash_proxy(cfg, flag, country, idx):
                 vmport = int(v.get("port") or 443)
             except Exception:
                 return None
-            if vmport <= 0:
+            if vmport <= 0 or not v.get("add") or not v.get("id"):
                 return None
-            proxy = {"name": name, "type": "vmess", "server": v.get("add"), "port": vmport,
-                     "uuid": v.get("id"), "alterId": aid, "cipher": v.get("scy") or "auto",
-                     "udp": True, "tls": v.get("tls") == "tls", "network": v.get("net", "tcp")}
+            proxy = {"name": name, "type": "vmess", "server": v["add"], "port": vmport,
+                     "uuid": v["id"], "alterId": aid, "cipher": cipher,
+                     "udp": True, "tls": v.get("tls") == "tls", "network": net}
             if v.get("sni") or v.get("host"):
                 proxy["servername"] = v.get("sni") or v.get("host")
-            if v.get("net") == "ws":
+            if net == "ws":
                 proxy["ws-opts"] = {"path": v.get("path", "/")}
                 if v.get("host"):
                     proxy["ws-opts"]["headers"] = {"Host": v["host"]}
-            elif v.get("net") == "grpc":
+            elif net == "grpc":
                 proxy["grpc-opts"] = {"grpc-service-name": v.get("path", "")}
-            elif v.get("net") == "tcp" and v.get("type") == "http":
-                proxy["network"] = "http"
+            elif net == "http":
                 proxy["http-opts"] = {"path": [v.get("path", "/")], "headers": {"Host": [v.get("host") or v.get("add")]}}
             return proxy
         if uri.startswith('trojan://'):
             p = urlparse(uri)
-            q = {k: v[0] for k, v in parse_qs(p.query).items()}
-            if not p.username:
+            q = {k: v[0] for k, v in parse_qs(p.query, keep_blank_values=True).items()}
+            if not p.username or not p.hostname:
                 return None
+            net = q.get("type", "tcp") or "tcp"
             proxy = {"name": name, "type": "trojan", "server": p.hostname, "port": p.port or 443,
                      "password": unquote(p.username), "sni": q.get("sni", "") or p.hostname,
                      "udp": True, "skip-cert-verify": q.get("allowInsecure", "0") == "1"}
-            net = q.get("type", "tcp")
             if net == "ws":
                 proxy["network"] = "ws"
                 proxy["ws-opts"] = {"path": q.get("path", "/")}
@@ -966,12 +948,14 @@ def to_clash_proxy(cfg, flag, country, idx):
             elif net == "grpc":
                 proxy["network"] = "grpc"
                 proxy["grpc-opts"] = {"grpc-service-name": q.get("serviceName", "")}
+            elif net != "tcp":
+                return None
             return proxy
         if uri.startswith('ss://'):
             u = uri[5:].split("#", 1)[0]
             if "?" in u:
                 base, qs = u.split("?", 1)
-                q = {k: v[0] for k, v in parse_qs(qs).items()}
+                q = {k: v[0] for k, v in parse_qs(qs, keep_blank_values=True).items()}
             else:
                 base, q = u, {}
             if "@" in base:
@@ -995,7 +979,7 @@ def to_clash_proxy(cfg, flag, country, idx):
             if not hp.hostname:
                 return None
             proxy = {"name": name, "type": "ss", "server": hp.hostname, "port": hp.port or 8388,
-                     "cipher": method.strip(), "password": unquote(password), "udp": True}
+                     "cipher": method.strip().lower(), "password": unquote(password), "udp": True}
             plugin = q.get("plugin", "")
             if plugin:
                 parts = plugin.split(";", 1)
@@ -1011,9 +995,9 @@ def to_clash_proxy(cfg, flag, country, idx):
             return proxy
         if uri.startswith(('hysteria2://', 'hy2://')):
             p = urlparse(uri)
-            q = {k: v[0] for k, v in parse_qs(p.query).items()}
+            q = {k: v[0] for k, v in parse_qs(p.query, keep_blank_values=True).items()}
             password = unquote(p.username or "") or q.get("auth", "")
-            if not password:
+            if not password or not p.hostname:
                 return None
             proxy = {"name": name, "type": "hysteria2", "server": p.hostname, "port": p.port or 443,
                      "password": password, "sni": q.get("sni", "") or p.hostname,
@@ -1027,17 +1011,12 @@ def to_clash_proxy(cfg, flag, country, idx):
     return None
 
 def build_clash_yaml(working_list, out_path):
-    proxies, skipped, seen_names, country_map, non_ru = [], 0, {}, {}, []
+    proxies, skipped, country_map, non_ru = [], 0, {}, []
     for idx, (cfg, _) in enumerate(working_list, 1):
         flag, country = get_flag_and_name(cfg['host'])
         p = to_clash_proxy(cfg, flag, country, idx)
         if not p:
             skipped += 1; continue
-        base = p["name"]
-        if base in seen_names:
-            seen_names[base] += 1; p["name"] = f"{base} #{seen_names[base]}"
-        else:
-            seen_names[base] = 1
         proxies.append(p)
         country_map.setdefault(country, []).append(p["name"])
         if country != "Russia":
@@ -1065,8 +1044,7 @@ def build_clash_yaml(working_list, out_path):
     data = {"proxies": proxies, "proxy-groups": groups, "rules": ["MATCH,Обычный"]}
     with open(out_path, "w", encoding="utf-8") as f:
         yaml.dump(data, f, allow_unicode=True, sort_keys=False, width=1000)
-    dupes = sum(v - 1 for v in seen_names.values() if v > 1)
-    print(f"💾 {out_path}: {len(proxies)} прокси, {len(country_map)} стран, без RU {len(non_ru)} (пропущено {skipped}, дубликатов {dupes})")
+    print(f"💾 {out_path}: {len(proxies)} прокси, {len(country_map)} стран, без RU {len(non_ru)} (пропущено {skipped})")
 
 def save_stats(working_list, out_path):
     countries = {}
@@ -1096,7 +1074,8 @@ def update_changelog(stats_bl, stats_wl, changelog_path="CHANGELOG.md"):
             break
     now = time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())
     bl, wl = stats_bl["total"], stats_wl["total"]
-    dbl, dwl = (bl - prev_bl) if prev_bl else 0, (wl - prev_wl) if prev_wl else 0
+    dbl = (bl - prev_bl) if prev_bl else 0
+    dwl = (wl - prev_wl) if prev_wl else 0
     line = f"- **{now}** — BL: {bl} ({'+' if dbl>0 else ''}{dbl}), WL: {wl} ({'+' if dwl>0 else ''}{dwl})"
     if old.startswith("# Changelog"):
         he = old.find("\n\n")
@@ -1111,15 +1090,16 @@ def update_changelog(stats_bl, stats_wl, changelog_path="CHANGELOG.md"):
     print(f"💾 {changelog_path}: BL {bl}, WL {wl}")
 
 def run_subscription(sources, remote_name, label):
-    global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS, _CHECK_COUNTER
+    global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_RUN_ERRORS
     _FLAGS = {}
     _ASN = {}
-    SB_GEN_ERRORS, SB_CHECK_ERRORS, SB_RUN_ERRORS = {}, {}, {}
-    _CHECK_COUNTER[0] = 0
+    SB_GEN_ERRORS, SB_RUN_ERRORS = {}, {}
     t0 = time.time()
     print(f"\n═══ {label} → {remote_name} ═══")
     all_configs = []
     for src_label, url in sources:
+        if not url:
+            continue
         if src_label == "dwnl" and (os.path.exists("configs.txt") or os.path.exists("configs.txt.gz")):
             print(f"   ✅ [dwnl] локальный configs.txt")
             try:
@@ -1157,10 +1137,6 @@ def run_subscription(sources, remote_name, label):
     print(f"\n🔥 Рабочих: {len(working)}")
     if SB_GEN_ERRORS:
         print("🧹 Не построен outbound: " + ", ".join(f"{k} ×{v}" for k, v in sorted(SB_GEN_ERRORS.items(), key=lambda kv: -kv[1])[:8]))
-    if SB_CHECK_ERRORS:
-        print("🧹 sing-box check, топ ошибок:")
-        for msg, n in sorted(SB_CHECK_ERRORS.items(), key=lambda kv: -kv[1])[:10]:
-            print(f"   [{n}x] {msg}")
     if SB_RUN_ERRORS:
         for msg, n in sorted(SB_RUN_ERRORS.items(), key=lambda kv: -kv[1])[:5]:
             print(f"   run [{n}x]: {msg}")
@@ -1180,7 +1156,7 @@ def run_subscription(sources, remote_name, label):
     if not working:
         print("⚠️ После фильтра ASN ничего не осталось"); return
     random.shuffle(working)
-    output = [format_line(c, p, i + 1) for i, (c, p) in enumerate(working)]
+    output = [format_line(c, i + 1) for i, (c, _) in enumerate(working)]
     title = "CoolSubs — Black" if "black" in remote_name.lower() else "CoolSubs — White"
     output = add_metadata(output, title, update_hours=4,
                           support_url="https://github.com/vessel-web/CoolSubs",
