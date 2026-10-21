@@ -1,38 +1,46 @@
 proxies:
-- name: "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#2|"
-  type: vless
-  server: 87.199.205.28
+- name: "cool [igareck-WL] \U0001F1F7\U0001F1FA |#1|"
+  type: trojan
+  server: edge2.cdnpoint.ru
   port: 443
-  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
+  password: 34a39a68-e7bf-4aa7-8340-a1a3126be65b
+  sni: cdn.cdnhaven.com
   udp: true
-  tls: true
-  network: tcp
   skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
-    short-id: a9c11b06829163c9
-  servername: vkvd754.okcdn.ru
-  client-fingerprint: android
-- name: "cool [etoneya wl] \U0001F1F8\U0001F1EA |#3|"
+- name: "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#2|"
   type: vless
-  server: 193.188.21.253
-  port: 10444
-  uuid: 57f7772d-f5d6-4d8f-992d-5fa5e0d6da55
+  server: 82.39.171.12
+  port: 443
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: video.yandex.ru
-  client-fingerprint: safari
-- name: "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#4|"
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: c39cc7310a
+  servername: yahoo.com
+  client-fingerprint: randomized
+- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#3|"
+  type: vless
+  server: 87.242.95.164
+  port: 8445
+  uuid: 92e135b9-4c04-4e7e-8b28-d8074a202cf8
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ
+    short-id: ''
+  servername: passport.yandex.ru
+  client-fingerprint: random
+- name: "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#7|"
   type: vless
   server: 193.23.195.37
-  port: 20443
+  port: 23443
   uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
   udp: true
   tls: true
@@ -40,56 +48,11 @@ proxies:
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: d2061bb1
-  servername: ya.ru
-  client-fingerprint: safari
-- name: "cool [etoneya wl] \U0001F1F5\U0001F1F1 |#6|"
-  type: vless
-  server: 144.31.101.196
-  port: 33891
-  uuid: 1c794e75-bcd4-4a65-9f69-ed0a10f33d60
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: HXXIkFRPeRpluXJ7SOoUGf9EOq4Lw-oJpvg1W0UPbEw
-    short-id: 5bd7b68ca4c04443
-  servername: browser.yandex.com
-  client-fingerprint: randomized
-- name: "cool [etoneya wl] \U0001F1E9\U0001F1EA |#7|"
-  type: vless
-  server: qcloudge1.exitvpn.shop
-  port: 20268
-  uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 5H_MmyfvF4SkwS84wTbLmtcZDecXJIJtZ3uisiKQpSM
-    short-id: 0c774b50
-  servername: metrika.yandex.ru
-  client-fingerprint: random
-- name: "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#9|"
-  type: vless
-  server: 150.241.101.17
-  port: 8443
-  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    short-id: 6ba85179e30d4fc2
-  servername: yandex.net
-  client-fingerprint: safari
-- name: "cool [etoneya wl] \U0001F1F8\U0001F1EC |#11|"
+    public-key: 8-QVqJkQK6im68scoBqUSvb14ishLf5c_YeD9WpB_Ec
+    short-id: 36f4f1d1a9bd8355
+  servername: dzen.ru
+  client-fingerprint: android
+- name: "cool [etoneya wl] \U0001F1F8\U0001F1EC |#8|"
   type: vless
   server: 147.93.173.45
   port: 10444
@@ -103,11 +66,55 @@ proxies:
     public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
     short-id: 8debcf36f1cc69ff
   servername: video.yandex.ru
-  client-fingerprint: edge
-- name: "cool [etoneya wl] \U0001F1F1\U0001F1F9 |#13|"
+  client-fingerprint: safari
+- name: "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#10|"
   type: vless
-  server: boostlitva77www.qcloud.surf
-  port: 21731
+  server: 87.199.205.28
+  port: 443
+  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
+    short-id: a9c11b06829163c9
+  servername: vkvd754.okcdn.ru
+  client-fingerprint: firefox
+- name: "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#11|"
+  type: vless
+  server: 87.199.205.28
+  port: 443
+  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
+    short-id: b7cd177731793b1e
+  servername: vkvd754.okcdn.ru
+  client-fingerprint: ios
+- name: "cool [IR-WL-1] \U0001F1E9\U0001F1EA |#12|"
+  type: vless
+  server: 46.225.46.136
+  port: 2087
+  uuid: a5db5ab5-8d28-49c0-ad55-0ad4724e4c0d
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: hoert1rert.localip.ir
+  ws-opts:
+    path: /hokm
+    headers:
+      Host: hoert1rert.localip.ir
+- name: "cool [etoneya wl] \U0001F1EB\U0001F1EE |#13|"
+  type: vless
+  server: finkawwwbroy5.qcloud.surf
+  port: 20324
   uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
   udp: true
   tls: true
@@ -115,28 +122,239 @@ proxies:
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: QeLV1NQeTG3e1DRFSNnK_f9Ca5Gf9smexICxtr27WUA
-    short-id: 0446eb17
+    public-key: RK2g-bLoaa9GD9cJRRk2ktU9nAvP4-YmUPnBs1-UC1A
+    short-id: a9391e22
   servername: metrika.yandex.ru
-  client-fingerprint: android
-- name: "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#14|"
+  client-fingerprint: ios
+- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#16|"
   type: vless
-  server: 144.31.50.236
-  port: 443
-  uuid: 1c332eae-7e02-4acd-996d-4eb3e652401c
+  server: 95.128.71.79
+  port: 10444
+  uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: uitO4Z8t9TplwwYaqwLqh5rfxDh_X8bOBiNuPbzvaEM
-    short-id: bbe46bd8f6b96839
-  servername: yandex.ru
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
   client-fingerprint: edge
-- name: "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#15|"
+- name: "cool [etoneya wl] \U0001F1EB\U0001F1EE |#18|"
   type: vless
-  server: 82.118.16.149
+  server: finkawwwbroy5.qcloud.surf
+  port: 20324
+  uuid: 8bd04756-3beb-4348-82c9-d35453df50ce
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: RK2g-bLoaa9GD9cJRRk2ktU9nAvP4-YmUPnBs1-UC1A
+    short-id: a9391e22
+  servername: metrika.yandex.ru
+  client-fingerprint: safari
+- name: "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#19|"
+  type: vless
+  server: 89.35.14.33
+  port: 443
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: TZVMqglhHzteJ6t34mtku75LKzXNq0CB6glKYMAH6zg
+    short-id: 8e07337954f9823f
+  servername: md4.univesalsrv.com
+  client-fingerprint: ios
+  grpc-opts:
+    grpc-service-name: hub.v1.ApiService
+- name: "cool [etoneya wl] \U0001F1EB\U0001F1EE |#20|"
+  type: vless
+  server: e1-cz.edgemedia.lol
+  port: 22443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: d2061bb1
+  servername: ya.ru
+  client-fingerprint: random
+- name: "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#21|"
+  type: vless
+  server: 193.23.195.37
+  port: 8443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: d2061bb1
+  servername: ya.ru
+  client-fingerprint: randomized
+- name: "cool [etoneya wl] \U0001F1F7\U0001F1FA |#23|"
+  type: vless
+  server: 188.225.83.133
+  port: 443
+  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+    short-id: a1b2c3d4e5f6a7b8
+  servername: xnodtwx.artemida.live
+  client-fingerprint: android
+  grpc-opts:
+    grpc-service-name: ''
+- name: "cool [etoneya wl] \U0001F1F7\U0001F1FA |#24|"
+  type: vless
+  server: xnodtwx.artemida.live
+  port: 443
+  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+    short-id: a1b2c3d4e5f6a7b8
+  servername: xnodtwx.artemida.live
+  client-fingerprint: edge
+  grpc-opts:
+    grpc-service-name: ''
+- name: "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#25|"
+  type: vless
+  server: 45.138.100.248
+  port: 10444
+  uuid: ae908ff5-f749-402c-af25-e6e9aef4d6bb
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: android
+- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#26|"
+  type: vless
+  server: 178.172.227.124
+  port: 10444
+  uuid: 1af36694-b548-4b18-89a0-bc076eab4ed7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: android
+- name: "cool [etoneya wl] \U0001F1F7\U0001F1FA |#28|"
+  type: vless
+  server: 188.225.83.133
+  port: 443
+  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+    short-id: a1b2c3d4e5f6a7b8
+  servername: xnodtwx.artemida.live
+  client-fingerprint: randomized
+  grpc-opts:
+    grpc-service-name: ''
+- name: "cool [etoneya wl] \U0001F1EB\U0001F1EE |#30|"
+  type: vless
+  server: e1-cz.edgemedia.lol
+  port: 22443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: d2061bb1
+  servername: ya.ru
+  client-fingerprint: android
+- name: "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#32|"
+  type: vless
+  server: node-uk.connectsuite.org
+  port: 8443
+  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  servername: node-uk.connectsuite.org
+- name: "cool [etoneya wl] \U0001F1F7\U0001F1FA |#33|"
+  type: vless
+  server: xnodtwx.artemida.live
+  port: 443
+  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+    short-id: a1b2c3d4e5f6a7b8
+  servername: xnodtwx.artemida.live
+  client-fingerprint: android
+  grpc-opts:
+    grpc-service-name: ''
+- name: "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#34|"
+  type: vless
+  server: 150.241.101.17
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: 6ba85179e30d4fc2
+  servername: yandex.net
+  client-fingerprint: android
+- name: "cool [etoneya wl] \U0001F1F7\U0001F1FA |#35|"
+  type: vless
+  server: 188.225.83.133
+  port: 443
+  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+    short-id: a1b2c3d4e5f6a7b8
+  servername: xnodtwx.artemida.live
+  client-fingerprint: random
+  grpc-opts:
+    grpc-service-name: ''
+- name: "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#36|"
+  type: vless
+  server: it.song69.fun
   port: 443
   uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
   udp: true
@@ -148,8 +366,82 @@ proxies:
     public-key: HbK-TTnL1Dog-wKCowjLrKsx5ECIt2uxBsdGfeWG6kQ
     short-id: 7bbf811a
   servername: metrika.yandex.ru
-  client-fingerprint: edge
-- name: "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#16|"
+  client-fingerprint: firefox
+- name: "cool [IR-WL-1] \U0001F1FA\U0001F1F8 |#37|"
+  type: vless
+  server: 31.77.126.2
+  port: 443
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: lucasjow.us.ci
+  ws-opts:
+    path: /?TELEGRAM---MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI
+    headers:
+      Host: lucasjow.us.ci
+- name: "cool [etoneya wl] \U0001F1E6\U0001F1F2 |#38|"
+  type: vless
+  server: 88.218.92.41
+  port: 24694
+  uuid: 4ad3dbf5-2005-4d96-b56c-a0ca9905cab6
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: kaPztgo_2b2CKxytGWXzn6EauyNKr6Ho8xerGpSS-SQ
+    short-id: '58301280'
+  servername: metrika.yandex.ru
+  client-fingerprint: random
+- name: "cool [IR-WL-1] \U0001F1FA\U0001F1F8 |#39|"
+  type: vless
+  server: node.nodebrcsp.ru
+  port: 8443
+  uuid: 81a227e3-cb97-40fe-b7b6-45a60ed065cf
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 75SvxhvlOLct7K2eSg4-a1o6Z6N3JMTqp3wIQmLSqTA
+    short-id: 8c609726e0233f08
+  servername: node.nodebrcsp.ru
+  client-fingerprint: randomized
+  grpc-opts:
+    grpc-service-name: grpc-api-v2
+- name: "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#41|"
+  type: vless
+  server: 193.23.195.37
+  port: 20443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: d2061bb1
+  servername: ya.ru
+  client-fingerprint: ios
+- name: "cool [etoneya wl] \U0001F1E6\U0001F1EA |#42|"
+  type: vless
+  server: 45.59.120.217
+  port: 443
+  uuid: 8732f92b-ba85-48f7-92e4-ad029f1cd4e7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: mWxcYeYE-M3iE0RBjTzG88QI9kj2wivJDoIYDu_aG3w
+    short-id: 29c2dd1e3ef7c4d4
+  servername: strm.yandex.net
+  client-fingerprint: ios
+- name: "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#43|"
   type: vless
   server: 87.199.205.28
   port: 443
@@ -163,11 +455,178 @@ proxies:
     public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
     short-id: dd3519f8d7626e05
   servername: vkvd754.okcdn.ru
-  client-fingerprint: random
-- name: "cool [etoneya wl] \U0001F1F8\U0001F1EA |#17|"
+  client-fingerprint: edge
+- name: "cool [etoneya wl] \U0001F1F7\U0001F1FA |#45|"
   type: vless
-  server: sweedenqfds777.qcloud.surf
-  port: 21221
+  server: xnodtwx.artemida.live
+  port: 443
+  uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+    short-id: a1b2c3d4e5f6a7b8
+  servername: xnodtwx.artemida.live
+  client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: ''
+- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#47|"
+  type: vless
+  server: 178.172.227.228
+  port: 10444
+  uuid: b6e5dc56-836f-48c1-9163-b0b0b43b647d
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: ios
+- name: "cool [etoneya wl] \U0001F1F8\U0001F1EA |#48|"
+  type: vless
+  server: 193.188.21.253
+  port: 10444
+  uuid: 57f7772d-f5d6-4d8f-992d-5fa5e0d6da55
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: video.yandex.ru
+  client-fingerprint: randomized
+- name: "cool [etoneya wl] \U0001F1EB\U0001F1F7 |#49|"
+  type: vless
+  server: ww3.levikogjgfdd.ir
+  port: 443
+  uuid: b81b4d1b-7f20-48f1-82dc-d24bef898cab
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0
+    short-id: e6
+  servername: passport.yandex.ru
+  client-fingerprint: random
+- name: "cool [etoneya wl] \U0001F1EB\U0001F1EE |#50|"
+  type: vless
+  server: e1-ee.edgemedia.lol
+  port: 443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: d2061bb1
+  servername: ya.ru
+  client-fingerprint: firefox
+- name: "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#51|"
+  type: vless
+  server: 45.138.100.248
+  port: 10444
+  uuid: ae908ff5-f749-402c-af25-e6e9aef4d6bb
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: ios
+- name: "cool [etoneya wl] \U0001F1F7\U0001F1FA |#52|"
+  type: vless
+  server: 87.242.95.164
+  port: 8445
+  uuid: 92e135b9-4c04-4e7e-8b28-d8074a202cf8
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ
+    short-id: ''
+  servername: passport.yandex.ru
+  client-fingerprint: random
+- name: "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#53|"
+  type: vless
+  server: 150.241.101.17
+  port: 8443
+  uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: 6ba85179e30d4fc2
+  servername: yandex.net
+  client-fingerprint: ios
+- name: "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#54|"
+  type: vless
+  server: 87.199.205.28
+  port: 443
+  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
+    short-id: ef1d3554c652a436
+  servername: vkvd754.okcdn.ru
+  client-fingerprint: random
+- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#55|"
+  type: vless
+  server: 178.172.227.228
+  port: 10444
+  uuid: b6e5dc56-836f-48c1-9163-b0b0b43b647d
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: android
+- name: "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#56|"
+  type: vless
+  server: md1.univesalsrv.com
+  port: 443
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: xWejOQUn2koOUorUPSrHMLM-lyHlZ441KzxKc9bLmkY
+    short-id: 221ba6174224ca5b
+  servername: md1.univesalsrv.com
+  client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: hub.v1.RelayService
+- name: "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#57|"
+  type: vless
+  server: 82.118.16.149
+  port: 443
   uuid: 408c51e8-9246-483d-ba73-34ab4e202eb9
   udp: true
   tls: true
@@ -175,135 +634,324 @@ proxies:
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: RtxGqCtQJeOyUwSe7k6oZOrQWV1hPbC-TMqqgxl9fn4
-    short-id: c430045c
+    public-key: HbK-TTnL1Dog-wKCowjLrKsx5ECIt2uxBsdGfeWG6kQ
+    short-id: 7bbf811a
   servername: metrika.yandex.ru
-  client-fingerprint: android
-- name: "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#19|"
+  client-fingerprint: randomized
+- name: "cool [etoneya wl] \U0001F1EB\U0001F1EE |#58|"
+  type: vless
+  server: e1-us.edgemedia.lol
+  port: 21443
+  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
+    short-id: d2061bb1
+  servername: ya.ru
+  client-fingerprint: ios
+- name: "cool [igareck-WL] \U0001F1F7\U0001F1FA |#59|"
   type: trojan
-  server: 188.241.241.122
+  server: edge2.cdnpoint.ru
   port: 443
-  password: 4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA
-  sni: de2.dedushka.top
+  password: 34a39a68-e7bf-4aa7-8340-a1a3126be65b
+  sni: cdn.cdnhaven.com
   udp: true
   skip-cert-verify: false
+- name: "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#60|"
+  type: vless
+  server: md3.univesalsrv.com
+  port: 443
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: q38CddDj2g-XNDc0uW1m6S6b8iGY_Bne2RwX7C_FYCQ
+    short-id: 9a72d40f1ff882b3
+  servername: md3.univesalsrv.com
+  client-fingerprint: safari
+  grpc-opts:
+    grpc-service-name: stats.v2.PushService
 proxy-groups:
 - name: Обычный
   type: select
   proxies:
   - Авто
   - Авто (без RU)
-  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#2|"
-  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#3|"
-  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#4|"
-  - "cool [etoneya wl] \U0001F1F5\U0001F1F1 |#6|"
-  - "cool [etoneya wl] \U0001F1E9\U0001F1EA |#7|"
-  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [etoneya wl] \U0001F1F8\U0001F1EC |#11|"
-  - "cool [etoneya wl] \U0001F1F1\U0001F1F9 |#13|"
-  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#14|"
-  - "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#15|"
-  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#16|"
-  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#17|"
-  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#19|"
+  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#1|"
+  - "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#2|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#3|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#7|"
+  - "cool [etoneya wl] \U0001F1F8\U0001F1EC |#8|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#10|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#11|"
+  - "cool [IR-WL-1] \U0001F1E9\U0001F1EA |#12|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#13|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#16|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#18|"
+  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#19|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#20|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#23|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#24|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#25|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#26|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#28|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#30|"
+  - "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#32|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#33|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#34|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#35|"
+  - "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#36|"
+  - "cool [IR-WL-1] \U0001F1FA\U0001F1F8 |#37|"
+  - "cool [etoneya wl] \U0001F1E6\U0001F1F2 |#38|"
+  - "cool [IR-WL-1] \U0001F1FA\U0001F1F8 |#39|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#41|"
+  - "cool [etoneya wl] \U0001F1E6\U0001F1EA |#42|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#43|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#45|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#47|"
+  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#48|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1F7 |#49|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#50|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#51|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#52|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#53|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#54|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#55|"
+  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#56|"
+  - "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#57|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#58|"
+  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#59|"
+  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#60|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#2|"
-  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#3|"
-  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#4|"
-  - "cool [etoneya wl] \U0001F1F5\U0001F1F1 |#6|"
-  - "cool [etoneya wl] \U0001F1E9\U0001F1EA |#7|"
-  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [etoneya wl] \U0001F1F8\U0001F1EC |#11|"
-  - "cool [etoneya wl] \U0001F1F1\U0001F1F9 |#13|"
-  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#14|"
-  - "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#15|"
-  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#16|"
-  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#17|"
-  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#19|"
+  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#1|"
+  - "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#2|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#3|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#7|"
+  - "cool [etoneya wl] \U0001F1F8\U0001F1EC |#8|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#10|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#11|"
+  - "cool [IR-WL-1] \U0001F1E9\U0001F1EA |#12|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#13|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#16|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#18|"
+  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#19|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#20|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#23|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#24|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#25|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#26|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#28|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#30|"
+  - "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#32|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#33|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#34|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#35|"
+  - "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#36|"
+  - "cool [IR-WL-1] \U0001F1FA\U0001F1F8 |#37|"
+  - "cool [etoneya wl] \U0001F1E6\U0001F1F2 |#38|"
+  - "cool [IR-WL-1] \U0001F1FA\U0001F1F8 |#39|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#41|"
+  - "cool [etoneya wl] \U0001F1E6\U0001F1EA |#42|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#43|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#45|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#47|"
+  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#48|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1F7 |#49|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#50|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#51|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#52|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#53|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#54|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#55|"
+  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#56|"
+  - "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#57|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#58|"
+  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#59|"
+  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#60|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#2|"
-  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#3|"
-  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#4|"
-  - "cool [etoneya wl] \U0001F1F5\U0001F1F1 |#6|"
-  - "cool [etoneya wl] \U0001F1E9\U0001F1EA |#7|"
-  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [etoneya wl] \U0001F1F8\U0001F1EC |#11|"
-  - "cool [etoneya wl] \U0001F1F1\U0001F1F9 |#13|"
-  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#14|"
-  - "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#15|"
-  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#16|"
-  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#17|"
-  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#19|"
+  - "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#2|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#7|"
+  - "cool [etoneya wl] \U0001F1F8\U0001F1EC |#8|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#10|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#11|"
+  - "cool [IR-WL-1] \U0001F1E9\U0001F1EA |#12|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#13|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#16|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#18|"
+  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#19|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#20|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#25|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#26|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#30|"
+  - "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#32|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#34|"
+  - "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#36|"
+  - "cool [IR-WL-1] \U0001F1FA\U0001F1F8 |#37|"
+  - "cool [etoneya wl] \U0001F1E6\U0001F1F2 |#38|"
+  - "cool [IR-WL-1] \U0001F1FA\U0001F1F8 |#39|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#41|"
+  - "cool [etoneya wl] \U0001F1E6\U0001F1EA |#42|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#43|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#47|"
+  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#48|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1F7 |#49|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#50|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#51|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#53|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#54|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#55|"
+  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#56|"
+  - "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#57|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#58|"
+  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#60|"
+- name: "\U0001F1E6\U0001F1F2 Armenia"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [etoneya wl] \U0001F1E6\U0001F1F2 |#38|"
+- name: "\U0001F1E7\U0001F1FE Belarus"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#16|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#26|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#47|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#55|"
+- name: "\U0001F1EB\U0001F1EE Finland"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#13|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#18|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#20|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#30|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#50|"
+  - "cool [etoneya wl] \U0001F1EB\U0001F1EE |#58|"
+- name: "\U0001F1EB\U0001F1F7 France"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [etoneya wl] \U0001F1EB\U0001F1F7 |#49|"
 - name: "\U0001F1E9\U0001F1EA Germany"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [etoneya wl] \U0001F1E9\U0001F1EA |#7|"
-  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#19|"
+  - "cool [IR-WL-1] \U0001F1E9\U0001F1EA |#12|"
 - name: "\U0001F1EE\U0001F1F9 Italy"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#15|"
-- name: "\U0001F1F1\U0001F1F9 Lithuania"
+  - "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#36|"
+  - "cool [etoneya wl] \U0001F1EE\U0001F1F9 |#57|"
+- name: "\U0001F1F2\U0001F1E9 Moldova"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [etoneya wl] \U0001F1F1\U0001F1F9 |#13|"
+  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#19|"
+  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#56|"
+  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#60|"
 - name: "\U0001F1F3\U0001F1F1 Netherlands"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#2|"
-  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#16|"
-- name: "\U0001F1F5\U0001F1F1 Poland"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#10|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#11|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#43|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#54|"
+- name: "\U0001F1F7\U0001F1FA Russia"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [etoneya wl] \U0001F1F5\U0001F1F1 |#6|"
+  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#1|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#3|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#23|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#24|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#28|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#33|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#35|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#45|"
+  - "cool [etoneya wl] \U0001F1F7\U0001F1FA |#52|"
+  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#59|"
 - name: "\U0001F1F8\U0001F1EC Singapore"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [etoneya wl] \U0001F1F8\U0001F1EC |#11|"
+  - "cool [etoneya wl] \U0001F1F8\U0001F1EC |#8|"
 - name: "\U0001F1F8\U0001F1EA Sweden"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#3|"
-  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#17|"
+  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#48|"
+- name: "\U0001F1E6\U0001F1EA UAE"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [etoneya wl] \U0001F1E6\U0001F1EA |#42|"
 - name: "\U0001F1FA\U0001F1F8 USA"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#4|"
-  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#14|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#7|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#25|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#34|"
+  - "cool [IR-WL-1] \U0001F1FA\U0001F1F8 |#37|"
+  - "cool [IR-WL-1] \U0001F1FA\U0001F1F8 |#39|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#41|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#51|"
+  - "cool [etoneya wl] \U0001F1FA\U0001F1F8 |#53|"
+- name: "\U0001F1EC\U0001F1E7 United Kingdom"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#2|"
+  - "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#32|"
 rules:
 - MATCH,Обычный
