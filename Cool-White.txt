@@ -3,4 +3,4 @@
 #support-url: https://github.com/vessel-web/CoolSubs
 #announce: могут быть нерабочие сервера под видом рабочих
 
-vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@165.99.222.161:443?security=reality&encryption=none&pbk=SC6AnZ_BlvDruiGFpDRno9b1V3wMmq9gjB-KEHHUlE4&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=in1.vkusnews.com#cool%20%5BIR-WL-3%5D%20%F0%9F%87%AE%F0%9F%87%B3%20%7C%231%7C
+ss://YWVzLTI1Ni1nY206WlJwZ2FCZUd4dEVOSVhndmhwa1pCS3o5R25XUlMyZFljeDlPK2EyaXdOND0@202.50.253.45:19999#cool%20%5BIR-WL-3%5D%20%F0%9F%87%AE%F0%9F%87%B9%20%7C%231%7C
