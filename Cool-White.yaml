@@ -1,38 +1,246 @@
 proxies:
-- name: "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#1|"
+- name: "cool [IR-WL-3] \U0001F1EE\U0001F1F9 |#1|"
   type: ss
-  server: 45.86.51.18
+  server: 202.50.253.45
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
+- name: "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#2|"
+  type: ss
+  server: 193.29.139.234
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: 4a2rfixophdjffa8KVA4Aa
+  udp: true
+- name: "cool [IR-WL-3] \U0001F1E8\U0001F1ED |#3|"
+  type: vless
+  server: lv1.himoy.space
+  port: 443
+  uuid: 5131b5e9-2c3c-44a0-8f18-0641f3f21cac
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: aow1gjMhnsFXqOuIulX3HBWiGI7m488euLPH6G5fcFA
+    short-id: 3446a8095e1788b4
+  servername: lv1.himoy.space
+  client-fingerprint: random
+- name: "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#4|"
+  type: vless
+  server: 15.204.97.206
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
+    short-id: '01'
+  servername: fuck.rkn
+  client-fingerprint: firefox
+- name: "cool [IR-WL-3] \U0001F1EE\U0001F1F9 |#5|"
+  type: ss
+  server: 202.50.253.27
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#6|"
+  type: vless
+  server: 45.9.14.15
+  port: 443
+  uuid: 2ed71363-5fd3-4859-9254-0003e395848c
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: uRkXxWMtTOSo8dfWho1D9-M6um6xSjXp0y6MgpWy8yc
+    short-id: aedba77e595128a6
+  servername: ru.filesconvert.org
+  client-fingerprint: safari
+- name: "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#7|"
+  type: vless
+  server: 144.31.215.162
+  port: 443
+  uuid: 558b26f6-061b-4079-9b84-ca13b3e90ae3
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: kqKpUiLtm5SPT2NO5Ss4LuH9xpTOxi79UJZWURwulwI
+    short-id: 547f159030aedc64
+  servername: c1.qwyak.ru
+  client-fingerprint: android
+- name: "cool [IR-WL-3] \U0001F1EB\U0001F1F7 |#8|"
+  type: ss
+  server: 141.227.172.132
+  port: 17001
+  cipher: aes-256-gcm
+  password: I6o9NnialYLMEjVt28RF4dpjmr9wMvNL
+  udp: true
+- name: "cool [IR-WL-3] \U0001F1EC\U0001F1E7 |#9|"
+  type: ss
+  server: 82.38.31.170
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#10|"
+  type: ss
+  server: 193.29.139.225
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#11|"
+  type: ss
+  server: 185.176.204.18
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: "cool [IR-WL-3] \U0001F1EB\U0001F1EE |#12|"
+  type: vless
+  server: fin3.himoy.space
+  port: 443
+  uuid: 5131b5e9-2c3c-44a0-8f18-0641f3f21cac
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 2aGY0cy7IEqurjq5XBPv9gaZHhuod0RDBJUToyTSrws
+    short-id: 2764053a11bdeec7
+  servername: fin3.himoy.space
+  client-fingerprint: ios
 proxy-groups:
 - name: Обычный
   type: select
   proxies:
   - Авто
   - Авто (без RU)
-  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [IR-WL-3] \U0001F1EE\U0001F1F9 |#1|"
+  - "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#2|"
+  - "cool [IR-WL-3] \U0001F1E8\U0001F1ED |#3|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [IR-WL-3] \U0001F1EE\U0001F1F9 |#5|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#6|"
+  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#7|"
+  - "cool [IR-WL-3] \U0001F1EB\U0001F1F7 |#8|"
+  - "cool [IR-WL-3] \U0001F1EC\U0001F1E7 |#9|"
+  - "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#10|"
+  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#11|"
+  - "cool [IR-WL-3] \U0001F1EB\U0001F1EE |#12|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [IR-WL-3] \U0001F1EE\U0001F1F9 |#1|"
+  - "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#2|"
+  - "cool [IR-WL-3] \U0001F1E8\U0001F1ED |#3|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [IR-WL-3] \U0001F1EE\U0001F1F9 |#5|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#6|"
+  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#7|"
+  - "cool [IR-WL-3] \U0001F1EB\U0001F1F7 |#8|"
+  - "cool [IR-WL-3] \U0001F1EC\U0001F1E7 |#9|"
+  - "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#10|"
+  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#11|"
+  - "cool [IR-WL-3] \U0001F1EB\U0001F1EE |#12|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [IR-WL-3] \U0001F1EE\U0001F1F9 |#1|"
+  - "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#2|"
+  - "cool [IR-WL-3] \U0001F1E8\U0001F1ED |#3|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [IR-WL-3] \U0001F1EE\U0001F1F9 |#5|"
+  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#7|"
+  - "cool [IR-WL-3] \U0001F1EB\U0001F1F7 |#8|"
+  - "cool [IR-WL-3] \U0001F1EC\U0001F1E7 |#9|"
+  - "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#10|"
+  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#11|"
+  - "cool [IR-WL-3] \U0001F1EB\U0001F1EE |#12|"
+- name: "\U0001F1EB\U0001F1EE Finland"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [IR-WL-3] \U0001F1EB\U0001F1EE |#12|"
+- name: "\U0001F1EB\U0001F1F7 France"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [IR-WL-3] \U0001F1EB\U0001F1F7 |#8|"
+- name: "\U0001F1E9\U0001F1EA Germany"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#7|"
+  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#11|"
+- name: "\U0001F1EE\U0001F1F9 Italy"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [IR-WL-3] \U0001F1EE\U0001F1F9 |#1|"
+  - "cool [IR-WL-3] \U0001F1EE\U0001F1F9 |#5|"
+- name: "\U0001F1F3\U0001F1F1 Netherlands"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#2|"
+  - "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#10|"
+- name: "\U0001F1F7\U0001F1FA Russia"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#6|"
+- name: "\U0001F1E8\U0001F1ED Switzerland"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [IR-WL-3] \U0001F1E8\U0001F1ED |#3|"
 - name: "\U0001F1FA\U0001F1F8 USA"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#4|"
+- name: "\U0001F1EC\U0001F1E7 United Kingdom"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [IR-WL-3] \U0001F1EC\U0001F1E7 |#9|"
 rules:
 - MATCH,Обычный
