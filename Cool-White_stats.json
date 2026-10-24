@@ -1,14 +1,22 @@
 {
-  "total": 7,
-  "countries": 5,
+  "total": 16,
+  "countries": 10,
   "top": [
     {
-      "country": "Italy",
+      "country": "United Kingdom",
       "count": 3
     },
     {
-      "country": "United Kingdom",
-      "count": 1
+      "country": "Germany",
+      "count": 3
+    },
+    {
+      "country": "Italy",
+      "count": 2
+    },
+    {
+      "country": "USA",
+      "count": 2
     },
     {
       "country": "Finland",
@@ -19,9 +27,21 @@
       "count": 1
     },
     {
-      "country": "Germany",
+      "country": "Moldova",
+      "count": 1
+    },
+    {
+      "country": "Switzerland",
+      "count": 1
+    },
+    {
+      "country": "Japan",
+      "count": 1
+    },
+    {
+      "country": "France",
       "count": 1
     }
   ],
-  "updated": 1792821307
+  "updated": 1792835694
 }
