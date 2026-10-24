@@ -11,28 +11,6 @@ except ImportError:
     HAS_SOCKS = False
 
 BLACK_SOURCES = [
-    ("Gidroksi","https://gidroksi.fun/black-list"),
-    ("Aetris","https://gitverse.ru/api/repos/flaafix/AetrisVPN_Black_list/raw/branch/master/configs.txt"),
-    ("etoneya","https://etoskam.ru/other"),
-    ("igareck","https://raw.githack.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt"),
-    ("Diversan","https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt"),
-    ("luxxuria","https://github.com/luxxuria/harvester/raw/refs/heads/main/non_ru.txt"),
-    ("Akres","https://github.com/theakres/VPN/raw/main/all"),
-    ("VLESSFORU","https://sub.vlessfo.ru/vlessforu/working_configs.txt"),
-    ("RKP","https://hub.mos.ru/rkp/sub-roskompozor/raw/main/bl"),
-    ("Pizduk-sub","https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/sub.txt"),
-    ("LimeVPN","https://raw.githubusercontent.com/LimeHi/LimeVPN/refs/heads/main/blacklist.txt"),
-    ("atbPars","https://raw.githubusercontent.com/djsigggmagg-ui/atbPars-sub/refs/heads/main/subscription.txt"),
-    ("WarpGen","https://warp-gen.cyb-portal.org/CP-039"),
-    ("BUNKER","https://hub.mos.ru/akelladejavu/bunker/-/raw/main/BLACK_LIST.txt"),
-    ("ImSketch","https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"),
-    ("LSO-WIFI","https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/WIFI.txt"),
-    ("IR-1","https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt"),
-    ("IR-2","https://raw.githubusercontent.com/mohammadaz2/v2rayConfigsForYou/main/configs.txt"),
-    ("IR-3","https://raw.githubusercontent.com/DukeMehdi/FreeList-V2ray-Configs/main/configs.txt"),
-    ("IR-4","https://raw.githubusercontent.com/MahanKenway/Freedom-V2Ray/main/Sub.txt"),
-    ("IR-5","https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"),
-    ("IR-6","https://raw.githubusercontent.com/balochscript/free-vpn-configs/gh-pages/subscription-recent.txt"),
     ("dwnl","https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/configs.txt.gz"),
 ]
 
@@ -101,11 +79,11 @@ TEST_URL = "https://api.ipify.org?format=json"
 PING_TIMEOUT = 5
 DELAY_TIMEOUT_MS = 6000
 API_START_TIMEOUT = 8.0
-KERNEL_COUNT = max(4, min(8, (os.cpu_count() or 4) * 2))
+KERNEL_COUNT = 5
 BATCH_SIZE_PER_CORE = 50
 XRAY_WORKERS = 20
-SOURCE_WORKERS = 16
-RETRY_PAUSE_SEC = 20
+SOURCE_WORKERS = 5
+RETRY_PAUSE_SEC = 10
 MAX_RESPONSE_BYTES = 128 * 1024 * 1024
 BLOCKED_ASNS = {"13335","14789","132892","202623","203898","209242","395747","400095","402542","16509","396982","8075","20860"}
 FINGERPRINTS = ["firefox","safari","ios","android","edge","random","randomized"]
@@ -117,9 +95,11 @@ TUIC_CC = {"cubic","new_reno","bbr"}
 TUIC_URM = {"native","quic"}
 SS_PLUGINS = {"obfs-local":"obfs-local","simple-obfs":"obfs-local","v2ray-plugin":"v2ray-plugin"}
 
+INITIAL_BLACK = 10000
+BLACK_STEPS = [(0, 20000), (500, 10000), (800, 5000), (1000, 1000)]
+
 try:
-    import yaml as _yaml_mod
-    YAML_DUMPER = getattr(_yaml_mod, "CSafeDumper", _yaml_mod.SafeDumper)
+    YAML_DUMPER = getattr(yaml, "CSafeDumper", yaml.SafeDumper)
 except Exception:
     YAML_DUMPER = yaml.SafeDumper
 
@@ -1153,16 +1133,10 @@ def _load_source(item):
     return label, lines, error, kind
 
 
-def run_subscription(sources, remote_name, label):
-    global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_RUN_ERRORS
-    _FLAGS = {}
-    _ASN = {}
-    SB_GEN_ERRORS, SB_RUN_ERRORS = {}, {}
-    t0 = time.time()
-    print(f"\n═══ {label} → {remote_name} ═══")
-    all_configs = []
+def _load_all_sources(sources):
     with ThreadPoolExecutor(max_workers=min(SOURCE_WORKERS, max(1, len(sources)))) as ex:
         loaded = list(ex.map(_load_source, sources))
+    all_configs = []
     for src_label, lines, error, kind in loaded:
         if lines is None:
             if error:
@@ -1179,10 +1153,82 @@ def run_subscription(sources, remote_name, label):
         else:
             print(f"   ✅ [{src_label}] {len(lines)} строк → {len(src_configs)} конфигов")
         all_configs.extend(src_configs)
+    return all_configs
+
+
+def _next_black_chunk(working):
+    size = 0
+    for threshold, n in BLACK_STEPS:
+        if working >= threshold:
+            size = n
+    return size
+
+
+def _finalize(working, remote_name, title):
+    load_flags_batch([c['host'] for c, _ in working])
+    load_asn_batch([c['host'] for c, _ in working])
+    filtered = [(c, p) for c, p in working if _ASN.get(c['host'], "") not in BLOCKED_ASNS]
+    print(f"🚫 ASN убрано {len(working) - len(filtered)}, осталось {len(filtered)}")
+    if not filtered:
+        return
+    random.shuffle(filtered)
+    output = [format_line(c, i + 1) for i, (c, _) in enumerate(filtered)]
+    output = add_metadata(output, title, update_hours=4,
+                          support_url="https://github.com/vessel-web/CoolSubs",
+                          announce="могут быть нерабочие сервера под видом рабочих")
+    with open(remote_name, "w", encoding="utf-8") as f:
+        f.write("\n".join(output))
+    print(f"💾 {remote_name}: {len(output)} серверов (TXT)")
+    build_clash_yaml(filtered, remote_name.replace(".txt", ".yaml"))
+    save_stats(filtered, remote_name.replace(".txt", "_stats.json"))
+
+
+def run_black_adaptive():
+    global _FLAGS, _ASN, _STATS_BL, SB_GEN_ERRORS, SB_RUN_ERRORS
+    _FLAGS = {}
+    _ASN = {}
+    SB_GEN_ERRORS, SB_RUN_ERRORS = {}, {}
+    t0 = time.time()
+    print("\n═══ ⚫ ЧЁРНАЯ (адаптивно, только dwnl) → Cool-Black.txt ═══")
+    pool_raw = _load_all_sources(BLACK_SOURCES)
+    pool = dedup_configs(pool_raw)
+    random.shuffle(pool)
+    print(f"✅ Пул: {len(pool)} уникальных конфигов")
+    if not pool:
+        print("⚠️ Нечего проверять"); return
+    save_unsorted(pool, "unsorted-black.txt")
+    working, pos, chunk = [], 0, INITIAL_BLACK
+    while pos < len(pool) and chunk > 0:
+        batch = pool[pos:pos + chunk]
+        pos += len(batch)
+        print(f"\n▶ порция {len(batch)} | проверено {pos}/{len(pool)} | рабочих {len(working)}")
+        working.extend(check_via_singbox_batch(batch))
+        print(f"   рабочих сейчас: {len(working)}")
+        chunk = _next_black_chunk(len(working))
+    if SB_GEN_ERRORS:
+        print("🧹 Не построен outbound: " + ", ".join(f"{k} ×{v}" for k, v in sorted(SB_GEN_ERRORS.items(), key=lambda kv: -kv[1])[:8]))
+    if SB_RUN_ERRORS:
+        for msg, n in sorted(SB_RUN_ERRORS.items(), key=lambda kv: -kv[1])[:5]:
+            print(f"   run [{n}x]: {msg}")
+    if not working:
+        print("⚠️ Рабочих нет"); return
+    _finalize(working, "Cool-Black.txt", "CoolSubs — Black")
+    _STATS_BL = {"total": len(working)}
+    print(f"⏱️  Всего: {time.time() - t0:.1f}с")
+
+
+def run_subscription(sources, remote_name, label):
+    global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_RUN_ERRORS
+    _FLAGS = {}
+    _ASN = {}
+    SB_GEN_ERRORS, SB_RUN_ERRORS = {}, {}
+    t0 = time.time()
+    print(f"\n═══ {label} → {remote_name} ═══")
+    all_configs = _load_all_sources(sources)
     print(f"\n✅ Всего конфигов: {len(all_configs)}")
     if not all_configs:
         print("⚠️ Нечего проверять"); return
-    save_unsorted(all_configs, "unsorted-black.txt" if "black" in remote_name.lower() else "unsorted-white.txt")
+    save_unsorted(all_configs, "unsorted-white.txt")
     before = len(all_configs); all_configs = dedup_configs(all_configs)
     if before > len(all_configs):
         print(f"♻️  Дедупликация: {before} → {len(all_configs)} (убрано {before - len(all_configs)})")
@@ -1197,34 +1243,23 @@ def run_subscription(sources, remote_name, label):
             print(f"   run [{n}x]: {msg}")
     if not working:
         print("⚠️ Ничего не прошло проверку"); return
-    print(f"\n🛡️  Фильтр по ASN...")
     load_asn_batch(list({c['host'] for c, _ in working}))
-    filtered, asn_skipped = [], 0
-    for cfg, ping in working:
-        if _ASN.get(cfg['host'], "") in BLOCKED_ASNS:
-            asn_skipped += 1
-            continue
-        filtered.append((cfg, ping))
-    print(f"🚫 Убрано {asn_skipped} (Cloudflare/Amazon/Google/Microsoft)")
+    filtered = [(c, p) for c, p in working if _ASN.get(c['host'], "") not in BLOCKED_ASNS]
+    print(f"🚫 Убрано {len(working) - len(filtered)} (Cloudflare/Amazon/Google/Microsoft)")
     print(f"✅ Осталось: {len(filtered)}")
-    working = filtered
-    if not working:
+    if not filtered:
         print("⚠️ После фильтра ASN ничего не осталось"); return
-    random.shuffle(working)
-    output = [format_line(c, i + 1) for i, (c, _) in enumerate(working)]
-    title = "CoolSubs — Black" if "black" in remote_name.lower() else "CoolSubs — White"
-    output = add_metadata(output, title, update_hours=4,
+    random.shuffle(filtered)
+    output = [format_line(c, i + 1) for i, (c, _) in enumerate(filtered)]
+    output = add_metadata(output, "CoolSubs — White", update_hours=4,
                           support_url="https://github.com/vessel-web/CoolSubs",
                           announce="могут быть нерабочие сервера под видом рабочих")
     with open(remote_name, "w", encoding="utf-8") as f:
         f.write("\n".join(output))
     print(f"💾 {remote_name}: {len(output)} серверов (TXT)")
-    build_clash_yaml(working, remote_name.replace(".txt", ".yaml"))
-    save_stats(working, remote_name.replace(".txt", "_stats.json"))
-    if "black" in remote_name.lower():
-        _STATS_BL = {"total": len(working)}
-    else:
-        _STATS_WL = {"total": len(working)}
+    build_clash_yaml(filtered, remote_name.replace(".txt", ".yaml"))
+    save_stats(filtered, remote_name.replace(".txt", "_stats.json"))
+    _STATS_WL = {"total": len(filtered)}
     print(f"⏱️  Всего: {time.time() - t0:.1f}с")
 
 
@@ -1235,7 +1270,7 @@ if __name__ == "__main__":
         print(f"❌ Бинарник не найден: {SINGBOX_BIN}"); raise SystemExit(1)
     print(f"🌍 GeoLite2: {GEOIP_DB}")
     print(f"🌐 DBIP ASN: {DBIP_DB}")
-    run_subscription(BLACK_SOURCES, "Cool-Black.txt", "⚫ ЧЁРНАЯ")
+    run_black_adaptive()
     run_subscription(WHITE_SOURCES, "Cool-White.txt", "⚪ БЕЛАЯ")
     if _STATS_BL and _STATS_WL:
         update_changelog(_STATS_BL, _STATS_WL)
