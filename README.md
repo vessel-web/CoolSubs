@@ -31,23 +31,7 @@ https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-White
 
 ### ⚫ Чёрные списки
 
-| Метка | Источник |
-|---|---|
-| **Gidroksi** | [gidroksi.fun/black-list](https://gidroksi.fun/black-list) |
-| **Aetris** | [gitverse.ru/flaafix/AetrisVPN_Black_list](https://gitverse.ru/api/repos/flaafix/AetrisVPN_Black_list/raw/branch/master/configs.txt) |
-| **etoneya** | [etoskam.ru/other](https://etoskam.ru/other) |
-| **igareck** | [igareck/vpn-configs-for-russia](https://raw.githack.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt) |
-| **apelsintel** | [Diversan313/apex-parser](https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt) |
-| **luxxuria** | [luxxuria/harvester](https://github.com/luxxuria/harvester/raw/refs/heads/main/non_ru.txt) |
-| **Akres** | [hub.mos.ru/akres/vpn](https://hub.mos.ru/akres/vpn/-/raw/main/all) |
-| **VLESSFORU** | [sub.vlessfo.ru](https://sub.vlessfo.ru/vlessforu/working_configs.txt) |
-| **RKP** | [hub.mos.ru/rkp/sub-roskompozor](https://hub.mos.ru/rkp/sub-roskompozor/raw/main/bl) |
-| **Pizduk-sub** | [gitverse.ru/Pizduk/PizdukVPN](https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/sub.txt) |
-| **LimeVPN** | [LimeHi/LimeVPN](https://raw.githubusercontent.com/LimeHi/LimeVPN/refs/heads/main/blacklist.txt) |
-| **atbPars** | [djsigggmagg-ui/atbPars-sub](https://raw.githubusercontent.com/djsigggmagg-ui/atbPars-sub/refs/heads/main/subscription.txt) |
-| **BUNKER** | [gitverse.ru/KOT_ANTIDOT/BUNKER](https://gitverse.ru/api/repos/KOT_ANTIDOT/BUNKER/raw/branch/master/BUNKER_BLACK700.txt) |
-| **ImSketch** | [ImSketch1337/vless-](https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt) |
-| **LSO-WIFI** | [LSO-LinSpisokObhod](https://raw.githubusercontent.com/LSO-LinSpisokObhod/LSO-LinSpisokObhod.github.io/refs/heads/main/sub/WIFI.txt) |
+https://deltarune.wiki/w/File:Swoon_message.png
 
 ### ⚪ Белые списки
 
