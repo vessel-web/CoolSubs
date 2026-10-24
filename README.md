@@ -31,7 +31,7 @@ https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-White
 
 ### ⚫ Чёрные списки
 
-https://deltarune.wiki/w/File:Swoon_message.png
+![DWNL](https://deltarune.wiki/w/File:Swoon_message.png)
 
 ### ⚪ Белые списки
 
