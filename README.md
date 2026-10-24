@@ -31,8 +31,7 @@ https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-White
 
 ### ⚫ Чёрные списки
 
-![DWNL](<img width="120" height="29" alt="image" src="https://github.com/user-attachments/assets/5f2f7902-c436-41fe-bde1-c62bf3676101" />
-)
+![DWNL](<img width="166" height="40" alt="image" src="https://github.com/user-attachments/assets/42ba25d1-4336-4038-951c-ecd6454ff013" />)
 
 ### ⚪ Белые списки
 
