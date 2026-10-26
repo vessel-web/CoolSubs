@@ -1,39 +1,11 @@
 {
-  "total": 26,
-  "countries": 8,
+  "total": 2,
+  "countries": 1,
   "top": [
     {
       "country": "Russia",
-      "count": 15
-    },
-    {
-      "country": "Japan",
-      "count": 3
-    },
-    {
-      "country": "Belarus",
       "count": 2
-    },
-    {
-      "country": "Germany",
-      "count": 2
-    },
-    {
-      "country": "USA",
-      "count": 1
-    },
-    {
-      "country": "Mexico",
-      "count": 1
-    },
-    {
-      "country": "Moldova",
-      "count": 1
-    },
-    {
-      "country": "Poland",
-      "count": 1
     }
   ],
-  "updated": 1793012799
+  "updated": 1793031135
 }
