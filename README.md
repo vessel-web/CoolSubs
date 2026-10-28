@@ -11,9 +11,8 @@
 
 Собирает подписки с кучи источников, проверяет их берет конфиги изаливает сюда же.
 
-Если берете подписку и выставляете, упоминайте пж
-
-## Ссылки для клиента
+Так же наш сайт | https://vessel-web.github.io/CoolSubs/ |
+## Ссылки для клиентов
 
 TXT чёрный:  
 https://raw.githubusercontent.com/vessel-web/CoolSubs/refs/heads/main/Cool-Black.txt
