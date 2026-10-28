@@ -3,291 +3,349 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#f3f3f3">
+<meta name="theme-color" content="#245edb">
 <title>CoolSubs</title>
 <style>
   :root {
-    --accent: #0078d4;
-    --accent-hover: #106ebe;
-    --accent-press: #005a9e;
-    --accent-text: #ffffff;
-    --bg-a: #e8f1fb;
-    --bg-b: #f3ecfb;
-    --bg-c: #e6f7f4;
-    --mica: rgba(249,249,249,.78);
-    --layer: rgba(255,255,255,.7);
-    --layer-solid: #ffffff;
-    --stroke: rgba(0,0,0,.06);
-    --stroke-strong: rgba(0,0,0,.12);
-    --text: #1b1b1b;
-    --text2: #5d5d5d;
-    --text3: #8a8a8a;
-    --ctrl: #fbfbfb;
-    --ctrl-hover: #f2f2f2;
-    --titlebar: #f3f3f3;
-    --shadow: 0 2px 6px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
-    --radius: 8px;
-    --radius-l: 12px;
-    --font: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, "Roboto", sans-serif;
-    --mono: "Cascadia Mono", "Cascadia Code", Consolas, ui-monospace, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --accent: #60cdff;
-      --accent-hover: #4cc2ff;
-      --accent-press: #3fb1ef;
-      --accent-text: #000000;
-      --bg-a: #1a2433;
-      --bg-b: #241a33;
-      --bg-c: #15292a;
-      --mica: rgba(32,32,32,.8);
-      --layer: rgba(255,255,255,.055);
-      --layer-solid: #2b2b2b;
-      --stroke: rgba(255,255,255,.08);
-      --stroke-strong: rgba(255,255,255,.14);
-      --text: #ffffff;
-      --text2: #c5c5c5;
-      --text3: #9a9a9a;
-      --ctrl: #3a3a3a;
-      --ctrl-hover: #444444;
-      --titlebar: #202020;
-      --shadow: 0 2px 6px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
-    }
+    --xp-blue: #0054e3;
+    --xp-blue-dark: #0040b0;
+    --xp-blue-light: #3a8dff;
+    --xp-face: #ece9d8;
+    --xp-face-dark: #d4d0c8;
+    --xp-border-dark: #003c74;
+    --xp-border-light: #ffffff;
+    --xp-gray: #919b9c;
+    --xp-text: #000000;
+    --xp-link: #0046d5;
+    --xp-green: #21a121;
+    --xp-green-light: #7de07d;
+    --xp-taskbar: #245edb;
+    --xp-taskbar-top: #3c81f3;
+    --xp-start: #3c9f2c;
+    --xp-yellow: #ffffe1;
+    --xp-red: #e0401c;
+    --xp-font: Tahoma, "Trebuchet MS", Verdana, "Segoe UI", sans-serif;
+    --xp-mono: "Lucida Console", "Courier New", monospace;
   }
 
   * { box-sizing: border-box; }
-  html, body { margin: 0; min-height: 100%; }
+  html, body { margin: 0; height: 100%; }
   body {
-    font-family: var(--font);
-    color: var(--text);
-    -webkit-font-smoothing: antialiased;
-    background-color: var(--mica);
-    background-image:
-      radial-gradient(70% 60% at 0% 0%, var(--bg-a) 0%, transparent 70%),
-      radial-gradient(60% 55% at 100% 20%, var(--bg-b) 0%, transparent 70%),
-      radial-gradient(55% 50% at 30% 100%, var(--bg-c) 0%, transparent 70%);
-    background-attachment: fixed;
-    min-height: 100vh;
+    font-family: var(--xp-font);
+    font-size: 11px;
+    color: var(--xp-text);
+    background: #3a6ea5;
+    overflow-x: hidden;
   }
 
-  /* ---------- окно: заголовок с кнопками ---------- */
+  /* ---------- обои «Bliss» ---------- */
+  .desktop {
+    position: fixed; inset: 0 0 40px 0;
+    background:
+      radial-gradient(120% 60% at 30% 110%, #3c9b2c 0%, #2a7a1e 45%, transparent 46%),
+      radial-gradient(140% 55% at 85% 120%, #4cae3b 0%, #2a7a1e 42%, transparent 43%),
+      radial-gradient(90% 40% at 0% 100%, #5cbf43 0%, transparent 60%),
+      linear-gradient(#2d6fd8 0%, #6fb1f5 45%, #bfe0ff 70%, #e7f3ff 100%);
+    padding: 16px;
+    overflow: auto;
+  }
+  @media (max-width: 720px) {
+    .desktop { padding: 0; }
+  }
+
+  /* ---------- окно (Luna) ---------- */
+  .window {
+    width: 100%; max-width: 640px; margin: 20px auto;
+    background: var(--xp-face);
+    border: 3px solid var(--xp-blue);
+    border-top-left-radius: 8px; border-top-right-radius: 8px;
+    border-bottom: 3px solid var(--xp-blue);
+    box-shadow: 0 6px 18px rgba(0,0,0,.45);
+  }
+  @media (max-width: 720px) {
+    .window { margin: 0; max-width: none; border-width: 0; border-radius: 0; min-height: 100%; }
+  }
+
   .titlebar {
-    position: sticky; top: 0; z-index: 10;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 40px; padding: 0 0 0 14px;
-    background: var(--titlebar); border-bottom: 1px solid var(--stroke);
-    font-size: 12px; color: var(--text);
-    padding-top: env(safe-area-inset-top, 0px);
-    height: calc(40px + env(safe-area-inset-top, 0px));
+    height: 30px; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6px 0 8px;
+    background: linear-gradient(#0997ff 0%, #0053ee 8%, #0050ee 40%, #06f 88%, #006dff 93%, #005bd5 100%);
+    border-top-left-radius: 7px; border-top-right-radius: 7px;
+    color: #fff; font-weight: bold; font-size: 13px;
+    text-shadow: 1px 1px #0f1089;
   }
-  .titlebar .app { display: flex; align-items: center; gap: 8px; font-weight: 600; }
-  .logo {
-    width: 16px; height: 16px; border-radius: 4px;
-    background: linear-gradient(135deg, #0078d4, #60cdff);
+  @media (max-width: 720px) {
+    .titlebar { border-radius: 0; }
   }
-  .winbtns { display: flex; height: 100%; }
-  .winbtns span {
-    width: 46px; display: flex; align-items: center; justify-content: center;
-    color: var(--text); font-size: 12px; opacity: .85;
+  .titlebar .t { display: flex; align-items: center; gap: 6px; }
+  .titlebar .ico {
+    width: 16px; height: 16px; border-radius: 3px;
+    background: linear-gradient(135deg, #fff 0 25%, #ff6 25% 50%, #6c6 50% 75%, #6cf 75%);
+    box-shadow: 0 0 0 1px #0c3d9a;
   }
-  .winbtns span.close:hover { background: #c42b1c; color: #fff; opacity: 1; }
-  .winbtns span:not(.close):hover { background: var(--stroke); opacity: 1; }
+  .tbtns { display: flex; gap: 2px; }
+  .tbtn {
+    width: 21px; height: 21px; border-radius: 3px;
+    border: 1px solid #fff;
+    background: linear-gradient(#3c97fc, #0d5ee5 60%, #2a72f2);
+    color: #fff; font-size: 12px; font-weight: bold;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: inset 0 0 0 1px #0a3b97;
+  }
+  .tbtn.close {
+    background: linear-gradient(#f0a585, #e0401c 60%, #d43c15);
+  }
 
-  /* ---------- контент ---------- */
-  main {
-    max-width: 720px; margin: 0 auto;
-    padding: 20px 16px calc(96px + env(safe-area-inset-bottom, 0px));
+  .menubar {
+    display: flex; gap: 14px; padding: 4px 8px;
+    background: var(--xp-face); border-bottom: 1px solid var(--xp-face-dark);
+    font-size: 11px;
   }
-  .page-head { padding: 6px 4px 14px; }
-  .page-head h1 {
-    margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -.2px;
-  }
-  .page-head p { margin: 4px 0 0; color: var(--text2); font-size: 14px; }
+  .menubar span { cursor: default; }
+  .menubar span:hover { text-decoration: underline; }
 
-  /* ---------- карточки Fluent (Acrylic-подложка, стандартная обводка) ---------- */
-  .card {
-    background: var(--layer);
-    border: 1px solid var(--stroke);
-    border-radius: var(--radius-l);
-    padding: 16px 18px;
-    margin-top: 12px;
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(30px) saturate(125%);
-    -webkit-backdrop-filter: blur(30px) saturate(125%);
+  .body {
+    padding: 14px 14px 18px;
+    background: var(--xp-face);
   }
-  .card-title {
-    display: flex; align-items: center; justify-content: space-between;
-    margin: 0 0 12px; font-size: 14px; font-weight: 600;
-  }
-  .card-title small { font-weight: 400; color: var(--text3); font-size: 12px; }
 
-  /* ---------- статистика (как карточки Settings в Win11) ---------- */
-  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .stat {
-    background: var(--layer-solid); border: 1px solid var(--stroke);
-    border-radius: var(--radius); padding: 14px 16px;
+  h1.page {
+    margin: 0 0 4px; font-size: 18px; font-weight: bold; color: #002c93;
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
   }
-  .stat .num { font-size: 32px; font-weight: 600; color: var(--accent); letter-spacing: -.4px; }
-  .stat .label { font-size: 13px; color: var(--text2); margin-top: 2px; }
-  .muted { color: var(--text2); font-size: 13px; margin: 12px 0 0; }
+  p.lead { margin: 0 0 12px; font-size: 11px; color: #000; }
 
-  /* ---------- список подписок (строки Settings) ---------- */
-  .row {
-    display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    padding: 12px 14px; border-radius: var(--radius);
-    background: var(--layer-solid); border: 1px solid var(--stroke);
-    margin-top: 8px;
+  /* ---------- группы (GroupBox) ---------- */
+  fieldset {
+    border: 1px solid var(--xp-gray);
+    border-radius: 3px;
+    box-shadow: inset 1px 1px #fff, 1px 1px #fff;
+    margin: 12px 0 0; padding: 12px 12px 10px;
   }
-  .row:first-of-type { margin-top: 0; }
-  .row .name { font-size: 14px; font-weight: 600; }
-  .row .desc { font-size: 12px; color: var(--text3); margin-top: 2px; font-family: var(--mono); }
+  legend {
+    padding: 0 4px; margin-left: 6px; color: #003399; font-size: 11px; font-weight: normal;
+  }
 
-  .btn {
-    font-family: var(--font); font-size: 14px; font-weight: 600;
-    border: 1px solid transparent; border-radius: var(--radius);
-    padding: 7px 16px; cursor: pointer; white-space: nowrap;
-    background: var(--accent); color: var(--accent-text);
-    transition: background .1s, transform .08s;
-  }
-  .btn:hover { background: var(--accent-hover); }
-  .btn:active { background: var(--accent-press); transform: scale(.98); }
-  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .btn.std {
-    background: var(--ctrl); color: var(--text); border-color: var(--stroke-strong);
-  }
-  .btn.std:hover { background: var(--ctrl-hover); }
+  .stat-row { display: flex; gap: 18px; align-items: baseline; }
+  .stat-row .big { font-size: 26px; color: #0046d5; font-weight: bold; font-family: "Trebuchet MS", Tahoma, sans-serif; }
+  .stat-row .cap { font-size: 11px; }
+  .muted { color: #555; font-size: 11px; margin: 8px 0 0; }
 
-  /* ---------- страны ---------- */
+  /* ---------- список подписок (ListView) ---------- */
+  .listview {
+    background: #fff;
+    border: 1px solid;
+    border-color: var(--xp-gray) #fff #fff var(--xp-gray);
+    box-shadow: inset 1px 1px #404040;
+  }
+  .lv-head {
+    display: grid; grid-template-columns: 1.4fr 1.6fr auto; gap: 0;
+    background: linear-gradient(#fff, #ece9d8); border-bottom: 1px solid #aca899;
+    font-weight: bold; font-size: 11px;
+  }
+  .lv-head div { padding: 3px 8px; border-right: 1px solid #d4d0c8; }
+  .lv-row {
+    display: grid; grid-template-columns: 1.4fr 1.6fr auto; align-items: center;
+    border-bottom: 1px solid #efefef;
+  }
+  .lv-row:nth-child(even) { background: #f7f7f2; }
+  .lv-row:hover { background: #e7f0ff; }
+  .lv-row div { padding: 6px 8px; }
+  .lv-row .fname { font-family: var(--xp-mono); font-size: 11px; color: var(--xp-link); }
+  .lv-row .btnwrap { padding: 4px 6px; }
+
+  /* ---------- кнопки XP ---------- */
+  button.xp {
+    font-family: var(--xp-font); font-size: 11px;
+    min-width: 75px; height: 23px; padding: 0 10px; cursor: pointer;
+    border: 1px solid var(--xp-border-dark); border-radius: 3px;
+    background: linear-gradient(#fff 0%, #f6f6f2 60%, #ece9d8 92%, #d6d0c0 100%);
+    color: #000;
+    box-shadow: inset -1px -1px #aca899, inset 1px 1px #fff;
+  }
+  button.xp:hover { background: linear-gradient(#fbfdff 0%, #eaf3ff 60%, #d3e6ff 92%, #bcd7fb 100%); border-color: #3c7fb1; }
+  button.xp:active { box-shadow: inset 1px 1px #aca899; background: #d2d0c0; }
+  button.xp:focus { outline: 1px dotted #000; outline-offset: -4px; }
+  button.xp.default { box-shadow: inset 0 0 0 2px #7aa7f3, inset -1px -1px #aca899, inset 1px 1px #fff; }
+
+  /* ---------- прогресс: страны ---------- */
   .country {
-    display: flex; justify-content: space-between; font-size: 13px;
-    padding: 8px 2px 2px; color: var(--text);
+    display: grid; grid-template-columns: 130px 1fr 46px; align-items: center; gap: 8px;
+    padding: 4px 0; font-size: 11px;
   }
-  .country span:last-child { color: var(--text2); font-variant-numeric: tabular-nums; }
-  .bar {
-    height: 4px; border-radius: 2px; margin: 4px 0 10px;
-    background: var(--accent);
+  .country .c-num { text-align: right; color: #333; font-variant-numeric: tabular-nums; }
+  .progress {
+    height: 16px; background: #fff; border: 1px solid;
+    border-color: var(--xp-gray) #fff #fff var(--xp-gray);
+    padding: 1px; overflow: hidden;
   }
-
-  /* ---------- журнал ---------- */
-  .log {
-    font-family: var(--mono); font-size: 12px; line-height: 1.7; white-space: pre-wrap;
-    color: var(--text2); max-height: 280px; overflow: auto;
-    background: var(--layer-solid); border: 1px solid var(--stroke);
-    border-radius: var(--radius); padding: 10px 12px;
+  .progress > i {
+    display: block; height: 100%;
+    background: repeating-linear-gradient(90deg, transparent 0 7px, #fff 7px 9px),
+                linear-gradient(#b2f2a7, #21a121 55%, #36c02a);
   }
 
-  /* ---------- нижняя панель команд (как в Win11 Store) ---------- */
-  .commandbar {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9;
-    display: flex; justify-content: flex-end; gap: 8px;
-    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
-    background: var(--titlebar); border-top: 1px solid var(--stroke);
-  }
-  .commandbar a {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 13px; font-weight: 600; padding: 7px 14px;
-    border-radius: var(--radius); text-decoration: none; color: var(--text);
-    background: var(--ctrl); border: 1px solid var(--stroke-strong);
-  }
-  .commandbar a:hover { background: var(--ctrl-hover); }
-  .commandbar a.accent { background: var(--accent); color: var(--accent-text); border-color: transparent; }
-  .commandbar a.accent:hover { background: var(--accent-hover); }
-
-  /* ---------- уведомление в стиле Windows 11 (правый нижний угол) ---------- */
-  .toast {
-    position: fixed; right: 16px; bottom: 70px; z-index: 20;
-    display: flex; align-items: center; gap: 10px;
-    background: var(--layer-solid); border: 1px solid var(--stroke-strong);
-    border-radius: var(--radius-l); padding: 12px 16px; box-shadow: var(--shadow);
-    font-size: 13px; font-weight: 600;
-    opacity: 0; transform: translateY(10px); pointer-events: none;
-    transition: opacity .18s, transform .18s;
-  }
-  .toast.show { opacity: 1; transform: translateY(0); }
-  .toast .ok {
-    width: 18px; height: 18px; border-radius: 50%; background: #107c10;
-    color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 11px;
+  /* ---------- лог (TextBox) ---------- */
+  .textbox {
+    background: #fff; border: 1px solid;
+    border-color: var(--xp-gray) #fff #fff var(--xp-gray);
+    box-shadow: inset 1px 1px #404040;
+    padding: 6px 8px; height: 180px; overflow: auto;
+    font-family: var(--xp-mono); font-size: 11px; line-height: 1.5; white-space: pre-wrap;
   }
 
-  footer { margin-top: 22px; text-align: center; color: var(--text3); font-size: 12px; line-height: 1.6; }
-  footer a { color: var(--accent); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
+  /* ---------- панель задач ---------- */
+  .taskbar {
+    position: fixed; left: 0; right: 0; bottom: 0; height: 40px; z-index: 20;
+    display: flex; align-items: stretch;
+    background: linear-gradient(#3c81f3 0%, #245edb 10%, #245edb 90%, #1941a5 100%);
+    border-top: 1px solid #0831d9;
+    box-shadow: inset 0 1px 0 #5ea0ff;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .start {
+    display: flex; align-items: center; gap: 6px;
+    padding: 0 16px 0 10px; margin: -1px 0 -1px 0;
+    background: linear-gradient(#3c9f2c, #3ea230 40%, #2e8d20 90%, #2c8a1f);
+    border-radius: 0 12px 12px 0;
+    color: #fff; font-family: "Trebuchet MS", Tahoma, sans-serif; font-style: italic;
+    font-weight: bold; font-size: 17px;
+    text-shadow: 1px 1px #0f3a0a;
+    box-shadow: inset -1px 0 #207a14, inset 0 1px #7dc76c;
+    cursor: pointer; user-select: none;
+  }
+  .start .flag {
+    width: 18px; height: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  }
+  .start .flag i:nth-child(1) { background: #f25022; }
+  .start .flag i:nth-child(2) { background: #7fba00; }
+  .start .flag i:nth-child(3) { background: #00a4ef; }
+  .start .flag i:nth-child(4) { background: #ffb900; }
+  .task {
+    margin: 4px 0 4px 6px; display: flex; align-items: center; gap: 6px;
+    padding: 0 12px; max-width: 220px;
+    background: linear-gradient(#1c4cc2, #1a46b8);
+    border: 1px solid #0a2a7a; border-radius: 3px;
+    color: #fff; font-size: 11px; box-shadow: inset 1px 1px #0c2f8c;
+  }
+  .tray {
+    margin-left: auto; display: flex; align-items: center; gap: 10px;
+    padding: 0 12px; color: #fff; font-size: 11px;
+    background: linear-gradient(#0f9ff0, #0c8ae6 40%, #0a7cd8);
+    border-left: 1px solid #1f56c1; box-shadow: inset 1px 0 #3eb6ff;
+  }
+
+  /* ---------- облачко (Balloon Tip) ---------- */
+  .balloon {
+    position: fixed; right: 12px; bottom: 56px; z-index: 30;
+    max-width: 260px; padding: 10px 14px 10px 14px;
+    background: var(--xp-yellow); border: 1px solid #000; border-radius: 6px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,.35);
+    font-size: 11px; color: #000;
+    opacity: 0; transform: translateY(6px); pointer-events: none;
+    transition: opacity .15s, transform .15s;
+  }
+  .balloon.show { opacity: 1; transform: translateY(0); }
+  .balloon b { display: block; margin-bottom: 2px; }
+  .balloon::after {
+    content: ""; position: absolute; right: 28px; bottom: -9px;
+    border: 8px solid transparent; border-top-color: #000; border-bottom: 0;
+  }
+  .balloon::before {
+    content: ""; position: absolute; right: 29px; bottom: -7px;
+    border: 7px solid transparent; border-top-color: var(--xp-yellow); border-bottom: 0; z-index: 1;
+  }
+
+  footer.status {
+    margin-top: 12px; padding: 4px 6px; font-size: 11px; color: #000;
+    border-top: 1px solid #aca899; background: var(--xp-face);
+  }
+  footer.status a { color: var(--xp-link); }
+
+  /* чтобы контент не прятался за панелью задач */
+  .spacer { height: 52px; }
+  @media (max-width: 720px) {
+    .window { padding-bottom: 0; }
+  }
 </style>
 </head>
 <body>
+<div class="desktop">
+  <div class="window" role="dialog" aria-label="CoolSubs">
+    <div class="titlebar">
+      <div class="t"><span class="ico"></span>CoolSubs — Проводник подписок</div>
+      <div class="tbtns">
+        <span class="tbtn" title="Свернуть">_</span>
+        <span class="tbtn" title="Развернуть">□</span>
+        <span class="tbtn close" title="Закрыть">×</span>
+      </div>
+    </div>
+    <div class="menubar">
+      <span>Файл</span><span>Правка</span><span>Вид</span><span>Сервис</span><span>Справка</span>
+    </div>
 
-<div class="titlebar">
-  <div class="app"><span class="logo"></span>CoolSubs</div>
-  <div class="winbtns">
-    <span title="Свернуть">&#8211;</span>
-    <span title="Развернуть">&#9633;</span>
-    <span class="close" title="Закрыть">&#10005;</span>
+    <div class="body">
+      <h1 class="page">Подписки прокси-серверов</h1>
+      <p class="lead">Проверенные подписки обновляются автоматически. Выберите нужный список и нажмите «Копировать».</p>
+
+      <fieldset>
+        <legend>Статус</legend>
+        <div class="stat-row">
+          <div><span class="big" id="bl-total">—</span><div class="cap">Чёрный список</div></div>
+          <div><span class="big" id="wl-total">—</span><div class="cap">Белый список</div></div>
+        </div>
+        <p class="muted" id="updated">Загрузка данных…</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Подписки</legend>
+        <div class="listview">
+          <div class="lv-head"><div>Список</div><div>Файл</div><div>&nbsp;</div></div>
+          <div class="lv-row">
+            <div>Чёрный список</div><div class="fname">Cool-Black.txt</div>
+            <div class="btnwrap"><button class="xp default" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-Black.txt">Копировать</button></div>
+          </div>
+          <div class="lv-row">
+            <div>Белый список</div><div class="fname">Cool-White.txt</div>
+            <div class="btnwrap"><button class="xp default" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-White.txt">Копировать</button></div>
+          </div>
+          <div class="lv-row">
+            <div>Clash · чёрный</div><div class="fname">Cool-Black.yaml</div>
+            <div class="btnwrap"><button class="xp" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-Black.yaml">Копировать</button></div>
+          </div>
+          <div class="lv-row">
+            <div>Clash · белый</div><div class="fname">Cool-White.yaml</div>
+            <div class="btnwrap"><button class="xp" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-White.yaml">Копировать</button></div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Страны (чёрный список)</legend>
+        <div id="countries"><p class="muted">Загрузка…</p></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>История обновлений</legend>
+        <div class="textbox" id="changelog">Загрузка…</div>
+      </fieldset>
+    </div>
+
+    <footer class="status">
+      Серверы проверяются автоматически. &nbsp;|&nbsp;
+      <a href="https://github.com/vessel-web/CoolSubs">Исходный код на GitHub</a>
+    </footer>
   </div>
+  <div class="spacer"></div>
 </div>
 
-<main>
-  <div class="page-head">
-    <h1>Подписки</h1>
-    <p>Проверенные подписки прокси-серверов. Обновляются автоматически.</p>
-  </div>
+<div class="taskbar">
+  <div class="start"><span class="flag"><i></i><i></i><i></i><i></i></span>пуск</div>
+  <div class="task">CoolSubs</div>
+  <div class="tray"><span id="clock">--:--</span></div>
+</div>
 
-  <section class="card">
-    <div class="card-title">Статус <small id="clock"></small></div>
-    <div class="stats">
-      <div class="stat">
-        <div class="num" id="bl-total">—</div>
-        <div class="label">Чёрный список</div>
-      </div>
-      <div class="stat">
-        <div class="num" id="wl-total">—</div>
-        <div class="label">Белый список</div>
-      </div>
-    </div>
-    <p class="muted" id="updated">Загрузка данных…</p>
-  </section>
-
-  <section class="card">
-    <div class="card-title">Подписки</div>
-    <div class="row">
-      <div><div class="name">Чёрный список</div><div class="desc">Cool-Black.txt</div></div>
-      <button class="btn" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-Black.txt">Копировать</button>
-    </div>
-    <div class="row">
-      <div><div class="name">Белый список</div><div class="desc">Cool-White.txt</div></div>
-      <button class="btn" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-White.txt">Копировать</button>
-    </div>
-    <div class="row">
-      <div><div class="name">Clash · чёрный</div><div class="desc">Cool-Black.yaml</div></div>
-      <button class="btn std" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-Black.yaml">Копировать</button>
-    </div>
-    <div class="row">
-      <div><div class="name">Clash · белый</div><div class="desc">Cool-White.yaml</div></div>
-      <button class="btn std" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-White.yaml">Копировать</button>
-    </div>
-  </section>
-
-  <section class="card">
-    <div class="card-title">Страны <small>чёрный список</small></div>
-    <div id="countries"><p class="muted">Загрузка…</p></div>
-  </section>
-
-  <section class="card">
-    <div class="card-title">История обновлений</div>
-    <div class="log" id="changelog">Загрузка…</div>
-  </section>
-
-  <footer>
-    Серверы проверяются автоматически.<br>
-    <a href="https://github.com/vessel-web/CoolSubs">Исходный код на GitHub</a>
-  </footer>
-</main>
-
-<nav class="commandbar">
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Наверх</a>
-  <a class="accent" href="https://github.com/vessel-web/CoolSubs">Репозиторий</a>
-</nav>
-
-<div class="toast" id="toast"><span class="ok">✓</span><span id="toast-text">Ссылка скопирована</span></div>
+<div class="balloon" id="balloon"><b>CoolSubs</b><span id="balloon-text">Ссылка скопирована в буфер обмена.</span></div>
 
 <script>
 const RAW = "https://raw.githubusercontent.com/vessel-web/CoolSubs/main/";
@@ -300,19 +358,19 @@ function tick() {
 tick();
 setInterval(tick, 15000);
 
-function toast(msg) {
-  document.getElementById("toast-text").textContent = msg;
-  const t = document.getElementById("toast");
-  t.classList.add("show");
-  clearTimeout(window._toastTimer);
-  window._toastTimer = setTimeout(() => t.classList.remove("show"), 2000);
+function balloon(msg) {
+  document.getElementById("balloon-text").textContent = msg;
+  const b = document.getElementById("balloon");
+  b.classList.add("show");
+  clearTimeout(window._balloonTimer);
+  window._balloonTimer = setTimeout(() => b.classList.remove("show"), 2500);
 }
 
 document.querySelectorAll("button[data-url]").forEach(btn => {
   btn.addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(btn.dataset.url);
-      toast("Ссылка скопирована");
+      balloon("Ссылка скопирована в буфер обмена.");
     } catch (e) {
       prompt("Скопируйте ссылку вручную:", btn.dataset.url);
     }
@@ -349,9 +407,11 @@ async function init() {
   if (bl && bl.top && bl.top.length) {
     const max = Math.max(...bl.top.map(x => x.count));
     box.innerHTML = bl.top.map(x => `
-      <div class="country"><span>${x.country}</span><span>${x.count}</span></div>
-      <div class="bar" style="width:${Math.max(6, Math.round(100 * x.count / max))}%"></div>
-    `).join("");
+      <div class="country">
+        <span>${x.country}</span>
+        <div class="progress"><i style="display:block;height:100%;width:${Math.max(4, Math.round(100 * x.count / max))}%"></i></div>
+        <span class="c-num">${x.count}</span>
+      </div>`).join("");
   } else {
     box.innerHTML = '<p class="muted">Данных пока нет</p>';
   }
