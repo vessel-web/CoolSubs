@@ -1,21 +1,15 @@
 proxies:
-- name: "cool [igareck-WL] \U0001F1F7\U0001F1FA |#1|"
-  type: vless
-  server: 194.55.239.89
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#1|"
+  type: trojan
+  server: 66.163.114.106
   port: 443
-  uuid: 073b7df7-5527-45a2-ba29-183b85c39071
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.findconnectwithemployersandbuildprofessionalnetwork.com
   udp: true
-  tls: true
-  network: ws
   skip-cert-verify: false
-  servername: broadcast.liveflow.space
-  ws-opts:
-    path: /live.stream.v1.Broadcast/
-    headers:
-      Host: broadcast.liveflow.space
-- name: "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#2|"
+- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#2|"
   type: vless
-  server: ee.h1cloud.net
+  server: 136.234.9.24
   port: 25895
   uuid: f90b7d43-69e2-4b46-a672-8029bc6796a2
   udp: true
@@ -27,52 +21,20 @@ proxies:
     short-id: a73f0410d728c823
   servername: www.samsung.com
   client-fingerprint: edge
-- name: "cool [ImSketch] \U0001F1E9\U0001F1EA |#3|"
-  type: vless
-  server: 78.17.178.125
-  port: 443
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: jcp4Lj_qYzxtkalm_XFjrmvqEMGRG7sb19yMwLe16WE
-    short-id: e0215064d8d1fd7c
-  servername: cdn.tbank.ru
-  client-fingerprint: edge
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#4|"
-  type: vless
-  server: 194.55.239.89
-  port: 443
-  uuid: 073b7df7-5527-45a2-ba29-183b85c39071
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: broadcast.liveflow.space
-  ws-opts:
-    path: /live.stream.v1.Broadcast/
-- name: "cool [ImSketch] \U0001F1F8\U0001F1EC |#6|"
-  type: vless
-  server: 45.77.40.28
-  port: 443
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  servername: sg003.zestapp778.com
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#8|"
+- name: "cool [IR-WL-2] \U0001F310 |#3|"
   type: trojan
-  server: 66.163.112.13
+  server: 172.66.40.99
   port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.unlockyourfuturefindyourperfectcareer.com
+  password: humanity
+  sni: www.trusteeforward.com
   udp: true
   skip-cert-verify: false
-- name: "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#9|"
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.trusteeforward.com
+- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#4|"
   type: vless
   server: 178.172.227.228
   port: 10444
@@ -86,180 +48,67 @@ proxies:
     public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
     short-id: 8debcf36f1cc69ff
   servername: ads.x5.ru
-  client-fingerprint: safari
-- name: "cool [igareck-WL] \U0001F1F7\U0001F1FA |#10|"
+  client-fingerprint: randomized
+- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#5|"
   type: vless
-  server: 194.55.239.89
-  port: 443
-  uuid: 073b7df7-5527-45a2-ba29-183b85c39071
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: broadcast.liveflow.space
-  ws-opts:
-    path: /live.stream.v1.Broadcast/
-    headers:
-      Host: broadcast.liveflow.space
-- name: "cool [ImSketch] \U0001F1F2\U0001F1FD |#12|"
-  type: trojan
-  server: 216.238.80.100
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: connectwithtopemployersandfindidealjobs.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1EA\U0001F1F8 |#13|"
-  type: trojan
-  server: 66.163.118.131
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.discovergreatjobsandadvanceyourcareer.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#14|"
-  type: vless
-  server: 77.232.135.141
-  port: 8445
-  uuid: 36cf792c-f07d-4500-97ea-a395e5178deb
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  servername: ru1.radiolumens.uk
-  grpc-opts:
-    grpc-service-name: beru-pl
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#15|"
-  type: trojan
-  server: 66.163.122.25
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.searchnationwidecareerchangehelperandguidancetoday.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1E9\U0001F1EA |#16|"
-  type: vless
-  server: borsch2.spravedlivost.fun
-  port: 443
-  uuid: 4c5a54b3-774e-4391-b78e-f3e9fa928792
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: borsch2.spravedlivost.fun
-  ws-opts:
-    path: /api/metric/ws
-- name: "cool [ImSketch] \U0001F1E6\U0001F1FA |#17|"
-  type: trojan
-  server: 45.63.30.142
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: connectwithemployerstohireyouridealteam.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#19|"
-  type: vless
-  server: 89.35.14.32
-  port: 443
-  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: q38CddDj2g-XNDc0uW1m6S6b8iGY_Bne2RwX7C_FYCQ
-    short-id: 9a72d40f1ff882b3
-  servername: md3.univesalsrv.com
-  client-fingerprint: ios
-  grpc-opts:
-    grpc-service-name: stats.v2.PushService
-- name: "cool [etoneya wl] \U0001F1E9\U0001F1EA |#20|"
-  type: vless
-  server: 78.17.178.125
-  port: 443
-  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  server: 178.172.227.124
+  port: 10444
+  uuid: 1af36694-b548-4b18-89a0-bc076eab4ed7
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: jcp4Lj_qYzxtkalm_XFjrmvqEMGRG7sb19yMwLe16WE
-    short-id: e0215064d8d1fd7c
-  servername: cdn.tbank.ru
-  client-fingerprint: randomized
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#21|"
-  type: hysteria2
-  server: 103.88.243.142
-  port: 11592
-  password: 41edb44c8e
-  sni: srv-17e124.21freedom.net
-  skip-cert-verify: false
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#22|"
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: ios
+- name: "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#6|"
   type: vless
-  server: 81.222.148.104
+  server: 87.199.205.28
   port: 443
-  uuid: f439e4fe-139b-4882-ad8b-a16176d09c88
+  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
+    short-id: b7cd177731793b1e
+  servername: vkvd754.okcdn.ru
+  client-fingerprint: edge
+- name: "cool [ImSketch] \U0001F1F3\U0001F1F1 |#7|"
+  type: vless
+  server: 2.27.118.10
+  port: 443
+  uuid: d9fe2431-8351-41eb-b956-75d96dec5d4a
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   reality-opts:
-    public-key: EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8
-    short-id: 1ed136481e0ede74
-  servername: eu53.cdn77.icu
-  client-fingerprint: edge
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#23|"
-  type: trojan
-  server: 66.163.112.242
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.unlockyourfuturefindyourperfectcareer.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#24|"
-  type: trojan
-  server: 66.163.114.106
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.findconnectwithemployersandbuildprofessionalnetwork.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1E8\U0001F1F1 |#25|"
-  type: trojan
-  server: 64.176.7.205
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: advanceyouremploymentskillsandcareerdevelopmenthub.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#26|"
+    public-key: goey7Sc4Xm6Nvdukb_DuoUnrkPSV0p4hPWbAmk2_AHc
+    short-id: ecf1d9f7caa6ba67
+  servername: ph-nl-s3784.cybercat.network
+  client-fingerprint: random
+- name: "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#8|"
   type: vless
-  server: 194.87.143.165
-  port: 8443
-  uuid: f9613819-d2fe-4b3a-a2e6-40c184c6854c
+  server: 138.124.125.193
+  port: 10444
+  uuid: e57ce64d-5a1a-4a90-96df-9e1bd3ad26e4
   udp: true
   tls: true
-  network: ws
+  network: tcp
   skip-cert-verify: false
-  servername: wsru1.wba-pn.ru
-  ws-opts:
-    path: /
-- name: "cool [mos.ru] \U0001F1F7\U0001F1FA |#27|"
-  type: vless
-  server: 194.55.239.89
-  port: 443
-  uuid: 073b7df7-5527-45a2-ba29-183b85c39071
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: broadcast.liveflow.space
-  ws-opts:
-    path: /live.stream.v1.Broadcast/
-    headers:
-      Host: broadcast.liveflow.space
-- name: "cool [IR-WL-1] \U0001F1E7\U0001F1EC |#29|"
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: random
+- name: "cool [IR-WL-1] \U0001F1E7\U0001F1EC |#9|"
   type: vless
   server: 45.9.156.42
   port: 443
@@ -272,33 +121,40 @@ proxies:
     public-key: RDWvDEygSk1eyAQhIK95H9EteFbrS2d9JEjBrco54Bw
     short-id: 1a3102bb8e51399e
   servername: bg5.univesalsrv.com
-  client-fingerprint: random
+  client-fingerprint: edge
   grpc-opts:
     grpc-service-name: gw.v2.RelayService
-- name: "cool [ImSketch] \U0001F1F7\U0001F1FA |#30|"
+- name: "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#10|"
   type: vless
-  server: 94.228.173.227
-  port: 443
-  uuid: e0216964-ffa1-4d39-82c4-0e40879a470d
+  server: 193.160.140.168
+  port: 8443
+  uuid: 5ce803ae-a81c-4276-b1f8-ee3b845c5c4b
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: XYkuP_Keu-yL7EQ8xZc4RTmcVAfp06Z1onV2ZNrlsHM
-    short-id: c31f187b
-  servername: stable.nullo.pro
-  client-fingerprint: random
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#31|"
-  type: trojan
-  server: 216.152.156.212
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: ''
+  servername: apple.com
+  client-fingerprint: ios
+- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#11|"
+  type: vless
+  server: 193.160.141.138
+  port: 8443
+  uuid: b4a1200a-9765-4649-94f2-c26e0a37dffb
   udp: true
+  tls: true
+  network: tcp
   skip-cert-verify: false
-- name: "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#32|"
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: ''
+  servername: apple.com
+  client-fingerprint: randomized
+- name: "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#12|"
   type: vless
   server: 95.128.71.79
   port: 10444
@@ -312,64 +168,38 @@ proxies:
     public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
     short-id: 8debcf36f1cc69ff
   servername: ads.x5.ru
-  client-fingerprint: randomized
-- name: "cool [ImSketch] \U0001F1F7\U0001F1FA |#33|"
-  type: vless
-  server: 185.76.241.51
-  port: 9601
-  uuid: 10be1dad-9952-4c5e-aa30-db435f69b727
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: e6RrKgiMRFZEKHn7bcpQHV_skmM-45eX6-G92U0tykY
-    short-id: edc4c30c
-  servername: msk1.nexfile.net
-  client-fingerprint: ios
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#35|"
-  type: vless
-  server: 147.45.175.81
+  client-fingerprint: random
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#13|"
+  type: trojan
+  server: 66.163.114.126
   port: 443
-  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.findconnectwithemployersandbuildprofessionalnetwork.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F310 |#14|"
+  type: vless
+  server: cdn.8211992.xyz
+  port: 443
+  uuid: 30610baf-4645-4c7b-9a22-0d0a0a79eab5
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: xsru1.ddnsfree.com
+  servername: mao.kipfelmaomao.de5.net
   ws-opts:
-    path: /wsru
+    path: /api/v1/guests/profiles/5de14443985f/
     headers:
-      Host: xsru1.ddnsfree.com
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#36|"
-  type: vless
-  server: 147.45.175.81
+      Host: mao.kipfelmaomao.de5.net
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#15|"
+  type: trojan
+  server: 66.163.114.245
   port: 443
-  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: findconnectwithemployersandbuildprofessionalnetwork.com
   udp: true
-  tls: true
-  network: grpc
   skip-cert-verify: false
-  servername: xsru1.ddnsfree.com
-  grpc-opts:
-    grpc-service-name: grpc-ru
-- name: "cool [etoneya wl] \U0001F1E6\U0001F1F2 |#37|"
-  type: vless
-  server: 88.218.92.41
-  port: 24694
-  uuid: 4ad3dbf5-2005-4d96-b56c-a0ca9905cab6
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: kaPztgo_2b2CKxytGWXzn6EauyNKr6Ho8xerGpSS-SQ
-    short-id: '58301280'
-  servername: metrika.yandex.ru
-  client-fingerprint: android
-- name: "cool [ImSketch] \U0001F1EB\U0001F1F7 |#38|"
+- name: "cool [ImSketch] \U0001F1EB\U0001F1F7 |#16|"
   type: vless
   server: 194.33.34.108
   port: 443
@@ -384,138 +214,99 @@ proxies:
     short-id: 3c6fc84d
   servername: stats.vk-portal.net
   client-fingerprint: safari
-- name: "cool [mos.ru] \U0001F1F7\U0001F1FA |#39|"
+- name: "cool [IR-WL-1] \U0001F310 |#17|"
   type: vless
-  server: 194.55.239.89
+  server: bg5.univesalsrv.com
   port: 443
-  uuid: 073b7df7-5527-45a2-ba29-183b85c39071
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
   udp: true
   tls: true
-  network: ws
+  network: grpc
   skip-cert-verify: false
-  servername: broadcast.liveflow.space
-  ws-opts:
-    path: /live.stream.v1.Broadcast/
-- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#40|"
+  reality-opts:
+    public-key: RDWvDEygSk1eyAQhIK95H9EteFbrS2d9JEjBrco54Bw
+    short-id: 1a3102bb8e51399e
+  servername: bg5.univesalsrv.com
+  client-fingerprint: safari
+  grpc-opts:
+    grpc-service-name: gw.v2.RelayService
+- name: "cool [IR-WL-1] \U0001F310 |#18|"
   type: vless
-  server: 178.172.227.124
-  port: 10444
-  uuid: 1af36694-b548-4b18-89a0-bc076eab4ed7
+  server: bg5.univesalsrv.com
+  port: 443
+  uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: RDWvDEygSk1eyAQhIK95H9EteFbrS2d9JEjBrco54Bw
+    short-id: 1a3102bb8e51399e
+  servername: bg5.univesalsrv.com
+  client-fingerprint: random
+  grpc-opts:
+    grpc-service-name: gw.v2.RelayService
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#19|"
+  type: trojan
+  server: 216.152.155.176
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.nextjobopportunityandclaimyouridealrole.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#21|"
+  type: trojan
+  server: 66.163.112.13
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.unlockyourfuturefindyourperfectcareer.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1F3\U0001F1F1 |#23|"
+  type: vless
+  server: 185.14.30.98
+  port: 8443
+  uuid: f5e70ce3-cfb4-4df1-b25c-d19bfae627c0
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: ads.x5.ru
-  client-fingerprint: safari
-- name: "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#42|"
+    public-key: Q0dPyF2hFWgxL7hxntJWJammcb6zcRCyA-NOiOFrsAo
+    short-id: 1433a38abea1191c
+  servername: twitch.tv
+  client-fingerprint: firefox
+- name: "cool [IR-WL-1] \U0001F310 |#24|"
   type: vless
-  server: ee.h1cloud.net
-  port: 25895
-  uuid: f90b7d43-69e2-4b46-a672-8029bc6796a2
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k
-    short-id: a73f0410d728c823
-  servername: www.samsung.com
-  client-fingerprint: random
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#43|"
-  type: trojan
-  server: 169.197.140.214
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.discoverfreshgraduatejobsstartyourprofessionaljourney.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#45|"
-  type: vless
-  server: 194.87.143.165
-  port: 8443
-  uuid: f9613819-d2fe-4b3a-a2e6-40c184c6854c
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: wsru1.wba-pn.ru
+  servername: sino.bestsellers1.site
   ws-opts:
     path: /
     headers:
-      Host: wsru1.wba-pn.ru
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#46|"
-  type: trojan
-  server: 66.163.122.113
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.searchnationwidecareerchangehelperandguidancetoday.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#47|"
-  type: trojan
-  server: 66.163.114.126
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.findconnectwithemployersandbuildprofessionalnetwork.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#49|"
+      Host: sino.bestsellers1.site
+- name: "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#27|"
   type: vless
-  server: 213.226.127.71
-  port: 2066
-  uuid: 5ad13ef8-ced8-43b5-9d8c-f046a3ce9ddc
+  server: 193.160.140.168
+  port: 8443
+  uuid: 5ce803ae-a81c-4276-b1f8-ee3b845c5c4b
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: kLCwYNBhCg68BQah9El1lNg6GQ7-7Y7xfTtIs6MiTEg
-    short-id: d18f4e
-  servername: tiktok.com
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: ''
+  servername: apple.com
   client-fingerprint: randomized
-- name: "cool [mos.ru] \U0001F1F7\U0001F1FA |#50|"
-  type: vless
-  server: 194.55.239.89
-  port: 443
-  uuid: 073b7df7-5527-45a2-ba29-183b85c39071
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: broadcast.liveflow.space
-  ws-opts:
-    path: /live.stream.v1.Broadcast/
-- name: "cool [ImSketch] \U0001F1E6\U0001F1F9 |#51|"
-  type: vless
-  server: softice.net
-  port: 443
-  uuid: ef328563-cda1-4530-9b0a-988cc5a74d78
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  servername: softice.net
-- name: "cool [ImSketch] \U0001F1F7\U0001F1FA |#52|"
-  type: vless
-  server: 217.19.122.156
-  port: 443
-  uuid: c720cb74-4c84-4fce-b8ae-637dbaa16199
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: z1q3pv4g78.rucdncomp.pro
-  ws-opts:
-    path: /useraction/events/b892639b7195/
-    headers:
-      Host: z1q3pv4g78.rucdncomp.pro
-- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#53|"
+- name: "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#28|"
   type: vless
   server: 178.172.227.228
   port: 10444
@@ -530,103 +321,7 @@ proxies:
     short-id: 8debcf36f1cc69ff
   servername: ads.x5.ru
   client-fingerprint: ios
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#54|"
-  type: trojan
-  server: 66.163.114.45
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.findconnectwithemployersandbuildprofessionalnetwork.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#56|"
-  type: vless
-  server: 95.128.71.79
-  port: 10444
-  uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: ads.x5.ru
-  client-fingerprint: android
-- name: "cool [ImSketch] \U0001F1F7\U0001F1FA |#57|"
-  type: vless
-  server: rumos.yandex-api.com
-  port: 443
-  uuid: d9d943cc-269b-4e34-9000-722f6795225d
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: aacc3j_mijcn5WdrrUcMRlTV7IhTgTVawR6oK_3cJGI
-    short-id: ''
-  servername: rumos.yandex-api.com
-  client-fingerprint: safari
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#58|"
-  type: trojan
-  server: 66.163.112.76
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.unlockyourfuturefindyourperfectcareer.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1F5\U0001F1F1 |#59|"
-  type: vless
-  server: 45.148.119.127
-  port: 443
-  uuid: 329e13e4-ee7c-4802-ac72-5fcab79c2402
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: pOHbbyo_PlUwH4DjC6bKvC3jB8RPnCdu-nL8trAP8CI
-    short-id: '50'
-  servername: cloudflare.com
-  client-fingerprint: edge
-- name: "cool [ImSketch] \U0001F1F8\U0001F1E8 |#60|"
-  type: trojan
-  server: 45.128.76.242
-  port: 443
-  password: humanity
-  sni: www.trusteeforward.com
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.trusteeforward.com
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#61|"
-  type: vless
-  server: 194.87.143.165
-  port: 8443
-  uuid: f9613819-d2fe-4b3a-a2e6-40c184c6854c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: wsru1.wba-pn.ru
-  ws-opts:
-    path: /
-    headers:
-      Host: 194.87.143.165
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#62|"
-  type: trojan
-  server: 66.163.122.7
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.searchnationwidecareerchangehelperandguidancetoday.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#63|"
+- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#29|"
   type: vless
   server: 178.172.227.124
   port: 10444
@@ -640,23 +335,16 @@ proxies:
     public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
     short-id: 8debcf36f1cc69ff
   servername: ads.x5.ru
-  client-fingerprint: random
-- name: "cool [ImSketch] \U0001F1F7\U0001F1FA |#64|"
-  type: vless
-  server: 213.226.127.71
-  port: 2066
-  uuid: 5ad13ef8-ced8-43b5-9d8c-f046a3ce9ddc
+  client-fingerprint: android
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#30|"
+  type: trojan
+  server: 216.152.156.65
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
   udp: true
-  tls: true
-  network: tcp
   skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: kLCwYNBhCg68BQah9El1lNg6GQ7-7Y7xfTtIs6MiTEg
-    short-id: d18f4e
-  servername: tiktok.com
-  client-fingerprint: random
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#65|"
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#31|"
   type: trojan
   server: 66.163.114.132
   port: 443
@@ -664,234 +352,112 @@ proxies:
   sni: courses.findconnectwithemployersandbuildprofessionalnetwork.com
   udp: true
   skip-cert-verify: false
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#66|"
+- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#33|"
   type: vless
-  server: 147.45.175.81
-  port: 443
-  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  servername: xssite.webredirect.org
-  grpc-opts:
-    grpc-service-name: grpc-ru
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#67|"
-  type: trojan
-  server: 216.152.155.23
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.nextjobopportunityandclaimyouridealrole.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#69|"
-  type: vless
-  server: 194.55.239.89
-  port: 443
-  uuid: 073b7df7-5527-45a2-ba29-183b85c39071
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: broadcast.liveflow.space
-  ws-opts:
-    path: /live.stream.v1.Broadcast/
-    headers:
-      Host: broadcast.liveflow.space
-- name: "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#70|"
-  type: vless
-  server: 188.164.248.91
-  port: 443
-  uuid: 45ceaca9-30f4-4035-85b7-8f83493911d8
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: tamoai.ccwu.cc
-  ws-opts:
-    path: /proxyip=163.192.47.40,47.57.181.17,34.83.245.149,4.155.83.212,64.227.62.172,24.144.68.139,161.35.232.123,107.170.248.68
-    headers:
-      Host: tamoai.ccwu.cc
-- name: "cool [LSO-LTE] \U0001F1F7\U0001F1FA |#71|"
-  type: vless
-  server: 185.76.241.51
-  port: 9601
-  uuid: 10be1dad-9952-4c5e-aa30-db435f69b727
+  server: 178.172.227.228
+  port: 10444
+  uuid: b6e5dc56-836f-48c1-9163-b0b0b43b647d
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: e6RrKgiMRFZEKHn7bcpQHV_skmM-45eX6-G92U0tykY
-    short-id: edc4c30c
-  servername: msk1.nexfile.net
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: randomized
+- name: "cool [ImSketch] \U0001F310 |#34|"
+  type: vless
+  server: f36f5ft.us4.h1clayd.click
+  port: 443
+  uuid: 5a519754-a673-4462-83f6-5eb25d2af141
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 5KZVzOFqMgdL47--JzLlg5HmPlAYp-cmQsXxkTXngS0
+    short-id: 8d50d3a4df71468c
+  servername: f36f5ft.us4.h1clayd.click
   client-fingerprint: firefox
-- name: "cool [igareck-WL] \U0001F1F7\U0001F1FA |#72|"
+- name: "cool [ImSketch] \U0001F1EE\U0001F1F1 |#35|"
+  type: trojan
+  server: 64.176.163.182
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: exploreeducationsectoropportunitiestodayandadvancecareers.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#36|"
+  type: trojan
+  server: 66.163.112.31
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: unlockyourfuturefindyourperfectcareer.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#37|"
   type: vless
-  server: 194.55.239.89
-  port: 443
-  uuid: 073b7df7-5527-45a2-ba29-183b85c39071
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: broadcast.liveflow.space
-  ws-opts:
-    path: /live.stream.v1.Broadcast/
-    headers:
-      Host: broadcast.liveflow.space
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#73|"
-  type: trojan
-  server: 216.152.156.49
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#74|"
-  type: trojan
-  server: 216.152.155.54
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.nextjobopportunityandclaimyouridealrole.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#75|"
-  type: trojan
-  server: 66.163.112.142
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.unlockyourfuturefindyourperfectcareer.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#76|"
-  type: trojan
-  server: 66.163.114.166
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.findconnectwithemployersandbuildprofessionalnetwork.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#77|"
-  type: trojan
-  server: 216.152.156.81
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [LSO-LTE] \U0001F1F7\U0001F1FA |#78|"
-  type: vless
-  server: 185.76.241.51
-  port: 9601
-  uuid: 10be1dad-9952-4c5e-aa30-db435f69b727
+  server: 193.160.141.81
+  port: 8443
+  uuid: ee82f319-ab92-425d-8e04-28a29f33f670
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: e6RrKgiMRFZEKHn7bcpQHV_skmM-45eX6-G92U0tykY
-    short-id: edc4c30c
-  servername: msk1.nexfile.net
-  client-fingerprint: ios
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#79|"
-  type: trojan
-  server: 66.163.112.121
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.unlockyourfuturefindyourperfectcareer.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1E9\U0001F1EA |#80|"
-  type: vless
-  server: 194.24.161.220
-  port: 443
-  uuid: 4c5a54b3-774e-4391-b78e-f3e9fa928792
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: borsch2.spravedlivost.fun
-  ws-opts:
-    path: /api/metric/ws
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#81|"
-  type: trojan
-  server: 66.163.112.171
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.unlockyourfuturefindyourperfectcareer.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#82|"
-  type: vless
-  server: 147.45.175.81
-  port: 443
-  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: xsru2.freeddns.org
-  ws-opts:
-    path: /wsru
-    headers:
-      Host: xsru2.freeddns.org
-- name: "cool [ImSketch] \U0001F1F7\U0001F1FA |#83|"
-  type: vless
-  server: 176.108.253.204
-  port: 443
-  uuid: d9d943cc-269b-4e34-9000-722f6795225d
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: aacc3j_mijcn5WdrrUcMRlTV7IhTgTVawR6oK_3cJGI
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
     short-id: ''
-  servername: rumos.yandex-api.com
-  client-fingerprint: firefox
-- name: "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#85|"
+  servername: apple.com
+  client-fingerprint: android
+- name: "cool [ImSketch] \U0001F1E8\U0001F1FE |#38|"
+  type: hysteria2
+  server: 194.76.147.34
+  port: 443
+  password: 4b1be712-774c-4b65-8491-a3339e124a70
+  sni: hys-eu.letsconnectpoint.com
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1EE\U0001F1F9 |#39|"
   type: vless
-  server: ee.h1cloud.net
-  port: 25895
-  uuid: f90b7d43-69e2-4b46-a672-8029bc6796a2
+  server: 147.45.51.171
+  port: 8443
+  uuid: f5e70ce3-cfb4-4df1-b25c-d19bfae627c0
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
+  flow: xtls-rprx-vision
   reality-opts:
-    public-key: jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k
-    short-id: a73f0410d728c823
-  servername: www.samsung.com
-  client-fingerprint: edge
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#86|"
+    public-key: dPa581kev2x9-st7VQ-DTh3NjXlHJ2830YDySuI8n2U
+    short-id: e723d26df67888b9
+  servername: twitch.tv
+  client-fingerprint: randomized
+- name: "cool [ImSketch] \U0001F1F7\U0001F1FA |#40|"
+  type: vless
+  server: 213.159.209.66
+  port: 443
+  uuid: afbd410e-1663-4f40-9d3b-df5117aa23ca
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 52fsWySqEpUvCt-jbEy2rYjVIZBYwoqsGfmSef8_UgI
+    short-id: 97a15f5af85c4a30
+  servername: ru11.oshost.network
+  client-fingerprint: randomized
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#41|"
   type: trojan
-  server: 66.163.114.114
+  server: 66.163.122.113
   port: 443
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.findconnectwithemployersandbuildprofessionalnetwork.com
+  sni: api.searchnationwidecareerchangehelperandguidancetoday.com
   udp: true
   skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#87|"
-  type: trojan
-  server: 66.163.114.245
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: findconnectwithemployersandbuildprofessionalnetwork.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#88|"
-  type: trojan
-  server: 216.152.155.59
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.nextjobopportunityandclaimyouridealrole.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1E9\U0001F1EA |#89|"
+- name: "cool [etoneya wl] \U0001F1E9\U0001F1EA |#42|"
   type: vless
   server: 78.17.178.125
   port: 443
@@ -905,12 +471,47 @@ proxies:
     public-key: jcp4Lj_qYzxtkalm_XFjrmvqEMGRG7sb19yMwLe16WE
     short-id: e0215064d8d1fd7c
   servername: cdn.tbank.ru
-  client-fingerprint: android
-- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#90|"
+  client-fingerprint: edge
+- name: "cool [ImSketch] \U0001F1E9\U0001F1EA |#43|"
   type: vless
-  server: 178.172.227.228
+  server: 78.17.178.125
+  port: 443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: jcp4Lj_qYzxtkalm_XFjrmvqEMGRG7sb19yMwLe16WE
+    short-id: e0215064d8d1fd7c
+  servername: cdn.tbank.ru
+  client-fingerprint: edge
+- name: "cool [IR-WL-1] \U0001F310 |#44|"
+  type: vless
+  server: sino.bestsellers1.site
+  port: 2083
+  uuid: 7858128a-6b5e-4f86-9bff-52c1f1e6439d
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: sino.bestsellers1.site
+  ws-opts:
+    path: /
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#45|"
+  type: trojan
+  server: 216.152.155.158
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.nextjobopportunityandclaimyouridealrole.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#46|"
+  type: vless
+  server: 95.128.71.79
   port: 10444
-  uuid: b6e5dc56-836f-48c1-9163-b0b0b43b647d
+  uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
   udp: true
   tls: true
   network: tcp
@@ -920,32 +521,231 @@ proxies:
     public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
     short-id: 8debcf36f1cc69ff
   servername: ads.x5.ru
+  client-fingerprint: firefox
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#48|"
+  type: trojan
+  server: 216.152.155.131
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.nextjobopportunityandclaimyouridealrole.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#49|"
+  type: vless
+  server: 193.160.141.81
+  port: 8443
+  uuid: ee82f319-ab92-425d-8e04-28a29f33f670
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: ''
+  servername: apple.com
   client-fingerprint: ios
-- name: "cool [ImSketch] \U0001F1EE\U0001F1F1 |#92|"
+- name: "cool [ImSketch] \U0001F1E9\U0001F1EA |#50|"
+  type: vless
+  server: 78.17.178.125
+  port: 443
+  uuid: 6c713691-3ca2-4446-ad25-113d1bed6b03
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: jcp4Lj_qYzxtkalm_XFjrmvqEMGRG7sb19yMwLe16WE
+    short-id: e0215064d8d1fd7c
+  servername: cdn.tbank.ru
+  client-fingerprint: safari
+- name: "cool [ImSketch] \U0001F1E8\U0001F1ED |#51|"
+  type: vless
+  server: 45.90.57.119
+  port: 8443
+  uuid: f5e70ce3-cfb4-4df1-b25c-d19bfae627c0
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: L6DeK_a25_ZjPKFOrQLoCPWuXi5KCIH_EcRpARmCwkI
+    short-id: 16036bbef04d0509
+  servername: twitch.tv
+  client-fingerprint: randomized
+- name: "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#52|"
   type: trojan
-  server: 64.176.163.182
+  server: 66.163.112.142
   port: 443
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: exploreeducationsectoropportunitiestodayandadvancecareers.com
+  sni: cdn.unlockyourfuturefindyourperfectcareer.com
   udp: true
   skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#93|"
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#53|"
   type: trojan
-  server: 66.163.112.147
+  server: 216.152.156.49
   port: 443
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.unlockyourfuturefindyourperfectcareer.com
+  sni: cdn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
   udp: true
   skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#94|"
+- name: "cool [LSO-LTE] \U0001F1EC\U0001F1E7 |#54|"
+  type: vless
+  server: 138.124.125.193
+  port: 10444
+  uuid: e57ce64d-5a1a-4a90-96df-9e1bd3ad26e4
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: android
+- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#55|"
+  type: vless
+  server: 92.51.23.133
+  port: 443
+  uuid: 26f751bc-2edc-4338-9c3f-abeb32aba3b7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: ''
+  servername: zjlavrpl7kwo.staticpool.store
+  client-fingerprint: randomized
+- name: "cool [etoneya wl] \U0001F1E8\U0001F1E6 |#57|"
+  type: vless
+  server: 148.113.179.73
+  port: 443
+  uuid: 3cd95e58-9f0a-47e1-9937-64a58e949aa5
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 6eN2NciEaZis5J4muRRqpfLQ1OglI3A8lNSTmAGo6Do
+    short-id: 3c6fc84d
+  servername: stats.vk-portal.net
+  client-fingerprint: safari
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#58|"
   type: trojan
-  server: 66.163.112.31
+  server: 66.163.114.166
   port: 443
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: unlockyourfuturefindyourperfectcareer.com
+  sni: blog.findconnectwithemployersandbuildprofessionalnetwork.com
   udp: true
   skip-cert-verify: false
-- name: "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#97|"
+- name: "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#59|"
+  type: trojan
+  server: 66.163.114.114
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.findconnectwithemployersandbuildprofessionalnetwork.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#60|"
+  type: vless
+  server: 95.128.71.79
+  port: 10444
+  uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: edge
+- name: "cool [ImSketch] \U0001F1E8\U0001F1F1 |#61|"
+  type: trojan
+  server: 64.176.7.205
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: advanceyouremploymentskillsandcareerdevelopmenthub.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#62|"
+  type: trojan
+  server: 216.152.156.212
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1E6\U0001F1FA |#63|"
+  type: trojan
+  server: 45.63.30.142
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: connectwithemployerstohireyouridealteam.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#64|"
+  type: trojan
+  server: 216.152.155.54
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.nextjobopportunityandclaimyouridealrole.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [Akres-WL] \U0001F1FA\U0001F1F8 |#66|"
+  type: vless
+  server: 201.24.119.44
+  port: 443
+  uuid: 26f751bc-2edc-4338-9c3f-abeb32aba3b7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: xJZgy1PaEukFZ06H3VV64iLhA8nlAj2MYwC68BKA5Sc
+    short-id: ''
+  servername: qj5ykvzhzb.edge-origin.space
+  client-fingerprint: android
+- name: "cool [ImSketch] \U0001F1F3\U0001F1F1 |#69|"
+  type: vless
+  server: 2.59.216.239
+  port: 8443
+  uuid: e0216964-ffa1-4d39-82c4-0e40879a470d
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: XYkuP_Keu-yL7EQ8xZc4RTmcVAfp06Z1onV2ZNrlsHM
+    short-id: c31f187b
+  servername: lamibeauty.site
+  client-fingerprint: ios
+- name: "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#70|"
+  type: trojan
+  server: 216.152.156.212
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#71|"
+  type: trojan
+  server: 66.163.114.45
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.findconnectwithemployersandbuildprofessionalnetwork.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#72|"
   type: vless
   server: 178.172.227.124
   port: 10444
@@ -959,124 +759,478 @@ proxies:
     public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
     short-id: 8debcf36f1cc69ff
   servername: ads.x5.ru
-  client-fingerprint: edge
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#98|"
+  client-fingerprint: ios
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#73|"
   type: trojan
-  server: 216.152.155.131
+  server: 66.163.112.76
   port: 443
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.nextjobopportunityandclaimyouridealrole.com
+  sni: api.unlockyourfuturefindyourperfectcareer.com
   udp: true
   skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1F7\U0001F1FA |#101|"
-  type: vless
-  server: 45.91.53.228
+- name: "cool [IR-WL-3] \U0001F310 |#74|"
+  type: trojan
+  server: 172.66.40.99
   port: 443
-  uuid: e0216964-ffa1-4d39-82c4-0e40879a470d
+  password: humanity
+  sni: www.trusteeforward.com
   udp: true
-  tls: true
-  network: tcp
   skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: XYkuP_Keu-yL7EQ8xZc4RTmcVAfp06Z1onV2ZNrlsHM
-    short-id: c31f187b
-  servername: stable.nullo.pro
-  client-fingerprint: randomized
-- name: "cool [ImSketch] \U0001F1F5\U0001F1F1 |#102|"
-  type: hysteria2
-  server: pl1.obxodvpn.us
-  port: 4443
-  password: 146d567c-6335-4e63-a8aa-7ec068642440
-  sni: nl1.obxodvpn.us
-  skip-cert-verify: false
-- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#103|"
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.trusteeforward.com
+- name: "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#75|"
   type: vless
-  server: 95.128.71.79
-  port: 10444
-  uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: ads.x5.ru
-  client-fingerprint: safari
-- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#105|"
-  type: vless
-  server: 95.128.71.79
-  port: 10444
-  uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: ads.x5.ru
-  client-fingerprint: ios
-- name: "cool [IR-WL-1] \U0001F1E9\U0001F1EA |#106|"
-  type: vless
-  server: mci1.amir12.ir
-  port: 1222
-  uuid: 36c3dcc2-17b6-4478-b8a7-3978e6d5afe9
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  reality-opts:
-    public-key: zpLKK8HuwXJDH9D0O3t5Z_tO3ajkj7VRtXdr6UGy1zE
-    short-id: a25d0f
-  servername: play.google.com
-  client-fingerprint: safari
-- name: "cool [RKP-WL] \U0001F1F7\U0001F1FA |#107|"
-  type: vless
-  server: 217.19.122.156
-  port: 443
-  uuid: c720cb74-4c84-4fce-b8ae-637dbaa16199
+  server: 91.107.188.129
+  port: 2083
+  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: z1q3pv4g78.rucdncomp.pro
+  servername: site.check-looks.space
   ws-opts:
-    path: /useraction/events/b892639b7195/
-    headers:
-      Host: z1q3pv4g78.rucdncomp.pro
-- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#109|"
-  type: trojan
-  server: 216.152.156.65
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1EA\U0001F1F8 |#111|"
-  type: trojan
-  server: 66.163.118.166
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.discovergreatjobsandadvanceyourcareer.com
-  udp: true
-  skip-cert-verify: false
-- name: "cool [ImSketch] \U0001F1EE\U0001F1F1 |#112|"
+    path: /
+- name: "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#76|"
   type: vless
-  server: f36f5ft.us4.h1clayd.click
+  server: 87.199.205.28
   port: 443
+  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
+    short-id: 6b196d2f190f32b3
+  servername: vkvd754.okcdn.ru
+  client-fingerprint: android
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#77|"
+  type: trojan
+  server: 66.163.112.121
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.unlockyourfuturefindyourperfectcareer.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#79|"
+  type: vless
+  server: 213.159.209.66
+  port: 443
+  uuid: afbd410e-1663-4f40-9d3b-df5117aa23ca
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 52fsWySqEpUvCt-jbEy2rYjVIZBYwoqsGfmSef8_UgI
+    short-id: 97a15f5af85c4a30
+  servername: ru11.oshost.network
+  client-fingerprint: ios
+- name: "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#81|"
+  type: vless
+  server: 87.199.205.28
+  port: 443
+  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
+    short-id: ef1d3554c652a436
+  servername: vkvd754.okcdn.ru
+  client-fingerprint: safari
+- name: "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#82|"
+  type: vless
+  server: 138.124.125.193
+  port: 10444
+  uuid: e57ce64d-5a1a-4a90-96df-9e1bd3ad26e4
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: random
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#83|"
+  type: trojan
+  server: 66.163.112.171
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.unlockyourfuturefindyourperfectcareer.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#84|"
+  type: trojan
+  server: 216.152.155.59
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: api.nextjobopportunityandclaimyouridealrole.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#85|"
+  type: trojan
+  server: 66.163.112.242
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.unlockyourfuturefindyourperfectcareer.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [IR-WL-3] \U0001F1EB\U0001F1F7 |#86|"
+  type: vless
+  server: 62.210.91.2
+  port: 23576
+  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
+    short-id: '01'
+  servername: fuck.rkn
+  client-fingerprint: android
+- name: "cool [etoneya wl] \U0001F1E7\U0001F1FE |#88|"
+  type: vless
+  server: 95.128.71.79
+  port: 10444
+  uuid: 8cef7621-c6f0-486e-b51d-59c30c5b0b25
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: android
+- name: "cool [ImSketch] \U0001F310 |#89|"
+  type: vless
+  server: sg003.zestapp778.com
+  port: 443
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  servername: sg003.zestapp778.com
+- name: "cool [IR-WL-1] \U0001F310 |#90|"
+  type: vless
+  server: ee.h1cloud.net
+  port: 25895
+  uuid: f90b7d43-69e2-4b46-a672-8029bc6796a2
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k
+    short-id: a73f0410d728c823
+  servername: www.samsung.com
+  client-fingerprint: safari
+- name: "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#91|"
+  type: vless
+  server: 87.199.205.28
+  port: 443
+  uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
+    short-id: dd3519f8d7626e05
+  servername: vkvd754.okcdn.ru
+  client-fingerprint: edge
+- name: "cool [IR-WL-1] \U0001F1EB\U0001F1F7 |#92|"
+  type: vless
+  server: 161.97.160.224
+  port: 443
+  uuid: b81b4d1b-7f20-48f1-82dc-d24bef898cab
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0
+    short-id: e6
+  servername: passport.yandex.ru
+  client-fingerprint: firefox
+- name: "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#93|"
+  type: vless
+  server: 147.45.46.157
+  port: 8443
+  uuid: 75985152-e16e-4a48-87ff-35c2615e0ab5
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    short-id: ''
+  servername: apple.com
+  client-fingerprint: android
+- name: "cool [ImSketch] \U0001F1F8\U0001F1E8 |#96|"
+  type: trojan
+  server: 45.128.76.242
+  port: 443
+  password: humanity
+  sni: www.trusteeforward.com
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.trusteeforward.com
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#97|"
+  type: trojan
+  server: 66.163.112.142
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.unlockyourfuturefindyourperfectcareer.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#98|"
+  type: vless
+  server: 5.129.198.34
+  port: 443
+  uuid: 26f751bc-2edc-4338-9c3f-abeb32aba3b7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: ''
+  servername: mmxi9k64xsh7.assetgrid.space
+  client-fingerprint: random
+- name: "cool [etoneya wl] \U0001F1ED\U0001F1F0 |#99|"
+  type: vless
+  server: 213.176.92.168
+  port: 10444
+  uuid: ba52cc43-700d-4040-9444-29214c98e6e0
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: video.yandex.ru
+  client-fingerprint: random
+- name: "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#100|"
+  type: vless
+  server: 51.89.194.151
+  port: 2053
+  uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  reality-opts:
+    public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
+    short-id: d051f678212f9d54
+  servername: www.apple.com
+  client-fingerprint: random
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#101|"
+  type: trojan
+  server: 66.163.112.147
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.unlockyourfuturefindyourperfectcareer.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#102|"
+  type: trojan
+  server: 66.163.122.7
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.searchnationwidecareerchangehelperandguidancetoday.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [etoneya wl] \U0001F1ED\U0001F1F0 |#103|"
+  type: vless
+  server: 213.176.92.168
+  port: 10444
+  uuid: ba52cc43-700d-4040-9444-29214c98e6e0
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: video.yandex.ru
+  client-fingerprint: ios
+- name: "cool [ImSketch] \U0001F1F2\U0001F1FD |#104|"
+  type: trojan
+  server: 216.238.80.100
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: connectwithtopemployersandfindidealjobs.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#105|"
+  type: trojan
+  server: 216.152.155.23
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.nextjobopportunityandclaimyouridealrole.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#107|"
+  type: vless
+  server: 136.234.9.3
+  port: 25548
   uuid: 5a519754-a673-4462-83f6-5eb25d2af141
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   reality-opts:
-    public-key: 5KZVzOFqMgdL47--JzLlg5HmPlAYp-cmQsXxkTXngS0
-    short-id: 8d50d3a4df71468c
-  servername: f36f5ft.us4.h1clayd.click
+    public-key: lceynvFy326oU4ew9OPR7079m-L5ZcFELgCl0sqxU2M
+    short-id: bceb5b2197b76818
+  servername: www.cloudflare.com
+  client-fingerprint: edge
+- name: "cool [etoneya wl] \U0001F1F1\U0001F1FB |#108|"
+  type: vless
+  server: 193.163.203.170
+  port: 443
+  uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o
+    short-id: b28db60d77c50b4f
+  servername: yandex.ru
+  client-fingerprint: android
+- name: "cool [ImSketch] \U0001F1F5\U0001F1F1 |#110|"
+  type: vless
+  server: 45.148.119.127
+  port: 443
+  uuid: 329e13e4-ee7c-4802-ac72-5fcab79c2402
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: pOHbbyo_PlUwH4DjC6bKvC3jB8RPnCdu-nL8trAP8CI
+    short-id: '50'
+  servername: cloudflare.com
+  client-fingerprint: randomized
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#111|"
+  type: trojan
+  server: 66.163.114.114
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.findconnectwithemployersandbuildprofessionalnetwork.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [etoneya wl] \U0001F1F8\U0001F1EA |#112|"
+  type: vless
+  server: 193.188.21.253
+  port: 10444
+  uuid: 57f7772d-f5d6-4d8f-992d-5fa5e0d6da55
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: video.yandex.ru
+  client-fingerprint: android
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#113|"
+  type: trojan
+  server: 66.163.122.25
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.searchnationwidecareerchangehelperandguidancetoday.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#114|"
+  type: trojan
+  server: 216.152.156.81
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [ImSketch] \U0001F1FA\U0001F1F8 |#116|"
+  type: trojan
+  server: 169.197.140.214
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.discoverfreshgraduatejobsstartyourprofessionaljourney.com
+  udp: true
+  skip-cert-verify: false
+- name: "cool [Akres-WL] \U0001F1F7\U0001F1FA |#117|"
+  type: vless
+  server: 136.234.9.23
+  port: 25021
+  uuid: 2446e2e2-1ce3-4502-9050-1dd32bacc68c
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: od79bUkYtqQtsGrrTdhmkDflx5c9al4vqxwWApvc-Dg
+    short-id: 17fa3af0924c88b3
+  servername: www.samsung.com
+  client-fingerprint: randomized
+- name: "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#118|"
+  type: vless
+  server: 138.124.125.193
+  port: 10444
+  uuid: e57ce64d-5a1a-4a90-96df-9e1bd3ad26e4
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: random
+- name: "cool [etoneya wl] \U0001F1F1\U0001F1FB |#119|"
+  type: vless
+  server: 193.163.203.170
+  port: 443
+  uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o
+    short-id: b28db60d77c50b4f
+  servername: yandex.ru
   client-fingerprint: random
 proxy-groups:
 - name: Обычный
@@ -1084,464 +1238,540 @@ proxy-groups:
   proxies:
   - Авто
   - Авто (без RU)
-  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#1|"
-  - "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#2|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#3|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#4|"
-  - "cool [ImSketch] \U0001F1F8\U0001F1EC |#6|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#8|"
-  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#9|"
-  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#10|"
-  - "cool [ImSketch] \U0001F1F2\U0001F1FD |#12|"
-  - "cool [ImSketch] \U0001F1EA\U0001F1F8 |#13|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#14|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#2|"
+  - "cool [IR-WL-2] \U0001F310 |#3|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#4|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#5|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#6|"
+  - "cool [ImSketch] \U0001F1F3\U0001F1F1 |#7|"
+  - "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#8|"
+  - "cool [IR-WL-1] \U0001F1E7\U0001F1EC |#9|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#10|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#11|"
+  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#12|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#13|"
+  - "cool [ImSketch] \U0001F310 |#14|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#15|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#16|"
-  - "cool [ImSketch] \U0001F1E6\U0001F1FA |#17|"
-  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#19|"
-  - "cool [etoneya wl] \U0001F1E9\U0001F1EA |#20|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#21|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#22|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#23|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#24|"
-  - "cool [ImSketch] \U0001F1E8\U0001F1F1 |#25|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#26|"
-  - "cool [mos.ru] \U0001F1F7\U0001F1FA |#27|"
-  - "cool [IR-WL-1] \U0001F1E7\U0001F1EC |#29|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#30|"
+  - "cool [ImSketch] \U0001F1EB\U0001F1F7 |#16|"
+  - "cool [IR-WL-1] \U0001F310 |#17|"
+  - "cool [IR-WL-1] \U0001F310 |#18|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#19|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [ImSketch] \U0001F1F3\U0001F1F1 |#23|"
+  - "cool [IR-WL-1] \U0001F310 |#24|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#27|"
+  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#28|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#29|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#30|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#31|"
-  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#32|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#33|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#35|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#36|"
-  - "cool [etoneya wl] \U0001F1E6\U0001F1F2 |#37|"
-  - "cool [ImSketch] \U0001F1EB\U0001F1F7 |#38|"
-  - "cool [mos.ru] \U0001F1F7\U0001F1FA |#39|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#40|"
-  - "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#42|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#43|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#45|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#46|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#47|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#49|"
-  - "cool [mos.ru] \U0001F1F7\U0001F1FA |#50|"
-  - "cool [ImSketch] \U0001F1E6\U0001F1F9 |#51|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#52|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#53|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#54|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#56|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#57|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#33|"
+  - "cool [ImSketch] \U0001F310 |#34|"
+  - "cool [ImSketch] \U0001F1EE\U0001F1F1 |#35|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#36|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#37|"
+  - "cool [ImSketch] \U0001F1E8\U0001F1FE |#38|"
+  - "cool [ImSketch] \U0001F1EE\U0001F1F9 |#39|"
+  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#40|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#41|"
+  - "cool [etoneya wl] \U0001F1E9\U0001F1EA |#42|"
+  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#43|"
+  - "cool [IR-WL-1] \U0001F310 |#44|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#45|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#46|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#48|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#49|"
+  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#50|"
+  - "cool [ImSketch] \U0001F1E8\U0001F1ED |#51|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#52|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#53|"
+  - "cool [LSO-LTE] \U0001F1EC\U0001F1E7 |#54|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#55|"
+  - "cool [etoneya wl] \U0001F1E8\U0001F1E6 |#57|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#58|"
-  - "cool [ImSketch] \U0001F1F5\U0001F1F1 |#59|"
-  - "cool [ImSketch] \U0001F1F8\U0001F1E8 |#60|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#61|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#59|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#60|"
+  - "cool [ImSketch] \U0001F1E8\U0001F1F1 |#61|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#62|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#63|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#64|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#65|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#66|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#67|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#69|"
-  - "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#70|"
-  - "cool [LSO-LTE] \U0001F1F7\U0001F1FA |#71|"
-  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#72|"
+  - "cool [ImSketch] \U0001F1E6\U0001F1FA |#63|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#64|"
+  - "cool [Akres-WL] \U0001F1FA\U0001F1F8 |#66|"
+  - "cool [ImSketch] \U0001F1F3\U0001F1F1 |#69|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#70|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#71|"
+  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#72|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#73|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#74|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#75|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#76|"
+  - "cool [IR-WL-3] \U0001F310 |#74|"
+  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#75|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#76|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#77|"
-  - "cool [LSO-LTE] \U0001F1F7\U0001F1FA |#78|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#79|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#80|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#81|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#82|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#83|"
-  - "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#85|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#86|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#87|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#88|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#89|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#90|"
-  - "cool [ImSketch] \U0001F1EE\U0001F1F1 |#92|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#93|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#94|"
-  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#97|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#98|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#101|"
-  - "cool [ImSketch] \U0001F1F5\U0001F1F1 |#102|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#103|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#105|"
-  - "cool [IR-WL-1] \U0001F1E9\U0001F1EA |#106|"
-  - "cool [RKP-WL] \U0001F1F7\U0001F1FA |#107|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#109|"
-  - "cool [ImSketch] \U0001F1EA\U0001F1F8 |#111|"
-  - "cool [ImSketch] \U0001F1EE\U0001F1F1 |#112|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#79|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#81|"
+  - "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#82|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#83|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#84|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#85|"
+  - "cool [IR-WL-3] \U0001F1EB\U0001F1F7 |#86|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#88|"
+  - "cool [ImSketch] \U0001F310 |#89|"
+  - "cool [IR-WL-1] \U0001F310 |#90|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#91|"
+  - "cool [IR-WL-1] \U0001F1EB\U0001F1F7 |#92|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#93|"
+  - "cool [ImSketch] \U0001F1F8\U0001F1E8 |#96|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#97|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#98|"
+  - "cool [etoneya wl] \U0001F1ED\U0001F1F0 |#99|"
+  - "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#100|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#101|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#102|"
+  - "cool [etoneya wl] \U0001F1ED\U0001F1F0 |#103|"
+  - "cool [ImSketch] \U0001F1F2\U0001F1FD |#104|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#105|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#107|"
+  - "cool [etoneya wl] \U0001F1F1\U0001F1FB |#108|"
+  - "cool [ImSketch] \U0001F1F5\U0001F1F1 |#110|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#111|"
+  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#112|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#113|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#114|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#116|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#117|"
+  - "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#118|"
+  - "cool [etoneya wl] \U0001F1F1\U0001F1FB |#119|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#1|"
-  - "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#2|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#3|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#4|"
-  - "cool [ImSketch] \U0001F1F8\U0001F1EC |#6|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#8|"
-  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#9|"
-  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#10|"
-  - "cool [ImSketch] \U0001F1F2\U0001F1FD |#12|"
-  - "cool [ImSketch] \U0001F1EA\U0001F1F8 |#13|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#14|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#2|"
+  - "cool [IR-WL-2] \U0001F310 |#3|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#4|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#5|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#6|"
+  - "cool [ImSketch] \U0001F1F3\U0001F1F1 |#7|"
+  - "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#8|"
+  - "cool [IR-WL-1] \U0001F1E7\U0001F1EC |#9|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#10|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#11|"
+  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#12|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#13|"
+  - "cool [ImSketch] \U0001F310 |#14|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#15|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#16|"
-  - "cool [ImSketch] \U0001F1E6\U0001F1FA |#17|"
-  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#19|"
-  - "cool [etoneya wl] \U0001F1E9\U0001F1EA |#20|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#21|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#22|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#23|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#24|"
-  - "cool [ImSketch] \U0001F1E8\U0001F1F1 |#25|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#26|"
-  - "cool [mos.ru] \U0001F1F7\U0001F1FA |#27|"
-  - "cool [IR-WL-1] \U0001F1E7\U0001F1EC |#29|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#30|"
+  - "cool [ImSketch] \U0001F1EB\U0001F1F7 |#16|"
+  - "cool [IR-WL-1] \U0001F310 |#17|"
+  - "cool [IR-WL-1] \U0001F310 |#18|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#19|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [ImSketch] \U0001F1F3\U0001F1F1 |#23|"
+  - "cool [IR-WL-1] \U0001F310 |#24|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#27|"
+  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#28|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#29|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#30|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#31|"
-  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#32|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#33|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#35|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#36|"
-  - "cool [etoneya wl] \U0001F1E6\U0001F1F2 |#37|"
-  - "cool [ImSketch] \U0001F1EB\U0001F1F7 |#38|"
-  - "cool [mos.ru] \U0001F1F7\U0001F1FA |#39|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#40|"
-  - "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#42|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#43|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#45|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#46|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#47|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#49|"
-  - "cool [mos.ru] \U0001F1F7\U0001F1FA |#50|"
-  - "cool [ImSketch] \U0001F1E6\U0001F1F9 |#51|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#52|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#53|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#54|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#56|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#57|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#33|"
+  - "cool [ImSketch] \U0001F310 |#34|"
+  - "cool [ImSketch] \U0001F1EE\U0001F1F1 |#35|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#36|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#37|"
+  - "cool [ImSketch] \U0001F1E8\U0001F1FE |#38|"
+  - "cool [ImSketch] \U0001F1EE\U0001F1F9 |#39|"
+  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#40|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#41|"
+  - "cool [etoneya wl] \U0001F1E9\U0001F1EA |#42|"
+  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#43|"
+  - "cool [IR-WL-1] \U0001F310 |#44|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#45|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#46|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#48|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#49|"
+  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#50|"
+  - "cool [ImSketch] \U0001F1E8\U0001F1ED |#51|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#52|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#53|"
+  - "cool [LSO-LTE] \U0001F1EC\U0001F1E7 |#54|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#55|"
+  - "cool [etoneya wl] \U0001F1E8\U0001F1E6 |#57|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#58|"
-  - "cool [ImSketch] \U0001F1F5\U0001F1F1 |#59|"
-  - "cool [ImSketch] \U0001F1F8\U0001F1E8 |#60|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#61|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#59|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#60|"
+  - "cool [ImSketch] \U0001F1E8\U0001F1F1 |#61|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#62|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#63|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#64|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#65|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#66|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#67|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#69|"
-  - "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#70|"
-  - "cool [LSO-LTE] \U0001F1F7\U0001F1FA |#71|"
-  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#72|"
+  - "cool [ImSketch] \U0001F1E6\U0001F1FA |#63|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#64|"
+  - "cool [Akres-WL] \U0001F1FA\U0001F1F8 |#66|"
+  - "cool [ImSketch] \U0001F1F3\U0001F1F1 |#69|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#70|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#71|"
+  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#72|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#73|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#74|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#75|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#76|"
+  - "cool [IR-WL-3] \U0001F310 |#74|"
+  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#75|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#76|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#77|"
-  - "cool [LSO-LTE] \U0001F1F7\U0001F1FA |#78|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#79|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#80|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#81|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#82|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#83|"
-  - "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#85|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#86|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#87|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#88|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#89|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#90|"
-  - "cool [ImSketch] \U0001F1EE\U0001F1F1 |#92|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#93|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#94|"
-  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#97|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#98|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#101|"
-  - "cool [ImSketch] \U0001F1F5\U0001F1F1 |#102|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#103|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#105|"
-  - "cool [IR-WL-1] \U0001F1E9\U0001F1EA |#106|"
-  - "cool [RKP-WL] \U0001F1F7\U0001F1FA |#107|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#109|"
-  - "cool [ImSketch] \U0001F1EA\U0001F1F8 |#111|"
-  - "cool [ImSketch] \U0001F1EE\U0001F1F1 |#112|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#79|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#81|"
+  - "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#82|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#83|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#84|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#85|"
+  - "cool [IR-WL-3] \U0001F1EB\U0001F1F7 |#86|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#88|"
+  - "cool [ImSketch] \U0001F310 |#89|"
+  - "cool [IR-WL-1] \U0001F310 |#90|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#91|"
+  - "cool [IR-WL-1] \U0001F1EB\U0001F1F7 |#92|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#93|"
+  - "cool [ImSketch] \U0001F1F8\U0001F1E8 |#96|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#97|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#98|"
+  - "cool [etoneya wl] \U0001F1ED\U0001F1F0 |#99|"
+  - "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#100|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#101|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#102|"
+  - "cool [etoneya wl] \U0001F1ED\U0001F1F0 |#103|"
+  - "cool [ImSketch] \U0001F1F2\U0001F1FD |#104|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#105|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#107|"
+  - "cool [etoneya wl] \U0001F1F1\U0001F1FB |#108|"
+  - "cool [ImSketch] \U0001F1F5\U0001F1F1 |#110|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#111|"
+  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#112|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#113|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#114|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#116|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#117|"
+  - "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#118|"
+  - "cool [etoneya wl] \U0001F1F1\U0001F1FB |#119|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#2|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#3|"
-  - "cool [ImSketch] \U0001F1F8\U0001F1EC |#6|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#8|"
-  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#9|"
-  - "cool [ImSketch] \U0001F1F2\U0001F1FD |#12|"
-  - "cool [ImSketch] \U0001F1EA\U0001F1F8 |#13|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [IR-WL-2] \U0001F310 |#3|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#4|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#5|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#6|"
+  - "cool [ImSketch] \U0001F1F3\U0001F1F1 |#7|"
+  - "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#8|"
+  - "cool [IR-WL-1] \U0001F1E7\U0001F1EC |#9|"
+  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#12|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#13|"
+  - "cool [ImSketch] \U0001F310 |#14|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#15|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#16|"
-  - "cool [ImSketch] \U0001F1E6\U0001F1FA |#17|"
-  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#19|"
-  - "cool [etoneya wl] \U0001F1E9\U0001F1EA |#20|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#23|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#24|"
-  - "cool [ImSketch] \U0001F1E8\U0001F1F1 |#25|"
-  - "cool [IR-WL-1] \U0001F1E7\U0001F1EC |#29|"
+  - "cool [ImSketch] \U0001F1EB\U0001F1F7 |#16|"
+  - "cool [IR-WL-1] \U0001F310 |#17|"
+  - "cool [IR-WL-1] \U0001F310 |#18|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#19|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [ImSketch] \U0001F1F3\U0001F1F1 |#23|"
+  - "cool [IR-WL-1] \U0001F310 |#24|"
+  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#28|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#29|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#30|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#31|"
-  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#32|"
-  - "cool [etoneya wl] \U0001F1E6\U0001F1F2 |#37|"
-  - "cool [ImSketch] \U0001F1EB\U0001F1F7 |#38|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#40|"
-  - "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#42|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#43|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#46|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#47|"
-  - "cool [ImSketch] \U0001F1E6\U0001F1F9 |#51|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#53|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#54|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#56|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#33|"
+  - "cool [ImSketch] \U0001F310 |#34|"
+  - "cool [ImSketch] \U0001F1EE\U0001F1F1 |#35|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#36|"
+  - "cool [ImSketch] \U0001F1E8\U0001F1FE |#38|"
+  - "cool [ImSketch] \U0001F1EE\U0001F1F9 |#39|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#41|"
+  - "cool [etoneya wl] \U0001F1E9\U0001F1EA |#42|"
+  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#43|"
+  - "cool [IR-WL-1] \U0001F310 |#44|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#45|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#46|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#48|"
+  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#50|"
+  - "cool [ImSketch] \U0001F1E8\U0001F1ED |#51|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#52|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#53|"
+  - "cool [LSO-LTE] \U0001F1EC\U0001F1E7 |#54|"
+  - "cool [etoneya wl] \U0001F1E8\U0001F1E6 |#57|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#58|"
-  - "cool [ImSketch] \U0001F1F5\U0001F1F1 |#59|"
-  - "cool [ImSketch] \U0001F1F8\U0001F1E8 |#60|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#59|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#60|"
+  - "cool [ImSketch] \U0001F1E8\U0001F1F1 |#61|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#62|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#63|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#65|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#67|"
-  - "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#70|"
+  - "cool [ImSketch] \U0001F1E6\U0001F1FA |#63|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#64|"
+  - "cool [Akres-WL] \U0001F1FA\U0001F1F8 |#66|"
+  - "cool [ImSketch] \U0001F1F3\U0001F1F1 |#69|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#70|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#71|"
+  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#72|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#73|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#74|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#75|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#76|"
+  - "cool [IR-WL-3] \U0001F310 |#74|"
+  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#75|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#76|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#77|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#79|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#80|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#81|"
-  - "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#85|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#86|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#87|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#88|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#89|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#90|"
-  - "cool [ImSketch] \U0001F1EE\U0001F1F1 |#92|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#93|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#94|"
-  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#97|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#98|"
-  - "cool [ImSketch] \U0001F1F5\U0001F1F1 |#102|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#103|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#105|"
-  - "cool [IR-WL-1] \U0001F1E9\U0001F1EA |#106|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#109|"
-  - "cool [ImSketch] \U0001F1EA\U0001F1F8 |#111|"
-  - "cool [ImSketch] \U0001F1EE\U0001F1F1 |#112|"
-- name: "\U0001F1E6\U0001F1F2 Armenia"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [etoneya wl] \U0001F1E6\U0001F1F2 |#37|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#81|"
+  - "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#82|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#83|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#84|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#85|"
+  - "cool [IR-WL-3] \U0001F1EB\U0001F1F7 |#86|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#88|"
+  - "cool [ImSketch] \U0001F310 |#89|"
+  - "cool [IR-WL-1] \U0001F310 |#90|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#91|"
+  - "cool [IR-WL-1] \U0001F1EB\U0001F1F7 |#92|"
+  - "cool [ImSketch] \U0001F1F8\U0001F1E8 |#96|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#97|"
+  - "cool [etoneya wl] \U0001F1ED\U0001F1F0 |#99|"
+  - "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#100|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#101|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#102|"
+  - "cool [etoneya wl] \U0001F1ED\U0001F1F0 |#103|"
+  - "cool [ImSketch] \U0001F1F2\U0001F1FD |#104|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#105|"
+  - "cool [etoneya wl] \U0001F1F1\U0001F1FB |#108|"
+  - "cool [ImSketch] \U0001F1F5\U0001F1F1 |#110|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#111|"
+  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#112|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#113|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#114|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#116|"
+  - "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#118|"
+  - "cool [etoneya wl] \U0001F1F1\U0001F1FB |#119|"
 - name: "\U0001F1E6\U0001F1FA Australia"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [ImSketch] \U0001F1E6\U0001F1FA |#17|"
-- name: "\U0001F1E6\U0001F1F9 Austria"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [ImSketch] \U0001F1E6\U0001F1F9 |#51|"
+  - "cool [ImSketch] \U0001F1E6\U0001F1FA |#63|"
 - name: "\U0001F1E7\U0001F1FE Belarus"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#9|"
-  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#32|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#40|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#53|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#56|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#63|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#90|"
-  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#97|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#103|"
-  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#105|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#4|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#5|"
+  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#12|"
+  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#28|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#29|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#33|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#46|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#60|"
+  - "cool [LSO-LTE] \U0001F1E7\U0001F1FE |#72|"
+  - "cool [etoneya wl] \U0001F1E7\U0001F1FE |#88|"
 - name: "\U0001F1E7\U0001F1EC Bulgaria"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [IR-WL-1] \U0001F1E7\U0001F1EC |#29|"
+  - "cool [IR-WL-1] \U0001F1E7\U0001F1EC |#9|"
+- name: "\U0001F1E8\U0001F1E6 Canada"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [etoneya wl] \U0001F1E8\U0001F1E6 |#57|"
 - name: "\U0001F1E8\U0001F1F1 Chile"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [ImSketch] \U0001F1E8\U0001F1F1 |#25|"
+  - "cool [ImSketch] \U0001F1E8\U0001F1F1 |#61|"
+- name: "\U0001F1E8\U0001F1FE Cyprus"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [ImSketch] \U0001F1E8\U0001F1FE |#38|"
 - name: "\U0001F1EB\U0001F1F7 France"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [ImSketch] \U0001F1EB\U0001F1F7 |#38|"
+  - "cool [ImSketch] \U0001F1EB\U0001F1F7 |#16|"
+  - "cool [IR-WL-3] \U0001F1EB\U0001F1F7 |#86|"
+  - "cool [IR-WL-1] \U0001F1EB\U0001F1F7 |#92|"
 - name: "\U0001F1E9\U0001F1EA Germany"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#3|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#16|"
-  - "cool [etoneya wl] \U0001F1E9\U0001F1EA |#20|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#80|"
-  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#89|"
-  - "cool [IR-WL-1] \U0001F1E9\U0001F1EA |#106|"
+  - "cool [etoneya wl] \U0001F1E9\U0001F1EA |#42|"
+  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#43|"
+  - "cool [ImSketch] \U0001F1E9\U0001F1EA |#50|"
+  - "cool [IR-WL-3] \U0001F1E9\U0001F1EA |#75|"
+- name: "\U0001F1ED\U0001F1F0 Hong Kong"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [etoneya wl] \U0001F1ED\U0001F1F0 |#99|"
+  - "cool [etoneya wl] \U0001F1ED\U0001F1F0 |#103|"
 - name: "\U0001F1EE\U0001F1F1 Israel"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#2|"
-  - "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#42|"
-  - "cool [IR-WL-1] \U0001F1EE\U0001F1F1 |#85|"
-  - "cool [ImSketch] \U0001F1EE\U0001F1F1 |#92|"
-  - "cool [ImSketch] \U0001F1EE\U0001F1F1 |#112|"
+  - "cool [ImSketch] \U0001F1EE\U0001F1F1 |#35|"
+- name: "\U0001F1EE\U0001F1F9 Italy"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [ImSketch] \U0001F1EE\U0001F1F9 |#39|"
+- name: "\U0001F1F1\U0001F1FB Latvia"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [etoneya wl] \U0001F1F1\U0001F1FB |#108|"
+  - "cool [etoneya wl] \U0001F1F1\U0001F1FB |#119|"
 - name: "\U0001F1F2\U0001F1FD Mexico"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [ImSketch] \U0001F1F2\U0001F1FD |#12|"
-- name: "\U0001F1F2\U0001F1E9 Moldova"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [IR-WL-1] \U0001F1F2\U0001F1E9 |#19|"
+  - "cool [ImSketch] \U0001F1F2\U0001F1FD |#104|"
 - name: "\U0001F1F3\U0001F1F1 Netherlands"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [IR-WL-3] \U0001F1F3\U0001F1F1 |#70|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#6|"
+  - "cool [ImSketch] \U0001F1F3\U0001F1F1 |#7|"
+  - "cool [ImSketch] \U0001F1F3\U0001F1F1 |#23|"
+  - "cool [ImSketch] \U0001F1F3\U0001F1F1 |#69|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#76|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#81|"
+  - "cool [etoneya wl] \U0001F1F3\U0001F1F1 |#91|"
 - name: "\U0001F1F5\U0001F1F1 Poland"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [ImSketch] \U0001F1F5\U0001F1F1 |#59|"
-  - "cool [ImSketch] \U0001F1F5\U0001F1F1 |#102|"
+  - "cool [ImSketch] \U0001F1F5\U0001F1F1 |#110|"
 - name: "\U0001F1F7\U0001F1FA Russia"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#1|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#4|"
-  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#10|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#14|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#21|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#22|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#26|"
-  - "cool [mos.ru] \U0001F1F7\U0001F1FA |#27|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#30|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#33|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#35|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#36|"
-  - "cool [mos.ru] \U0001F1F7\U0001F1FA |#39|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#45|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#49|"
-  - "cool [mos.ru] \U0001F1F7\U0001F1FA |#50|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#52|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#57|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#61|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#64|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#66|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#69|"
-  - "cool [LSO-LTE] \U0001F1F7\U0001F1FA |#71|"
-  - "cool [igareck-WL] \U0001F1F7\U0001F1FA |#72|"
-  - "cool [LSO-LTE] \U0001F1F7\U0001F1FA |#78|"
-  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#82|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#83|"
-  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#101|"
-  - "cool [RKP-WL] \U0001F1F7\U0001F1FA |#107|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#2|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#10|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#11|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#27|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#37|"
+  - "cool [ImSketch] \U0001F1F7\U0001F1FA |#40|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#49|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#55|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#79|"
+  - "cool [IR-WL-3] \U0001F1F7\U0001F1FA |#93|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#98|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#107|"
+  - "cool [Akres-WL] \U0001F1F7\U0001F1FA |#117|"
 - name: "\U0001F1F8\U0001F1E8 Seychelles"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [ImSketch] \U0001F1F8\U0001F1E8 |#60|"
-- name: "\U0001F1F8\U0001F1EC Singapore"
+  - "cool [ImSketch] \U0001F1F8\U0001F1E8 |#96|"
+- name: "\U0001F1F8\U0001F1EA Sweden"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [ImSketch] \U0001F1F8\U0001F1EC |#6|"
-- name: "\U0001F1EA\U0001F1F8 Spain"
+  - "cool [etoneya wl] \U0001F1F8\U0001F1EA |#112|"
+- name: "\U0001F1E8\U0001F1ED Switzerland"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [ImSketch] \U0001F1EA\U0001F1F8 |#13|"
-  - "cool [ImSketch] \U0001F1EA\U0001F1F8 |#111|"
+  - "cool [ImSketch] \U0001F1E8\U0001F1ED |#51|"
 - name: "\U0001F1FA\U0001F1F8 USA"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#8|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#13|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#15|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#23|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#24|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#19|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#30|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#31|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#43|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#46|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#47|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#54|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#36|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#41|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#45|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#48|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#52|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#53|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#58|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#59|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#62|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#65|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#67|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#64|"
+  - "cool [Akres-WL] \U0001F1FA\U0001F1F8 |#66|"
+  - "cool [IR-WL-3] \U0001F1FA\U0001F1F8 |#70|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#71|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#73|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#74|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#75|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#76|"
   - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#77|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#79|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#81|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#86|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#87|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#88|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#93|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#94|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#98|"
-  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#109|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#83|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#84|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#85|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#97|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#101|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#102|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#105|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#111|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#113|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#114|"
+  - "cool [ImSketch] \U0001F1FA\U0001F1F8 |#116|"
+- name: "\U0001F1EC\U0001F1E7 United Kingdom"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#8|"
+  - "cool [LSO-LTE] \U0001F1EC\U0001F1E7 |#54|"
+  - "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#82|"
+  - "cool [IR-WL-1] \U0001F1EC\U0001F1E7 |#100|"
+  - "cool [etoneya wl] \U0001F1EC\U0001F1E7 |#118|"
+- name: "\U0001F310 Unknown"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [IR-WL-2] \U0001F310 |#3|"
+  - "cool [ImSketch] \U0001F310 |#14|"
+  - "cool [IR-WL-1] \U0001F310 |#17|"
+  - "cool [IR-WL-1] \U0001F310 |#18|"
+  - "cool [IR-WL-1] \U0001F310 |#24|"
+  - "cool [ImSketch] \U0001F310 |#34|"
+  - "cool [IR-WL-1] \U0001F310 |#44|"
+  - "cool [IR-WL-3] \U0001F310 |#74|"
+  - "cool [ImSketch] \U0001F310 |#89|"
+  - "cool [IR-WL-1] \U0001F310 |#90|"
 rules:
 - MATCH,Обычный
