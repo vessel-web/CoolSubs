@@ -3,383 +3,223 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#245edb">
+<meta name="theme-color" content="#000000">
 <title>CoolSubs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
   :root {
-    --xp-blue: #0054e3;
-    --xp-blue-dark: #0040b0;
-    --xp-blue-light: #3a8dff;
-    --xp-face: #ece9d8;
-    --xp-face-dark: #d4d0c8;
-    --xp-border-dark: #003c74;
-    --xp-border-light: #ffffff;
-    --xp-gray: #919b9c;
-    --xp-text: #000000;
-    --xp-link: #0046d5;
-    --xp-green: #21a121;
-    --xp-green-light: #7de07d;
-    --xp-taskbar: #245edb;
-    --xp-taskbar-top: #3c81f3;
-    --xp-start: #3c9f2c;
-    --xp-yellow: #ffffe1;
-    --xp-red: #e0401c;
-    --xp-font: Tahoma, "Trebuchet MS", Verdana, "Segoe UI", sans-serif;
-    --xp-mono: "Lucida Console", "Courier New", monospace;
+    --white: #ffffff;
+    --yellow: #ffff00;
+    --red: #ff0000;
+    --gray: #7f7f7f;
+    --px: "Press Start 2P", "Courier New", monospace;
   }
 
   * { box-sizing: border-box; }
-  html, body { margin: 0; height: 100%; }
+  html, body { margin: 0; min-height: 100%; }
   body {
-    font-family: var(--xp-font);
-    font-size: 11px;
-    color: var(--xp-text);
-    background: #3a6ea5;
-    overflow-x: hidden;
+    background: #000;
+    color: var(--white);
+    font-family: var(--px);
+    font-size: 13px;
+    line-height: 2;
+    -webkit-font-smoothing: none;
+    image-rendering: pixelated;
+    padding: calc(env(safe-area-inset-top, 0px) + 16px) 12px calc(env(safe-area-inset-bottom, 0px) + 24px);
   }
 
-  /* ---------- обои «Bliss» ---------- */
-  .desktop {
-    position: fixed; inset: 0 0 40px 0;
-    background:
-      radial-gradient(120% 60% at 30% 110%, #3c9b2c 0%, #2a7a1e 45%, transparent 46%),
-      radial-gradient(140% 55% at 85% 120%, #4cae3b 0%, #2a7a1e 42%, transparent 43%),
-      radial-gradient(90% 40% at 0% 100%, #5cbf43 0%, transparent 60%),
-      linear-gradient(#2d6fd8 0%, #6fb1f5 45%, #bfe0ff 70%, #e7f3ff 100%);
-    padding: 16px;
-    overflow: auto;
-  }
-  @media (max-width: 720px) {
-    .desktop { padding: 0; }
-  }
+  main { max-width: 620px; margin: 0 auto; }
 
-  /* ---------- окно (Luna) ---------- */
-  .window {
-    width: 100%; max-width: 640px; margin: 20px auto;
-    background: var(--xp-face);
-    border: 3px solid var(--xp-blue);
-    border-top-left-radius: 8px; border-top-right-radius: 8px;
-    border-bottom: 3px solid var(--xp-blue);
-    box-shadow: 0 6px 18px rgba(0,0,0,.45);
+  /* текстовая рамка Undertale */
+  .box {
+    border: 4px solid var(--white);
+    border-radius: 0;
+    background: #000;
+    padding: 14px 16px 12px;
+    margin: 0 0 18px;
   }
-  @media (max-width: 720px) {
-    .window { margin: 0; max-width: none; border-width: 0; border-radius: 0; min-height: 100%; }
+  .box.wide { padding: 16px 18px; }
+  .box h2 {
+    margin: 0 0 10px; font-size: 14px; font-weight: normal; color: var(--yellow); letter-spacing: 1px;
   }
+  .say { white-space: pre-wrap; min-height: 2.2em; word-break: break-word; }
+  .cursor::after {
+    content: "▼"; display: inline-block; margin-left: 6px; color: var(--white);
+    animation: blink .8s steps(2, start) infinite;
+  }
+  @keyframes blink { to { visibility: hidden; } }
 
-  .titlebar {
-    height: 30px; display: flex; align-items: center; justify-content: space-between;
-    padding: 0 6px 0 8px;
-    background: linear-gradient(#0997ff 0%, #0053ee 8%, #0050ee 40%, #06f 88%, #006dff 93%, #005bd5 100%);
-    border-top-left-radius: 7px; border-top-right-radius: 7px;
-    color: #fff; font-weight: bold; font-size: 13px;
-    text-shadow: 1px 1px #0f1089;
-  }
-  @media (max-width: 720px) {
-    .titlebar { border-radius: 0; }
-  }
-  .titlebar .t { display: flex; align-items: center; gap: 6px; }
-  .titlebar .ico {
-    width: 16px; height: 16px; border-radius: 3px;
-    background: linear-gradient(135deg, #fff 0 25%, #ff6 25% 50%, #6c6 50% 75%, #6cf 75%);
-    box-shadow: 0 0 0 1px #0c3d9a;
-  }
-  .tbtns { display: flex; gap: 2px; }
-  .tbtn {
-    width: 21px; height: 21px; border-radius: 3px;
-    border: 1px solid #fff;
-    background: linear-gradient(#3c97fc, #0d5ee5 60%, #2a72f2);
-    color: #fff; font-size: 12px; font-weight: bold;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: inset 0 0 0 1px #0a3b97;
-  }
-  .tbtn.close {
-    background: linear-gradient(#f0a585, #e0401c 60%, #d43c15);
-  }
+  .name { color: var(--yellow); }
+  .lv { color: var(--white); }
+  .hp { color: var(--gray); }
 
-  .menubar {
-    display: flex; gap: 14px; padding: 4px 8px;
-    background: var(--xp-face); border-bottom: 1px solid var(--xp-face-dark);
-    font-size: 11px;
-  }
-  .menubar span { cursor: default; }
-  .menubar span:hover { text-decoration: underline; }
+  /* статистика */
+  .stat { display: flex; justify-content: space-between; gap: 12px; }
+  .stat b { color: var(--yellow); font-weight: normal; }
 
-  .body {
-    padding: 14px 14px 18px;
-    background: var(--xp-face);
+  /* меню с сердечком */
+  .menu { list-style: none; margin: 0; padding: 0; }
+  .menu li {
+    display: flex; align-items: center; gap: 12px; padding: 4px 6px; cursor: pointer; user-select: none;
   }
+  .menu li .heart { visibility: hidden; display: inline-block; width: 22px; height: 20px; flex-shrink: 0; }
+  .menu li .heart svg { width: 100%; height: 100%; display: block; shape-rendering: crispEdges; }
+  .menu li.sel .heart { visibility: visible; }
+  .menu li.sel { color: var(--yellow); }
+  .menu li:hover { color: var(--yellow); }
+  .menu li:active { opacity: .7; }
+  .menu li small { display: block; color: var(--gray); font-size: 10px; line-height: 1.6; }
 
-  h1.page {
-    margin: 0 0 4px; font-size: 18px; font-weight: bold; color: #002c93;
-    font-family: "Trebuchet MS", Tahoma, sans-serif;
+  .countries .row { display: flex; justify-content: space-between; gap: 10px; padding: 2px 0; }
+  .countries .bar {
+    height: 10px; background: var(--white); margin: 0 0 8px; border: 0;
+    transform-origin: left center;
   }
-  p.lead { margin: 0 0 12px; font-size: 11px; color: #000; }
+  .countries .track { background: #000; border: 2px solid var(--white); height: 16px; padding: 2px; margin-bottom: 8px; }
+  .countries .track > i { display: block; height: 100%; background: var(--white); }
 
-  /* ---------- группы (GroupBox) ---------- */
-  fieldset {
-    border: 1px solid var(--xp-gray);
-    border-radius: 3px;
-    box-shadow: inset 1px 1px #fff, 1px 1px #fff;
-    margin: 12px 0 0; padding: 12px 12px 10px;
-  }
-  legend {
-    padding: 0 4px; margin-left: 6px; color: #003399; font-size: 11px; font-weight: normal;
-  }
+  .log { white-space: pre-wrap; font-size: 11px; line-height: 2.1; max-height: 260px; overflow: auto; }
 
-  .stat-row { display: flex; gap: 18px; align-items: baseline; }
-  .stat-row .big { font-size: 26px; color: #0046d5; font-weight: bold; font-family: "Trebuchet MS", Tahoma, sans-serif; }
-  .stat-row .cap { font-size: 11px; }
-  .muted { color: #555; font-size: 11px; margin: 8px 0 0; }
+  .toast {
+    position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 18px);
+    transform: translateX(-50%); z-index: 9;
+    border: 4px solid var(--white); background: #000; padding: 10px 14px;
+    font-size: 11px; opacity: 0; pointer-events: none; transition: opacity .15s;
+    white-space: nowrap;
+  }
+  .toast.show { opacity: 1; }
 
-  /* ---------- список подписок (ListView) ---------- */
-  .listview {
-    background: #fff;
-    border: 1px solid;
-    border-color: var(--xp-gray) #fff #fff var(--xp-gray);
-    box-shadow: inset 1px 1px #404040;
-  }
-  .lv-head {
-    display: grid; grid-template-columns: 1.4fr 1.6fr auto; gap: 0;
-    background: linear-gradient(#fff, #ece9d8); border-bottom: 1px solid #aca899;
-    font-weight: bold; font-size: 11px;
-  }
-  .lv-head div { padding: 3px 8px; border-right: 1px solid #d4d0c8; }
-  .lv-row {
-    display: grid; grid-template-columns: 1.4fr 1.6fr auto; align-items: center;
-    border-bottom: 1px solid #efefef;
-  }
-  .lv-row:nth-child(even) { background: #f7f7f2; }
-  .lv-row:hover { background: #e7f0ff; }
-  .lv-row div { padding: 6px 8px; }
-  .lv-row .fname { font-family: var(--xp-mono); font-size: 11px; color: var(--xp-link); }
-  .lv-row .btnwrap { padding: 4px 6px; }
+  footer { margin-top: 10px; font-size: 10px; color: var(--gray); line-height: 2; }
+  footer a { color: var(--white); text-decoration: none; }
+  footer a:hover { color: var(--yellow); }
 
-  /* ---------- кнопки XP ---------- */
-  button.xp {
-    font-family: var(--xp-font); font-size: 11px;
-    min-width: 75px; height: 23px; padding: 0 10px; cursor: pointer;
-    border: 1px solid var(--xp-border-dark); border-radius: 3px;
-    background: linear-gradient(#fff 0%, #f6f6f2 60%, #ece9d8 92%, #d6d0c0 100%);
-    color: #000;
-    box-shadow: inset -1px -1px #aca899, inset 1px 1px #fff;
-  }
-  button.xp:hover { background: linear-gradient(#fbfdff 0%, #eaf3ff 60%, #d3e6ff 92%, #bcd7fb 100%); border-color: #3c7fb1; }
-  button.xp:active { box-shadow: inset 1px 1px #aca899; background: #d2d0c0; }
-  button.xp:focus { outline: 1px dotted #000; outline-offset: -4px; }
-  button.xp.default { box-shadow: inset 0 0 0 2px #7aa7f3, inset -1px -1px #aca899, inset 1px 1px #fff; }
-
-  /* ---------- прогресс: страны ---------- */
-  .country {
-    display: grid; grid-template-columns: 130px 1fr 46px; align-items: center; gap: 8px;
-    padding: 4px 0; font-size: 11px;
-  }
-  .country .c-num { text-align: right; color: #333; font-variant-numeric: tabular-nums; }
-  .progress {
-    height: 16px; background: #fff; border: 1px solid;
-    border-color: var(--xp-gray) #fff #fff var(--xp-gray);
-    padding: 1px; overflow: hidden;
-  }
-  .progress > i {
-    display: block; height: 100%;
-    background: repeating-linear-gradient(90deg, transparent 0 7px, #fff 7px 9px),
-                linear-gradient(#b2f2a7, #21a121 55%, #36c02a);
-  }
-
-  /* ---------- лог (TextBox) ---------- */
-  .textbox {
-    background: #fff; border: 1px solid;
-    border-color: var(--xp-gray) #fff #fff var(--xp-gray);
-    box-shadow: inset 1px 1px #404040;
-    padding: 6px 8px; height: 180px; overflow: auto;
-    font-family: var(--xp-mono); font-size: 11px; line-height: 1.5; white-space: pre-wrap;
-  }
-
-  /* ---------- панель задач ---------- */
-  .taskbar {
-    position: fixed; left: 0; right: 0; bottom: 0; height: 40px; z-index: 20;
-    display: flex; align-items: stretch;
-    background: linear-gradient(#3c81f3 0%, #245edb 10%, #245edb 90%, #1941a5 100%);
-    border-top: 1px solid #0831d9;
-    box-shadow: inset 0 1px 0 #5ea0ff;
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  .start {
-    display: flex; align-items: center; gap: 6px;
-    padding: 0 16px 0 10px; margin: -1px 0 -1px 0;
-    background: linear-gradient(#3c9f2c, #3ea230 40%, #2e8d20 90%, #2c8a1f);
-    border-radius: 0 12px 12px 0;
-    color: #fff; font-family: "Trebuchet MS", Tahoma, sans-serif; font-style: italic;
-    font-weight: bold; font-size: 17px;
-    text-shadow: 1px 1px #0f3a0a;
-    box-shadow: inset -1px 0 #207a14, inset 0 1px #7dc76c;
-    cursor: pointer; user-select: none;
-  }
-  .start .flag {
-    width: 18px; height: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-  }
-  .start .flag i:nth-child(1) { background: #f25022; }
-  .start .flag i:nth-child(2) { background: #7fba00; }
-  .start .flag i:nth-child(3) { background: #00a4ef; }
-  .start .flag i:nth-child(4) { background: #ffb900; }
-  .task {
-    margin: 4px 0 4px 6px; display: flex; align-items: center; gap: 6px;
-    padding: 0 12px; max-width: 220px;
-    background: linear-gradient(#1c4cc2, #1a46b8);
-    border: 1px solid #0a2a7a; border-radius: 3px;
-    color: #fff; font-size: 11px; box-shadow: inset 1px 1px #0c2f8c;
-  }
-  .tray {
-    margin-left: auto; display: flex; align-items: center; gap: 10px;
-    padding: 0 12px; color: #fff; font-size: 11px;
-    background: linear-gradient(#0f9ff0, #0c8ae6 40%, #0a7cd8);
-    border-left: 1px solid #1f56c1; box-shadow: inset 1px 0 #3eb6ff;
-  }
-
-  /* ---------- облачко (Balloon Tip) ---------- */
-  .balloon {
-    position: fixed; right: 12px; bottom: 56px; z-index: 30;
-    max-width: 260px; padding: 10px 14px 10px 14px;
-    background: var(--xp-yellow); border: 1px solid #000; border-radius: 6px;
-    box-shadow: 2px 2px 4px rgba(0,0,0,.35);
-    font-size: 11px; color: #000;
-    opacity: 0; transform: translateY(6px); pointer-events: none;
-    transition: opacity .15s, transform .15s;
-  }
-  .balloon.show { opacity: 1; transform: translateY(0); }
-  .balloon b { display: block; margin-bottom: 2px; }
-  .balloon::after {
-    content: ""; position: absolute; right: 28px; bottom: -9px;
-    border: 8px solid transparent; border-top-color: #000; border-bottom: 0;
-  }
-  .balloon::before {
-    content: ""; position: absolute; right: 29px; bottom: -7px;
-    border: 7px solid transparent; border-top-color: var(--xp-yellow); border-bottom: 0; z-index: 1;
-  }
-
-  footer.status {
-    margin-top: 12px; padding: 4px 6px; font-size: 11px; color: #000;
-    border-top: 1px solid #aca899; background: var(--xp-face);
-  }
-  footer.status a { color: var(--xp-link); }
-
-  /* чтобы контент не прятался за панелью задач */
-  .spacer { height: 52px; }
-  @media (max-width: 720px) {
-    .window { padding-bottom: 0; }
-  }
+  .title { text-align: center; font-size: 22px; line-height: 1.6; color: var(--yellow); margin: 12px 0 18px; }
+  .title small { display: block; font-size: 11px; color: var(--white); margin-top: 6px; }
 </style>
 </head>
 <body>
-<div class="desktop">
-  <div class="window" role="dialog" aria-label="CoolSubs">
-    <div class="titlebar">
-      <div class="t"><span class="ico"></span>CoolSubs — Проводник подписок</div>
-      <div class="tbtns">
-        <span class="tbtn" title="Свернуть">_</span>
-        <span class="tbtn" title="Развернуть">□</span>
-        <span class="tbtn close" title="Закрыть">×</span>
-      </div>
-    </div>
-    <div class="menubar">
-      <span>Файл</span><span>Правка</span><span>Вид</span><span>Сервис</span><span>Справка</span>
-    </div>
+<main>
+  <h1 class="title">* CoolSubs<small>прокси-сервера</small></h1>
 
-    <div class="body">
-      <h1 class="page">Подписки прокси-серверов</h1>
-      <p class="lead">Проверенные подписки обновляются автоматически. Выберите нужный список и нажмите «Копировать».</p>
+  <section class="box wide">
+    <h2>* СТАТУС</h2>
+    <div class="say" id="intro"></div>
+    <div class="stat"><span>Чёрный список</span><b id="bl-total">—</b></div>
+    <div class="stat"><span>Белый список</span><b id="wl-total">—</b></div>
+    <div class="say" id="updated" style="color:var(--gray);font-size:10px;margin-top:6px">загрузка...</div>
+  </section>
 
-      <fieldset>
-        <legend>Статус</legend>
-        <div class="stat-row">
-          <div><span class="big" id="bl-total">—</span><div class="cap">Чёрный список</div></div>
-          <div><span class="big" id="wl-total">—</span><div class="cap">Белый список</div></div>
-        </div>
-        <p class="muted" id="updated">Загрузка данных…</p>
-      </fieldset>
+  <section class="box wide">
+    <h2>* ВЫБЕРИТЕ ФАЙЛ</h2>
+    <ul class="menu" id="menu">
+      <li data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-Black.txt"><span class="heart">♥</span>Чёрный список<small>Cool-Black.txt</small></li>
+      <li data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-White.txt"><span class="heart">♥</span>Белый список<small>Cool-White.txt</small></li>
+      <li data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-Black.yaml"><span class="heart">♥</span>Clash · чёрный<small>Cool-Black.yaml</small></li>
+      <li data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-White.yaml"><span class="heart">♥</span>Clash · белый<small>Cool-White.yaml</small></li>
+    </ul>
+  </section>
 
-      <fieldset>
-        <legend>Подписки</legend>
-        <div class="listview">
-          <div class="lv-head"><div>Список</div><div>Файл</div><div>&nbsp;</div></div>
-          <div class="lv-row">
-            <div>Чёрный список</div><div class="fname">Cool-Black.txt</div>
-            <div class="btnwrap"><button class="xp default" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-Black.txt">Копировать</button></div>
-          </div>
-          <div class="lv-row">
-            <div>Белый список</div><div class="fname">Cool-White.txt</div>
-            <div class="btnwrap"><button class="xp default" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-White.txt">Копировать</button></div>
-          </div>
-          <div class="lv-row">
-            <div>Clash · чёрный</div><div class="fname">Cool-Black.yaml</div>
-            <div class="btnwrap"><button class="xp" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-Black.yaml">Копировать</button></div>
-          </div>
-          <div class="lv-row">
-            <div>Clash · белый</div><div class="fname">Cool-White.yaml</div>
-            <div class="btnwrap"><button class="xp" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-White.yaml">Копировать</button></div>
-          </div>
-        </div>
-      </fieldset>
+  <section class="box wide countries">
+    <h2>* СТРАНЫ</h2>
+    <div id="countries"><div class="say">загрузка...</div></div>
+  </section>
 
-      <fieldset>
-        <legend>Страны (чёрный список)</legend>
-        <div id="countries"><p class="muted">Загрузка…</p></div>
-      </fieldset>
+  <section class="box wide">
+    <h2>* ИСТОРИЯ</h2>
+    <div class="log" id="changelog">загрузка...</div>
+  </section>
 
-      <fieldset>
-        <legend>История обновлений</legend>
-        <div class="textbox" id="changelog">Загрузка…</div>
-      </fieldset>
-    </div>
+  <footer>
+    * Серверы проверяются автоматически.<br>
+    * <a href="https://github.com/vessel-web/CoolSubs">Исходный код</a>
+  </footer>
+</main>
 
-    <footer class="status">
-      Серверы проверяются автоматически. &nbsp;|&nbsp;
-      <a href="https://github.com/vessel-web/CoolSubs">Исходный код на GitHub</a>
-    </footer>
-  </div>
-  <div class="spacer"></div>
-</div>
-
-<div class="taskbar">
-  <div class="start"><span class="flag"><i></i><i></i><i></i><i></i></span>пуск</div>
-  <div class="task">CoolSubs</div>
-  <div class="tray"><span id="clock">--:--</span></div>
-</div>
-
-<div class="balloon" id="balloon"><b>CoolSubs</b><span id="balloon-text">Ссылка скопирована в буфер обмена.</span></div>
+<div class="toast" id="toast">* ССЫЛКА СКОПИРОВАНА</div>
 
 <script>
 const RAW = "https://raw.githubusercontent.com/vessel-web/CoolSubs/main/";
 
-function tick() {
-  const d = new Date();
-  document.getElementById("clock").textContent =
-    d.toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit" });
-}
-tick();
-setInterval(tick, 15000);
-
-function balloon(msg) {
-  document.getElementById("balloon-text").textContent = msg;
-  const b = document.getElementById("balloon");
-  b.classList.add("show");
-  clearTimeout(window._balloonTimer);
-  window._balloonTimer = setTimeout(() => b.classList.remove("show"), 2500);
-}
-
-document.querySelectorAll("button[data-url]").forEach(btn => {
-  btn.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(btn.dataset.url);
-      balloon("Ссылка скопирована в буфер обмена.");
-    } catch (e) {
-      prompt("Скопируйте ссылку вручную:", btn.dataset.url);
-    }
+// пиксельное сердце (душа) 11×10, каждая клетка = 1 пиксель
+const SOUL = [
+  "..XX...XX..",
+  ".XXXXXXXXX.",
+  "XXXXXXXXXXX",
+  "XXXXXXXXXXX",
+  "XXXXXXXXXXX",
+  ".XXXXXXXXX.",
+  "..XXXXXXX..",
+  "...XXXXX...",
+  "....XXX....",
+  ".....X....."
+];
+(function drawSouls() {
+  let d = "";
+  SOUL.forEach((row, y) => {
+    [...row].forEach((c, x) => {
+      if (c === "X") d += `M${x} ${y}h1v1h-1z`;
+    });
   });
+  const svg = `<svg viewBox="0 0 11 10" preserveAspectRatio="xMidYMid meet" shape-rendering="crispEdges">` +
+              `<path fill="#ff0000" d="${d}"/></svg>`;
+  document.querySelectorAll(".heart").forEach(h => { h.innerHTML = svg; });
+})();
+
+// печатающийся текст, как в диалогах Undertale
+function typeText(el, text, speed = 28) {
+  return new Promise(resolve => {
+    el.textContent = "";
+    el.classList.add("cursor");
+    let i = 0;
+    const tick = () => {
+      el.textContent = text.slice(0, i++);
+      if (i <= text.length) setTimeout(tick, speed);
+      else { el.classList.remove("cursor"); resolve(); }
+    };
+    tick();
+  });
+}
+
+// меню: стрелки вверх/вниз и Enter, или нажатие
+const items = [...document.querySelectorAll("#menu li")];
+let sel = 0;
+function select(i) {
+  items.forEach(li => li.classList.remove("sel"));
+  sel = (i + items.length) % items.length;
+  items[sel].classList.add("sel");
+}
+select(0);
+document.addEventListener("keydown", e => {
+  if (e.key === "ArrowDown") select(sel + 1);
+  if (e.key === "ArrowUp") select(sel - 1);
+  if (e.key === "Enter") copy(items[sel].dataset.url);
 });
+items.forEach((li, i) => {
+  li.addEventListener("click", () => { select(i); copy(li.dataset.url); });
+});
+
+function toast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = "* " + msg;
+  t.classList.add("show");
+  clearTimeout(window._tt);
+  window._tt = setTimeout(() => t.classList.remove("show"), 1600);
+}
+
+async function copy(url) {
+  try {
+    await navigator.clipboard.writeText(url);
+    toast("ССЫЛКА СКОПИРОВАНА");
+  } catch (e) {
+    prompt("Скопируйте ссылку вручную:", url);
+  }
+}
 
 function fmtDate(ts) {
   if (!ts) return "";
-  return new Date(ts * 1000).toLocaleString("ru-RU", { dateStyle: "medium", timeStyle: "short" });
+  return new Date(ts * 1000).toLocaleString("ru-RU", { dateStyle: "short", timeStyle: "short" });
 }
 
 async function loadJson(file) {
@@ -387,43 +227,43 @@ async function loadJson(file) {
     const r = await fetch(RAW + file, { cache: "no-store" });
     if (!r.ok) throw new Error(r.status);
     return await r.json();
-  } catch (e) {
-    return null;
-  }
+  } catch (e) { return null; }
 }
 
 async function init() {
-  const bl = await loadJson("Cool-Black_stats.json");
-  const wl = await loadJson("Cool-White_stats.json");
+  const intro = document.getElementById("intro");
+  typeText(intro, "* Привет! Здесь свежие конфигурации.", 22);
+
+  const [bl, wl] = await Promise.all([
+    loadJson("Cool-Black_stats.json"),
+    loadJson("Cool-White_stats.json"),
+  ]);
 
   document.getElementById("bl-total").textContent = bl ? bl.total : "—";
   document.getElementById("wl-total").textContent = wl ? wl.total : "—";
-
   const updated = (bl && bl.updated) || (wl && wl.updated);
   document.getElementById("updated").textContent =
-    updated ? "Обновлено: " + fmtDate(updated) : "Дата обновления неизвестна";
+    updated ? "* обновлено " + fmtDate(updated) : "* дата неизвестна";
 
   const box = document.getElementById("countries");
   if (bl && bl.top && bl.top.length) {
     const max = Math.max(...bl.top.map(x => x.count));
     box.innerHTML = bl.top.map(x => `
-      <div class="country">
-        <span>${x.country}</span>
-        <div class="progress"><i style="display:block;height:100%;width:${Math.max(4, Math.round(100 * x.count / max))}%"></i></div>
-        <span class="c-num">${x.count}</span>
-      </div>`).join("");
+      <div class="row"><span>${x.country}</span><span>${x.count}</span></div>
+      <div class="track"><i style="width:${Math.max(4, Math.round(100 * x.count / max))}%"></i></div>
+    `).join("");
   } else {
-    box.innerHTML = '<p class="muted">Данных пока нет</p>';
+    box.innerHTML = '<div class="say">* данных пока нет</div>';
   }
 
   try {
     const r = await fetch(RAW + "CHANGELOG.md", { cache: "no-store" });
     const text = await r.text();
-    const lines = text.split("\n").filter(l => l.startsWith("- ")).slice(0, 15);
+    const lines = text.split("\n").filter(l => l.startsWith("- ")).slice(0, 12);
     document.getElementById("changelog").textContent =
-      lines.length ? lines.join("\n").replace(/\*\*/g, "") : "Записей пока нет";
+      lines.length ? lines.join("\n").replace(/\*\*/g, "") : "* записей пока нет";
   } catch (e) {
-    document.getElementById("changelog").textContent = "Не удалось загрузить";
+    document.getElementById("changelog").textContent = "* не удалось загрузить";
   }
 }
 
