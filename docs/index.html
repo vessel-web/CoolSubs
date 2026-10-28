@@ -2,209 +2,237 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3f3f3">
 <title>CoolSubs</title>
 <style>
   :root {
-    --primary: #6750a4;
-    --on-primary: #ffffff;
-    --primary-container: #eaddff;
-    --on-primary-container: #21005d;
-    --surface: #fef7ff;
-    --surface-variant: #e7e0ec;
-    --on-surface: #1d1b20;
-    --on-surface-variant: #49454f;
-    --outline: #79747e;
-    --radius-xl: 28px;
-    --radius-l: 20px;
-    --radius-m: 14px;
+    --accent: #0078d4;
+    --accent-hover: #106ebe;
+    --accent-press: #005a9e;
+    --accent-text: #ffffff;
+    --bg-a: #e8f1fb;
+    --bg-b: #f3ecfb;
+    --bg-c: #e6f7f4;
+    --mica: rgba(249,249,249,.78);
+    --layer: rgba(255,255,255,.7);
+    --layer-solid: #ffffff;
+    --stroke: rgba(0,0,0,.06);
+    --stroke-strong: rgba(0,0,0,.12);
+    --text: #1b1b1b;
+    --text2: #5d5d5d;
+    --text3: #8a8a8a;
+    --ctrl: #fbfbfb;
+    --ctrl-hover: #f2f2f2;
+    --titlebar: #f3f3f3;
+    --shadow: 0 2px 6px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
+    --radius: 8px;
+    --radius-l: 12px;
+    --font: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, "Roboto", sans-serif;
+    --mono: "Cascadia Mono", "Cascadia Code", Consolas, ui-monospace, monospace;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --primary: #d0bcff;
-      --on-primary: #381e72;
-      --primary-container: #4f378b;
-      --on-primary-container: #eaddff;
-      --surface: #141218;
-      --surface-variant: #49454f;
-      --on-surface: #e6e0e9;
-      --on-surface-variant: #cac4d0;
-      --outline: #938f99;
+      --accent: #60cdff;
+      --accent-hover: #4cc2ff;
+      --accent-press: #3fb1ef;
+      --accent-text: #000000;
+      --bg-a: #1a2433;
+      --bg-b: #241a33;
+      --bg-c: #15292a;
+      --mica: rgba(32,32,32,.8);
+      --layer: rgba(255,255,255,.055);
+      --layer-solid: #2b2b2b;
+      --stroke: rgba(255,255,255,.08);
+      --stroke-strong: rgba(255,255,255,.14);
+      --text: #ffffff;
+      --text2: #c5c5c5;
+      --text3: #9a9a9a;
+      --ctrl: #3a3a3a;
+      --ctrl-hover: #444444;
+      --titlebar: #202020;
+      --shadow: 0 2px 6px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
     }
   }
+
   * { box-sizing: border-box; }
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--surface);
-    color: var(--on-surface);
-    font-family: "Roboto", "Segoe UI", system-ui, sans-serif;
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    font-family: var(--font);
+    color: var(--text);
     -webkit-font-smoothing: antialiased;
+    background-color: var(--mica);
+    background-image:
+      radial-gradient(70% 60% at 0% 0%, var(--bg-a) 0%, transparent 70%),
+      radial-gradient(60% 55% at 100% 20%, var(--bg-b) 0%, transparent 70%),
+      radial-gradient(55% 50% at 30% 100%, var(--bg-c) 0%, transparent 70%);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
+
+  /* ---------- окно: заголовок с кнопками ---------- */
+  .titlebar {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 40px; padding: 0 0 0 14px;
+    background: var(--titlebar); border-bottom: 1px solid var(--stroke);
+    font-size: 12px; color: var(--text);
+    padding-top: env(safe-area-inset-top, 0px);
+    height: calc(40px + env(safe-area-inset-top, 0px));
+  }
+  .titlebar .app { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+  .logo {
+    width: 16px; height: 16px; border-radius: 4px;
+    background: linear-gradient(135deg, #0078d4, #60cdff);
+  }
+  .winbtns { display: flex; height: 100%; }
+  .winbtns span {
+    width: 46px; display: flex; align-items: center; justify-content: center;
+    color: var(--text); font-size: 12px; opacity: .85;
+  }
+  .winbtns span.close:hover { background: #c42b1c; color: #fff; opacity: 1; }
+  .winbtns span:not(.close):hover { background: var(--stroke); opacity: 1; }
+
+  /* ---------- контент ---------- */
   main {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 16px 16px 48px;
+    max-width: 720px; margin: 0 auto;
+    padding: 20px 16px calc(96px + env(safe-area-inset-bottom, 0px));
   }
-  header {
-    padding: 24px 8px 8px;
+  .page-head { padding: 6px 4px 14px; }
+  .page-head h1 {
+    margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -.2px;
   }
-  header h1 {
-    margin: 0;
-    font-size: 40px;
-    font-weight: 400;
-    letter-spacing: -0.5px;
-  }
-  header p {
-    margin: 8px 0 0;
-    color: var(--on-surface-variant);
-    font-size: 16px;
-  }
+  .page-head p { margin: 4px 0 0; color: var(--text2); font-size: 14px; }
+
+  /* ---------- карточки Fluent (Acrylic-подложка, стандартная обводка) ---------- */
   .card {
-    background: var(--surface-variant);
-    border-radius: var(--radius-xl);
-    padding: 20px;
-    margin-top: 16px;
-  }
-  .card.tonal {
-    background: var(--primary-container);
-    color: var(--on-primary-container);
-  }
-  .card h2 {
-    margin: 0 0 12px;
-    font-size: 22px;
-    font-weight: 500;
-  }
-  .stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .stat {
-    background: var(--surface);
+    background: var(--layer);
+    border: 1px solid var(--stroke);
     border-radius: var(--radius-l);
-    padding: 16px;
-  }
-  .stat .num {
-    font-size: 32px;
-    font-weight: 500;
-    color: var(--primary);
-  }
-  .stat .label {
-    margin-top: 4px;
-    font-size: 14px;
-    color: var(--on-surface-variant);
-  }
-  .muted {
-    color: var(--on-surface-variant);
-    font-size: 14px;
-    margin: 12px 0 0;
-  }
-  .sub {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    background: var(--surface);
-    border-radius: var(--radius-l);
-    padding: 16px;
+    padding: 16px 18px;
     margin-top: 12px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(30px) saturate(125%);
+    -webkit-backdrop-filter: blur(30px) saturate(125%);
   }
-  .sub .name { font-size: 18px; font-weight: 500; }
-  .sub .desc { font-size: 13px; color: var(--on-surface-variant); margin-top: 2px; }
-  .btn {
-    border: none;
-    border-radius: 999px;
-    padding: 10px 18px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    background: var(--primary);
-    color: var(--on-primary);
-    white-space: nowrap;
-    transition: transform .1s ease;
+  .card-title {
+    display: flex; align-items: center; justify-content: space-between;
+    margin: 0 0 12px; font-size: 14px; font-weight: 600;
   }
-  .btn:active { transform: scale(0.96); }
-  .btn.ghost {
-    background: transparent;
-    color: var(--primary);
-    border: 1px solid var(--outline);
+  .card-title small { font-weight: 400; color: var(--text3); font-size: 12px; }
+
+  /* ---------- статистика (как карточки Settings в Win11) ---------- */
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat {
+    background: var(--layer-solid); border: 1px solid var(--stroke);
+    border-radius: var(--radius); padding: 14px 16px;
   }
-  .countries { margin-top: 8px; }
+  .stat .num { font-size: 32px; font-weight: 600; color: var(--accent); letter-spacing: -.4px; }
+  .stat .label { font-size: 13px; color: var(--text2); margin-top: 2px; }
+  .muted { color: var(--text2); font-size: 13px; margin: 12px 0 0; }
+
+  /* ---------- список подписок (строки Settings) ---------- */
   .row {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--outline);
-    font-size: 15px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 12px 14px; border-radius: var(--radius);
+    background: var(--layer-solid); border: 1px solid var(--stroke);
+    margin-top: 8px;
   }
-  .row:last-child { border-bottom: none; }
+  .row:first-of-type { margin-top: 0; }
+  .row .name { font-size: 14px; font-weight: 600; }
+  .row .desc { font-size: 12px; color: var(--text3); margin-top: 2px; font-family: var(--mono); }
+
+  .btn {
+    font-family: var(--font); font-size: 14px; font-weight: 600;
+    border: 1px solid transparent; border-radius: var(--radius);
+    padding: 7px 16px; cursor: pointer; white-space: nowrap;
+    background: var(--accent); color: var(--accent-text);
+    transition: background .1s, transform .08s;
+  }
+  .btn:hover { background: var(--accent-hover); }
+  .btn:active { background: var(--accent-press); transform: scale(.98); }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .btn.std {
+    background: var(--ctrl); color: var(--text); border-color: var(--stroke-strong);
+  }
+  .btn.std:hover { background: var(--ctrl-hover); }
+
+  /* ---------- страны ---------- */
+  .country {
+    display: flex; justify-content: space-between; font-size: 13px;
+    padding: 8px 2px 2px; color: var(--text);
+  }
+  .country span:last-child { color: var(--text2); font-variant-numeric: tabular-nums; }
   .bar {
-    height: 6px;
-    border-radius: 3px;
-    background: var(--primary);
-    margin-top: 6px;
+    height: 4px; border-radius: 2px; margin: 4px 0 10px;
+    background: var(--accent);
   }
+
+  /* ---------- журнал ---------- */
   .log {
-    font-size: 14px;
-    line-height: 1.6;
-    white-space: pre-wrap;
-    font-family: "Roboto Mono", monospace;
-    color: var(--on-surface-variant);
-    max-height: 260px;
-    overflow: auto;
+    font-family: var(--mono); font-size: 12px; line-height: 1.7; white-space: pre-wrap;
+    color: var(--text2); max-height: 280px; overflow: auto;
+    background: var(--layer-solid); border: 1px solid var(--stroke);
+    border-radius: var(--radius); padding: 10px 12px;
   }
-  .fab {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    border: none;
-    border-radius: 16px;
-    padding: 16px 22px;
-    background: var(--primary-container);
-    color: var(--on-primary-container);
-    font-size: 15px;
-    font-weight: 500;
-    box-shadow: 0 4px 12px rgba(0,0,0,.2);
-    cursor: pointer;
+
+  /* ---------- нижняя панель команд (как в Win11 Store) ---------- */
+  .commandbar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9;
+    display: flex; justify-content: flex-end; gap: 8px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: var(--titlebar); border-top: 1px solid var(--stroke);
   }
+  .commandbar a {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; padding: 7px 14px;
+    border-radius: var(--radius); text-decoration: none; color: var(--text);
+    background: var(--ctrl); border: 1px solid var(--stroke-strong);
+  }
+  .commandbar a:hover { background: var(--ctrl-hover); }
+  .commandbar a.accent { background: var(--accent); color: var(--accent-text); border-color: transparent; }
+  .commandbar a.accent:hover { background: var(--accent-hover); }
+
+  /* ---------- уведомление в стиле Windows 11 (правый нижний угол) ---------- */
   .toast {
-    position: fixed;
-    left: 50%;
-    bottom: 90px;
-    transform: translateX(-50%) translateY(20px);
-    background: var(--on-surface);
-    color: var(--surface);
-    padding: 12px 20px;
-    border-radius: 12px;
-    opacity: 0;
-    transition: opacity .2s, transform .2s;
-    pointer-events: none;
-    font-size: 14px;
+    position: fixed; right: 16px; bottom: 70px; z-index: 20;
+    display: flex; align-items: center; gap: 10px;
+    background: var(--layer-solid); border: 1px solid var(--stroke-strong);
+    border-radius: var(--radius-l); padding: 12px 16px; box-shadow: var(--shadow);
+    font-size: 13px; font-weight: 600;
+    opacity: 0; transform: translateY(10px); pointer-events: none;
+    transition: opacity .18s, transform .18s;
   }
-  .toast.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+  .toast.show { opacity: 1; transform: translateY(0); }
+  .toast .ok {
+    width: 18px; height: 18px; border-radius: 50%; background: #107c10;
+    color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 11px;
   }
-  footer {
-    margin-top: 32px;
-    text-align: center;
-    color: var(--on-surface-variant);
-    font-size: 13px;
-    line-height: 1.5;
-  }
-  a { color: var(--primary); }
+
+  footer { margin-top: 22px; text-align: center; color: var(--text3); font-size: 12px; line-height: 1.6; }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <h1>CoolSubs</h1>
-    <p>Проверенные подписки прокси-серверов. Обновляются автоматически.</p>
-  </header>
 
-  <section class="card tonal">
-    <h2>Статус</h2>
+<div class="titlebar">
+  <div class="app"><span class="logo"></span>CoolSubs</div>
+  <div class="winbtns">
+    <span title="Свернуть">&#8211;</span>
+    <span title="Развернуть">&#9633;</span>
+    <span class="close" title="Закрыть">&#10005;</span>
+  </div>
+</div>
+
+<main>
+  <div class="page-head">
+    <h1>Подписки</h1>
+    <p>Проверенные подписки прокси-серверов. Обновляются автоматически.</p>
+  </div>
+
+  <section class="card">
+    <div class="card-title">Статус <small id="clock"></small></div>
     <div class="stats">
       <div class="stat">
         <div class="num" id="bl-total">—</div>
@@ -219,64 +247,65 @@
   </section>
 
   <section class="card">
-    <h2>Подписки</h2>
-    <div class="sub">
-      <div>
-        <div class="name">Чёрный список</div>
-        <div class="desc">Cool-Black.txt</div>
-      </div>
+    <div class="card-title">Подписки</div>
+    <div class="row">
+      <div><div class="name">Чёрный список</div><div class="desc">Cool-Black.txt</div></div>
       <button class="btn" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-Black.txt">Копировать</button>
     </div>
-    <div class="sub">
-      <div>
-        <div class="name">Белый список</div>
-        <div class="desc">Cool-White.txt</div>
-      </div>
+    <div class="row">
+      <div><div class="name">Белый список</div><div class="desc">Cool-White.txt</div></div>
       <button class="btn" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-White.txt">Копировать</button>
     </div>
-    <div class="sub">
-      <div>
-        <div class="name">Clash (чёрный)</div>
-        <div class="desc">Cool-Black.yaml</div>
-      </div>
-      <button class="btn ghost" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-Black.yaml">Копировать</button>
+    <div class="row">
+      <div><div class="name">Clash · чёрный</div><div class="desc">Cool-Black.yaml</div></div>
+      <button class="btn std" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-Black.yaml">Копировать</button>
     </div>
-    <div class="sub">
-      <div>
-        <div class="name">Clash (белый)</div>
-        <div class="desc">Cool-White.yaml</div>
-      </div>
-      <button class="btn ghost" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-White.yaml">Копировать</button>
+    <div class="row">
+      <div><div class="name">Clash · белый</div><div class="desc">Cool-White.yaml</div></div>
+      <button class="btn std" data-url="https://raw.githubusercontent.com/vessel-web/CoolSubs/main/Cool-White.yaml">Копировать</button>
     </div>
   </section>
 
   <section class="card">
-    <h2>Страны (чёрный список)</h2>
-    <div class="countries" id="countries"><p class="muted">Загрузка…</p></div>
+    <div class="card-title">Страны <small>чёрный список</small></div>
+    <div id="countries"><p class="muted">Загрузка…</p></div>
   </section>
 
   <section class="card">
-    <h2>История обновлений</h2>
+    <div class="card-title">История обновлений</div>
     <div class="log" id="changelog">Загрузка…</div>
   </section>
 
   <footer>
     Серверы проверяются автоматически.<br>
-    Исходный код : github.com/vessel-web/CoolSubs
+    <a href="https://github.com/vessel-web/CoolSubs">Исходный код на GitHub</a>
   </footer>
 </main>
 
-<button class="fab" onclick="location.href='https://github.com/vessel-web/CoolSubs'">Открыть репозиторий</button>
-<div class="toast" id="toast">Ссылка скопирована</div>
+<nav class="commandbar">
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Наверх</a>
+  <a class="accent" href="https://github.com/vessel-web/CoolSubs">Репозиторий</a>
+</nav>
+
+<div class="toast" id="toast"><span class="ok">✓</span><span id="toast-text">Ссылка скопирована</span></div>
 
 <script>
 const RAW = "https://raw.githubusercontent.com/vessel-web/CoolSubs/main/";
 
+function tick() {
+  const d = new Date();
+  document.getElementById("clock").textContent =
+    d.toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit" });
+}
+tick();
+setInterval(tick, 15000);
+
 function toast(msg) {
+  document.getElementById("toast-text").textContent = msg;
   const t = document.getElementById("toast");
-  t.textContent = msg;
   t.classList.add("show");
-  setTimeout(() => t.classList.remove("show"), 1800);
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(() => t.classList.remove("show"), 2000);
 }
 
 document.querySelectorAll("button[data-url]").forEach(btn => {
@@ -292,27 +321,25 @@ document.querySelectorAll("button[data-url]").forEach(btn => {
 
 function fmtDate(ts) {
   if (!ts) return "";
-  const d = new Date(ts * 1000);
-  return d.toLocaleString("ru-RU", { dateStyle: "medium", timeStyle: "short" });
+  return new Date(ts * 1000).toLocaleString("ru-RU", { dateStyle: "medium", timeStyle: "short" });
 }
 
-async function loadStats(file, totalId) {
+async function loadJson(file) {
   try {
     const r = await fetch(RAW + file, { cache: "no-store" });
     if (!r.ok) throw new Error(r.status);
     return await r.json();
   } catch (e) {
-    document.getElementById(totalId).textContent = "—";
     return null;
   }
 }
 
 async function init() {
-  const bl = await loadStats("Cool-Black_stats.json", "bl-total");
-  const wl = await loadStats("Cool-White_stats.json", "wl-total");
+  const bl = await loadJson("Cool-Black_stats.json");
+  const wl = await loadJson("Cool-White_stats.json");
 
-  if (bl) document.getElementById("bl-total").textContent = bl.total;
-  if (wl) document.getElementById("wl-total").textContent = wl.total;
+  document.getElementById("bl-total").textContent = bl ? bl.total : "—";
+  document.getElementById("wl-total").textContent = wl ? wl.total : "—";
 
   const updated = (bl && bl.updated) || (wl && wl.updated);
   document.getElementById("updated").textContent =
@@ -322,8 +349,8 @@ async function init() {
   if (bl && bl.top && bl.top.length) {
     const max = Math.max(...bl.top.map(x => x.count));
     box.innerHTML = bl.top.map(x => `
-      <div class="row"><span>${x.country}</span><span>${x.count}</span></div>
-      <div class="bar" style="width:${Math.round(100 * x.count / max)}%"></div>
+      <div class="country"><span>${x.country}</span><span>${x.count}</span></div>
+      <div class="bar" style="width:${Math.max(6, Math.round(100 * x.count / max))}%"></div>
     `).join("");
   } else {
     box.innerHTML = '<p class="muted">Данных пока нет</p>';
