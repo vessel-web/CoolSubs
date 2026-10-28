@@ -1,0 +1,73 @@
+name: update subs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3,15 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: coolsubs
+  cancel-in-progress: false
+
+jobs:
+  parse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Python deps
+        run: pip install requests pyyaml geoip2 aiohttp pysocks
+
+      - name: sing-box-extended
+        env:
+          SINGBOX_URL: ${{ secrets.SINGBOX_URL }}
+        run: |
+          set -e
+          curl -fL "$SINGBOX_URL" -o pkg
+          mkdir -p sb
+          case "$SINGBOX_URL" in
+            *.zip) unzip -q -o pkg -d sb ;;
+            *)     tar -xzf pkg -C sb ;;
+          esac
+          BIN=$(find sb -type f -name 'sing-box*' | head -1)
+          chmod +x "$BIN"
+          sudo mv "$BIN" /usr/local/bin/sing-box-extended
+          sing-box-extended version
+
+      - name: DB-IP ASN (optional)
+        env:
+          DBIP_URL: ${{ secrets.DBIP_URL }}
+        run: |
+          if [ -n "$DBIP_URL" ]; then
+            curl -fL "$DBIP_URL" -o dbip-asn-lite.mmdb.gz
+            gunzip -f dbip-asn-lite.mmdb.gz
+          else
+            echo "DBIP_URL не задан, ASN-фильтр пропущен"
+          fi
+
+      - name: parse
+        env:
+          SINGBOX_BIN: /usr/local/bin/sing-box-extended
+          RING_TEAM_SUB: ${{ secrets.RING_TEAM_SUB }}
+        run: python scripts/parser_cloud.py
+
+      - name: publish
+        run: |
+          git config user.name "coolsubs-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add Cool-Black.txt Cool-Black.yaml Cool-Black_stats.json \
+                  Cool-White.txt Cool-White.yaml Cool-White_stats.json CHANGELOG.md
+          if git diff --cached --quiet; then
+            echo "изменений нет"
+          else
+            git commit -m "update subs $(date -u '+%F %H:%M') UTC"
+            git push
+          fi
