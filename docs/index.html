@@ -121,6 +121,12 @@
     </ul>
   </section>
 
+  <section class="box wide">
+    <h2>* ОБНОВЛЕНИЕ</h2>
+    <div class="say" id="run-status">* проверяю...</div>
+    <div class="say" id="run-next" style="color:var(--gray);font-size:10px;margin-top:6px"></div>
+  </section>
+
   <section class="box wide countries">
     <h2>* СТРАНЫ</h2>
     <div id="countries"><div class="say">загрузка...</div></div>
@@ -266,6 +272,57 @@ async function init() {
     document.getElementById("changelog").textContent = "* не удалось загрузить";
   }
 }
+
+// ---------- статус автообновления ----------
+const REPO_API = "https://api.github.com/repos/vessel-web/CoolSubs";
+
+// расписание из update.yml: cron "0 3,15 * * *" (UTC) = 06:00 и 18:00 по Москве
+function nextScheduledRun() {
+  const now = new Date();
+  for (let d = 0; d < 2; d++) {
+    for (const h of [3, 15]) {
+      const t = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + d, h, 0, 0));
+      if (t > now) return t;
+    }
+  }
+  return null;
+}
+
+async function checkRuns() {
+  const status = document.getElementById("run-status");
+  const next = document.getElementById("run-next");
+  const fmt = d => d.toLocaleString("ru-RU", { dateStyle: "short", timeStyle: "short" });
+
+  const n = nextScheduledRun();
+  next.textContent = "* следующий плановый запуск: " + (n ? fmt(n) : "неизвестно") +
+                     " (06:00 и 18:00 по Москве)";
+
+  try {
+    const r = await fetch(REPO_API + "/actions/workflows/update.yml/runs?per_page=1",
+                          { cache: "no-store" });
+    if (!r.ok) throw new Error(r.status);
+    const j = await r.json();
+    const run = j.workflow_runs && j.workflow_runs[0];
+    if (!run) {
+      status.textContent = "* запусков обновления ещё не было";
+      return;
+    }
+    const started = new Date(run.run_started_at || run.created_at);
+    if (run.status === "in_progress" || run.status === "queued") {
+      status.innerHTML = '<span class="name">* ИДЁТ ОБНОВЛЕНИЕ</span> ▼ <br>' +
+        '* начато ' + fmt(started);
+    } else if (run.conclusion === "success") {
+      status.textContent = "* последнее обновление прошло успешно: " + fmt(started);
+    } else {
+      status.textContent = "* последнее обновление не удалось (" + (run.conclusion || "?") + "): " + fmt(started);
+    }
+  } catch (e) {
+    status.textContent = "* не удалось проверить статус обновления";
+  }
+}
+
+checkRuns();
+setInterval(checkRuns, 120000);
 
 init();
 </script>
