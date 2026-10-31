@@ -1,47 +1,47 @@
 {
-  "total": 1070,
-  "countries": 37,
+  "total": 1280,
+  "countries": 42,
   "top": [
     {
       "country": "USA",
-      "count": 262
+      "count": 299
     },
     {
       "country": "Singapore",
-      "count": 123
+      "count": 124
     },
     {
       "country": "Unknown",
-      "count": 93
+      "count": 108
     },
     {
       "country": "Netherlands",
-      "count": 87
+      "count": 89
     },
     {
       "country": "France",
-      "count": 79
-    },
-    {
-      "country": "Canada",
-      "count": 67
+      "count": 84
     },
     {
       "country": "Germany",
-      "count": 63
+      "count": 77
+    },
+    {
+      "country": "Canada",
+      "count": 70
     },
     {
       "country": "South Korea",
-      "count": 41
+      "count": 65
     },
     {
-      "country": "Japan",
-      "count": 41
+      "country": "United Kingdom",
+      "count": 58
     },
     {
       "country": "Hong Kong",
-      "count": 39
+      "count": 55
     }
   ],
-  "updated": 1793397189
+  "updated": 1793404684
 }
