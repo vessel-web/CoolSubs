@@ -1312,6 +1312,57 @@ def run_white():
     print(f"⏱️  Белый список: {(time.time() - t0) / 60:.1f} мин")
 
 
+ADAPTIVE_FIRST = 10000
+ADAPTIVE_STEP = 30000
+ADAPTIVE_TARGET = 500
+ADAPTIVE_CHECKPOINT = 100
+
+
+def run_adaptive(kind, title, out_name):
+    global _FLAGS, _ASN, _STATS_BL, _STATS_WL, SB_GEN_ERRORS, SB_RUN_ERRORS
+    _FLAGS = {}
+    _ASN = {}
+    SB_GEN_ERRORS, SB_RUN_ERRORS = {}, {}
+    t0 = time.time()
+    src = f"results_{kind}.txt.gz"
+    print(f"\n═══ {title} ← {src} ═══")
+    if not os.path.exists(src):
+        print(f"⚠️ нет файла {src}, пропускаю")
+        return
+    with gzip.open(src, "rt", encoding="utf-8", errors="ignore") as f:
+        lines = f.read().splitlines()
+    pool = dedup_configs([c for c in (parse_config(l, kind) for l in lines) if c])
+    random.shuffle(pool)
+    print(f"✅ пул: {len(pool)} конфигов")
+    if not pool:
+        return
+
+    working, pos, chunk, checkpoint_hit = [], 0, ADAPTIVE_FIRST, False
+    while pos < len(pool) and len(working) < ADAPTIVE_TARGET:
+        batch = pool[pos:pos + chunk]
+        pos += len(batch)
+        print(f"\n▶ порция {len(batch)} | проверено {pos}/{len(pool)} | рабочих {len(working)}")
+        working.extend(check_via_singbox_batch(batch))
+        print(f"   рабочих сейчас: {len(working)}")
+        if not checkpoint_hit and len(working) >= ADAPTIVE_CHECKPOINT:
+            checkpoint_hit = True
+            print(f"🎯 порог {ADAPTIVE_CHECKPOINT} рабочих пройден, дальше порции по {ADAPTIVE_STEP}")
+        chunk = ADAPTIVE_STEP
+
+    _print_errors()
+    if not working:
+        print("⚠️ Рабочих нет")
+        return
+    if len(working) >= ADAPTIVE_TARGET:
+        print(f"🎯 достигнут {ADAPTIVE_TARGET}")
+    _finalize(working, out_name, title)
+    if kind == "black":
+        _STATS_BL = {"total": len(working)}
+    else:
+        _STATS_WL = {"total": len(working)}
+    print(f"⏱️  {title}: {(time.time() - t0) / 60:.1f} мин")
+
+
 if __name__ == "__main__":
     os.makedirs(TMP_DIR, exist_ok=True)
     print("🚀 sing-box-extended batch parser")
@@ -1320,8 +1371,8 @@ if __name__ == "__main__":
         raise SystemExit(1)
     print(f"🌍 GeoLite2: {GEOIP_DB}")
     print(f"🌐 DBIP ASN: {DBIP_DB}")
-    run_black_full()
-    run_white()
+    run_adaptive("black", "CoolSubs — Black", "Cool-Black.txt")
+    run_adaptive("white", "CoolSubs — White", "Cool-White.txt")
     if _STATS_BL and _STATS_WL:
         update_changelog(_STATS_BL, _STATS_WL)
     print("\n✅ Готово!")
