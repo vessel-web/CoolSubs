@@ -1,0 +1,9 @@
+# Список источников для free_collector.py
+# Формат: категория|ссылка  (black — чёрный список, white — белый)
+# Строки с # игнорируются. Пустые строки тоже.
+#
+# Примеры формата (замените на свои источники):
+# black|https://example.com/subscription.txt
+# white|https://example.com/whitelist.txt
+#
+# Новые источники можно добавить автоматически: python free_collector.py --discover
