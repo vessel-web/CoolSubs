@@ -39,9 +39,11 @@ OUT_BLACK = "results_black.txt.gz"
 OUT_WHITE = "results_white.txt.gz"
 OUT_STATS = "results_stats.json"
 
-TIMEOUT = 20
+TIMEOUT = 10
 MAX_BYTES = 20 * 1024 * 1024
-WORKERS = 32
+WORKERS = 64
+DISCOVER_MAX_REPOS_TOTAL = 300   # общий лимит новых репозиториев за один запуск
+DISCOVER_WORKERS = 8             # параллельные запросы дерева файлов
 USER_AGENT = "Mozilla/5.0 (compatible; free-collector/1.0)"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 
@@ -176,8 +178,8 @@ def month_ranges(months):
     return out
 
 
-def discover():
-    """Ищет репозитории по месяцам и возвращает новые источники (категория, raw-url)."""
+def discover_old():
+    """Старая версия (не используется)."""
     pause = 1.0 if GITHUB_TOKEN else 7.0
     found = {}
     for cat_hint, q in DISCOVER_QUERIES:
@@ -208,6 +210,77 @@ def discover():
     return found
 
 
+def known_repos():
+    """Репозитории, уже есть в free_sources.txt (owner/repo)."""
+    repos = set()
+    if os.path.exists(SOURCES_FILE):
+        with open(SOURCES_FILE, encoding="utf-8") as f:
+            for line in f:
+                if "|" not in line or line.strip().startswith("#"):
+                    continue
+                url = line.split("|", 1)[1].strip()
+                m = re.match(r"https://raw\.githubusercontent\.com/([^/]+/[^/]+)/", url)
+                if m:
+                    repos.add(m.group(1))
+    return repos
+
+
+def repo_files(repo, cat):
+    """Текстовые файлы одного репозитория (один запрос дерева)."""
+    full = repo["full_name"]
+    branch = repo.get("default_branch", "main")
+    tree = gh_get(f"https://api.github.com/repos/{full}/git/trees/{branch}")
+    if not tree:
+        return []
+    picked = [i["path"] for i in tree.get("tree", [])
+              if i.get("type") == "blob" and
+              (i["path"].lower().endswith(".txt") or i["path"].lower().endswith("readme.md"))]
+    return [(f"https://raw.githubusercontent.com/{full}/{branch}/{p}", cat)
+            for p in picked[:DISCOVER_FILES_PER_REPO]]
+
+
+def discover():
+    """Поиск новых репозиториев по месяцам. Каждый репозиторий обрабатывается один раз."""
+    search_pause = 2.0 if GITHUB_TOKEN else 7.0
+    seen = known_repos()
+    found = {}
+    budget = DISCOVER_MAX_REPOS_TOTAL
+    months = month_ranges(DISCOVER_MONTHS)
+
+    for _cat_hint, q in DISCOVER_QUERIES:
+        for start, end in months:
+            if budget <= 0:
+                break
+            query = f"{q} pushed:{start}..{end}"
+            data = gh_get("https://api.github.com/search/repositories",
+                          {"q": query, "per_page": 30, "page": 1})
+            time.sleep(search_pause)
+            if not data:
+                continue
+            new = []
+            for repo in data.get("items", []):
+                full = repo["full_name"]
+                if full in seen:
+                    continue
+                seen.add(full)
+                hint = (full + " " + (repo.get("description") or "")).lower()
+                cat = "white" if any(k in hint for k in WHITE_KEYWORDS) else "black"
+                new.append((repo, cat))
+            new = new[:budget]
+            budget -= len(new)
+
+            with ThreadPoolExecutor(max_workers=DISCOVER_WORKERS) as ex:
+                futs = [ex.submit(repo_files, repo, cat) for repo, cat in new]
+                for fut in as_completed(futs):
+                    for url, cat in fut.result():
+                        found[url] = cat
+            print(f"  {query[:50]} → новых репо {len(new)}, источников всего {len(found)}")
+        if budget <= 0:
+            print("Достигнут лимит DISCOVER_MAX_REPOS_TOTAL")
+            break
+    return found
+
+
 def append_sources(found):
     existing = set()
     if os.path.exists(SOURCES_FILE):
@@ -232,7 +305,7 @@ def main():
     if not os.path.exists(SOURCES_FILE):
         print(f"Нет файла {SOURCES_FILE}")
         sys.exit(1)
-    sources = read_sources()
+    sources = list(dict.fromkeys(read_sources()))
     print(f"Источников: {len(sources)} "
           f"(black {sum(1 for c, _ in sources if c == 'black')}, "
           f"white {sum(1 for c, _ in sources if c == 'white')})")
