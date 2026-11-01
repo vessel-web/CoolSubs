@@ -124,6 +124,17 @@ def fetch(url):
         return "", f"{type(e).__name__}: {str(e)[:80]}"
 
 
+def fetch_any(urls):
+    """Пробует адреса по очереди (основной, затем зеркала). Возвращает (текст, ошибка, сработавший адрес)."""
+    last = "нет адресов"
+    for u in urls:
+        text, err = fetch(u)
+        if not err and text.strip():
+            return text, None, u
+        last = err or "пустой ответ"
+    return "", last, None
+
+
 def read_sources():
     items = []
     with open(SOURCES_FILE, encoding="utf-8") as f:
@@ -131,10 +142,11 @@ def read_sources():
             s = line.strip()
             if not s or s.startswith("#") or "|" not in s:
                 continue
-            cat, url = s.split("|", 1)
-            cat = cat.strip().lower()
-            if cat in ("black", "white") and url.strip().startswith("http"):
-                items.append((cat, url.strip()))
+            parts = [p.strip() for p in s.split("|")]
+            cat = parts[0].lower()
+            urls = tuple(p for p in parts[1:] if p.startswith("http"))
+            if cat in ("black", "white") and urls:
+                items.append((cat, urls))
     return items
 
 
@@ -239,7 +251,7 @@ def repo_files(repo, cat):
             for p in picked[:DISCOVER_FILES_PER_REPO]]
 
 
-def discover():
+def discover(queries=None):
     """Поиск новых репозиториев по месяцам. Каждый репозиторий обрабатывается один раз."""
     search_pause = 2.0 if GITHUB_TOKEN else 7.0
     seen = known_repos()
@@ -247,7 +259,7 @@ def discover():
     budget = DISCOVER_MAX_REPOS_TOTAL
     months = month_ranges(DISCOVER_MONTHS)
 
-    for _cat_hint, q in DISCOVER_QUERIES:
+    for _cat_hint, q in (queries or DISCOVER_QUERIES):
         for start, end in months:
             if budget <= 0:
                 break
@@ -298,9 +310,30 @@ def append_sources(found):
 
 # ---------- основной сбор ----------
 
+def ask_queries():
+    """Спрашивает поисковые запросы у пользователя. quit — закончить ввод."""
+    print("Введите поисковые запросы для GitHub, по одному в строке.")
+    print("quit — закончить ввод.")
+    qs = []
+    while True:
+        try:
+            s = input("запрос> ").strip()
+        except EOFError:
+            break
+        if s.lower() == "quit":
+            break
+        if s:
+            qs.append(("", s))
+    return qs
+
+
 def main():
     if "--discover" in sys.argv:
-        append_sources(discover())
+        qs = ask_queries()
+        if qs:
+            append_sources(discover(qs))
+        else:
+            print("запросов нет, поиск пропущен")
 
     if not os.path.exists(SOURCES_FILE):
         print(f"Нет файла {SOURCES_FILE}")
@@ -316,10 +349,10 @@ def main():
     per_cat = {"black": 0, "white": 0}
 
     with ThreadPoolExecutor(max_workers=WORKERS) as ex:
-        futures = {ex.submit(fetch, url): (cat, url) for cat, url in sources}
+        futures = {ex.submit(fetch_any, urls): (cat, urls) for cat, urls in sources}
         for i, fut in enumerate(as_completed(futures), 1):
-            cat, url = futures[fut]
-            text, err = fut.result()
+            cat, urls = futures[fut]
+            text, err, _used = fut.result()
             if err:
                 fail += 1
                 continue
