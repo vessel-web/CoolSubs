@@ -1,226 +1,12 @@
 proxies:
-- name: "cool [white] \U0001F1E8\U0001F1ED |#1|"
-  type: vless
-  server: 195.141.65.98
-  port: 443
-  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: 148-253-210-191.sslip.io
-  ws-opts:
-    path: /test-ws
-    headers:
-      Host: 148-253-210-191.sslip.io
-- name: "cool [white] \U0001F1E8\U0001F1ED |#2|"
-  type: vless
-  server: 195.141.65.98
-  port: 443
-  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: 148-253-210-191.sslip.io
-  ws-opts:
-    path: /test-ws
-    headers:
-      Host: 148-253-210-191.sslip.io
-- name: "cool [white] \U0001F1F8\U0001F1EC |#3|"
-  type: vmess
-  server: az-1.linkaa.xyz
-  port: 53110
-  uuid: 6E571484-4166-4699-8F58-B34A1823691F
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: az-1.linkaa.xyz
-  ws-opts:
-    path: /game/resources
-    headers:
-      Host: az-1.linkaa.xyz
-- name: "cool [white] \U0001F1F8\U0001F1E8 |#4|"
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#1|"
   type: ss
-  server: 45.207.207.25
-  port: 443
-  cipher: aes-256-gcm
-  password: gj1+XKulKV0nmw6IThckOkkJh5DSM7+C
-  udp: true
-- name: "cool [white] \U0001F1F8\U0001F1EC |#5|"
-  type: vmess
-  server: az-1.linkaa.xyz
-  port: 53617
-  uuid: 6E571484-4166-4699-8F58-B34A1823691F
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: az-1.linkaa.xyz
-  ws-opts:
-    path: /game/resources
-    headers:
-      Host: az-1.linkaa.xyz
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#6|"
-  type: vless
-  server: sw.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: safari
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  type: vless
-  server: sw.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: randomized
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#8|"
-  type: ss
-  server: 82.38.31.175
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1E8\U0001F1F4 |#9|"
-  type: ss
-  server: 149.104.107.41
-  port: 8090
-  cipher: aes-256-gcm
-  password: PCnnH6SQSnfoS27
-  udp: true
-- name: "cool [white] \U0001F1E8\U0001F1ED |#10|"
-  type: vless
-  server: 195.141.65.98
-  port: 443
-  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: 148-253-210-191.sslip.io
-  ws-opts:
-    path: /test-ws
-    headers:
-      Host: 148-253-210-191.sslip.io
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#11|"
-  type: vless
-  server: 141.193.213.21
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#12|"
-  type: ss
-  server: 82.38.31.149
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#13|"
-  type: vless
-  server: sw.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: edge
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#14|"
-  type: ss
-  server: 82.38.31.195
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#15|"
-  type: ss
-  server: 82.38.31.175
+  server: 82.38.31.7
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#16|"
-  type: ss
-  server: 193.29.139.168
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: QCXDxuDlTTMD7jtgHUjIoj
-  udp: true
-- name: "cool [white] \U0001F1F8\U0001F1EC |#17|"
-  type: vmess
-  server: az-1.linkaa.xyz
-  port: 55386
-  uuid: 6E571484-4166-4699-8F58-B34A1823691F
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: az-1.linkaa.xyz
-  ws-opts:
-    path: /game/resources
-    headers:
-      Host: az-1.linkaa.xyz
-- name: "cool [white] \U0001F1F8\U0001F1EC |#18|"
-  type: vmess
-  server: az-1.linkaa.xyz
-  port: 53437
-  uuid: 6E571484-4166-4699-8F58-B34A1823691F
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  ws-opts:
-    path: /game/resources
-- name: "cool [white] \U0001F1F2\U0001F1FE |#19|"
-  type: ss
-  server: 130.94.69.15
-  port: 7001
-  cipher: aes-256-gcm
-  password: RexnBgU7EV5ADxG
-  udp: true
-- name: "cool [white] \U0001F1EA\U0001F1EC |#20|"
-  type: ss
-  server: 38.54.59.102
-  port: 443
-  cipher: aes-256-gcm
-  password: pKEW8JPByTVTLtM
-  udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#21|"
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#2|"
   type: vless
   server: sw.golangwikito.cfd
   port: 443
@@ -235,7 +21,22 @@ proxies:
     short-id: a1037b25dcef6aa7
   servername: sw.golangwikito.cfd
   client-fingerprint: random
-- name: "cool [white] \U0001F1E8\U0001F1ED |#22|"
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#3|"
+  type: vless
+  server: sw.golangwikito.cfd
+  port: 443
+  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
+    short-id: a1037b25dcef6aa7
+  servername: sw.golangwikito.cfd
+  client-fingerprint: android
+- name: "cool [white] \U0001F1E8\U0001F1ED |#4|"
   type: vless
   server: 195.141.65.98
   port: 443
@@ -249,100 +50,80 @@ proxies:
     path: /test-ws
     headers:
       Host: 148-253-210-191.sslip.io
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#23|"
-  type: ss
-  server: 82.38.31.174
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#24|"
-  type: ss
-  server: 82.38.31.149
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1F8\U0001F1EC |#25|"
-  type: vmess
-  server: az-1.linkaa.xyz
-  port: 53437
-  uuid: 6E571484-4166-4699-8F58-B34A1823691F
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: az-1.linkaa.xyz
-  ws-opts:
-    path: /game/resources
-    headers:
-      Host: az-1.linkaa.xyz
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#26|"
-  type: vless
-  server: 141.193.213.21
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#27|"
-  type: ss
-  server: 82.38.31.7
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#28|"
-  type: ss
-  server: 82.38.31.204
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#29|"
-  type: vless
-  server: news.zoom.us
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#30|"
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#5|"
   type: ss
   server: 82.38.31.18
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-- name: "cool [white] \U0001F1F8\U0001F1EC |#31|"
-  type: vmess
-  server: az-1.linkaa.xyz
-  port: 53617
-  uuid: 6E571484-4166-4699-8F58-B34A1823691F
-  alterId: 0
-  cipher: auto
+- name: "cool [white] \U0001F1ED\U0001F1F0 |#6|"
+  type: hysteria2
+  server: 112.120.123.140
+  port: 443
+  password: e1dee7c0-cff7-11eb-a8bf-f23c91cfbbc9
+  sni: 525b1a38-tly2o0-tn5bnx-19xg1.nw4.hyhuawei.com
+  skip-cert-verify: false
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#7|"
+  type: ss
+  server: 82.38.31.175
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  tls: false
-  network: ws
-  servername: az-1.linkaa.xyz
-  ws-opts:
-    path: /game/resources
-    headers:
-      Host: az-1.linkaa.xyz
-- name: "cool [white] \U0001F1E8\U0001F1ED |#32|"
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#8|"
+  type: vless
+  server: sw.golangwikito.cfd
+  port: 443
+  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
+    short-id: a1037b25dcef6aa7
+  servername: sw.golangwikito.cfd
+  client-fingerprint: ios
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#9|"
+  type: vless
+  server: sw.golangwikito.cfd
+  port: 443
+  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
+    short-id: a1037b25dcef6aa7
+  servername: sw.golangwikito.cfd
+  client-fingerprint: edge
+- name: "cool [white] \U0001F1ED\U0001F1F0 |#10|"
+  type: hysteria2
+  server: 112.120.123.140
+  port: 443
+  password: b2c6384c-f63d-11ec-b1b3-f23c91cfbbc9
+  sni: 818667a4-tmm5c0-tpsg94-1jbj0.nw4.hyhuawei.com
+  skip-cert-verify: false
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#11|"
+  type: vless
+  server: sw.golangwikito.cfd
+  port: 443
+  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
+    short-id: a1037b25dcef6aa7
+  servername: sw.golangwikito.cfd
+  client-fingerprint: firefox
+- name: "cool [white] \U0001F1E8\U0001F1ED |#12|"
   type: vless
   server: 195.141.65.98
   port: 443
@@ -356,57 +137,92 @@ proxies:
     path: /test-ws
     headers:
       Host: 148-253-210-191.sslip.io
-- name: "cool [white] \U0001F1ED\U0001F1F0 |#33|"
-  type: hysteria2
-  server: 112.120.123.140
+- name: "cool [white] \U0001F1E8\U0001F1ED |#13|"
+  type: vless
+  server: 195.141.65.98
   port: 443
-  password: 3f514ea2-4662-11ed-a8bf-f23c91cfbbc9
-  sni: 9fc34650-tmm5c0-tmj4pk-1kcpe.nw4.hyhuawei.com
+  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
+  udp: true
+  tls: true
+  network: ws
   skip-cert-verify: false
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#34|"
+  servername: 148-253-210-191.sslip.io
+  ws-opts:
+    path: /test-ws
+    headers:
+      Host: 148-253-210-191.sslip.io
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#14|"
+  type: ss
+  server: 82.38.31.149
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#15|"
+  type: ss
+  server: 82.38.31.198
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#16|"
+  type: vless
+  server: sw.golangwikito.cfd
+  port: 443
+  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
+    short-id: a1037b25dcef6aa7
+  servername: sw.golangwikito.cfd
+  client-fingerprint: android
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#17|"
+  type: ss
+  server: 82.38.31.149
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#18|"
+  type: ss
+  server: 82.38.31.174
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#19|"
   type: ss
   server: 82.38.31.11
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#35|"
-  type: vless
-  server: sw.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+- name: "cool [white] \U0001F1E8\U0001F1F4 |#20|"
+  type: ss
+  server: 149.104.107.41
+  port: 8090
+  cipher: aes-256-gcm
+  password: PCnnH6SQSnfoS27
   udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: firefox
-- name: "cool [white] \U0001F1ED\U0001F1F0 |#36|"
+- name: "cool [white] \U0001F1ED\U0001F1F0 |#21|"
   type: hysteria2
   server: 112.120.123.140
   port: 443
   password: d6abdbda-fe9d-11ec-bb74-f23c9164ca5d
   sni: 51cc2d6e-tmm5c0-tw661e-1isea.nw4.hyhuawei.com
   skip-cert-verify: false
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#37|"
-  type: vless
-  server: news.zoom.us
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+- name: "cool [white] \U0001F1F2\U0001F1FE |#22|"
+  type: ss
+  server: 130.94.69.15
+  port: 7001
+  cipher: aes-256-gcm
+  password: RexnBgU7EV5ADxG
   udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1E8\U0001F1ED |#38|"
+- name: "cool [white] \U0001F1E8\U0001F1ED |#23|"
   type: vless
   server: 195.141.65.98
   port: 443
@@ -420,254 +236,272 @@ proxies:
     path: /test-ws
     headers:
       Host: 148-253-210-191.sslip.io
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#39|"
-  type: vless
-  server: sw.golangwikito.cfd
+- name: "cool [white] \U0001F1F8\U0001F1E8 |#24|"
+  type: ss
+  server: 45.207.207.25
   port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  cipher: aes-256-gcm
+  password: gj1+XKulKV0nmw6IThckOkkJh5DSM7+C
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#25|"
+  type: ss
+  server: 82.38.31.185
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#26|"
+  type: ss
+  server: 82.38.31.204
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: "cool [white] \U0001F1E8\U0001F1ED |#27|"
+  type: vless
+  server: 195.141.65.98
+  port: 443
+  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
   udp: true
   tls: true
-  network: tcp
+  network: ws
   skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: firefox
+  servername: 148-253-210-191.sslip.io
+  ws-opts:
+    path: /test-ws
+    headers:
+      Host: 148-253-210-191.sslip.io
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#28|"
+  type: ss
+  server: 82.38.31.175
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1E8\U0001F1ED |#29|"
+  type: vless
+  server: 195.141.65.98
+  port: 443
+  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: 148-253-210-191.sslip.io
+  ws-opts:
+    path: /test-ws
+    headers:
+      Host: 148-253-210-191.sslip.io
+- name: "cool [white] \U0001F1E8\U0001F1ED |#30|"
+  type: vless
+  server: 195.141.65.98
+  port: 443
+  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: 148-253-210-191.sslip.io
+  ws-opts:
+    path: /test-ws
+    headers:
+      Host: 148-253-210-191.sslip.io
+- name: "cool [white] \U0001F1EA\U0001F1EC |#31|"
+  type: ss
+  server: 38.54.59.102
+  port: 443
+  cipher: aes-256-gcm
+  password: pKEW8JPByTVTLtM
+  udp: true
 proxy-groups:
 - name: Обычный
   type: select
   proxies:
   - Авто
   - Авто (без RU)
-  - "cool [white] \U0001F1E8\U0001F1ED |#1|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#2|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#3|"
-  - "cool [white] \U0001F1F8\U0001F1E8 |#4|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#5|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#6|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#8|"
-  - "cool [white] \U0001F1E8\U0001F1F4 |#9|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#12|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#1|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#3|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#4|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#5|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#6|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#7|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#8|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#9|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#10|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#11|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#12|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#13|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#14|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#15|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#16|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#17|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#18|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#19|"
-  - "cool [white] \U0001F1EA\U0001F1EC |#20|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#21|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#22|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#23|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#24|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#25|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#26|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#27|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#17|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#18|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#19|"
+  - "cool [white] \U0001F1E8\U0001F1F4 |#20|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#21|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#22|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#23|"
+  - "cool [white] \U0001F1F8\U0001F1E8 |#24|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#25|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#26|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#27|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#28|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#29|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#30|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#31|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#32|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#33|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#34|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#35|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#36|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#37|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#38|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#39|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#29|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#30|"
+  - "cool [white] \U0001F1EA\U0001F1EC |#31|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1E8\U0001F1ED |#1|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#2|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#3|"
-  - "cool [white] \U0001F1F8\U0001F1E8 |#4|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#5|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#6|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#8|"
-  - "cool [white] \U0001F1E8\U0001F1F4 |#9|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#12|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#1|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#3|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#4|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#5|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#6|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#7|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#8|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#9|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#10|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#11|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#12|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#13|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#14|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#15|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#16|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#17|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#18|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#19|"
-  - "cool [white] \U0001F1EA\U0001F1EC |#20|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#21|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#22|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#23|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#24|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#25|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#26|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#27|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#17|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#18|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#19|"
+  - "cool [white] \U0001F1E8\U0001F1F4 |#20|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#21|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#22|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#23|"
+  - "cool [white] \U0001F1F8\U0001F1E8 |#24|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#25|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#26|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#27|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#28|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#29|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#30|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#31|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#32|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#33|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#34|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#35|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#36|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#37|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#38|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#39|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#29|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#30|"
+  - "cool [white] \U0001F1EA\U0001F1EC |#31|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1E8\U0001F1ED |#1|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#2|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#3|"
-  - "cool [white] \U0001F1F8\U0001F1E8 |#4|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#5|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#6|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#8|"
-  - "cool [white] \U0001F1E8\U0001F1F4 |#9|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#12|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#1|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#3|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#4|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#5|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#6|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#7|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#8|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#9|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#10|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#11|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#12|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#13|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#14|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#15|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#16|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#17|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#18|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#19|"
-  - "cool [white] \U0001F1EA\U0001F1EC |#20|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#21|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#22|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#23|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#24|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#25|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#26|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#27|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#17|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#18|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#19|"
+  - "cool [white] \U0001F1E8\U0001F1F4 |#20|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#21|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#22|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#23|"
+  - "cool [white] \U0001F1F8\U0001F1E8 |#24|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#25|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#26|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#27|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#28|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#29|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#30|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#31|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#32|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#33|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#34|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#35|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#36|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#37|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#38|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#39|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#29|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#30|"
+  - "cool [white] \U0001F1EA\U0001F1EC |#31|"
 - name: "\U0001F1E8\U0001F1F4 Colombia"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1E8\U0001F1F4 |#9|"
+  - "cool [white] \U0001F1E8\U0001F1F4 |#20|"
 - name: "\U0001F1EA\U0001F1EC Egypt"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1EA\U0001F1EC |#20|"
+  - "cool [white] \U0001F1EA\U0001F1EC |#31|"
 - name: "\U0001F1ED\U0001F1F0 Hong Kong"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1ED\U0001F1F0 |#33|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#36|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#6|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#10|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#21|"
 - name: "\U0001F1F2\U0001F1FE Malaysia"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F2\U0001F1FE |#19|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#22|"
 - name: "\U0001F1F3\U0001F1F1 Netherlands"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F3\U0001F1F1 |#6|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#3|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#8|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#9|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#11|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#16|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#21|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#35|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#39|"
 - name: "\U0001F1F8\U0001F1E8 Seychelles"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F8\U0001F1E8 |#4|"
-- name: "\U0001F1F8\U0001F1EC Singapore"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1F8\U0001F1EC |#3|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#5|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#17|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#18|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#25|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#31|"
+  - "cool [white] \U0001F1F8\U0001F1E8 |#24|"
 - name: "\U0001F1E8\U0001F1ED Switzerland"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1E8\U0001F1ED |#1|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#2|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#10|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#22|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#32|"
-  - "cool [white] \U0001F1E8\U0001F1ED |#38|"
-- name: "\U0001F1FA\U0001F1F8 USA"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#26|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#29|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#37|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#4|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#12|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#13|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#23|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#27|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#29|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#30|"
 - name: "\U0001F1EC\U0001F1E7 United Kingdom"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1EC\U0001F1E7 |#8|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#12|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#1|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#5|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#7|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#14|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#15|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#23|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#24|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#27|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#17|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#18|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#19|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#25|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#26|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#28|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#30|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#34|"
 rules:
 - MATCH,Обычный
