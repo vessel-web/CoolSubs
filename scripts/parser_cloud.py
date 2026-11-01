@@ -84,7 +84,7 @@ TEST_URL = "https://api.ipify.org?format=json"
 PING_TIMEOUT = 5
 DELAY_TIMEOUT_MS = 6000
 API_START_TIMEOUT = 15.0
-KERNEL_COUNT = max(3, min(8, os.cpu_count() or 4))
+KERNEL_COUNT = int(os.environ.get("KERNEL_COUNT") or max(4, min(12, (os.cpu_count() or 4) * 2)))
 BATCH_SIZE_PER_CORE = 50
 XRAY_WORKERS = 20
 SOURCE_WORKERS = 3
@@ -822,6 +822,25 @@ async def _split_retry(batch_cfgs, worker_id, session):
     return left + right
 
 
+def _update_check(summary):
+    """Пишет строку прогресса в check run (видна через API во время работы)."""
+    rid = os.environ.get("CHECK_RUN_ID", "")
+    tok = os.environ.get("GH_TOKEN", "")
+    repo = os.environ.get("GITHUB_REPOSITORY", "")
+    if not (rid and tok and repo):
+        return
+    try:
+        requests.patch(
+            f"https://api.github.com/repos/{repo}/check-runs/{rid}",
+            headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json"},
+            json={"output": {"title": "parse progress",
+                             "summary": (summary + "\nобновлено " + time.strftime("%H:%M:%S", time.gmtime()) + " UTC")[:60000]}},
+            timeout=10,
+        )
+    except Exception:
+        pass
+
+
 async def _batch_worker(worker_id, queue, session, results, lock, stats, total):
     while True:
         try:
@@ -835,8 +854,16 @@ async def _batch_worker(worker_id, queue, session, results, lock, stats, total):
             elapsed = time.time() - stats["t0"]
             speed = stats["done"] / elapsed if elapsed > 0 else 0
             eta = (total - stats["done"]) / speed if speed > 0 else 0
-            print(f"   [w{worker_id}] {stats['done']}/{total} | рабочих {len(results)} | "
-                  f"{speed:.1f}/с | ETA {eta / 60:.0f} мин")
+            now = time.time()
+            if now - stats.get("last", 0) >= 30 or stats["done"] >= total:
+                stats["last"] = now
+                done_all = _PROGRESS["base_done"] + stats["done"]
+                work_all = _PROGRESS["base_working"] + len(results)
+                line = (f"[{_PROGRESS['stage']}] проверено {done_all}/{_PROGRESS['pool']} | "
+                        f"рабочих {work_all}/{_PROGRESS['target']} | {speed:.1f}/с | "
+                        f"прошло {elapsed / 60:.1f} мин | ETA порции {eta / 60:.0f} мин")
+                print(line, flush=True)
+                _update_check(line)
 
 
 async def _check_batch_main(all_configs):
@@ -1316,6 +1343,7 @@ ADAPTIVE_FIRST = 10000
 ADAPTIVE_STEP = 30000
 ADAPTIVE_TARGET = 500
 ADAPTIVE_CHECKPOINT = 100
+_PROGRESS = {"stage": "", "base_done": 0, "pool": 0, "base_working": 0, "target": 500}
 
 
 def run_adaptive(kind, title, out_name):
@@ -1340,10 +1368,13 @@ def run_adaptive(kind, title, out_name):
     working, pos, chunk, checkpoint_hit = [], 0, ADAPTIVE_FIRST, False
     while pos < len(pool) and len(working) < ADAPTIVE_TARGET:
         batch = pool[pos:pos + chunk]
+        _PROGRESS.update(stage=title, base_done=pos, pool=len(pool),
+                         base_working=len(working), target=ADAPTIVE_TARGET)
         pos += len(batch)
         print(f"\n▶ порция {len(batch)} | проверено {pos}/{len(pool)} | рабочих {len(working)}")
         working.extend(check_via_singbox_batch(batch))
         print(f"   рабочих сейчас: {len(working)}")
+        _update_check(f"{title}: проверено {pos}/{len(pool)} | рабочих {len(working)}/{ADAPTIVE_TARGET}")
         if not checkpoint_hit and len(working) >= ADAPTIVE_CHECKPOINT:
             checkpoint_hit = True
             print(f"🎯 порог {ADAPTIVE_CHECKPOINT} рабочих пройден, дальше порции по {ADAPTIVE_STEP}")
