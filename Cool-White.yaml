@@ -1,18 +1,17 @@
 proxies:
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#1|"
-  type: vless
-  server: 199.232.78.160
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#1|"
+  type: trojan
+  server: 45.131.4.38
   port: 443
-  uuid: XpnTeam-72
+  password: humanity
+  sni: www.pleadcourt.org
   udp: true
-  tls: true
-  network: ws
   skip-cert-verify: false
-  servername: ssl.fastly.com
+  network: ws
   ws-opts:
-    path: /
+    path: /assignment
     headers:
-      Host: Appxdn.global.ssl.fastly.net
+      Host: www.pleadcourt.org
 - name: "cool [white] \U0001F1F3\U0001F1F1 |#2|"
   type: trojan
   server: 194.147.149.54
@@ -26,63 +25,9 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#3|"
-  type: ss
-  server: 82.38.31.149
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#4|"
-  type: vless
-  server: sw.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: random
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#5|"
-  type: vless
-  server: 199.232.78.170
-  port: 443
-  uuid: 49e29dba-814a-50b0-b4a9-deffe26ae624
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ssl.fastly.com
-  ws-opts:
-    path: /
-    headers:
-      Host: Appxdn.global.ssl.fastly.net
-- name: "cool [white] \U0001F1F2\U0001F1FE |#6|"
-  type: vmess
-  server: 47.250.135.244
-  port: 10000
-  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: tcp
-  servername: 47.250.135.244
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  type: ss
-  server: 193.29.139.168
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: QCXDxuDlTTMD7jtgHUjIoj
-  udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#8|"
+- name: "cool [white] \U0001F310 |#3|"
   type: trojan
-  server: 45.131.4.38
+  server: 8.47.69.0
   port: 443
   password: humanity
   sni: www.pleadcourt.org
@@ -93,31 +38,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  type: vless
-  server: 199.232.78.170
-  port: 443
-  uuid: XpnTeam-71
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ssl.fastly.com
-  ws-opts:
-    path: /
-    headers:
-      Host: Appxdn.global.ssl.fastly.net
-- name: "cool [white] \U0001F1F2\U0001F1FE |#10|"
-  type: vmess
-  server: 47.250.135.244
-  port: 10000
-  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: tcp
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#11|"
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#4|"
   type: trojan
   server: 141.193.213.172
   port: 443
@@ -130,27 +51,14 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#12|"
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#5|"
   type: ss
-  server: 82.38.31.204
+  server: 82.38.31.185
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#13|"
-  type: trojan
-  server: 45.131.4.38
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#14|"
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#7|"
   type: trojan
   server: 194.147.149.54
   port: 443
@@ -163,13 +71,92 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#15|"
+- name: "cool [white] \U0001F1EA\U0001F1EC |#8|"
   type: ss
-  server: 82.38.31.185
+  server: 38.54.59.102
+  port: 443
+  cipher: aes-256-gcm
+  password: pKEW8JPByTVTLtM
+  udp: true
+- name: "cool [white] \U0001F1E8\U0001F1F4 |#9|"
+  type: ss
+  server: 149.104.107.41
+  port: 8090
+  cipher: aes-256-gcm
+  password: PCnnH6SQSnfoS27
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#10|"
+  type: ss
+  server: 82.38.31.18
   port: 8080
   cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
+- name: "cool [white] \U0001F310 |#11|"
+  type: trojan
+  server: 8.47.69.0
+  port: 443
+  password: humanity
+  sni: www.pleadcourt.org
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: "cool [white] \U0001F310 |#12|"
+  type: trojan
+  server: 8.47.69.0
+  port: 443
+  password: humanity
+  sni: www.pleadcourt.org
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: "cool [white] \U0001F310 |#13|"
+  type: trojan
+  server: 8.47.69.0
+  port: 443
+  password: humanity
+  sni: www.pleadcourt.org
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#14|"
+  type: trojan
+  server: 141.193.213.172
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#15|"
+  type: trojan
+  server: 194.147.149.54
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
 - name: "cool [white] \U0001F310 |#16|"
   type: trojan
   server: 8.47.69.0
@@ -184,15 +171,8 @@ proxies:
     headers:
       Host: www.pleadcourt.org
 - name: "cool [white] \U0001F1F3\U0001F1F1 |#17|"
-  type: ss
-  server: 185.4.115.147
-  port: 8044
-  cipher: chacha20-ietf-poly1305
-  password: hNfeLCN3XzYgLFSAWo_fxOl4HC1gNw0V
-  udp: true
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#18|"
   type: trojan
-  server: 141.193.213.172
+  server: 194.147.149.54
   port: 443
   password: humanity
   sni: www.calmlunch.com
@@ -203,22 +183,22 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#19|"
+- name: "cool [white] \U0001F1F2\U0001F1FE |#18|"
   type: trojan
-  server: 141.193.213.172
-  port: 443
+  server: 76.13.188.13
+  port: 8443
   password: humanity
-  sni: www.calmlunch.com
+  sni: www.cordweave.com
   udp: true
   skip-cert-verify: false
   network: ws
   ws-opts:
     path: /assignment
     headers:
-      Host: www.calmlunch.com
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#20|"
+      Host: www.cordweave.com
+- name: "cool [white] \U0001F310 |#19|"
   type: trojan
-  server: 45.131.4.38
+  server: 8.47.69.0
   port: 443
   password: humanity
   sni: www.pleadcourt.org
@@ -229,218 +209,168 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1E9\U0001F1EA |#21|"
-  type: vmess
-  server: LO7ioZK1FPYWR1t1.v.3dns.vip
+- name: "cool [white] \U0001F1ED\U0001F1F0 |#20|"
+  type: hysteria2
+  server: 112.120.123.140
   port: 443
-  uuid: 234a80412b4d44a3a8d8523cbfd58dc4
-  alterId: 0
-  cipher: auto
+  password: c12f73f6-e8c7-11ed-9246-f23c9164ca5d
+  sni: 193d0c41-tm96o0-tnggms-6gn6.nw4.hyhuawei.com
+  skip-cert-verify: false
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#21|"
+  type: trojan
+  server: 141.193.213.172
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
   udp: true
-  tls: true
+  skip-cert-verify: false
   network: ws
-  servername: LO7ioZK1FPYWR1t1.v.3dns.vip
   ws-opts:
-    path: /ws-vmess
+    path: /assignment
     headers:
-      Host: LO7ioZK1FPYWR1t1.v.3dns.vip
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#22|"
-  type: vless
-  server: 199.232.78.170
+      Host: www.calmlunch.com
+- name: "cool [white] \U0001F1ED\U0001F1F0 |#22|"
+  type: hysteria2
+  server: 112.120.123.140
   port: 443
-  uuid: 49e29dba-814a-50b0-b4a9-deffe26ae624
+  password: 4eedcde6-d16a-11ef-973a-f23c913c8d2b
+  sni: 3d0bb862-tm96o0-tnhquc-1j0a4.nw4.hyhuawei.com
+  skip-cert-verify: false
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#23|"
+  type: trojan
+  server: 141.193.213.172
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: "cool [white] \U0001F1E8\U0001F1ED |#24|"
+  type: vless
+  server: 195.141.65.98
+  port: 443
+  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: ssl.fastly.com
+  servername: 148-253-210-191.sslip.io
   ws-opts:
-    path: /
+    path: /test-ws
     headers:
-      Host: Appxdn.global.ssl.fastly.net
-- name: "cool [white] \U0001F1EE\U0001F1E9 |#24|"
-  type: vmess
-  server: az-1.linkaa.xyz
-  port: 53437
-  uuid: 6E571484-4166-4699-8F58-B34A1823691F
-  alterId: 0
-  cipher: auto
+      Host: 148-253-210-191.sslip.io
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#25|"
+  type: trojan
+  server: 141.193.213.172
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
   udp: true
-  tls: false
+  skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /game/resources
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#25|"
-  type: ss
-  server: 185.4.115.146
-  port: 8044
-  cipher: chacha20-ietf-poly1305
-  password: hNfeLCN3XzYgLFSAWo_fxOl4HC1gNw0V
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#26|"
+  type: trojan
+  server: 194.147.149.54
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
   udp: true
-- name: "cool [white] \U0001F1F5\U0001F1ED |#26|"
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#27|"
+  type: trojan
+  server: 141.193.213.172
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: "cool [white] \U0001F310 |#28|"
+  type: trojan
+  server: 8.47.69.0
+  port: 443
+  password: humanity
+  sni: www.pleadcourt.org
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: "cool [white] \U0001F1E8\U0001F1ED |#29|"
+  type: vless
+  server: 195.141.65.98
+  port: 443
+  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: 148-253-210-191.sslip.io
+  ws-opts:
+    path: /test-ws
+    headers:
+      Host: 148-253-210-191.sslip.io
+- name: "cool [white] \U0001F1ED\U0001F1F0 |#30|"
+  type: hysteria2
+  server: 112.120.123.140
+  port: 443
+  password: 3f514ea2-4662-11ed-a8bf-f23c91cfbbc9
+  sni: 9fc34650-tmm5c0-tmj4pk-1kcpe.nw4.hyhuawei.com
+  skip-cert-verify: false
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#31|"
+  type: ss
+  server: 82.38.31.204
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#32|"
+  type: ss
+  server: 82.38.31.175
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#33|"
+  type: trojan
+  server: 194.147.149.54
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: "cool [white] \U0001F1F5\U0001F1ED |#34|"
   type: ss
   server: 149.104.109.252
   port: 8882
   cipher: aes-256-gcm
   password: kDWvXYZoTBcGkC4
   udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#27|"
-  type: ss
-  server: 82.38.31.198
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-- name: "cool [white] \U0001F1E8\U0001F1F4 |#28|"
-  type: ss
-  server: 149.104.107.41
-  port: 8090
-  cipher: aes-256-gcm
-  password: PCnnH6SQSnfoS27
-  udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#29|"
-  type: ss
-  server: 82.38.31.18
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F310 |#30|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#31|"
-  type: ss
-  server: 185.4.115.147
-  port: 1352
-  cipher: chacha20-ietf-poly1305
-  password: hNfeLCN3XzYgLFSAWo_fxOl4HC1gNw0V
-  udp: true
-- name: "cool [white] \U0001F1EE\U0001F1E9 |#32|"
-  type: vmess
-  server: az-1.linkaa.xyz
-  port: 53617
-  uuid: 6E571484-4166-4699-8F58-B34A1823691F
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: az-1.linkaa.xyz
-  ws-opts:
-    path: /game/resources
-    headers:
-      Host: az-1.linkaa.xyz
-- name: "cool [white] \U0001F310 |#33|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F310 |#34|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#35|"
-  type: trojan
-  server: 141.193.213.172
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#36|"
-  type: vless
-  server: sw.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: ios
-- name: "cool [white] \U0001F310 |#37|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#38|"
-  type: trojan
-  server: 194.147.149.54
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: "cool [white] \U0001F1F2\U0001F1FE |#39|"
-  type: trojan
-  server: 76.13.188.13
-  port: 8443
-  password: humanity
-  sni: www.cordweave.com
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.cordweave.com
-- name: "cool [white] \U0001F1ED\U0001F1F0 |#40|"
-  type: hysteria2
-  server: 112.120.123.140
-  port: 443
-  password: d6abdbda-fe9d-11ec-bb74-f23c9164ca5d
-  sni: 51cc2d6e-tmm5c0-tw661e-1isea.nw4.hyhuawei.com
-  skip-cert-verify: false
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#41|"
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#35|"
   type: trojan
   server: 45.131.4.38
   port: 443
@@ -453,90 +383,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#42|"
-  type: ss
-  server: dns27.m3hrzd.ir
-  port: 8044
-  cipher: chacha20-ietf-poly1305
-  password: hNfeLCN3XzYgLFSAWo_fxOl4HC1gNw0V
-  udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#43|"
-  type: ss
-  server: 82.38.31.11
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  type: trojan
-  server: 141.193.213.172
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: "cool [white] \U0001F1E9\U0001F1EA |#46|"
-  type: vmess
-  server: kRUXDIdk3hdiDOcf.v.3dns.vip
-  port: 443
-  uuid: 234a80412b4d44a3a8d8523cbfd58dc4
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: kRUXDIdk3hdiDOcf.v.3dns.vip
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: kRUXDIdk3hdiDOcf.v.3dns.vip
-- name: "cool [white] \U0001F1ED\U0001F1F0 |#47|"
-  type: hysteria2
-  server: 112.120.123.140
-  port: 443
-  password: a2313fba-74a6-11ed-a8bf-f23c91cfbbc9
-  sni: b3dfb3ed-tmm5c0-trg4wh-z65w.nw4.hyhuawei.com
-  skip-cert-verify: false
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#48|"
-  type: vless
-  server: 141.193.213.21
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#49|"
-  type: ss
-  server: 82.38.31.175
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#50|"
-  type: trojan
-  server: 194.147.149.54
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: "cool [white] \U0001F1F2\U0001F1FE |#51|"
+- name: "cool [white] \U0001F1F2\U0001F1FE |#36|"
   type: trojan
   server: 76.13.188.13
   port: 8443
@@ -549,45 +396,199 @@ proxies:
     path: /assignment
     headers:
       Host: www.cordweave.com
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#52|"
-  type: vless
-  server: sw.golangwikito.cfd
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#37|"
+  type: trojan
+  server: 45.131.4.38
   port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  password: humanity
+  sni: www.pleadcourt.org
   udp: true
-  tls: true
-  network: tcp
   skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: randomized
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#53|"
-  type: vless
-  server: 199.232.78.170
-  port: 443
-  uuid: XpnTeam-71
-  udp: true
-  tls: true
   network: ws
-  skip-cert-verify: false
-  servername: ssl.fastly.com
   ws-opts:
-    path: /
+    path: /assignment
     headers:
-      Host: Appxdn.global.ssl.fastly.net
-- name: "cool [white] \U0001F1F8\U0001F1E8 |#54|"
+      Host: www.pleadcourt.org
+- name: "cool [white] \U0001F1F2\U0001F1FE |#38|"
+  type: ss
+  server: 130.94.69.15
+  port: 7001
+  cipher: aes-256-gcm
+  password: RexnBgU7EV5ADxG
+  udp: true
+- name: "cool [white] \U0001F310 |#39|"
+  type: trojan
+  server: 8.47.69.0
+  port: 443
+  password: humanity
+  sni: www.pleadcourt.org
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#40|"
+  type: ss
+  server: 82.38.31.7
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1F8\U0001F1E8 |#41|"
   type: ss
   server: 45.207.207.25
   port: 443
   cipher: aes-256-gcm
   password: gj1+XKulKV0nmw6IThckOkkJh5DSM7+C
   udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#55|"
+- name: "cool [white] \U0001F1E8\U0001F1ED |#42|"
+  type: vless
+  server: 195.141.65.98
+  port: 443
+  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: 148-253-210-191.sslip.io
+  ws-opts:
+    path: /test-ws
+    headers:
+      Host: 148-253-210-191.sslip.io
+- name: "cool [white] \U0001F310 |#43|"
+  type: trojan
+  server: 8.47.69.0
+  port: 443
+  password: humanity
+  sni: www.pleadcourt.org
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#44|"
   type: trojan
   server: 45.131.4.38
+  port: 443
+  password: humanity
+  sni: www.pleadcourt.org
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#45|"
+  type: ss
+  server: 82.38.31.149
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#46|"
+  type: ss
+  server: 82.38.31.174
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#47|"
+  type: ss
+  server: 82.38.31.175
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F310 |#48|"
+  type: trojan
+  server: 8.47.69.0
+  port: 443
+  password: humanity
+  sni: www.pleadcourt.org
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: "cool [white] \U0001F1F2\U0001F1FE |#49|"
+  type: vmess
+  server: 47.250.135.244
+  port: 10000
+  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: tcp
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#50|"
+  type: ss
+  server: 82.38.31.198
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#51|"
+  type: trojan
+  server: 45.131.4.38
+  port: 443
+  password: humanity
+  sni: www.pleadcourt.org
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: "cool [white] \U0001F310 |#52|"
+  type: trojan
+  server: 8.47.69.0
+  port: 443
+  password: humanity
+  sni: www.pleadcourt.org
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#53|"
+  type: trojan
+  server: 194.147.149.54
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: "cool [white] \U0001F310 |#54|"
+  type: trojan
+  server: 8.47.69.0
+  port: 443
+  password: humanity
+  sni: www.pleadcourt.org
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: "cool [white] \U0001F310 |#55|"
+  type: trojan
+  server: 8.47.69.0
   port: 443
   password: humanity
   sni: www.pleadcourt.org
@@ -599,86 +600,6 @@ proxies:
     headers:
       Host: www.pleadcourt.org
 - name: "cool [white] \U0001F1FA\U0001F1F8 |#56|"
-  type: vless
-  server: 199.232.78.160
-  port: 443
-  uuid: XpnTeam-71
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ssl.fastly.com
-  ws-opts:
-    path: /
-    headers:
-      Host: Appxdn.global.ssl.fastly.net
-- name: "cool [white] \U0001F310 |#57|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F310 |#58|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F310 |#59|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1F2\U0001F1FE |#60|"
-  type: ss
-  server: 130.94.69.15
-  port: 7001
-  cipher: aes-256-gcm
-  password: RexnBgU7EV5ADxG
-  udp: true
-- name: "cool [white] \U0001F1F7\U0001F1FA |#61|"
-  type: ss
-  server: 185.22.155.121
-  port: 18443
-  cipher: aes-256-gcm
-  password: NTiHBg64fsY8u8DbGrtypD9gPGSL386p
-  udp: true
-- name: "cool [white] \U0001F310 |#62|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#63|"
   type: trojan
   server: 141.193.213.172
   port: 443
@@ -691,975 +612,349 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#64|"
-  type: trojan
-  server: 141.193.213.172
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#57|"
+  type: ss
+  server: 82.38.31.11
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#65|"
+- name: "cool [white] \U0001F1E8\U0001F1ED |#58|"
   type: vless
-  server: news.zoom.us
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+  server: 195.141.65.98
+  port: 443
+  uuid: 53f03acd-fec1-6685-fc8f-03baf9550cb8
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: site.check-looks.space
+  servername: 148-253-210-191.sslip.io
   ws-opts:
-    path: /
+    path: /test-ws
     headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#66|"
-  type: trojan
-  server: 45.131.4.38
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#67|"
-  type: vless
-  server: 199.232.78.160
-  port: 443
-  uuid: XpnTeam-72
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ssl.fastly.com
-  ws-opts:
-    path: /
-    headers:
-      Host: Appxdn.global.ssl.fastly.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#68|"
-  type: vless
-  server: 199.232.78.160
-  port: 443
-  uuid: 49e29dba-814a-50b0-b4a9-deffe26ae624
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ssl.fastly.com
-  ws-opts:
-    path: /
-    headers:
-      Host: Appxdn.global.ssl.fastly.net
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#69|"
-  type: trojan
-  server: 45.131.4.38
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#70|"
-  type: trojan
-  server: 45.131.4.38
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#71|"
-  type: vless
-  server: 199.232.78.160
-  port: 443
-  uuid: XpnTeam-71
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ssl.fastly.com
-  ws-opts:
-    path: /
-    headers:
-      Host: Appxdn.global.ssl.fastly.net
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#72|"
+      Host: 148-253-210-191.sslip.io
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#59|"
   type: ss
   server: 82.38.31.149
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#74|"
-  type: trojan
-  server: 141.193.213.172
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: "cool [white] \U0001F1EA\U0001F1EC |#75|"
-  type: ss
-  server: 38.54.59.102
-  port: 443
-  cipher: aes-256-gcm
-  password: pKEW8JPByTVTLtM
-  udp: true
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#76|"
-  type: vless
-  server: 141.193.213.21
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#77|"
-  type: vless
-  server: sw.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: ios
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#78|"
-  type: ss
-  server: 82.38.31.174
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#79|"
-  type: ss
-  server: 82.38.31.7
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#80|"
-  type: ss
-  server: 82.38.31.195
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#81|"
-  type: vless
-  server: 199.232.78.160
-  port: 443
-  uuid: 49e29dba-814a-50b0-b4a9-deffe26ae624
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ssl.fastly.com
-  ws-opts:
-    path: /
-    headers:
-      Host: Appxdn.global.ssl.fastly.net
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#82|"
-  type: ss
-  server: 82.38.31.175
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F310 |#83|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#84|"
-  type: vless
-  server: news.zoom.us
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1EE\U0001F1E9 |#85|"
-  type: vmess
-  server: az-1.linkaa.xyz
-  port: 55386
-  uuid: 6E571484-4166-4699-8F58-B34A1823691F
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: az-1.linkaa.xyz
-  ws-opts:
-    path: /game/resources
-    headers:
-      Host: az-1.linkaa.xyz
-- name: "cool [white] \U0001F310 |#86|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#87|"
-  type: vless
-  server: sw.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: android
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#88|"
-  type: trojan
-  server: 45.131.4.38
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F310 |#89|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1EE\U0001F1E9 |#90|"
-  type: vmess
-  server: az-1.linkaa.xyz
-  port: 53617
-  uuid: 6E571484-4166-4699-8F58-B34A1823691F
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: az-1.linkaa.xyz
-  ws-opts:
-    path: /game/resources
-    headers:
-      Host: az-1.linkaa.xyz
-- name: "cool [white] \U0001F310 |#91|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F310 |#92|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#93|"
-  type: trojan
-  server: 194.147.149.54
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: "cool [white] \U0001F1F9\U0001F1FC |#94|"
-  type: vmess
-  server: mdk.mdmekjll.best
-  port: 80
-  uuid: 6E571484-4166-4699-8F58-B34A1823691F
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: mdk.mdmekjll.best
-  ws-opts:
-    path: /game/resources
-    headers:
-      Host: mdk.mdmekjll.best
-- name: "cool [white] \U0001F310 |#95|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#96|"
-  type: ss
-  server: dns24.m3hrzd.ir
-  port: 8044
-  cipher: chacha20-ietf-poly1305
-  password: hNfeLCN3XzYgLFSAWo_fxOl4HC1gNw0V
-  udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#97|"
-  type: vless
-  server: sw.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: android
-- name: "cool [white] \U0001F310 |#98|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#99|"
-  type: trojan
-  server: 194.147.149.54
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-- name: "cool [white] \U0001F310 |#100|"
-  type: trojan
-  server: 8.47.69.0
-  port: 443
-  password: humanity
-  sni: www.pleadcourt.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: "cool [white] \U0001F1EE\U0001F1E9 |#101|"
-  type: vmess
-  server: az-1.linkaa.xyz
-  port: 53437
-  uuid: 6E571484-4166-4699-8F58-B34A1823691F
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: az-1.linkaa.xyz
-  ws-opts:
-    path: /game/resources
-    headers:
-      Host: az-1.linkaa.xyz
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#102|"
-  type: trojan
-  server: 194.147.149.54
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
 proxy-groups:
 - name: Обычный
   type: select
   proxies:
   - Авто
   - Авто (без RU)
-  - "cool [white] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#1|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#3|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#4|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#5|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#6|"
+  - "cool [white] \U0001F310 |#3|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#5|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#8|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#12|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#14|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#15|"
+  - "cool [white] \U0001F1EA\U0001F1EC |#8|"
+  - "cool [white] \U0001F1E8\U0001F1F4 |#9|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#10|"
+  - "cool [white] \U0001F310 |#11|"
+  - "cool [white] \U0001F310 |#12|"
+  - "cool [white] \U0001F310 |#13|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#14|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#17|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#19|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#20|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#21|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#22|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#24|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#25|"
-  - "cool [white] \U0001F1F5\U0001F1ED |#26|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#27|"
-  - "cool [white] \U0001F1E8\U0001F1F4 |#28|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#29|"
-  - "cool [white] \U0001F310 |#30|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#31|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#32|"
-  - "cool [white] \U0001F310 |#33|"
-  - "cool [white] \U0001F310 |#34|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#35|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#36|"
-  - "cool [white] \U0001F310 |#37|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#38|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#39|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#40|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#41|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#42|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#43|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#46|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#47|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#48|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#49|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#50|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#51|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#52|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#53|"
-  - "cool [white] \U0001F1F8\U0001F1E8 |#54|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#55|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#18|"
+  - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#20|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#22|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#23|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#24|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#25|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#26|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#27|"
+  - "cool [white] \U0001F310 |#28|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#29|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#30|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#31|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#32|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#33|"
+  - "cool [white] \U0001F1F5\U0001F1ED |#34|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#35|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#36|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#37|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#38|"
+  - "cool [white] \U0001F310 |#39|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#40|"
+  - "cool [white] \U0001F1F8\U0001F1E8 |#41|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#42|"
+  - "cool [white] \U0001F310 |#43|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#44|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#45|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#46|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#47|"
+  - "cool [white] \U0001F310 |#48|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#49|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#50|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#51|"
+  - "cool [white] \U0001F310 |#52|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#53|"
+  - "cool [white] \U0001F310 |#54|"
+  - "cool [white] \U0001F310 |#55|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#56|"
-  - "cool [white] \U0001F310 |#57|"
-  - "cool [white] \U0001F310 |#58|"
-  - "cool [white] \U0001F310 |#59|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#60|"
-  - "cool [white] \U0001F1F7\U0001F1FA |#61|"
-  - "cool [white] \U0001F310 |#62|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#63|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#64|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#65|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#66|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#67|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#68|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#69|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#70|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#71|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#72|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#74|"
-  - "cool [white] \U0001F1EA\U0001F1EC |#75|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#76|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#77|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#78|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#79|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#80|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#81|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#82|"
-  - "cool [white] \U0001F310 |#83|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#84|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#85|"
-  - "cool [white] \U0001F310 |#86|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#87|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#88|"
-  - "cool [white] \U0001F310 |#89|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#90|"
-  - "cool [white] \U0001F310 |#91|"
-  - "cool [white] \U0001F310 |#92|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#93|"
-  - "cool [white] \U0001F1F9\U0001F1FC |#94|"
-  - "cool [white] \U0001F310 |#95|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#96|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#97|"
-  - "cool [white] \U0001F310 |#98|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#99|"
-  - "cool [white] \U0001F310 |#100|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#101|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#102|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#57|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#58|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#59|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#1|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#3|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#4|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#5|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#6|"
+  - "cool [white] \U0001F310 |#3|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#5|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#8|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#12|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#14|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#15|"
+  - "cool [white] \U0001F1EA\U0001F1EC |#8|"
+  - "cool [white] \U0001F1E8\U0001F1F4 |#9|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#10|"
+  - "cool [white] \U0001F310 |#11|"
+  - "cool [white] \U0001F310 |#12|"
+  - "cool [white] \U0001F310 |#13|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#14|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#17|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#19|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#20|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#21|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#22|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#24|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#25|"
-  - "cool [white] \U0001F1F5\U0001F1ED |#26|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#27|"
-  - "cool [white] \U0001F1E8\U0001F1F4 |#28|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#29|"
-  - "cool [white] \U0001F310 |#30|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#31|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#32|"
-  - "cool [white] \U0001F310 |#33|"
-  - "cool [white] \U0001F310 |#34|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#35|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#36|"
-  - "cool [white] \U0001F310 |#37|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#38|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#39|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#40|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#41|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#42|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#43|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#46|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#47|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#48|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#49|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#50|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#51|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#52|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#53|"
-  - "cool [white] \U0001F1F8\U0001F1E8 |#54|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#55|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#18|"
+  - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#20|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#22|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#23|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#24|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#25|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#26|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#27|"
+  - "cool [white] \U0001F310 |#28|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#29|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#30|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#31|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#32|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#33|"
+  - "cool [white] \U0001F1F5\U0001F1ED |#34|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#35|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#36|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#37|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#38|"
+  - "cool [white] \U0001F310 |#39|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#40|"
+  - "cool [white] \U0001F1F8\U0001F1E8 |#41|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#42|"
+  - "cool [white] \U0001F310 |#43|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#44|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#45|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#46|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#47|"
+  - "cool [white] \U0001F310 |#48|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#49|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#50|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#51|"
+  - "cool [white] \U0001F310 |#52|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#53|"
+  - "cool [white] \U0001F310 |#54|"
+  - "cool [white] \U0001F310 |#55|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#56|"
-  - "cool [white] \U0001F310 |#57|"
-  - "cool [white] \U0001F310 |#58|"
-  - "cool [white] \U0001F310 |#59|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#60|"
-  - "cool [white] \U0001F1F7\U0001F1FA |#61|"
-  - "cool [white] \U0001F310 |#62|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#63|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#64|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#65|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#66|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#67|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#68|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#69|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#70|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#71|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#72|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#74|"
-  - "cool [white] \U0001F1EA\U0001F1EC |#75|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#76|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#77|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#78|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#79|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#80|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#81|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#82|"
-  - "cool [white] \U0001F310 |#83|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#84|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#85|"
-  - "cool [white] \U0001F310 |#86|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#87|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#88|"
-  - "cool [white] \U0001F310 |#89|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#90|"
-  - "cool [white] \U0001F310 |#91|"
-  - "cool [white] \U0001F310 |#92|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#93|"
-  - "cool [white] \U0001F1F9\U0001F1FC |#94|"
-  - "cool [white] \U0001F310 |#95|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#96|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#97|"
-  - "cool [white] \U0001F310 |#98|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#99|"
-  - "cool [white] \U0001F310 |#100|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#101|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#102|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#57|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#58|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#59|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#1|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#3|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#4|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#5|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#6|"
+  - "cool [white] \U0001F310 |#3|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#5|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#8|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#12|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#14|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#15|"
+  - "cool [white] \U0001F1EA\U0001F1EC |#8|"
+  - "cool [white] \U0001F1E8\U0001F1F4 |#9|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#10|"
+  - "cool [white] \U0001F310 |#11|"
+  - "cool [white] \U0001F310 |#12|"
+  - "cool [white] \U0001F310 |#13|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#14|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#17|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#19|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#20|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#21|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#22|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#24|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#25|"
-  - "cool [white] \U0001F1F5\U0001F1ED |#26|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#27|"
-  - "cool [white] \U0001F1E8\U0001F1F4 |#28|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#29|"
-  - "cool [white] \U0001F310 |#30|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#31|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#32|"
-  - "cool [white] \U0001F310 |#33|"
-  - "cool [white] \U0001F310 |#34|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#35|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#36|"
-  - "cool [white] \U0001F310 |#37|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#38|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#39|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#40|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#41|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#42|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#43|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#46|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#47|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#48|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#49|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#50|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#51|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#52|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#53|"
-  - "cool [white] \U0001F1F8\U0001F1E8 |#54|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#55|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#18|"
+  - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#20|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#22|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#23|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#24|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#25|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#26|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#27|"
+  - "cool [white] \U0001F310 |#28|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#29|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#30|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#31|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#32|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#33|"
+  - "cool [white] \U0001F1F5\U0001F1ED |#34|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#35|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#36|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#37|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#38|"
+  - "cool [white] \U0001F310 |#39|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#40|"
+  - "cool [white] \U0001F1F8\U0001F1E8 |#41|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#42|"
+  - "cool [white] \U0001F310 |#43|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#44|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#45|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#46|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#47|"
+  - "cool [white] \U0001F310 |#48|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#49|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#50|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#51|"
+  - "cool [white] \U0001F310 |#52|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#53|"
+  - "cool [white] \U0001F310 |#54|"
+  - "cool [white] \U0001F310 |#55|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#56|"
-  - "cool [white] \U0001F310 |#57|"
-  - "cool [white] \U0001F310 |#58|"
-  - "cool [white] \U0001F310 |#59|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#60|"
-  - "cool [white] \U0001F310 |#62|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#63|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#64|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#65|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#66|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#67|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#68|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#69|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#70|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#71|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#72|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#74|"
-  - "cool [white] \U0001F1EA\U0001F1EC |#75|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#76|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#77|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#78|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#79|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#80|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#81|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#82|"
-  - "cool [white] \U0001F310 |#83|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#84|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#85|"
-  - "cool [white] \U0001F310 |#86|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#87|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#88|"
-  - "cool [white] \U0001F310 |#89|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#90|"
-  - "cool [white] \U0001F310 |#91|"
-  - "cool [white] \U0001F310 |#92|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#93|"
-  - "cool [white] \U0001F1F9\U0001F1FC |#94|"
-  - "cool [white] \U0001F310 |#95|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#96|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#97|"
-  - "cool [white] \U0001F310 |#98|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#99|"
-  - "cool [white] \U0001F310 |#100|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#101|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#102|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#57|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#58|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#59|"
 - name: "\U0001F1E8\U0001F1F4 Colombia"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1E8\U0001F1F4 |#28|"
+  - "cool [white] \U0001F1E8\U0001F1F4 |#9|"
 - name: "\U0001F1EA\U0001F1EC Egypt"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1EA\U0001F1EC |#75|"
-- name: "\U0001F1E9\U0001F1EA Germany"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1E9\U0001F1EA |#21|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#46|"
+  - "cool [white] \U0001F1EA\U0001F1EC |#8|"
 - name: "\U0001F1ED\U0001F1F0 Hong Kong"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1ED\U0001F1F0 |#40|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#47|"
-- name: "\U0001F1EE\U0001F1E9 Indonesia"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1EE\U0001F1E9 |#24|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#32|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#85|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#90|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#101|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#20|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#22|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#30|"
 - name: "\U0001F1F2\U0001F1FE Malaysia"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F2\U0001F1FE |#6|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#10|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#39|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#51|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#60|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#18|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#36|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#38|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#49|"
 - name: "\U0001F1F3\U0001F1F1 Netherlands"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
+  - "cool [white] \U0001F1F3\U0001F1F1 |#1|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#4|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#8|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#14|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#15|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#17|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#20|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#25|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#31|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#36|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#38|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#41|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#42|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#50|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#52|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#55|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#66|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#69|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#70|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#77|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#87|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#88|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#93|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#96|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#97|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#99|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#102|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#26|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#33|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#35|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#37|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#44|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#51|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#53|"
 - name: "\U0001F1F5\U0001F1ED Philippines"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F5\U0001F1ED |#26|"
-- name: "\U0001F1F7\U0001F1FA Russia"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1F7\U0001F1FA |#61|"
+  - "cool [white] \U0001F1F5\U0001F1ED |#34|"
 - name: "\U0001F1F8\U0001F1E8 Seychelles"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F8\U0001F1E8 |#54|"
-- name: "\U0001F1F9\U0001F1FC Taiwan"
+  - "cool [white] \U0001F1F8\U0001F1E8 |#41|"
+- name: "\U0001F1E8\U0001F1ED Switzerland"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F9\U0001F1FC |#94|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#24|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#29|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#42|"
+  - "cool [white] \U0001F1E8\U0001F1ED |#58|"
 - name: "\U0001F1FA\U0001F1F8 USA"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#1|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#5|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#19|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#22|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#35|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#48|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#53|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#14|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#23|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#25|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#27|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#56|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#63|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#64|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#65|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#67|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#68|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#71|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#74|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#76|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#81|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#84|"
 - name: "\U0001F1EC\U0001F1E7 United Kingdom"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1EC\U0001F1E7 |#3|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#12|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#15|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#27|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#29|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#43|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#49|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#72|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#78|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#79|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#80|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#82|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#5|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#10|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#31|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#32|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#40|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#45|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#46|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#47|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#50|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#57|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#59|"
 - name: "\U0001F310 Unknown"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
+  - "cool [white] \U0001F310 |#3|"
+  - "cool [white] \U0001F310 |#11|"
+  - "cool [white] \U0001F310 |#12|"
+  - "cool [white] \U0001F310 |#13|"
   - "cool [white] \U0001F310 |#16|"
-  - "cool [white] \U0001F310 |#30|"
-  - "cool [white] \U0001F310 |#33|"
-  - "cool [white] \U0001F310 |#34|"
-  - "cool [white] \U0001F310 |#37|"
-  - "cool [white] \U0001F310 |#57|"
-  - "cool [white] \U0001F310 |#58|"
-  - "cool [white] \U0001F310 |#59|"
-  - "cool [white] \U0001F310 |#62|"
-  - "cool [white] \U0001F310 |#83|"
-  - "cool [white] \U0001F310 |#86|"
-  - "cool [white] \U0001F310 |#89|"
-  - "cool [white] \U0001F310 |#91|"
-  - "cool [white] \U0001F310 |#92|"
-  - "cool [white] \U0001F310 |#95|"
-  - "cool [white] \U0001F310 |#98|"
-  - "cool [white] \U0001F310 |#100|"
+  - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F310 |#28|"
+  - "cool [white] \U0001F310 |#39|"
+  - "cool [white] \U0001F310 |#43|"
+  - "cool [white] \U0001F310 |#48|"
+  - "cool [white] \U0001F310 |#52|"
+  - "cool [white] \U0001F310 |#54|"
+  - "cool [white] \U0001F310 |#55|"
 rules:
 - MATCH,Обычный
