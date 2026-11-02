@@ -1,29 +1,25 @@
 {
-  "total": 31,
-  "countries": 8,
+  "total": 25,
+  "countries": 7,
   "top": [
     {
       "country": "United Kingdom",
-      "count": 11
-    },
-    {
-      "country": "Switzerland",
-      "count": 7
+      "count": 12
     },
     {
       "country": "Netherlands",
       "count": 6
     },
     {
-      "country": "Hong Kong",
-      "count": 3
+      "country": "Singapore",
+      "count": 2
     },
     {
-      "country": "Colombia",
-      "count": 1
+      "country": "USA",
+      "count": 2
     },
     {
-      "country": "Malaysia",
+      "country": "Germany",
       "count": 1
     },
     {
@@ -31,9 +27,9 @@
       "count": 1
     },
     {
-      "country": "Egypt",
+      "country": "Malaysia",
       "count": 1
     }
   ],
-  "updated": 1793569545
+  "updated": 1793615555
 }
