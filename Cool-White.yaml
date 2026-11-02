@@ -1,86 +1,65 @@
 proxies:
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#1|"
+- name: "cool [white] \U0001F1F2\U0001F1FE |#1|"
   type: ss
-  server: 82.38.31.54
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
+  server: 130.94.69.15
+  port: 7001
+  cipher: aes-256-gcm
+  password: RexnBgU7EV5ADxG
   udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#2|"
+- name: "cool [white] \U0001F1ED\U0001F1F0 |#2|"
+  type: ss
+  server: 58.152.58.193
+  port: 40006
+  cipher: chacha20-ietf-poly1305
+  password: 28789988-887e-4e41-83cd-27bbfb7999ad
+  udp: true
+- name: "cool [white] \U0001F1F7\U0001F1FA |#3|"
   type: vless
-  server: fr.golangwikito.cfd
+  server: 72.56.11.115
   port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  uuid: 7ad63b26-bf70-4872-8fab-ebaf73a1e19d
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
-    short-id: e6d589857d1cec5e
-  servername: fr.golangwikito.cfd
-  client-fingerprint: firefox
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#3|"
-  type: ss
-  server: 82.38.31.198
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#4|"
-  type: ss
-  server: 82.38.31.7
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#5|"
-  type: vless
-  server: fr.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
-    short-id: e6d589857d1cec5e
-  servername: fr.golangwikito.cfd
+    public-key: LEziyH-E4k9hehGRJkVi1FadVObB_NZJy8U7oUCVWXU
+    short-id: b9120cd53ffd7bba
+  servername: dl-65.topp-con.xyz
   client-fingerprint: android
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#6|"
-  type: ss
-  server: 82.38.31.195
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#7|"
-  type: ss
-  server: 82.38.31.46
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1F8\U0001F1EC |#8|"
+- name: "cool [white] \U0001F1F9\U0001F1F7 |#4|"
   type: vless
-  server: 47.84.87.77
-  port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  server: tr2.h1cloud.net
+  port: 25021
+  uuid: 2446e2e2-1ce3-4502-9050-1dd32bacc68c
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: od79bUkYtqQtsGrrTdhmkDflx5c9al4vqxwWApvc-Dg
+    short-id: 17fa3af0924c88b3
+  servername: www.samsung.com
+  client-fingerprint: firefox
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#5|"
+  type: vless
+  server: 212.43.152.62
+  port: 8444
+  uuid: 35c9f200-7520-4005-b78e-f8a2fb9f68f7
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: t5pmr.mail-node.gfw.kdns.fr
+  servername: us1.meshbeat.online
   ws-opts:
-    path: /danfeng?ed=2560
+    path: /api/v1/devices/3ec9e2ef7b/telemetry
     headers:
-      Host: t5pmr.mail-node.gfw.kdns.fr
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#9|"
+      Host: us1.meshbeat.online
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#6|"
   type: vless
-  server: sw.golangwikito.cfd
+  server: fr.golangwikito.cfd
   port: 443
   uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
   udp: true
@@ -89,32 +68,18 @@ proxies:
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
+    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
+    short-id: e6d589857d1cec5e
+  servername: fr.golangwikito.cfd
   client-fingerprint: ios
-- name: "cool [white] \U0001F1E9\U0001F1EA |#10|"
-  type: hysteria2
-  server: 144.31.225.79
-  port: 28152
-  password: 6656cc0a-5908-4d04-a436-64f5843c0c7a
-  sni: downloadchache1.song69.fun
-  skip-cert-verify: false
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#11|"
-  type: ss
-  server: 82.38.31.175
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#12|"
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#7|"
   type: ss
   server: 49.51.39.148
   port: 443
   cipher: chacha20-ietf-poly1305
   password: LCvps-199-168-136-193-bak8443
   udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#13|"
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#8|"
   type: vless
   server: fr.golangwikito.cfd
   port: 443
@@ -128,64 +93,111 @@ proxies:
     public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
     short-id: e6d589857d1cec5e
   servername: fr.golangwikito.cfd
-  client-fingerprint: edge
-- name: "cool [white] \U0001F1F8\U0001F1E8 |#14|"
-  type: ss
-  server: 45.207.207.25
-  port: 443
-  cipher: aes-256-gcm
-  password: gj1+XKulKV0nmw6IThckOkkJh5DSM7+C
-  udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#15|"
+  client-fingerprint: random
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#9|"
   type: ss
   server: 82.38.31.174
   port: 443
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-- name: "cool [white] \U0001F1F8\U0001F1EC |#16|"
-  type: vless
-  server: 101.32.142.168
-  port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#17|"
-  type: hysteria2
-  server: 13.143.189.105
-  port: 4444
-  password: a35c508f-4d5d-4531-842e-6e9d43c762c0
-  sni: pl2.nexfile.net
-  skip-cert-verify: false
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#18|"
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#10|"
   type: ss
-  server: 82.38.31.185
+  server: 82.38.31.195
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#19|"
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#11|"
+  type: vmess
+  server: 23.147.56.181
+  port: 52843
+  uuid: 88be793c-c368-4eb1-8809-057e5df96606
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: tcp
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#12|"
+  type: vless
+  server: 45.91.202.32
+  port: 8444
+  uuid: 35c9f200-7520-4005-b78e-f8a2fb9f68f7
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: nl15.meshbeat.online
+  ws-opts:
+    path: /api/v1/devices/02585a2d89/telemetry
+    headers:
+      Host: nl15.meshbeat.online
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#13|"
+  type: ss
+  server: 82.38.31.175
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#14|"
+  type: ss
+  server: 82.38.31.198
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#15|"
+  type: ss
+  server: 82.38.31.54
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#16|"
+  type: vless
+  server: 94.183.206.226
+  port: 7443
+  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
+    short-id: ''
+  servername: optim.tildacdn.pub
+  client-fingerprint: android
+  grpc-opts:
+    grpc-service-name: ebl
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#17|"
+  type: ss
+  server: 82.38.31.7
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#18|"
   type: ss
   server: 82.38.31.175
   port: 443
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#20|"
-  type: ss
-  server: 82.38.31.149
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#19|"
+  type: vless
+  server: 212.43.152.62
+  port: 8444
+  uuid: 35c9f200-7520-4005-b78e-f8a2fb9f68f7
   udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#21|"
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: us1.meshbeat.online
+  ws-opts:
+    path: /api/v1/devices/3ec9e2ef7b/telemetry
+    headers:
+      Host: us1.meshbeat.online
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#20|"
   type: vless
   server: fr.golangwikito.cfd
   port: 443
@@ -199,11 +211,25 @@ proxies:
     public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
     short-id: e6d589857d1cec5e
   servername: fr.golangwikito.cfd
-  client-fingerprint: randomized
+  client-fingerprint: ios
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#21|"
+  type: vless
+  server: 45.91.202.32
+  port: 8444
+  uuid: 35c9f200-7520-4005-b78e-f8a2fb9f68f7
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: nl15.meshbeat.online
+  ws-opts:
+    path: /api/v1/devices/02585a2d89/telemetry
+    headers:
+      Host: nl15.meshbeat.online
 - name: "cool [white] \U0001F1EC\U0001F1E7 |#22|"
   type: ss
   server: 82.38.31.149
-  port: 8080
+  port: 443
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
@@ -221,180 +247,449 @@ proxies:
     public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
     short-id: e6d589857d1cec5e
   servername: fr.golangwikito.cfd
+  client-fingerprint: ios
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#24|"
+  type: vless
+  server: 212.43.152.62
+  port: 8444
+  uuid: 35c9f200-7520-4005-b78e-f8a2fb9f68f7
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: us1.meshbeat.online
+  ws-opts:
+    path: /api/v1/devices/3ec9e2ef7b/telemetry
+    headers:
+      Host: us1.meshbeat.online
+- name: "cool [white] \U0001F1ED\U0001F1F0 |#25|"
+  type: ss
+  server: xunlinknode.csdjhajkshdjkas.com
+  port: 40006
+  cipher: chacha20-ietf-poly1305
+  password: 28789988-887e-4e41-83cd-27bbfb7999ad
+  udp: true
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#27|"
+  type: vless
+  server: 45.91.202.32
+  port: 8444
+  uuid: 35c9f200-7520-4005-b78e-f8a2fb9f68f7
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: nl15.meshbeat.online
+  ws-opts:
+    path: /api/v1/devices/02585a2d89/telemetry
+    headers:
+      Host: nl15.meshbeat.online
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#28|"
+  type: vless
+  server: 94.183.206.226
+  port: 7443
+  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
+    short-id: ''
+  servername: optim.tildacdn.pub
   client-fingerprint: edge
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#24|"
+  grpc-opts:
+    grpc-service-name: ebl
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#29|"
+  type: vless
+  server: fr.golangwikito.cfd
+  port: 443
+  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
+    short-id: e6d589857d1cec5e
+  servername: fr.golangwikito.cfd
+  client-fingerprint: android
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#30|"
+  type: vless
+  server: 94.183.206.226
+  port: 7443
+  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
+    short-id: ''
+  servername: optim.tildacdn.pub
+  client-fingerprint: safari
+  grpc-opts:
+    grpc-service-name: ebl
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#31|"
   type: ss
   server: 82.38.31.11
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-- name: "cool [white] \U0001F1F2\U0001F1FE |#25|"
-  type: ss
-  server: 130.94.69.15
-  port: 7001
-  cipher: aes-256-gcm
-  password: RexnBgU7EV5ADxG
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#32|"
+  type: vless
+  server: 212.43.152.62
+  port: 8444
+  uuid: 35c9f200-7520-4005-b78e-f8a2fb9f68f7
   udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: us1.meshbeat.online
+  ws-opts:
+    path: /api/v1/devices/3ec9e2ef7b/telemetry
+    headers:
+      Host: us1.meshbeat.online
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#33|"
+  type: vless
+  server: 94.183.206.226
+  port: 7443
+  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
+    short-id: ''
+  servername: optim.tildacdn.pub
+  client-fingerprint: edge
+  grpc-opts:
+    grpc-service-name: ebl
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#34|"
+  type: vless
+  server: g01tig3hasus3.dnetsolutions.ru
+  port: 443
+  uuid: e08d9bc5-6832-4dd4-bd44-d9bbe61e5817
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: 4qE0kXmxDvNzsns2jdwd74AN35RptcTD4eKo5REa9w8
+    short-id: '04'
+  servername: max.ru
+  client-fingerprint: edge
+  grpc-opts:
+    grpc-service-name: grpc-67
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#35|"
+  type: ss
+  server: 82.38.31.204
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#36|"
+  type: vless
+  server: 212.43.152.62
+  port: 8444
+  uuid: 35c9f200-7520-4005-b78e-f8a2fb9f68f7
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: us1.meshbeat.online
+  ws-opts:
+    path: /api/v1/devices/3ec9e2ef7b/telemetry
+    headers:
+      Host: us1.meshbeat.online
+- name: "cool [white] \U0001F1F7\U0001F1FA |#37|"
+  type: vless
+  server: 72.56.11.115
+  port: 443
+  uuid: 7ad63b26-bf70-4872-8fab-ebaf73a1e19d
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: LEziyH-E4k9hehGRJkVi1FadVObB_NZJy8U7oUCVWXU
+    short-id: b9120cd53ffd7bba
+  servername: dl-65.topp-con.xyz
+  client-fingerprint: safari
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#38|"
+  type: ss
+  server: 82.38.31.149
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#39|"
+  type: ss
+  server: 82.38.31.185
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#41|"
+  type: ss
+  server: 82.38.31.46
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#43|"
+  type: vless
+  server: fr.golangwikito.cfd
+  port: 443
+  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
+    short-id: e6d589857d1cec5e
+  servername: fr.golangwikito.cfd
+  client-fingerprint: random
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#44|"
+  type: vless
+  server: 212.43.152.62
+  port: 8444
+  uuid: 35c9f200-7520-4005-b78e-f8a2fb9f68f7
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: us1.meshbeat.online
+  ws-opts:
+    path: /api/v1/devices/3ec9e2ef7b/telemetry
+    headers:
+      Host: us1.meshbeat.online
 proxy-groups:
 - name: Обычный
   type: select
   proxies:
   - Авто
   - Авто (без RU)
-  - "cool [white] \U0001F1EC\U0001F1E7 |#1|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#3|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#4|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#5|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#6|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#7|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#8|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#9|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#10|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#11|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#12|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
-  - "cool [white] \U0001F1F8\U0001F1E8 |#14|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#1|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#2|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#3|"
+  - "cool [white] \U0001F1F9\U0001F1F7 |#4|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#5|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#6|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#7|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#8|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#9|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#10|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#12|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#13|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#14|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#15|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#16|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#17|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#16|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#17|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#18|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#19|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#20|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#19|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#20|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#21|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#22|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#23|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#24|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#25|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#24|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#25|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#27|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#28|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#29|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#30|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#31|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#32|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#33|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#34|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#35|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#36|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#37|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#38|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#39|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#41|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#43|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#44|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1EC\U0001F1E7 |#1|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#3|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#4|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#5|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#6|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#7|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#8|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#9|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#10|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#11|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#12|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
-  - "cool [white] \U0001F1F8\U0001F1E8 |#14|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#1|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#2|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#3|"
+  - "cool [white] \U0001F1F9\U0001F1F7 |#4|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#5|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#6|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#7|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#8|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#9|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#10|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#12|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#13|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#14|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#15|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#16|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#17|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#16|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#17|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#18|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#19|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#20|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#19|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#20|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#21|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#22|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#23|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#24|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#25|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#24|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#25|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#27|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#28|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#29|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#30|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#31|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#32|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#33|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#34|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#35|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#36|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#37|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#38|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#39|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#41|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#43|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#44|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1EC\U0001F1E7 |#1|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#3|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#4|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#5|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#6|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#7|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#8|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#9|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#10|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#11|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#12|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
-  - "cool [white] \U0001F1F8\U0001F1E8 |#14|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#1|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#2|"
+  - "cool [white] \U0001F1F9\U0001F1F7 |#4|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#5|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#6|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#7|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#8|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#9|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#10|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#12|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#13|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#14|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#15|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#16|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#17|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#16|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#17|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#18|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#19|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#20|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#19|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#20|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#21|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#22|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#23|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#24|"
-  - "cool [white] \U0001F1F2\U0001F1FE |#25|"
-- name: "\U0001F1E9\U0001F1EA Germany"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#24|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#25|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#27|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#28|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#29|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#30|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#31|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#32|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#33|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#34|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#35|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#36|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#38|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#39|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#41|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#43|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#44|"
+- name: "\U0001F1ED\U0001F1F0 Hong Kong"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1E9\U0001F1EA |#10|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#2|"
+  - "cool [white] \U0001F1ED\U0001F1F0 |#25|"
 - name: "\U0001F1F2\U0001F1FE Malaysia"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F2\U0001F1FE |#25|"
+  - "cool [white] \U0001F1F2\U0001F1FE |#1|"
 - name: "\U0001F1F3\U0001F1F1 Netherlands"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#5|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#9|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#6|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#8|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#12|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#16|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#20|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#21|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#23|"
-- name: "\U0001F1F8\U0001F1E8 Seychelles"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#27|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#28|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#29|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#30|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#33|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#34|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#43|"
+- name: "\U0001F1F7\U0001F1FA Russia"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F8\U0001F1E8 |#14|"
-- name: "\U0001F1F8\U0001F1EC Singapore"
+  - "cool [white] \U0001F1F7\U0001F1FA |#3|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#37|"
+- name: "\U0001F1F9\U0001F1F7 Turkey"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F8\U0001F1EC |#8|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#16|"
+  - "cool [white] \U0001F1F9\U0001F1F7 |#4|"
 - name: "\U0001F1FA\U0001F1F8 USA"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#12|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#17|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#5|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#7|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#19|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#24|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#32|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#36|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#44|"
 - name: "\U0001F1EC\U0001F1E7 United Kingdom"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1EC\U0001F1E7 |#1|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#3|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#4|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#6|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#7|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#11|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#9|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#10|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#13|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#14|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#15|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#17|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#18|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#19|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#20|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#22|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#24|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#31|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#35|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#38|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#39|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#41|"
 rules:
 - MATCH,Обычный
