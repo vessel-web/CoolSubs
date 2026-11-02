@@ -3,10 +3,11 @@ name: update subs
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3,15 * * *"
+    - cron: "0 3,9,15,21 * * *"
 
 permissions:
   contents: write
+  checks: write
 
 concurrency:
   group: coolsubs
@@ -22,6 +23,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
 
       - name: Python deps
         run: pip install requests pyyaml geoip2 aiohttp pysocks
@@ -53,21 +55,60 @@ jobs:
             echo "DBIP_URL не задан, ASN-фильтр пропущен"
           fi
 
+      - name: progress check run
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ID=$(curl -s -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/check-runs" \
+            -d "{\"name\":\"progress\",\"head_sha\":\"$GITHUB_SHA\",\"status\":\"in_progress\",\"output\":{\"title\":\"parse progress\",\"summary\":\"запуск...\"}}" \
+            | python3 -c 'import json,sys; print(json.load(sys.stdin).get("id",""))')
+          echo "CHECK_RUN_ID=$ID" >> "$GITHUB_ENV"
+
       - name: parse
         env:
           SINGBOX_BIN: /usr/local/bin/sing-box-extended
           RING_TEAM_SUB: ${{ secrets.RING_TEAM_SUB }}
-        run: python scripts/parser_cloud.py
+          KERNEL_COUNT: "10"
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python -u scripts/parser_cloud.py
+
+      - name: close progress check run
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          [ -n "$CHECK_RUN_ID" ] && curl -s -X PATCH \
+            -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/check-runs/$CHECK_RUN_ID" \
+            -d '{"status":"completed","conclusion":"neutral"}' > /dev/null || true
 
       - name: publish
         run: |
+          set -e
           git config user.name "coolsubs-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add Cool-Black.txt Cool-Black.yaml Cool-Black_stats.json \
-                  Cool-White.txt Cool-White.yaml Cool-White_stats.json CHANGELOG.md
-          if git diff --cached --quiet; then
-            echo "изменений нет"
-          else
+          FILES="Cool-Black.txt Cool-Black.yaml Cool-Black_stats.json Cool-White.txt Cool-White.yaml Cool-White_stats.json CHANGELOG.md"
+          mkdir -p /tmp/out
+          cp $FILES /tmp/out/
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/out/* .
+            mkdir -p docs && cp $FILES docs/
+            git add $FILES docs/
+            if git diff --cached --quiet; then
+              echo "изменений нет"
+              exit 0
+            fi
             git commit -m "update subs $(date -u '+%F %H:%M') UTC"
-            git push
-          fi
+            if git push origin HEAD:main; then
+              echo "опубликовано"
+              exit 0
+            fi
+            echo "push отклонён, повтор $i"
+            sleep $((i * 5))
+          done
+          echo "не удалось опубликовать после 5 попыток"
+          exit 1
