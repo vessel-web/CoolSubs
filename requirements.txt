@@ -1,0 +1,5 @@
+requests
+pyyaml
+geoip2
+aiohttp
+pysocks
