@@ -1341,7 +1341,8 @@ def run_white():
 
 ADAPTIVE_FIRST = 10000
 ADAPTIVE_STEP = 30000
-ADAPTIVE_TARGET = 500
+ADAPTIVE_TARGET = 0          # 0 = без лимита рабочих, проверить весь пул
+ADAPTIVE_MAX_MIN = int(os.environ.get("MAX_MIN") or 280)   # лимит времени на этап, мин
 ADAPTIVE_CHECKPOINT = 100
 _PROGRESS = {"stage": "", "base_done": 0, "pool": 0, "base_working": 0, "target": 500}
 
@@ -1366,15 +1367,18 @@ def run_adaptive(kind, title, out_name):
         return
 
     working, pos, chunk, checkpoint_hit = [], 0, ADAPTIVE_FIRST, False
-    while pos < len(pool) and len(working) < ADAPTIVE_TARGET:
+    while pos < len(pool) and (ADAPTIVE_TARGET == 0 or len(working) < ADAPTIVE_TARGET):
+        if ADAPTIVE_MAX_MIN and (time.time() - t0) / 60 > ADAPTIVE_MAX_MIN:
+            print(f"⏱ лимит времени {ADAPTIVE_MAX_MIN} мин, останавливаюсь")
+            break
         batch = pool[pos:pos + chunk]
         _PROGRESS.update(stage=title, base_done=pos, pool=len(pool),
-                         base_working=len(working), target=ADAPTIVE_TARGET)
+                         base_working=len(working), target=ADAPTIVE_TARGET or "∞")
         pos += len(batch)
         print(f"\n▶ порция {len(batch)} | проверено {pos}/{len(pool)} | рабочих {len(working)}")
         working.extend(check_via_singbox_batch(batch))
         print(f"   рабочих сейчас: {len(working)}")
-        _update_check(f"{title}: проверено {pos}/{len(pool)} | рабочих {len(working)}/{ADAPTIVE_TARGET}")
+        _update_check(f"{title}: проверено {pos}/{len(pool)} | рабочих {len(working)}/{ADAPTIVE_TARGET or '∞'}")
         if not checkpoint_hit and len(working) >= ADAPTIVE_CHECKPOINT:
             checkpoint_hit = True
             print(f"🎯 порог {ADAPTIVE_CHECKPOINT} рабочих пройден, дальше порции по {ADAPTIVE_STEP}")
@@ -1384,7 +1388,7 @@ def run_adaptive(kind, title, out_name):
     if not working:
         print("⚠️ Рабочих нет")
         return
-    if len(working) >= ADAPTIVE_TARGET:
+    if ADAPTIVE_TARGET and len(working) >= ADAPTIVE_TARGET:
         print(f"🎯 достигнут {ADAPTIVE_TARGET}")
     _finalize(working, out_name, title)
     if kind == "black":
