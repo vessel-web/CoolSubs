@@ -1,61 +1,5 @@
 proxies:
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#2|"
-  type: ss
-  server: 82.38.31.11
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1EE\U0001F1E9 |#3|"
-  type: vless
-  server: 147.139.139.151
-  port: 587
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#4|"
-  type: vless
-  server: 141.193.213.21
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#5|"
-  type: ss
-  server: 82.38.31.46
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#6|"
-  type: vless
-  server: news.zoom.us
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#7|"
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#1|"
   type: vless
   server: 94.183.206.226
   port: 7443
@@ -68,68 +12,10 @@ proxies:
     public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
     short-id: ''
   servername: optim.tildacdn.pub
-  client-fingerprint: safari
+  client-fingerprint: edge
   grpc-opts:
     grpc-service-name: ebl
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#8|"
-  type: vless
-  server: 141.193.213.21
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  type: vless
-  server: 141.193.213.21
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1ED\U0001F1F0 |#10|"
-  type: ss
-  server: xunlinknode.csdjhajkshdjkas.com
-  port: 40006
-  cipher: chacha20-ietf-poly1305
-  password: 28789988-887e-4e41-83cd-27bbfb7999ad
-  udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#11|"
-  type: ss
-  server: 82.38.31.185
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-- name: "cool [white] \U0001F1FA\U0001F1E6 |#13|"
-  type: vless
-  server: qtir1.dnetsolutions.ru
-  port: 443
-  uuid: 63959ed7-d26f-48dd-8c7b-ebdb6ea68535
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 9X-tgXeFaqxURY0nGxFNdz9bpNIo7DTXHoWXpBqiOj0
-    short-id: cbc638acc8ac87
-  servername: max.ru
-  client-fingerprint: random
-  grpc-opts:
-    grpc-service-name: grpc-90
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#14|"
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#2|"
   type: vless
   server: fr.golangwikito.cfd
   port: 443
@@ -143,38 +29,38 @@ proxies:
     public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
     short-id: e6d589857d1cec5e
   servername: fr.golangwikito.cfd
-  client-fingerprint: firefox
-- name: "cool [white] \U0001F1EE\U0001F1E9 |#15|"
-  type: vless
-  server: 147.139.139.151
-  port: 587
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  client-fingerprint: edge
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#4|"
+  type: ss
+  server: 82.38.31.149
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#16|"
-  type: vless
-  server: 141.193.213.21
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#5|"
+  type: ss
+  server: 82.38.31.7
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1F8\U0001F1EA |#17|"
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#7|"
+  type: ss
+  server: 82.38.31.46
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#8|"
+  type: ss
+  server: 82.38.31.185
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#10|"
   type: vless
-  server: sw.golangwikito.cfd
+  server: fr.golangwikito.cfd
   port: 443
   uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
   udp: true
@@ -183,10 +69,119 @@ proxies:
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: safari
+    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
+    short-id: e6d589857d1cec5e
+  servername: fr.golangwikito.cfd
+  client-fingerprint: randomized
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#11|"
+  type: vless
+  server: fr.golangwikito.cfd
+  port: 443
+  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
+    short-id: e6d589857d1cec5e
+  servername: fr.golangwikito.cfd
+  client-fingerprint: random
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#12|"
+  type: vless
+  server: 94.183.206.226
+  port: 7443
+  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
+    short-id: ''
+  servername: optim.tildacdn.pub
+  client-fingerprint: randomized
+  grpc-opts:
+    grpc-service-name: ebl
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#13|"
+  type: vless
+  server: 94.183.206.226
+  port: 7443
+  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
+    short-id: ''
+  servername: optim.tildacdn.pub
+  client-fingerprint: random
+  grpc-opts:
+    grpc-service-name: ebl
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#14|"
+  type: vless
+  server: 94.183.206.226
+  port: 7443
+  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
+    short-id: ''
+  servername: optim.tildacdn.pub
+  client-fingerprint: randomized
+  grpc-opts:
+    grpc-service-name: ebl
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#15|"
+  type: vless
+  server: fr.golangwikito.cfd
+  port: 443
+  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
+    short-id: e6d589857d1cec5e
+  servername: fr.golangwikito.cfd
+  client-fingerprint: randomized
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#16|"
+  type: vless
+  server: 94.183.206.226
+  port: 7443
+  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
+  udp: true
+  tls: true
+  network: grpc
+  skip-cert-verify: false
+  reality-opts:
+    public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
+    short-id: ''
+  servername: optim.tildacdn.pub
+  client-fingerprint: random
+  grpc-opts:
+    grpc-service-name: ebl
+- name: "cool [white] \U0001F1F7\U0001F1FA |#17|"
+  type: vless
+  server: 130.49.177.193
+  port: 443
+  uuid: 727a9178-d7f0-4142-8205-b0d19959ded0
+  udp: true
+  tls: true
+  network: tcp
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: DCpi9-1rSXxBnEIAQ9U3mTqHivk7vHJRV_T2pWw5vCc
+    short-id: 681fc2dd643bc2f3
+  servername: de-2.ffpn.pro
+  client-fingerprint: ios
 - name: "cool [white] \U0001F1F3\U0001F1F1 |#18|"
   type: vless
   server: 94.183.206.226
@@ -203,177 +198,23 @@ proxies:
   client-fingerprint: edge
   grpc-opts:
     grpc-service-name: ebl
-- name: "cool [white] \U0001F1FA\U0001F1E6 |#19|"
-  type: vless
-  server: qtir1.dnetsolutions.ru
-  port: 443
-  uuid: 63959ed7-d26f-48dd-8c7b-ebdb6ea68535
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: 9X-tgXeFaqxURY0nGxFNdz9bpNIo7DTXHoWXpBqiOj0
-    short-id: cbc638acc8ac87
-  servername: max.ru
-  client-fingerprint: firefox
-  grpc-opts:
-    grpc-service-name: grpc-90
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#20|"
-  type: ss
-  server: 82.38.31.7
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1EE\U0001F1E9 |#21|"
-  type: vless
-  server: 147.139.139.151
-  port: 587
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#22|"
-  type: ss
-  server: 82.38.31.175
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#23|"
-  type: vless
-  server: 45.91.202.32
-  port: 8444
-  uuid: 35c9f200-7520-4005-b78e-f8a2fb9f68f7
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: nl15.meshbeat.online
-  ws-opts:
-    path: /api/v1/devices/02585a2d89/telemetry
-    headers:
-      Host: nl15.meshbeat.online
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#24|"
-  type: vless
-  server: news.zoom.us
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1ED\U0001F1F0 |#25|"
-  type: ss
-  server: 58.152.58.193
-  port: 40006
-  cipher: chacha20-ietf-poly1305
-  password: 28789988-887e-4e41-83cd-27bbfb7999ad
-  udp: true
-- name: "cool [white] \U0001F1F8\U0001F1EC |#26|"
-  type: vless
-  server: 101.32.142.168
-  port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#27|"
-  type: vless
-  server: 94.183.206.226
-  port: 7443
-  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
-    short-id: ''
-  servername: optim.tildacdn.pub
-  client-fingerprint: randomized
-  grpc-opts:
-    grpc-service-name: ebl
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#28|"
-  type: ss
-  server: 82.38.31.175
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#29|"
-  type: vless
-  server: 94.183.206.226
-  port: 7443
-  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
-    short-id: ''
-  servername: optim.tildacdn.pub
-  client-fingerprint: android
-  grpc-opts:
-    grpc-service-name: ebl
-- name: "cool [white] \U0001F1F8\U0001F1EA |#30|"
-  type: vless
-  server: sw.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: random
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#31|"
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#19|"
   type: ss
   server: 82.38.31.204
   port: 8080
   cipher: chacha20-ietf-poly1305
   password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
-- name: "cool [white] \U0001F1F5\U0001F1ED |#32|"
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#20|"
   type: ss
-  server: 149.104.109.252
-  port: 8882
-  cipher: aes-256-gcm
-  password: kDWvXYZoTBcGkC4
-  udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#33|"
-  type: ss
-  server: 82.38.31.174
+  server: 49.51.39.148
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
+  password: LCvps-199-168-136-193-bak8443
   udp: true
-- name: "cool [white] \U0001F1F8\U0001F1EA |#34|"
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#21|"
   type: vless
-  server: sw.golangwikito.cfd
+  server: fr.golangwikito.cfd
   port: 443
   uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
   udp: true
@@ -382,11 +223,11 @@ proxies:
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg
-    short-id: a1037b25dcef6aa7
-  servername: sw.golangwikito.cfd
-  client-fingerprint: android
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#35|"
+    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
+    short-id: e6d589857d1cec5e
+  servername: fr.golangwikito.cfd
+  client-fingerprint: randomized
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#22|"
   type: vless
   server: 45.91.202.32
   port: 8444
@@ -400,60 +241,21 @@ proxies:
     path: /api/v1/devices/02585a2d89/telemetry
     headers:
       Host: nl15.meshbeat.online
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#36|"
-  type: vless
-  server: 94.183.206.226
-  port: 7443
-  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
-  reality-opts:
-    public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
-    short-id: ''
-  servername: optim.tildacdn.pub
-  client-fingerprint: ios
-  grpc-opts:
-    grpc-service-name: ebl
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#38|"
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#23|"
   type: ss
-  server: 82.38.31.149
-  port: 443
+  server: 82.38.31.198
+  port: 8080
   cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
+  password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#39|"
-  type: vless
-  server: fr.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+- name: "cool [white] \U0001F1F5\U0001F1ED |#24|"
+  type: ss
+  server: 149.104.109.252
+  port: 8882
+  cipher: aes-256-gcm
+  password: kDWvXYZoTBcGkC4
   udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
-    short-id: e6d589857d1cec5e
-  servername: fr.golangwikito.cfd
-  client-fingerprint: randomized
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#40|"
-  type: vless
-  server: fr.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
-    short-id: e6d589857d1cec5e
-  servername: fr.golangwikito.cfd
-  client-fingerprint: randomized
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#41|"
+- name: "cool [white] \U0001F1F3\U0001F1F1 |#25|"
   type: vless
   server: fr.golangwikito.cfd
   port: 443
@@ -468,439 +270,187 @@ proxies:
     short-id: e6d589857d1cec5e
   servername: fr.golangwikito.cfd
   client-fingerprint: safari
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#42|"
+- name: "cool [white] \U0001F1F7\U0001F1FA |#26|"
   type: vless
-  server: fr.golangwikito.cfd
+  server: 130.49.177.193
   port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  uuid: 727a9178-d7f0-4142-8205-b0d19959ded0
   udp: true
   tls: true
   network: tcp
   skip-cert-verify: false
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
-    short-id: e6d589857d1cec5e
-  servername: fr.golangwikito.cfd
-  client-fingerprint: ios
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#44|"
-  type: ss
-  server: 49.51.39.148
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: LCvps-199-168-136-193-bak8443
-  udp: true
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  type: vless
-  server: 141.193.213.21
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1F8\U0001F1EC |#46|"
-  type: vless
-  server: 101.32.142.168
-  port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#47|"
-  type: vless
-  server: fr.golangwikito.cfd
-  port: 443
-  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
-  udp: true
-  tls: true
-  network: tcp
-  skip-cert-verify: false
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA
-    short-id: e6d589857d1cec5e
-  servername: fr.golangwikito.cfd
+    public-key: DCpi9-1rSXxBnEIAQ9U3mTqHivk7vHJRV_T2pWw5vCc
+    short-id: 681fc2dd643bc2f3
+  servername: de-2.ffpn.pro
   client-fingerprint: firefox
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#48|"
-  type: vless
-  server: news.zoom.us
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#49|"
-  type: vless
-  server: 141.193.213.21
-  port: 2083
-  uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: site.check-looks.space
-  ws-opts:
-    path: /
-    headers:
-      Host: site.check-looks.space
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#50|"
-  type: ss
-  server: 82.38.31.195
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#51|"
+- name: "cool [white] \U0001F1EC\U0001F1E7 |#27|"
   type: ss
   server: 82.38.31.149
-  port: 8080
+  port: 443
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-- name: "cool [white] \U0001F1EC\U0001F1E7 |#52|"
-  type: ss
-  server: 82.38.31.198
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-- name: "cool [white] \U0001F1F8\U0001F1EC |#53|"
+- name: "cool [white] \U0001F1F7\U0001F1FA |#28|"
   type: vless
-  server: 101.32.142.168
+  server: 130.49.177.193
   port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  uuid: 727a9178-d7f0-4142-8205-b0d19959ded0
   udp: true
   tls: true
-  network: ws
+  network: tcp
   skip-cert-verify: false
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#54|"
-  type: vless
-  server: 45.91.202.32
-  port: 8444
-  uuid: 35c9f200-7520-4005-b78e-f8a2fb9f68f7
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: nl15.meshbeat.online
-  ws-opts:
-    path: /api/v1/devices/02585a2d89/telemetry
-    headers:
-      Host: nl15.meshbeat.online
-- name: "cool [white] \U0001F1F3\U0001F1F1 |#55|"
-  type: vless
-  server: 94.183.206.226
-  port: 7443
-  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
-  udp: true
-  tls: true
-  network: grpc
-  skip-cert-verify: false
+  flow: xtls-rprx-vision
   reality-opts:
-    public-key: unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE
-    short-id: ''
-  servername: optim.tildacdn.pub
-  client-fingerprint: firefox
-  grpc-opts:
-    grpc-service-name: ebl
+    public-key: DCpi9-1rSXxBnEIAQ9U3mTqHivk7vHJRV_T2pWw5vCc
+    short-id: 681fc2dd643bc2f3
+  servername: de-2.ffpn.pro
+  client-fingerprint: edge
 proxy-groups:
 - name: Обычный
   type: select
   proxies:
   - Авто
   - Авто (без RU)
-  - "cool [white] \U0001F1EC\U0001F1E7 |#2|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#3|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#1|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#4|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#5|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#6|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#8|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#10|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#11|"
-  - "cool [white] \U0001F1FA\U0001F1E6 |#13|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#7|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#8|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#10|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#11|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#12|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#14|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#15|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#16|"
-  - "cool [white] \U0001F1F8\U0001F1EA |#17|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#15|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#16|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#17|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#18|"
-  - "cool [white] \U0001F1FA\U0001F1E6 |#19|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#20|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#21|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#22|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#23|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#24|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#25|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#26|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#27|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#28|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#29|"
-  - "cool [white] \U0001F1F8\U0001F1EA |#30|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#31|"
-  - "cool [white] \U0001F1F5\U0001F1ED |#32|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#33|"
-  - "cool [white] \U0001F1F8\U0001F1EA |#34|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#35|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#36|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#38|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#39|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#40|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#41|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#42|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#44|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#46|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#47|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#48|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#49|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#50|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#51|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#52|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#53|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#54|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#55|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#19|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#20|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#21|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#22|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#23|"
+  - "cool [white] \U0001F1F5\U0001F1ED |#24|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#25|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#26|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#27|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#28|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1EC\U0001F1E7 |#2|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#3|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#1|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#4|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#5|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#6|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#8|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#10|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#11|"
-  - "cool [white] \U0001F1FA\U0001F1E6 |#13|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#7|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#8|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#10|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#11|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#12|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#14|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#15|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#16|"
-  - "cool [white] \U0001F1F8\U0001F1EA |#17|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#15|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#16|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#17|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#18|"
-  - "cool [white] \U0001F1FA\U0001F1E6 |#19|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#20|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#21|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#22|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#23|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#24|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#25|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#26|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#27|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#28|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#29|"
-  - "cool [white] \U0001F1F8\U0001F1EA |#30|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#31|"
-  - "cool [white] \U0001F1F5\U0001F1ED |#32|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#33|"
-  - "cool [white] \U0001F1F8\U0001F1EA |#34|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#35|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#36|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#38|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#39|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#40|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#41|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#42|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#44|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#46|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#47|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#48|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#49|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#50|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#51|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#52|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#53|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#54|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#55|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#19|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#20|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#21|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#22|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#23|"
+  - "cool [white] \U0001F1F5\U0001F1ED |#24|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#25|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#26|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#27|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#28|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1EC\U0001F1E7 |#2|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#3|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#1|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#4|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#5|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#6|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#7|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#8|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#10|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#11|"
-  - "cool [white] \U0001F1FA\U0001F1E6 |#13|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#7|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#8|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#10|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#11|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#12|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#14|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#15|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#16|"
-  - "cool [white] \U0001F1F8\U0001F1EA |#17|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#15|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#16|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#18|"
-  - "cool [white] \U0001F1FA\U0001F1E6 |#19|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#20|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#21|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#22|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#23|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#24|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#25|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#26|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#27|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#28|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#29|"
-  - "cool [white] \U0001F1F8\U0001F1EA |#30|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#31|"
-  - "cool [white] \U0001F1F5\U0001F1ED |#32|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#33|"
-  - "cool [white] \U0001F1F8\U0001F1EA |#34|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#35|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#36|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#38|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#39|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#40|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#41|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#42|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#44|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#46|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#47|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#48|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#49|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#50|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#51|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#52|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#53|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#54|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#55|"
-- name: "\U0001F1ED\U0001F1F0 Hong Kong"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1ED\U0001F1F0 |#10|"
-  - "cool [white] \U0001F1ED\U0001F1F0 |#25|"
-- name: "\U0001F1EE\U0001F1E9 Indonesia"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1EE\U0001F1E9 |#3|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#15|"
-  - "cool [white] \U0001F1EE\U0001F1E9 |#21|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#19|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#20|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#21|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#22|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#23|"
+  - "cool [white] \U0001F1F5\U0001F1ED |#24|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#25|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#27|"
 - name: "\U0001F1F3\U0001F1F1 Netherlands"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F3\U0001F1F1 |#7|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#1|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#2|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#10|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#11|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#12|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#13|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#14|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#15|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#16|"
   - "cool [white] \U0001F1F3\U0001F1F1 |#18|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#23|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#27|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#29|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#35|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#36|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#39|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#40|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#41|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#42|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#47|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#54|"
-  - "cool [white] \U0001F1F3\U0001F1F1 |#55|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#21|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#22|"
+  - "cool [white] \U0001F1F3\U0001F1F1 |#25|"
 - name: "\U0001F1F5\U0001F1ED Philippines"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F5\U0001F1ED |#32|"
-- name: "\U0001F1F8\U0001F1EC Singapore"
+  - "cool [white] \U0001F1F5\U0001F1ED |#24|"
+- name: "\U0001F1F7\U0001F1FA Russia"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F8\U0001F1EC |#26|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#46|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#53|"
-- name: "\U0001F1F8\U0001F1EA Sweden"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1F8\U0001F1EA |#17|"
-  - "cool [white] \U0001F1F8\U0001F1EA |#30|"
-  - "cool [white] \U0001F1F8\U0001F1EA |#34|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#17|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#26|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#28|"
 - name: "\U0001F1FA\U0001F1F8 USA"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#6|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#8|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#16|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#24|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#44|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#48|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#49|"
-- name: "\U0001F1FA\U0001F1E6 Ukraine"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1FA\U0001F1E6 |#13|"
-  - "cool [white] \U0001F1FA\U0001F1E6 |#19|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#20|"
 - name: "\U0001F1EC\U0001F1E7 United Kingdom"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1EC\U0001F1E7 |#2|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#4|"
   - "cool [white] \U0001F1EC\U0001F1E7 |#5|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#11|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#20|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#22|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#28|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#31|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#33|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#38|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#50|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#51|"
-  - "cool [white] \U0001F1EC\U0001F1E7 |#52|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#7|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#8|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#19|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#23|"
+  - "cool [white] \U0001F1EC\U0001F1E7 |#27|"
 rules:
 - MATCH,Обычный
