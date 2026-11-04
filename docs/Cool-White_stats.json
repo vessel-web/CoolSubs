@@ -1,25 +1,21 @@
 {
-  "total": 27,
-  "countries": 6,
+  "total": 24,
+  "countries": 5,
   "top": [
     {
       "country": "Netherlands",
-      "count": 15
+      "count": 13
     },
     {
       "country": "United Kingdom",
       "count": 8
     },
     {
-      "country": "Philippines",
-      "count": 1
-    },
-    {
       "country": "USA",
       "count": 1
     },
     {
-      "country": "Malaysia",
+      "country": "Philippines",
       "count": 1
     },
     {
@@ -27,5 +23,5 @@
       "count": 1
     }
   ],
-  "updated": 1793826837
+  "updated": 1793828608
 }
