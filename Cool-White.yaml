@@ -1,533 +1,5 @@
 proxies:
 - name: "cool [white] \U0001F310 |#1|"
-  type: vless
-  server: 104.21.58.37
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#2|"
-  type: trojan
-  server: 199.68.156.121
-  port: 2087
-  password: 7bpe9s002exll38s
-  sni: nexoshop.netvia.ir
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /wss
-    headers:
-      Host: nexoshop.netvia.ir
-- name: "cool [white] \U0001F310 |#3|"
-  type: trojan
-  server: 188.114.96.3
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#4|"
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#5|"
-  type: vmess
-  server: 172.67.167.78
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#6|"
-  type: trojan
-  server: 104.18.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#7|"
-  type: trojan
-  server: 104.27.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#8|"
-  type: vmess
-  server: 104.27.0.1
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  type: trojan
-  server: 199.68.156.121
-  port: 2087
-  password: 7bpe9s002exll38s
-  sni: nexoshop.netvia.ir
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /wss
-    headers:
-      Host: nexoshop.netvia.ir
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#10|"
-  type: vmess
-  server: 172.66.0.1
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#11|"
-  type: trojan
-  server: 104.16.186.130
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#12|"
-  type: vmess
-  server: 104.17.77.77
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#13|"
-  type: hysteria2
-  server: steel7.hadsvpn.com
-  port: 443
-  password: 23c82941-70f4-4381-90db-bd28e9a902e9
-  sni: steel7.hadsvpn.com
-  skip-cert-verify: false
-- name: "cool [white] \U0001F310 |#14|"
-  type: trojan
-  server: 104.24.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#15|"
-  type: hysteria2
-  server: 201.8.71.59
-  port: 443
-  password: 23c82941-70f4-4381-90db-bd28e9a902e9
-  sni: steel7.hadsvpn.com
-  skip-cert-verify: false
-- name: "cool [white] \U0001F310 |#16|"
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#17|"
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#18|"
-  type: trojan
-  server: 104.18.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#19|"
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#20|"
-  type: trojan
-  server: 172.66.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#21|"
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-- name: "cool [white] \U0001F310 |#23|"
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#24|"
-  type: vmess
-  server: cf.0sm.com
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#25|"
-  type: vmess
-  server: 172.64.229.21
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#26|"
-  type: vmess
-  server: 188.114.96.3
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#27|"
-  type: vmess
-  server: 104.27.0.1
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#28|"
-  type: trojan
-  server: 188.114.96.3
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#29|"
-  type: trojan
-  server: 104.18.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#30|"
-  type: vless
-  server: 104.21.58.37
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#31|"
-  type: trojan
-  server: 172.66.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#32|"
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#33|"
-  type: vmess
-  server: 172.67.161.144
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#34|"
-  type: vmess
-  server: cf.0sm.com
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#35|"
-  type: vmess
-  server: cf.877771.xyz
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#36|"
-  type: trojan
-  server: 104.18.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#37|"
-  type: vmess
-  server: 172.64.155.209
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#38|"
-  type: vmess
-  server: 172.66.203.67
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#39|"
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#40|"
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-- name: "cool [white] \U0001F310 |#41|"
   type: vmess
   server: 172.64.80.1
   port: 8443
@@ -542,30 +14,9 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#42|"
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#43|"
-  type: hysteria2
-  server: steel7.hadsvpn.com
-  port: 443
-  password: 23c82941-70f4-4381-90db-bd28e9a902e9
-  sni: steel7.hadsvpn.com
-  skip-cert-verify: false
-- name: "cool [white] \U0001F310 |#44|"
+- name: "cool [white] \U0001F310 |#2|"
   type: vmess
-  server: 188.114.96.3
+  server: 172.64.155.209
   port: 8443
   uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
@@ -578,49 +29,36 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  type: trojan
-  server: 172.66.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#46|"
+- name: "cool [white] \U0001F310 |#3|"
   type: vless
-  server: 104.21.58.37
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  server: 188.114.97.6
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: fast.145779.xyz
+  servername: jp3.yohototo.top
   ws-opts:
-    path: /ws-tesla
+    path: /tyxyws
     headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#47|"
+      Host: jp3.yohototo.top
+- name: "cool [white] \U0001F310 |#4|"
   type: vmess
-  server: 104.27.0.1
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  server: 104.21.57.84
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
   cipher: auto
   udp: true
   tls: true
   network: ws
-  servername: vmess.lbw666.dpdns.org
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /ws
+    path: /lMnsZUN4/
     headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#48|"
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#6|"
   type: vmess
   server: 172.67.161.144
   port: 8443
@@ -635,7 +73,222 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#49|"
+- name: "cool [white] \U0001F310 |#7|"
+  type: vmess
+  server: 172.67.161.144
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#8|"
+  type: vmess
+  server: 188.114.96.3
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#9|"
+  type: vmess
+  server: 172.64.80.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#10|"
+  type: vmess
+  server: 172.64.80.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#11|"
+  type: vmess
+  server: 172.64.155.209
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#12|"
+  type: hysteria2
+  server: 42fab11a-tm96o0-tnggms-6gn6.los.hyhuawei.com
+  port: 443
+  password: c12f73f6-e8c7-11ed-9246-f23c9164ca5d
+  sni: 42fab11a-tm96o0-tnggms-6gn6.los.hyhuawei.com
+  skip-cert-verify: false
+- name: "cool [white] \U0001F1F0\U0001F1FF |#13|"
+  type: vmess
+  server: 38.107.234.57
+  port: 80
+  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: ws
+  servername: google.com
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: google.com
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#14|"
+  type: trojan
+  server: 199.68.156.121
+  port: 2087
+  password: 7bpe9s002exll38s
+  sni: nexoshop.netvia.ir
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /wss
+    headers:
+      Host: nexoshop.netvia.ir
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#15|"
+  type: trojan
+  server: 199.68.156.121
+  port: 2087
+  password: 7bpe9s002exll38s
+  sni: nexoshop.netvia.ir
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /wss
+    headers:
+      Host: nexoshop.netvia.ir
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#16|"
+  type: hysteria2
+  server: steel7.hadsvpn.com
+  port: 443
+  password: 23c82941-70f4-4381-90db-bd28e9a902e9
+  sni: steel7.hadsvpn.com
+  skip-cert-verify: false
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#17|"
+  type: hysteria2
+  server: steel7.hadsvpn.com
+  port: 443
+  password: 23c82941-70f4-4381-90db-bd28e9a902e9
+  sni: steel7.hadsvpn.com
+  skip-cert-verify: false
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#18|"
+  type: hysteria2
+  server: 201.8.71.59
+  port: 443
+  password: 23c82941-70f4-4381-90db-bd28e9a902e9
+  sni: steel7.hadsvpn.com
+  skip-cert-verify: false
+- name: "cool [white] \U0001F310 |#19|"
+  type: vless
+  server: 104.21.34.106
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: jp3.yohototo.top
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
+- name: "cool [white] \U0001F310 |#20|"
+  type: vmess
+  server: 188.114.96.3
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#21|"
+  type: vless
+  server: 104.16.10.56
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: jp3.yohototo.top
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#22|"
+  type: trojan
+  server: 199.68.156.121
+  port: 2087
+  password: 7bpe9s002exll38s
+  sni: nexoshop.netvia.ir
+  udp: true
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /wss
+    headers:
+      Host: nexoshop.netvia.ir
+- name: "cool [white] \U0001F310 |#23|"
+  type: vmess
+  server: 172.64.155.209
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#24|"
   type: vmess
   server: 104.17.77.77
   port: 8443
@@ -650,89 +303,7 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#50|"
-  type: trojan
-  server: 104.24.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#51|"
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#52|"
-  type: vmess
-  server: 104.17.136.198
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#53|"
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#54|"
-  type: trojan
-  server: 104.27.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#55|"
-  type: trojan
-  server: 104.27.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#56|"
+- name: "cool [white] \U0001F310 |#25|"
   type: vmess
   server: 104.17.77.77
   port: 8443
@@ -747,85 +318,36 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#57|"
+- name: "cool [white] \U0001F310 |#26|"
+  type: vmess
+  server: 172.64.80.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#27|"
   type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  server: 188.114.98.0
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: fast.145779.xyz
+  servername: jp3.yohototo.top
   ws-opts:
-    path: /ws-tesla
+    path: /tyxyws
     headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#58|"
-  type: trojan
-  server: 199.68.156.121
-  port: 2087
-  password: 7bpe9s002exll38s
-  sni: nexoshop.netvia.ir
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /wss
-    headers:
-      Host: nexoshop.netvia.ir
-- name: "cool [white] \U0001F310 |#59|"
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-- name: "cool [white] \U0001F310 |#60|"
-  type: trojan
-  server: 188.114.96.3
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#61|"
-  type: trojan
-  server: 172.66.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#62|"
-  type: trojan
-  server: 104.18.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#63|"
+      Host: jp3.yohototo.top
+- name: "cool [white] \U0001F310 |#28|"
   type: vmess
   server: 104.21.91.53
   port: 8443
@@ -840,138 +362,22 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#64|"
-  type: trojan
-  server: 104.18.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#65|"
+- name: "cool [white] \U0001F1F0\U0001F1FF |#29|"
   type: vmess
-  server: 162.159.135.234
-  port: 2083
-  uuid: ac251237-576f-40c8-a543-554960c958b1
+  server: 3h-kazakhstan1.09vpn.com
+  port: 80
+  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
   alterId: 0
   cipher: auto
   udp: true
-  tls: true
+  tls: false
   network: ws
-  servername: or3.sfacg.uk
+  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
   ws-opts:
-    path: /or3
+    path: /vmess/
     headers:
-      Host: or3.sfacg.uk
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#66|"
-  type: hysteria2
-  server: 42fab11a-tm96o0-tnggms-6gn6.los.hyhuawei.com
-  port: 443
-  password: c12f73f6-e8c7-11ed-9246-f23c9164ca5d
-  sni: 42fab11a-tm96o0-tnggms-6gn6.los.hyhuawei.com
-  skip-cert-verify: false
-- name: "cool [white] \U0001F310 |#67|"
-  type: vmess
-  server: 172.66.203.67
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#68|"
-  type: trojan
-  server: 104.24.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#69|"
-  type: vmess
-  server: chatgpt.com
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#70|"
-  type: trojan
-  server: 104.27.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#71|"
-  type: trojan
-  server: 188.114.96.3
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#72|"
-  type: trojan
-  server: 104.24.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#73|"
-  type: vless
-  server: 104.21.58.37
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#74|"
+      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+- name: "cool [white] \U0001F310 |#30|"
   type: vmess
   server: 104.17.77.77
   port: 8443
@@ -986,128 +392,6 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#75|"
-  type: trojan
-  server: 104.24.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#76|"
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-- name: "cool [white] \U0001F310 |#77|"
-  type: vmess
-  server: 172.66.203.67
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#78|"
-  type: trojan
-  server: 104.18.0.1
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
-- name: "cool [white] \U0001F310 |#79|"
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#80|"
-  type: vmess
-  server: 172.67.161.144
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#81|"
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-- name: "cool [white] \U0001F310 |#82|"
-  type: vmess
-  server: 104.17.77.77
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#83|"
-  type: trojan
-  server: 104.16.186.130
-  port: 2053
-  password: gHQP0D7D15
-  sni: marvdasht.phonecomparisonblog.org
-  udp: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: marvdasht.phonecomparisonblog.org
 proxy-groups:
 - name: Обычный
   type: select
@@ -1115,87 +399,34 @@ proxy-groups:
   - Авто
   - Авто (без RU)
   - "cool [white] \U0001F310 |#1|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#2|"
+  - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F310 |#3|"
   - "cool [white] \U0001F310 |#4|"
-  - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
   - "cool [white] \U0001F310 |#7|"
   - "cool [white] \U0001F310 |#8|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#10|"
+  - "cool [white] \U0001F310 |#9|"
+  - "cool [white] \U0001F310 |#10|"
   - "cool [white] \U0001F310 |#11|"
-  - "cool [white] \U0001F310 |#12|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#13|"
-  - "cool [white] \U0001F310 |#14|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#12|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#13|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#14|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#15|"
-  - "cool [white] \U0001F310 |#16|"
-  - "cool [white] \U0001F310 |#17|"
-  - "cool [white] \U0001F310 |#18|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#16|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#17|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
   - "cool [white] \U0001F310 |#19|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#20|"
+  - "cool [white] \U0001F310 |#20|"
   - "cool [white] \U0001F310 |#21|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#22|"
   - "cool [white] \U0001F310 |#23|"
   - "cool [white] \U0001F310 |#24|"
   - "cool [white] \U0001F310 |#25|"
   - "cool [white] \U0001F310 |#26|"
   - "cool [white] \U0001F310 |#27|"
   - "cool [white] \U0001F310 |#28|"
-  - "cool [white] \U0001F310 |#29|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#29|"
   - "cool [white] \U0001F310 |#30|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#31|"
-  - "cool [white] \U0001F310 |#32|"
-  - "cool [white] \U0001F310 |#33|"
-  - "cool [white] \U0001F310 |#34|"
-  - "cool [white] \U0001F310 |#35|"
-  - "cool [white] \U0001F310 |#36|"
-  - "cool [white] \U0001F310 |#37|"
-  - "cool [white] \U0001F310 |#38|"
-  - "cool [white] \U0001F310 |#39|"
-  - "cool [white] \U0001F310 |#40|"
-  - "cool [white] \U0001F310 |#41|"
-  - "cool [white] \U0001F310 |#42|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#43|"
-  - "cool [white] \U0001F310 |#44|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  - "cool [white] \U0001F310 |#46|"
-  - "cool [white] \U0001F310 |#47|"
-  - "cool [white] \U0001F310 |#48|"
-  - "cool [white] \U0001F310 |#49|"
-  - "cool [white] \U0001F310 |#50|"
-  - "cool [white] \U0001F310 |#51|"
-  - "cool [white] \U0001F310 |#52|"
-  - "cool [white] \U0001F310 |#53|"
-  - "cool [white] \U0001F310 |#54|"
-  - "cool [white] \U0001F310 |#55|"
-  - "cool [white] \U0001F310 |#56|"
-  - "cool [white] \U0001F310 |#57|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#58|"
-  - "cool [white] \U0001F310 |#59|"
-  - "cool [white] \U0001F310 |#60|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#61|"
-  - "cool [white] \U0001F310 |#62|"
-  - "cool [white] \U0001F310 |#63|"
-  - "cool [white] \U0001F310 |#64|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#65|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#66|"
-  - "cool [white] \U0001F310 |#67|"
-  - "cool [white] \U0001F310 |#68|"
-  - "cool [white] \U0001F310 |#69|"
-  - "cool [white] \U0001F310 |#70|"
-  - "cool [white] \U0001F310 |#71|"
-  - "cool [white] \U0001F310 |#72|"
-  - "cool [white] \U0001F310 |#73|"
-  - "cool [white] \U0001F310 |#74|"
-  - "cool [white] \U0001F310 |#75|"
-  - "cool [white] \U0001F310 |#76|"
-  - "cool [white] \U0001F310 |#77|"
-  - "cool [white] \U0001F310 |#78|"
-  - "cool [white] \U0001F310 |#79|"
-  - "cool [white] \U0001F310 |#80|"
-  - "cool [white] \U0001F310 |#81|"
-  - "cool [white] \U0001F310 |#82|"
-  - "cool [white] \U0001F310 |#83|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1203,87 +434,34 @@ proxy-groups:
   tolerance: 50
   proxies:
   - "cool [white] \U0001F310 |#1|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#2|"
+  - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F310 |#3|"
   - "cool [white] \U0001F310 |#4|"
-  - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
   - "cool [white] \U0001F310 |#7|"
   - "cool [white] \U0001F310 |#8|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#10|"
+  - "cool [white] \U0001F310 |#9|"
+  - "cool [white] \U0001F310 |#10|"
   - "cool [white] \U0001F310 |#11|"
-  - "cool [white] \U0001F310 |#12|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#13|"
-  - "cool [white] \U0001F310 |#14|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#12|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#13|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#14|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#15|"
-  - "cool [white] \U0001F310 |#16|"
-  - "cool [white] \U0001F310 |#17|"
-  - "cool [white] \U0001F310 |#18|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#16|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#17|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
   - "cool [white] \U0001F310 |#19|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#20|"
+  - "cool [white] \U0001F310 |#20|"
   - "cool [white] \U0001F310 |#21|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#22|"
   - "cool [white] \U0001F310 |#23|"
   - "cool [white] \U0001F310 |#24|"
   - "cool [white] \U0001F310 |#25|"
   - "cool [white] \U0001F310 |#26|"
   - "cool [white] \U0001F310 |#27|"
   - "cool [white] \U0001F310 |#28|"
-  - "cool [white] \U0001F310 |#29|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#29|"
   - "cool [white] \U0001F310 |#30|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#31|"
-  - "cool [white] \U0001F310 |#32|"
-  - "cool [white] \U0001F310 |#33|"
-  - "cool [white] \U0001F310 |#34|"
-  - "cool [white] \U0001F310 |#35|"
-  - "cool [white] \U0001F310 |#36|"
-  - "cool [white] \U0001F310 |#37|"
-  - "cool [white] \U0001F310 |#38|"
-  - "cool [white] \U0001F310 |#39|"
-  - "cool [white] \U0001F310 |#40|"
-  - "cool [white] \U0001F310 |#41|"
-  - "cool [white] \U0001F310 |#42|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#43|"
-  - "cool [white] \U0001F310 |#44|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  - "cool [white] \U0001F310 |#46|"
-  - "cool [white] \U0001F310 |#47|"
-  - "cool [white] \U0001F310 |#48|"
-  - "cool [white] \U0001F310 |#49|"
-  - "cool [white] \U0001F310 |#50|"
-  - "cool [white] \U0001F310 |#51|"
-  - "cool [white] \U0001F310 |#52|"
-  - "cool [white] \U0001F310 |#53|"
-  - "cool [white] \U0001F310 |#54|"
-  - "cool [white] \U0001F310 |#55|"
-  - "cool [white] \U0001F310 |#56|"
-  - "cool [white] \U0001F310 |#57|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#58|"
-  - "cool [white] \U0001F310 |#59|"
-  - "cool [white] \U0001F310 |#60|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#61|"
-  - "cool [white] \U0001F310 |#62|"
-  - "cool [white] \U0001F310 |#63|"
-  - "cool [white] \U0001F310 |#64|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#65|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#66|"
-  - "cool [white] \U0001F310 |#67|"
-  - "cool [white] \U0001F310 |#68|"
-  - "cool [white] \U0001F310 |#69|"
-  - "cool [white] \U0001F310 |#70|"
-  - "cool [white] \U0001F310 |#71|"
-  - "cool [white] \U0001F310 |#72|"
-  - "cool [white] \U0001F310 |#73|"
-  - "cool [white] \U0001F310 |#74|"
-  - "cool [white] \U0001F310 |#75|"
-  - "cool [white] \U0001F310 |#76|"
-  - "cool [white] \U0001F310 |#77|"
-  - "cool [white] \U0001F310 |#78|"
-  - "cool [white] \U0001F310 |#79|"
-  - "cool [white] \U0001F310 |#80|"
-  - "cool [white] \U0001F310 |#81|"
-  - "cool [white] \U0001F310 |#82|"
-  - "cool [white] \U0001F310 |#83|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1291,106 +469,55 @@ proxy-groups:
   tolerance: 50
   proxies:
   - "cool [white] \U0001F310 |#1|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#2|"
+  - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F310 |#3|"
   - "cool [white] \U0001F310 |#4|"
-  - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
   - "cool [white] \U0001F310 |#7|"
   - "cool [white] \U0001F310 |#8|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#10|"
+  - "cool [white] \U0001F310 |#9|"
+  - "cool [white] \U0001F310 |#10|"
   - "cool [white] \U0001F310 |#11|"
-  - "cool [white] \U0001F310 |#12|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#13|"
-  - "cool [white] \U0001F310 |#14|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#12|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#13|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#14|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#15|"
-  - "cool [white] \U0001F310 |#16|"
-  - "cool [white] \U0001F310 |#17|"
-  - "cool [white] \U0001F310 |#18|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#16|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#17|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
   - "cool [white] \U0001F310 |#19|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#20|"
+  - "cool [white] \U0001F310 |#20|"
   - "cool [white] \U0001F310 |#21|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#22|"
   - "cool [white] \U0001F310 |#23|"
   - "cool [white] \U0001F310 |#24|"
   - "cool [white] \U0001F310 |#25|"
   - "cool [white] \U0001F310 |#26|"
   - "cool [white] \U0001F310 |#27|"
   - "cool [white] \U0001F310 |#28|"
-  - "cool [white] \U0001F310 |#29|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#29|"
   - "cool [white] \U0001F310 |#30|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#31|"
-  - "cool [white] \U0001F310 |#32|"
-  - "cool [white] \U0001F310 |#33|"
-  - "cool [white] \U0001F310 |#34|"
-  - "cool [white] \U0001F310 |#35|"
-  - "cool [white] \U0001F310 |#36|"
-  - "cool [white] \U0001F310 |#37|"
-  - "cool [white] \U0001F310 |#38|"
-  - "cool [white] \U0001F310 |#39|"
-  - "cool [white] \U0001F310 |#40|"
-  - "cool [white] \U0001F310 |#41|"
-  - "cool [white] \U0001F310 |#42|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#43|"
-  - "cool [white] \U0001F310 |#44|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  - "cool [white] \U0001F310 |#46|"
-  - "cool [white] \U0001F310 |#47|"
-  - "cool [white] \U0001F310 |#48|"
-  - "cool [white] \U0001F310 |#49|"
-  - "cool [white] \U0001F310 |#50|"
-  - "cool [white] \U0001F310 |#51|"
-  - "cool [white] \U0001F310 |#52|"
-  - "cool [white] \U0001F310 |#53|"
-  - "cool [white] \U0001F310 |#54|"
-  - "cool [white] \U0001F310 |#55|"
-  - "cool [white] \U0001F310 |#56|"
-  - "cool [white] \U0001F310 |#57|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#58|"
-  - "cool [white] \U0001F310 |#59|"
-  - "cool [white] \U0001F310 |#60|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#61|"
-  - "cool [white] \U0001F310 |#62|"
-  - "cool [white] \U0001F310 |#63|"
-  - "cool [white] \U0001F310 |#64|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#65|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#66|"
-  - "cool [white] \U0001F310 |#67|"
-  - "cool [white] \U0001F310 |#68|"
-  - "cool [white] \U0001F310 |#69|"
-  - "cool [white] \U0001F310 |#70|"
-  - "cool [white] \U0001F310 |#71|"
-  - "cool [white] \U0001F310 |#72|"
-  - "cool [white] \U0001F310 |#73|"
-  - "cool [white] \U0001F310 |#74|"
-  - "cool [white] \U0001F310 |#75|"
-  - "cool [white] \U0001F310 |#76|"
-  - "cool [white] \U0001F310 |#77|"
-  - "cool [white] \U0001F310 |#78|"
-  - "cool [white] \U0001F310 |#79|"
-  - "cool [white] \U0001F310 |#80|"
-  - "cool [white] \U0001F310 |#81|"
-  - "cool [white] \U0001F310 |#82|"
-  - "cool [white] \U0001F310 |#83|"
+- name: "\U0001F1F0\U0001F1FF Kazakhstan"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [white] \U0001F1F0\U0001F1FF |#13|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#29|"
 - name: "\U0001F1FA\U0001F1F8 USA"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#2|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#13|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#12|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#14|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#15|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#20|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#31|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#43|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#58|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#61|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#65|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#66|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#16|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#17|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#22|"
 - name: "\U0001F310 Unknown"
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1398,19 +525,17 @@ proxy-groups:
   tolerance: 50
   proxies:
   - "cool [white] \U0001F310 |#1|"
+  - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F310 |#3|"
   - "cool [white] \U0001F310 |#4|"
-  - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
   - "cool [white] \U0001F310 |#7|"
   - "cool [white] \U0001F310 |#8|"
+  - "cool [white] \U0001F310 |#9|"
+  - "cool [white] \U0001F310 |#10|"
   - "cool [white] \U0001F310 |#11|"
-  - "cool [white] \U0001F310 |#12|"
-  - "cool [white] \U0001F310 |#14|"
-  - "cool [white] \U0001F310 |#16|"
-  - "cool [white] \U0001F310 |#17|"
-  - "cool [white] \U0001F310 |#18|"
   - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F310 |#20|"
   - "cool [white] \U0001F310 |#21|"
   - "cool [white] \U0001F310 |#23|"
   - "cool [white] \U0001F310 |#24|"
@@ -1418,53 +543,6 @@ proxy-groups:
   - "cool [white] \U0001F310 |#26|"
   - "cool [white] \U0001F310 |#27|"
   - "cool [white] \U0001F310 |#28|"
-  - "cool [white] \U0001F310 |#29|"
   - "cool [white] \U0001F310 |#30|"
-  - "cool [white] \U0001F310 |#32|"
-  - "cool [white] \U0001F310 |#33|"
-  - "cool [white] \U0001F310 |#34|"
-  - "cool [white] \U0001F310 |#35|"
-  - "cool [white] \U0001F310 |#36|"
-  - "cool [white] \U0001F310 |#37|"
-  - "cool [white] \U0001F310 |#38|"
-  - "cool [white] \U0001F310 |#39|"
-  - "cool [white] \U0001F310 |#40|"
-  - "cool [white] \U0001F310 |#41|"
-  - "cool [white] \U0001F310 |#42|"
-  - "cool [white] \U0001F310 |#44|"
-  - "cool [white] \U0001F310 |#46|"
-  - "cool [white] \U0001F310 |#47|"
-  - "cool [white] \U0001F310 |#48|"
-  - "cool [white] \U0001F310 |#49|"
-  - "cool [white] \U0001F310 |#50|"
-  - "cool [white] \U0001F310 |#51|"
-  - "cool [white] \U0001F310 |#52|"
-  - "cool [white] \U0001F310 |#53|"
-  - "cool [white] \U0001F310 |#54|"
-  - "cool [white] \U0001F310 |#55|"
-  - "cool [white] \U0001F310 |#56|"
-  - "cool [white] \U0001F310 |#57|"
-  - "cool [white] \U0001F310 |#59|"
-  - "cool [white] \U0001F310 |#60|"
-  - "cool [white] \U0001F310 |#62|"
-  - "cool [white] \U0001F310 |#63|"
-  - "cool [white] \U0001F310 |#64|"
-  - "cool [white] \U0001F310 |#67|"
-  - "cool [white] \U0001F310 |#68|"
-  - "cool [white] \U0001F310 |#69|"
-  - "cool [white] \U0001F310 |#70|"
-  - "cool [white] \U0001F310 |#71|"
-  - "cool [white] \U0001F310 |#72|"
-  - "cool [white] \U0001F310 |#73|"
-  - "cool [white] \U0001F310 |#74|"
-  - "cool [white] \U0001F310 |#75|"
-  - "cool [white] \U0001F310 |#76|"
-  - "cool [white] \U0001F310 |#77|"
-  - "cool [white] \U0001F310 |#78|"
-  - "cool [white] \U0001F310 |#79|"
-  - "cool [white] \U0001F310 |#80|"
-  - "cool [white] \U0001F310 |#81|"
-  - "cool [white] \U0001F310 |#82|"
-  - "cool [white] \U0001F310 |#83|"
 rules:
 - MATCH,Обычный
