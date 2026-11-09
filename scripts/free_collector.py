@@ -237,6 +237,22 @@ def known_repos():
     return repos
 
 
+WHITE_TOKENS = {"white", "whitelist", "wl", "bwl"}
+BLACK_TOKENS = {"black", "blacklist", "bl"}
+
+
+def classify_name(text):
+    """Категория по словам в тексте (целыми словами). None, если однозначно не понятно."""
+    words = set(w for w in re.split(r"[^a-z0-9]+", text.lower()) if w)
+    white = bool(words & WHITE_TOKENS)
+    black = bool(words & BLACK_TOKENS)
+    if white and not black:
+        return "white"
+    if black and not white:
+        return "black"
+    return None
+
+
 def repo_files(repo, cat):
     """Текстовые файлы одного репозитория (один запрос дерева)."""
     full = repo["full_name"]
@@ -247,7 +263,7 @@ def repo_files(repo, cat):
     picked = [i["path"] for i in tree.get("tree", [])
               if i.get("type") == "blob" and
               (i["path"].lower().endswith(".txt") or i["path"].lower().endswith("readme.md"))]
-    return [(f"https://raw.githubusercontent.com/{full}/{branch}/{p}", cat)
+    return [(f"https://raw.githubusercontent.com/{full}/{branch}/{p}", classify_name(p) or cat)
             for p in picked[:DISCOVER_FILES_PER_REPO]]
 
 
@@ -276,7 +292,7 @@ def discover(queries=None):
                     continue
                 seen.add(full)
                 hint = (full + " " + (repo.get("description") or "")).lower()
-                cat = "white" if any(k in hint for k in WHITE_KEYWORDS) else "black"
+                cat = classify_name(hint) or "black"
                 new.append((repo, cat))
             new = new[:budget]
             budget -= len(new)
