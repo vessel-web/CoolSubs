@@ -1,9 +1,9 @@
 {
-  "sources_ok": 368,
-  "sources_failed": 1,
-  "unique_total": 31723,
-  "black": 30877,
-  "white": 878,
-  "seconds": 15,
-  "updated": 1793942759
+  "sources_ok": 365,
+  "sources_failed": 4,
+  "unique_total": 31557,
+  "black": 31118,
+  "white": 454,
+  "seconds": 16,
+  "updated": 1794218587
 }
