@@ -1,19 +1,23 @@
 {
-  "total": 44,
-  "countries": 3,
+  "total": 84,
+  "countries": 4,
   "top": [
     {
       "country": "USA",
-      "count": 24
+      "count": 50
     },
     {
       "country": "Unknown",
-      "count": 19
+      "count": 32
+    },
+    {
+      "country": "Japan",
+      "count": 1
     },
     {
       "country": "Singapore",
       "count": 1
     }
   ],
-  "updated": 1794309353
+  "updated": 1794346699
 }
