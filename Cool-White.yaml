@@ -1,33 +1,32 @@
 proxies:
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#1|"
+- name: "cool [white] \U0001F310 |#1|"
   type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  server: 172.67.199.126
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: djzrntowvoo42.cloudfront.net
+  servername: fast.145779.xyz
   ws-opts:
-    path: /
+    path: /ws-tesla
     headers:
-      Host: djzrntowvoo42.cloudfront.net
+      Host: fast.145779.xyz
 - name: "cool [white] \U0001F310 |#2|"
-  type: vmess
-  server: 188.114.96.3
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
   udp: true
   tls: true
   network: ws
-  servername: v2ray1.dozapp.xyz
+  skip-cert-verify: false
+  servername: fast.145779.xyz
   ws-opts:
-    path: /lMnsZUN4/
+    path: /ws-tesla
     headers:
-      Host: v2ray1.dozapp.xyz
+      Host: fast.145779.xyz
 - name: "cool [white] \U0001F1FA\U0001F1F8 |#3|"
   type: vless
   server: 3.169.9.125
@@ -37,21 +36,32 @@ proxies:
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: djzrntowvoo42.cloudfront.net
+  servername: dkfsoyk9ju2as.cloudfront.net
   ws-opts:
     path: /
     headers:
-      Host: djzrntowvoo42.cloudfront.net
-- name: "cool [white] \U0001F1F8\U0001F1EC |#4|"
-  type: vmess
-  server: 195.133.135.238
-  port: 10086
-  uuid: b831381d-6324-4d53-ad4f-8cda48b30811
-  alterId: 0
-  cipher: auto
+      Host: dkfsoyk9ju2as.cloudfront.net
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  type: ss
+  server: 177.202.64.67
+  port: 1080
+  cipher: aes-256-gcm
+  password: FJo_V-KMvriDekN0CYkdNH0C
   udp: true
-  tls: false
-  network: tcp
+- name: "cool [white] \U0001F310 |#5|"
+  type: vless
+  server: 104.21.58.37
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
 - name: "cool [white] \U0001F1FA\U0001F1F8 |#6|"
   type: vless
   server: 3.169.9.125
@@ -66,49 +76,62 @@ proxies:
     path: /
     headers:
       Host: djzrntowvoo42.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#8|"
+- name: "cool [white] \U0001F310 |#7|"
   type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  server: 172.67.199.126
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: d14jyezfrcyf60.cloudfront.net
+  servername: fast.145779.xyz
   ws-opts:
-    path: /
+    path: /ws-tesla
     headers:
-      Host: d14jyezfrcyf60.cloudfront.net
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#9|"
+  type: vless
+  server: 104.21.58.37
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
 - name: "cool [white] \U0001F310 |#10|"
-  type: vmess
-  server: 172.64.80.1
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#12|"
   type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  server: 172.67.199.126
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: djzrntowvoo42.cloudfront.net
+  servername: fast.145779.xyz
   ws-opts:
-    path: /
+    path: /ws-tesla
     headers:
-      Host: djzrntowvoo42.cloudfront.net
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#11|"
+  type: vless
+  server: 172.67.199.126
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
 - name: "cool [white] \U0001F1FA\U0001F1F8 |#13|"
   type: vless
   server: 3.169.9.125
@@ -118,39 +141,23 @@ proxies:
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: dkfsoyk9ju2as.cloudfront.net
-  ws-opts:
-    path: /
-    headers:
-      Host: dkfsoyk9ju2as.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#14|"
-  type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
   servername: d3kw8eszm8s6l1.cloudfront.net
   ws-opts:
     path: /
     headers:
       Host: d3kw8eszm8s6l1.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#15|"
+- name: "cool [white] \U0001F310 |#15|"
   type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: d2ex4nxd2e01ub.cloudfront.net
+  servername: fast.145779.xyz
   ws-opts:
-    path: /
-    headers:
-      Host: d2ex4nxd2e01ub.cloudfront.net
+    path: /ws-tesla
 - name: "cool [white] \U0001F1FA\U0001F1F8 |#16|"
   type: vless
   server: 3.169.9.125
@@ -160,215 +167,26 @@ proxies:
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: d3kw8eszm8s6l1.cloudfront.net
-  ws-opts:
-    path: /
-    headers:
-      Host: d3kw8eszm8s6l1.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#17|"
-  type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: d14jyezfrcyf60.cloudfront.net
-  ws-opts:
-    path: /
-    headers:
-      Host: d14jyezfrcyf60.cloudfront.net
-- name: "cool [white] \U0001F1F0\U0001F1FF |#18|"
-  type: vmess
-  server: 3h-kazakhstan1.09vpn.com
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  ws-opts:
-    path: /vmess/
-    headers:
-      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#19|"
-  type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: d1afk2ndm8pox3.cloudfront.net
-  ws-opts:
-    path: /
-    headers:
-      Host: d1afk2ndm8pox3.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#20|"
-  type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: d4afoyczh5tek.cloudfront.net
-  ws-opts:
-    path: /
-    headers:
-      Host: d4afoyczh5tek.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#21|"
-  type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: d1afk2ndm8pox3.cloudfront.net
-  ws-opts:
-    path: /
-    headers:
-      Host: d1afk2ndm8pox3.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#22|"
-  type: ss
-  server: 177.202.64.67
-  port: 1080
-  cipher: aes-256-gcm
-  password: FJo_V-KMvriDekN0CYkdNH0C
-  udp: true
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#23|"
-  type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: d2ex4nxd2e01ub.cloudfront.net
-  ws-opts:
-    path: /
-    headers:
-      Host: d2ex4nxd2e01ub.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#24|"
-  type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: d2im3v6ipzlavc.cloudfront.net
-  ws-opts:
-    path: /
-    headers:
-      Host: d2im3v6ipzlavc.cloudfront.net
-- name: "cool [white] \U0001F1F0\U0001F1FF |#25|"
-  type: vmess
-  server: 3h-kazakhstan1.09vpn.com
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  ws-opts:
-    path: /vmess/
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#26|"
-  type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: d4afoyczh5tek.cloudfront.net
-  ws-opts:
-    path: /
-    headers:
-      Host: d4afoyczh5tek.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#27|"
-  type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: d2ex4nxd2e01ub.cloudfront.net
-  ws-opts:
-    path: /
-    headers:
-      Host: d2ex4nxd2e01ub.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#28|"
-  type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
   servername: djb2br1cgydas.cloudfront.net
   ws-opts:
     path: /
     headers:
       Host: djb2br1cgydas.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#29|"
+- name: "cool [white] \U0001F310 |#17|"
   type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  server: 172.67.199.126
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: dkfsoyk9ju2as.cloudfront.net
+  servername: fast.145779.xyz
   ws-opts:
-    path: /
+    path: /ws-tesla
     headers:
-      Host: dkfsoyk9ju2as.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#30|"
-  type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: djb2br1cgydas.cloudfront.net
-  ws-opts:
-    path: /
-    headers:
-      Host: djb2br1cgydas.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#32|"
-  type: vless
-  server: 3.169.9.125
-  port: 443
-  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: d1afk2ndm8pox3.cloudfront.net
-  ws-opts:
-    path: /
-    headers:
-      Host: d1afk2ndm8pox3.cloudfront.net
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#33|"
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#18|"
   type: vless
   server: 3.169.9.125
   port: 443
@@ -382,7 +200,141 @@ proxies:
     path: /
     headers:
       Host: djzrntowvoo42.cloudfront.net
-- name: "cool [white] \U0001F310 |#35|"
+- name: "cool [white] \U0001F310 |#19|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+- name: "cool [white] \U0001F310 |#20|"
+  type: vless
+  server: 104.21.58.37
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#21|"
+  type: vless
+  server: 172.67.199.126
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#22|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: dkfsoyk9ju2as.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: dkfsoyk9ju2as.cloudfront.net
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#23|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: d1m31xp31bswc2.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: d1m31xp31bswc2.cloudfront.net
+- name: "cool [white] \U0001F310 |#24|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+- name: "cool [white] \U0001F310 |#26|"
+  type: vless
+  server: 172.67.199.126
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#27|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: djzrntowvoo42.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: djzrntowvoo42.cloudfront.net
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#28|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: d2ex4nxd2e01ub.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: d2ex4nxd2e01ub.cloudfront.net
+- name: "cool [white] \U0001F310 |#29|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+- name: "cool [white] \U0001F310 |#30|"
   type: vmess
   server: 104.21.57.84
   port: 8443
@@ -397,182 +349,673 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F1F0\U0001F1FF |#36|"
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#31|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: d1afk2ndm8pox3.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: d1afk2ndm8pox3.cloudfront.net
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#32|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: d1afk2ndm8pox3.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: d1afk2ndm8pox3.cloudfront.net
+- name: "cool [white] \U0001F310 |#33|"
   type: vmess
-  server: 38.107.234.57
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
+  server: 172.64.80.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
   cipher: auto
   udp: true
-  tls: false
+  tls: true
   network: ws
-  servername: google.com
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /vmess/
+    path: /lMnsZUN4/
     headers:
-      Host: google.com
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#34|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+- name: "cool [white] \U0001F310 |#35|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#36|"
+  type: vless
+  server: 104.21.58.37
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#37|"
+  type: vless
+  server: 104.21.58.37
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#38|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#40|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: d25kvre1mf3uya.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: d25kvre1mf3uya.cloudfront.net
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#41|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: d2ex4nxd2e01ub.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: d2ex4nxd2e01ub.cloudfront.net
+- name: "cool [white] \U0001F310 |#42|"
+  type: vless
+  server: 104.21.58.37
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#44|"
+  type: vless
+  server: 104.21.58.37
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#45|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: d2ex4nxd2e01ub.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: d2ex4nxd2e01ub.cloudfront.net
+- name: "cool [white] \U0001F310 |#47|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+- name: "cool [white] \U0001F310 |#49|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+- name: "cool [white] \U0001F310 |#50|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+- name: "cool [white] \U0001F310 |#51|"
+  type: vless
+  server: 104.21.58.37
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#52|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#53|"
+  type: vless
+  server: 104.21.58.37
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#54|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: d1m31xp31bswc2.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: d1m31xp31bswc2.cloudfront.net
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#55|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: d3kw8eszm8s6l1.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: d3kw8eszm8s6l1.cloudfront.net
+- name: "cool [white] \U0001F310 |#58|"
+  type: vmess
+  server: 188.114.96.3
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#59|"
+  type: vless
+  server: 172.67.199.126
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#60|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#61|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: d1m31xp31bswc2.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: d1m31xp31bswc2.cloudfront.net
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#62|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: d25kvre1mf3uya.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: d25kvre1mf3uya.cloudfront.net
+- name: "cool [white] \U0001F310 |#63|"
+  type: vless
+  server: 172.67.199.126
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#64|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#66|"
+  type: vless
+  server: 172.67.199.126
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#67|"
+  type: vless
+  server: 3.169.9.125
+  port: 443
+  uuid: 67cd3349-f789-4cbb-8b91-4b6b1654ce7c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: d1afk2ndm8pox3.cloudfront.net
+  ws-opts:
+    path: /
+    headers:
+      Host: d1afk2ndm8pox3.cloudfront.net
 proxy-groups:
 - name: Обычный
   type: select
   proxies:
   - Авто
   - Авто (без RU)
-  - "cool [white] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [white] \U0001F310 |#1|"
   - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#3|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#4|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#6|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#8|"
+  - "cool [white] \U0001F310 |#7|"
+  - "cool [white] \U0001F310 |#9|"
   - "cool [white] \U0001F310 |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#12|"
+  - "cool [white] \U0001F310 |#11|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#13|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#14|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#15|"
+  - "cool [white] \U0001F310 |#15|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#16|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#17|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#18|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#19|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#20|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [white] \U0001F310 |#17|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
+  - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F310 |#20|"
+  - "cool [white] \U0001F310 |#21|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#22|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#23|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#24|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#25|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#26|"
+  - "cool [white] \U0001F310 |#24|"
+  - "cool [white] \U0001F310 |#26|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#27|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#28|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#29|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#30|"
+  - "cool [white] \U0001F310 |#29|"
+  - "cool [white] \U0001F310 |#30|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#31|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#32|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#33|"
+  - "cool [white] \U0001F310 |#33|"
+  - "cool [white] \U0001F310 |#34|"
   - "cool [white] \U0001F310 |#35|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#36|"
+  - "cool [white] \U0001F310 |#36|"
+  - "cool [white] \U0001F310 |#37|"
+  - "cool [white] \U0001F310 |#38|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#40|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#41|"
+  - "cool [white] \U0001F310 |#42|"
+  - "cool [white] \U0001F310 |#44|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
+  - "cool [white] \U0001F310 |#47|"
+  - "cool [white] \U0001F310 |#49|"
+  - "cool [white] \U0001F310 |#50|"
+  - "cool [white] \U0001F310 |#51|"
+  - "cool [white] \U0001F310 |#52|"
+  - "cool [white] \U0001F310 |#53|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#54|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#55|"
+  - "cool [white] \U0001F310 |#58|"
+  - "cool [white] \U0001F310 |#59|"
+  - "cool [white] \U0001F310 |#60|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#61|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#62|"
+  - "cool [white] \U0001F310 |#63|"
+  - "cool [white] \U0001F310 |#64|"
+  - "cool [white] \U0001F310 |#66|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#67|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [white] \U0001F310 |#1|"
   - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#3|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#4|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#6|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#8|"
+  - "cool [white] \U0001F310 |#7|"
+  - "cool [white] \U0001F310 |#9|"
   - "cool [white] \U0001F310 |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#12|"
+  - "cool [white] \U0001F310 |#11|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#13|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#14|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#15|"
+  - "cool [white] \U0001F310 |#15|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#16|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#17|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#18|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#19|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#20|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [white] \U0001F310 |#17|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
+  - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F310 |#20|"
+  - "cool [white] \U0001F310 |#21|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#22|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#23|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#24|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#25|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#26|"
+  - "cool [white] \U0001F310 |#24|"
+  - "cool [white] \U0001F310 |#26|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#27|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#28|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#29|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#30|"
+  - "cool [white] \U0001F310 |#29|"
+  - "cool [white] \U0001F310 |#30|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#31|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#32|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#33|"
+  - "cool [white] \U0001F310 |#33|"
+  - "cool [white] \U0001F310 |#34|"
   - "cool [white] \U0001F310 |#35|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#36|"
+  - "cool [white] \U0001F310 |#36|"
+  - "cool [white] \U0001F310 |#37|"
+  - "cool [white] \U0001F310 |#38|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#40|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#41|"
+  - "cool [white] \U0001F310 |#42|"
+  - "cool [white] \U0001F310 |#44|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
+  - "cool [white] \U0001F310 |#47|"
+  - "cool [white] \U0001F310 |#49|"
+  - "cool [white] \U0001F310 |#50|"
+  - "cool [white] \U0001F310 |#51|"
+  - "cool [white] \U0001F310 |#52|"
+  - "cool [white] \U0001F310 |#53|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#54|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#55|"
+  - "cool [white] \U0001F310 |#58|"
+  - "cool [white] \U0001F310 |#59|"
+  - "cool [white] \U0001F310 |#60|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#61|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#62|"
+  - "cool [white] \U0001F310 |#63|"
+  - "cool [white] \U0001F310 |#64|"
+  - "cool [white] \U0001F310 |#66|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#67|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [white] \U0001F310 |#1|"
   - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#3|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#4|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#6|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#8|"
+  - "cool [white] \U0001F310 |#7|"
+  - "cool [white] \U0001F310 |#9|"
   - "cool [white] \U0001F310 |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#12|"
+  - "cool [white] \U0001F310 |#11|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#13|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#14|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#15|"
+  - "cool [white] \U0001F310 |#15|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#16|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#17|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#18|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#19|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#20|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [white] \U0001F310 |#17|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
+  - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F310 |#20|"
+  - "cool [white] \U0001F310 |#21|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#22|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#23|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#24|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#25|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#26|"
+  - "cool [white] \U0001F310 |#24|"
+  - "cool [white] \U0001F310 |#26|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#27|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#28|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#29|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#30|"
+  - "cool [white] \U0001F310 |#29|"
+  - "cool [white] \U0001F310 |#30|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#31|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#32|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#33|"
+  - "cool [white] \U0001F310 |#33|"
+  - "cool [white] \U0001F310 |#34|"
   - "cool [white] \U0001F310 |#35|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#36|"
-- name: "\U0001F1F0\U0001F1FF Kazakhstan"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1F0\U0001F1FF |#18|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#25|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#36|"
-- name: "\U0001F1F8\U0001F1EC Singapore"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1F8\U0001F1EC |#4|"
+  - "cool [white] \U0001F310 |#36|"
+  - "cool [white] \U0001F310 |#37|"
+  - "cool [white] \U0001F310 |#38|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#40|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#41|"
+  - "cool [white] \U0001F310 |#42|"
+  - "cool [white] \U0001F310 |#44|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
+  - "cool [white] \U0001F310 |#47|"
+  - "cool [white] \U0001F310 |#49|"
+  - "cool [white] \U0001F310 |#50|"
+  - "cool [white] \U0001F310 |#51|"
+  - "cool [white] \U0001F310 |#52|"
+  - "cool [white] \U0001F310 |#53|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#54|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#55|"
+  - "cool [white] \U0001F310 |#58|"
+  - "cool [white] \U0001F310 |#59|"
+  - "cool [white] \U0001F310 |#60|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#61|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#62|"
+  - "cool [white] \U0001F310 |#63|"
+  - "cool [white] \U0001F310 |#64|"
+  - "cool [white] \U0001F310 |#66|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#67|"
 - name: "\U0001F1FA\U0001F1F8 USA"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#1|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#3|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#6|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#8|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#12|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#13|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#14|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#15|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#16|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#17|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#19|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#20|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#21|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#22|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#23|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#24|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#26|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#27|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#28|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#29|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#30|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#31|"
   - "cool [white] \U0001F1FA\U0001F1F8 |#32|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#33|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#40|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#41|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#45|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#54|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#55|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#61|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#62|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#67|"
 - name: "\U0001F310 Unknown"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
+  - "cool [white] \U0001F310 |#1|"
   - "cool [white] \U0001F310 |#2|"
+  - "cool [white] \U0001F310 |#5|"
+  - "cool [white] \U0001F310 |#7|"
+  - "cool [white] \U0001F310 |#9|"
   - "cool [white] \U0001F310 |#10|"
+  - "cool [white] \U0001F310 |#11|"
+  - "cool [white] \U0001F310 |#15|"
+  - "cool [white] \U0001F310 |#17|"
+  - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F310 |#20|"
+  - "cool [white] \U0001F310 |#21|"
+  - "cool [white] \U0001F310 |#24|"
+  - "cool [white] \U0001F310 |#26|"
+  - "cool [white] \U0001F310 |#29|"
+  - "cool [white] \U0001F310 |#30|"
+  - "cool [white] \U0001F310 |#33|"
+  - "cool [white] \U0001F310 |#34|"
   - "cool [white] \U0001F310 |#35|"
+  - "cool [white] \U0001F310 |#36|"
+  - "cool [white] \U0001F310 |#37|"
+  - "cool [white] \U0001F310 |#38|"
+  - "cool [white] \U0001F310 |#42|"
+  - "cool [white] \U0001F310 |#44|"
+  - "cool [white] \U0001F310 |#47|"
+  - "cool [white] \U0001F310 |#49|"
+  - "cool [white] \U0001F310 |#50|"
+  - "cool [white] \U0001F310 |#51|"
+  - "cool [white] \U0001F310 |#52|"
+  - "cool [white] \U0001F310 |#53|"
+  - "cool [white] \U0001F310 |#58|"
+  - "cool [white] \U0001F310 |#59|"
+  - "cool [white] \U0001F310 |#60|"
+  - "cool [white] \U0001F310 |#63|"
+  - "cool [white] \U0001F310 |#64|"
+  - "cool [white] \U0001F310 |#66|"
 rules:
 - MATCH,Обычный
