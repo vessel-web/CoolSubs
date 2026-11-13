@@ -1,15 +1,15 @@
 {
-  "total": 67,
+  "total": 15,
   "countries": 2,
   "top": [
     {
-      "country": "Unknown",
-      "count": 36
+      "country": "USA",
+      "count": 12
     },
     {
-      "country": "USA",
-      "count": 31
+      "country": "Unknown",
+      "count": 3
     }
   ],
-  "updated": 1794522141
+  "updated": 1794567760
 }
