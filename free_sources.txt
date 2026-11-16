@@ -376,3 +376,12 @@ black|https://raw.githubusercontent.com/antonovajullie1408/vpn-subscribe-site2/m
 black|https://raw.githubusercontent.com/antonovajullie1408/vpn-subscribe-site/main/README.md
 black|https://raw.githubusercontent.com/antonovajullie1408/vpn-subscribe-site/main/requirements.txt
 black|https://raw.githubusercontent.com/mehrdadmb2/v2ray-telegram-collector/main/README.md
+black|https://etoskam.ru/other
+black|https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt
+white|https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bs.txt
+black|https://github.com/theakres/VPN/raw/main/all
+white|https://github.com/theakres/VPN/raw/main/bwl
+white|https://hub.mos.ru/rkp/sub-roskompozor/raw/main/wl
+black|https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat
+white|https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat
+black|https://gidroksi.fun/black-list
