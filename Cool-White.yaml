@@ -1,20 +1,5 @@
 proxies:
-- name: "cool [white] \U0001F310 |#1|"
-  type: vmess
-  server: 104.21.57.84
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F1F0\U0001F1FF |#2|"
+- name: "cool [white] \U0001F1F0\U0001F1FF |#1|"
   type: vmess
   server: 3h-kazakhstan1.09vpn.com
   port: 80
@@ -24,32 +9,12 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  ws-opts:
-    path: /vmess/
-- name: "cool [white] \U0001F1F0\U0001F1FF |#3|"
-  type: vmess
-  server: 38.107.234.57
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: google.com
+  servername: 3h-kazakhstan1.09vpn.com
   ws-opts:
     path: /vmess/
     headers:
-      Host: google.com
-- name: "cool [white] \U0001F1F7\U0001F1FA |#4|"
-  type: ss
-  server: 185.22.153.117
-  port: 18443
-  cipher: aes-256-gcm
-  password: NTiHBg64fsY8u8DbGrtypD9gPGSL386p
-  udp: true
-- name: "cool [white] \U0001F310 |#5|"
+      Host: 3h-kazakhstan1.09vpn.com
+- name: "cool [white] \U0001F310 |#2|"
   type: vmess
   server: 104.17.77.77
   port: 8443
@@ -64,79 +29,79 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#6|"
+- name: "cool [white] \U0001F1F0\U0001F1FF |#3|"
   type: vmess
-  server: 172.64.80.1
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  server: 3h-kazakhstan1.09vpn.com
+  port: 80
+  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
   alterId: 0
   cipher: auto
   udp: true
-  tls: true
+  tls: false
   network: ws
-  servername: v2ray1.dozapp.xyz
+  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
   ws-opts:
-    path: /lMnsZUN4/
+    path: /vmess/
     headers:
-      Host: v2ray1.dozapp.xyz
+      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+- name: "cool [white] \U0001F1F0\U0001F1FF |#4|"
+  type: vmess
+  server: 3h-kazakhstan1.09vpn.com
+  port: 80
+  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: ws
+  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+  ws-opts:
+    path: /vmess/
 proxy-groups:
 - name: Обычный
   type: select
   proxies:
   - Авто
   - Авто (без RU)
-  - "cool [white] \U0001F310 |#1|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#2|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#1|"
+  - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F1F0\U0001F1FF |#3|"
-  - "cool [white] \U0001F1F7\U0001F1FA |#4|"
-  - "cool [white] \U0001F310 |#5|"
-  - "cool [white] \U0001F310 |#6|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#4|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F310 |#1|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#2|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#1|"
+  - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F1F0\U0001F1FF |#3|"
-  - "cool [white] \U0001F1F7\U0001F1FA |#4|"
-  - "cool [white] \U0001F310 |#5|"
-  - "cool [white] \U0001F310 |#6|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#4|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F310 |#1|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#2|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#1|"
+  - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F1F0\U0001F1FF |#3|"
-  - "cool [white] \U0001F310 |#5|"
-  - "cool [white] \U0001F310 |#6|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#4|"
 - name: "\U0001F1F0\U0001F1FF Kazakhstan"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F0\U0001F1FF |#2|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#1|"
   - "cool [white] \U0001F1F0\U0001F1FF |#3|"
-- name: "\U0001F1F7\U0001F1FA Russia"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1F7\U0001F1FA |#4|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#4|"
 - name: "\U0001F310 Unknown"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F310 |#1|"
-  - "cool [white] \U0001F310 |#5|"
-  - "cool [white] \U0001F310 |#6|"
+  - "cool [white] \U0001F310 |#2|"
 rules:
 - MATCH,Обычный
