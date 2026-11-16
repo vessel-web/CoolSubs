@@ -1,5 +1,35 @@
 proxies:
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#1|"
+- name: "cool [white] \U0001F310 |#1|"
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#2|"
+  type: vmess
+  server: 104.21.57.84
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#3|"
   type: vless
   server: 170.114.45.6
   port: 2096
@@ -13,79 +43,7 @@ proxies:
     path: /
     headers:
       Host: pcloud.z-tas.com
-- name: "cool [white] \U0001F310 |#2|"
-  type: vmess
-  server: 172.66.203.67
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#4|"
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#5|"
-  type: vmess
-  server: cf.0sm.com
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#6|"
-  type: vless
-  server: 172.67.199.126
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#7|"
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#8|"
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#4|"
   type: vless
   server: 170.114.46.6
   port: 2096
@@ -99,66 +57,44 @@ proxies:
     path: /
     headers:
       Host: pcloud.z-tas.com
-- name: "cool [white] \U0001F310 |#9|"
+- name: "cool [white] \U0001F1F7\U0001F1FA |#5|"
+  type: ss
+  server: 185.22.153.117
+  port: 18443
+  cipher: aes-256-gcm
+  password: NTiHBg64fsY8u8DbGrtypD9gPGSL386p
+  udp: true
+- name: "cool [white] \U0001F310 |#6|"
   type: vmess
-  server: cf.090227.xyz
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  server: 172.64.80.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
   cipher: auto
   udp: true
   tls: true
   network: ws
-  servername: vmess.lbw666.dpdns.org
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /ws
+    path: /lMnsZUN4/
     headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#10|"
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#7|"
   type: vmess
-  server: 172.66.203.67
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  server: 188.114.96.3
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
   cipher: auto
   udp: true
   tls: true
   network: ws
-  servername: vmess.lbw666.dpdns.org
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /ws
+    path: /lMnsZUN4/
     headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#11|"
-  type: vmess
-  server: cf.0sm.com
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#12|"
-  type: vless
-  server: 104.21.58.37
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#13|"
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#8|"
   type: vmess
   server: 104.17.136.198
   port: 443
@@ -173,53 +109,9 @@ proxies:
     path: /ws
     headers:
       Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#14|"
-  type: vless
-  server: fast.145779.xyz
-  port: 2053
-  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: fast.145779.xyz
-  ws-opts:
-    path: /ws-tesla
-    headers:
-      Host: fast.145779.xyz
-- name: "cool [white] \U0001F310 |#15|"
+- name: "cool [white] \U0001F1F0\U0001F1FF |#9|"
   type: vmess
-  server: 104.21.7.133
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F310 |#16|"
-  type: vmess
-  server: 172.66.203.67
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: vmess.lbw666.dpdns.org
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- name: "cool [white] \U0001F1F0\U0001F1FF |#17|"
-  type: vmess
-  server: 38.107.234.57
+  server: 3h-kazakhstan1.09vpn.com
   port: 80
   uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
   alterId: 0
@@ -227,110 +119,87 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: google.com
+  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
   ws-opts:
     path: /vmess/
     headers:
-      Host: google.com
+      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
 proxy-groups:
 - name: Обычный
   type: select
   proxies:
   - Авто
   - Авто (без RU)
-  - "cool [white] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [white] \U0001F310 |#1|"
   - "cool [white] \U0001F310 |#2|"
-  - "cool [white] \U0001F310 |#4|"
-  - "cool [white] \U0001F310 |#5|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#3|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#5|"
   - "cool [white] \U0001F310 |#6|"
   - "cool [white] \U0001F310 |#7|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#8|"
-  - "cool [white] \U0001F310 |#9|"
-  - "cool [white] \U0001F310 |#10|"
-  - "cool [white] \U0001F310 |#11|"
-  - "cool [white] \U0001F310 |#12|"
-  - "cool [white] \U0001F310 |#13|"
-  - "cool [white] \U0001F310 |#14|"
-  - "cool [white] \U0001F310 |#15|"
-  - "cool [white] \U0001F310 |#16|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#17|"
+  - "cool [white] \U0001F310 |#8|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#9|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [white] \U0001F310 |#1|"
   - "cool [white] \U0001F310 |#2|"
-  - "cool [white] \U0001F310 |#4|"
-  - "cool [white] \U0001F310 |#5|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#3|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
+  - "cool [white] \U0001F1F7\U0001F1FA |#5|"
   - "cool [white] \U0001F310 |#6|"
   - "cool [white] \U0001F310 |#7|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#8|"
-  - "cool [white] \U0001F310 |#9|"
-  - "cool [white] \U0001F310 |#10|"
-  - "cool [white] \U0001F310 |#11|"
-  - "cool [white] \U0001F310 |#12|"
-  - "cool [white] \U0001F310 |#13|"
-  - "cool [white] \U0001F310 |#14|"
-  - "cool [white] \U0001F310 |#15|"
-  - "cool [white] \U0001F310 |#16|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#17|"
+  - "cool [white] \U0001F310 |#8|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#9|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#1|"
+  - "cool [white] \U0001F310 |#1|"
   - "cool [white] \U0001F310 |#2|"
-  - "cool [white] \U0001F310 |#4|"
-  - "cool [white] \U0001F310 |#5|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#3|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
   - "cool [white] \U0001F310 |#6|"
   - "cool [white] \U0001F310 |#7|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#8|"
-  - "cool [white] \U0001F310 |#9|"
-  - "cool [white] \U0001F310 |#10|"
-  - "cool [white] \U0001F310 |#11|"
-  - "cool [white] \U0001F310 |#12|"
-  - "cool [white] \U0001F310 |#13|"
-  - "cool [white] \U0001F310 |#14|"
-  - "cool [white] \U0001F310 |#15|"
-  - "cool [white] \U0001F310 |#16|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#17|"
+  - "cool [white] \U0001F310 |#8|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#9|"
 - name: "\U0001F1F0\U0001F1FF Kazakhstan"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F0\U0001F1FF |#17|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#9|"
+- name: "\U0001F1F7\U0001F1FA Russia"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [white] \U0001F1F7\U0001F1FA |#5|"
 - name: "\U0001F1FA\U0001F1F8 USA"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#1|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#8|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#3|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#4|"
 - name: "\U0001F310 Unknown"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
+  - "cool [white] \U0001F310 |#1|"
   - "cool [white] \U0001F310 |#2|"
-  - "cool [white] \U0001F310 |#4|"
-  - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
   - "cool [white] \U0001F310 |#7|"
-  - "cool [white] \U0001F310 |#9|"
-  - "cool [white] \U0001F310 |#10|"
-  - "cool [white] \U0001F310 |#11|"
-  - "cool [white] \U0001F310 |#12|"
-  - "cool [white] \U0001F310 |#13|"
-  - "cool [white] \U0001F310 |#14|"
-  - "cool [white] \U0001F310 |#15|"
-  - "cool [white] \U0001F310 |#16|"
+  - "cool [white] \U0001F310 |#8|"
 rules:
 - MATCH,Обычный
