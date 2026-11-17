@@ -1,17 +1,17 @@
 {
-  "total": 84,
-  "countries": 5,
+  "total": 130,
+  "countries": 6,
   "top": [
     {
       "country": "Unknown",
-      "count": 68
+      "count": 116
     },
     {
       "country": "USA",
-      "count": 12
+      "count": 9
     },
     {
-      "country": "Kazakhstan",
+      "country": "Germany",
       "count": 2
     },
     {
@@ -19,9 +19,13 @@
       "count": 1
     },
     {
-      "country": "Malaysia",
+      "country": "Kazakhstan",
+      "count": 1
+    },
+    {
+      "country": "Singapore",
       "count": 1
     }
   ],
-  "updated": 1794869697
+  "updated": 1794873945
 }
