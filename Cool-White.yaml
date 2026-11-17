@@ -14,118 +14,35 @@ proxies:
     headers:
       Host: free.sahanwickramasinghe.com
 - name: "cool [white] \U0001F310 |#2|"
-  type: vless
-  server: ws137.mydosss.ccwu.cc
-  port: 443
-  uuid: 56066a03-d283-48cf-8120-eb8d810025cb
+  type: vmess
+  server: 104.21.57.84
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
   udp: true
   tls: true
   network: ws
-  skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /3b575ddc8596
+    path: /lMnsZUN4/
     headers:
-      Host: ws137.mydosss.ccwu.cc
+      Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#3|"
   type: vless
-  server: ws137.mydosss.ccwu.cc
-  port: 443
-  uuid: 369360e9-ff90-43c3-b81b-ebac420fce73
+  server: 104.21.58.37
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
+  servername: fast.145779.xyz
   ws-opts:
-    path: /3b575ddc8596
+    path: /ws-tesla
     headers:
-      Host: ws137.mydosss.ccwu.cc
+      Host: fast.145779.xyz
 - name: "cool [white] \U0001F310 |#4|"
-  type: vless
-  server: 104.17.70.206
-  port: 8443
-  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: free.sahanwickramasinghe.com
-  ws-opts:
-    path: /
-    headers:
-      Host: free.sahanwickramasinghe.com
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#5|"
-  type: vless
-  server: 23.144.68.90
-  port: 8443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#6|"
-  type: vless
-  server: 104.21.0.87
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#7|"
-  type: vless
-  server: ws137.mydosss.ccwu.cc
-  port: 443
-  uuid: 44be961e-c60d-463c-86d6-50ce6d8866c5
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
-  ws-opts:
-    path: /3b575ddc8596
-    headers:
-      Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F310 |#8|"
-  type: vless
-  server: 104.21.23.29
-  port: 443
-  uuid: 48eb716d-6121-43c1-9dd2-9a2a25bf3178
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
-  ws-opts:
-    path: /3b575ddc8596
-    headers:
-      Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F310 |#9|"
-  type: vless
-  server: ws137.mydosss.ccwu.cc
-  port: 443
-  uuid: 48eb716d-6121-43c1-9dd2-9a2a25bf3178
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
-  ws-opts:
-    path: /3b575ddc8596
-    headers:
-      Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F310 |#10|"
   type: vless
   server: 172.67.208.118
   port: 443
@@ -139,39 +56,37 @@ proxies:
     path: /3b575ddc8596
     headers:
       Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#11|"
-  type: vmess
-  server: 172.66.0.1
+- name: "cool [white] \U0001F310 |#5|"
+  type: vless
+  server: 104.17.70.206
   port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
+  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
   udp: true
   tls: true
   network: ws
-  servername: v2ray1.dozapp.xyz
+  skip-cert-verify: false
+  servername: free.sahanwickramasinghe.com
   ws-opts:
-    path: /lMnsZUN4/
+    path: /
     headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#12|"
-  type: vmess
-  server: 172.64.80.1
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
+      Host: free.sahanwickramasinghe.com
+- name: "cool [white] \U0001F310 |#6|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 48eb716d-6121-43c1-9dd2-9a2a25bf3178
   udp: true
   tls: true
   network: ws
-  servername: v2ray1.dozapp.xyz
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
   ws-opts:
-    path: /lMnsZUN4/
+    path: /3b575ddc8596
     headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#13|"
+      Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#7|"
   type: vmess
-  server: 141.193.213.21
+  server: news.zoom.us
   port: 8443
   uuid: bd67fcd2-ec34-40a6-aac6-67731f2d7011
   alterId: 0
@@ -184,7 +99,7 @@ proxies:
     path: /
     headers:
       Host: matrix.phonicsindia.mobi
-- name: "cool [white] \U0001F310 |#14|"
+- name: "cool [white] \U0001F310 |#8|"
   type: vmess
   server: 172.67.161.144
   port: 8443
@@ -199,7 +114,19 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#15|"
+- name: "cool [white] \U0001F310 |#9|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 7e0e7ca3-7aab-420e-9b40-c15a228ef33a
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+- name: "cool [white] \U0001F310 |#10|"
   type: vless
   server: ws137.mydosss.ccwu.cc
   port: 443
@@ -213,11 +140,11 @@ proxies:
     path: /3b575ddc8596
     headers:
       Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F310 |#16|"
+- name: "cool [white] \U0001F310 |#11|"
   type: vless
-  server: ws137.mydosss.ccwu.cc
+  server: 104.21.23.29
   port: 443
-  uuid: 56066a03-d283-48cf-8120-eb8d810025cb
+  uuid: 48eb716d-6121-43c1-9dd2-9a2a25bf3178
   udp: true
   tls: true
   network: ws
@@ -227,21 +154,21 @@ proxies:
     path: /3b575ddc8596
     headers:
       Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F310 |#17|"
+- name: "cool [white] \U0001F310 |#12|"
   type: vless
-  server: ws137.mydosss.ccwu.cc
-  port: 443
-  uuid: 7e0e7ca3-7aab-420e-9b40-c15a228ef33a
+  server: 104.21.58.37
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
+  servername: fast.145779.xyz
   ws-opts:
-    path: /3b575ddc8596
+    path: /ws-tesla
     headers:
-      Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F310 |#18|"
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#13|"
   type: vless
   server: 104.17.70.206
   port: 8443
@@ -255,6 +182,79 @@ proxies:
     path: /
     headers:
       Host: free.sahanwickramasinghe.com
+- name: "cool [white] \U0001F310 |#14|"
+  type: vmess
+  server: chatgpt.com
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#15|"
+  type: vless
+  server: 104.17.70.206
+  port: 8443
+  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: free.sahanwickramasinghe.com
+  ws-opts:
+    path: /
+    headers:
+      Host: free.sahanwickramasinghe.com
+- name: "cool [white] \U0001F310 |#16|"
+  type: vless
+  server: 104.17.70.206
+  port: 8443
+  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: free.sahanwickramasinghe.com
+  ws-opts:
+    path: /
+    headers:
+      Host: free.sahanwickramasinghe.com
+- name: "cool [white] \U0001F310 |#17|"
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: none
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#18|"
+  type: vmess
+  server: 172.66.0.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#19|"
   type: vless
   server: ws137.mydosss.ccwu.cc
@@ -271,64 +271,23 @@ proxies:
       Host: ws137.mydosss.ccwu.cc
 - name: "cool [white] \U0001F310 |#20|"
   type: vless
-  server: 172.67.208.118
+  server: 104.16.10.56
   port: 443
-  uuid: 48eb716d-6121-43c1-9dd2-9a2a25bf3178
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
+  servername: jp3.yohototo.top
   ws-opts:
-    path: /3b575ddc8596
+    path: /tyxyws
     headers:
-      Host: ws137.mydosss.ccwu.cc
+      Host: jp3.yohototo.top
 - name: "cool [white] \U0001F310 |#21|"
   type: vless
   server: ws137.mydosss.ccwu.cc
   port: 443
-  uuid: 369360e9-ff90-43c3-b81b-ebac420fce73
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
-  ws-opts:
-    path: /3b575ddc8596
-- name: "cool [white] \U0001F310 |#22|"
-  type: vmess
-  server: 104.21.91.53
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#23|"
-  type: vless
-  server: 104.17.70.206
-  port: 8443
-  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: free.sahanwickramasinghe.com
-  ws-opts:
-    path: /
-    headers:
-      Host: free.sahanwickramasinghe.com
-- name: "cool [white] \U0001F310 |#24|"
-  type: vless
-  server: ws137.mydosss.ccwu.cc
-  port: 443
-  uuid: 56066a03-d283-48cf-8120-eb8d810025cb
+  uuid: 7e0e7ca3-7aab-420e-9b40-c15a228ef33a
   udp: true
   tls: true
   network: ws
@@ -338,9 +297,35 @@ proxies:
     path: /3b575ddc8596
     headers:
       Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F310 |#25|"
+- name: "cool [white] \U0001F310 |#22|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+- name: "cool [white] \U0001F310 |#23|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#24|"
   type: vmess
-  server: 172.64.80.1
+  server: 172.67.167.78
   port: 8443
   uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
@@ -353,6 +338,21 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#25|"
+  type: vmess
+  server: 172.66.203.67
+  port: 443
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: vmess.lbw666.dpdns.org
+  ws-opts:
+    path: /ws
+    headers:
+      Host: vmess.lbw666.dpdns.org
 - name: "cool [white] \U0001F310 |#26|"
   type: vless
   server: ws137.mydosss.ccwu.cc
@@ -369,31 +369,35 @@ proxies:
       Host: ws137.mydosss.ccwu.cc
 - name: "cool [white] \U0001F310 |#27|"
   type: vless
-  server: ws137.mydosss.ccwu.cc
+  server: 104.18.42.98
   port: 443
-  uuid: 7e0e7ca3-7aab-420e-9b40-c15a228ef33a
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
+  servername: jp3.yohototo.top
   ws-opts:
-    path: /3b575ddc8596
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
 - name: "cool [white] \U0001F310 |#28|"
   type: vless
-  server: ws137.mydosss.ccwu.cc
-  port: 443
-  uuid: 369360e9-ff90-43c3-b81b-ebac420fce73
+  server: 104.17.70.206
+  port: 8443
+  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
+  servername: free.sahanwickramasinghe.com
   ws-opts:
-    path: /3b575ddc8596
-- name: "cool [white] \U0001F310 |#30|"
+    path: /
+    headers:
+      Host: free.sahanwickramasinghe.com
+- name: "cool [white] \U0001F310 |#29|"
   type: vmess
-  server: 172.67.161.144
+  server: 104.17.77.77
   port: 8443
   uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
@@ -406,37 +410,23 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#30|"
+  type: vless
+  server: 104.21.23.29
+  port: 443
+  uuid: 48eb716d-6121-43c1-9dd2-9a2a25bf3178
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+    headers:
+      Host: ws137.mydosss.ccwu.cc
 - name: "cool [white] \U0001F310 |#31|"
   type: vless
-  server: 104.17.70.206
-  port: 8443
-  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: free.sahanwickramasinghe.com
-  ws-opts:
-    path: /
-    headers:
-      Host: free.sahanwickramasinghe.com
-- name: "cool [white] \U0001F310 |#32|"
-  type: vless
-  server: ws137.mydosss.ccwu.cc
-  port: 443
-  uuid: 369360e9-ff90-43c3-b81b-ebac420fce73
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
-  ws-opts:
-    path: /3b575ddc8596
-    headers:
-      Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F310 |#33|"
-  type: vless
-  server: 104.21.23.29
+  server: 172.67.208.118
   port: 443
   uuid: 48eb716d-6121-43c1-9dd2-9a2a25bf3178
   udp: true
@@ -448,9 +438,49 @@ proxies:
     path: /3b575ddc8596
     headers:
       Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F310 |#32|"
+  type: vless
+  server: ujp.xn--ghqu5fm27b67w.com
+  port: 443
+  uuid: debafe5b-6760-4b00-b0b2-ee30cbf769f0
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: portland-wins-robbie-skirt.trycloudflare.com
+  ws-opts:
+    path: /e0843c8ad581
+    headers:
+      Host: portland-wins-robbie-skirt.trycloudflare.com
+- name: "cool [white] \U0001F310 |#33|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
 - name: "cool [white] \U0001F310 |#34|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 56066a03-d283-48cf-8120-eb8d810025cb
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+    headers:
+      Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F310 |#35|"
   type: vmess
-  server: 172.64.155.209
+  server: 104.17.77.77
   port: 8443
   uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
@@ -463,74 +493,7 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#35|"
-  type: vless
-  server: 104.17.70.206
-  port: 8443
-  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: free.sahanwickramasinghe.com
-  ws-opts:
-    path: /
-    headers:
-      Host: free.sahanwickramasinghe.com
 - name: "cool [white] \U0001F310 |#36|"
-  type: vless
-  server: ws137.mydosss.ccwu.cc
-  port: 443
-  uuid: 7e0e7ca3-7aab-420e-9b40-c15a228ef33a
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
-  ws-opts:
-    path: /3b575ddc8596
-- name: "cool [white] \U0001F310 |#37|"
-  type: vless
-  server: ws137.mydosss.ccwu.cc
-  port: 443
-  uuid: 369360e9-ff90-43c3-b81b-ebac420fce73
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
-  ws-opts:
-    path: /3b575ddc8596
-- name: "cool [white] \U0001F310 |#39|"
-  type: vless
-  server: 104.21.23.29
-  port: 443
-  uuid: 48eb716d-6121-43c1-9dd2-9a2a25bf3178
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
-  ws-opts:
-    path: /3b575ddc8596
-    headers:
-      Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#40|"
-  type: vmess
-  server: news.zoom.us
-  port: 8443
-  uuid: bd67fcd2-ec34-40a6-aac6-67731f2d7011
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: matrix.phonicsindia.mobi
-  ws-opts:
-    path: /
-    headers:
-      Host: matrix.phonicsindia.mobi
-- name: "cool [white] \U0001F310 |#41|"
   type: vless
   server: ws137.mydosss.ccwu.cc
   port: 443
@@ -544,21 +507,65 @@ proxies:
     path: /3b575ddc8596
     headers:
       Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F310 |#42|"
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#37|"
   type: vless
-  server: ws137.mydosss.ccwu.cc
+  server: www.zoom.us
   port: 443
-  uuid: 7e0e7ca3-7aab-420e-9b40-c15a228ef33a
+  uuid: b19c62cc-f2c2-4895-aee1-978a0f58f8c8
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
+  servername: matrix.phonicsindia.mobi
   ws-opts:
-    path: /3b575ddc8596
+    path: /
     headers:
-      Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F310 |#43|"
+      Host: matrix.phonicsindia.mobi
+- name: "cool [white] \U0001F310 |#38|"
+  type: vmess
+  server: 104.21.57.84
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#39|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#40|"
+  type: vmess
+  server: 188.114.96.3
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#41|"
   type: vless
   server: 104.17.70.206
   port: 8443
@@ -572,35 +579,22 @@ proxies:
     path: /
     headers:
       Host: free.sahanwickramasinghe.com
-- name: "cool [white] \U0001F310 |#45|"
-  type: vless
-  server: ws137.mydosss.ccwu.cc
-  port: 443
-  uuid: 369360e9-ff90-43c3-b81b-ebac420fce73
+- name: "cool [white] \U0001F310 |#42|"
+  type: vmess
+  server: 104.21.91.53
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
   udp: true
   tls: true
   network: ws
-  skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /3b575ddc8596
+    path: /lMnsZUN4/
     headers:
-      Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F310 |#46|"
-  type: vless
-  server: ws137.mydosss.ccwu.cc
-  port: 443
-  uuid: 48eb716d-6121-43c1-9dd2-9a2a25bf3178
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: ws137.mydosss.ccwu.cc
-  ws-opts:
-    path: /3b575ddc8596
-    headers:
-      Host: ws137.mydosss.ccwu.cc
-- name: "cool [white] \U0001F310 |#47|"
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#43|"
   type: vmess
   server: 104.17.77.77
   port: 8443
@@ -615,7 +609,103 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#44|"
+  type: vmess
+  server: 172.64.155.209
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#45|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#46|"
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#47|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 7e0e7ca3-7aab-420e-9b40-c15a228ef33a
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
 - name: "cool [white] \U0001F310 |#48|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 369360e9-ff90-43c3-b81b-ebac420fce73
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+- name: "cool [white] \U0001F310 |#49|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 48eb716d-6121-43c1-9dd2-9a2a25bf3178
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+    headers:
+      Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F310 |#50|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#51|"
   type: vless
   server: 104.17.70.206
   port: 8443
@@ -629,7 +719,50 @@ proxies:
     path: /
     headers:
       Host: free.sahanwickramasinghe.com
-- name: "cool [white] \U0001F310 |#49|"
+- name: "cool [white] \U0001F310 |#52|"
+  type: vmess
+  server: 172.67.167.78
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#53|"
+  type: vless
+  server: 104.17.50.227
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: jp3.yohototo.top
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
+- name: "cool [white] \U0001F310 |#54|"
+  type: vless
+  server: ujp.xn--ghqu5fm27b67w.com
+  port: 443
+  uuid: debafe5b-6760-4b00-b0b2-ee30cbf769f0
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: portland-wins-robbie-skirt.trycloudflare.com
+  ws-opts:
+    path: /e0843c8ad581
+    headers:
+      Host: portland-wins-robbie-skirt.trycloudflare.com
+- name: "cool [white] \U0001F310 |#55|"
   type: vless
   server: ws137.mydosss.ccwu.cc
   port: 443
@@ -641,7 +774,328 @@ proxies:
   servername: ws137.mydosss.ccwu.cc
   ws-opts:
     path: /3b575ddc8596
-- name: "cool [white] \U0001F310 |#50|"
+- name: "cool [white] \U0001F310 |#56|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 369360e9-ff90-43c3-b81b-ebac420fce73
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+    headers:
+      Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F310 |#57|"
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#58|"
+  type: vmess
+  server: 141.193.213.21
+  port: 8443
+  uuid: bd67fcd2-ec34-40a6-aac6-67731f2d7011
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: matrix.phonicsindia.mobi
+  ws-opts:
+    path: /
+    headers:
+      Host: matrix.phonicsindia.mobi
+- name: "cool [white] \U0001F310 |#59|"
+  type: vmess
+  server: 172.67.161.144
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#60|"
+  type: vless
+  server: www.zoom.us
+  port: 443
+  uuid: b19c62cc-f2c2-4895-aee1-978a0f58f8c8
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: matrix.phonicsindia.mobi
+  ws-opts:
+    path: /
+    headers:
+      Host: matrix.phonicsindia.mobi
+- name: "cool [white] \U0001F310 |#61|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 44be961e-c60d-463c-86d6-50ce6d8866c5
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+    headers:
+      Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F310 |#62|"
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#63|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#64|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 56066a03-d283-48cf-8120-eb8d810025cb
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+    headers:
+      Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F310 |#65|"
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#66|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 369360e9-ff90-43c3-b81b-ebac420fce73
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#67|"
+  type: vless
+  server: www.zoom.us
+  port: 443
+  uuid: b19c62cc-f2c2-4895-aee1-978a0f58f8c8
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: matrix.phonicsindia.mobi
+  ws-opts:
+    path: /
+    headers:
+      Host: matrix.phonicsindia.mobi
+- name: "cool [white] \U0001F310 |#68|"
+  type: vmess
+  server: 172.64.80.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F1E8\U0001F1FE |#69|"
+  type: ss
+  server: frr.drwrdoh.org
+  port: 8086
+  cipher: 2022-blake3-aes-256-gcm
+  password: f2Nq5YLnyclPaWR8my7/Vdd3ZX8URncXZNly5+HcUSs=:dQ6WYcPpGX5xIxUVPAR8w1A9eY6kEVoKKW3HleJ6o8Y=
+  udp: true
+- name: "cool [white] \U0001F310 |#70|"
+  type: vmess
+  server: 188.114.96.3
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#71|"
+  type: vmess
+  server: 172.64.80.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#72|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: "cool [white] \U0001F310 |#73|"
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+- name: "cool [white] \U0001F310 |#74|"
+  type: vmess
+  server: 172.64.80.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#75|"
+  type: vless
+  server: www.zoom.us
+  port: 443
+  uuid: b19c62cc-f2c2-4895-aee1-978a0f58f8c8
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: matrix.phonicsindia.mobi
+  ws-opts:
+    path: /
+    headers:
+      Host: matrix.phonicsindia.mobi
+- name: "cool [white] \U0001F310 |#76|"
+  type: vmess
+  server: 172.64.80.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#77|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 369360e9-ff90-43c3-b81b-ebac420fce73
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+    headers:
+      Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F310 |#78|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 56066a03-d283-48cf-8120-eb8d810025cb
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+    headers:
+      Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F310 |#79|"
   type: vless
   server: 172.67.208.118
   port: 443
@@ -655,6 +1109,104 @@ proxies:
     path: /3b575ddc8596
     headers:
       Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F310 |#80|"
+  type: vmess
+  server: 188.114.96.3
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F1F0\U0001F1FF |#81|"
+  type: vmess
+  server: 38.107.234.57
+  port: 80
+  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: ws
+  servername: google.com
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: google.com
+- name: "cool [white] \U0001F310 |#82|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 369360e9-ff90-43c3-b81b-ebac420fce73
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+    headers:
+      Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F310 |#83|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 369360e9-ff90-43c3-b81b-ebac420fce73
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+- name: "cool [white] \U0001F310 |#84|"
+  type: vless
+  server: 104.21.23.29
+  port: 443
+  uuid: 48eb716d-6121-43c1-9dd2-9a2a25bf3178
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+    headers:
+      Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F310 |#85|"
+  type: vless
+  server: ws137.mydosss.ccwu.cc
+  port: 443
+  uuid: 7e0e7ca3-7aab-420e-9b40-c15a228ef33a
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: ws137.mydosss.ccwu.cc
+  ws-opts:
+    path: /3b575ddc8596
+    headers:
+      Host: ws137.mydosss.ccwu.cc
+- name: "cool [white] \U0001F310 |#86|"
+  type: vless
+  server: 104.21.58.37
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: fast.145779.xyz
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
 proxy-groups:
 - name: Обычный
   type: select
@@ -665,20 +1217,20 @@ proxy-groups:
   - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F310 |#3|"
   - "cool [white] \U0001F310 |#4|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#5|"
+  - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
-  - "cool [white] \U0001F310 |#7|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#7|"
   - "cool [white] \U0001F310 |#8|"
   - "cool [white] \U0001F310 |#9|"
   - "cool [white] \U0001F310 |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
+  - "cool [white] \U0001F310 |#11|"
   - "cool [white] \U0001F310 |#12|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#13|"
+  - "cool [white] \U0001F310 |#13|"
   - "cool [white] \U0001F310 |#14|"
   - "cool [white] \U0001F310 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F310 |#17|"
-  - "cool [white] \U0001F310 |#18|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
   - "cool [white] \U0001F310 |#19|"
   - "cool [white] \U0001F310 |#20|"
   - "cool [white] \U0001F310 |#21|"
@@ -689,6 +1241,7 @@ proxy-groups:
   - "cool [white] \U0001F310 |#26|"
   - "cool [white] \U0001F310 |#27|"
   - "cool [white] \U0001F310 |#28|"
+  - "cool [white] \U0001F310 |#29|"
   - "cool [white] \U0001F310 |#30|"
   - "cool [white] \U0001F310 |#31|"
   - "cool [white] \U0001F310 |#32|"
@@ -696,18 +1249,56 @@ proxy-groups:
   - "cool [white] \U0001F310 |#34|"
   - "cool [white] \U0001F310 |#35|"
   - "cool [white] \U0001F310 |#36|"
-  - "cool [white] \U0001F310 |#37|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#37|"
+  - "cool [white] \U0001F310 |#38|"
   - "cool [white] \U0001F310 |#39|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#40|"
+  - "cool [white] \U0001F310 |#40|"
   - "cool [white] \U0001F310 |#41|"
   - "cool [white] \U0001F310 |#42|"
   - "cool [white] \U0001F310 |#43|"
+  - "cool [white] \U0001F310 |#44|"
   - "cool [white] \U0001F310 |#45|"
   - "cool [white] \U0001F310 |#46|"
   - "cool [white] \U0001F310 |#47|"
   - "cool [white] \U0001F310 |#48|"
   - "cool [white] \U0001F310 |#49|"
   - "cool [white] \U0001F310 |#50|"
+  - "cool [white] \U0001F310 |#51|"
+  - "cool [white] \U0001F310 |#52|"
+  - "cool [white] \U0001F310 |#53|"
+  - "cool [white] \U0001F310 |#54|"
+  - "cool [white] \U0001F310 |#55|"
+  - "cool [white] \U0001F310 |#56|"
+  - "cool [white] \U0001F310 |#57|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#58|"
+  - "cool [white] \U0001F310 |#59|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#60|"
+  - "cool [white] \U0001F310 |#61|"
+  - "cool [white] \U0001F310 |#62|"
+  - "cool [white] \U0001F310 |#63|"
+  - "cool [white] \U0001F310 |#64|"
+  - "cool [white] \U0001F310 |#65|"
+  - "cool [white] \U0001F310 |#66|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#67|"
+  - "cool [white] \U0001F310 |#68|"
+  - "cool [white] \U0001F1E8\U0001F1FE |#69|"
+  - "cool [white] \U0001F310 |#70|"
+  - "cool [white] \U0001F310 |#71|"
+  - "cool [white] \U0001F310 |#72|"
+  - "cool [white] \U0001F310 |#73|"
+  - "cool [white] \U0001F310 |#74|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#75|"
+  - "cool [white] \U0001F310 |#76|"
+  - "cool [white] \U0001F310 |#77|"
+  - "cool [white] \U0001F310 |#78|"
+  - "cool [white] \U0001F310 |#79|"
+  - "cool [white] \U0001F310 |#80|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#81|"
+  - "cool [white] \U0001F310 |#82|"
+  - "cool [white] \U0001F310 |#83|"
+  - "cool [white] \U0001F310 |#84|"
+  - "cool [white] \U0001F310 |#85|"
+  - "cool [white] \U0001F310 |#86|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -718,20 +1309,20 @@ proxy-groups:
   - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F310 |#3|"
   - "cool [white] \U0001F310 |#4|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#5|"
+  - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
-  - "cool [white] \U0001F310 |#7|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#7|"
   - "cool [white] \U0001F310 |#8|"
   - "cool [white] \U0001F310 |#9|"
   - "cool [white] \U0001F310 |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
+  - "cool [white] \U0001F310 |#11|"
   - "cool [white] \U0001F310 |#12|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#13|"
+  - "cool [white] \U0001F310 |#13|"
   - "cool [white] \U0001F310 |#14|"
   - "cool [white] \U0001F310 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F310 |#17|"
-  - "cool [white] \U0001F310 |#18|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
   - "cool [white] \U0001F310 |#19|"
   - "cool [white] \U0001F310 |#20|"
   - "cool [white] \U0001F310 |#21|"
@@ -742,6 +1333,7 @@ proxy-groups:
   - "cool [white] \U0001F310 |#26|"
   - "cool [white] \U0001F310 |#27|"
   - "cool [white] \U0001F310 |#28|"
+  - "cool [white] \U0001F310 |#29|"
   - "cool [white] \U0001F310 |#30|"
   - "cool [white] \U0001F310 |#31|"
   - "cool [white] \U0001F310 |#32|"
@@ -749,18 +1341,56 @@ proxy-groups:
   - "cool [white] \U0001F310 |#34|"
   - "cool [white] \U0001F310 |#35|"
   - "cool [white] \U0001F310 |#36|"
-  - "cool [white] \U0001F310 |#37|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#37|"
+  - "cool [white] \U0001F310 |#38|"
   - "cool [white] \U0001F310 |#39|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#40|"
+  - "cool [white] \U0001F310 |#40|"
   - "cool [white] \U0001F310 |#41|"
   - "cool [white] \U0001F310 |#42|"
   - "cool [white] \U0001F310 |#43|"
+  - "cool [white] \U0001F310 |#44|"
   - "cool [white] \U0001F310 |#45|"
   - "cool [white] \U0001F310 |#46|"
   - "cool [white] \U0001F310 |#47|"
   - "cool [white] \U0001F310 |#48|"
   - "cool [white] \U0001F310 |#49|"
   - "cool [white] \U0001F310 |#50|"
+  - "cool [white] \U0001F310 |#51|"
+  - "cool [white] \U0001F310 |#52|"
+  - "cool [white] \U0001F310 |#53|"
+  - "cool [white] \U0001F310 |#54|"
+  - "cool [white] \U0001F310 |#55|"
+  - "cool [white] \U0001F310 |#56|"
+  - "cool [white] \U0001F310 |#57|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#58|"
+  - "cool [white] \U0001F310 |#59|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#60|"
+  - "cool [white] \U0001F310 |#61|"
+  - "cool [white] \U0001F310 |#62|"
+  - "cool [white] \U0001F310 |#63|"
+  - "cool [white] \U0001F310 |#64|"
+  - "cool [white] \U0001F310 |#65|"
+  - "cool [white] \U0001F310 |#66|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#67|"
+  - "cool [white] \U0001F310 |#68|"
+  - "cool [white] \U0001F1E8\U0001F1FE |#69|"
+  - "cool [white] \U0001F310 |#70|"
+  - "cool [white] \U0001F310 |#71|"
+  - "cool [white] \U0001F310 |#72|"
+  - "cool [white] \U0001F310 |#73|"
+  - "cool [white] \U0001F310 |#74|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#75|"
+  - "cool [white] \U0001F310 |#76|"
+  - "cool [white] \U0001F310 |#77|"
+  - "cool [white] \U0001F310 |#78|"
+  - "cool [white] \U0001F310 |#79|"
+  - "cool [white] \U0001F310 |#80|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#81|"
+  - "cool [white] \U0001F310 |#82|"
+  - "cool [white] \U0001F310 |#83|"
+  - "cool [white] \U0001F310 |#84|"
+  - "cool [white] \U0001F310 |#85|"
+  - "cool [white] \U0001F310 |#86|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -771,20 +1401,20 @@ proxy-groups:
   - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F310 |#3|"
   - "cool [white] \U0001F310 |#4|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#5|"
+  - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
-  - "cool [white] \U0001F310 |#7|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#7|"
   - "cool [white] \U0001F310 |#8|"
   - "cool [white] \U0001F310 |#9|"
   - "cool [white] \U0001F310 |#10|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
+  - "cool [white] \U0001F310 |#11|"
   - "cool [white] \U0001F310 |#12|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#13|"
+  - "cool [white] \U0001F310 |#13|"
   - "cool [white] \U0001F310 |#14|"
   - "cool [white] \U0001F310 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F310 |#17|"
-  - "cool [white] \U0001F310 |#18|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
   - "cool [white] \U0001F310 |#19|"
   - "cool [white] \U0001F310 |#20|"
   - "cool [white] \U0001F310 |#21|"
@@ -795,6 +1425,7 @@ proxy-groups:
   - "cool [white] \U0001F310 |#26|"
   - "cool [white] \U0001F310 |#27|"
   - "cool [white] \U0001F310 |#28|"
+  - "cool [white] \U0001F310 |#29|"
   - "cool [white] \U0001F310 |#30|"
   - "cool [white] \U0001F310 |#31|"
   - "cool [white] \U0001F310 |#32|"
@@ -802,28 +1433,83 @@ proxy-groups:
   - "cool [white] \U0001F310 |#34|"
   - "cool [white] \U0001F310 |#35|"
   - "cool [white] \U0001F310 |#36|"
-  - "cool [white] \U0001F310 |#37|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#37|"
+  - "cool [white] \U0001F310 |#38|"
   - "cool [white] \U0001F310 |#39|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#40|"
+  - "cool [white] \U0001F310 |#40|"
   - "cool [white] \U0001F310 |#41|"
   - "cool [white] \U0001F310 |#42|"
   - "cool [white] \U0001F310 |#43|"
+  - "cool [white] \U0001F310 |#44|"
   - "cool [white] \U0001F310 |#45|"
   - "cool [white] \U0001F310 |#46|"
   - "cool [white] \U0001F310 |#47|"
   - "cool [white] \U0001F310 |#48|"
   - "cool [white] \U0001F310 |#49|"
   - "cool [white] \U0001F310 |#50|"
+  - "cool [white] \U0001F310 |#51|"
+  - "cool [white] \U0001F310 |#52|"
+  - "cool [white] \U0001F310 |#53|"
+  - "cool [white] \U0001F310 |#54|"
+  - "cool [white] \U0001F310 |#55|"
+  - "cool [white] \U0001F310 |#56|"
+  - "cool [white] \U0001F310 |#57|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#58|"
+  - "cool [white] \U0001F310 |#59|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#60|"
+  - "cool [white] \U0001F310 |#61|"
+  - "cool [white] \U0001F310 |#62|"
+  - "cool [white] \U0001F310 |#63|"
+  - "cool [white] \U0001F310 |#64|"
+  - "cool [white] \U0001F310 |#65|"
+  - "cool [white] \U0001F310 |#66|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#67|"
+  - "cool [white] \U0001F310 |#68|"
+  - "cool [white] \U0001F1E8\U0001F1FE |#69|"
+  - "cool [white] \U0001F310 |#70|"
+  - "cool [white] \U0001F310 |#71|"
+  - "cool [white] \U0001F310 |#72|"
+  - "cool [white] \U0001F310 |#73|"
+  - "cool [white] \U0001F310 |#74|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#75|"
+  - "cool [white] \U0001F310 |#76|"
+  - "cool [white] \U0001F310 |#77|"
+  - "cool [white] \U0001F310 |#78|"
+  - "cool [white] \U0001F310 |#79|"
+  - "cool [white] \U0001F310 |#80|"
+  - "cool [white] \U0001F1F0\U0001F1FF |#81|"
+  - "cool [white] \U0001F310 |#82|"
+  - "cool [white] \U0001F310 |#83|"
+  - "cool [white] \U0001F310 |#84|"
+  - "cool [white] \U0001F310 |#85|"
+  - "cool [white] \U0001F310 |#86|"
+- name: "\U0001F1E8\U0001F1FE Cyprus"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [white] \U0001F1E8\U0001F1FE |#69|"
+- name: "\U0001F1F0\U0001F1FF Kazakhstan"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - "cool [white] \U0001F1F0\U0001F1FF |#81|"
 - name: "\U0001F1FA\U0001F1F8 USA"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#5|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#11|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#13|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#40|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#7|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#18|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#37|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#58|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#60|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#67|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#75|"
 - name: "\U0001F310 Unknown"
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -834,17 +1520,18 @@ proxy-groups:
   - "cool [white] \U0001F310 |#2|"
   - "cool [white] \U0001F310 |#3|"
   - "cool [white] \U0001F310 |#4|"
+  - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
-  - "cool [white] \U0001F310 |#7|"
   - "cool [white] \U0001F310 |#8|"
   - "cool [white] \U0001F310 |#9|"
   - "cool [white] \U0001F310 |#10|"
+  - "cool [white] \U0001F310 |#11|"
   - "cool [white] \U0001F310 |#12|"
+  - "cool [white] \U0001F310 |#13|"
   - "cool [white] \U0001F310 |#14|"
   - "cool [white] \U0001F310 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F310 |#17|"
-  - "cool [white] \U0001F310 |#18|"
   - "cool [white] \U0001F310 |#19|"
   - "cool [white] \U0001F310 |#20|"
   - "cool [white] \U0001F310 |#21|"
@@ -855,6 +1542,7 @@ proxy-groups:
   - "cool [white] \U0001F310 |#26|"
   - "cool [white] \U0001F310 |#27|"
   - "cool [white] \U0001F310 |#28|"
+  - "cool [white] \U0001F310 |#29|"
   - "cool [white] \U0001F310 |#30|"
   - "cool [white] \U0001F310 |#31|"
   - "cool [white] \U0001F310 |#32|"
@@ -862,16 +1550,48 @@ proxy-groups:
   - "cool [white] \U0001F310 |#34|"
   - "cool [white] \U0001F310 |#35|"
   - "cool [white] \U0001F310 |#36|"
-  - "cool [white] \U0001F310 |#37|"
+  - "cool [white] \U0001F310 |#38|"
   - "cool [white] \U0001F310 |#39|"
+  - "cool [white] \U0001F310 |#40|"
   - "cool [white] \U0001F310 |#41|"
   - "cool [white] \U0001F310 |#42|"
   - "cool [white] \U0001F310 |#43|"
+  - "cool [white] \U0001F310 |#44|"
   - "cool [white] \U0001F310 |#45|"
   - "cool [white] \U0001F310 |#46|"
   - "cool [white] \U0001F310 |#47|"
   - "cool [white] \U0001F310 |#48|"
   - "cool [white] \U0001F310 |#49|"
   - "cool [white] \U0001F310 |#50|"
+  - "cool [white] \U0001F310 |#51|"
+  - "cool [white] \U0001F310 |#52|"
+  - "cool [white] \U0001F310 |#53|"
+  - "cool [white] \U0001F310 |#54|"
+  - "cool [white] \U0001F310 |#55|"
+  - "cool [white] \U0001F310 |#56|"
+  - "cool [white] \U0001F310 |#57|"
+  - "cool [white] \U0001F310 |#59|"
+  - "cool [white] \U0001F310 |#61|"
+  - "cool [white] \U0001F310 |#62|"
+  - "cool [white] \U0001F310 |#63|"
+  - "cool [white] \U0001F310 |#64|"
+  - "cool [white] \U0001F310 |#65|"
+  - "cool [white] \U0001F310 |#66|"
+  - "cool [white] \U0001F310 |#68|"
+  - "cool [white] \U0001F310 |#70|"
+  - "cool [white] \U0001F310 |#71|"
+  - "cool [white] \U0001F310 |#72|"
+  - "cool [white] \U0001F310 |#73|"
+  - "cool [white] \U0001F310 |#74|"
+  - "cool [white] \U0001F310 |#76|"
+  - "cool [white] \U0001F310 |#77|"
+  - "cool [white] \U0001F310 |#78|"
+  - "cool [white] \U0001F310 |#79|"
+  - "cool [white] \U0001F310 |#80|"
+  - "cool [white] \U0001F310 |#82|"
+  - "cool [white] \U0001F310 |#83|"
+  - "cool [white] \U0001F310 |#84|"
+  - "cool [white] \U0001F310 |#85|"
+  - "cool [white] \U0001F310 |#86|"
 rules:
 - MATCH,Обычный
