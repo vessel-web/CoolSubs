@@ -1,65 +1,45 @@
 proxies:
 - name: "cool [white] \U0001F310 |#1|"
   type: vless
-  server: 104.17.70.206
-  port: 8443
-  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
+  server: 104.24.31.89
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: free.sahanwickramasinghe.com
+  servername: jp3.yohototo.top
   ws-opts:
-    path: /
+    path: /tyxyws
     headers:
-      Host: free.sahanwickramasinghe.com
-- name: "cool [white] \U0001F310 |#2|"
+      Host: jp3.yohototo.top
+- name: "cool [white] \U0001F1F8\U0001F1EC |#2|"
   type: vmess
-  server: 172.67.167.78
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F1F0\U0001F1FF |#3|"
-  type: vmess
-  server: 3h-kazakhstan1.09vpn.com
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
+  server: 195.133.135.238
+  port: 10086
+  uuid: b831381d-6324-4d53-ad4f-8cda48b30811
   alterId: 0
   cipher: auto
   udp: true
   tls: false
-  network: ws
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  ws-opts:
-    path: /vmess/
-    headers:
-      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-- name: "cool [white] \U0001F310 |#4|"
+  network: tcp
+- name: "cool [white] \U0001F310 |#3|"
   type: vless
-  server: 104.17.70.206
-  port: 8443
-  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
+  server: 104.17.50.227
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: free.sahanwickramasinghe.com
+  servername: jp3.yohototo.top
   ws-opts:
-    path: /
+    path: /tyxyws
     headers:
-      Host: free.sahanwickramasinghe.com
-- name: "cool [white] \U0001F310 |#5|"
+      Host: jp3.yohototo.top
+- name: "cool [white] \U0001F310 |#4|"
   type: vmess
-  server: chatgpt.com
+  server: 172.64.80.1
   port: 8443
   uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
@@ -72,7 +52,7 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#6|"
+- name: "cool [white] \U0001F310 |#5|"
   type: vless
   server: 104.17.70.206
   port: 8443
@@ -86,9 +66,24 @@ proxies:
     path: /
     headers:
       Host: free.sahanwickramasinghe.com
+- name: "cool [white] \U0001F310 |#6|"
+  type: vmess
+  server: 188.114.96.3
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#7|"
   type: vmess
-  server: 172.67.161.144
+  server: 104.21.91.53
   port: 8443
   uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
@@ -101,9 +96,19 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#8|"
+- name: "cool [white] \U0001F1F8\U0001F1EC |#8|"
   type: vmess
-  server: 172.67.167.78
+  server: 195.133.135.238
+  port: 10086
+  uuid: b831381d-6324-4d53-ad4f-8cda48b30811
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  network: tcp
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#9|"
+  type: vmess
+  server: 172.66.0.1
   port: 8443
   uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
@@ -116,7 +121,7 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F310 |#9|"
+- name: "cool [white] \U0001F310 |#10|"
   type: vless
   server: 104.17.70.206
   port: 8443
@@ -130,21 +135,6 @@ proxies:
     path: /
     headers:
       Host: free.sahanwickramasinghe.com
-- name: "cool [white] \U0001F310 |#10|"
-  type: vmess
-  server: 104.17.77.77
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: true
-  network: ws
-  servername: v2ray1.dozapp.xyz
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#11|"
   type: vless
   server: 104.17.70.206
@@ -174,22 +164,23 @@ proxies:
     headers:
       Host: free.sahanwickramasinghe.com
 - name: "cool [white] \U0001F310 |#13|"
-  type: vless
-  server: 104.17.70.206
+  type: vmess
+  server: 104.17.77.77
   port: 8443
-  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
   udp: true
   tls: true
   network: ws
-  skip-cert-verify: false
-  servername: free.sahanwickramasinghe.com
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /
+    path: /lMnsZUN4/
     headers:
-      Host: free.sahanwickramasinghe.com
+      Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#14|"
   type: vmess
-  server: 104.17.77.77
+  server: chatgpt.com
   port: 8443
   uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
@@ -217,21 +208,62 @@ proxies:
     headers:
       Host: free.sahanwickramasinghe.com
 - name: "cool [white] \U0001F310 |#16|"
-  type: vmess
-  server: 172.64.80.1
+  type: vless
+  server: 104.17.70.206
   port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
+  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
   udp: true
   tls: true
   network: ws
-  servername: v2ray1.dozapp.xyz
+  skip-cert-verify: false
+  servername: free.sahanwickramasinghe.com
   ws-opts:
-    path: /lMnsZUN4/
+    path: /
     headers:
-      Host: v2ray1.dozapp.xyz
+      Host: free.sahanwickramasinghe.com
 - name: "cool [white] \U0001F310 |#17|"
+  type: vless
+  server: 104.16.10.56
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: jp3.yohototo.top
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
+- name: "cool [white] \U0001F310 |#18|"
+  type: vless
+  server: 104.17.70.206
+  port: 8443
+  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: free.sahanwickramasinghe.com
+  ws-opts:
+    path: /
+    headers:
+      Host: free.sahanwickramasinghe.com
+- name: "cool [white] \U0001F310 |#19|"
+  type: vless
+  server: 104.17.70.206
+  port: 8443
+  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
+  udp: true
+  tls: true
+  network: ws
+  skip-cert-verify: false
+  servername: free.sahanwickramasinghe.com
+  ws-opts:
+    path: /
+    headers:
+      Host: free.sahanwickramasinghe.com
+- name: "cool [white] \U0001F310 |#20|"
   type: vmess
   server: 104.17.77.77
   port: 8443
@@ -246,13 +278,21 @@ proxies:
     path: /lMnsZUN4/
     headers:
       Host: v2ray1.dozapp.xyz
-- name: "cool [white] \U0001F1E9\U0001F1EA |#18|"
-  type: ss
-  server: frr.drwrdoh.org
-  port: 8086
-  cipher: 2022-blake3-aes-256-gcm
-  password: f2Nq5YLnyclPaWR8my7/Vdd3ZX8URncXZNly5+HcUSs=:dQ6WYcPpGX5xIxUVPAR8w1A9eY6kEVoKKW3HleJ6o8Y=
+- name: "cool [white] \U0001F310 |#21|"
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
   udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
 proxy-groups:
 - name: Обычный
   type: select
@@ -260,14 +300,14 @@ proxy-groups:
   - Авто
   - Авто (без RU)
   - "cool [white] \U0001F310 |#1|"
-  - "cool [white] \U0001F310 |#2|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#3|"
+  - "cool [white] \U0001F1F8\U0001F1EC |#2|"
+  - "cool [white] \U0001F310 |#3|"
   - "cool [white] \U0001F310 |#4|"
   - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
   - "cool [white] \U0001F310 |#7|"
-  - "cool [white] \U0001F310 |#8|"
-  - "cool [white] \U0001F310 |#9|"
+  - "cool [white] \U0001F1F8\U0001F1EC |#8|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
   - "cool [white] \U0001F310 |#10|"
   - "cool [white] \U0001F310 |#11|"
   - "cool [white] \U0001F310 |#12|"
@@ -276,7 +316,10 @@ proxy-groups:
   - "cool [white] \U0001F310 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F310 |#17|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#18|"
+  - "cool [white] \U0001F310 |#18|"
+  - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F310 |#20|"
+  - "cool [white] \U0001F310 |#21|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -284,14 +327,14 @@ proxy-groups:
   tolerance: 50
   proxies:
   - "cool [white] \U0001F310 |#1|"
-  - "cool [white] \U0001F310 |#2|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#3|"
+  - "cool [white] \U0001F1F8\U0001F1EC |#2|"
+  - "cool [white] \U0001F310 |#3|"
   - "cool [white] \U0001F310 |#4|"
   - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
   - "cool [white] \U0001F310 |#7|"
-  - "cool [white] \U0001F310 |#8|"
-  - "cool [white] \U0001F310 |#9|"
+  - "cool [white] \U0001F1F8\U0001F1EC |#8|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
   - "cool [white] \U0001F310 |#10|"
   - "cool [white] \U0001F310 |#11|"
   - "cool [white] \U0001F310 |#12|"
@@ -300,7 +343,10 @@ proxy-groups:
   - "cool [white] \U0001F310 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F310 |#17|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#18|"
+  - "cool [white] \U0001F310 |#18|"
+  - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F310 |#20|"
+  - "cool [white] \U0001F310 |#21|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -308,14 +354,14 @@ proxy-groups:
   tolerance: 50
   proxies:
   - "cool [white] \U0001F310 |#1|"
-  - "cool [white] \U0001F310 |#2|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#3|"
+  - "cool [white] \U0001F1F8\U0001F1EC |#2|"
+  - "cool [white] \U0001F310 |#3|"
   - "cool [white] \U0001F310 |#4|"
   - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
   - "cool [white] \U0001F310 |#7|"
-  - "cool [white] \U0001F310 |#8|"
-  - "cool [white] \U0001F310 |#9|"
+  - "cool [white] \U0001F1F8\U0001F1EC |#8|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
   - "cool [white] \U0001F310 |#10|"
   - "cool [white] \U0001F310 |#11|"
   - "cool [white] \U0001F310 |#12|"
@@ -324,21 +370,25 @@ proxy-groups:
   - "cool [white] \U0001F310 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F310 |#17|"
-  - "cool [white] \U0001F1E9\U0001F1EA |#18|"
-- name: "\U0001F1E9\U0001F1EA Germany"
+  - "cool [white] \U0001F310 |#18|"
+  - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F310 |#20|"
+  - "cool [white] \U0001F310 |#21|"
+- name: "\U0001F1F8\U0001F1EC Singapore"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1E9\U0001F1EA |#18|"
-- name: "\U0001F1F0\U0001F1FF Kazakhstan"
+  - "cool [white] \U0001F1F8\U0001F1EC |#2|"
+  - "cool [white] \U0001F1F8\U0001F1EC |#8|"
+- name: "\U0001F1FA\U0001F1F8 USA"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F0\U0001F1FF |#3|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#9|"
 - name: "\U0001F310 Unknown"
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -346,13 +396,11 @@ proxy-groups:
   tolerance: 50
   proxies:
   - "cool [white] \U0001F310 |#1|"
-  - "cool [white] \U0001F310 |#2|"
+  - "cool [white] \U0001F310 |#3|"
   - "cool [white] \U0001F310 |#4|"
   - "cool [white] \U0001F310 |#5|"
   - "cool [white] \U0001F310 |#6|"
   - "cool [white] \U0001F310 |#7|"
-  - "cool [white] \U0001F310 |#8|"
-  - "cool [white] \U0001F310 |#9|"
   - "cool [white] \U0001F310 |#10|"
   - "cool [white] \U0001F310 |#11|"
   - "cool [white] \U0001F310 |#12|"
@@ -361,5 +409,9 @@ proxy-groups:
   - "cool [white] \U0001F310 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F310 |#17|"
+  - "cool [white] \U0001F310 |#18|"
+  - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F310 |#20|"
+  - "cool [white] \U0001F310 |#21|"
 rules:
 - MATCH,Обычный
