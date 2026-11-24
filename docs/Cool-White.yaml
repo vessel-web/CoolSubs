@@ -1,46 +1,160 @@
 proxies:
-- name: "cool [white] \U0001F1F0\U0001F1FF |#1|"
+- name: "cool [white] \U0001F310 |#1|"
   type: vmess
-  server: 3h-kazakhstan1.09vpn.com
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
+  server: 104.17.136.198
+  port: 443
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
   alterId: 0
   cipher: auto
   udp: true
-  tls: false
+  tls: true
   network: ws
-  servername: 3h-kazakhstan1.09vpn.com
+  servername: vmess.lbw666.dpdns.org
   ws-opts:
-    path: /vmess/
+    path: /ws
     headers:
-      Host: 3h-kazakhstan1.09vpn.com
+      Host: vmess.lbw666.dpdns.org
+- name: "cool [white] \U0001F310 |#2|"
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#3|"
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#4|"
+  type: vmess
+  server: 104.27.0.1
+  port: 443
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: vmess.lbw666.dpdns.org
+  ws-opts:
+    path: /ws
+    headers:
+      Host: vmess.lbw666.dpdns.org
+- name: "cool [white] \U0001F310 |#5|"
+  type: vmess
+  server: 188.114.96.3
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#6|"
+  type: vmess
+  server: 104.21.91.53
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#7|"
+  type: vmess
+  server: 172.67.161.144
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
 proxy-groups:
 - name: Обычный
   type: select
   proxies:
   - Авто
   - Авто (без RU)
-  - "cool [white] \U0001F1F0\U0001F1FF |#1|"
+  - "cool [white] \U0001F310 |#1|"
+  - "cool [white] \U0001F310 |#2|"
+  - "cool [white] \U0001F310 |#3|"
+  - "cool [white] \U0001F310 |#4|"
+  - "cool [white] \U0001F310 |#5|"
+  - "cool [white] \U0001F310 |#6|"
+  - "cool [white] \U0001F310 |#7|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F0\U0001F1FF |#1|"
+  - "cool [white] \U0001F310 |#1|"
+  - "cool [white] \U0001F310 |#2|"
+  - "cool [white] \U0001F310 |#3|"
+  - "cool [white] \U0001F310 |#4|"
+  - "cool [white] \U0001F310 |#5|"
+  - "cool [white] \U0001F310 |#6|"
+  - "cool [white] \U0001F310 |#7|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F0\U0001F1FF |#1|"
-- name: "\U0001F1F0\U0001F1FF Kazakhstan"
+  - "cool [white] \U0001F310 |#1|"
+  - "cool [white] \U0001F310 |#2|"
+  - "cool [white] \U0001F310 |#3|"
+  - "cool [white] \U0001F310 |#4|"
+  - "cool [white] \U0001F310 |#5|"
+  - "cool [white] \U0001F310 |#6|"
+  - "cool [white] \U0001F310 |#7|"
+- name: "\U0001F310 Unknown"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1F0\U0001F1FF |#1|"
+  - "cool [white] \U0001F310 |#1|"
+  - "cool [white] \U0001F310 |#2|"
+  - "cool [white] \U0001F310 |#3|"
+  - "cool [white] \U0001F310 |#4|"
+  - "cool [white] \U0001F310 |#5|"
+  - "cool [white] \U0001F310 |#6|"
+  - "cool [white] \U0001F310 |#7|"
 rules:
 - MATCH,Обычный
