@@ -1,34 +1,21 @@
 proxies:
 - name: "cool [white] \U0001F310 |#1|"
-  type: vless
-  server: 104.17.70.206
+  type: vmess
+  server: 104.21.91.53
   port: 8443
-  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
   udp: true
   tls: true
   network: ws
-  skip-cert-verify: false
-  servername: free.sahanwickramasinghe.com
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /
+    path: /lMnsZUN4/
     headers:
-      Host: free.sahanwickramasinghe.com
+      Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#2|"
   type: vless
-  server: 104.27.46.35
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#3|"
-  type: vless
   server: 104.17.70.206
   port: 8443
   uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
@@ -41,6 +28,21 @@ proxies:
     path: /
     headers:
       Host: free.sahanwickramasinghe.com
+- name: "cool [white] \U0001F310 |#3|"
+  type: vmess
+  server: 172.64.80.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#4|"
   type: vless
   server: 104.17.70.206
@@ -57,21 +59,21 @@ proxies:
       Host: free.sahanwickramasinghe.com
 - name: "cool [white] \U0001F310 |#5|"
   type: vless
-  server: 104.19.48.107
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  server: 104.17.70.206
+  port: 8443
+  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: jp3.yohototo.top
+  servername: free.sahanwickramasinghe.com
   ws-opts:
-    path: /tyxyws
+    path: /
     headers:
-      Host: jp3.yohototo.top
+      Host: free.sahanwickramasinghe.com
 - name: "cool [white] \U0001F310 |#6|"
   type: vmess
-  server: 104.17.77.77
+  server: 172.67.167.78
   port: 8443
   uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
@@ -86,20 +88,6 @@ proxies:
       Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#7|"
   type: vless
-  server: 104.19.48.107
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#8|"
-  type: vless
   server: 104.17.70.206
   port: 8443
   uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
@@ -112,116 +100,96 @@ proxies:
     path: /
     headers:
       Host: free.sahanwickramasinghe.com
-- name: "cool [white] \U0001F310 |#9|"
-  type: vless
-  server: 104.24.31.89
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+- name: "cool [white] \U0001F310 |#8|"
+  type: vmess
+  server: 172.67.161.144
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
   udp: true
   tls: true
   network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /tyxyws
+    path: /lMnsZUN4/
     headers:
-      Host: jp3.yohototo.top
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#9|"
+  type: vmess
+  server: 188.114.96.3
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#10|"
   type: vless
-  server: 104.18.42.98
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  server: 104.17.70.206
+  port: 8443
+  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: jp3.yohototo.top
+  servername: free.sahanwickramasinghe.com
   ws-opts:
-    path: /tyxyws
+    path: /
     headers:
-      Host: jp3.yohototo.top
+      Host: free.sahanwickramasinghe.com
 - name: "cool [white] \U0001F310 |#11|"
   type: vmess
-  server: cf.0sm.com
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  server: 104.21.57.84
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
   cipher: auto
   udp: true
   tls: true
   network: ws
-  servername: vmess.lbw666.dpdns.org
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /ws
+    path: /lMnsZUN4/
     headers:
-      Host: vmess.lbw666.dpdns.org
+      Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#12|"
-  type: vless
-  server: 104.19.12.94
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#13|"
-  type: vless
-  server: 188.114.97.6
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#14|"
-  type: vless
-  server: 104.18.42.98
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F1F8\U0001F1EC |#15|"
   type: vmess
-  server: 195.133.135.238
-  port: 10086
-  uuid: b831381d-6324-4d53-ad4f-8cda48b30811
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
   cipher: auto
   udp: true
-  tls: false
-  network: tcp
-- name: "cool [white] \U0001F310 |#16|"
-  type: vless
-  server: 104.17.50.227
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#13|"
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
   udp: true
   tls: true
   network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /tyxyws
+    path: /lMnsZUN4/
     headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#17|"
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#14|"
   type: vless
   server: 104.17.70.206
   port: 8443
@@ -235,52 +203,90 @@ proxies:
     path: /
     headers:
       Host: free.sahanwickramasinghe.com
-- name: "cool [white] \U0001F310 |#18|"
-  type: vless
-  server: 104.21.70.21
+- name: "cool [white] \U0001F1FA\U0001F1F8 |#15|"
+  type: hysteria2
+  server: 42fab11a-tm96o0-tnggms-6gn6.los.hyhuawei.com
   port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  password: c12f73f6-e8c7-11ed-9246-f23c9164ca5d
+  sni: 42fab11a-tm96o0-tnggms-6gn6.los.hyhuawei.com
+  skip-cert-verify: false
+- name: "cool [white] \U0001F310 |#16|"
+  type: vless
+  server: 104.17.70.206
+  port: 8443
+  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
   udp: true
   tls: true
   network: ws
   skip-cert-verify: false
-  servername: jp3.yohototo.top
+  servername: free.sahanwickramasinghe.com
   ws-opts:
-    path: /tyxyws
+    path: /
     headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#19|"
-  type: vless
-  server: 104.19.12.94
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F1F0\U0001F1FF |#20|"
+      Host: free.sahanwickramasinghe.com
+- name: "cool [white] \U0001F310 |#17|"
   type: vmess
-  server: 3h-kazakhstan1.09vpn.com
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   alterId: 0
   cipher: auto
   udp: true
-  tls: false
+  tls: true
   network: ws
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /vmess/
+    path: /lMnsZUN4/
     headers:
-      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#18|"
+  type: vmess
+  server: 104.21.57.84
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#19|"
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: none
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- name: "cool [white] \U0001F310 |#20|"
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: none
+  udp: true
+  tls: true
+  network: ws
+  servername: v2ray1.dozapp.xyz
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#21|"
   type: vless
-  server: 104.24.31.89
+  server: 104.16.10.56
   port: 443
   uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
   udp: true
@@ -293,126 +299,37 @@ proxies:
     headers:
       Host: jp3.yohototo.top
 - name: "cool [white] \U0001F310 |#22|"
-  type: vless
-  server: 104.17.70.206
+  type: vmess
+  server: 172.64.80.1
   port: 8443
-  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
   udp: true
   tls: true
   network: ws
-  skip-cert-verify: false
-  servername: free.sahanwickramasinghe.com
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /
+    path: /lMnsZUN4/
     headers:
-      Host: free.sahanwickramasinghe.com
+      Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#23|"
-  type: vless
-  server: 104.18.42.98
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  type: vmess
+  server: 104.17.77.77
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
   udp: true
   tls: true
   network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
+  servername: v2ray1.dozapp.xyz
   ws-opts:
-    path: /tyxyws
+    path: /lMnsZUN4/
     headers:
-      Host: jp3.yohototo.top
+      Host: v2ray1.dozapp.xyz
 - name: "cool [white] \U0001F310 |#24|"
   type: vless
-  server: 104.18.153.10
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#25|"
-  type: vless
-  server: 104.16.111.102
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#26|"
-  type: vless
-  server: 188.114.97.6
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#27|"
-  type: vless
-  server: 188.114.97.6
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F1FA\U0001F1F8 |#28|"
-  type: hysteria2
-  server: 42fab11a-tm96o0-tnggms-6gn6.los.hyhuawei.com
-  port: 443
-  password: c12f73f6-e8c7-11ed-9246-f23c9164ca5d
-  sni: 42fab11a-tm96o0-tnggms-6gn6.los.hyhuawei.com
-  skip-cert-verify: false
-- name: "cool [white] \U0001F310 |#29|"
-  type: vless
-  server: 104.27.46.35
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#30|"
-  type: vless
-  server: 104.16.111.102
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F310 |#31|"
-  type: vless
   server: 104.17.70.206
   port: 8443
   uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
@@ -425,76 +342,6 @@ proxies:
     path: /
     headers:
       Host: free.sahanwickramasinghe.com
-- name: "cool [white] \U0001F310 |#32|"
-  type: vless
-  server: 104.16.0.1
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
-- name: "cool [white] \U0001F1F0\U0001F1FF |#33|"
-  type: vmess
-  server: 3h-kazakhstan1.09vpn.com
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: 3h-kazakhstan1.09vpn.com
-  ws-opts:
-    path: /vmess/
-    headers:
-      Host: 3h-kazakhstan1.09vpn.com
-- name: "cool [white] \U0001F310 |#34|"
-  type: vless
-  server: 104.17.70.206
-  port: 8443
-  uuid: 3692de53-42e6-4aed-a522-40ec355dcd2f
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: free.sahanwickramasinghe.com
-  ws-opts:
-    path: /
-    headers:
-      Host: free.sahanwickramasinghe.com
-- name: "cool [white] \U0001F1F0\U0001F1FF |#35|"
-  type: vmess
-  server: 3h-kazakhstan1.09vpn.com
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  ws-opts:
-    path: /vmess/
-- name: "cool [white] \U0001F310 |#36|"
-  type: vless
-  server: 104.17.50.53
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
-  tls: true
-  network: ws
-  skip-cert-verify: false
-  servername: jp3.yohototo.top
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
 proxy-groups:
 - name: Обычный
   type: select
@@ -515,28 +362,16 @@ proxy-groups:
   - "cool [white] \U0001F310 |#12|"
   - "cool [white] \U0001F310 |#13|"
   - "cool [white] \U0001F310 |#14|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#15|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F310 |#17|"
   - "cool [white] \U0001F310 |#18|"
   - "cool [white] \U0001F310 |#19|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#20|"
+  - "cool [white] \U0001F310 |#20|"
   - "cool [white] \U0001F310 |#21|"
   - "cool [white] \U0001F310 |#22|"
   - "cool [white] \U0001F310 |#23|"
   - "cool [white] \U0001F310 |#24|"
-  - "cool [white] \U0001F310 |#25|"
-  - "cool [white] \U0001F310 |#26|"
-  - "cool [white] \U0001F310 |#27|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#28|"
-  - "cool [white] \U0001F310 |#29|"
-  - "cool [white] \U0001F310 |#30|"
-  - "cool [white] \U0001F310 |#31|"
-  - "cool [white] \U0001F310 |#32|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#33|"
-  - "cool [white] \U0001F310 |#34|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#35|"
-  - "cool [white] \U0001F310 |#36|"
 - name: Авто
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -557,28 +392,16 @@ proxy-groups:
   - "cool [white] \U0001F310 |#12|"
   - "cool [white] \U0001F310 |#13|"
   - "cool [white] \U0001F310 |#14|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#15|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F310 |#17|"
   - "cool [white] \U0001F310 |#18|"
   - "cool [white] \U0001F310 |#19|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#20|"
+  - "cool [white] \U0001F310 |#20|"
   - "cool [white] \U0001F310 |#21|"
   - "cool [white] \U0001F310 |#22|"
   - "cool [white] \U0001F310 |#23|"
   - "cool [white] \U0001F310 |#24|"
-  - "cool [white] \U0001F310 |#25|"
-  - "cool [white] \U0001F310 |#26|"
-  - "cool [white] \U0001F310 |#27|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#28|"
-  - "cool [white] \U0001F310 |#29|"
-  - "cool [white] \U0001F310 |#30|"
-  - "cool [white] \U0001F310 |#31|"
-  - "cool [white] \U0001F310 |#32|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#33|"
-  - "cool [white] \U0001F310 |#34|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#35|"
-  - "cool [white] \U0001F310 |#36|"
 - name: Авто (без RU)
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -599,51 +422,23 @@ proxy-groups:
   - "cool [white] \U0001F310 |#12|"
   - "cool [white] \U0001F310 |#13|"
   - "cool [white] \U0001F310 |#14|"
-  - "cool [white] \U0001F1F8\U0001F1EC |#15|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#15|"
   - "cool [white] \U0001F310 |#16|"
   - "cool [white] \U0001F310 |#17|"
   - "cool [white] \U0001F310 |#18|"
   - "cool [white] \U0001F310 |#19|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#20|"
+  - "cool [white] \U0001F310 |#20|"
   - "cool [white] \U0001F310 |#21|"
   - "cool [white] \U0001F310 |#22|"
   - "cool [white] \U0001F310 |#23|"
   - "cool [white] \U0001F310 |#24|"
-  - "cool [white] \U0001F310 |#25|"
-  - "cool [white] \U0001F310 |#26|"
-  - "cool [white] \U0001F310 |#27|"
-  - "cool [white] \U0001F1FA\U0001F1F8 |#28|"
-  - "cool [white] \U0001F310 |#29|"
-  - "cool [white] \U0001F310 |#30|"
-  - "cool [white] \U0001F310 |#31|"
-  - "cool [white] \U0001F310 |#32|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#33|"
-  - "cool [white] \U0001F310 |#34|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#35|"
-  - "cool [white] \U0001F310 |#36|"
-- name: "\U0001F1F0\U0001F1FF Kazakhstan"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1F0\U0001F1FF |#20|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#33|"
-  - "cool [white] \U0001F1F0\U0001F1FF |#35|"
-- name: "\U0001F1F8\U0001F1EC Singapore"
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - "cool [white] \U0001F1F8\U0001F1EC |#15|"
 - name: "\U0001F1FA\U0001F1F8 USA"
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - "cool [white] \U0001F1FA\U0001F1F8 |#28|"
+  - "cool [white] \U0001F1FA\U0001F1F8 |#15|"
 - name: "\U0001F310 Unknown"
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -668,18 +463,10 @@ proxy-groups:
   - "cool [white] \U0001F310 |#17|"
   - "cool [white] \U0001F310 |#18|"
   - "cool [white] \U0001F310 |#19|"
+  - "cool [white] \U0001F310 |#20|"
   - "cool [white] \U0001F310 |#21|"
   - "cool [white] \U0001F310 |#22|"
   - "cool [white] \U0001F310 |#23|"
   - "cool [white] \U0001F310 |#24|"
-  - "cool [white] \U0001F310 |#25|"
-  - "cool [white] \U0001F310 |#26|"
-  - "cool [white] \U0001F310 |#27|"
-  - "cool [white] \U0001F310 |#29|"
-  - "cool [white] \U0001F310 |#30|"
-  - "cool [white] \U0001F310 |#31|"
-  - "cool [white] \U0001F310 |#32|"
-  - "cool [white] \U0001F310 |#34|"
-  - "cool [white] \U0001F310 |#36|"
 rules:
 - MATCH,Обычный
